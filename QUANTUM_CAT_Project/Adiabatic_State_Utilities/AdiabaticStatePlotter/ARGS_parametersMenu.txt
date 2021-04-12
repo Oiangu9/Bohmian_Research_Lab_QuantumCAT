@@ -1,0 +1,14 @@
+adiabaticStates---------
+double g=3.0,a1=5.0,a2=40.0,Lmax=40.0,Lmin=5.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(j*PI*(y-o)/L);}
+potential(x,y)----------
+double g=3.0,a1=5.0,a2=40.0,Lmax=40.0,Lmin=5.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; if(y>L1 || y<-L1){return 100.0;} else{return 0.0;}
+jmax--------------------
+10
+nx_ny-------------------
+500 700
+xmin_x1max---------------
+-50.0 70.0
+x2min_x2max---------------
+-20.0 20.0
+expLabel----------------
+diffyy_Estados_adiabaticos

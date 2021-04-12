@@ -1,0 +1,15 @@
+pathFileWF-----------------------
+GaussianPrueba.txt
+EigenstatesSectionsInx-----------
+double c=2.5, d=3.5, s=1.0, L, o;if(x<c || x>d){ L=ymax-ymin; o=ymin;} else{ if(abs(y)>s){return 0.0;} L=2.0*s; o=-s; } return sqrt(2.0/L)*sin(j*PI*(y-o)/L);
+jmax-----------------------------
+10
+nx1 nx2--------------------------
+350 370
+x1min x1max----------------------
+-6 14
+x2min x2max----------------------
+-6 6
+gif------------------------------
+L
+Probatxuek

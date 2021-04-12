@@ -1,0 +1,90 @@
+ks_to_use------------------------
+0.1 0.5 1.0
+numk-----------------------------
+3
+GG-or-GS-------------------------
+GG
+sigmax sigmay mux muy------------
+2.0 3.0 -9.5 0.0
+potential------------------------
+double g=3.0,a1=5.0,a2=40.0,Lmax=40.0,Lmin=5.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; if(y>L1 || y<-L1){return 100.0;} else{return 0.0;}
+EigenstatesSectionsInx-----------
+double g=3.0,a1=5.0,a2=40.0,Lmax=40.0,Lmin=5.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(j*PI*(y-o)/L);}
+use_Oiangu_Correction------------
+1
+jmax-----------------------------
+11
+numTrajs-------------------------
+2
+nx ny_CN----------------------------CN
+400 300
+xmin xmax------------------------
+-50.0 68.0
+ymin ymax------------------------
+-20.0 20.0
+numIt----------------------------
+23000
+dt-------------------------------
+0.004
+massx massy----------------------
+1.0 0.5
+hbar-----------------------------
+1.0
+xBound---------------------------
+20.0
+outputDataEvery------------------
+350
+
+
+ks_to_use------------------------
+0.5
+numk-----------------------------
+1
+GG-or-GS-------------------------
+GG
+sigmax sigmay mux muy------------
+2.0 3.0 -12.0 0.0
+potential------------------------
+double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; if(y>L1 || y<-L1){return 100.0;} else{return 0.0;}
+EigenstatesSectionsInx-----------
+double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(j*PI*(y-o)/L);}
+DiffyEigenstatesSectionsInx------No_hace_falta_para_CN2
+double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*(j*PI/L)*cos(j*PI*(y-o)/L);}
+DiffyyEigenstatesSectionsInx-----No_hace_falta_para_CN2
+double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*(-j*j*PI*PI/(L*L))*sin(j*PI*(y-o)/L);}
+jmax-----------------------------
+1
+chiSumTolerance------------------No_hace_falta_para_CN2
+0.95
+numTrajs-------------------------
+4
+nx ny_CN----------------------------CN
+120 120
+nx ny_X0----------------------------XO
+400 400
+xmin xmax------------------------
+-30.0 20.0
+ymin ymax------------------------
+-20.0 20.0
+numIt----------------------------
+5500
+dt-------------------------------
+0.004
+massx massy----------------------
+1.0 0.5
+hbar-----------------------------
+1.0
+Kin Adv G J----------------------
+1.0 0.0 1.0 0.0
+customInitialPositionTrajs-------
+1
+codeForCustomTrajs---------------
+double posymin=-1.0, posymax=1.0, centerx1=-10.0, centerx2=-8.5; for(int k=0; k<numTrajs/2; ++k){ initialPosx[k]=centerx1; initialPosy[k]= posymin+(posymax-posymin)*k/(numTrajs/2-1.0);}for(int k=numTrajs/2; k<numTrajs; ++k){ initialPosx[k]=centerx2; initialPosy[k]= posymin+(posymax-posymin)*(k-numTrajs/2)/(numTrajs/2-1.0);}
+xBound---------------------------
+10.0
+outputDataEvery------------------
+50
+gif------------------------------
+G
+ExpLabel-------------------------
+gaussinXgaussian

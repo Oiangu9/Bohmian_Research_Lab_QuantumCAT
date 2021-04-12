@@ -1,0 +1,26 @@
+2d_WF(x,y)---------
+double sigmax=2.0, sigmay=3.0, mux=-9.5, muy=0.0, kx=0.3, ky=0.0; return pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2))* pow(1.0/(2*PI*sigmay*sigmay),0.25)*exp(J*ky*y-0.25*pow((y-muy)/sigmay,2));
+potential(x,y)----------
+double g=3.0,a1=5.0,a2=40.0,Lmax=40.0,Lmin=7.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; if(y>L1 || y<-L1){return 100.0;} else{return 0.0;}
+nx ny--------------------
+850 850
+xmin_xmax_ymin_ymax-------------------
+-50.0 70.0 -20.0 20.0
+massx_massy---------------
+1.0 0.5
+hbar---------------
+1.0
+
+Extra-GaussianSinus
+2d_WF(x,y)---------
+double sigmax=2.0, sigmay=2.0, mux=0.0, muy=0.0, kx=0.3, ky=0.0; return pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2))*sqrt(2/(x2max-x2min))*sin(PI*(y-x2min)/(x2max-x2min));
+potential(x,y)----------
+return 0;
+nx ny--------------------
+850 850
+xmin_xmax_ymin_ymax-------------------
+-10.0 10.0 -10.0 10.0
+massx_massy---------------
+1.0 1.0
+hbar---------------
+1.0

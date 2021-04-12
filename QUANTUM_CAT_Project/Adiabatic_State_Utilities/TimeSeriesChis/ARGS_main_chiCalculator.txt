@@ -1,0 +1,19 @@
+pathFileWF-----------------------
+DATA_rawSimulationData_2D_CN.txt
+EigenstatesSectionsInx-----------
+double c=2.5, d=3.5, s=1.0, L, o;if(x<c || x>d){ L=ymax-ymin; o=ymin;} else{ if(abs(y)>s){return 0.0;} L=2.0*s; o=-s; } return sqrt(2.0/L)*sin(j*PI*(y-o)/L);
+jmax-----------------------------
+10
+nx1 nx2--------------------------
+150 170
+x1min x1max----------------------
+-6 14
+x2min x2max----------------------
+-6 6
+numIt----------------------------
+350
+speed----------------------------
+1
+gif------------------------------
+G
+Probatxuek
