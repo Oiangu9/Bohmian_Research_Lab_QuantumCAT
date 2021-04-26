@@ -1,4 +1,4 @@
-$$34$1$CODE_simulator_XO_KinAdv.cpp$$
+$$35$1$CODE_simulator_XO_KinAdv.cpp$$
 
 // 2D SCHRODINGER EQUATION SOLVER - XO ALGORITHM Kinetic and Advective Correlation Potential approximation of G and J:
 // The Conditional Single Particle Wave Function (CSPWF) of the dimensions (x,y) will be evolved for each initial conditions using a 1D Cranck Nicolson method for the Pseudo Schrodinger Equations
@@ -794,8 +794,14 @@ $22$
 }
 //We choose if we want the Uj for y dimension to be calculated as well
 double b_y=$25$;
+int Jmax_extra_info = $35$;
+VectorXd Ps_legacy = VectorXd::Zero(Jmax_extra_info+1);;
+VectorXd Ps_correction = VectorXd::Zero(Jmax_extra_info+1);
+VectorXd Ps_CWF_def = VectorXd::Zero(Jmax_extra_info+2);
+
+cdouble chi_j_conditional;
 //We declare the matrix that will save the Uj(x,t) values for each x and j, in order to allow the calculation of the normalized Uj
-ArrayXXcd Ujx_container(xDivs+1, xjmax+1), Ujy_container(yDivs+1, yjmax +1), Chijx_container(xDivs+1, xjmax+1), Chijy_container(yDivs+1, yjmax+1);
+ArrayXXcd Ujx_container(xDivs+1, Jmax_extra_info+1), Ujx_container_legacy(xDivs+1, Jmax_extra_info+1), Ujy_container(yDivs+1, yjmax +1), Chijx_container(xDivs+1, xjmax+1), Chijy_container(yDivs+1, yjmax+1);
 //ArrayXd Ujx_normFactors(xjmax+1), Ujy_normFactors(yjmax+1);
 //We declare a matrix to store the computed correlation potential G(x)+i*J(x) for a certain time iteration in order to allow its plot. Another one for G(y)+i*J(y)
 //We also declare a matrix to store the real and imaginary parts of the Kinetic and Advective correlation potentials approximated for x and for y. (4 columns -> Re{Kin}, Im{Kin}, Re{Adv}, Im{Adv}
@@ -893,10 +899,14 @@ traj[timeIts+1][3]=0.0;
 
 double vx, vy;
 //We open the output streams
-ofstream probabDataFile, trajDataFile, DATA_chiInfo, DATA_sumChiInfo, DATA_G_J_x, DATA_G_J_y, DATA_KinAdv_x, DATA_KinAdv_y, DATA_XO_Re_Uj_x, DATA_XO_Im_Uj_x;
+ofstream probabDataFile, trajDataFile, DATA_populations_CWF, DATA_populations_legacy, DATA_population_correction;
+// DATA_chiInfo, DATA_sumChiInfo, DATA_G_J_x, DATA_G_J_y, DATA_KinAdv_x, DATA_KinAdv_y, DATA_XO_Re_Uj_x, DATA_XO_Im_Uj_x;
 //psiDataFile.open("DATA_rawSimulationData_nD_XO_ZERO_CN_ABC_tDEP.txt");
 //probabDataFile.open("DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt");
 trajDataFile.open("DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$28$.txt");
+DATA_populations_CWF.open("DATA_populations_CWF.txt");
+DATA_populations_legacy.open("DATA_populations_legacy.txt");
+DATA_population_correction.open("DATA_population_correction.txt");
 //DATA_chiInfo.open("DATA_chiInfo_XO.txt");
 //DATA_sumChiInfo.open("DATA_sumChiInfo_XO.txt");
 //DATA_G_J_x.open("DATA_G_J_x_KA.txt");
@@ -986,20 +996,55 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     lastjUsedInItx=-1.0;
     sumaParaChisx=0.0;
     for(int j=0; j<=xjmax; ++j){
+        if(j%2==0){continue;}
+        posx = traj[it][0]; // current trajectory position
+        chi_j_conditional = 0.5*(eigenstatesForSectionsInx(ymin,posx,j)*psiY(0) + eigenstatesForSectionsInx(ymax,posx,j)*psiY(yDivs));
+        for(int k=1; k<yDivs; ++k){ chi_j_conditional=chi_j_conditional+eigenstatesForSectionsInx(ygrid(k),posx,j)*psiY(k);}
+        chi_j_conditional*=dy;
+        Ps_CWF_def(j+1)=abs(chi_j_conditional)*abs(chi_j_conditional);
+
       for(int i=0; i<=xDivs; ++i){
         posx = xgrid(i);
         //we get the Uj for this x and this j
-
         Uj=0.5*(eigenstatesForSectionsInx(ymin,posx,j)*psiY(0) + eigenstatesForSectionsInx(ymax,posx,j)*psiY(yDivs));
         for(int k=1; k<yDivs; ++k){ Uj=Uj+eigenstatesForSectionsInx(ygrid(k),posx,j)*psiY(k);}
         Ujx_container(i, j)=Uj*dy/(0.5*(psiY_in_y_traj_pos+psiX_in_x_traj_pos));
+        Ujx_container_legacy(i,j)=Uj*dy/((cdouble) sqrt(Nx*Ny))*psiX(i);
         Chijx_container(i,j)=Ujx_container(i, j)*psiX(i);
       }
       lastjUsedInItx=j;
-      sumaParaChisx+=abs2(Chijx_container.col(j)).sum();
-      if((sumaChisx(j)=sumaParaChisx*dx)>=chiSumTolerance){break;}
+      Ps_correction(j)=abs2(Chijx_container.col(j)).sum()*dx;
+      sumaParaChisx+=Ps_correction(j);
+      Ps_legacy(j)=abs2(Ujx_container_legacy.col(j)).sum()*dx;
+
+      if((sumaChisx(j)=sumaParaChisx)>=chiSumTolerance){break;}
       //Ujx_normFactors(j) = sqrt((abs2(psiX.array()*Ujx_container.col(j)).sum())*(xjmax+1)); //sure we miss the 1/2 for the first and last elements in the trapezium rule, but due to the number of entries in the vector this will turn out negligible
     }
+
+    // we extract all the population dynamics we are asked
+    Ps_CWF_def(0)=traj[it][0];
+    for(int j=lastjUsedInItx+1; j<=Jmax_extra_info; ++j){
+        if(j%2==0){continue;}
+        // For the computation of the chi using the CWF definition
+        posx = traj[it][0]; // current trajectory position
+        chi_j_conditional = 0.5*(eigenstatesForSectionsInx(ymin,posx,j)*psiY(0) + eigenstatesForSectionsInx(ymax,posx,j)*psiY(yDivs));
+        for(int k=1; k<yDivs; ++k){ chi_j_conditional=chi_j_conditional+eigenstatesForSectionsInx(ygrid(k),posx,j)*psiY(k);}
+        Ps_CWF_def(j+1)=abs(chi_j_conditional*dy);
+        Ps_CWF_def(j+1)=Ps_CWF_def(j+1)*Ps_CWF_def(j+1);
+
+        // For the computation of the chi using the full WF ansatz as product state
+        for(int i=0; i<=xDivs; ++i){
+          posx = xgrid(i);
+          //we get the Uj for this x and this j
+          Uj=0.5*(eigenstatesForSectionsInx(ymin,posx,j)*psiY(0) + eigenstatesForSectionsInx(ymax,posx,j)*psiY(yDivs));
+          for(int k=1; k<yDivs; ++k){ Uj=Uj+eigenstatesForSectionsInx(ygrid(k),posx,j)*psiY(k);}
+          Ujx_container(i, j)=Uj*dy/(0.5*(psiY_in_y_traj_pos+psiX_in_x_traj_pos))*psiX(i);
+          Ujx_container_legacy(i,j)=Uj*dy/((cdouble) sqrt(Nx*Ny))*psiX(i);
+        }
+        Ps_correction(j)=abs2(Ujx_container.col(j)).sum()*dx;
+        Ps_legacy(j)=abs2(Ujx_container_legacy.col(j)).sum()*dx;
+    }
+
     if(b_y!=0){
     lastjUsedInIty=-1.0;
     sumaParaChisy=0.0;
@@ -1026,6 +1071,7 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       advectiveCor = 0.0;
       //correlPot =0.0;
       for(int j=0; j<=lastjUsedInItx; ++j){ //generate the kinetic and advective correlation potentials for this spatial grid point posx
+        if(j%2==0){continue;}
         kineticCor = kineticCor - Ujx_container(i,j)* 0.5*hbar*hbar*diffyyEigenstatesForSectionsInx(posy, posx, j)/my;
         advectiveCor = advectiveCor + Ujx_container(i,j)* vy*hbar*diffyEigenstatesForSectionsInx(posy, posx, j);
 
@@ -1097,7 +1143,16 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       DATA_XO_Im_Uj_x << Ujx_container.imag() << endl << endl << endl;
     }
     */
+    if( it%outputDataEvery == 0){ //then we output the data
+        DATA_populations_legacy << Ps_legacy.transpose()<<endl;
+        DATA_population_correction << Ps_correction.transpose()<<endl;
+        DATA_populations_CWF << Ps_CWF_def.transpose()<<endl;
+    }
   } //end time iteration loop
+  DATA_populations_legacy <<endl <<endl;
+  DATA_population_correction <<endl <<endl;
+  DATA_populations_CWF <<endl <<endl;
+
   for(int it=0; it<=timeIts; ++it){
     if( it%outputDataEvery == 0){ //then we output the data
       trajDataFile << traj[it][0] << " " << traj[it][1] << " 0 "<<traj[it][2]<< " "<< traj[it][3]<< endl;
@@ -1105,8 +1160,11 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     }
   }
 } //end TrajectoryNumber loop
-probabDataFile.close();
+//probabDataFile.close();
 trajDataFile.close();
+DATA_populations_CWF.close();
+DATA_populations_legacy.close();
+DATA_population_correction.close();
 /*
 DATA_chiInfo.close();
 DATA_sumChiInfo.close();
