@@ -52,8 +52,8 @@ ofstream DATA_conditWF_CN, DATA_CN_Re_Uj, DATA_CN_Im_Uj, DATA_chiInfo, DATA_sumC
 
 DATA_Full_WF_G_J.open("DATA_Full_WF_G_J_CN.txt");
 DATA_conditWF_CN.open("DATA_probDensity_conditional_WF_CN.txt");
-// DATA_CN_Re_Uj.open("DATA_CN_Re_Uj.txt");
-// DATA_CN_Im_Uj.open("DATA_CN_Im_Uj.txt");
+DATA_CN_Re_Uj.open("DATA_CN_Re_Uj.txt");
+DATA_CN_Im_Uj.open("DATA_CN_Im_Uj.txt");
 
 DATA_chiInfo.open("DATA_chiInfo_CN_w_KA_trajs.txt");
 DATA_sumChiInfo.open("DATA_sumChiInfo_CN_with_KA_traj.txt");
@@ -65,7 +65,7 @@ DATA_derivatives.open("DATA_derivatives_S_R.txt");
 double** traj = new double*[timeIts+1];
 for (int i=0; i<=timeIts; ++i){ traj[i]= new double[4];} //the trajectory will include both position x,y and velocity x,y
 
-double posx, probAtTraj_x, probAtTraj_y;
+double posx;
 
 int gridPoints=(xDivs+1)*(yDivs+1), wholex, wholey;
 ArrayXcd WF(gridPoints), psiX(xDivs+1), psiY(yDivs+1), auxComplexVector(gridPoints), conjPsi(gridPoints);
@@ -133,10 +133,6 @@ for(int trajIdx=0; trajIdx<trajNum; trajIdx++){
       probDensityx = abs2(psiX);
       probDensityy = abs2(psiY);
 
-      // Compute the probability at the position of the trajectory
-      probAtTraj_x = probDensityx(wholex);
-      probAtTraj_y = probDensityy(wholey);
-
       N_x=0.5*(probDensityx(0)+probDensityx(xDivs));
       for(int i=1; i<xDivs; ++i){N_x+=probDensityx(i);}
       N_x*=dx;
@@ -156,7 +152,7 @@ for(int trajIdx=0; trajIdx<trajNum; trajIdx++){
 
             Uj=0.5*(eigenstatesForSectionsInx(ymin,posx,j)*psiY(0) + eigenstatesForSectionsInx(ymax,posx,j)*psiY(yDivs));
             for(int k=1; k<yDivs; ++k){ Uj=Uj+eigenstatesForSectionsInx(ygrid(k),posx,j)*psiY(k);}
-            Ujx_container(i, j)=Uj*dy/(WF(wholex*(yDivs+1)+ wholey));
+            Ujx_container(i, j)=Uj*dy/((cdouble) sqrt(N_x*N_y));
             Chijx_container(i,j)=Ujx_container(i, j)*psiX(i);
           }
           lastjUsedInItx=j;
@@ -166,12 +162,12 @@ for(int trajIdx=0; trajIdx<trajNum; trajIdx++){
 
       // Output the results
       // the norm and the conditional wf probability densities
-      DATA_conditWF_CN <<"CN-Norm_x=" << N_x<< "|psi(traj)|^2"<< probAtTraj_x<<endl<<probDensityx << endl << endl<<endl;
-      DATA_conditWF_CN<<"CN-Norm_y=" << N_y<< "|psi(traj)|^2"<< probAtTraj_y << endl << probDensityy << endl << endl<<endl;
+      DATA_conditWF_CN <<"CN-Norm_x=" << N_x<<endl<<probDensityx << endl << endl<<endl;
+      DATA_conditWF_CN<<"CN-Norm_y=" << N_y<<endl << probDensityy << endl << endl<<endl;
 
       // output the U_jx
-      // DATA_CN_Re_Uj << Ujx_container.real() << endl << endl << endl;
-      // DATA_CN_Im_Uj << Ujx_container.imag() << endl << endl << endl;
+      DATA_CN_Re_Uj << Ujx_container.real() << endl << endl << endl;
+      DATA_CN_Im_Uj << Ujx_container.imag() << endl << endl << endl;
 
 
       // output chi_j_x partial sums
@@ -339,8 +335,8 @@ DATA_traj_XO_File.close();
 DATA_wf_CN_File.close();
 
 DATA_conditWF_CN.close();
-// DATA_CN_Re_Uj.close();
-// DATA_CN_Im_Uj.close();
+DATA_CN_Re_Uj.close();
+DATA_CN_Im_Uj.close();
 
 DATA_sumChiInfo.close();
 DATA_chiInfo.close();

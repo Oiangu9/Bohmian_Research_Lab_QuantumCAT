@@ -170,16 +170,16 @@ double vx, vy;
 //We open the output streams
 ofstream probabDataFile, trajDataFile, DATA_chiInfo, DATA_sumChiInfo, DATA_G_J_x, DATA_G_J_y, DATA_KinAdv_x, DATA_KinAdv_y, DATA_XO_Re_Uj_x, DATA_XO_Im_Uj_x;
 //psiDataFile.open("DATA_rawSimulationData_nD_XO_ZERO_CN_ABC_tDEP.txt");
-probabDataFile.open("DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt");
+//probabDataFile.open("DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt");
 trajDataFile.open("DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$28$.txt");
-DATA_chiInfo.open("DATA_chiInfo_XO.txt");
-DATA_sumChiInfo.open("DATA_sumChiInfo_XO.txt");
-DATA_G_J_x.open("DATA_G_J_x_KA.txt");
+//DATA_chiInfo.open("DATA_chiInfo_XO.txt");
+//DATA_sumChiInfo.open("DATA_sumChiInfo_XO.txt");
+//DATA_G_J_x.open("DATA_G_J_x_KA.txt");
 //DATA_G_J_y.open("DATA_G_J_y_KA.txt");
 //DATA_XO_Re_Uj_x.open("DATA_XO_Re_Uj.txt");
 //DATA_XO_Im_Uj_x.open("DATA_XO_Im_Uj.txt");
 
-DATA_KinAdv_x.open("DATA_KinAdv_x.txt");
+//DATA_KinAdv_x.open("DATA_KinAdv_x.txt");
 //DATA_KinAdv_y.open("DATA_KinAdv_y.txt");
 
 //psiDataFile << std::setprecision(17);
@@ -306,12 +306,14 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       correlPot=$29$*kineticCor+J*advectiveCor*$30$;
       U1x.coeffRef(i,i) = 1.0+J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
       U2x.coeffRef(i,i) = 1.0-J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
+      /*
       G_J_x(i,0) = $31$*correlPot.real();
       G_J_x(i,1) = $32$*correlPot.imag();
       KinAdv_x(i,0)=$29$*kineticCor.real();
       KinAdv_x(i,1)=$29$*kineticCor.imag();
       KinAdv_x(i,2)=$30$*advectiveCor.real();
       KinAdv_x(i,3)=$30$*advectiveCor.imag();
+      */
     }
     posx = traj[it][0];
     for(int i=0; i<=yDivs; ++i){
@@ -350,6 +352,7 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     }
     U2psiy= U2y*psiY;
     psiY = LUsolvery.solve(U2psiy);
+    /*
     if( it%outputDataEvery == 0){ //then we output the data
       probabDataFile <<"KA-Norm_x=" << Nx<<endl<<probDensityx << endl << endl<<endl;
       probabDataFile<<"KA-Norm_y=" << Ny<<endl << probDensityy << endl << endl<<endl;
@@ -362,9 +365,10 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       //DATA_G_J_y<<G_J_y<<endl<<endl<<endl;
       DATA_KinAdv_x << KinAdv_x<<endl<<endl<<endl;
       //DATA_KinAdv_y << KinAdv_y<<endl<<endl<<endl;
-      //DATA_XO_Re_Uj_x << Ujx_container.real() << endl<<endl<<endl;
-      //DATA_XO_Im_Uj_x << Ujx_container.imag() << endl << endl << endl;
+      DATA_XO_Re_Uj_x << Ujx_container.real() << endl<<endl<<endl;
+      DATA_XO_Im_Uj_x << Ujx_container.imag() << endl << endl << endl;
     }
+    */
   } //end time iteration loop
   for(int it=0; it<=timeIts; ++it){
     if( it%outputDataEvery == 0){ //then we output the data
@@ -375,10 +379,12 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
 } //end TrajectoryNumber loop
 probabDataFile.close();
 trajDataFile.close();
+/*
 DATA_chiInfo.close();
 DATA_sumChiInfo.close();
-//DATA_XO_Re_Uj_x.close();
-//DATA_XO_Im_Uj_x.close();
+DATA_XO_Re_Uj_x.close();
+DATA_XO_Im_Uj_x.close();
+*/
 
 //We output the shape of the potential in order to be able to plot it
 ofstream potentialToPlot, trajProps;
@@ -422,7 +428,6 @@ return 0;
 // #################################################################################################
 
 $$2$CODE_simulator_XO_NoGJ.cpp$$
-
 
 // 2D SCHRODINGER EQUATION SOLVER - XO ALGORITHM NO G, J:
 // The Conditional Single Particle Wave Function (CSPWF) of the dimensions (x,y) will be evolved for each initial conditions using a 1D Cranck Nicolson method for the Pseudo Schrodinger Equations
@@ -554,11 +559,11 @@ double vx, vy;
 //We open the output streams
 ofstream probabDataFile, trajDataFile;
 //psiDataFile.open("DATA_rawSimulationData_nD_XO_ZERO_CN_ABC_tDEP.txt");
-probabDataFile.open("DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt");
+//probabDataFile.open("DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt");
 trajDataFile.open("DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$18$.txt");
 
 //psiDataFile << std::setprecision(17);
-probabDataFile << std::setprecision(17);
+//probabDataFile << std::setprecision(17);
 trajDataFile << std::setprecision(17);
 
 //BEGINNING OF THE ALGORITHM FOR EACH OF THE INITIAL CONDITIONS----------------------------------------------------------------
@@ -659,12 +664,12 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
         }
         U2psiy= U2y*psiY;
         psiY = LUsolvery.solve(U2psiy);
-
+        /*
         if( it%outputDataEvery == 0){ //then we output the data
             probabDataFile <<"Norm_x=" << Nx<<endl<<probDensityx << endl << endl<<endl;
             probabDataFile<<"Norm_y=" << Ny<<endl << probDensityy << endl << endl<<endl;
         }
-
+        */
      } // END TIME ITERATIONS
     for(int it=0; it<=timeIts; ++it){
         if( it%outputDataEvery == 0){ //then we output the data
@@ -674,7 +679,7 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
             }
     }
 }// END TARJECTORY ITERATIONS
-probabDataFile.close();
+//probabDataFile.close();
 trajDataFile.close();
 //We output the shape of the potential in order to be able to plot it
 ofstream potentialToPlot, trajProps;
@@ -715,12 +720,12 @@ return 0;
 
 
 
-// ###############################################################################################
-// ###############################################################################################
+//########################################################################################
+//########################################################################################
 
 $$3$CODE_simulator_XO_KinAdv.cpp$$
 
-// 2D SCHRODINGER EQUATION SOLVER - XO ALGORITHM Kinetic and Advective Correlation Potential approximation of G and J WITH XABIER'S CORRECTION!
+// 2D SCHRODINGER EQUATION SOLVER - XO ALGORITHM Kinetic and Advective Correlation Potential approximation of G and J using Xabier's Correction!:
 // The Conditional Single Particle Wave Function (CSPWF) of the dimensions (x,y) will be evolved for each initial conditions using a 1D Cranck Nicolson method for the Pseudo Schrodinger Equations
 //WARNING! The eigenstates for the sections are not set cdouble because in the box case they are fully real. However, this should be adjusted for a generalized algorithm. As such, complex conjugate should be done in the integrals for the Ujx!!!
 //We include the necessary libraries
@@ -743,8 +748,8 @@ using namespace std;
 #define customTrajs $33$
 //USER INPUT DECLARATION----------------------------------------------------------------------
 //We declare the Spatial and Time grids - names are self-explaning
-double xmin = $7$, xmax = $8$, ymin = $9$, ymax = $10$, t0=0.0, dt=$11$, posx, posy, Nx, Ny, prob_in_traj_y, prob_in_traj_x;
-cdouble Uj, psiY_in_y_traj_pos, psiX_in_x_traj_pos;
+double xmin = $7$, xmax = $8$, ymin = $9$, ymax = $10$, t0=0.0, dt=$11$, posx, posy, Nx, Ny;
+cdouble Uj, psiX_in_x_traj_pos, psiY_in_y_traj_pos;
 int xDivs=$5$, yDivs = $6$, timeIts=$12$, xBound=$27$, aux;
 double dx=(xmax-xmin)/xDivs;
 double dy=(ymax-ymin)/yDivs;
@@ -890,20 +895,20 @@ double vx, vy;
 //We open the output streams
 ofstream probabDataFile, trajDataFile, DATA_chiInfo, DATA_sumChiInfo, DATA_G_J_x, DATA_G_J_y, DATA_KinAdv_x, DATA_KinAdv_y, DATA_XO_Re_Uj_x, DATA_XO_Im_Uj_x;
 //psiDataFile.open("DATA_rawSimulationData_nD_XO_ZERO_CN_ABC_tDEP.txt");
-probabDataFile.open("DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt");
+//probabDataFile.open("DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt");
 trajDataFile.open("DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$28$.txt");
-DATA_chiInfo.open("DATA_chiInfo_XO.txt");
-DATA_sumChiInfo.open("DATA_sumChiInfo_XO.txt");
-DATA_G_J_x.open("DATA_G_J_x_KA.txt");
+//DATA_chiInfo.open("DATA_chiInfo_XO.txt");
+//DATA_sumChiInfo.open("DATA_sumChiInfo_XO.txt");
+//DATA_G_J_x.open("DATA_G_J_x_KA.txt");
 //DATA_G_J_y.open("DATA_G_J_y_KA.txt");
 //DATA_XO_Re_Uj_x.open("DATA_XO_Re_Uj.txt");
 //DATA_XO_Im_Uj_x.open("DATA_XO_Im_Uj.txt");
 
-DATA_KinAdv_x.open("DATA_KinAdv_x.txt");
+//DATA_KinAdv_x.open("DATA_KinAdv_x.txt");
 //DATA_KinAdv_y.open("DATA_KinAdv_y.txt");
 
 //psiDataFile << std::setprecision(17);
-probabDataFile << std::setprecision(7);
+probabDataFile << std::setprecision(17);
 trajDataFile << std::setprecision(17);
 //BEGINNING OF THE ALGORITHM FOR EACH OF THE INITIAL CONDITIONS----------------------------------------------------------------
 for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithreading branching point
@@ -960,7 +965,6 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     traj[it+1][0] = traj[it][0]+vx*dt;
     traj[it][2] = vx;
     psiX_in_x_traj_pos = (1-fractional)*psiX(whole)+ fractional*psiX(whole+1);
-    prob_in_traj_x = probDensityx(whole);
 
     fractional = std::modf((traj[it][1]-ymin)/dy, &wholef);
     whole = wholef;
@@ -969,9 +973,6 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     traj[it+1][1] = traj[it][1]+vy*dt;
     traj[it][3] = vy;
     psiY_in_y_traj_pos = (1-fractional)*psiY(whole)+ fractional*psiY(whole+1);
-    prob_in_traj_y = probDensityy(whole);
-
-    //cout << psiX_in_x_traj_pos << " " << psiY_in_y_traj_pos << endl;
 
     //The norms of the SPCWFs Nx and Ny for Uj term calculation are obtained with a composed trapezium rule--------------------------------------------------------------------
     //for Nx
@@ -1033,12 +1034,14 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       correlPot=$29$*kineticCor+J*advectiveCor*$30$;
       U1x.coeffRef(i,i) = 1.0+J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
       U2x.coeffRef(i,i) = 1.0-J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
+      /*
       G_J_x(i,0) = $31$*correlPot.real();
       G_J_x(i,1) = $32$*correlPot.imag();
       KinAdv_x(i,0)=$29$*kineticCor.real();
       KinAdv_x(i,1)=$29$*kineticCor.imag();
       KinAdv_x(i,2)=$30$*advectiveCor.real();
       KinAdv_x(i,3)=$30$*advectiveCor.imag();
+      */
     }
     posx = traj[it][0];
     for(int i=0; i<=yDivs; ++i){
@@ -1054,6 +1057,7 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       }
       U1y.coeffRef(i,i)= 1.0+J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) + b_y*correlPot)/((cdouble)2.0*hbar);
       U2y.coeffRef(i,i)= 1.0-J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) + b_y*correlPot)/((cdouble)2.0*hbar);
+
       //G_J_y(i,0) = correlPot.real();//nG_J_y(i,1) = correlPot.imag();
 
     }
@@ -1076,9 +1080,10 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
     }
     U2psiy= U2y*psiY;
     psiY = LUsolvery.solve(U2psiy);
+    /*
     if( it%outputDataEvery == 0){ //then we output the data
-      probabDataFile <<"KA-Norm_x=" << Nx<<";|psi(traj)|^2="<<prob_in_traj_x<< endl<<probDensityx << endl << endl<<endl;
-      probabDataFile<<"KA-Norm_y=" << Ny<<";|psi(traj)|^2="<<prob_in_traj_y <<endl << probDensityy << endl << endl<<endl;
+      probabDataFile <<"KA-Norm_x=" << Nx<<endl<<probDensityx << endl << endl<<endl;
+      probabDataFile<<"KA-Norm_y=" << Ny<<endl << probDensityy << endl << endl<<endl;
       for(int j=0; j<=lastjUsedInItx; ++j){
         DATA_sumChiInfo<<j<<" "<<sumaChisx(j)<<endl;
       }
@@ -1088,9 +1093,10 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       //DATA_G_J_y<<G_J_y<<endl<<endl<<endl;
       DATA_KinAdv_x << KinAdv_x<<endl<<endl<<endl;
       //DATA_KinAdv_y << KinAdv_y<<endl<<endl<<endl;
-      //DATA_XO_Re_Uj_x << Ujx_container.real() << endl<<endl<<endl;
-      //DATA_XO_Im_Uj_x << Ujx_container.imag() << endl << endl << endl;
+      DATA_XO_Re_Uj_x << Ujx_container.real() << endl<<endl<<endl;
+      DATA_XO_Im_Uj_x << Ujx_container.imag() << endl << endl << endl;
     }
+    */
   } //end time iteration loop
   for(int it=0; it<=timeIts; ++it){
     if( it%outputDataEvery == 0){ //then we output the data
@@ -1101,10 +1107,12 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
 } //end TrajectoryNumber loop
 probabDataFile.close();
 trajDataFile.close();
+/*
 DATA_chiInfo.close();
 DATA_sumChiInfo.close();
-//DATA_XO_Re_Uj_x.close();
-//DATA_XO_Im_Uj_x.close();
+DATA_XO_Re_Uj_x.close();
+DATA_XO_Im_Uj_x.close();
+*/
 
 //We output the shape of the potential in order to be able to plot it
 ofstream potentialToPlot, trajProps;

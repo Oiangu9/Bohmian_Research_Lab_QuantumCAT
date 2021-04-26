@@ -4,10 +4,10 @@ cd SOURCE_FILES
 rm DATA_chiInfo_CN_w_KA_trajs.txt
 rm DATA_chiInfo_XO.txt
 rm DATA_chiInfo_CN.txt
-#rm DATA_CN_Im_Uj.txt
-#rm DATA_CN_Re_Uj.txt
-#rm DATA_XO_Im_Uj.txt
-#rm DATA_XO_Re_Uj.txt
+rm DATA_CN_Im_Uj.txt
+rm DATA_CN_Re_Uj.txt
+rm DATA_XO_Im_Uj.txt
+rm DATA_XO_Re_Uj.txt
 rm DATA_G_J_x_KA.txt
 rm DATA_G_J_with_CN_and_KA_trajs.txt
 rm DATA_KinAdv_x.txt

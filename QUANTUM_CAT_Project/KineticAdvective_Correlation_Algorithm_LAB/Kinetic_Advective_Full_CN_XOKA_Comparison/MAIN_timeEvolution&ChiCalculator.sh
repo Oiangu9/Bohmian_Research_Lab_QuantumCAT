@@ -47,9 +47,9 @@ read diffy_functionEigenstates
 echo "Introduce an expression for the second derivative in y of the eigenstates as a function of x and j - NOT NECESSARY FOR CN2"
 read trash
 read diffyy_functionEigenstates
-echo " Would you like to use Xabier's correction? (1 if yes, 0 if not)"
+echo " Do you want to use Xabier's correction? If yes input 1, else 0"
 read trash
-read correctionOiangu
+read oianguCorrection
 echo " Introduce the maximum j of the chis you want me to calculate"
 read trash
 read jmax
@@ -133,30 +133,73 @@ if [[ $customTrajs == *"0"* ]]; then
 customTrajsCode=" "
 fi
 
+XOKA_version="1"
+if [[ $oianguCorrection == *"1"* ]]; then
+XOKA_version="3"
+fi
+
 tIts=$(echo "$numIt / $outputEvery" | bc)
 
-version_of_XOKA="1"
-if [[ $correctionOiangu == *"1"* ]]; then
-version_of_XOKA="3"
-fi
 
 for k0 in $ks
 do
 
-if [[ $psi == *"GS"* ]]; then
-    psiIni="double g=${g},a1=${a1},a2=${a2},Lmax=${Lmax},Lmin=${Lmin}, kx=${k0}, mux=${mux}, sigmax=${sigmax}, o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(PI*(y-o)/L)*pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2));}"
-else
-    psiIni="double sigmax=${sigmax}, sigmay=${sigmay}, mux=${mux}, muy=${muy}, kx=${k0}, ky=0; return pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2))* pow(1.0/(2*PI*sigmay*sigmay),0.25)*exp(J*ky*y-0.25*pow((y-muy)/sigmay,2));"
-fi
+    if [[ $psi == *"GS"* ]]; then
+        psiIni="double g=${g},a1=${a1},a2=${a2},Lmax=${Lmax},Lmin=${Lmin}, kx=${k0}, mux=${mux}, sigmax=${sigmax}, o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(PI*(y-o)/L)*pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2));}"
+    else
+        psiIni="double sigmax=${sigmax}, sigmay=${sigmay}, mux=${mux}, muy=${muy}, kx=${k0}, ky=0; return pow(1.0/(2*PI*sigmax*sigmax),0.25)*exp(J*kx*x-0.25*pow((x-mux)/sigmax,2))* pow(1.0/(2*PI*sigmay*sigmay),0.25)*exp(J*ky*y-0.25*pow((y-muy)/sigmay,2));"
+    fi
 
     expLabel="CN_k0_${k0}_${label}"
+
+    # XO KINETIC ADVECTIVEEE!!!!!-------------------------------------------------------------------------------------------------------------
+    echo "XO KA time!!------------------------"
+    expLabel="XO_KA_k0_${k0}_${label}"
+    echo " (2) CODE COMPILATION and EXECUTION"
+    echo " Generating code and compiling..."
+
+    potentialPlotFineness=0.007
+    eigenstatesForSectionsIny="return 0;"
+    diffxEigenstatesForSectionsIny="return 0;"
+    diffxxEigenstatesForSectionsIny="return 0;"
+    yjmax=0
+    b_y=0
+
+
+    ./EXE_codeFileGenerator_2D_XO_KINADV_BornHuang_tINDEP "$psiIni" "$potential" $mass1 $mass2 $nx1 $nx2 $x1min $x1max $x2min $x2max $dt $numIt $numTrajs $potentialPlotFineness $hbar $outputEvery "$functionEigenstates" "$diffy_functionEigenstates" "$diffyy_functionEigenstates" "$eigenstatesForSectionsIny" "$diffxEigenstatesForSectionsIny" "$diffxxEigenstatesForSectionsIny" $jmax $yjmax $b_y $chiSumTolerance $xBound $k0 $Kin $Adv $G $J $customTrajs "$customTrajsCode" $XOKA_version
+
+    g++ -Wall -O CODE_simulator_XO_KinAdv.cpp -o EXE_simulator_XO_KinAdv
+    echo " Done!"
+    echo ""
+    echo " Executing calculations..."
+    START_TIME=$SECONDS
+    ./EXE_simulator_XO_KinAdv
+    CALCULATION_TIME=$SECONDS
+    echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
+    echo ""
+
+    echo "(2) GENERATING FINAL PLOT..."
+
+    START_TIME=$SECONDS
+
+        currentDateTime=`date +"%m-%d-%Y_%H:%M:%S"`
+        echo " Generating GIF..."
+        gnuplot -e "set terminal gif size 1800, 900 font 'Helvetica,10' animate delay 1; set output '../ANIMATION_GIFS/XOKA_$expLabel-{$currentDateTime}_numTrajs($numTrajs)_XOKA.gif'; t=0; tmax=$tIts+1; while(t<tmax){ set key title 'KINETIC ADVECTIVE Algorithm :' at 1,25; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set pm3d map; set palette rgbformulae 33,13,10; set cbrange[0:100]; set colorbox; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' title 'Potential Energy heatmap and aproximate KA Bohmian trajectories', 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' title 'Animated trajectories in colors - current in red, resultant in black, current traced in colors' w points lt 5 pt 4 ps 0.18 lc rgb 'black', for [i=0:($numTrajs-1)] 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' every ::(i*tmax)::(i*tmax+t) notitle w points lt 5 pt 4 ps 0.16 linecolor palette frac (i+1.0)/($numTrajs+1.0), for [i=0:($numTrajs-1)] 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' every ::(i*tmax+t)::(i*tmax+t) notitle w points lt 5 pt 7 ps 1.0 linecolor rgb 'red';unset pm3d; unset view; unset colorbox; unset key; t=t+1;}"
+
+        echo "Done!"
+
+
+    CALCULATION_TIME=$SECONDS
+    echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
+    echo ""
+
     # CRANCK NICOLSON!!!!---------------------------------------------------------------------------------------------
     trajOption="R"
     echo "-------CRANCK NICOLSON time!-------- "
     echo "(2) Executing calculations for the time evolution...."
     echo " Generating code and compiling..."
 
-    ./EXE_codeFileGenerator_2D_CN_tINDEP "$psiIni" "$potential" $nx1CN $nx2CN $x1min $x1max $x2min $x2max $dt $numIt $mass1 $mass2 $hbar  $outputEvery $version_of_XOKA 1
+    ./EXE_codeFileGenerator_2D_CN_tINDEP "$psiIni" "$potential" $nx1CN $nx2CN $x1min $x1max $x2min $x2max $dt $numIt $mass1 $mass2 $hbar  $outputEvery 1
     g++ -Wall -O CODE_simulator_2D_CN_tINDEP.cpp -o EXE_simulator_2D_CN_tINDEP
     echo " Done!"
     echo ""
@@ -184,84 +227,11 @@ fi
     CALCULATION_TIME=$SECONDS
     echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
     echo ""
+    currentDateTime=`date +"%m-%d-%Y_%H:%M:%S"`
 
-
-    # XO KINETIC ADVECTIVEEE!!!!!-------------------------------------------------------------------------------------------------------------
-    echo "XO KA time!!------------------------"
-    expLabel="XO_KA_k0_${k0}_${label}"
-    echo " (2) CODE COMPILATION and EXECUTION"
-    echo " Generating code and compiling..."
-
-    potentialPlotFineness=0.013
-    eigenstatesForSectionsIny="return 0;"
-    diffxEigenstatesForSectionsIny="return 0;"
-    diffxxEigenstatesForSectionsIny="return 0;"
-    yjmax=0
-    b_y=0
-
-
-    ./EXE_codeFileGenerator_2D_XO_KINADV_BornHuang_tINDEP "$psiIni" "$potential" $mass1 $mass2 $nx1 $nx2 $x1min $x1max $x2min $x2max $dt $numIt $numTrajs $potentialPlotFineness $hbar $outputEvery "$functionEigenstates" "$diffy_functionEigenstates" "$diffyy_functionEigenstates" "$eigenstatesForSectionsIny" "$diffxEigenstatesForSectionsIny" "$diffxxEigenstatesForSectionsIny" $jmax $yjmax $b_y $chiSumTolerance $xBound $k0 $Kin $Adv $G $J $customTrajs "$customTrajsCode" $version_of_XOKA
-
-    g++ -Wall -O CODE_simulator_XO_KinAdv.cpp -o EXE_simulator_XO_KinAdv
-    echo " Done!"
-    echo ""
-    echo " Executing calculations..."
-    START_TIME=$SECONDS
-    ./EXE_simulator_XO_KinAdv
-    CALCULATION_TIME=$SECONDS
-    echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
-    echo ""
-
-    # Combined information calculation!
-    echo "Combine XO trajectories with CN!!---------------"
-    echo " (1) CODE COMPILATION and EXECUTION"
-
-    DATA_traj_XO_File="DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt"
-    DATA_wf_CN_File="DATA_rawSimulationData_2D_CN.txt"
-
-    ./EXE_codeFileGenerator_CN_Conditional_WFs_with_XO_Trajectories "$DATA_traj_XO_File" "$DATA_wf_CN_File" $nx1CN $nx2CN $jmax $x1min $x2min $x1max $x2max $tIts $numTrajs "$functionEigenstates" $chiSumTolerance $mass1 $mass2 $hbar 1
-
-    g++ -Wall -O CODE_Simulator_CN_Conditional_WFs_with_XO_Trajectories.cpp -o EXE_Simulator_CN_Conditional_WFs_with_XO_Trajectories
-
-    echo " Executing calculations..."
-    START_TIME=$SECONDS
-    ./EXE_Simulator_CN_Conditional_WFs_with_XO_Trajectories
-
-    CALCULATION_TIME=$SECONDS
-    echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
-    echo ""
-
-    echo "(2) GENERATING FINAL PLOT..."
-
-    START_TIME=$SECONDS
-
-        currentDateTime=`date +"%m-%d-%Y_%H:%M:%S"`
-        echo " Generating GIF..."
-
-        gnuplot -e "set terminal gif size 1950, 1350 font 'Helvetica,10' animate delay 1; set output '../ANIMATION_GIFS/$expLabel CN vs XOKA $currentDateTime jmax($jmax) numTrajs($numTrajs).gif'; t=0; tCN=0; countTrajs=0; tmax=2*$numIt*$numTrajs/$outputEvery; dx1=($x1max-($x1min))/$nx1; dx2=($x2max-($x2min))/$nx2; dx1CN=($x1max-($x1min))/$nx1CN; dx2CN=($x2max-($x2min))/$nx2CN; array posx1[$nx1+1]; array posx2[$nx2+1]; array posx1CN[$nx1CN+1]; array posx2CN[$nx2CN+1]; do for [i=1:($nx1+1)] { posx1[i] = $x1min + i*dx1 }; do for [i=1:($nx2+1)] { posx2[i] = $x2min + i*dx2 }; do for [i=1:($nx1CN+1)] { posx1CN[i] = $x1min + i*dx1CN }; do for [i=1:($nx2CN+1)] { posx2CN[i] = $x2min + i*dx2CN }; while(t<tmax){ set multiplot;
-        set origin -0.005, 0.66; set size 0.25, 0.33; clear; set key title 'CN |WF(x,y)|^2' at 1,30; set xtics auto; set palette rgbformulae 33,13,10; set pm3d map; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set cbrange[0:0.012]; set colorbox user origin 0.215,0.72 size 0.008,0.22; splot 'DATA_probDensity_WF_CN.txt' index tCN title columnheader(1); unset pm3d; unset view; unset colorbox; unset key;
-        set origin 0, 0.33; set size 0.25, 0.33; clear; set key title 'Potential Energy heatmap and KA trajectories'; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set pm3d map; set palette rgbformulae 33,13,10; set cbrange[0:100]; set colorbox; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' title 'Potential Energy Map', 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' title 'Resultant Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'black', 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' every ::1::(t/2+2) title 'traced KA Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'red';unset pm3d; unset view; unset colorbox; unset key;
-        set origin -0.007,0.0; set size 0.25, 0.33; clear; set key title 'R^4 G_x(x,y,t) for this trajectory KA y(t)'; set palette rgbformulae 33,13,10; set pm3d map; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set cbrange[-2e-7<*:*<1e-6]; set colorbox; splot 'DATA_Full_WF_G_J_CN.txt' index t/2 using 1:2:3 title 'Full WF R^4 G_x(x,y,t)'; unset pm3d; unset view; unset colorbox; unset key;
-        set origin 0.25, 0.66; set size 0.25, 0.33; clear; set xrange [-1:($jmax+2)]; set yrange [0:1.7]; set xtics 1; set xlabel 'jmax'; set ylabel 'integrate(\sum_{j=0}^{j=jmax}(|\chi^j(x)|^2))dx'; set key title ' ' inside; plot 'DATA_sumChiInfo_XO.txt' index t/2 using 1:2 with linespoint lw 3 pt 3 title 'KA', 'DATA_sumChiInfo_XO.txt' index t/2 using 1:2:(sprintf('%f', \$2)) with labels center offset -5.4,-.5 rotate by -45 notitle, 'DATA_sumChiInfo_CN.txt' index tCN using 1:2 with linespoint lw 3 pt 3 title 'exact CN', 'DATA_sumChiInfo_CN.txt' index tCN using 1:2:(sprintf('%f', \$2)) with labels center offset -3.4,-.5 rotate by -45 notitle, 'DATA_sumChiInfo_CN_with_KA_traj.txt' index t/2 using 1:2 with linespoint lw 3 pt 3 title 'Cn w KA trajs', 'DATA_sumChiInfo_CN_with_KA_traj.txt' index t/2 using 1:2:(sprintf('%f', \$2)) with labels center offset -1.4,-.5 rotate by -45 notitle; unset key;
-        set origin 0.25, 0.33; set size 0.25, 0.33; clear; set xtics auto; set key title ' ' inside; set xrange [$x1min:$x1max]; set yrange [-0.7:0.7]; set xlabel 'Position x'; set ylabel 'Kin'; set y2tics nomirror; set y2label 'Adv'; set y2range [-0.7:0.7]; plot 'DATA_KinAdv_x.txt' index t/2 using (posx1[\$0+1]):1 title 'Re{Kin(x)}' axes x1y1 w l, 'DATA_KinAdv_x.txt' index t/2 using (posx1[\$0+1]):2 title 'Im{Kin(x)}' axes x1y1 w l, 'DATA_KinAdv_x.txt' index t/2 using (posx1[\$0+1]):3 title 'Re{Adv(x)}' axes x1y2 w l, 'DATA_KinAdv_x.txt' index t/2 using (posx1[\$0+1]):4 title 'Im{Adv(x)}' axes x1y2 w l; unset y2tics; unset y2label;
-        set origin 0.25,0.0; set size 0.25, 0.33; clear; set xtics auto; set key title 'R^4 J_x(x,y,t) for this trajectory KA y(t)' at 1,30; set palette rgbformulae 33,13,10; set pm3d map; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set cbrange[-2e-7<*:*<1.5e-7]; set colorbox user origin 0.48,0.06 size 0.008,0.22; splot 'DATA_Full_WF_G_J_CN.txt' index t/2 using 1:2:4 title 'Full WF R^4 J_x(x,y,t)'; unset pm3d; unset view; unset colorbox; unset key;
-        set origin 0.5, 0.66; set size 0.25, 0.33; clear; set key title '' inside; set xrange [$x1min:$x1max]; set yrange [0:0.4]; set xlabel 'Position x'; set ylabel '|Chi^j(x)|'; plot for [i=2:(($jmax+1)/2+1)] 'DATA_chiInfo_XO.txt' index t/2 using (posx1[\$0+1]):i title sprintf('KA |Chi^{%d}(x)|',i-1) w l, for [i=2:(($jmax+1)/2+1)] 'DATA_chiInfo_CN.txt' index tCN using (posx1CN[\$0+1]):i title sprintf('CN |Chi^{%d}(x)|',i-1) w l, for [i=2:(($jmax+1)/2+1)] 'DATA_chiInfo_CN_w_KA_trajs.txt' index t/2 using (posx1CN[\$0+1]):i title sprintf('CN with KA traj condit wfs |Chi^{%d}(x)|',i-1) w l;
-        set origin 0.5, 0.33; set size 0.25, 0.33; clear; set xtics auto; set xrange [$x1min:$x1max]; set yrange [0:0.013]; set key title 'x Conditional Wave Function Probability Density' inside; set xlabel 'Position x'; set ylabel 'Probab Density'; plot 'DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt' index t using (posx1[\$0+1]):1 title columnheader(1) w l, 'DATA_probDensity_conditional_WF_CN.txt' index t using (posx1CN[\$0+1]):1 title columnheader(1) w l, 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' using 1:3 every ::(t/2)::(t/2+2) title 'x component of the Trajectory' w points lt 5 pt 6 ps 1 lc rgb 'red';
-        set origin 0.51, 0.0; set size 0.26, 0.33; clear; set key title ' ' inside; set xrange [$x1min:$x1max]; set xlabel 'Position x'; set ylabel 'G(x)'; set y2tics nomirror; set y2label 'J(x)'; set yrange [-1e-5<*:*<1e-5]; set y2range [-1e-5<*:*<1e-5]; plot 'DATA_G_J_with_CN_and_KA_trajs.txt' index t/2 using (posx1CN[\$0+1]):1 title 'R^4 G(x) CN with KA trajs' axes x1y1 w l lc rgb 'red', 'DATA_G_J_with_CN_and_KA_trajs.txt' index t/2 using (posx1CN[\$0+1]):2 title 'R^4 J(x) CN with KA trajs' axes x1y2 w l lc rgb 'blue'; unset y2tics; unset y2label; unset key;
-        set origin 0.75, 0.66; set size 0.25, 0.33; clear; set key title '' inside; set xrange [$x1min:$x1max]; set yrange [0:0.4]; set xlabel 'Position x'; set ylabel '|Chi^j(x)|'; if($jmax+1>2){plot for [i=(($jmax+1)/2+2):($jmax+1)] 'DATA_chiInfo_XO.txt' index t/2 using (posx1[\$0+1]):i title sprintf('KA |Chi^{%d}(x)|',i-1) w l, for [i=(($jmax+1)/2+2):($jmax+1)] 'DATA_chiInfo_CN.txt' index tCN using (posx1CN[\$0+1]):i title sprintf('CN |Chi^{%d}(x)|',i-1) w l, for [i=(($jmax+1)/2+2):($jmax+1)] 'DATA_chiInfo_CN_w_KA_trajs.txt' index t/2 using (posx1CN[\$0+1]):i title sprintf('CN with KA traj condit wfs |Chi^{%d}(x)|',i-1) w l;};
-        set origin 0.75, 0.33; set size 0.25, 0.33; clear; set xrange [$x2min:$x2max]; set yrange [0:0.013]; set key title 'y Conditional Wave Function Probability Density';  set xlabel 'Position y'; set ylabel 'Probab Density'; plot 'DATA_probabilityToPlot_2D_XO_KinAdv_BornHuang_tINDEP.txt' index (t+1) using (posx2[\$0+1]):1 title columnheader(1) w l, 'DATA_probDensity_conditional_WF_CN.txt' index (t+1) using (posx2CN[\$0+1]):1 title columnheader(1) w l, 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP_k=$k0.txt' using 2:3 every ::(t/2)::(t/2+2) title 'y component of the Trajectory' w points lt 5 pt 6 ps 2 lc rgb 'red';
-        set origin 0.76, 0.0; set size 0.25, 0.33; clear; set key title ' ' inside; set xrange [$x1min:$x1max]; set yrange [-0.1:0.2]; set xlabel 'Position x'; set ylabel 'G(x)'; set y2tics nomirror; set y2label 'J(x)'; set y2range [-0.1:0.1]; plot 'DATA_G_J_x_KA.txt' index t/2 using (posx1[\$0+1]):1 title 'G(x) KA aprox' axes x1y1 w l lc rgb 'red', 'DATA_G_J_x_KA.txt' index t/2 using (posx1[\$0+1]):2 title 'J(x) KA aprox' axes x1y2 w l lc rgb 'blue'; unset y2tics; unset y2label; unset key;
-        t=t+2; tCN=tCN+1; if(tCN>($tIts)){tCN=0;}; unset multiplot;}"
-
-        echo "Done!"
-
-        # ta goikoan plot for [i=1:($jmax/2+2)]
-
-        #set origin 0, 0.5; set size 0.35, 0.5; clear; set key title; set xrange [$x1min:$x1max]; set yrange [0:0.3]; set xlabel 'Position x'; set ylabel '|Chi^j(x)|'; set y2tics nomirror; set y2label 'J(x)'; set y2range [-0.45:0.2]; plot for [i=($jmax/2+1):($jmax)] 'DATA_chiInfo.txt' index t/2 using (posx1[\$0+1]):i title sprintf('|Chi^{%d}(x)|',i-1) axes x1y1 w l, 'DATA_G_J_x.txt' index t/2 using (posx1[\$0+1]):2 title 'J(x)' axes x1y2 w l; unset y2tics; unset y2label;
-
-    CALCULATION_TIME=$SECONDS
-    echo " Done! " $(($CALCULATION_TIME - $START_TIME)) " seconds required!"
-    echo ""
+    gnuplot -e "set terminal gif size 1800,900 font 'Helvetica,11' animate delay 1; set output '../ANIMATION_GIFS/$expLabel-{$currentDateTime}__numTrajs($numTrajs)_CN2D.gif'; t=0; tmax=$tIts; array zeros[$tIts+1]; do for [i=1:($tIsts+1)] { zeros[i] = 0.0 }; while(t<tmax){ set multiplot;
+    set origin 0.0, 0.0; clear; set size 0.5, 1.0; clear; set key title '|WF(x,y)|^2' at 1,25; set cbrange [0:0.01]; set xtics auto; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set pm3d map; set palette rgbformulae 33,13,10; set colorbox; splot 'DATA_probDensity_WF_CN.txt' index t title columnheader(1), for [i=0:$numTrajs] 'DATA_CN_Trajs_k=$k0.txt' using 1:2:(zeros[\$0+1]) index t every ::i notitle w points lt 5 pt 7 ps 1 lc rgb 'black'; unset pm3d; unset view; unset colorbox;
+    set origin 0.5, 0.0; set size 0.5, 1.0; clear; set key title 'Potential Energy heatmap and Bohmian trajectories' at 1,25; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set pm3d map; set palette rgbformulae 33,13,10; set cbrange[0:100]; set colorbox; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' notitle, for [i=0:$numTrajs] 'DATA_CN_Trajs_k=$k0.txt' using 1:2:(zeros[\$0+1]) every ::i::(i+1):$tIts notitle w points lt 5 pt 4 ps 0.2 lc rgb 'black', for [i=0:$numTrajs] 'DATA_CN_Trajs_k=$k0.txt' using 1:2:(zeros[\$0+1]) index t every ::i notitle w points lt 5 pt 7 ps 1 lc rgb 'red';unset pm3d; unset view; unset colorbox; unset key; t=t+1; unset multiplot;}"
 
 
 
@@ -271,7 +241,7 @@ fi
     echo " (2) CODE COMPILATION and EXECUTION"
     echo " Generating code and compiling..."
 
-    potentialPlotFineness=0.013
+    potentialPlotFineness=0.007
     eigenstatesForSectionsIny="return 0;"
     diffxEigenstatesForSectionsIny="return 0;"
     diffxxEigenstatesForSectionsIny="return 0;"
@@ -291,26 +261,9 @@ fi
     echo ""
 
     echo "(3) PLOTTING"
-    if [[ $gif == *"G"* ]]; then
-        currentDateTime=`date +"%m-%d-%Y_%H:%M:%S"`
-        echo " Generating Animation GIF..."
+    echo " Generating GIF..."
+    gnuplot -e "set terminal gif size 1800, 900 font 'Helvetica,10' animate delay 1; set output '../ANIMATION_GIFS/XOKA_$expLabel-{$currentDateTime}_numTrajs($numTrajs)_VanillaXO.gif'; t=0; tmax=$tIts+1; while(t<tmax){ set key title 'KINETIC ADVECTIVE Algorithm :' at 1,25; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; set pm3d map; set palette rgbformulae 33,13,10; set cbrange[0:100]; set colorbox; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' title 'Potential Energy heatmap and aproximate KA Bohmian trajectories', 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' title 'Animated trajectories in colors - current in red, resultant in black, current traced in colors' w points lt 5 pt 4 ps 0.18 lc rgb 'black', for [i=0:($numTrajs-1)] 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' every ::(i*tmax)::(i*tmax+t) notitle w points lt 5 pt 4 ps 0.16 linecolor palette frac (i+1.0)/($numTrajs+1.0), for [i=0:($numTrajs-1)] 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' every ::(i*tmax+t)::(i*tmax+t) notitle w points lt 5 pt 7 ps 1.0 linecolor rgb 'red';unset pm3d; unset view; unset colorbox; unset key; t=t+1;}"
 
-        gnuplot -e "set terminal gif size 1800,900 animate delay 1; set output '../ANIMATION_GIFS/$expLabel XO_NoGJ_$currentDateTime x,yDivs($nx1,$nx2) x,ymin($x1min,$x2min) x,ymax($x1max,$x2max) nTrjs($numTrajs) dt($dt) tIt($numIt) mx,y($mass1,$mass2) outEvry($outputEvery).gif'; t=0; countTrajs=0; tmax=2*$numIt*$numTrajs/$outputEvery; dx1=($x1max-($x1min))/$nx1; dx2=($x2max-($x2min))/$nx2; array posx1[$nx1+1]; array posx2[$nx2+1]; do for [i=1:($nx1+1)] { posx1[i] = $x1min + i*dx1 }; do for [i=1:($nx2+1)] { posx2[i] = $x2min + i*dx2 }; while(t<tmax){  set multiplot;
-        set origin 0.0, 0.0; set size 0.5, 0.5; clear; set xrange [$x1min:$x1max]; set yrange [0:0.025]; set key title 'x Conditional Wave Function Probability Density'; set xlabel 'Position x'; set ylabel 'Probab Density';plot 'DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' index t using (posx1[\$0+1]):1 title columnheader(1) w l, 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' every ::(t/2)::(t/2+2) using 1:3 title 'x component of the Trajectory' w points lt 5 pt 6 ps 2 lc rgb 'red';
-        set origin 0.5, 0.5; set size 0.5, 0.5; clear; set xrange [$x2min:$x2max]; set yrange [0:0.025];set key title 'y Conditional Wave Function Probability Density';  set xlabel 'Position y'; set ylabel 'Probab Density'; plot 'DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' index (t+1) using (posx2[\$0+1]):1 title columnheader(1) w l, 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' every ::(t/2)::(t/2+2) using 2:3 title 'y component of the Trajectory' w points lt 5 pt 6 ps 2 lc rgb 'red'; set origin 0.0, 0.5; set size 0.5, 0.5; clear; set xrange [$x1min:$x1max]; set yrange [$x2min:$x2max]; set xlabel 'Position x'; set ylabel 'Position y'; if ((t-(2*$numIt*countTrajs)) >= 2*$numIt){ countTrajs=countTrajs+1; }; set pm3d map; set palette rgbformulae 33,13,10; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' title 'Potential Energy Map', 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' title 'Resultant Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'black', 'DATA_trajectoriesToPlot_2D_XO_CN_NoGJ_BornHuang_tINDEP_k=$k0.txt' every ::1::(t/2+2) title 'Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'red';
-        t=t+20; unset multiplot; }"
-
-    else
-
-
-        gnuplot -e "set terminal WTX size 1800,900; t=0; countTrajs=0; tmax=2*$tIt*$numTrajs; dx1=($xmax-($xmin))/$xDivs; dx2=($ymax-($ymin))/$yDivs; array posx1[$xDivs+1]; array posx2[$yDivs+1]; do for [i=1:($xDivs+1)] { posx1[i] = $xmin + i*dx1 }; do for [i=1:($yDivs+1)] { posx2[i] = $ymin + i*dx2 }; while(t<tmax){  set multiplot; set origin 0.0, 0.0; set size 0.5, 0.5; clear; set xrange [$xmin:$xmax]; set yrange [0:0.1]; set xlabel 'Position x'; set ylabel 'Probab Density';plot 'DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' index t using (posx1[\$0+1]):1 title 'x Conditional Wave Function Probability Density' w l, 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' every ::(t/2)::(t/2+2) using 1:3 title 'x component of the Trajectory' w points lt 5 pt 6 ps 2 lc rgb 'red';
-        set origin 0.5, 0.5; set size 0.5, 0.5; clear; set xrange [$ymin:$ymax]; set yrange [0:0.1]; set xlabel 'Position y'; set ylabel 'Probab Density'; plot 'DATA_probabilityToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' index (t+1) using (posx2[\$0+1]):1 title 'y Conditional Wave Function Probability Density' w l, 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' every ::(t/2)::(t/2+2) using 2:3 title 'y component of the Trajectory' w points lt 5 pt 6 ps 2 lc rgb 'red';
-        set origin 0.0, 0.5; set size 0.5, 0.5; clear; set xrange [$xmin:$xmax]; set yrange [$ymin:$ymax]; set xlabel 'Position x'; set ylabel 'Position y'; if ((t-(2*$tIt*countTrajs)) >= 2*$tIt){ countTrajs=countTrajs+1; }; set pm3d map; set palette rgbformulae 33,13,10; splot 'DATA_potentialToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' index ((t-(2*$tIt*countTrajs))/2) title 'Potential Energy Map', 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' title 'Resultant Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'black', 'DATA_trajectoriesToPlot_2D_XO_CN_KinAdv_BornHuang_tINDEP.txt' every ::1::(t/2+2) title 'Trajectories' w points lt 5 pt 4 ps 0.2 lc rgb 'red';
-        t=t+2; unset multiplot; }"
-
-
-
-    fi
     echo ""
     echo "All the simulations for k=" $k0 " completed.-------------------------"
     echo "Thanks for trusting XOA engine"

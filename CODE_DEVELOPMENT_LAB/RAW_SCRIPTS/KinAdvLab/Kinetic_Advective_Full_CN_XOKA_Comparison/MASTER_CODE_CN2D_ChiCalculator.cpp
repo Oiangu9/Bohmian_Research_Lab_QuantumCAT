@@ -170,7 +170,7 @@ for(int tIt=0; tIt<=numIt; ++tIt){
     }
     areaProportionCrossed(tIt)=areaProportionCrossed(tIt)/normWF;
     //CALCULATE PROBABILITY AREA PASSING xBOUND inside the for loop with j and i in the next section
-
+    /*
     //CACLCULATE CHI_j(x,t)-----------
     sumaParaChisx=0;
     for(int j=0; j<=jmax; ++j){
@@ -196,7 +196,7 @@ for(int tIt=0; tIt<=numIt; ++tIt){
     sumChiInfo<<endl<<endl;
 
     chiInfo << abs(Chijx_container) <<endl <<endl <<endl;
-
+    */
     //OUTPUT WF information for plots-------------
 
     wfPlot <<"Norm="<< normWF << endl;
