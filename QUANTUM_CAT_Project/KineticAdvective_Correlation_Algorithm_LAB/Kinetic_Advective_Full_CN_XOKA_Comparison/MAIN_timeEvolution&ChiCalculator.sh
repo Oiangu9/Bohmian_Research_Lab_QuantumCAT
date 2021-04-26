@@ -38,6 +38,9 @@ fi
 echo "Introduce the potential energy profile as a function of x and y"
 read trash
 read potential
+echo "Introduce the constraint L(x) in C++ syntax"
+read trash
+read L_x
 echo " Introduce a general C++ syntax set of operations that allow the obtention of the value of the adiabatic eigenstates for the sections in x, as a function of y, x and j (dont forget the return)"
 read trash
 read functionEigenstates
@@ -114,6 +117,9 @@ fi
 if [[ $functionEigenstates != *"return"* ]]; then
         diffyy_functionEigenstates="return ${diffyy_functionEigenstates}"
 fi
+if [[ $L_x != *"return"* ]]; then
+        L_x="return ${L_x}"
+fi
 
 if [[ $psiIni != *"return"* ]]; then
     psiIni="return ${psiIni}"
@@ -166,7 +172,7 @@ do
     b_y=0
 
 
-    ./EXE_codeFileGenerator_2D_XO_KINADV_BornHuang_tINDEP "$psiIni" "$potential" $mass1 $mass2 $nx1 $nx2 $x1min $x1max $x2min $x2max $dt $numIt $numTrajs $potentialPlotFineness $hbar $outputEvery "$functionEigenstates" "$diffy_functionEigenstates" "$diffyy_functionEigenstates" "$eigenstatesForSectionsIny" "$diffxEigenstatesForSectionsIny" "$diffxxEigenstatesForSectionsIny" $jmax $yjmax $b_y $chiSumTolerance $xBound $k0 $Kin $Adv $G $J $customTrajs "$customTrajsCode" $XOKA_version
+    ./EXE_codeFileGenerator_2D_XO_KINADV_BornHuang_tINDEP "$psiIni" "$potential" $mass1 $mass2 $nx1 $nx2 $x1min $x1max $x2min $x2max $dt $numIt $numTrajs $potentialPlotFineness $hbar $outputEvery "$functionEigenstates" "$diffy_functionEigenstates" "$diffyy_functionEigenstates" "$eigenstatesForSectionsIny" "$diffxEigenstatesForSectionsIny" "$diffxxEigenstatesForSectionsIny" $jmax $yjmax $b_y $chiSumTolerance $xBound $k0 $Kin $Adv $G $J $customTrajs "$customTrajsCode" "$L_x" $XOKA_version
 
     g++ -Wall -O CODE_simulator_XO_KinAdv.cpp -o EXE_simulator_XO_KinAdv
     echo " Done!"

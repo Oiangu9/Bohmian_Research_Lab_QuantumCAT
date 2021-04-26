@@ -1,4 +1,4 @@
-$$34$1$CODE_simulator_XO_KinAdv.cpp$$
+$$35$1$CODE_simulator_XO_KinAdv.cpp$$
 
 // 2D SCHRODINGER EQUATION SOLVER - XO ALGORITHM Kinetic and Advective Correlation Potential approximation of G and J:
 // The Conditional Single Particle Wave Function (CSPWF) of the dimensions (x,y) will be evolved for each initial conditions using a 1D Cranck Nicolson method for the Pseudo Schrodinger Equations
@@ -792,6 +792,11 @@ $21$
 double diffxxEigenstatesForSectionsIny(double x, double y, int j){ //the so called d**2 psi_y^j(x)/dx**2
 $22$
 }
+
+double L(double x){
+    $35$
+}
+
 //We choose if we want the Uj for y dimension to be calculated as well
 double b_y=$25$;
 //We declare the matrix that will save the Uj(x,t) values for each x and j, in order to allow the calculation of the normalized Uj
@@ -891,7 +896,7 @@ for (int i=0; i<=(timeIts+1); ++i){ traj[i]= new double[4];} // the trajectory i
 traj[timeIts+1][2]=0.0; //timeIts+2 traj points are computed, while only timeIts+1 general iterations are made -thus that many speeds we will have
 traj[timeIts+1][3]=0.0;
 
-double vx, vy;
+double vx, vy, aux, Energy;
 //We open the output streams
 ofstream probabDataFile, trajDataFile, DATA_chiInfo, DATA_sumChiInfo, DATA_G_J_x, DATA_G_J_y, DATA_KinAdv_x, DATA_KinAdv_y, DATA_XO_Re_Uj_x, DATA_XO_Im_Uj_x;
 //psiDataFile.open("DATA_rawSimulationData_nD_XO_ZERO_CN_ABC_tDEP.txt");
@@ -976,6 +981,7 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
 
     //The norms of the SPCWFs Nx and Ny for Uj term calculation are obtained with a composed trapezium rule--------------------------------------------------------------------
     //for Nx
+    /*
     Nx=0.5*(probDensityx(0)+probDensityx(xDivs));
     for(int i=1; i<xDivs; ++i){Nx+=probDensityx(i);}
     Nx*=dx;
@@ -1018,47 +1024,23 @@ for(int trajNum=0; trajNum<numTrajs; ++trajNum){ //this is a potential multithre
       //Ujy_normFactors(j) = sqrt((abs2(psiY.array()*Ujy_container.col(j)).sum())*(yjmax+1));
     }
     }
+    */
     //The Ui propagator matrices of each dimension x,y are updated for this time iteration-------------------------------------------------------------------------------------
     posy = traj[it][1];
+    aux = PI*PI*hbar*hbar/(2.0*my);
     for(int i=0; i<=xDivs; ++i){
       posx = xgrid(i);
-      kineticCor = 0.0;
-      advectiveCor = 0.0;
-      //correlPot =0.0;
-      for(int j=0; j<=lastjUsedInItx; ++j){ //generate the kinetic and advective correlation potentials for this spatial grid point posx
-        kineticCor = kineticCor - Ujx_container(i,j)* 0.5*hbar*hbar*diffyyEigenstatesForSectionsInx(posy, posx, j)/my;
-        advectiveCor = advectiveCor + Ujx_container(i,j)* vy*hbar*diffyEigenstatesForSectionsInx(posy, posx, j);
+      Energy = aux/(L(posx)*L(posx));
+      U1x.coeffRef(i,i) = 1.0+J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) +  Energy )/((cdouble)2.0*hbar);
+      U2x.coeffRef(i,i) = 1.0-J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) +  Energy )/((cdouble)2.0*hbar);
 
-        //correlPot = correlPot + ( Ujx_container(i,j) )*(kineticCor + J*advectiveCor);
-      }
-      correlPot=$29$*kineticCor+J*advectiveCor*$30$;
-      U1x.coeffRef(i,i) = 1.0+J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
-      U2x.coeffRef(i,i) = 1.0-J*dt*(hbar*hbar/(mx*dx*dx)+ W(posx, posy) + $31$*correlPot.real()+J*correlPot.imag()*$32$ )/((cdouble)2.0*hbar);
-      /*
-      G_J_x(i,0) = $31$*correlPot.real();
-      G_J_x(i,1) = $32$*correlPot.imag();
-      KinAdv_x(i,0)=$29$*kineticCor.real();
-      KinAdv_x(i,1)=$29$*kineticCor.imag();
-      KinAdv_x(i,2)=$30$*advectiveCor.real();
-      KinAdv_x(i,3)=$30$*advectiveCor.imag();
-      */
     }
     posx = traj[it][0];
     for(int i=0; i<=yDivs; ++i){
       posy = ygrid(i);
-      correlPot =0.0;
-      if(b_y!=0){
-        for(int j=0; j<=lastjUsedInIty; ++j){ //generate the kinetic and advective correlation potentials for this spatial grid point posx
-          kineticCor = -0.5*hbar*hbar*diffxxEigenstatesForSectionsIny(posx, posy, j)/mx;
-          advectiveCor = vx*hbar*diffxEigenstatesForSectionsIny(posx, posy, j);
 
-          correlPot = correlPot + ( Ujy_container(i,j) )*(kineticCor + J*advectiveCor);
-        }
-      }
-      U1y.coeffRef(i,i)= 1.0+J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) + b_y*correlPot)/((cdouble)2.0*hbar);
-      U2y.coeffRef(i,i)= 1.0-J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) + b_y*correlPot)/((cdouble)2.0*hbar);
-
-      //G_J_y(i,0) = correlPot.real();//nG_J_y(i,1) = correlPot.imag();
+      U1y.coeffRef(i,i)= 1.0+J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) )/((cdouble)2.0*hbar);
+      U2y.coeffRef(i,i)= 1.0-J*dt*(hbar*hbar/(my*dy*dy)+ W(posx,posy) )/((cdouble)2.0*hbar);
 
     }
     U1x.makeCompressed();

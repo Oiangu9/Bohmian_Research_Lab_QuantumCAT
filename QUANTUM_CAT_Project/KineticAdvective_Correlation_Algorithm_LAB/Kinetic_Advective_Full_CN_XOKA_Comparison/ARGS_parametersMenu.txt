@@ -8,6 +8,8 @@ g a1 a2 Lmax Lmin mux sigmax------------
 1.0 0.0 12.0 40.0 70.0 -15 2.0
 potential------------------------
 double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; if(y>L1 || y<-L1){return 100.0;} else{return 0.0;}
+L_x-----------------------------
+double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,L1; L1= (Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))+Lmin/2.0; return 2*L1;
 EigenstatesSectionsInx-----------
 double g=1.0,a1=0.0,a2=12.0,Lmax=40.0,Lmin=7.0,o, L; o= -(Lmax-Lmin)/2.0*(1.0/(1.0+exp((x-a1)/g))+1.0/(1.0+exp((-x+a2)/g)))-Lmin/2.0; L=-2*o; if(y>(o+L) || y<o){return 0.0;} else{return sqrt(2.0/L)*sin(j*PI*(y-o)/L);}
 DiffyEigenstatesSectionsInx------No_hace_falta_para_CN2
