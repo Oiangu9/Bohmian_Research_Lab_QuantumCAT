@@ -1,0 +1,294 @@
+\documentclass[11pt, a4paper]{article} % , draft
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem} % customiçe item dots etc
+\usepackage{textgreek} % obv
+\usepackage{physics} % for easy derivative notation
+\usepackage{amsmath}
+\usepackage{amsthm} %theorems
+\usepackage{amssymb}
+\usepackage{mathtools} % for matrices with blocks inside
+\usepackage[scr=boondoxo]{mathalfa}
+\usepackage{pst-node}%
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Holo}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\z}{\mathpzc{s}}
+\newcommand{\p}{\mathpzc{r}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\U}{\mathscr{U}}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\setlength{\parskip}{0.3 cm}
+
+
+%\usepackage{nath} % authomatic parenthesis stuff
+%\delimgrowth=1
+\usepackage[left=2cm, right=2cm, top=2.1cm, bottom=2.1cm]{geometry} % set custom margins
+\usepackage{graphicx} % to insert figures
+\usepackage{grffile}
+\graphicspath{{Figures/}} % define the figure folder path
+\usepackage{subcaption} % for multiple figures at once each with a caption
+\usepackage{multirow} %multirow in tables
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize} %adjust caption size
+\captionsetup[table]{font=footnotesize} %adjust caption size
+
+\usepackage{booktabs} % for pretty tabs in tables
+\usepackage{siunitx} % Required for alignment
+\captionsetup{labelfont=bf} % bold face captations
+
+\usepackage{hyperref} % makes every reference a hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    filecolor=[rgb]{0.69, 0.19, 0.38},      
+    urlcolor=[rgb]{0.0, 0.81, 0.82},
+    citecolor=[rgb]{0.69, 0.19, 0.38}
+}
+
+\usepackage{epigraph} % for quotations in teh begginig
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\renewcommand{\qedsymbol}{o.\textepsilon.\textdelta}
+
+\newtheorem{prop}{Proposition} %so I can use propositions
+\newtheorem{cor}{Corollary} %so I can use corollaries
+\newtheorem{defi}{Definition} %so I can use corollaries
+
+\makeatother % all this is for the epigraph
+\usepackage{imakeidx} % make index
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+%\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
+\title{\vspace{-2cm} {\bf Quantum Dynamics:\\  Mixing Wavefunctions and Trajectories}}
+\date{\vspace{-11ex}}
+\let\clipbox\relax
+\usepackage{adjustbox}
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\pagenumbering{gobble}
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\vspace{-0.3 cm}
+%\section{The Objective}
+%It is well known that the time dependent Schrödinger Equation (TDSE) that predicts the dynamics of a quantum system is a problem that scales exponentially both in space and in time for increasing dimensionality of the problem. This becomes very obvious when interpreting the wave-funtion in terms of an ensemble of tangentially interacting trajectories of the system. That is, quantum mechanical systems (experiments) depend on all their possible realizations in a way that all the possible trajectories of the system interact repulsively among them due to the quantum potential first described by David Bohm. This means that it is equivalent to think on the wavefunction of the system as an ensemble of an infinitely dense set of exactly equivalent systems forming a fluid where each copy of the system cannot cross the trajectory of any other at the same time (they cannot occupy the same point in configuration space-time) and they still have a repelling force pushing the fluid towards the most homogenenous distribution possibel given the manifold described by the potential energy term. 
+%
+%This clearly shows that it is impossible to evolve a single one of these trajectories without knowing the whole ensemble. This is the so called Quanutm Wholeness. This means that if we increase the dimensionality of the system, it is not enough to increase the computational complexity linearly. A single dimension more implies that in order to know about one single trajectory we now need to know as many trajectories as we needed for the previous dimensionality multiplied by all the possible positions in a new axis. The number of trajectories we would need to simultaneously compute in order to be able to even compute them (and by the way reconstruct the wave-funtion in tyheir vecinity) increases exponentially. However, it is still not clear that there is no method that could allow us evolve self-consistently in parallel at each time step enough trajectories, such that their evolution is linear in time for increasing number of dimensions (even if it scales exponentially in parallel threads that communicate at each time step).
+%
+%That is, the question is, can we find a method that allows us to compute a single time step that has a fixed cost (perhaps with soem overheads for parallel communiocation) that transfers the expoenntial complexity to the parallelization? That is, it is clear, that if we try to sequentially compute the necessary number of trajectories to advance a central trajectory, we need exponentially more surrounding trajetcories, thus in the single thread's time we would require exponentially more time. Then, even if we are given as many parallel computation threads as we want, we are not able to compute all the trajectories, because they are not independent and they do influence each other. Still, if we allow a cross talk between them every time step, we could achieve an evolution for them that does not increase the complexity in sequential time (unless for the overhead). This cross talk would account for the qwuantum potential propagation. Osea esto es fundamentalemte posible si consiguiese encontrar cual es el pair-wise quantum potential discreto, que al hacer al infinito tiende a la funcion de onda continua. Si fuese asi con una integracion del sistema de edos infinito (pero cada eq simple) en paralelo actualizando los potenciales para cada uno podrias conseguir resolver cualquier problema quantum many body problem si tuvieses suficientes threads paralellos (uno por cada trayectoria evolucionada). HAbria claramente el problema del cross talk, que seria cada vez mas complicada pero bueno, en si seria eso.
+%
+%Alternativamente, en vez de intentar hacer que todas las trayectorias sean por igual ecuaciones d eNewton, queiza podrias intentar darle un empujon y evolucionar fks de onda condicionadas y una trayectoria por cada conjunto. Ya que cada CWF es 1D y eso es muy facil de resolver. Si fueses capaz de aproximar la full fk de onda con estas slices en cada dimension mejor que usando las trajs en si pues mejor. Ze en si cada CWF es un ensemble de trayectorias, pero de las cuales en principio solo uan (la central) es en cada tiempo la misma. Osea la pregunta es realmente el qtm wholeness necesita trayectorias que estan super lejos? Claro, la cuestion es que no seras capaz de obtener con un solo set de cwf-s en cdad dimension (una trayectoria) evolucionada al mismo timepo el self-impulso dado por las trayectorias que lo rodean. Aka una sola cwf evolucionada en paralelo no funkiona. En todo caso muchas cwf-s evolucionadas tangentemente si, como las trayectorias. Pero esto por supuesto acabaria siendo un ensemble method tipo quantum trajectory method. 
+%
+%
+%Osea la cuestion es que la velocidad e duna trayectoria de Bohm solo depende de la derivad de sus CWF-s en cada timepo! de las direcciones ortonormales (ze claro, el campo de velocidades es la derivada parcial (en las dirs cartesianas de la accion) y el qtm potential solo depende de la derivada parcial en las dirs cartesianas de la "densidad" local!). Entonces, dado un t, dada la fk onda completa, sacas condicioanndo las CWF. Ahora de las CWF tu puedes computar a donde se mueve la traj de Bohm en el sigueinte teimpo. Ahora la pregunta es, puedes si supieses toda la traj evolucionar un tiempo la CWF? Si pudieses ya estaria reuslto el problema many body. Pero la resuesta es que las ecuaciones que rigen las CWF dependen de la full wavefunction al parecer!
+%
+%Disclaimer, all the present work will be made for 3 dims but is clearly generalizable to N.
+\section*{Objectives}\vspace{-0.2cm}
+The present document is a review the panorama we face today when talking about quantum dynamics involving trajectories and wavefunctions. It is especially oriented towards lighting possible paths for the development of new algorithms that could help us surpass the difficulties faced by the current standard methods.
+
+
+\section*{Guideline}\vspace{-0.2cm}
+
+ In the first part of Section 1, a bird eye view will be registered about the paths one could take to approach quantum dynamics involving wavefunctions and/or trajectories. 
+
+In the second part, for each of the approaches mentioned in the previous part, a set of possible methods to face them will be explored in a coarse-grained mode.
+
+In Section 2, we will present all the interesting (exact) equations we find for each of the approaches, trying to do it in a constructive and didactic way. In the way we will explore several possible definitions of trajectories and wavefunctions in the context of each understanding.
+
+
+
+\newpage
+
+\section*{A Necessary Panorama}
+\addcontentsline{toc}{section}{0. A Necessary Panorama}
+
+\subsection*{Panorama of the Approaches We Can Take }
+\addcontentsline{toc}{subsection}{Panorama of the Approaches We Can Take }
+
+Let us list the main four approaches we can adopt in the context of quantum dynamics involving trajectories and wavefunctions. From I to IV, the approaches will be ordered according to the relevance of trajectories against the relevance of wavefunctions. Let us consider a general quantum system of $N$ degrees of freedom (they could be $N$ 1D bodies, $N/3$ 3D bodies etc.).
+
+\begin{enumerate}
+\item[\bf ( I )] {\bf Only or Mainly a Wavefunction: } We could consider a fully wave picture (a continuous fluid moving in $\R^N$). This implies only considering the full N+1 dimensional wavefunction $\psi(\vec{x},t)$ as unknown. This is what we will call the {\bf Fully Eulerian Picture}. If we involve trajectories in the description these will only be computed {\em a posteriori}. This approach can be understood within Orthodox Quantum Mechanics (if only considering the wavefunction) and within Bohmian Mechanics (BM) and Quantum Hydrodynamics (QH) (if considering also the trajectories).
+
+\item[{\bf ( II )}]{\bf Wavefunctions and Trajectories in Equal footing: } We could consider a scheme where part of the quantum system is considered to be described by the trajectory of a certain continuum manifold in $\R^N$ (Lagrangian-frame) and part of the system will be considered a continuous fluid (Eulerian-frame). This will imply considering one or several waves $\{ \psi(\vec{x}_a, \vec{x}_b^\xi(t), t) \}_\chi$ which will describe their degrees of freedom in the {\bf Eulerian frame} and one or several sets of trajectories $\{\vec{x}_b^\chi(t)\}_\xi$ which will describe the motion of {\bf Lagrangian frame} elements of their degrees of freedom. This approach can be understood under the prism of BM or QH.
+
+\item[\bf ( III )]{\bf Mainly Trajectories: } We still view the quantum system as a fluid, but now the values of the field will only be relevant at the positions of {\bf Lagrangian frame} trajectories. The trajectories of elements of the $\R^N$ continuum $\{\vec{x}^\chi(t)\}_\chi$ will be the main actors and the wavefunction will be only implicitly acting. This approach is as akin to the "Continuum of Tangent Universes" Interpretation as we could get. It is also consistent with BM even if there is no explicit pilot wave.
+
+\item[\bf ( IV ) ]{\bf Only Trajectories: } We will view the quantum system not as a continuum, not as a continuous distribution of $\R^N$ particles or fluid, instead we will evolve many discrete particles in $\R^N$ that will feel a repulsive force among them acting on the configuration space of the system. Except for this configuration space interaction, the system will behave classically. Here the wavefunction will only be computed {\em a posteriori} if required. This approach can be understood under the prism of the "Discrete Tangent Universe Interpretation".
+
+\end{enumerate}
+From the prism of the several interpretations mentioned, the approaches in which they do not show, would be considered equally valid in a computational basis, but would be considered as merely mathematical tools for calculations.
+
+
+\subsection*{ Panorama of the Methods We Can Study }
+\addcontentsline{toc}{subsection}{Panorama of the Methods We Can Study}
+
+The order in which the approaches were presented is also the order in which parallelization seems to be most attainable. It is known that evolving a full fluid or wavefucntion of $N$ degrees of freedom  is a problem with exponentially increasing complexity with dimensions. This exponential barrier in time cannot be linearized if we do not apply any approximation (e.g. the Hermitian approximation) or if we do not use external knowledge about the system (e.g. knowing the eigenstates of the Hamiltonian of the system), or both things at once (the Truncated Born-Huang Expansion of the tensor product of conditional wavefunctions for a particle in a channel). However, we can distribute the computational complexity in parallel threads for which we allow cross-talk. If parallel thread communication has negligible overhead, we could in fact make the problem linear in time if parallelized exponentially. This could be the best-case scenario to face big problems with {\em ab initio} methods. 
+
+In the following sections, we will further comment on the equations used for each of the approaches, but for a first look-over, here are some of the main methods used to solve them numerically:
+\begin{enumerate}
+\item[\bf ( I )] {\bf Only or Mainly a Wavefunction}: There are lots of fixed grid methods, ranging from using naive finite differences to Crank Nicolson or Runge-Kutta Methods. Also, expressing the wavefunction in a certain function basis and then evolving the coefficients could be considered a method type. Then there are the Spectral and Pseudo-Spectral methods based on changing the Schrödinger Equation to other representations, like the momentum representation, involving the Fourier transform, related conceptually with the basis representation methods. 
+
+Except in the case where we know analytically the Hamiltonian eigenstates or some sub-sytem Hamiltonian eigenstates, in general the approach to the full wavefunction allows no escape from the exponential time barrier and are methods hard to be parallelized.
+
+\item [\bf ( III )] {\bf Mainly Trajectories :} This approach basically consists on a dynamical grid of points that move according to the fluid flow. Each fluid element will know the evaluation of the relevant fields like the polar phase and magnitude of the wavefunction along the trajectory it traces. We will have ordinary differential equations ruling their motion, but some functions will need to be computed from the ensemble at each time. Particles encode the field at the points they are and at the same time, the values of the fluid they discover serve as feedback for them to know how to move according to the pilot wave. It is known in general as the family of Quantum Trajectory Methods (QTM), which was boosted by {\em Wyatt et al.} at the beginning of this century. It has essentially two main variations:
+\begin{enumerate}
+\item Driving the fluid elements or points of the dynamical grid  according to the joint information given by the field elements they drag. The trajectories are driven by the probability density flow lines, so they shape Bohmian trajectories. One of its problems is that Bohmian trajectories avoid nodal regions of the pilot wave, so the grid gets under-sampled or over-sampled for different regions in an uncontrolled manner with. The second problem is that the grid gets very unstructured, which can be problematic to feedback the algorithm using the information of the wave each element drags.
+
+\item Using adaptive grids is one of the main solutions to the fact that Bohmian trajectories avoid regions that could be of interest. It is based on writing the dynamic equations for what fluid elements perceive of the pilot wave if they follow a user-defined path instead of the fluid flow. For instance it can be chosen such that the fluid elements preserve certain monitor functions in each path, so the grid distorts itself to become denser around high fluctuation regions. Many additional methods like adding a viscosity or friction term are very useful here in order to avoid instabilizing the evolution due to spiky fluctuations of the quantum potential.
+\end{enumerate}
+
+Both methods have the problem that in order to compute the time evolution of fluid elements, derivatives of the fields they drive are required. This means that the single value of the field they drive is not enough. In fact this is the reason by which it is necessary to simulate several many trajectroies in parallel with cross talk. In order to cope with this problem three approaches can be taken.
+
+\begin{enumerate}
+\item Using the values of the field over the trajectories as an unstructured grid, fit a linear sum of analytic functions (by maximum likelihood, least squares, gradient descent etc.). This sum can be analytically derivated and integrated or else numerically. Alternatively a K nearest-neighbor interpolation could also be very useful, which would avoid the need to fit. Just evaluate the points of interest. This is a very interesting method but makes the time evolution more costly than what initially looked like.
+
+\item Generate dynamical equations for the derivatives of the required field quantities. Then evolve the derivatives of the fields along the trajectories too. This increases the number of partial differential equations in play, but allows to evolve a single trajectory fully independently of th rest. Conceptually it seems the most interesting idea for a Bohmian. However, it turns out that when trying to get the equations governing the dynamics of those derivatives, infinite chains of equations coupling higher derivatives with lower are obtained. Thus, approximating a certain maximum degree of them will be required. We will review this in the following section more in detail.
+
+\item Knowing the problem, approximate shapes can be obtained as {\em ansatz} for those derivatives of the fields (for the quantum potential etc.).
+
+\end{enumerate}
+All of these methods are in general very parallelizable. Each trajectory can be evolved in parallel if we allow cross-talk in each time. It is possibly the only case in whcih we can achieve 
+
+\item [\bf ( II )] {\bf Wavefunctions and Trajectories in Equal Footing :} We will have that part of the problem to be solved (the Eulerian one) is similar to case (I) and part (the Lagrangian one) similar to case (III). Therefore, we will have the freedom to use one of the methods mentioned in (I) to solve the partial differential equations of the wavefunctions, mixed with the approaches used for (III) in order to account for derivatives in the axes where we only consider discrete trajectories. We will have control over the degree at which we place more or less weight into one or the other problem. Thus, we could arrive at a compromise that has all the main advantages of both methods but perhaps less of their problems.
+
+Following the discussion in the previous section, the trajectories could be chosen to be Bohmian, if they follow the fluid flow, but could also be chosen to be otherwise, in order to achieve an adaptive grid that explores the regions of configuration space we are most interested on.
+
+Following the same ideas, we will be able to solve the derivative problem in several ways:
+\begin{enumerate}
+\item Evolve many of these wavefunctions with coupled trajectories in order to be able to rebuild the interesting parts of the Eulerian fields necessary to move the trajectories. This could be done by fitting functions or using nearest neighbor approaches. Exponentially less wavefunctions will be required to be computed for increasing dimensionality of the eulerian part of the wavefunctions. However, they will also be each time more complex to compute. On the other hand, expoentially more will be needed for decreasing dimensionality.
+
+\item Generate dynamical equations for those derivatives in the trajectory axes that can be evolved too along the trajectories. This would allow to evolve a single conditional wavefunction "exactly". It turns out that an infinite chain of equations will emerge here too.
+
+\item Knowing the problem approximate the problematic terms at the theoretical level, ad hoc for the given system.
+\end{enumerate}
+
+\item [\bf ( IV )] {\bf Only Trajectories:} In this approach, we can choose a large enough number of configuration space trajectories and evolve them using classical mechanics, introducing the necessary repulsive potential between all the trajectories. If the number is large enough, then the theory will be a good enough approximation of continuum quantum mechanics. The point is that there will be no need for the trajectories to "carry" any information about any wave. They are be ontologically sufficient to describe quantum phenomena. If we need information of quantum nature, we just need to see the wavefunction as the ensemble limit of the trajectories. From the moving histogram we can fit a density function and the velocities will provide the action field.
+
+This method is perhaps as parallelized as we could get the problem. It would require cross talk to evolve the coupled system of ordinary differential equations, but could perhaps be efficiently driven.
+
+\end{enumerate}
+
+% Bai kasu generalerako (inspireta perhaps en el QTM) zein trajectory methoderako:
+% - Adaptive gridentzako ekuaziñoak sartun leidu ostien kapitulo hori.
+% - Sartun ekuaziñoak dynamical deribatuentzako.
+
+\newpage
+
+%\section{ The Equations for Quantum Dynamics }
+
+\section*{I . Fully Eulerian Equations: Orthodox QM }
+\addcontentsline{toc}{section}{I . Fully Eulerian Equations: Orthodox QM }
+
+\subsection*{(I.a) The Full Schrödinger Equation}
+\addcontentsline{toc}{subsection}{(I.a) The Full Schrödinger Equation}
+
+\subsection*{(I.b) The Continuity + The Hamilton-Jacobi Equations}
+
+\subsection*{(I.c) Basis Set Expansion}
+
+\section*{III . Fully Lagrangian Equations: Bohmian QM}
+\subsection*{(III.a) The Schrödinger Equation}
+
+\subsection*{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}
+
+\subsection*{(III.b.2) The Bohmian-Newton's Second Law}
+
+\subsection*{(III.c) Basis Set Expansion}
+
+\section*{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions. Half Orthodox, Half Bohmian}
+\subsection*{(II.a.1) The Schrödinger Equation: Kinetic and Advective}
+
+\subsection*{(II.a.2) The Schrödinger Equation: G and J Correlations}
+
+\subsection*{(II.b.1) The Continuity + The Hamilton-Jacobi Equations}
+
+\subsection*{(II.b.2) The Bohmian-Newton's Second Law}
+
+\subsection*{(II.c) Basis Set Expansion}
+
+\section*{III . No Pilot-Wave: Finite Tangent Universe Mechanics}
+
+
+% Gero generalization bixek baia en el caso en el que usas una base ortonormal genérica, de forma que no has de resolver eigenstate problem: Que te aporta de bueno?
+
+% Hau eindde dekotenien bidali eta hasi bigarren partie, dala como podemos aprovechar para las cwf-s cualquiera de estos algoritmos? Nos permiten quizas solo usar las eigenstates en los puntos por donde va la trayectoria (mucho mejor, ze son n_t veces solo) y encima avoidea las integrales creo, asi que de pm. Si es verdad eso entonces quizas, y solo quizas con alguna de estas ultimas podemos hacer algo asombroso
+
+
+
+
+
+
+
+
+
+
+ 
+
+% Bale hemen sekziñoa akabe hau koemntetan eta esan zelan ya eztan exponentziala SE sino oin exponentziala dana eigenstatek topetie da ze minimo komplejidade O(M_x^N) dala. Gero ikusi ia la badozun algoritmo generiaku bat pentseu inception bat eitzen del tipo transversla section del transversal section del transversal section.
+
+% Hurrengo sekziñoa hasi expliketan zelan alko zan ein lineala problemie si taj inifnito alko bazenuzen ta potenzixela tal. Gero, si no, con CWFak info guztixe dekiela de la trajectoria evolucioentko, alko zenuzela berez ebolucioneu si no dependiesen de derivadas que no puedes sacar. Jarri ekuaziñoa adiabatic and advectivena. Argi itxi igual localmente bai alko zala tal baia hori ke seria antza danez lo mismo que Hermitian. Orduen in an attempt to have domianted ese y ba escribes todas las posibles cwfs (ein bi dimko adibidie), baia hau hori dala. Ein gero desarrolloa de las eqs para cwf evolution desde las dev. Diftzxe? que no hay integrales! Eso bien, ze eran expoennciales las integrales esas...pero again eigenstatek jakin bidiez.
+
+% Imposatu adiab state baten conretuetan, gero entre ellos son ortonormales, asike koef bat jarri y mirar como evolucionarian.
+
+\begin{thebibliography}{1}
+\addcontentsline{toc}{section}{References}
+
+%\bibitem{JordiXO}
+%	Oriols X, Mompart J,{\em Applied Bohmian Mechanics: From Nanoscale Systems to Cosmology} Pan Stanford, Singapore (2012)
+	
+%\bibitem{XO}
+%	Oriols X. 2007 {\em Quantum-trajectory approach to time-dependent transport in mesoscopic systems with electron-electron interactions} Phys. Rev. Lett. 98 066803
+
+\bibitem{Dev}
+	Devashish Pandey, Xavier Oriols, and Guillermo Albareda. {\em Effective 1D Time-Dependent Schrödinger Equations for 3D Geometrically Correlated Systems.} Materials 13.13 (2020): 3033.
+
+%\bibitem{nireTFGie}
+%	Oyanguren Xabier, {\em The Quantum Many Body Problem}, Bachelor's Thesis (2020) for the Nanoscience and Nanotechnology Degree (UAB).
+
+%\href{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}
+
+%\bibitem{Albareda}
+%	Albareda G, Kelly A, Rubio A. {\em Nonadiabatic quantum dynamics without potential energy surfaces.} Phys Rev Materials. 2019; 3: 023803. 
+
+%\bibitem{DATA}
+%	All the animations employed for the analysis of Section 3.2 can be found in the following link:\\
+%	\href{https://drive.google.com/drive/folders/1vnNDZrIYDlAhd-kVmmnVJgXmcdE2gxAV?usp=sharing}{https://drive.google.com/drive/folders/1vnNDZrIYDlAhd-kVmmnVJgXmcdE2gxAV?usp=sharing}
+	
+\end{thebibliography}
+
+
+\end{document}

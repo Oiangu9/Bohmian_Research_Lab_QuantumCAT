@@ -1,0 +1,6 @@
+\contentsline {section}{0. A Necessary Panorama}{2}{section*.4}
+\contentsline {subsection}{Panorama of the Approaches We Can Take }{2}{section*.5}
+\contentsline {subsection}{Panorama of the Methods We Can Study}{2}{section*.6}
+\contentsline {section}{I . Fully Eulerian Equations: Orthodox QM }{5}{section*.7}
+\contentsline {subsection}{(I.a) The Full Schr\IeC {\"o}dinger Equation}{5}{section*.8}
+\contentsline {section}{References}{5}{section*.23}
