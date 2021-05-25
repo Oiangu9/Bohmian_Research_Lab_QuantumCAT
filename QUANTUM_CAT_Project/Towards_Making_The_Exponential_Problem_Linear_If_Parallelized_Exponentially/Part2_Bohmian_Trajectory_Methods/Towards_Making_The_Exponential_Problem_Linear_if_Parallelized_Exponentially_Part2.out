@@ -1,6 +1,14 @@
-\BOOKMARK [1][-]{section*.4}{0. A Necessary Panorama}{}% 1
-\BOOKMARK [2][-]{section*.5}{Panorama of the Approaches We Can Take }{section*.4}% 2
-\BOOKMARK [2][-]{section*.6}{Panorama of the Methods We Can Study}{section*.4}% 3
-\BOOKMARK [1][-]{section*.7}{I . Fully Eulerian Equations: Orthodox QM }{}% 4
-\BOOKMARK [2][-]{section*.8}{\(I.a\) The Full Schr\366dinger Equation}{section*.7}% 5
-\BOOKMARK [1][-]{section*.23}{References}{}% 6
+\BOOKMARK [1][-]{section*.4}{Section 1: On the Employed Vocabulary}{}% 1
+\BOOKMARK [1][-]{section*.5}{Section 2: A Necessary Panoramas}{}% 2
+\BOOKMARK [2][-]{section*.6}{Panorama of the Approaches We Can Take }{section*.5}% 3
+\BOOKMARK [2][-]{section*.7}{Panorama of the Methods We Can Study}{section*.5}% 4
+\BOOKMARK [1][-]{section*.8}{Section 3: The Equations for Quantum Dynamics}{}% 5
+\BOOKMARK [1][-]{section*.9}{I . Fully Eulerian Equations: Orthodox QM }{}% 6
+\BOOKMARK [2][-]{section*.10}{\(I.a\) The Full Schr\366dinger Equation}{section*.9}% 7
+\BOOKMARK [2][-]{section*.11}{\(I.b\) The Continuity + The Hamilton-Jacobi Equations}{section*.9}% 8
+\BOOKMARK [2][-]{section*.12}{\(I.c\) Basis Set Expansion}{section*.9}% 9
+\BOOKMARK [2][-]{section*.13}{\(I.c.1\) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{section*.9}% 10
+\BOOKMARK [2][-]{section*.14}{\(I.c.2\) Arbitrary known orthonormal Base Expansion}{section*.9}% 11
+\BOOKMARK [2][-]{subsection.0.1}{If we knew an orthonormal basis for N-m}{section*.9}% 12
+\BOOKMARK [2][-]{section*.15}{\(I.d\) Dynamic Equations for Partial Differentials}{section*.9}% 13
+\BOOKMARK [1][-]{section*.32}{References}{}% 14
