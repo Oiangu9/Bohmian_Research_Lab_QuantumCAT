@@ -6,9 +6,26 @@
 \BOOKMARK [1][-]{section*.9}{I . Fully Eulerian Equations: Orthodox QM }{}% 6
 \BOOKMARK [2][-]{section*.10}{\(I.a\) The Full Schr\366dinger Equation}{section*.9}% 7
 \BOOKMARK [2][-]{section*.11}{\(I.b\) The Continuity + The Hamilton-Jacobi Equations}{section*.9}% 8
-\BOOKMARK [2][-]{section*.12}{\(I.c\) Basis Set Expansion}{section*.9}% 9
-\BOOKMARK [2][-]{section*.13}{\(I.c.1\) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{section*.9}% 10
-\BOOKMARK [2][-]{section*.14}{\(I.c.2\) Arbitrary known orthonormal Base Expansion}{section*.9}% 11
-\BOOKMARK [2][-]{subsection.0.1}{If we knew an orthonormal basis for N-m}{section*.9}% 12
-\BOOKMARK [2][-]{section*.15}{\(I.d\) Dynamic Equations for Partial Differentials}{section*.9}% 13
-\BOOKMARK [1][-]{section*.32}{References}{}% 14
+\BOOKMARK [2][-]{section*.12}{\(I.c\) Basis Set Expansions}{section*.9}% 9
+\BOOKMARK [3][-]{section*.13}{\(I.c.1\) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{section*.12}% 10
+\BOOKMARK [3][-]{section*.14}{\(I.c.2\) Arbitrary known orthonormal Base Expansion}{section*.12}% 11
+\BOOKMARK [2][-]{section*.15}{\(I.d\) Dynamic Equations for Partial Differentials}{section*.9}% 12
+\BOOKMARK [3][-]{section*.16}{\(I.d.1\) For the Wavefunction}{section*.15}% 13
+\BOOKMARK [3][-]{section*.17}{\(I.d.2\) For the Density and Action}{section*.15}% 14
+\BOOKMARK [1][-]{section*.18}{III . Fully Lagrangian Equations: Bohmian QM}{}% 15
+\BOOKMARK [2][-]{section*.19}{\(III.a\) The Schr\366dinger Equation}{section*.18}% 16
+\BOOKMARK [3][-]{section*.20}{\(III.a.1.1\) Dynamics of Partial Derivatives For the Wavefunction}{section*.19}% 17
+\BOOKMARK [3][-]{section*.21}{\(III.a.1.2\)Partial Derivatives relative to the Labels}{section*.19}% 18
+\BOOKMARK [3][-]{section*.22}{\(III.a.1.3\) Adaptive Grid Equations}{section*.19}% 19
+\BOOKMARK [2][-]{section*.23}{\(III.b.1\) The Continuity + The Hamilton-Jacobi Equations}{section*.18}% 20
+\BOOKMARK [3][-]{section*.25}{\(III.b.1.1\) Dynamics of Partial Derivatives}{section*.23}% 21
+\BOOKMARK [3][-]{section*.26}{\(III.b.1.2\) Partial Derivatives relative to the Labels}{section*.23}% 22
+\BOOKMARK [3][-]{section*.27}{\(III.b.1.3\) Adaptive Grid Equations}{section*.23}% 23
+\BOOKMARK [2][-]{section*.28}{\(III.b.2\) The Bohmian-Newton's Second Law}{section*.18}% 24
+\BOOKMARK [2][-]{section*.29}{\(III.c\) Basis Set Expansion}{section*.18}% 25
+\BOOKMARK [2][-]{section*.30}{\(III.d\) Dynamic Equations for Partial Differentials}{section*.18}% 26
+\BOOKMARK [1][-]{section*.31}{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}{}% 27
+\BOOKMARK [2][-]{section*.32}{\(II.a.1\) The Schr\366dinger Equation: Kinetic and Advective}{section*.31}% 28
+\BOOKMARK [3][-]{section*.33}{What do we mean by a Conditional Wavefunction?}{section*.32}% 29
+\BOOKMARK [2][-]{section*.41}{\(II.a.2\) The Schr\366dinger Equation: G and J Correlations}{section*.31}% 30
+\BOOKMARK [1][-]{section*.49}{References}{}% 31
