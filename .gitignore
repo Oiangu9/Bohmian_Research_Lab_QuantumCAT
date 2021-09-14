@@ -23,7 +23,7 @@ tmp
 
 KDE*
 
-*.png
+#*.png
 
 !QUANTUM_CAT_Project/Towards_An_Improvement_of_the_Hermitian_Approximation/Figures/*.png
 
