@@ -589,9 +589,11 @@ In order to avoid confusion we will use the term "mesh element" to designate flu
 
 Let us suggest three different appraches we could follow in alternative definitions of the trajectories, inspired by the ones exposed by Ref. \cite{Wyatt}.
 
-{\bf (\textalpha) Leave the trajectories still: } We could directly fix $\vec{x}(t;\vec{\xi})=\vec{\xi}\ \forall t$, meaning that the velocity field for the mesh elements would be null $\dv{}{t}\vec{x}(t;\vec{\xi})=0\ \forall t$. This would make the Advective correlation potential \eqref{Adv} null, and since the grid of fluid elements would preserve its initial regularity, the approach would be identical to a fully Eulerian one. That is, solving the Lagrangian Schrödinger Equation \eqref{KinAdv} would be the same as trying to solve the Eulerian Schrödinger Equation \eqref{SE}. Perhaps an advantage of acknowledging each mesh element can be seen as an independent entity is that it could suggest a Schrödinger Equation solver that could be way more parallelizable. Just like what the standard QTM suggests, one could evolve the value of the quantum fields at each mesh position in parallel, then allow a cross talk to compute the partial derivatives in configuration-space and then again a parallel time step.
+\subsubsection*{\bf (\textalpha) Leave the trajectories still}
+ We could directly fix $\vec{x}(t;\vec{\xi})=\vec{\xi}\ \forall t$, meaning that the velocity field for the mesh elements would be null $\dv{}{t}\vec{x}(t;\vec{\xi})=0\ \forall t$. This would make the Advective correlation potential \eqref{Adv} null, and since the grid of fluid elements would preserve its initial regularity, the approach would be identical to a fully Eulerian one. That is, solving the Lagrangian Schrödinger Equation \eqref{KinAdv} would be the same as trying to solve the Eulerian Schrödinger Equation \eqref{SE}. Perhaps an advantage of acknowledging each mesh element can be seen as an independent entity is that it could suggest a Schrödinger Equation solver that could be way more parallelizable. Just like what the standard QTM suggests, one could evolve the value of the quantum fields at each mesh position in parallel, then allow a cross talk to compute the partial derivatives in configuration-space and then again a parallel time step.
 
-{\bf (\textbeta) Make a moving mesh/support preserving grid spacing:} Once defined a regular grid of mesh elements, regular in the sense that there is an equal spacing between the grid points, we could allow the mesh to move along the wavefunction but preserving the equal spacing of the grid, which allows an efficient and straightforward computation of the spatial derivatives. To do this we could do the following at each time step after computing the value of the quantum fields at each grid point:
+\subsubsection*{\bf (\textbeta) Make a moving mesh/support preserving grid spacing}
+Once defined a regular grid of mesh elements, regular in the sense that there is an equal spacing between the grid points, we could allow the mesh to move along the wavefunction but preserving the equal spacing of the grid, which allows an efficient and straightforward computation of the spatial derivatives. To do this we could do the following at each time step after computing the value of the quantum fields at each grid point:
 \begin{enumerate}
 \item Take the vertices of the convex hull of the mesh, e.g. the corners of the parallelogram that the grid supposes. Treat them like Bohmian trajectories and evolve them to their following position.
 \item Compute an equispaced grid inside this domain with the same number of mesh points and geometry as the previous grid. Knowing the positions where the new mesh points should be, compute the velocity of each old mesh point to arrive there. If for example, we are using a simple Euler method to evolve the trajectories, use: $\dv{}{t}x_k(\xi,t_{j})=\frac{x_k(\xi,t_{j+1})-x_k(\xi,t_{j})}{t_{j+1}-t_j}$.
@@ -606,8 +608,10 @@ If we did so, we could actually use any sort of regular grid method (like matrix
 
 In any case, this method solves the problem of the unstructuring grid (for computing partial derivatives) that Bohmian mesh elements had, with the advantage that the grid still moves along the regions of interest.
 
-{\bf (\textgamma) Move the mesh using arbitrary monitor functions :} One of the typical problems with the methods relying on Bohmian trajectories to guide the mesh elements is that, even if these trajectories typically follow the interesting parts of configuration-space where there is appreciable density, in reality, the quantum potential repels them from regions with spiky densities, both from nodal points and big agglomerations. This means that we will end up having almost no mesh elements in the regions of configuraiton-space where nodes start to appear, among others. These regions however, are vital not only because they might have theoretical interest, but because the time evolution of the fluid elements depends on spatial derivatives in all directions, and those regions can highly influence them: if we have no representatives from those regions, we will not have enough information to allow a proper time evolution. In order to face this problem, we could force the trajectories to be attracted by regions with high curvature.
+\subsubsection*{\bf (\textgamma) Move the mesh using arbitrary monitor functions } 
+One of the typical problems with the methods relying on Bohmian trajectories to guide the mesh elements is that, even if these trajectories typically follow the interesting parts of configuration-space where there is appreciable density, in reality, the quantum potential repels them from regions with spiky densities, both from nodal points and big agglomerations. This means that we will end up having almost no mesh elements in the regions of configuration-space where nodes start to appear, among others. These regions however, are vital not only because they might have theoretical interest, but because the time evolution of the fluid elements depends on spatial derivatives in all directions, and those regions can highly influence them: if we have no representatives from those regions, we will not have enough information to allow a proper time evolution. In order to face this problem, we could force the trajectories to be attracted by regions with high curvature.
 
+\subsubsection*{(\textgamma.1) The equidistribution principle}
 For doing this, a standard approach is to force the mesh elements to get into positions that equalize the integral of a positive monitor function $M(x,t)>0$ in each grid-cell, the so called {\em equidistribution principle}. In $N=1$ the intuition is immediate. It is to find at each time $t$, the grid points $\{x^j\}_{j=1}^m$ that satisfy:
 \begin{equation}
 \int^{x^{j+1}}_{x^j} M(x,t) dx =C \quad \forall j
@@ -643,6 +647,7 @@ Where $M_{j,...,k}(t)$ is the local average of the monitor function evaluated at
 
 We should note though, that this approach is not the one generating the most suitable grid, since we do not allow each mesh element to move in arbitrary directions. If we did, note that the volume elements would get shapes the computation of the volume of which is not immediate. In addition, we realize that now each mesh element can move in $N$ directions, meaning we will still have $(m-1)^N$ mesh-cells (if we initially discretize each axis in $m$ points) but there will be $m^N$ nodes each with $N$ numbers to fix. A total of $Nm^N$ unknowns. We should subtract the fixed positions of all the fixed boundary grid-points (which will in principle be chosen to be hyperplanes). However, we still see that there are more unknowns than equations. In addition, the equations are non-linear with no remedy and we must make an $N$ dimensional interpolation of the monitor function. It is this why this is not the way employed in the literature.
 
+\subsubsection*{(\textgamma.2) The continum version of the dynamical mesh}
 The standard approach for treating this is by first noting that we are not looking for independent nodes at each time, but we are looking for a diffeomorphism $\vec{x}(\vec{\xi},t)$, or an ensemble of continuous non-crossing trajectories that map the fluid (the mesh) at the initial time to a suitable mesh that allows us to have the field values evaluated at the points of interest. In this section, we will use the degrees of freedom $\vec{\xi}$, which reflect the initial grid that can be chosen to be a regular cartesian grid, just as a taging system for each mesh element. Such that we can keep track of each node of the grid in a continous manner. Note however, for the coming sections that this also means that if we are able to convert the derivatives in general configuration space variables $\vec{x}$ to derivatives in this initial labelling space variables $\vec{\xi}$, we will actually win a lot.
 
 Note that, as we use $\vec{\xi}$ for the labelling of each mesh element, having in $N=1$ that $x^{j+1}-x^j\rightarrow 0$ means that Equation \eqref{discEq} should have the constant $C$ across all the differences diminished consequently to avoid a mathematical inconsistency. This means that we should choose $C=K(\xi^{j+1}-\xi^j)$, with $K$ a certain constant. Then, equation \eqref{discEq} would become:
@@ -660,7 +665,7 @@ M(\xi,t)\cdot J(\xi,t)=K \quad \forall \xi\in \Omega\subset \R
 which is the continuum version of the idea in equation \eqref{discEq}. Namely, the value of the monitor in each mesh element must be inversely proportional to the local divergence or convergence of trajectories, the local expansion or contraction of the grid.
 
 Alternatively, we can get rid of the constant if we make a further derivative:
-\begin{equation}
+\begin{equation}\label{EL1D}
 \pdv{}{\xi}\qty(M(\xi,t)\cdot \pdv{x(\xi,t)}{\xi})=0 \quad \forall \xi\in \Omega\subset \R
 \end{equation}
 which can be manipulated to get:
@@ -689,6 +694,7 @@ This would allow us the straightforward computation of the dynamic grid. In fact
 K(t)=(b(t)-a(t))\frac{1}{\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)}d\xi}
 \end{equation}
 
+\subsubsection*{\bf (\textgamma.3) Using a variational/optimization approach}
 We will now show, following Ref.\cite{movingGrids} that this could have equivalently been derived from an optimization problem (a variational one), since it will be one of the ways to explain how we can generalize this grid generation to arbitrary $N$.
 
 First let us express a discrete optimization problem, a discrete functional from which we will derive equation \eqref{discEq}. Suppose we are looking for a set of grid points $\{x^j \}_{j=1}^m$ such that the product of the interval lengths they leave and the average value of the monitor $M(x,t)$ is minimum. That is, we are looking for the $\R^m$ minimum of: 
@@ -705,7 +711,7 @@ This means that we must have the same product for all the intervals:
 \begin{equation}
  M_{j-1}(t)(x^j-x^{j-1})=M_j(t)(x^{j+1}-x^j)\ \ \forall j
 \end{equation}
-Which is equivalent to ask that all the products are equal to a same number $C(t)$:
+Which is equivalent to asking that all the products are equal to a same number $C(t)$:
 \begin{equation}
 M_j(t)(x^{j+1}-x^j)=C(t) \quad \forall j
 \end{equation}
@@ -727,7 +733,17 @@ As we let $\Delta \xi \rightarrow 0$ and $m\rightarrow \infty$, we get:
 \begin{equation}
 I[x(\xi,t)]:=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}}\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}} \sum_{j=1}^{m-1}\frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
 \end{equation}
+\begin{equation}
+I[x(\xi,t)]=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
+\end{equation}
+$I$ is a functional, that gives us a number, a score for each admissible $x(\xi,t)$ we input. In analogy with the discrete optimization problem, we will seek to find a diffeomorphism that minimizes the value of $I$, which is nothing more than the Jacobian squared times the monitor function summed over all the domain for $\xi$. Again, the same interpretation holds. The minimization is subject to the requirement that the boundary of the mesh is fixed at $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$.
 
+The Euler-Lagrange equation for this functional (a necessary condition that $x(\xi,t)$ must obey) immediately gives us back equation \eqref{EL1D}, which is what we wanted.
+
+\subsubsection*{\bf (\textgamma.)}
+Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve.
+
+Oin azaldu N dimensiñotara juteko errezena alrebes de forma continum alzuz definidu elemento metriko posibliek, length o voolume or orthogonality por ejemplo del grid. Azaldu funtzionalak eta EL ekuaziñoak emon. Gatxak badie, tipo la del JAcobiano, ba emon 2D kasue eta 3D kasue. Finally esan discrete functionalak al dozuzela erabili, botrh los obtenidos como approx del continuo y los inventados. Ze gauza on azken approachek? BA alzule erabili cosas tipo gradient descent etc eta boundary conditionakl jartzie errezaue dala. Orthogonalen pbmie da boundary conditionak jartziek batzutan ezteuela funtzionetan!
 
 
 Hau izengo zala forcetan badogun paralelotopoak izeten celdak, Itxizgero benetan mugitzen ba ya oso komplikaue eitzen da. Orduen solucion, beste metodo bategaz solucione. Konturatu eqt tal limitien eztauela ondo par ac generico a menos C disminuye con el mismo rate, eso da una eqt diferential. Lo que sugiere una forma variational de obtenerlo.
