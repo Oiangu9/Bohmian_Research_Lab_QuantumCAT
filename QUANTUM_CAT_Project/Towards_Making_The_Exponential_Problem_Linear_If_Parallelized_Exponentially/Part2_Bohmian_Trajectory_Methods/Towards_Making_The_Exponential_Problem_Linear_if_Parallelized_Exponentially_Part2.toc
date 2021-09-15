@@ -18,17 +18,17 @@
 \contentsline {subsubsection}{(III.a.1.1) Dynamics of Partial Derivatives For the Wavefunction}{16}{section*.21}%
 \contentsline {subsubsection}{(III.a.1.2)Partial Derivatives relative to the Labels}{16}{section*.22}%
 \contentsline {subsubsection}{(III.a.1.3) Adaptive Grid Equations}{16}{section*.23}%
-\contentsline {subsection}{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}{23}{section*.31}%
-\contentsline {subsubsection}{(III.b.1.1) Dynamics of Partial Derivatives}{25}{section*.32}%
-\contentsline {subsubsection}{(III.b.1.2) Partial Derivatives relative to the Labels}{25}{section*.33}%
-\contentsline {subsubsection}{(III.b.1.3) Adaptive Grid Equations}{26}{section*.34}%
-\contentsline {subsection}{(III.b.2) The Bohmian-Newton's Second Law}{26}{section*.35}%
-\contentsline {subsection}{(III.c) Basis Set Expansion}{26}{section*.36}%
-\contentsline {subsection}{(III.d) Dynamic Equations for Partial Differentials}{26}{section*.37}%
-\contentsline {section}{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}{26}{section*.38}%
-\contentsline {subsection}{(II.a.1) The Schrödinger Equation: Kinetic and Advective}{27}{section*.40}%
-\contentsline {subsubsection}{What do we mean by a Conditional Wavefunction?}{28}{section*.41}%
-\contentsline {subsection}{(II.a.2) The Schrödinger Equation: G and J Correlations}{35}{section*.56}%
-\contentsline {subsection}{(II.c) Basis Set Expansion}{41}{section*.63}%
-\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{41}{section*.64}%
-\contentsline {section}{References}{42}{section*.67}%
+\contentsline {subsection}{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}{24}{section*.33}%
+\contentsline {subsubsection}{(III.b.1.1) Dynamics of Partial Derivatives}{26}{section*.34}%
+\contentsline {subsubsection}{(III.b.1.2) Partial Derivatives relative to the Labels}{26}{section*.35}%
+\contentsline {subsubsection}{(III.b.1.3) Adaptive Grid Equations}{27}{section*.36}%
+\contentsline {subsection}{(III.b.2) The Bohmian-Newton's Second Law}{27}{section*.37}%
+\contentsline {subsection}{(III.c) Basis Set Expansion}{27}{section*.38}%
+\contentsline {subsection}{(III.d) Dynamic Equations for Partial Differentials}{27}{section*.39}%
+\contentsline {section}{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}{27}{section*.40}%
+\contentsline {subsection}{(II.a.1) The Schrödinger Equation: Kinetic and Advective}{28}{section*.42}%
+\contentsline {subsubsection}{What do we mean by a Conditional Wavefunction?}{29}{section*.43}%
+\contentsline {subsection}{(II.a.2) The Schrödinger Equation: G and J Correlations}{36}{section*.58}%
+\contentsline {subsection}{(II.c) Basis Set Expansion}{42}{section*.65}%
+\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{42}{section*.66}%
+\contentsline {section}{References}{43}{section*.69}%

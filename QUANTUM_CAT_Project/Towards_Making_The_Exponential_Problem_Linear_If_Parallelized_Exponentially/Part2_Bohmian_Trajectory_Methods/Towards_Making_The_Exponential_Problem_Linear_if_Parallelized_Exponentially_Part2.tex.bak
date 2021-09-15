@@ -733,15 +733,41 @@ As we let $\Delta \xi \rightarrow 0$ and $m\rightarrow \infty$, we get:
 \begin{equation}
 I[x(\xi,t)]:=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}}\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}} \sum_{j=1}^{m-1}\frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
 \end{equation}
-\begin{equation}
+\begin{equation}\label{functional1D}
 I[x(\xi,t)]=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
 \end{equation}
 $I$ is a functional, that gives us a number, a score for each admissible $x(\xi,t)$ we input. In analogy with the discrete optimization problem, we will seek to find a diffeomorphism that minimizes the value of $I$, which is nothing more than the Jacobian squared times the monitor function summed over all the domain for $\xi$. Again, the same interpretation holds. The minimization is subject to the requirement that the boundary of the mesh is fixed at $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$.
 
 The Euler-Lagrange equation for this functional (a necessary condition that $x(\xi,t)$ must obey) immediately gives us back equation \eqref{EL1D}, which is what we wanted.
 
-\subsubsection*{\bf (\textgamma.)}
-Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve.
+\subsubsection*{\bf (\textgamma.4) The generalization of the dynamic grids to arbitrary N}
+
+Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve their minimization.
+
+\subsubsection*{\bf (\textgamma.4.1) A monitor per axis}
+One possible way to generalize the functional in equation \eqref{functional1D} is noting that in $N=1$, $\pdv{x(\xi,t)}{\xi}$ is the variant vector of the $\xi$ axis. We could build a generalizing functional for arbitrary $N$ by defining a set of monitor functions $M_1(\vec{\xi,t}),...,M_N(\vec{\xi},t)$ that we wish to equalize blah blah
+
+\subsubsection*{\bf (\textgamma.4.2) The N-volume element functional}
+Following the original idea, we could try to make the product of a monitor function $M(\vec{\xi},t)$ with the separation increase factor between the trajectories of the mesh elements be as minimum as possible. Since we saw that the $N$-volume local increase factor of the mesh was given by the Jacobian (the determinant of the Jacobian matrix) of the transformation that drives the mesh elements $\vec{x}(\vec{\xi},t)$, we are trying to find the transformation $\vec{x}(\vec{\xi},t)$ that minimizes the functional:
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega M(\vec{\xi},t) \qty(det(D_\xi \vec{x}(\vec{\xi},t)))^2 d\vec{\xi}
+\end{equation}
+where note that we choose the square of the Jacobian, because we do not want the sign of the Jacobian to influence our choice for the transformation (the sign gave information about the local inversion of the coordinates).
+
+In $N=1$ this leads to equation \eqref{functional1D}, since $(det(D_\xi \vec{x}(\vec{\xi},t)))^2=\qty(\pdv{x(\xi,t)}{\xi})^2$, and consequently, the differential equation we would need to solve for getting the positions of the mesh elements would be equation \eqref{EL1D}.
+
+In $N=2$, the functional we seek to minimize would be:
+\begin{equation}
+I[\vec{x}(\xi_1,\xi_2 ,t)]=\iint_\Omega M(\xi_1, \xi_2,t) \qty( \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1})^2 d\vec{\xi}
+\end{equation}
+the system of two Euler-Lagrange equations of which (the equation that the searched transformation must obey) is:
+\begin{equation}
+\pdv{}{\xi_1}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_2})-\pdv{}{\xi_2}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_1})=0
+\end{equation}
+with $J(\xi_1,\xi_2,t):=\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1}$, the Jacobian.
+
+What we would achieve by solving this equation system is the time evolution of the grid points, in a way that the local product of the area of each grid-cell and the monitor function is minimized: if one the monitor gets big, the area will contract and viceversa.
+
 
 Oin azaldu N dimensiñotara juteko errezena alrebes de forma continum alzuz definidu elemento metriko posibliek, length o voolume or orthogonality por ejemplo del grid. Azaldu funtzionalak eta EL ekuaziñoak emon. Gatxak badie, tipo la del JAcobiano, ba emon 2D kasue eta 3D kasue. Finally esan discrete functionalak al dozuzela erabili, botrh los obtenidos como approx del continuo y los inventados. Ze gauza on azken approachek? BA alzule erabili cosas tipo gradient descent etc eta boundary conditionakl jartzie errezaue dala. Orthogonalen pbmie da boundary conditionak jartziek batzutan ezteuela funtzionetan!
 
