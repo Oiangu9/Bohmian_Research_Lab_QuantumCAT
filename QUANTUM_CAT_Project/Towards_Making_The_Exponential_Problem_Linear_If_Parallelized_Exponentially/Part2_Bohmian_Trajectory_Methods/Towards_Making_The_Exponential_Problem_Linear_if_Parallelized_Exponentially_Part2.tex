@@ -745,15 +745,30 @@ The Euler-Lagrange equation for this functional (a necessary condition that $x(\
 Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve their minimization.
 
 \subsubsection*{\bf (\textgamma.4.1) A monitor per axis}
-One possible way to generalize the functional in equation \eqref{functional1D} is noting that in $N=1$, $\pdv{x(\xi,t)}{\xi}$ is the variant vector of the $\xi$ axis. We could build a generalizing functional for arbitrary $N$ by defining a set of monitor functions $M_1(\vec{\xi,t}),...,M_N(\vec{\xi},t)$ that we wish to equalize blah blah.
-takata
+One possible way to generalize the functional in equation \eqref{functional1D} is noting that in $N=1$, $\pdv{x(\xi,t)}{\xi}$ is the variant vector of the $\xi$ axis, the tangent vector to the curve defined by the movement along each label space coordinate $\pdv{\vec{x}(\vec{xi},t)}{\xi_k}$. Its square $\qty(\pdv{x(\xi,t)}{\xi})^2$ could then be interpreted as the (positive) magnitude of this covariant vector, which is the amount by which the grid spacing increases or decreases in that axis. For each small increment of the label space coordinate $\xi_k$, how much the relative distance of those mesh elements has increased or decreased. We could build a generalizing functional for arbitrary $N$ by defining first a set of monitor functions $M_1(\vec{\xi,t}),...,M_N(\vec{\xi},t)$ each of which we pretend to equalize with the grid spacing along each of the $N$ axes.
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k=1}^N M_k(\vec{\xi},t) \Big|\Big|\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\Big|\Big|^2 d\vec{\xi}
+\end{equation}
+In general, the system of $N$ Euler-Lagrange equations that minimizes this axis-wise product of the monitors times the mesh enlargement along each axis can be easily seen to be:
+\begin{equation}
+\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_1} )+\cdots+\pdv{}{\xi_N}\qty( M_N(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} )=0
+\end{equation}
+In the $N=2$ case for example, we would have that we are minimizing:
+\begin{equation}
+I[\vec{x}(\xi_1, \xi_2,t)]=\iint_\Omega \Bigg\{M_1(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_1})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_1})^2] +
+\end{equation}
+$$
+M_2(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_2})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_2})^2]\Bigg\} d\xi_1d\xi_2
+$$
+with the transformation that satisfies the two differential equations:
+\begin{equation}
+\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_1} )+\pdv{}{\xi_2}\qty( M_2(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_2} )=0 \quad k\in\{1,2\}
+\end{equation}
 
-en general Euler Lagrange eqts honek die pa N
-
-Pero claro, esto no es exactamente la idea que teniamos originalmente! Pero lo siguiente si que es.
+However, this is not exactly the equidistribution idea we had in the beginning, by which all the mesh elements are orchestrated in order to equalize a global monitor.
 
 \subsubsection*{\bf (\textgamma.4.2) The N-volume element functional}
-Following the original idea, we could try to make the product of a monitor function $M(\vec{\xi},t)$ with the separation increase factor between the trajectories of the mesh elements be as minimum as possible. Since we saw that the $N$-volume local increase factor of the mesh was given by the Jacobian (the determinant of the Jacobian matrix) of the transformation that drives the mesh elements $\vec{x}(\vec{\xi},t)$, we are trying to find the transformation $\vec{x}(\vec{\xi},t)$ that minimizes the functional:
+In order to arrive to that idea, we can realize that in equation \eqref{functional1D}, $(\pdv{x(\xi,t)}{\xi})^2$ is also the $N=1$ case of the squared determinant of the Jacobian matrix of the transformation, which gave us the separation increase factor between the trajectories $\vec{x}(\vec{\xi},t)$ of the mesh elements $\vec{\xi}$. How the grid contracts or expands locally in volume. Then, if we try to minimize the product of this Jacobian squared with a monitor function $M(\vec{\xi},t)$, we are trying to find the transformation $\vec{x}(\vec{\xi},t)$ that minimizes the functional:
 \begin{equation}
 I[\vec{x}(\vec{\xi},t)]=\iint_\Omega M(\vec{\xi},t) \qty(det(D_\xi \vec{x}(\vec{\xi},t)))^2 d\vec{\xi}
 \end{equation}
@@ -773,31 +788,41 @@ with $J(\xi_1,\xi_2,t):=\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv
 
 What we would achieve by solving this equation system is the time evolution of the grid points, in a way that the local product of the area of each grid-cell and the monitor function is minimized: if one the monitor gets big, the area will contract and viceversa.
 
-En $N$ ba izengo da derivada del JAcobianogaz ikusi papelan.
+In general, for an arbitrary $N$ we will get the $N$ differential equations:
+\begin{equation}
+\sum_{k=1}^N \pdv{}{\xi_k} \qty( M(\vec{\xi},t) J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) \pdv{J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) }{\pdv{x_l}{\xi_j}} )=0
+\end{equation}
+where we need to know the explicit shape of the Jacobian matrix determinant $J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}):=det(D_\xi \vec{x}(\vec{\xi},t))$.
 
-Oin azaldu N dimensiñotara juteko errezena alrebes de forma continum alzuz definidu elemento metriko posibliek, length o voolume or orthogonality por ejemplo del grid. Azaldu funtzionalak eta EL ekuaziñoak emon. Gatxak badie, tipo la del JAcobiano, ba emon 2D kasue eta 3D kasue. Finally esan discrete functionalak al dozuzela erabili, botrh los obtenidos como approx del continuo y los inventados. Ze gauza on azken approachek? BA alzule erabili cosas tipo gradient descent etc eta boundary conditionakl jartzie errezaue dala. Orthogonalen pbmie da boundary conditionak jartziek batzutan ezteuela funtzionetan!
+\subsubsection*{\bf (\textgamma.4.3) Forcing the mesh to be orthogonal}
+We could even invent custom functionals that for instance ask the mesh to preserve its orthogonality. A transformation $\vec{x}(\vec{\xi},t)$ will locally preserve the orthogonality if the covariant tangent vectors are mutually orthogonal: $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}=0\ \ \forall k\neq j$. We can try to impose this by looking for the transformation that minimizes the functional:
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k\neq j} \qty(\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j})^2 d\vec{\xi}
+\end{equation}
+Again, we consider the squared metric, in order to avoid negative projections between the covariant tangent vectors to make the functional hardly non-convex.
+The system of $N$ Euler-Lagrange equations for this is:
+\begin{equation}
+\sum_{l=1}^N \pdv{}{\xi_l}\qty( \sum_{k=1;\ k\neq l}^N \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_l}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}  )=0
+\end{equation}
+The $N=2$ leaves:
+\begin{equation}
+\pdv{}{\xi_1}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}  )+\pdv{}{\xi_2}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_1}  )=0
+\end{equation}
+For the sake of numerical derivative computation, an orthogonal grid is always of good help. The problem is that there is no valid solution for many possible boundary conditions we could be interested on.
+
+\subsubsection*{\bf (\textgamma.4.4) Using discretized functionals}
+
+Just as we did in the $N=1$ case, instead of finding the time evolution of the mesh elements by solving the differtential equations lead by the Euler-Lagrange equations of the continous functionals, we could find the discretized versions of these functionals, or even invent some discrete functionals and find the minimum by direct optimization, solving non-linear equation systems.
+
+To do this, we formulate the problem in the following way: we seek the set of points $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ where we assume that we choose to have in the first iteration $m$ discrete points per axis (there are a total of $Nm^N$ unknowns), such that a cost function $S(\vec{x}^1,..,\vec{x}^{m^N})$ is minimized. This cost function can be built by discretizing any functional we have considered so far, or by directly considering combinations of monitor functions and unit-cell angles, volumes etc. Once decided that, we write the explicit expression for $S$ and look for the grid $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ that makes its gradient be as close to zero as possible. This can be done by writing the equations explicitly, differentiating explicitly, and thus generating a system of $Nm^N$ coupled non-linear equations, or rather by using a gradient-descent like algorithm for local non-linear optimization.
+
+The big advantage of this approach is that introducing the boundary conditions is typically simpler, since they are just conditions for the search space and can be trivially introduced.
+
+\subsubsection*{\bf (\textgamma.4.5) Mixing different functionals}
+Both in the continous or discrete functional cases, we can build new perhaps more desirable functionals, by choosing a weighted sum of the different functionals we have seen so far. In such a way that we try to minimize the non-orthogonality but we also try to force a certain equalization.
 
 
-Hau izengo zala forcetan badogun paralelotopoak izeten celdak, Itxizgero benetan mugitzen ba ya oso komplikaue eitzen da. Orduen solucion, beste metodo bategaz solucione. Konturatu eqt tal limitien eztauela ondo par ac generico a menos C disminuye con el mismo rate, eso da una eqt diferential. Lo que sugiere una forma variational de obtenerlo.
-De aqui las varaitional equations de length y area y volume y las dift eqts Euler Lagrnage que salen.
 
-
-
-
-
-EZ, GEHIXAU FIJE BIHER DIRE FRONTERAN! Horma guztixe. Ta klaro, inkognita gehixau dauz. Tantos como el numero de fluid elementsxdim de cada elemento. Baia appoach iterativo haregaz de tener todo el bounding box del grid fijo nik uste ein al dala very simple.
-\begin{enumerate}
-\item 
-\end{enumerate}
-Esan 1D-s oso simplie dala baia ke en mas bueno, como lo del anterior.
-
-Bale inbiablie da, explike zelan izengo zan como problema de optimizacion, zelan en la bibliografia eitzen dan con ED-s pa generar el grid en cada tiempo. Metodos muy avanzados. en 1D muy simple though como ejemplo: jarri azalpena lein simplie dan klaro. Ze klaro, al alko zenun simplifike pblmie forcetan beti celdak rektnagularrak izeten. Azaldu zelan izengo zan. Pero el pb ke tienen es ke ezta hain ondo adaptetan, ta anyway, opt moduko pblmie deko.
-
-Ta bueno azaldu ze monitor funktion dauzen ondo: rho, direktly o derivada de esto o de lo otro.
-
-
-
-% c) Monitor functions erabili tal tal density hau ta bestie. c.2) Ein b+c erdixen izetie monitor function bategaz.
 
 % d) Hybrid approaches, escenarioko zati bet dynamikoki bihurtu finaue edo beste approach batera. Problemas? MBP ezu supereko eta fronterien tratamentue klaro ejem. Ta bai eboluziñoa establiaue izengo da for sure, however, comput complexity ++ kambixo bakoitzeko problema kalro!
 
