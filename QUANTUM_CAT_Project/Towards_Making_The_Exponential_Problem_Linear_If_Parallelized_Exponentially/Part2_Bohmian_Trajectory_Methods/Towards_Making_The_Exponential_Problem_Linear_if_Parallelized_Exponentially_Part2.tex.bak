@@ -569,15 +569,87 @@ Evolving the value of $\psi(t,\vec{\xi})$ for a grid of fluid elements $\{\vec{\
 
 A very interesting alternative that would allow us to evolve a single fluid element would be to also have a dynamical equation for the values of the spatial derivatives along the trajectories of the elements! This is exactly what we seek in the next sub-section.
 
-It would also be interesting to write down equation \eqref{KinAdv} in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$, which we can make sure it will be a regular Cartesian mesh. However, if try this, we will realize that we require the Jacobian of the density, that is:
-\begin{equation}
-\pdv{f(\vec{\xi},t)}{x_k}=\sum_j \pdv{f(\vec{\xi},t)}{\xi_j}\pdv{\xi_j(x,t)}{x_j}
-\end{equation}
+It would also be interesting to write down equation \eqref{KinAdv} in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$, which we can make sure it will be a regular Cartesian mesh. We will explore this option as well in a coming sub-section. 
+
 \subsubsection*{(III.a.1.1) Dynamics of Partial Derivatives}
 \addcontentsline{toc}{subsubsection}{(III.a.1.1) Dynamics of Partial Derivatives For the Wavefunction}
 
 \subsubsection*{(III.a.1.2) Partial Derivatives relative to the Labels}
 \addcontentsline{toc}{subsubsection}{(III.a.1.2)Partial Derivatives relative to the Labels}
+Clearly one of the main problems with the Lagrangian frame is that the fluid-elements move in directions that end up unstructuring the initial mesh, which could have been a regular Cartesian mesh at the beginning, but not in the next time iterations. To solve this, what we could do is convert the partial derivatives in the configuration-space Eulerian positions $x_k$ into partial derivatives in the label configuration-space positions $\xi_j$, using the fact that since we are evolving trajectories we have knowledge of the function $\vec{x}(\vec{\xi},t)$. As an example, lets analyse how we could compute $\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ for a function $f$ for which we want to know the $x_k$ derivative fora given trajectory $\vec{\xi}$. By the chain rule:
+\begin{equation}
+\pdv{f(\vec{x},t)}{x_k}=\dv{f(\vec{\xi}(\vec{x},t),t)}{x_k}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j}\Big\rvert_{\vec{\xi}(\vec{x},t)} \pdv{\xi_j(\vec{x},t)}{x_k}
+\end{equation}
+which can be evaluated at $\vec{x}=\vec{\xi}(\vec{x},t)$ to get:
+\begin{equation}
+\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\end{equation}
+We see that we can freely change the derivative in $x_k$ by derivatives in $\xi_j$ if we also know how to compute $\pdv{\xi_j(\vec{x},t)}{x_k}$, which are the elements of the Jacobian matrix of $\vec{\xi}(\vec{x},t)$. If we attempt to directly compute them, we immediately acknowledge that these derivatives are still in an unstructured grid. However, as we proved in equation \eqref{inverse}, we have that the Jacobian matrix $D_x \vec{\xi}(\vec{x},t)$ where the element in row $j$ and column $k$ is $\pdv{\xi_j(\vec{x},t)}{x_k}$, is the inverse of the Jacobian matrix $D_\xi \vec{x}(\vec{\xi},t)$, the entries of which are of the shape $\pdv{x_j(\vec{\xi},t)}{\xi_k}$. Observe that the entries of this last Jacobian matrix can actually be computed in a regular grid if we chose the label space to be so, by just knowing the trajectories of the fluid elements! Therefore, if we first compute the elements $\pdv{x_j(\vec{\xi},t)}{\xi_k}$ of the matrix $D_\xi \vec{x}(\vec{\xi},t)$ and then compute the inverse matrix with any possible method, we will have the computed the values $\pdv{\xi_j(\vec{x},t)}{x_k}$ in a structured grid.\\
+
+A possible way to do this would be by using the inverse matrix theorem. Which can be summerized as follows. Let $A$ be an $N\cross N$ invertible (non-singular) matrix. Then:
+\begin{itemize}
+\item Its $i,j$ {\bf minor}, which we will note by $Min(A)_{ij}$, is the $(N-1)\cross (N-1)$ matrix obtained by deleting row and column $j$.
+\item Its $i,j$ {\bf cofactor}, which we will note by $Cof(A)_{ij}$, is: $(-1)^{i+j}det\qty(Min(A)_{ij})$.
+\item Its inverse matrix is:
+\begin{equation}
+A^{-1}=\frac{1}{det(A)} \begin{pmatrix}
+Cof(A)_{11} & Cof(A)_{21}&\cdots& Cof(A)_{N1}\\
+Cof(A)_{12} & Cof(A)_{22}&\cdots& Cof(A)_{N2}\\
+\vdots & \vdots & \ddots & \vdots \\
+Cof(A)_{1N} & Cof(A)_{2N}&\cdots& Cof(A)_{NN}\\
+\end{pmatrix}
+\end{equation}
+Thus, if we denote the $i,j$ element of $A^{-1}$ as $(A^{-1})_{ij}$, we have that:
+\begin{equation}
+(A^{-1})_{ij} = (-1)^{j+i}\ det\qty(Min(A)_{ji} )
+\end{equation}
+\end{itemize}
+Therefore, we have that:
+\begin{equation}
+\pdv{\xi_i(\vec{x},t)}{x_j}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \frac{ (-1)^{i+j}}{det \qty(D_{\xi} \vec{x}(\vec{\xi},t))}\cdot det \qty(D_{\xi} \vec{x}(\vec{\xi},t)\textit{ erasing the row and column of }\pdv{x_j(\vec{\xi},t)}{\xi_i} )
+\end{equation}
+For example in $N=1$ this means in particular that:
+\begin{equation}
+\pdv{\xi(x,t)}{x}=\frac{1}{\pdv{x(\xi,t)}{\xi}}
+\end{equation}
+In $N=2$:
+\begin{equation}
+\begin{pmatrix}
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} \\
+\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2}
+\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
+\pdv{x_2}{\xi_2} & - \pdv{x_1}{\xi_2} \\
+-\pdv{x_2}{\xi_1} & \pdv{x_1}{\xi_1
+} 
+\end{pmatrix}
+\end{equation}
+In $N=3$:
+\begin{equation}
+\begin{pmatrix}
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_1}{x_3} \\
+\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_2}{\xi_3}\\
+\pdv{\xi_3}{x_1} & \pdv{\xi_3}{x_2} & \pdv{\xi_3}{\xi_3}
+\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
+\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_3}-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_2}- \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_2}\pdv{x_2}{\xi_3}-\pdv{x_1}{\xi_3}\pdv{x_2}{\xi_2} \\
+
+\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_1}-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_3}- \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_3}\pdv{x_2}{\xi_1}-\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_3} \\
+
+\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_2}-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_1}- \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2}-\pdv{x_1}{\xi_2}\pdv{x_2}{\xi_1} \\
+
+\end{pmatrix}
+\end{equation}
+where $J$ is the {\bf signed} Jacobian determinant of $\vec{x}(\vec{\xi},t)$.\\
+
+Then, in any of the differential equations we develop that contain Lagrangian degrees of freedom we will be able to do the following changes and similar ones:
+\begin{equation}
+\sum_{a=1}^N \pdv{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \sum_{a=1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\end{equation}
+or for the Laplacian:
+\begin{equation}
+\sum_{a=1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}]
+\end{equation}
+Taking into account that for each fluid element at each time we will need to compute all those partial derivati determinants and an in
+
 
 \subsubsection*{(III.a.1.3) Adaptive Grid Equations}
 \addcontentsline{toc}{subsubsection}{(III.a.1.3) Adaptive Grid Equations}
@@ -934,7 +1006,7 @@ $$
 \sum_{l=1}^N \pdv{x_k(\vec{\xi},t)}{\xi_l}\Big\rvert_{\vec{\xi}(\vec{x},t)}\pdv{\xi_l(\vec{x},t)}{x_j}=\delta_{jk}
 $$
 which can be written in matrix form as:
-\begin{equation}
+\begin{equation}\label{inverse}
 \begin{pmatrix}
 \pdv{x_1}{\xi_1}&\cdots&\pdv{x_1}{\xi_N} \\
 \vdots &\ddots& \vdots \\
@@ -950,16 +1022,25 @@ which can be written in matrix form as:
 \end{pmatrix}\Rightarrow
 \end{equation}
 $$
-\Rightarrow D_\xi \vec{x}(\vec{\xi},t)\cdot D_x \vec{\xi}(\vec{\x},t) = Id_{NxN}
+\Rightarrow D_\xi \vec{x}(\vec{\xi},t)\cdot D_x \vec{\xi}(\vec{x},t) = Id_{NxN}
 $$
-Which means for the uniqueness of the inverse matrix that the Jacobian matrix of $\xi(x,t)$ is the inverse of the Jacobian matrix of $x(\xi,t)$! }
-
+Which means for the uniqueness of the inverse matrix that the Jacobian matrix of $\xi(x,t)$ is the inverse of the Jacobian matrix of $x(\xi,t)$! Namely, $D_x \vec{\xi}(\vec{x},t)=D_\xi \vec{x}(\vec{\xi},t)^{-1}$.
+}
 \mybox{
-In particular this means that in order to compute the determinant of any of them it is enough to compute the one for the other one, since for any invertible matrix $A$ with inverse $A^{-1}$ we have that $det(A)=1/det(A^{-1})$. This will be relevant, because computing $D_\xi \vec{x}(\vec{\xi},t)$ will be trivial at all times if we choose the label space to be a regular discretized grid, while $D_x \vec{\xi}(\vec{\x},t)$ will hardly be in a regular grid.\\
+In particular this means that in order to compute the determinant of any of them it is enough to compute the one for the other one, since for any invertible matrix $A$ with inverse $A^{-1}$ we have that $det(A)=1/det(A^{-1})$. This will be relevant, because computing $D_\xi \vec{x}(\vec{\xi},t)$ will be trivial at all times if we choose the label space to be a regular discretized grid, while $D_x \vec{\xi}(\vec{x},t)$ will hardly be in a regular grid.\\
 
 Finally, let us see how useful the Jacobian is, in that we will be able to derive the continuity equation from simple considerations, and we will arrive at equation $\eqref{JacPre}$ identifying a vital relationship between the velocity field driving the fluid elements and the Jacobian. In fact, we will arrive to find which is the conserved quantity along any given trajectory.\\
 
-It is natural to think that there should be no source or sink of Universes (in the TUM sense). That is, that the number of trajectories should be conserved. Asking this would mean that the amount of Universes in a initial configuration space $N$-volume $\Omega$, should be the same as the amount of Universes in the volume at which those Universes extend at time $t$, say $\vec{x}(\Omega,t)$. Mathematically:
+Let us take the continity equation in the Eulerian frame that we got from the Schrödinger Equation \eqref{CE} to see which is the simple consideration we can make. Integrating both sides of the equation on a bounded configuration space volume $V\subset\R^N$ and applying the divergence theorem we get:
+$$
+\int_{V}\pdv{}{t} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{V}\vec{\nabla}\cdot \qty( \rho(\vec{x},t)\vec{v}(\vec{x},t) )dx_1\cdots dx_N
+$$
+\begin{equation}
+\pdv{}{t} \int_{V} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{\partial V} \rho(\vec{x},t)\vec{v}(\vec{x},t)\cdot d\vec{S}(\vec{x})=-\int_{\partial V} \rho(\vec{x},t)v_{normal}(\vec{x},t)\cdot dS
+\end{equation}
+The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $V$ (in units of fluid-elements/time). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface (in fluid-elements/time). Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes, the variation of its number can only be due to its displacement. Universes cannot be destroyed nor created, but they can flow lighter or denser in density.\\
+
+Then, let us try to derive the continuity equation in the converse way: we acknowledge that the amount of Universes in a initial configuration space $N$-volume $\Omega$, should be the same as the amount of Universes in the volume at which those Universes extend at time $t$, say $\vec{x}(\Omega,t)$. Mathematically this conservation of fluid-elements would mean:
 \begin{equation}
 \iint_\Omega \rho(\vec{\xi},t=t_0) d\xi_1\cdots d\xi_N=\iint_{\vec{x}(\Omega,t)} \rho(\vec{x},t) dx_1\cdots dx_N\quad \forall t
 \end{equation}
@@ -975,13 +1056,14 @@ Since this must be true for any possible $\Omega$, it must be that:
 \begin{equation}
 \rho(\vec{\xi},t_0) = \rho(\vec{\xi},t) J(\vec{\xi},t)\Longleftrightarrow \rho(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{J(\vec{\xi},t)}\Longleftrightarrow \frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}=J(\vec{\xi},t)
 \end{equation}
+}
+
+\mybox{
 Or equivalently if we evaluate $\vec{\xi}=\vec{\xi}(\vec{x},t)$:
 \begin{equation}
 \rho(\vec{x},t_0) = \rho(\vec{x},t) J(\vec{x},t)\Longleftrightarrow \rho(\vec{x},t)=\frac{\rho(\vec{\xi},t_0)}{J(\vec{x},t)}\Longleftrightarrow \frac{\rho(\vec{x},t_0)}{\rho(\vec{x},t)}=J(\vec{x},t)
 \end{equation}
-On the one hand, this gives us a way to compute the density in any time by just knowing the density at the initial time $\rho(\vec{\xi},t_0)$ and $\vec{x}(\vec{\xi},t)$ (which lets us compute the derivatives in label space $\pdv{x_k}{\xi_j}$ and thus the Jacobian determinant $J$). On the other hand, it lets us interpret the Jacobian in fluid terms: $J(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}$. The Jacobian determinant of $\vec	{x}(\vec{\xi},t)$ is the (positive) ratio of the density perceived by the fluid element $\vec{\xi}$ in its local surrounding relative to the one at the beginning. This can be smaller than one or greater than one. If the ratio is greater than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, meaning that the fluid of configuration-space "Universes" has been diluted around $\vec{\xi}$, the density has been decreased, which is in accordance with the fact that a positive Jacobian meant the trajectories in that locality get more spaced between them. If on the other hand the ratio is smaller than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, the density gets concentrated locally, in accordance with the convergence of trajectories in the surrounding. Note though that there is no source of Universes, since}
-
-\mybox{ the Jacobian, accounting only for the movement of trajectories is the only factor influencing the density change. This is precisely what we imposed with the integral above.\\
+On the one hand, this gives us a way to compute the density in any time by just knowing the density at the initial time $\rho(\vec{\xi},t_0)$ and $\vec{x}(\vec{\xi},t)$ (which lets us compute the derivatives in label space $\pdv{x_k}{\xi_j}$ and thus the Jacobian determinant $J$). On the other hand, it lets us interpret the Jacobian in fluid terms: $J(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}$. The Jacobian determinant of $\vec	{x}(\vec{\xi},t)$ is the (positive) ratio of the density perceived by the fluid element $\vec{\xi}$ in its local surrounding relative to the one at the beginning. This can be smaller than one or greater than one. If the ratio is greater than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, meaning that the fluid of configuration-space "Universes" has been diluted around $\vec{\xi}$, the density has been decreased, which is in accordance with the fact that a positive Jacobian meant the trajectories in that locality get more spaced between them. If on the other hand the ratio is smaller than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, the density gets concentrated locally, in accordance with the convergence of trajectories in the surrounding. Note though that there is no source of Universes, since the Jacobian, accounting only for the movement of trajectories is the only factor influencing the density change. This is precisely what we imposed with the integral above.\\
 
 Now, let us finish deriving from here the continuity equation as we can get from the Schrödinger Equation. Let us take $\rho(\vec{\xi},t_0) = \rho(\vec{\xi},t) J(\vec{\xi},t)$ and derivate it at each side in time. Since the left hand side is time independent, we get:
 \begin{equation}
@@ -1006,6 +1088,8 @@ with the sum running over all the $N!$ possible permutation tuples $p=(p_1,...,p
 $$
 +\pdv{x_1}{\xi_{p1}} \cdots \pdv{x_{N-1}}{\xi_{pN-1}}\qty[\pdv{}{t}\pdv{x_N}{\xi_{pN}}]\Bigg)
 $$
+}
+\mybox{
 Note that since $\pdv{x_j(\vec{\xi},t)}{t}=:v_j(\vec{\xi},t)=v_k(\vec{x}(\vec{\xi},t),t)$:
 \begin{equation}
 \pdv{}{t}\pdv{x_i(\vec{\xi},t)}{\xi_j}=\pdv{}{\xi_j}\pdv{x_i(\vec{\xi},t)}{t}=\pdv{}{\xi_j}v_i(\vec{x}(\vec{\xi},t),t)=
@@ -1020,8 +1104,7 @@ This leaves equation \eqref{Jacobproc} as:
 $$
 +\pdv{x_1}{\xi_{p1}} \cdots \pdv{x_{N-1}}{\xi_{pN-1}}\qty[\sum_{k=1}^N \pdv{v_N(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}\pdv{x_k(\vec{\xi},t)}{\xi_{pN}}]\Bigg)=
 $$
-}
-\mybox{
+
 $$
 =\sum_{k=1}^N\sum_p sgn(p) \pdv{v_1(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}\pdv{x_k(\vec{\xi},t)}{\xi_{p1}}\pdv{x_2}{\xi_{p2}} \cdots \pdv{x_N}{\xi_{pN}}+\cdots 
 $$
@@ -1057,18 +1140,22 @@ Clearly, in each determinant, if the index $k$ is in row $j$, for all the $k\neq
 \pdv{}{t}J(\vec{\xi},t)=J(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
 which is what we wanted to prove.\\
-
+Equation \eqref{EulerDif} is a differential equation stating how the Jacobian of a certain fluid element evolves in time, given we know the velocity field moving those fluid elements.\\
+}
+\mybox{
 In particular, this means that:
 \begin{equation}
-J(\vec{\xi},t)=e^{\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
+J(\vec{\xi},t)=J(\vec{\xi},t_0)e^{\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
 \end{equation}
-
-Equation \eqref{EulerDif} is a differential equation stating how the Jacobian of a certain fluid element evolves in time, given we know the velocity field moving those fluid elements.\\
-
-If we now evaluate this last expression in equation \eqref{Jacobproc0}:
+where as $J(\vec{\xi},t0)=1$ by definition, we have that:
+\begin{equation}
+\frac{1}{J(\vec{\xi},t)}=\frac{\rho(\vec{\xi},t)}{\rho(\vec{\xi},t_0)}=e^{-\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
+\end{equation}
+which is the propagator equation we found in equation \eqref{JacPre} from the continuity equaiton i the Lagrangian frame. Yet, we can get the Continuity Equaiton itself by evaluating \eqref{EulerDif} in equation \eqref{Jacobproc0}:
 \begin{equation}
 J(\vec{\xi},t)\qty(\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)})=0
 \end{equation}
+
 Since we assumed that the Jacobian of the trajectories was never zero to allow its invertibility, we will have that the differential equation multiplying it must be zero:
 \begin{equation}
 \pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}=0
@@ -1077,8 +1164,7 @@ which is the Continuity Equation in the Lagrangian frame \eqref{CE.L}. If we now
 \begin{equation}
 \pdv{\rho(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\dv{\rho(\vec{x}(\vec{\xi},t),t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}\pdv{x_k(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)
 \end{equation}
-}
-\mybox{
+
 We have that:
 \begin{equation}
 \pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)+\rho(\vec{x},t)\pdv{v_k(\vec{x},t)}{x_k}=0
@@ -1088,7 +1174,6 @@ which reverting the derivative of a product rule yields the Continuity Equation 
 
 }
 \mybox{
-$\bullet$ It is the configuration-space itself that is getting distorted, and the fluid elements follow this distortion. The space around the particles is contracting (or dilating). The increase or decrease of volume locally causes the density to increase or decrease relative to the first instant.
 
 
 % So faltan:
@@ -1099,6 +1184,8 @@ $\bullet$ It is the configuration-space itself that is getting distorted, and th
 - Ein koherentzi pute bat eukitzie narraziñoak xD Asteburuen
 - Dibujoak ein. Astelehenien
 - Releidu dana. Martitzenien.
+
+- Azken sekziñoa de discrete tangent universes itxi soltien.
 }
 
 \mybox{{\bf About the Fluid Jacobian\\ }
