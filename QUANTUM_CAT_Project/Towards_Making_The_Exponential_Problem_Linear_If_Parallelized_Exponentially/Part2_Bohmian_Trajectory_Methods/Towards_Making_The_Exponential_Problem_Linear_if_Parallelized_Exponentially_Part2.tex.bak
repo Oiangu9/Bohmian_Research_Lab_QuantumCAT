@@ -648,7 +648,7 @@ or for the Laplacian:
 \begin{equation}
 \sum_{a=1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}]
 \end{equation}
-Taking into account that for each fluid element at each time we will need to compute all those partial derivati determinants and an in
+Taking into account that for each fluid element at each time we will need to compute all those partial derivatives (even if they will be in a regular grid), determinants, products and sums, it is clear that the approach of changing the differential equations to label space is not a miracle, but it is a possible one that can be used at least for computing some of the derivatives.
 
 
 \subsubsection*{(III.a.1.3) Adaptive Grid Equations}
