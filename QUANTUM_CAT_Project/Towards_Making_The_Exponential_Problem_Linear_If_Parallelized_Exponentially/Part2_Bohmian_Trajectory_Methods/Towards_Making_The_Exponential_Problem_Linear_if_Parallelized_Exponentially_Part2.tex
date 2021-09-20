@@ -326,6 +326,23 @@ x^\xi(t=t_0)=\xi
 \end{equation}
 Due to the fact that equation \eqref{GL} is an ordinary differential equation, the existence and uniqueness theorems for the initial value problem will ensure that these fluid element trajectories never cross each other in configuration space $\R^N$ and thus we will be able to evolve an ensemble of them both {\em a priori} and {\em a posteriori}. Each of these trajectories is a possible Bohmian trajectory in BM (weighted by the density $\rho$, which is a property of the pilot wave). In TUM, each of these trajectories is a "Universe", the relative frequency of which (and thus the probability for it to be ours) is weighted by $\rho$. All this simply reduces to the Born Rule from a purely observational standpoint.
 
+It is interesting to rewrite the two equations we obtained from the Schrödinger Equation in terms of the so called $C$-amplitude, which comes from the following parametrization of the wavefunction:
+\begin{equation}
+\psi(x,t)=e^{C(x,t)}e^{\frac{iS(x,t)}{\hbar}}\ \Longrightarrow\ R(x,t)=e^{C(x,t)} \ \Leftrightarrow \ C(x,t)=log(R(x,t))
+\end{equation}
+If we evaluate $R(x,t)=e^{C(x,t)}$ and $\rho(x,t)=e^{2C(x,t)}$ in equations \eqref{CE} and \eqref{HJE}, we get the following equivalent shape for them:
+\begin{equation}\label{CE.C}
+\pdv{C(x,t)}{t} = -\sum_{k=1}^N \frac{1}{2m_k}\qty[\pdv[2]{S(x,t)}{x_k}+2\pdv{C(x,t)}{x_k}\pdv{S(x,t)}{x_k}]
+\end{equation}
+\begin{equation}\label{HJE.C}
+-\pdv{}{t}S(x,t) = \sum_{j=1}^N \frac{\hbar^2}{2m_j} \qty(\pdv{}{x_j} S(x,t) )^2+ V(x,t)+Q(x,t)
+\end{equation}
+where:
+\begin{equation}\label{QP}
+Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty[\qty(\pdv{C(x,t)}{x_j})^2+\pdv[2]{C(x,t)}{x_j}]
+\end{equation}
+The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(x,t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space).
+
 \subsection*{(I.c) Basis Set Expansions}
 \addcontentsline{toc}{subsection}{(I.c) Basis Set Expansions}
 \subsubsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
@@ -498,15 +515,34 @@ If we repeat the trick, we can get a dynamical equation for the second partial d
 \begin{equation}
 i\hbar \pdv{}{t}\qty[\pdv[2]{}{x_k}\psi(x,t)] = \sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}\qty[\pdv[2]{}{x_k}\psi(x,t)]+U(x,t)\pdv[2]{\psi(x,t)}{x_k} + \psi(x,t)\pdv[2]{}{x_k}U(x,t)+2\pdv{\psi(x,t)}{x_k}\pdv{}{x_k}U(x,t)
 \end{equation}
-Defining $\psi^{(j)}_k(x,t):=\pdv[j]{}{x_k}\psi(x,t)$ this means:
+Defining $\psi^{(j)}_k(x,t):=\pdv[j]{}{x_k}\psi(x,t)$, this means:
 \begin{equation}
 i\hbar \pdv{}{t}\psi^{(2)}_k(x,t) = \qty(\sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(x,t))\psi^{(2)}_k(x,t)+ \psi(x,t)\pdv[2]{}{x_k}U(x,t)+2\psi^{(1)}_k(x,t)\pdv{}{x_k}U(x,t)
 \end{equation}
 Which could be easily generalized to get the dynamical equation for any superior spatial derivative. It is evident that the dynamic equation for $\psi^{(j)}_k(x,t)$ would also involve in the same equation all $\psi^{(s)}_j(x,t)$ with $s<k$. However, it will also include always a second spatial derivative of $\psi^{(s)}_j(x,t)$. Meaning the term $\psi^{(s+2)}_j(x,t)$ will always be coupled to $\psi^{(s)}_j(x,t)$ and at the same time $\psi^{(s+4)}_j(x,t)$ will be coupled to the first. Thus, an inifnite number of partial differential equations in time should be solved in order to avoid explicitly derivating any function in space. 
 
-What we could do though, in order to avoid having to solve an endless sequence of partial derivatives, is to assume that at some point $\pdv[J]{}{x_a}\psi(x,t)\simeq 0$, which seems reasonable for a big enough $J$. If we assumed so, then we would be left with a coupled linear system of equations ruling the dynamics of the functions $\psi^{(1)}_k(x,t),\psi^{(1)}_k(x,t)...\psi^{(J)}_k(x,t)$ and all of their second partial derivatives for the kinetic part (which could themselves be obtained with the same method by augmenting the number of equations).
+Let us note now that the general formula for the $J-th$ derivative of a product of functions is:
+\begin{equation}
+\dv[J]{}{x}\qty(f(x)g(x))=\sum_{k=0}^J b(J, k)\dv[J-k]{}{x}f(x)\dv[J]{}{x}g(x)
+\end{equation}
+with $b(J,k):=\frac{J!}{k!(J-k)!}$ the binomial coefficients.
 
-Clearly, in the Eulerian frame using these equations makes almost no sense, but their use will become evident when we go into the Lagrangian frame.
+Then in general, if we define the most general partial derivative of a function (assuming always enough regularity for being able to apply Schwarz's Theorem) as the function:
+\begin{equation}\label{defPdv}
+f_{(j1,...,jN)}(x,t):=\pdv[j_1]{}{x_1}\cdots\pdv[j_N]{}{x_N} f(x,t) \quad with\quad j_1,...,j_N\in \N\cup \{0\}
+\end{equation}
+We can get the recurrent formula for the time evolution of an arbitrary $\psi_{(j_1,...,j_N)}(x,t)$ by iteratively derivating the Schrödinger Equation \eqref{SE}. In general it is easy to see that:
+\begin{equation}\label{infchain.SE}
+i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(x,t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
+$$
+We clearly see that in order to compute $\psi_{(j_1,...,j_N)}$, we need to evolve as well all the functions with smaller degree, but also functions with 2 degrees more. The infinite chain of equations is then clear.
+
+What we could do, in order to avoid having to solve an endless sequence of partial differential equations, is to assume that at some point $\pdv[J]{}{x_a}\psi(x,t)\simeq 0$, which seems reasonable for a big enough $J$. If we assumed so, then we would be left with a finite coupled {\bf linear} system of equations ruling the dynamics of the functions $psi_{(j_1,...,j_N)}$ with all $j_k<J$. These would add up to $J^N$ {\bf linear} differential equations. Exponentially more with dimensions.
+
+Clearly, in the Eulerian frame using these equations makes almost no sense, since each of the $psi_{(j_1,...,j_N)}$ has actually $N+1$ degrees of freedom, so we are not getting any good, but their use will become more suggestive when we go into the Lagrangian frame.
 
 \subsubsection*{(I.d.2) For the Density and Action}
 \addcontentsline{toc}{subsubsection}{(I.d.2) For the Density and Action}
@@ -526,6 +562,29 @@ with:
 \end{equation}
 
 If we repeat the procedure for higher derivatives, we will obtain again a set of coupled partial differential equations (non-linear in this case), which can only be made a finite number of equations if we assume that for a certain $J$ $\pdv[J]{}{x_k}R(x,t)\simeq 0$ and $\pdv[J]{}{x_k}S(x,t)\simeq 0$ $\forall k$ and some crossed partial derivatives.
+
+In order to have a general equation, we will use the continuity and Hamilton-Jacobi equations in their $C$-amplitude shapes \eqref{CE.C} and \eqref{HJE.C}. Again using the definition \eqref{defPdv}, we can get following the previously mentioned procedure that the derivatives of the field $C(x,t)$ evolve as:
+\begin{equation}\label{infchain.CE}
+\pdv{}{t}C_{(j1,...,jN)}(x,t)=-\sum_{s=1}^N\frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}(x,t) 
+\end{equation}
+$$
++2 \sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)} \Bigg]
+$$
+While the field $S(x,t)$ and its derivatives evolve as:
+\begin{equation}\label{infchain.HJE}
+-\pdv{}{t}S_{(j1,...,jN)}(x,t)=V_{(j1,...,jN)}-\sum_{s=1}^N\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} 
+$$
+$$
+-S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]
+$$
+
+Once again, we have an infinite partial differential equation chain (just that, this time they are non-linar). Each of them is coupled with all of the smaller degree ones and with some of the two degree higher ones.
+
+Again, the use of this will become more clear in the Lagrangian frame.
+
 
 \fancyhead[L]{III . Fully Lagrangian Equations}
 \section*{III . Fully Lagrangian Equations: Bohmian QM}
@@ -573,6 +632,29 @@ It would also be interesting to write down equation \eqref{KinAdv} in terms of p
 
 \subsubsection*{(III.a.1.1) Dynamics of Partial Derivatives}
 \addcontentsline{toc}{subsubsection}{(III.a.1.1) Dynamics of Partial Derivatives For the Wavefunction}
+
+If we go back to the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, we will notice that there is no partial derivative with respect to space $x_k$ in any place. This means, we can directly evaluate $x=x(\xi,t)$ by first noting that by the chain rule:
+\begin{equation}
+\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \dv{f(x(\xi,t),t)}{t}-\sum_{s=1}^N \pdv{f(x,t)}{x_s}\Big\rvert_{x_s(\xi,t)}\pdv{x(\xi,t)}{t}
+\end{equation}
+In the notation we defined in \eqref{defPdv}, we saw $\pdv{f(x,t)}{x_s}=f_{(0,...,1,...,0)}(x,t)$ (with the array full of 0-s except for a 1 in the $s$-th position). Then:
+\begin{equation}\label{matrialTimePdv}
+\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
+\end{equation}
+This would leave \eqref{infchain.SE} in the Lagrangian frame as:
+\begin{equation}\label{infchain.SE}
+i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
+$$
+where all the functions have arguments $(\xi,t)$.
+
+This is an infinite system of coupled linear differential equations. Assuming that at a certain $J$, $\pdv[J]{\psi(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for all $k$, we would then have $J^N$ equations. Doing this approximation, we are assuming that the wavefunction in the immediate locality of the fluid element has a roughly constant derivative of $J$-th order. Contrary to the Eulerian case, we are not assuming this for the whole configuration space, which might improve the approximation. The best point about this mehtod is that this equation system would allow us to compute the wavefunction and trajectory of a {\bf single} fluid element $\xi$! With no need to know the partial derivatives in configuration-space $x_k$, there is no need to couple other trajectories to this one.
+
+Certainly, the main problem of this method will be that we will need to choose the truncation $J$, which if chosen to be too small, would make the trajectory blind to nodal points and fluctuating regions that are not in its immediate vicinity, since we would be assuming that high order curvatures around the trajectory are small, when in reality they should influence the trajectory.
+
+
 
 \subsubsection*{(III.a.1.2) Partial Derivatives relative to the Labels}
 \addcontentsline{toc}{subsubsection}{(III.a.1.2)Partial Derivatives relative to the Labels}
@@ -1237,6 +1319,29 @@ Y luego haces derivada temporal y uno de los lados debe ser constante etc.}
 
 \subsubsection*{(III.b.1.1) Dynamics of Partial Derivatives}
 \addcontentsline{toc}{subsubsection}{(III.b.1.1) Dynamics of Partial Derivatives}
+
+If we note again equation \eqref{matrialTimePdv}, we see that it is possible to evaluate the partial differential equations for the spatial derivatives of $C$ and $S$, such that $C(x,t)=log(\rho(x,t))/2$, that we got in equations \eqref{infchain.CE} and \eqref{infchain.HJE}. We can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$, over any single fluid element $\xi$ follows:
+
+\begin{equation}\label{infchain.CE.L}
+\pdv{}{t}C_{(j_1,...,j_N)}(\xi,t)=-\sum_{s=1}^N \Bigg(i\hbar C_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t} + \frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}(x,t)+
+\end{equation}
+$$
++2 \sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)} \Bigg]\bigg)
+$$
+
+While the field $S$ and all its derivatives in configuration space $x_k$, follow over any single fluid element $\xi$:
+\begin{equation}\label{infchain.HJE.L}
+-\pdv{}{t}S_{(j_1,...,j_N)}(\xi,t)=V_{(j1,...,jN)}+\sum_{s=1}^N\Bigg\{ i\hbar S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} 
+$$
+$$
+-S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]\Bigg\}
+$$
+Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.
+
+
 
 \subsubsection*{(III.b.1.2) Partial Derivatives relative to the Labels}
 \addcontentsline{toc}{subsubsection}{(III.b.1.2) Partial Derivatives relative to the Labels}
