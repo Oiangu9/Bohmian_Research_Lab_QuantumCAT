@@ -1,36 +1,25 @@
-\contentsline {section}{Part A: Drafting the Panorama}{0}{section*.4}
-\contentsline {section}{Section 1: On the Employed Vocabulary}{1}{section*.5}
-\contentsline {section}{Section 2: On the Possible Approaches and Methods}{4}{section*.6}
-\contentsline {subsection}{Panorama of the Approaches We Can Take }{4}{section*.7}
-\contentsline {subsection}{Panorama of the Methods We Can Study}{5}{section*.8}
-\contentsline {section}{Part B: The Equations and Techniques}{8}{Item.8}
-\contentsline {section}{Section 3: The Equations for Quantum Dynamics}{9}{section*.9}
-\contentsline {section}{I . Fully Eulerian Equations: Orthodox QM }{9}{section*.10}
-\contentsline {subsection}{(I.a) The Full Schr\IeC {\"o}dinger Equation}{9}{section*.11}
-\contentsline {subsection}{(I.b) The Continuity + The Hamilton-Jacobi Equations}{9}{section*.12}
-\contentsline {subsection}{(I.c) Basis Set Expansions}{11}{section*.13}
-\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{11}{section*.14}
-\contentsline {subsubsection}{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}{12}{section*.15}
-\contentsline {subsubsection}{(I.c.2) Arbitrary known orthonormal Base Expansion}{14}{section*.16}
-\contentsline {subsection}{(I.d) Dynamic Equations for Partial Derivatives}{15}{section*.17}
-\contentsline {subsubsection}{(I.d.1) For the Wavefunction}{15}{section*.18}
-\contentsline {subsubsection}{(I.d.2) For the Density and Action}{16}{section*.19}
-\contentsline {section}{III . Fully Lagrangian Equations: Bohmian QM}{17}{section*.20}
-\contentsline {subsection}{(III.a) The Schr\IeC {\"o}dinger Equation}{17}{section*.21}
-\contentsline {subsubsection}{(III.a.1.1) Dynamics of Partial Derivatives For the Wavefunction}{19}{section*.22}
-\contentsline {subsubsection}{(III.a.1.2)Partial Derivatives relative to the Labels}{19}{section*.23}
-\contentsline {subsubsection}{(III.a.1.3) Adaptive Grid Equations}{21}{section*.24}
-\contentsline {subsection}{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}{29}{section*.37}
-\contentsline {subsubsection}{(III.b.1.1) Dynamics of Partial Derivatives}{39}{section*.38}
-\contentsline {subsubsection}{(III.b.1.2) Partial Derivatives relative to the Labels}{40}{section*.39}
-\contentsline {subsubsection}{(III.b.1.3) Adaptive Grid Equations}{40}{section*.40}
-\contentsline {subsection}{(III.b.2) The Bohmian-Newton's Second Law}{40}{section*.41}
-\contentsline {subsection}{(III.c) Basis Set Expansion}{41}{section*.42}
-\contentsline {subsection}{(III.d) Dynamic Equations for Partial Differentials}{41}{section*.43}
-\contentsline {section}{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}{41}{section*.44}
-\contentsline {subsection}{(II.a.1) The Schr\IeC {\"o}dinger Equation: Kinetic and Advective}{41}{section*.46}
-\contentsline {subsubsection}{What do we mean by a Conditional Wavefunction?}{42}{section*.47}
-\contentsline {subsection}{(II.a.2) The Schr\IeC {\"o}dinger Equation: G and J Correlations}{49}{section*.62}
-\contentsline {subsection}{(II.c) Basis Set Expansion}{55}{section*.69}
-\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{55}{section*.70}
-\contentsline {section}{References}{56}{section*.73}
+\contentsline {section}{Part A: Drafting the Panorama}{0}{section*.4}%
+\contentsline {subsubsection}{On the Employed Notation and Vocabulary}{1}{section*.5}%
+\contentsline {subsubsection}{Approaches with Respect to the Degrees of Freedom}{4}{section*.6}%
+\contentsline {subsubsection}{Panorama of the Methods We Can Study}{5}{section*.7}%
+\contentsline {section}{Part B: The Equations of Quantum Dynamics}{8}{Item.10}%
+\contentsline {subsection}{{\bf I . Fully Eulerian Equations }}{9}{section*.8}%
+\contentsline {subsubsection}{{\bf (I.a)} The Schrödinger Equation}{9}{section*.9}%
+\contentsline {subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}{9}{section*.10}%
+\contentsline {subsubsection}{{\bf (I.c)} Basis Set Expansions}{11}{section*.11}%
+\contentsline {subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}{15}{section*.15}%
+\contentsline {subsection}{\bf II . Fully Lagrangian Equations: Bohmian QM}{17}{section*.18}%
+\contentsline {subsubsection}{{\bf (II.a)} The Schrödinger Equation}{17}{section*.19}%
+\contentsline {subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}{18}{section*.20}%
+\contentsline {subsubsection}{{\bf (II.c)} Basis Set Expansions?}{26}{section*.21}%
+\contentsline {subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}{26}{section*.22}%
+\contentsline {subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}{28}{section*.25}%
+\contentsline {subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}{29}{section*.26}%
+\contentsline {subsubsection}{{\bf (II.g)} Adaptive Grid Equations}{30}{section*.27}%
+\contentsline {subsection}{\bf III . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}{38}{section*.40}%
+\contentsline {subsection}{(II.a.1) The Schrödinger Equation: Kinetic and Advective}{39}{section*.42}%
+\contentsline {subsubsection}{What do we mean by a Conditional Wavefunction?}{40}{section*.43}%
+\contentsline {subsection}{(II.a.2) The Schrödinger Equation: G and J Correlations}{46}{section*.58}%
+\contentsline {subsection}{(II.c) Basis Set Expansion}{53}{section*.65}%
+\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{53}{section*.66}%
+\contentsline {section}{References}{54}{section*.69}%

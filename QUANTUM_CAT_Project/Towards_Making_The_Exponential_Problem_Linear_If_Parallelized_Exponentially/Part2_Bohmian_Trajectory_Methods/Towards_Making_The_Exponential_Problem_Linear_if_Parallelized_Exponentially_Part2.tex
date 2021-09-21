@@ -76,7 +76,7 @@
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 %\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
-\title{\vspace{-2cm} {\bf Quantum Dynamics:\\  Mixing Wavefunctions and Trajectories}\\{\small Review by Xabier Oyanguren Asua}\vspace{-0.3cm}}
+\title{\vspace{-2cm} {\bf Quantum Dynamics\\  Mixing Wavefunctions and Trajectories}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.3cm}}
 \date{\vspace{-11ex}}
 \let\clipbox\relax
 \usepackage{adjustbox}
@@ -179,101 +179,114 @@ Drafting the Panorama
 
 \pagestyle{fancy}
 
-\fancyhead[R]{\em On the Employed Vocabulary}
-\section*{Section 1: On the Employed Vocabulary}
-\addcontentsline{toc}{section}{Section 1: On the Employed Vocabulary}
+\fancyhead[R]{\em On the Employed Notation and Vocabulary}
+\section*{On the Employed Notation and Vocabulary}
+\addcontentsline{toc}{subsubsection}{On the Employed Notation and Vocabulary}
 
 Throughout the document concepts of the Orthodox, Bohmian, Hydrodynamic and Tangent Universe interpretations will be employed altogether in order to give names to the mathematical tools we will employ. Let us thus, have a brief brainstorm on them to set things in place.
 
-Given a system whose possible ontological configurations can be labeled by a set of $N$ coordinates or degrees of freedom $(x_1, ...,x_N)\equiv \vec{x}$, which can take continuous values in a certain subset of $\R^N$, say $\Omega_t\subseteq \R^N$, we call the space of possible values of $\vec{x}$, the {\bf configuration-space} of the system. We introduce an additional labeling axis, called time, $t$, together with the concept of dynamics, which is the evolution in time of the quantitative properties of the points in configuration-space. Note that the subset of $\R^N$ that we consider may vary continously in time, thus the subindex $t$ in $\Omega_t\subseteq \R^N$. In order to describe a set of quantitative properties of this continuous contingent extension in configuration-space and time, we shall use a set of functions that map points in configuration-space $\vec{x}$ and time $t$ to numbers. These properties shall be called the {\bf state variables} of the system, and should be enough as to be able to predict the time evolution of themselves. The state variables, described by scalar functions, could be equivalently interpreted as fields, that have a value per point in configuration-space, or as fluids, where there is an underlying movement of points, each of which carries with it a value of the quantitative properties, among them, their position in configuration-space. We will mainly use the second approach for it is way more intuitive, not only conceptually with regards to the interpretations of quantum mechanics, but because it will provide us with a mathematical advantage of flipping from two distinct descriptions. 
+Given a system whose possible ontological configurations can be labeled by a set of $N$ coordinates or degrees of freedom\footnote{They could be $N$ 1D bodies, $N/3$ 3D bodies etc.} $(x_1, ...,x_N)\equiv \vec{x}$, which can take continuous values in a certain subset of $\R^N$, say $\Omega_t\subseteq \R^N$, we call the set of possible values of $\vec{x}$, the {\bf configuration-space} of the system. We introduce an additional labeling axis, called time, $t$, together with the concept of dynamics, which is the evolution in time of the quantitative properties of the points in configuration-space. Note that the subset of $\R^N$ that we consider may vary continously in time, thus the subindex $t$ in $\Omega_t\subseteq \R^N$. In order to describe a set of quantitative properties of this continuous contingent extension in configuration-space and time, we shall use a set of functions that map points in configuration-space $\vec{x}$ and time $t$ to numbers. These properties shall be called the {\bf state variables} of the system, and should be enough as to be able to predict the time evolution of themselves. 
 
-Understanding a field (a scalar quantity as a function of $\vec{x},t$) as the state property of a fluid, means we will consider there is a continuum of uncountable point like particles that move in configuration-space, where each of which will carry a value of the scalar that can change in time. We call these particles, the {\bf fluid elements} or {\bf fluid particles}. Certainly, in order to have a moving set of particles or fluid, we require to have a velocity field for the fluid at each time. If we have so, we will soon realize that we could describe the scalar quantities both in the frame of (as seen as by) the moving particles of the fluid (the so called Lagrangian frame) or rather as seen from each configuration-space point (the Eulerian frame).
+The state variables, described by scalar functions, could be interpreted as properties of configuration-space, where the scalar values per point $\vec{x}$ in configuration-space are intrinsic properties of that point. These values may change in time. Alternatively, we could understand these scalar functions as properties of a fluid, where there is an underlying movement of points in configuration-space, each of which carries with it its value of the quantitative properties. Among the properties of those points moving in configuration-space, there is their position. This means that according to this fluid vision, we will observe a certain value for a state variable in a configuration-space point, not because the value is telling us something about that point $\vec{x}$, but because it describes a property of the fluid element crossing that point at that time.
 
-If for instance, the configuration-space represents the positions in 3D space of each particle in the Universe, then each point $\vec{x}\in \R^N$ will represent a particular macroscopically observable configuration of the Universe. The moving fluid in $\R^N$ would then mean that we can track the time evolution of each particular initial configuration of the Universe in time, along with the properties of the quantitative scalars perceived from each of them (Lagrangian), or we could alternatively see the value of the properties at each time from a Universe with the same configuration (Eulerian). Naturally, for a consistent description of the fluid in terms of particles, we require that their trajectories in configuration-space and time  must not cross each other. Fortunately, the unitary time evolution of isolated quantum systems (like the Universe as a whole) will guarantee this. Each interpretation will have its own explanation of this repulsive interaction between fluid particles.
+Before talking about anything else, we see thus a necessity to formalize the continuum of uncountably infinite point like "particles" moving in configuration-space. An $\R^N$ particle is actually a possible configuration of the whole system. As we will see later, if for example, $N$ are all the degrees of freedom in the Universe, a particle in $\R^N$ is a possible position for all the $3D$ particles in it (where there would be $N/3$ particles). Thus, each fluid element could be seen as a possible Universe, and its movement in configuration-space $\R^N$, would mean tracking the change of the positions of all the $3D$ particles in the Universe. We would have the trajectory of a Universe. We will call these consitituent poarticles of the $R^N$ fluid, {\bf fluid elements} or {\bf Universes}. Since we are talking about an uncountably infinite amount of moving points in configuration-space, but we assume that each fluid element occupies a unique point like position in configuration-space at each time, we could label each of this fluid elements by their position at a reference time $t_0$ (which we shall call the initial time). We will then label the fluid element that is in the position $\vec{\xi}\in\Omega_0\subseteq \R^N$ at time $t=t_0$, the fluid element $\vec{\xi}$. Since we assume that these elements never cross each other (never collide and occupy the same configuration-space point at the same time), we assume there is a continuous function $\vec{x}(\vec{\xi},t)\equiv \vec{x}^\xi(t)$ that tells us where in $\Omega_t$ each fluid element $\vec{\xi}\in\Omega_0$ is at each time $t$.\footnote{Note that we call $\Omega_0$ the subset of $\R^N$ where there are fluid elements at the reference time $t=t_0$. } This is what we call the {\bf trajectory} of the fluid element. Since each fluid element $\vec{\xi}$ has a different position in $\Omega_t$ at each time, we see that the function $\vec{x}(\vec{\xi},t)$ must have an inverse function $\vec{\xi}(\vec{x},t)$ telling which is the label of the fluid element crossing the configuration-space point $\vec{x}$ in time $t$. This inverse must be continous, since the transformation $\vec{x}(\vec{\xi},t)$ is required to be continuous in time (we will see there are quantum reasons for it, but for now it is a convenience). Thus, $\Omega_t$ must be homeomorphic to $\Omega_0$ at all times. In fact, since we will achieve the description of the time evolution of the positions of the fluid elements through the integration of a velocity field, we will require that the transformation $\vec{x}(\vec{\xi},t)$ is differentiable, meaning it must be a diffeomorphism.
 
-We essentially define the {\bf Eulerian} frame of the system, as the description of the properties of the system as seen from each configuration-space point. That is, for each $\vec{x}\in\R^N$, we will know the values of the state variables of the system (like the wavefunction or equivalently the action/velocity field and the density) at a fixed spatial point for each time. That is, we will know the fields of interest as a function of $(\vec{x},t)$. This view is compatible with a non-fluid interpretation, as if each configuration-point itself would have a certain observable value. 
+We can now realize that we will be able to describe a state varaible, or property both by reference to a specific configuration-space position $\vec{x}$ at a certain time $t$ or by reference to a specific fluid element (or Universe or experiment) $\vec{\xi}$ at a certain time. These will be respectively the Eulerian and the Lagrangian frames. 
 
-The {\bf Lagrangian} frame of the system on the other hand, will be knowing about the values of the state properties by knowing them as observed by each fluid element along their trajectories. We can label each fluid particle by a vector $\vec{\xi}\in \R^N$ that can denote for instance, the position in $\R^N$ of the fluid particle a particular time. Thanks to the fact that the trajectories of the fluid will never cross each other in $\R^N$, because they will have a repulsive interaction, the label will be a precise tag at all times. There will then exist a map $\vec{x}(t,\vec{\xi})\equiv \vec{x}^{\xi}(t)$, that will give us the position at each time of the particle labeled by $\vec{\xi}$. This is what we call the {\bf trajectory} of a fluid element. Of course, this must be invertible for the injectivity of the labeling through time (which again is guaranteed by the unitary time evolution), and thus we could also get $\vec{\xi}(t,\vec{x})$, the label of the particle crossing configuration-spatial point $\vec{x}$ as a function of time. Then the Lagrangian frame will give us the value of the relevant fields of the fluid as a function of time and the label $(\vec{\xi},t)$.
+If again, the configuration-space represents a tuple of all the positions in 3D space of each particle in the Universe, then each point $\vec{x}\in \R^N$ will represent a particular macroscopically observable configuration of the Universe. Tracking the fluid elements in $\R^N$ would then mean that we can track the time evolution of each particular initial configuration of the Universe $\vec{\xi}$ in time, along with the properties of the quantitative scalars perceived from each of them (Lagrangian frame). Alternatively, we could see the value of the properties at each time from a particular preferred Universe configuration $\vec{x}$ (Eulerian). The interesting part of talking about the Universe as a whole is that in reality, for a true descrition of natural pehnomena, we require taking into account all the degrees of freedom in the Universe and their mutual interactions. Thus, taking as system the whole possible system, should be the preferred approach for an interpretation of a fundamental theory of nature. 
+
+We essentially define the {\bf Eulerian} frame of the system, as the description of the properties of the system as seen from each configuration-space point. That is, for each $\vec{x}\in\R^N$, we will know the values of the state variables of the system (like the wavefunction or equivalently the action/velocity field and the density). That is, we will know the fields of interest as a function of $(\vec{x},t)$. This view is compatible with a non-fluid interpretation, as if each configuration-point itself would have a certain observable value. 
+
+The {\bf Lagrangian} frame of the system on the other hand, will be knowing about the values of the state properties by knowing them as observed by each fluid element along their trajectories.  Then the Lagrangian frame will give us the value of the relevant fields of the fluid as a function of time and the label $(\vec{\xi},t)$.
  
-As we will mathematically formalize in the following section, according to non-relativistic quantum mechanics, a single complex state property, or equivalently, two real ones, are enough for the full description of the time evolution of an isolated system (say, the whole Universe). This complex quantity is the so called {\bf wave-function}, where its magnitude squared is the so called {\bf density} and its phase is the {\bf action} (the gradient of which in configuration-space yields the velocity field for the displacement of the fluid).
+As we will mathematically formalize in the following section, according to non-relativistic quantum mechanics, a single complex state property, or equivalently, two real properties, are enough for the full description of the time evolution of an isolated system (say, the whole Universe). This complex quantity is the so called {\bf wave-function} $\psi$, where its magnitude squared is the so called {\bf density} $\rho$ (which can be interpreted as the density of fluid elements and will be responsible for the observable results at each time) and its phase is the {\bf action} $S$ (the gradient of which in configuration-space yields the velocity field for the displacement of the fluid elements).
 
-The wavefunction is the basic ontology within the {\bf Orthodox} interpretation of Quantum Mechanics. Here, each fluid element is just a mathematically valid tool for deriving equations, but has no interpretative representation. Only the overall density and relative phases of the action field (velocity field variations) have physical significance. In fact, this is the most pragmatic approach with all its interpretative paradoxes, since the only things that can be reflected on experimental observations\footnote{from our perspective of a single trajectory} are these two. 
+The wavefunction is the basic ontology within the {\bf Orthodox} interpretation of Quantum Mechanics. Here, each fluid element is just a mathematically valid tool for obtaining equations, but has no interpretative representation. Only the overall density and relative phases of the action field (velocity field variations) have physical significance. The density gives the probability density to find the system in each configuration-space point. This is the most pragmatic interpretation, with all its corresponding interpretative paradoxes due to its philosophical vagueness. 
 
-The {\bf Bohmian} interpretation understands these fluid elements to be all the possible {\bf Bohmian trajectories} of the system, from which only happens to exist one, while the rest composes the so called {\bf pilot wave}, that should be understood as an aura or field, without mentioning its composing elements as having any special significance. This pilot wave drives {\bf the} particle (the only one ontologically existing) by a repulsive interaction in configuration space, just like a leaf in a current (in a $\R^N$ current). The trajectory that is said to exist is the one we observe when observing the quantum system, which happens to be a sample statistically obeying the probability density given by the density field of the pilot wave. This is how Bohmian Mechanics ultimately matches orthodox predictions. It is because of that that in a Bohmian perspective, the elements of the density field could also be seen as the "possible experimental outcomes". Each fluid trajectory is a possible experiment, but in a way that possible experiments interfere between them, even if only one of them is truly existing (this is in the author's opinion the point that makes Bohmian still uncomfortable). That is, the rest of possible experiments that do not exist, which are the pilot wave, which is unobservable, influence what reality is. What is the nature of this pilot wave that is attributed a separate contingency of the particle, its {\em arkhé}...no body seems to know it in this interpretation.
+The {\bf Bohmian} interpretation understands the fluid elements driven by the velocity field given by the configuration-space gradient of the action $S$, to be the possible {\bf trajectories} of the system, possible observable experiments, from which only happens to exist one, the so called {\bf Bohmian trajectory} of the system. The rest of fluid elements composes the so called {\bf pilot wave}, that should be understood as an aura or field driving the Bohmian trajectory, even if each fluid element composing it is also a possible Bohmian trajectory for another experiment. The bundle of possible (but not actual) Bohmian trajectories composing the pilot wave have no special significance. This pilot wave drives {\bf the} Bohmian particle (in $\R^N$), which is the only one ontologically contingent, by a repulsive interaction in configuration space, just like a leaf in a current (in an $\R^N$ current). The trajectory that is said to exist is the one we observe when observing the quantum system, which happens to be a sample statistically obeying the probability density given by the density field of the pilot wave. This is how Bohmian Mechanics ultimately matches orthodox predictions. It is because of that that in a Bohmian perspective, the elements of the density field could also be seen as the "possible experimental outcomes". Each fluid trajectory is a possible experiment, but note that this means that possible experiments (that do not simultaneously occur) interfere between them, even if only one of them is truly existing (this is in the author's opinion the point that makes Bohmian still uncomfortable). That is, the rest of possible experiments that do not exist, which are the pilot wave, which is unobservable, influence what reality is. What is the nature of this pilot wave that is attributed a separate contingency of the Bohmian particle, its {\em arkhé}...no body seems to know.
 
-Finally, there is the {\bf Tangent Universe} interpretation, which understands that all of these fluid elements exist on a same ontological contingent basis, as a swarm of possible point-systems that interact repulsively whenever one of them approaches all of its degrees of freedom to another one, but such that they never cross (thus tangential). That is, each "possible experiment", each possible Bohmian trajectory that interacts with the real trajectory in a physical way, is here understood as actually a physical contingent trajectory that physically "pushes" the actual trajectory we observe. Then why do we only observe one trajectory of the system? One definite position for each particle in the universe? Precisely because we, as observers, are trapped in one of these trajectories. Or have you ever experienced a superposition? Of course not. And as trajectories never cross, we will always be "trapped" in this trajectory, and will only perceive the rest of "Universes" through the tangent force they exert on each degree of freedom of ours. Our lack of knowledge of the position of all the particles in the Universe, makes us be in one of the possible ones with equal probability, which means that our Universe will be a sample of the relative density they follow. Thus allowing the same predictions as Orthodox. This interpretation gives the same material basis to both the density and the velocity field. No need for an unobservable magic pilot wave. Within this interpretation, other tangent trajectories cannot be observed because we happen to perceive a singular one, and as they never cross, we can only feel them through the quantum pressure they exert on our trajectory (due to the local agglomeration of the Universes having the most similar configuration to ours: those push the particles in our Universe through every degree of freedom of our Universe). Just like dark matter or dark energy, we feel a physical influence of them, their information is implicit on our Universe, it is necessary to predict its behavior and the rules of its motion, but we cannot observe the origin directly. We can still measure clearly their contingent effect on every quantum experiment we perform!.
+Finally, there is the {\bf Tangent Universe} interpretation, which understands that all of these fluid elements or Universes exist on a same ontologically contingent basis, as a swarm of possible Universes that interact repulsively whenever one of them approaches all of its degrees of freedom to another one (whenever two Universes become similar in all of their degrees), such that they never cross. Thus, instead of parallel Universes, which suggests that there is no influence between them, it is more convenient to call them, tangent Universes: they never cross, but they never stop to push each other. That is, each "possible experiment", each possible Bohmian trajectory composing the pilot wave, that interacts with the actually observed Bohmian trajectory, are here understood as well as physically contingent Universes that physically "push" the one we happen to be in. We never see these other tangent Universes, and always see a single point like trajectory of the system, one definite position for each particle in the universe, because we, as observers, are trapped in one of these trajectories. Or have you ever experienced a superposition? Is there any experiment that has found that the electron is not point-like? Of course not. And as fluid elements never cross, we will always be "trapped" in this Universal trajectory, and will only perceive the rest of "Universes" through the tangent force they exert on each degree of freedom of ours. Our lack of knowledge of the position of all the particles in the Universe, makes us thus, be in one of the possible Universes with equal probability, which means that our Universe will be a sample of the relative density they follow. Thus allowing the same predictions as Orthodox or Bohmian Mechanics. This interpretation gives the same material basis to both the density and the velocity field. No need for an unobservable magic pilot wave. Within this interpretation, other tangent trajectories cannot be observed because we happen to perceive a singular one, and as they never cross, we can only feel them through the quantum pressure they exert on our trajectory (due to the local agglomeration of the Universes having the most similar configuration to ours: those push the particles in our Universe through every degree of freedom of our Universe). Just like dark matter or dark energy, we feel a physical influence of them, their information is implicit on our Universe, it is necessary to predict its behavior and the rules of its motion, but we cannot observe the origin directly. We can still measure clearly their contingent effect on every single quantum experiment we perform!. How many years more are we ready to close our eyes in front of this?
 
-There is finally a discrete version of the last interpretation, suggesting that in fact, it is not necessary that these tangent Universes are infinitely uncountable. If we have a large enough amount of Universes only interacting between them through a repulsive force acting in proportion of their distance in the whole configuration, we can recover in the limit the quantum potential and quantum dynamics. This however, would result in different predictions to the quantum case for a number of discrete Universes smaller than a certain tolerance. It is yet interesting to consider it for potential numerical methods!
+There is finally a discrete version of the last interpretation, suggesting that in fact, it is not necessary that these tangent Universes are infinitely uncountable. If we have a large enough amount of Universes only interacting between them through a repulsive force acting in proportion of their distance in configuration space, we can recover in the limit the quantum potential and quantum dynamics. This however, if the number of tangent Universes is not big enough, could result in different predictions to the quantum case. It is yet interesting to consider it for potential numerical methods!
 \newpage
 \fancyhead[R]{\em On the Possible Approaches and Methods}
-\section*{Section 2: On the Possible Approaches and Methods}
-\addcontentsline{toc}{section}{Section 2: On the Possible Approaches and Methods}
-\subsection*{Panorama of the Approaches We Can Take }
-\addcontentsline{toc}{subsection}{Panorama of the Approaches We Can Take }
 
-Let us list the main four approaches we can adopt in the context of quantum dynamics involving trajectories and wavefunctions. From I to IV, the approaches will be ordered according to the relevance of trajectories in the Lagrangian frame against the relevance of Eulerian frame wavefunctions. Let us consider a general quantum system of $N$ degrees of freedom (they could be $N$ 1D bodies, $N/3$ 3D bodies etc.).
+\subsection*{Approaches with Respect to the Degrees of Freedom}
+\addcontentsline{toc}{subsubsection}{Approaches with Respect to the Degrees of Freedom}
+\vspace{-0.1cm}
 
+Let us list the main four approaches we can adopt in the context of quantum dynamics involving trajectories and wavefunctions. Approach I gives predominance to waves, while II gives it to trajectories. Approach III gives a weighted predominance to both, while IV forgets about continuous waves.
+\vspace{-0.1cm}
 \begin{enumerate}
-\item[\bf ( I )] {\bf Mainly a Wavefunction: } We could consider a fully wave-like picture (a continuous field moving in $\R^N$) without considering the fluid elements. This implies considering only the dynamics of a full N+1 dimensional wavefunction in configuration-space $\psi(\vec{x},t)$. This is what we will call the {\bf Fully Eulerian Picture}. If we involve trajectories in the description, these will only be computed {\em a posteriori} and will not be required to know the time evolution of the system. This approach is the typical one within Orthodox Quantum Mechanics (if only considering the wavefunction) and can be understood within Bohmian Mechanics (BM) or Tangent Universe Mechanics (TUM) (by considering also the {\em a posteriori} trajectories).
+\item[\bf ( I )] {\bf Mainly a Wavefunction: } We could consider a fully wave-like picture, where the properties of the fields are intrinsic to configuration-space points, just without considering the fluid elements. This implies considering just the dynamics of an N+1 dimensional wavefunction in configuration-space $\psi(\vec{x},t)$. This is what we will call the {\bf Fully Eulerian Picture}. If we present trajectories in the description, these will only be computed {\em a posteriori} and will not be required to know the time evolution of the system. This approach is the typical one within Orthodox Quantum Mechanics (if only considering the wavefunction) and can be understood within Bohmian Mechanics (BM) or Tangent Universe Mechanics (TUM) (by considering also the {\em a posteriori} trajectories).
 
-\item[{\bf ( II )}]{\bf Wavefunctions and Trajectories in Equal footing: } We could consider a scheme where {\bf part} of the quantum system is considered to be described by fluid elements in $\R^m$ in the Lagrangian-frame and {\bf part} of the system is a continuous field in the Eulerian-frame. This will imply considering several waves $\{ \psi(\vec{x}_a, \vec{x}_b^\xi(t), t) \}_\xi$ which will describe the state properties in the {\bf Eulerian frame}, the so called {\bf conditional wave-functions}, and one or several sets of trajectories $\{\vec{x}_b^\chi(t)\}_\xi$ which will then describe the motion of {\bf Lagrangian frame} elements of their degrees of freedom. It is a mixed approach between evolving a wave equation and evolving purely trajectory equations.
 
-\item[\bf ( III )]{\bf Mainly Trajectories:} We will still view the quantum system as a continuous fluid, but now the values of the field will exclusively be relevant at the positions of {\bf Lagrangian frame} trajectories. The trajectories of elements of the $\R^N$ continuum $\{\vec{x}^\xi(t)\}_\xi$ will be the main actors and the wavefunction will be only implicitly acting. This approach is as akin to the "Continuum of Tangent Universes" Interpretation as we could get. It is also consistent with BM even if there is no explicit pilot wave. BM would understand these elements as possible Bohmian trajectories (or a granulated pilot wave). The wavefunction is somewhat {\em a posteriori}, even if it is not really true, because we need to know its values in a moving grid.
+\item[\bf ( II )]{\bf Mainly Trajectories:} We could view the quantum system as a fluid of moving fluid elements in configuration-space. The values of the field will now be relevant at the positions of {\bf Lagrangian frame} trajectories. The trajectory map of the fluid elements, $\{\vec{x}^\xi(t)\}_\xi$ will be a main actor and will be required to be computed "a priori" together with the other state varaibels. The wavefunction will only be implicitly acting, but will also be "a priori". This is what we will call the {\bf Fully Lagrangian Picture}. This approach is as akin to the "Continuum of Tangent Universes" Interpretation as we could get. It is also the most consistent one with BM even if there is no explicit pilot wave. BM would understand these elements as possible Bohmian trajectories (or as a granulation of the pilot wave).
 
-\item[\bf ( IV ) ]{\bf Only Trajectories: } We will view the quantum system not as a continuum, not as a continuous distribution of $\R^N$ particles of fluid, but instead we will evolve many discrete particles in $\R^N$ that will feel a repulsive force among them acting on the configuration space of the system. Except for this configuration space interaction, the system will behave classically. The density will be computed as the agglomeration of trajectories and the velocity field as a nearest neighbourgh average. Here the wavefunction will only be computed {\em a posteriori} if required. This approach can be understood under the prism of the "Discrete Tangent Universe Interpretation" or making an asymptotic limit, as the TUM.
+\item[{\bf ( III )}]{\bf Wavefunctions and Trajectories in Equal footing: } We could consider a scheme where {\bf part} of the quantum system is considered to be described by fluid elements in $\R^m$ in the Lagrangian-frame and {\bf part} of the system is a field in the Eulerian-frame. This will imply considering several waves $\{ \psi(\vec{x}_a, \vec{x}_b(\vec{xi}_b,t), t) \}_{\vec{\xi}_b}$ which will describe the state properties in a Lagrangian frame for the fluid elements $\vec{\xi}_b$ describing the axes $\vec{x}_b$, together with a description of the state properties in a {\bf Eulerian frame} for the other degrees. These are the so called {\bf conditional wave-functions}. Note that we will need to compute "a priori" the trajectories $\vec{x}_b(\vec{\xi}_b,t)$ that will describe the motion of the {\bf Lagrangian frame} elements of their degrees of freedom. It is a mixed approach between evolving a wave equation and evolving purely trajectory equations. If we wish to assign to it a preferred interpretation, possibly BM would be comfortable with this, since it would see the Eulerian degrees as the Pilot Wave itself. For this however, it would be necessary to define complementary conditional wavefunctions $\{ \psi(\vec{x}_a(\vec{\xi}_a,t), \vec{x}_b, t) \}_{\vec{\xi}_b}$, so as to get simulatneously, Bohmian trajectories (fully Lagrangian) and the pilot wave (which is acceptable in a fully Eulerian frame). Both trajectories and wavefunctions are "a priori".
+
+
+\item[\bf ( IV ) ]{\bf Only Trajectories: } We could view the quantum system not as a continuum, not as a continuous distribution of $\R^N$ point like fluid elements, but instead we will evolve many discrete particles in $\R^N$ that will feel a repulsive force among them acting on the configuration space of the system. Except for this configuration space interaction, the system will behave fully classically. The density will be computed as the agglomeration of trajectories in a histogram-like sense, or by computing the Jacobian of the system and the velocity field as a nearest neighbourgh average. Here the wavefunction will only be computed {\em a posteriori} if required and the trajectories will be "a priori". This approach can be understood under the prism of the "Discrete Tangent Universe Interpretation" or making an asymptotic limit, in the TUM.
 
 \end{enumerate}
-In reality, for all the interpretations all the approaches are equally valid in a computational sense, however, some interpretations would consider some of the approaches as mere mathematical tools, useful for calculations but nothing else. It is interesting to wonder however, why Orthodox physicists do not also consider other aspects of physics as "mere mathematical tools".
+Very importantly, note that for all the interpretations all these approaches are equally valid in a computational or mathematical sense. However, some interpretations would consider some of the approaches as mere mathematical tools, useful for calculations but nothing else. It is interesting to wonder however, why Orthodox physicists do not also consider other aspects of physics, like the concept of mass, or dark energy, or electrons themselves as "mere mathematical tools".
 
 
 \subsection*{ Panorama of the Methods We Can Study }
-\addcontentsline{toc}{subsection}{Panorama of the Methods We Can Study}
+\addcontentsline{toc}{subsubsection}{Panorama of the Methods We Can Study}
 
-The order in which the approaches were presented is also the order in which parallelization seems to be most attainable. It is known that evolving a full fluid or wavefunction of $N$ degrees of freedom  is a problem with exponentially increasing complexity with dimensions. This exponential barrier in time cannot be linearized if we do not apply any approximation (e.g. the Hermitian approximation) or if we do not use external knowledge about the system (e.g. knowing the eigenstates of the Hamiltonian of the system), or both things at once (the Truncated Born-Huang Expansion of the tensor product of conditional wavefunctions for a particle in a channel). However, we can distribute the computational complexity in parallel threads for which we allow cross-talk. If parallel thread communication has negligible overhead, we could in fact make the problem linear in time if parallelized exponentially. This could be the best-case scenario to face big problems with {\em ab initio} methods. 
+Quantum Mechanics is well known for its many body problem, where the number of operations needed to simulate its dynamics grows exponentially with the number of degrees of freedom $N$. This wall is unbreakable. However, we can deliver these operations in sequential time, thus leading to an exponentially bigger time complexity for simulating bigger quantum systems, or deliver them in parallel threads that can share information, in order to make the problem linearly scaling in time, at the cost of using exponentially more threads (in space)\footnote{Assuming always that the overhead of the thread cross talk does not grow exponentially with dimensions $N$}. The fully Eulerian approaches are typically solved in an exponential time (we will see some technical ways to avoid it), but trajectory based methods are naturally parallelizable, thus allowing us to put the many body problem almost entirely there. The thing is that, we cannot wait years for a computation, but we can always build bigger supercomputers with more parallel processors. Thus the interest on this tread-off.
 
-In the following sections we will formalize the equations used for each of the approaches, but for a first look-over, here are some of the main methods used to solve them numerically:
+There are still some techniques that try to make the exponential problem be linear by applying approximations to the equations (the Hermitian approximation, DFT etc.) or if we do not use external knowledge about the system (knowing the eigenstates of the Hamiltonian of the system, knowing the expected quantum correlations etc.)\footnote{Or both things at once, as we did in the Truncated Born-Huang Expansion of the tensor product of conditional wavefunctions for a particle in a channel}. These could also be useful even if they are not really generalizable.
+
+In the second part of the treatise, we will formalize the exact equations employed within each degree of freedom approach, and we will have the option to suggest numerical methods thereof. However, for an initial brainstorm, let us review here for each approach, some of the main numerical methods employed:
 \begin{enumerate}
-\item[\bf ( I )] {\bf Only or Mainly a Wavefunction}: There are lots of fixed grid methods, ranging from using naive finite differences to Crank Nicolson or Runge-Kutta Methods. Also, expressing the wavefunction in a certain function basis and then evolving the coefficients could be considered a method type. Then there are the Spectral and Pseudo-Spectral methods based on changing the Schrödinger Equation to other representations, like the momentum representation, involving the Fourier transform, related conceptually with the basis representation methods. 
+\item[\bf ( I )] {\bf Mainly a Wavefunction - Eulerian Picture}: There are lots of fixed grid methods, ranging from using naive finite differences to Crank Nicolson or Runge-Kutta Methods. Also, expressing the wavefunction in a certain function basis and then evolving the coefficients could be considered a kind of method. Then there are the Spectral and Pseudo-Spectral methods based on changing the Schrödinger Equation to other representations, like the momentum representation, involving the Fourier transform, related conceptually with the basis representation methods. 
 
-Except in the case where we know analytically the Hamiltonian eigenstates or some sub-sytem Hamiltonian eigenstates, in general the approach to the full wavefunction allows no escape from the exponential time barrier and are methods hard to be parallelized.
+Except in the case where we know analytically the Hamiltonian eigenstates or some sub-sytem Hamiltonian eigenstates, in general the approach to the Eulerian wavefunction allows no escape from the exponential time barrier and are methods hard to be parallelized.
 
-\item [\bf ( III )] {\bf Mainly Trajectories :} This approach basically consists on a dynamical grid of points that move according to the fluid flow. Each fluid element will know the evaluation of the relevant fields like the polar phase and magnitude of the wavefunction along the trajectory it traces. We will have ordinary differential equations ruling their motion, but some functions will need to be computed from the ensemble at each time. Particles encode the field at the points they are and at the same time, the values of the fluid they discover serve as feedback for them to know how to move according to the pilot wave. It is known in general as the family of Quantum Trajectory Methods (QTM), which was boosted by {\em Wyatt et al.} at the beginning of this century. It has essentially two main variations:
+\item [\bf ( II )] {\bf Mainly Trajectories - Lagrangian Picture :} This approach basically consists on a dynamical grid of points or fluid elements that move according to the fluid flow. Each fluid element will know the evaluation of the relevant fields like the polar phase and magnitude of the wavefunction along the trajectory it traces. Fluid elements encode the field at the points they are and at the same time, the values of the fluid they discover as an ensemble, serve as feedback for them to know how to move. It is known in general as the family of Quantum Trajectory Methods (QTM), which was boosted by {\em Wyatt et al.} at the beginning of this century. It has essentially two main variations, according to the law of motion for the fluid elements that we choose:
 \begin{enumerate}
-\item Driving the fluid elements or points of the dynamical grid  according to the joint information given by the field elements they drag. The trajectories are driven by the probability density flow lines, so they shape Bohmian trajectories. One of its problems is that Bohmian trajectories avoid nodal regions of the pilot wave, so the grid gets under-sampled or over-sampled for different regions in an uncontrolled manner. The second problem is that the grid gets very unstructured, which can be problematic to feedback the algorithm using the information of the state property that each element drags.
+\item Driving the fluid elements or points of the dynamical grid  according to the configuration-spatial gradient of the action as velocity field. If done so, the trajectories are driven by the probability density flow lines, so they shape Bohmian trajectories. One of their problems is that Bohmian trajectories avoid nodal regions of the pilot wave, so the grid of points gets under-sampled or over-sampled for different regions in an uncontrolled manner. At the same time this is an interesting property, since the mesh asa whole will follow the densest parts of the wavefunction. The second problem is that the grid gets very unstructured, which can be problematic to compute the spatial gradient of the action, or other properties they carry.
 
-\item Using adaptive grids is one of the main solutions to the fact that Bohmian trajectories avoid regions that could be of interest. It is based on writing the dynamic equations for what fluid elements perceive of the pilot wave if they follow a user-defined path instead of the fluid flow. For instance it can be chosen such that the fluid elements preserve certain monitor functions in each path, so the grid distorts itself to become denser around high fluctuation regions. Many additional methods like adding a viscosity or friction term are very useful here in order to avoid instabilizing the evolution due to spiky fluctuations of the quantum potential.
+\item Using adaptive grids. Choosing the velocity field of the fluid elements so as to trace custom trajectories designed by the user. For instance it can be chosen such that the fluid elements preserve certain monitor functions in each path, so the grid distorts itself to become denser around high fluctuation regions. Many additional methods like adding a viscosity or friction term are very useful here in order to avoid instabilizing the evolution due to spiky fluctuations of the quantum potential.
 \end{enumerate}
 
-Both methods have the problem that in order to compute the time evolution of fluid elements, configuration-spatial derivatives of the fields they drive are required. This means that the single value of the field they drive is not enough. In fact this is the reason by which it is necessary to simulate several many trajectroies in parallel with cross talk. In order to cope with this problem three approaches can be taken.
+Both methods have the problem that in order to compute the time evolution of the properties carried by the fluid elements, configuration-spatial derivatives $\pdv{}{x_k}$ of these fields they drive are required along the trajectories. This means that the single value of the field they drive is not enough to know their rate of change. This is the reason why it is necessary to simulate several trajectories in parallel with cross talk. In order to cope with this problem four approaches can be taken.
 
 \begin{enumerate}
-\item Using the values of the field over the trajectories as an unstructured grid, fit a linear sum of analytic functions (by maximum likelihood, least squares, gradient descent etc.). This sum can be analytically derivated and integrated or else numerically. Alternatively a K nearest-neighbor interpolation could also be very useful, which would avoid the need to fit. Just evaluate the points of interest. This is a very interesting method but makes the time evolution more costly than what initially looked like.
+\item Using the values of the field over the trajectories as an unstructured grid, fit a linear sum of analytic functions (by maximum likelihood, least squares, gradient descent etc.). This sum can be analytically derivated and integrated or else numerically. Alternatively a K nearest-neighbor interpolation could also be very useful, which would avoid the need of function fitting. Using the unstructured grid in the Eulerian frame for computing spatial derivatives is the simplest way to go but makes the time evolution more costly than what initially looked like.
 
-\item Generate dynamical equations for the derivatives of the required field quantities. Then evolve the derivatives of the fields along the trajectories too. This increases the number of partial differential equations in play, but allows to evolve {\bf a single trajectory} fully independently of the rest. Conceptually it seems the most interesting idea for a Bohmian. However, it turns out that when trying to get the equations governing the dynamics of those derivatives, infinite chains of equations coupling higher derivatives with lower are obtained. Thus, approximating a certain maximum degree of them will be required. We will review this in the following section more in detail.
+\item Generate dynamical equations for the derivatives of the required field quantities. Then evolve the derivatives of the fields along the trajectories too. This increases the number of partial differential equations in play, but allows to evolve {\bf a single trajectory} fully independently of the rest. Conceptually it seems the most interesting idea for a Bohmian. However, it turns out that when trying to get the equations governing the dynamics of those derivatives, infinite chains of equations coupling higher derivatives with lower are obtained. Thus, approximating a certain maximum degree of them will be required.
 
-\item Knowing the problem, approximate shapes can be obtained as {\em ansatz} for those derivatives of the fields (for the quantum potential etc.).
+\item Convert the derivatives with respect to configuration-space $\vec{x}$ variables to derivatives with respect to label space $\vec{\xi}$. If we choose the initial grid to be a regular Cartesian grid, then these derivatives will be in a regular grid and will be simple to compute using local finite differences. To do this change we will require the knowledge of the Jacobian matrix for the transformation $\vec{x}(\vec{\xi},t)$ and its determinants. The time evolution will still get more costly than what initially looked like.
+
+
+\item Knowing the problem a priori, approximate shapes can be obtained as {\em ansatz} for those derivatives of the fields (for the quantum potential etc.).
 
 \end{enumerate}
-All of these methods are in general very parallelizable. Each trajectory can be evolved in parallel if we allow cross-talk in each time. It is possibly the only case in which we can achieve fully parallelizing the many body problem.
+All of these methods are in general very parallelizable allowing cross-talk in each time. It is possibly only here, in the fully Lagrangian picture, that where we can achieve full parallelization of the many body problem.
 
-\item [\bf ( II )] {\bf Wavefunctions and Trajectories in Equal Footing :} We will have that part of the problem to be solved (the Eulerian one) is similar to case (I) and part (the Lagrangian one) similar to case (III). Therefore, we will have the freedom to use one of the methods mentioned in (I) to solve the partial differential equations of the wavefunctions, mixed with the approaches used for (III) in order to account for derivatives in the axes where we only consider discrete trajectories. We will have control over the degree at which we place more or less weight into one or the other problem. Thus, we could arrive at a compromise that has all the main advantages of both methods but perhaps less of their problems.
+\item [\bf ( III )] {\bf Wavefunctions and Trajectories in Equal Footing - Part Lagrangian, Part Eulerian Picture:} We will have that part of the problem to be solved (the Eulerian one) is similar to case (I) and part (the Lagrangian one) similar to case (II). Therefore, we will have the freedom to use one of the methods mentioned in (I) to solve the partial differential equations of the Eulerian parts, mixed with the approaches used for (III) in order to account for derivatives in the axes where we only consider Lagrangian elements. We will have control over the degree at which we place more or less weight into one or the other problem. Thus, we could arrive at a compromise that has all the main advantages of both methods but ideally less of their problems.
 
 Following the discussion in the previous section, the trajectories could be chosen to be Bohmian, if they follow the fluid flow, but could also be chosen to be otherwise, in order to achieve an adaptive grid that explores the regions of configuration space we are most interested on.
 
 Following the same ideas, we will be able to solve the derivative problem in several ways:
 \begin{enumerate}
-\item Evolve many of these wavefunctions with coupled trajectories in order to be able to rebuild the interesting parts of the Eulerian fields necessary to move the trajectories. This could be done by fitting functions or using nearest neighbor approaches. Exponentially less wavefunctions will be required to be computed for increasing dimensionality of the eulerian part of the wavefunctions. However, they will also be each time more complex to compute. On the other hand, expoentially more will be needed for decreasing dimensionality.
+\item Evolve many of these CWF-s with coupled trajectories in order to be able to rebuild the derivatives in the Eulerian frame necessary to move the trajectories. This could be done by fitting functions or using nearest neighbor approaches. Exponentially less CWF-s will be required to be computed for increasing dimensionality of their Eulerian part. However, they will also be each time more complex to compute. On the other hand, exponentially more CWF-s will be needed for decreasing dimensionality of their Eulerian degrees.
 
-\item Generate dynamical equations for those derivatives in the trajectory axes that can be evolved too along the trajectories. This would allow to evolve a single conditional wavefunction "exactly". It turns out that an infinite chain of equations will emerge here too.
+\item Generate dynamical equations for those derivatives in the trajectory axes, that can be evolved as well along the trajectories. This would allow to evolve a single conditional wavefunction "exactly". It turns out that an infinite chain of equations will emerge here too.
 
-\item Knowing the problem, approximate the problematic terms at the theoretical level, ad hoc for the given system. This is what we tried so far.
+\item Convert the derivatives with respect to undesired Eulerian degrees $x_k$ into derivatives with respect to label space or Lagrangian degrees $\xi_j$. If we choose the Lagrangian elements to shape a regular grid at the initial time, then we will always have the option to compute derivatives in a regular grid using the information of the different CWF-s.
+
+\item Knowing the problem, approximate the problematic terms at the theoretical level, {\em ad hoc}, for the given system. This is what we tried so far.
 \end{enumerate}
 
-Clearly, approach II is the generalization of approach I and III, those last being the two extreme cases. Condition it all or condition nothing.
+Clearly, approach III is the generalization of approach I and II, those last being the two extreme cases. Condition it all or condition nothing.
 
-\item [\bf ( IV )] {\bf Only Trajectories:} In this approach, we can choose a large enough number of configuration space trajectories and evolve them using classical mechanics, introducing the necessary repulsive potential between all the trajectories. If the number is large enough, then the theory will be a good enough approximation of continuum quantum mechanics. The point is that there will be no need for the trajectories to "carry" any information about any wave. They are ontologically sufficient to describe quantum phenomena. If we need information of quantum nature, we just need to see the wavefunction as the ensemble limit of the trajectories. From the moving histogram we can fit a density function and the velocities will provide the action field likewise.
+\item [\bf ( IV )] {\bf Only Trajectories:} In this approach, we can choose a large enough number of configuration space trajectories and evolve them using classical mechanics, introducing the necessary repulsive potential between all the trajectories as to replicate Quantum Dynamics. If the number is large enough, then the theory will be a good enough approximation of continuum quantum mechanics. The point is that there will be no need for the trajectories to "carry" any information about any wave. They are ontologically sufficient to describe quantum phenomena. If we need information of quantum nature, we just need to see the wavefunction as the ensemble limit of the trajectories. From the moving histogram we can fit a density function, or else use the Jacobian determinant of the trajectory mapping function to approximate it, and the velocities will provide the action field likewise.
 
-This method is perhaps as parallelized as we could get the problem. It would require cross talk to evolve the coupled system of ordinary differential equations though, but could perhaps be efficiently driven.
+It is worth noting, that this method is also highly parallelizable if we allow cross-talk.
 
 \end{enumerate}
 
@@ -284,20 +297,19 @@ This method is perhaps as parallelized as we could get the problem. It would req
 \newpage
 
 \begin{kapituloBerria}[Part B]
-The Equations and Techniques
-\addcontentsline{toc}{section}{Part B: The Equations and Techniques}
+The Equations of Quantum Dynamics
+\addcontentsline{toc}{section}{Part B: The Equations of Quantum Dynamics}
 \end{kapituloBerria}
 
 \fancyhead[R]{\em The Equations for Quantum Dynamics }
 \fancyhead[L]{I . Fully Eulerian Equations}
-\section*{Section 3: The Equations for Quantum Dynamics }
-\addcontentsline{toc}{section}{Section 3: The Equations for Quantum Dynamics}
-\section*{I . Fully Eulerian Equations: Orthodox QM }
-\addcontentsline{toc}{section}{I . Fully Eulerian Equations: Orthodox QM }
+
+\section*{I . Fully Eulerian Equations}
+\addcontentsline{toc}{subsection}{{\bf I . Fully Eulerian Equations }}
 Given a closed quantum system of $N$ degrees of freedom in a potential field $U(x, t)$, with $x\in\R^N$, described by a complex wavefunction with real support $\psi(x,t)$, the time evolution of the system is governed by the Schrödinger Equation:
 
-\subsection*{(I.a) The Full Schrödinger Equation}
-\addcontentsline{toc}{subsection}{(I.a) The Full Schrödinger Equation}
+\subsection*{(I.a) The Schrödinger Equation}
+\addcontentsline{toc}{subsubsection}{{\bf (I.a)} The Schrödinger Equation}
 \begin{equation}\label{SE}
 i\hbar \pdv{\psi(x,t)}{t} = \qty[-\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(x,t)]\psi(x,t)
 \end{equation}
@@ -309,8 +321,8 @@ Due to the unitary nature of the Schrödinger Equation's time evolution, the nor
 
 By the Born Rule axiom of Orthodox QM, the quantity $\psi^\dagger\psi=|\psi|^2=:\rho(x,t)$ is the probability density that a spatial observation of the degrees of freedom $x$ follows.
 
-\subsection*{(I.b) The Continuity + The Hamilton-Jacobi Equations}
-\addcontentsline{toc}{subsection}{(I.b) The Continuity + The Hamilton-Jacobi Equations}
+\subsection*{(I.b) The Continuity and The Hamilton-Jacobi Equations}
+\addcontentsline{toc}{subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}
 Writing the wavefunction in polar form $\psi(x,t)=R(x,t)exp(iS(x,t)/\hbar)$ with $R(x,t)$ and $S(x,t)$ real fields (note that $|\psi|^2=R^2=:\rho(x,t)$), it is easy to see that the Schrödinger Equation is simply coupling in a single complex equation the following pair of real partial differential equations:
 \begin{equation}\label{CE}
 \pdv{}{t} \rho(x,t)=-\sum_{k=1}^N \pdv{}{x_k}\qty( \rho(x,t)\frac{1}{m_k}\pdv{}{x_k} S(x,t) )
@@ -377,9 +389,9 @@ Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty[\qty(\pdv{C(x,t)}{x_j})^2+\pdv[2]
 The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(x,t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space).
 
 \subsection*{(I.c) Basis Set Expansions}
-\addcontentsline{toc}{subsection}{(I.c) Basis Set Expansions}
+\addcontentsline{toc}{subsubsection}{{\bf (I.c)} Basis Set Expansions}
 \subsubsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
-\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
+%\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
 
 If we shorthand the "main" degrees of freedom $x=(x_1,..,x_m)$ and we set the transverse degrees of freedom $y=(x_{m+1},...x_N)$, we can decompose the full Hamiltonian as:
 \begin{equation}
@@ -422,7 +434,7 @@ Which is a coupled linear partial differential equation for the $m$ dimensional 
 If the eigenstates are known analytically, then the problem has a complexity only due to the $m$ spatial dimension coefficients $\Lambda^j(x,t)$, which can range from $m=0$ (and $N-m=N$) to $m=N$ (and $N-m=0$), respectively: only coefficients that vary in time (and eigenstates of the full Hamiltonian) and the full Schrödinger Equation (with no eigenstate).
 
 \subsection*{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
-\addcontentsline{toc}{subsubsection}{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
+%\addcontentsline{toc}{subsubsection}{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
 
 Let us retake the equation \eqref{XabEq} and its associated formalism. Remember we considered that $x\equiv (x_1,...,x_m)$ and $y\equiv (y_{m+1},...,y_N)$. Now, if we note the following identity that comes from developing the coupling term definitions \eqref{S} and \eqref{F}:
 \begin{equation}
@@ -500,7 +512,7 @@ $$
 The usefulness of this coupled system will become evident when we treat the transversal degrees of freedom $y$ in a Lagrangian frame, since it will allow us to compute a single conditional wavefunction using a linear system of equations.
 
 \subsubsection*{(I.c.2) Arbitrary known orthonormal Base Expansion}
-\addcontentsline{toc}{subsubsection}{(I.c.2) Arbitrary known orthonormal Base Expansion}
+%\addcontentsline{toc}{subsubsection}{(I.c.2) Arbitrary known orthonormal Base Expansion}
 
 We will build here the analogue of the generalized method \eqref{XabEq} of the previous section. Using the notation $x=(x_1,..,x_m)$ and $y=(x_{m+1},...,x_N)$, we will assume we know an arbitrary orthonormal set of functions $\{ f^j(y,t) \}_j$ spanning the space $y$. They need not depend on time, but for generality we will consider so (the difference will be that the coupling terms would simplify). For the completeness of the basis for the subspace, we could find coefficients $\Lambda^j(x,t)$ such that:
 \begin{equation}
@@ -533,11 +545,11 @@ In this case though, we will have lost the possibility to study the adiabaticity
 
 
 \subsection*{(I.d) Dynamic Equations for Partial Derivatives}
-\addcontentsline{toc}{subsection}{(I.d) Dynamic Equations for Partial Derivatives}
+\addcontentsline{toc}{subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}
 In the next section, we will find the advantage of having dynamic equations not only for the main waves $\psi$ or $S$ and $R$, but also for their derivatives in space.
 
-\subsubsection*{(I.d.1) For the Wavefunction}
-\addcontentsline{toc}{subsubsection}{(I.d.1) For the Wavefunction}
+\subsubsection*{(I.d.a) For the Wavefunction}
+%\addcontentsline{toc}{subsubsection}{(I.d.a) For the Wavefunction}
 If we take the Schrödinger Equation \eqref{SE} and partially derivate it in $x_k$ at each side and we assume the wavefunction is regular enough in all its variables $t$, $\vec{x}$ in order to use Schwartz's Law for crossed partial derivatives, we get:
 \begin{equation}
 i\hbar \pdv{}{t}\qty[\pdv{}{x_k}\psi(x,t)] = \sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}\qty[\pdv{}{x_k}\psi(x,t)]+U(x,t)\pdv{}{x_k}\psi(x,t) + \psi(x,t)\pdv{}{x_k}U(x,t)
@@ -577,8 +589,8 @@ What we could do, in order to avoid having to solve an endless sequence of parti
 
 Clearly, in the Eulerian frame using these equations makes almost no sense, since each of the $psi_{(j_1,...,j_N)}$ has actually $N+1$ degrees of freedom, so we are not getting any good, but their use will become more suggestive when we go into the Lagrangian frame.
 
-\subsubsection*{(I.d.2) For the Density and Action}
-\addcontentsline{toc}{subsubsection}{(I.d.2) For the Density and Action}
+\subsubsection*{(I.d.b) For the Density and Action}
+%\addcontentsline{toc}{subsubsection}{(I.d.b) For the Density and Action}
 
 Doing the same for the Hamilton-Jacobi and the Continuity Equations \eqref{HJE} and \eqref{CE}, will turn out to be more dramatic. Due to their non-linear nature, each time higher derivative terms will emerge. Again we will have an infinite chain of partial differential equations.
 
@@ -621,10 +633,10 @@ Again, the use of this will become more clear in the Lagrangian frame.
 
 \fancyhead[L]{III . Fully Lagrangian Equations}
 \section*{III . Fully Lagrangian Equations: Bohmian QM}
-\addcontentsline{toc}{section}{III . Fully Lagrangian Equations: Bohmian QM}
+\addcontentsline{toc}{subsection}{\bf II . Fully Lagrangian Equations: Bohmian QM}
 Given we parametrize the fluid elements with labels $\vec{\xi}\in\R^N$ referring to their initial position $\vec{\xi}=x(t_0, \vec{\xi})$, we define the set of trajectories of the continuum as $\vec{x}(t;\vec{\xi}) \equiv \vec{x}^\xi(t)$. We will then denote by $\vec{x}_b=(x_1,...,x_{a-1}, x_{a+1},...,x_N)$ the set of degrees of freedom excluding the $a-th$ $x_a$.
-\subsection*{(III.a) The Schrödinger Equation}
-\addcontentsline{toc}{subsection}{(III.a) The Schrödinger Equation}
+\subsection*{(II.a) The Schrödinger Equation}
+\addcontentsline{toc}{subsubsection}{{\bf (II.a)} The Schrödinger Equation}
 If we evaluate the position in the Lagrangian frame $\vec{x}(t;\vec{\xi})$ in the Schrödinger Equation \eqref{SE}:
 \begin{equation}
 i\hbar \pdv{}{t}\psi(\vec{x}^\xi(t),t)=-\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}+U(\vec{x}_b^\xi(t),t)\psi(\vec{x}^\xi(t),t)
@@ -663,359 +675,15 @@ A very interesting alternative that would allow us to evolve a single fluid elem
 
 It would also be interesting to write down equation \eqref{KinAdv} in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$, which we can make sure it will be a regular Cartesian mesh. We will explore this option as well in a coming sub-section. 
 
-\subsubsection*{(III.a.1.1) Dynamics of Partial Derivatives}
-\addcontentsline{toc}{subsubsection}{(III.a.1.1) Dynamics of Partial Derivatives For the Wavefunction}
-
-If we go back to the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, we will notice that there is no partial derivative with respect to space $x_k$ in any place. This means, we can directly evaluate $x=x(\xi,t)$ by first noting that by the chain rule:
-\begin{equation}
-\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \dv{f(x(\xi,t),t)}{t}-\sum_{s=1}^N \pdv{f(x,t)}{x_s}\Big\rvert_{x_s(\xi,t)}\pdv{x(\xi,t)}{t}
-\end{equation}
-In the notation we defined in \eqref{defPdv}, we saw $\pdv{f(x,t)}{x_s}=f_{(0,...,1,...,0)}(x,t)$ (with the array full of 0-s except for a 1 in the $s$-th position). Then:
-\begin{equation}\label{matrialTimePdv}
-\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
-\end{equation}
-This would leave \eqref{infchain.SE} in the Lagrangian frame as:
-\begin{equation}\label{infchain.SE}
-i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+
-\end{equation}
-$$
-+\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
-$$
-where all the functions have arguments $(\xi,t)$.
-
-This is an infinite system of coupled linear differential equations. Assuming that at a certain $J$, $\pdv[J]{\psi(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for all $k$, we would then have $J^N$ equations. Doing this approximation, we are assuming that the wavefunction in the immediate locality of the fluid element has a roughly constant derivative of $J$-th order. Contrary to the Eulerian case, we are not assuming this for the whole configuration space, which might improve the approximation. The best point about this mehtod is that this equation system would allow us to compute the wavefunction and trajectory of a {\bf single} fluid element $\xi$! With no need to know the partial derivatives in configuration-space $x_k$, there is no need to couple other trajectories to this one.
-
-Certainly, the main problem of this method will be that we will need to choose the truncation $J$, which if chosen to be too small, would make the trajectory blind to nodal points and fluctuating regions that are not in its immediate vicinity, since we would be assuming that high order curvatures around the trajectory are small, when in reality they should influence the trajectory.
-
-
-
-\subsubsection*{(III.a.1.2) Partial Derivatives relative to the Labels}
-\addcontentsline{toc}{subsubsection}{(III.a.1.2)Partial Derivatives relative to the Labels}
-Clearly one of the main problems with the Lagrangian frame is that the fluid-elements move in directions that end up unstructuring the initial mesh, which could have been a regular Cartesian mesh at the beginning, but not in the next time iterations. To solve this, what we could do is convert the partial derivatives in the configuration-space Eulerian positions $x_k$ into partial derivatives in the label configuration-space positions $\xi_j$, using the fact that since we are evolving trajectories we have knowledge of the function $\vec{x}(\vec{\xi},t)$. As an example, lets analyse how we could compute $\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ for a function $f$ for which we want to know the $x_k$ derivative fora given trajectory $\vec{\xi}$. By the chain rule:
-\begin{equation}
-\pdv{f(\vec{x},t)}{x_k}=\dv{f(\vec{\xi}(\vec{x},t),t)}{x_k}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j}\Big\rvert_{\vec{\xi}(\vec{x},t)} \pdv{\xi_j(\vec{x},t)}{x_k}
-\end{equation}
-which can be evaluated at $\vec{x}=\vec{\xi}(\vec{x},t)$ to get:
-\begin{equation}
-\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
-\end{equation}
-We see that we can freely change the derivative in $x_k$ by derivatives in $\xi_j$ if we also know how to compute $\pdv{\xi_j(\vec{x},t)}{x_k}$, which are the elements of the Jacobian matrix of $\vec{\xi}(\vec{x},t)$. If we attempt to directly compute them, we immediately acknowledge that these derivatives are still in an unstructured grid. However, as we proved in equation \eqref{inverse}, we have that the Jacobian matrix $D_x \vec{\xi}(\vec{x},t)$ where the element in row $j$ and column $k$ is $\pdv{\xi_j(\vec{x},t)}{x_k}$, is the inverse of the Jacobian matrix $D_\xi \vec{x}(\vec{\xi},t)$, the entries of which are of the shape $\pdv{x_j(\vec{\xi},t)}{\xi_k}$. Observe that the entries of this last Jacobian matrix can actually be computed in a regular grid if we chose the label space to be so, by just knowing the trajectories of the fluid elements! Therefore, if we first compute the elements $\pdv{x_j(\vec{\xi},t)}{\xi_k}$ of the matrix $D_\xi \vec{x}(\vec{\xi},t)$ and then compute the inverse matrix with any possible method, we will have the computed the values $\pdv{\xi_j(\vec{x},t)}{x_k}$ in a structured grid.\\
-
-A possible way to do this would be by using the inverse matrix theorem. Which can be summerized as follows. Let $A$ be an $N\cross N$ invertible (non-singular) matrix. Then:
-\begin{itemize}
-\item Its $i,j$ {\bf minor}, which we will note by $Min(A)_{ij}$, is the $(N-1)\cross (N-1)$ matrix obtained by deleting row and column $j$.
-\item Its $i,j$ {\bf cofactor}, which we will note by $Cof(A)_{ij}$, is: $(-1)^{i+j}det\qty(Min(A)_{ij})$.
-\item Its inverse matrix is:
-\begin{equation}
-A^{-1}=\frac{1}{det(A)} \begin{pmatrix}
-Cof(A)_{11} & Cof(A)_{21}&\cdots& Cof(A)_{N1}\\
-Cof(A)_{12} & Cof(A)_{22}&\cdots& Cof(A)_{N2}\\
-\vdots & \vdots & \ddots & \vdots \\
-Cof(A)_{1N} & Cof(A)_{2N}&\cdots& Cof(A)_{NN}\\
-\end{pmatrix}
-\end{equation}
-Thus, if we denote the $i,j$ element of $A^{-1}$ as $(A^{-1})_{ij}$, we have that:
-\begin{equation}
-(A^{-1})_{ij} = (-1)^{j+i}\ det\qty(Min(A)_{ji} )
-\end{equation}
-\end{itemize}
-Therefore, we have that:
-\begin{equation}
-\pdv{\xi_i(\vec{x},t)}{x_j}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \frac{ (-1)^{i+j}}{det \qty(D_{\xi} \vec{x}(\vec{\xi},t))}\cdot det \qty(D_{\xi} \vec{x}(\vec{\xi},t)\textit{ erasing the row and column of }\pdv{x_j(\vec{\xi},t)}{\xi_i} )
-\end{equation}
-For example in $N=1$ this means in particular that:
-\begin{equation}
-\pdv{\xi(x,t)}{x}=\frac{1}{\pdv{x(\xi,t)}{\xi}}
-\end{equation}
-In $N=2$:
-\begin{equation}
-\begin{pmatrix}
-\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} \\
-\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2}
-\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
-\pdv{x_2}{\xi_2} & - \pdv{x_1}{\xi_2} \\
--\pdv{x_2}{\xi_1} & \pdv{x_1}{\xi_1
-} 
-\end{pmatrix}
-\end{equation}
-In $N=3$:
-\begin{equation}
-\begin{pmatrix}
-\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_1}{x_3} \\
-\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_2}{\xi_3}\\
-\pdv{\xi_3}{x_1} & \pdv{\xi_3}{x_2} & \pdv{\xi_3}{\xi_3}
-\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_3}-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_2}- \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_2}\pdv{x_2}{\xi_3}-\pdv{x_1}{\xi_3}\pdv{x_2}{\xi_2} \\
-
-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_1}-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_3}- \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_3}\pdv{x_2}{\xi_1}-\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_3} \\
-
-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_2}-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_1}- \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2}-\pdv{x_1}{\xi_2}\pdv{x_2}{\xi_1} \\
-
-\end{pmatrix}
-\end{equation}
-where $J$ is the {\bf signed} Jacobian determinant of $\vec{x}(\vec{\xi},t)$.\\
-
-Then, in any of the differential equations we develop that contain Lagrangian degrees of freedom we will be able to do the following changes and similar ones:
-\begin{equation}
-\sum_{a=1}^N \pdv{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \sum_{a=1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}
-\end{equation}
-or for the Laplacian:
-\begin{equation}
-\sum_{a=1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}]
-\end{equation}
-Taking into account that for each fluid element at each time we will need to compute all those partial derivatives (even if they will be in a regular grid), determinants, products and sums, it is clear that the approach of changing the differential equations to label space is not a miracle, but it is a possible one that can be used at least for computing some of the derivatives.
-
-
-\subsubsection*{(III.a.1.3) Adaptive Grid Equations}
-\addcontentsline{toc}{subsubsection}{(III.a.1.3) Adaptive Grid Equations}
-If for a moment we forget about evolving Bohmian trajectories, because we are interested on the values of $S,R$ alone at each time, we could force the fluid elements to remain fixed (and go back to the Eulerian frame), or instead, we could manipulate the trajectories so as to get an adaptive grid that obeys our desires. For instance, we could force the trajectories to get more agglomerated around very spikey regions and to go away from very smooth regions, even force them to never avoid nodal regions.
-
-Note that the decision to define the velocity fields for the fluid element trajectories to be the derivatives of the phase $S$ was quite arbitrary from the numerical standpoint, and was only supported by the analogy with classical mechanics. Alternatively, we could have forced the velocity field to follow a certain monitor function that depends on the state of the wavefunction, but in a custom way. Even if the resulting trajectories would lack interpretability within the Bohmian or the TUM vision, this can be computationally very interesting. In fact, once the fields were evolved along these custom trajectories, we could still compute Bohmian trajectories {\em a posteriori} by using the phase values of the moving mesh, if this was of any particular interest.
-
-In order to avoid confusion we will use the term "mesh element" to designate fluid elements the trajectories of which are evolved using laws other than the Bohmian probability density flow lines \eqref{ImpBohm}. We will reserve the term "fluid element" to designate the ones that are evolved following the density of the fluid. In fact, the term adaptive grid or moving mesh is used in general to denote the fact that these fluid elements now, away from having a clear ontological nature are useful as components of a mesh that evolves in time adapting to the particular state of the system.
-
-Let us suggest three different appraches we could follow in alternative definitions of the trajectories, inspired by the ones exposed by Ref. \cite{Wyatt}.
-
-\subsubsection*{\bf (\textalpha) Leave the trajectories still}
- We could directly fix $\vec{x}(t;\vec{\xi})=\vec{\xi}\ \forall t$, meaning that the velocity field for the mesh elements would be null $\dv{}{t}\vec{x}(t;\vec{\xi})=0\ \forall t$. This would make the Advective correlation potential \eqref{Adv} null, and since the grid of fluid elements would preserve its initial regularity, the approach would be identical to a fully Eulerian one. That is, solving the Lagrangian Schrödinger Equation \eqref{KinAdv} would be the same as trying to solve the Eulerian Schrödinger Equation \eqref{SE}. Perhaps an advantage of acknowledging each mesh element can be seen as an independent entity is that it could suggest a Schrödinger Equation solver that could be way more parallelizable. Just like what the standard QTM suggests, one could evolve the value of the quantum fields at each mesh position in parallel, then allow a cross talk to compute the partial derivatives in configuration-space and then again a parallel time step.
-
-\subsubsection*{\bf (\textbeta) Make a moving mesh/support preserving grid spacing}
-Once defined a regular grid of mesh elements, regular in the sense that there is an equal spacing between the grid points, we could allow the mesh to move along the wavefunction but preserving the equal spacing of the grid, which allows an efficient and straightforward computation of the spatial derivatives. To do this we could do the following at each time step after computing the value of the quantum fields at each grid point:
-\begin{enumerate}
-\item Take the vertices of the convex hull of the mesh, e.g. the corners of the parallelogram that the grid supposes. Treat them like Bohmian trajectories and evolve them to their following position.
-\item Compute an equispaced grid inside this domain with the same number of mesh points and geometry as the previous grid. Knowing the positions where the new mesh points should be, compute the velocity of each old mesh point to arrive there. If for example, we are using a simple Euler method to evolve the trajectories, use: $\dv{}{t}x_k(\xi,t_{j})=\frac{x_k(\xi,t_{j+1})-x_k(\xi,t_{j})}{t_{j+1}-t_j}$.
-\item Compute the spatial derivatives at each grid point, using standard equispaced mesh methods.
-\item Employing the computed velocity and spatial derivatives, compute the next value of the fields on each mesh point using the time evolution equations for them.
-\end{enumerate}
-Note how this would allow the mesh to dynamically move wherever most of the probability density goes, avoiding the need to fix a giant grid as a fixed scenario where the wavefunction is restricted to stay. It does not only reduce the number of necessary points to map a scenario (the grid is always more or less dense wherever the wavefunction is most probable), but it also allows the mesh to avoid getting to small or too big when the wavepacket contracts or expands (Bohmian trajectories inflate or deflate). 
- 
-In a $N>1$ the method is not as straightforward as it might seem, since the mesh looses the straight angles between the edges of the mesh domain: say, in 2D, the rectangle mesh becomes a parallelogram. This is a problem in that now there are more "grid boundaries" for the computation of partial derivatives in space. However, we could make slight modifications to the method in order to make the mesh move, contract and dilate with the probability density, but also preserve the angles at the vertices.
-
-If we did so, we could actually use any sort of regular grid method (like matrix methods) to evolve partial differential equations, where we would only need to change the boundary conditions at each time.
-
-In any case, this method solves the problem of the unstructuring grid (for computing partial derivatives) that Bohmian mesh elements had, with the advantage that the grid still moves along the regions of interest.
-
-\subsubsection*{\bf (\textgamma) Move the mesh using arbitrary monitor functions } 
-One of the typical problems with the methods relying on Bohmian trajectories to guide the mesh elements is that, even if these trajectories typically follow the interesting parts of configuration-space where there is appreciable density, in reality, the quantum potential repels them from regions with spiky densities, both from nodal points and big agglomerations. This means that we will end up having almost no mesh elements in the regions of configuration-space where nodes start to appear, among others. These regions however, are vital not only because they might have theoretical interest, but because the time evolution of the fluid elements depends on spatial derivatives in all directions, and those regions can highly influence them: if we have no representatives from those regions, we will not have enough information to allow a proper time evolution. In order to face this problem, we could force the trajectories to be attracted by regions with high curvature.
-
-\subsubsection*{(\textgamma.1) The equidistribution principle}
-For doing this, a standard approach is to force the mesh elements to get into positions that equalize the integral of a positive monitor function $M(x,t)>0$ in each grid-cell, the so called {\em equidistribution principle}. In $N=1$ the intuition is immediate. It is to find at each time $t$, the grid points $\{x^j\}_{j=1}^m$ that satisfy:
-\begin{equation}
-\int^{x^{j+1}}_{x^j} M(x,t) dx =C \quad \forall j
-\end{equation}
-for a fixed constant $C$. If we discretize the integral, we get:
-\begin{equation}\label{discEq}
-M_j(t)\cdot (x^{j+1}-x^j)=C \quad \forall j
-\end{equation}
-where $M_j(t)$ could be the average of the monitor function evaluated at the edges of the grid-cell, or rather the mid-point interpolated point. We can readily see that if for example the monitor $M$ is chosen to be $M(x,t)=|\pdv{\rho(x,t)}{x}|$, then the bigger the curvature of the density, the denser the grid will become, and viceversa. This would adapt the grid to the curvature of the density, with a higher concentration of mesh points in the most spikey regions of the density. See Figure \ref{fig:equid} to get the full intuition. We should alternatively choose the monitor function to be $M(x,t)=\varepsilon+|\pdv{\rho(x,t)}{x}|$ for some $\varepsilon>0$, to avoid an infinite separation wherever the density is flat. We could also adapt the grid to any other positive monitor of the system like $M(x,t)=1+|\pdv{S(x,t)}{x}|$ etc.
-
-Equation \eqref{discEq} are in reality $m-1$ equations with $m-2$ unknowns, since the boundaries of the grid $x_1, x_m$ are fixed by us (rather being still or following a certain trajectory, for instance a Bohmian one\footnote{This would allow the grid as a whole to follow the region of interest of the wave-function}). This means, we can solve it in two ways: 
-\begin{itemize}
-\item With an interpolation of the monitor by a sum of analytic functions, we can find the exact best grid. This would make the systm of equations non-linear however, and would add the complication of the interpolation.
-
-\item If we grossly approximate the values $M_j(t)$ as the value of the monitor function at say, the left corner of the interval, we could iteratively find the right corners of each grid cell, since the constant $C$ would be fixed.
-\end{itemize}
-
-Any of the two would define the positions of the grid elements such that they allow the equidistribution of the monitor function in each cell. We would then just need to compute the grid element velocities necessary for this using for instance $v^j(t)=\frac{x^j(t+\Delta t)-x^j(t)}{\Delta t}$, where $x^j(t)$ is the position of the mesh element at the last known time and $x^j(t+\Delta t)$ is the position of the mesh element in the following time. The velocities are essential for the computation of the Lagrangian frame dynamical equations.
-
-This approach seems good so far, however, as we try to generalize it to an arbitrary $N$ we will note that it is actually a rather too complicated numerical problem to solve.
-
-A grid-cell for an arbitrary $N$ is the unit discretized volume element, each discrete N-volume chunk in which the considered volume of configuration-space is partitioned. At the beginning, each of them will be a parallelotope, but as we move around the vertices, the cells can loose their regular shape. This would make the discretization of the volume integral in each grid-cell very complicated, so we will restrict ourselves to the case in which we force the grid to be made of parallelotopes. Once fixed that, we can try to generalize the equidistribution idea, by first fixing the boundary grid points (leaving them just fixed or moving them according to some other criterium) and then look for the inside grid points that allow the following integral to be constant:
-
-\begin{equation}
-\int_{x_1^j}^{x_1^{j+1}}\cdots \int_{x_N^k}^{x_N^{k+1}} M(\vec{x},t) dx_1 \cdots dx_N=C \quad \forall j\cdots \forall k
-\end{equation}
-If we discretize the integral we get:
-\begin{equation}\label{monitor}
- M_{j,...,k}(t)\cdot (x_1^{j+1}-x_1^j)\ \cdots (x_N^{k+1}-x_N^k) =C \quad \forall j\cdots \forall k
-\end{equation}
-
-Where $M_{j,...,k}(t)$ is the local average of the monitor function evaluated at the vertices of the parallelotope-cells. Forcing the parallelotope shape for the unit cells provides us with the following. Each axis will be partitioned in, say, $m$ points, meaning we will have $m^N$ mesh elements. We have about $(m-1)^N$ volume elements, so by fixing the boundaries of the region as we did in $N=1$, we can get the solution for the position of the new grid-elements. Once again, we will be able to do this by interpolating the monitor function with analytic functions and then solving the equation system, or doing some gross approximation and solving in chain the equations.
-
-We should note though, that this approach is not the one generating the most suitable grid, since we do not allow each mesh element to move in arbitrary directions. If we did, note that the volume elements would get shapes the computation of the volume of which is not immediate. In addition, we realize that now each mesh element can move in $N$ directions, meaning we will still have $(m-1)^N$ mesh-cells (if we initially discretize each axis in $m$ points) but there will be $m^N$ nodes each with $N$ numbers to fix. A total of $Nm^N$ unknowns. We should subtract the fixed positions of all the fixed boundary grid-points (which will in principle be chosen to be hyperplanes). However, we still see that there are more unknowns than equations. In addition, the equations are non-linear with no remedy and we must make an $N$ dimensional interpolation of the monitor function. It is this why this is not the way employed in the literature.
-
-\subsubsection*{(\textgamma.2) The continum version of the dynamical mesh}
-The standard approach for treating this is by first noting that we are not looking for independent nodes at each time, but we are looking for a diffeomorphism $\vec{x}(\vec{\xi},t)$, or an ensemble of continuous non-crossing trajectories that map the fluid (the mesh) at the initial time to a suitable mesh that allows us to have the field values evaluated at the points of interest. In this section, we will use the degrees of freedom $\vec{\xi}$, which reflect the initial grid that can be chosen to be a regular cartesian grid, just as a taging system for each mesh element. Such that we can keep track of each node of the grid in a continous manner. Note however, for the coming sections that this also means that if we are able to convert the derivatives in general configuration space variables $\vec{x}$ to derivatives in this initial labelling space variables $\vec{\xi}$, we will actually win a lot.
-
-Note that, as we use $\vec{\xi}$ for the labelling of each mesh element, having in $N=1$ that $x^{j+1}-x^j\rightarrow 0$ means that Equation \eqref{discEq} should have the constant $C$ across all the differences diminished consequently to avoid a mathematical inconsistency. This means that we should choose $C=K(\xi^{j+1}-\xi^j)$, with $K$ a certain constant. Then, equation \eqref{discEq} would become:
-\begin{equation}
-M_j(t)\cdot \frac{x(\xi^{j+1},t)-x(\xi^{j},t)}{\xi^{j+1}-\xi^j}=K \quad \forall j
-\end{equation}
-Taking the limit of a continuous transformation $x(\xi,t)$, with $\xi^{j+1}-\xi^j\rightarrow 0$, this means that we are looking for:
-\begin{equation}\label{contEq}
-M(\xi,t)\cdot \pdv{x(\xi,t)}{\xi}=K \quad \forall \xi\in \Omega\subset \R
-\end{equation}
-If we note that actually the Jacobian of the transformation is: $J(\xi,t)\equiv det(D_{\xi}x(\xi,t)=\pdv{x(\xi,t)}{\xi}$, then the above equation is equivalent to:
-\begin{equation}
-M(\xi,t)\cdot J(\xi,t)=K \quad \forall \xi\in \Omega\subset \R
-\end{equation}
-which is the continuum version of the idea in equation \eqref{discEq}. Namely, the value of the monitor in each mesh element must be inversely proportional to the local divergence or convergence of trajectories, the local expansion or contraction of the grid.
-
-Alternatively, we can get rid of the constant if we make a further derivative:
-\begin{equation}\label{EL1D}
-\pdv{}{\xi}\qty(M(\xi,t)\cdot \pdv{x(\xi,t)}{\xi})=0 \quad \forall \xi\in \Omega\subset \R
-\end{equation}
-which can be manipulated to get:
-\begin{equation}
-\pdv[2]{x(\xi,t)}{\xi}+\pdv{}{\xi}log(M(\xi,t))\pdv{x(\xi,t)}{\xi}=0
-\end{equation}
-with boundary conditions $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$, which are the moving boundaries of the grid we fix.
-
-In particular, we can get the value of $K$ if we integrate equation \eqref{contEq} in $\xi$ in its domain $\Omega=\{\xi\in(\xi_1,\xi_m)\}$:
-\begin{equation}
-\int^{\xi_m}_{\xi_1} M(\xi,t) \pdv{x(\xi,t)}{\xi} d\xi=\int^{\xi_m}_{\xi_1} K d \xi  \Leftrightarrow \int^{x(\xi_m,t)}_{x(\xi_1,t)} M(x(\xi,t),t) dx(\xi,t)=K(\xi_m-\xi_1)
-\end{equation}
-\begin{equation}
-K(t)=\frac{1}{(\xi_m-\xi_1)}\int^{b(t)}_{a(t)} M(x,t) dx
-\end{equation}
-
-Using that $M(\xi,t)>0$ $\forall \xi,t$, we could also integrate a little manipulation of equation \eqref{contEq}:
-\begin{equation}
-\int^{\xi_m}_{\xi_1}  \pdv{x(\xi,t)}{\xi} d\xi=\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)} K d \xi  \Leftrightarrow x(\xi,t)-x(\xi_1,t) =K(t)\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)}  d \xi
-\end{equation}
-\begin{equation}
-x(\xi,t)=a(t)+K(t)\int^\xi_{\xi_1} \frac{1}{M(\xi,t)}d\xi
-\end{equation}
-This would allow us the straightforward computation of the dynamic grid. In fact, we get an alternative, perhaps computationally more tasty formula for $K(t)$ if we use $\xi=\xi_m$:
-\begin{equation}
-K(t)=(b(t)-a(t))\frac{1}{\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)}d\xi}
-\end{equation}
-
-\subsubsection*{\bf (\textgamma.3) Using a variational/optimization approach}
-We will now show, following Ref.\cite{movingGrids} that this could have equivalently been derived from an optimization problem (a variational one), since it will be one of the ways to explain how we can generalize this grid generation to arbitrary $N$.
-
-First let us express a discrete optimization problem, a discrete functional from which we will derive equation \eqref{discEq}. Suppose we are looking for a set of grid points $\{x^j \}_{j=1}^m$ such that the product of the interval lengths they leave and the average value of the monitor $M(x,t)$ is minimum. That is, we are looking for the $\R^m$ minimum of: 
-\begin{equation}\label{discFunc}
-S( x^1,...,x^m;t)=\sum_{j=1}^{m-1} \frac{1}{2} M_j(t) \qty(x^{j+1}-x^j)^2
-\end{equation}
-with the conditions $x^1=a(t)$, $x^m=b(t)$. If we seek $S$ to be minimum, we also seek the products $M_j(t) \qty(x^{j+1}-x^j)^2$ to be minimum, which means that if the monitor $M$ gets big at a certain interval, the length of the interval $\qty(x^{j+1}-x^j)^2$ will get smaller. Just as we wanted.
-
-If we are seeking the vector $(x^1,...,x^m)$ that minimizes $S$ at a certain $t$, we will require that the gradient of $S$ at that point is zero. As such:
-\begin{equation}
-\pdv{S}{x^j}\Big\rvert_{optim}=0\ \ \forall j\Leftrightarrow M_{j-1}(t)(x^j-x^{j-1})-M_j(t)(x^{j+1}-x^j)=0\ \ \forall j
-\end{equation}
-This means that we must have the same product for all the intervals:
-\begin{equation}
- M_{j-1}(t)(x^j-x^{j-1})=M_j(t)(x^{j+1}-x^j)\ \ \forall j
-\end{equation}
-Which is equivalent to asking that all the products are equal to a same number $C(t)$:
-\begin{equation}
-M_j(t)(x^{j+1}-x^j)=C(t) \quad \forall j
-\end{equation}
-which is exactly equation \eqref{discEq}. In fact, if one computes the Hessian matrix of the function $S$, one can see that the matrix is symmetric and positive semi-definite, meaning $S$ is convex, and has thus a single minimum at most. 
-
-In fact, alternatively using as cost function (or discrete functional) the following one:
-\begin{equation}
-\hat{S}(x^1,...,x^m;t)=\sum_{j=1}^{m-1} \qty{\qty[ M_j(t) \qty(x^{j+1}-x^j)]^2-\qty[ M_j(t) \qty(x^{j}-x^{j-1})]^2}^2
-\end{equation}
-we get that the minimum is the same one. So we see that the discrete functional interpretation is not unique.
-
-Now, let us obtain from here the continuous optimization problem that will lead us to the continuous version \eqref{contEq}. We will seek to minimize a functional $I[x(\xi,t)]$, the minimum of which will be required to satisfy \eqref{contEq}. We could do this by inspection or by making the continuum limit of the discrete functional.
-
-If we divide both sides of equation \eqref{discFunc} by the increment $\Delta \xi$ of the labeling space grid we can have:
-\begin{equation}
-\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\sum_{j=1}^{m-1} \frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi
-\end{equation}
-As we let $\Delta \xi \rightarrow 0$ and $m\rightarrow \infty$, we get:
-\begin{equation}
-I[x(\xi,t)]:=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}}\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}} \sum_{j=1}^{m-1}\frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
-\end{equation}
-\begin{equation}\label{functional1D}
-I[x(\xi,t)]=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
-\end{equation}
-$I$ is a functional, that gives us a number, a score for each admissible $x(\xi,t)$ we input. In analogy with the discrete optimization problem, we will seek to find a diffeomorphism that minimizes the value of $I$, which is nothing more than the Jacobian squared times the monitor function summed over all the domain for $\xi$. Again, the same interpretation holds. The minimization is subject to the requirement that the boundary of the mesh is fixed at $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$.
-
-The Euler-Lagrange equation for this functional (a necessary condition that $x(\xi,t)$ must obey) immediately gives us back equation \eqref{EL1D}, which is what we wanted.
-
-\subsubsection*{\bf (\textgamma.4) The generalization of the dynamic grids to arbitrary N}
-
-Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve their minimization.
-
-\subsubsection*{\bf (\textgamma.4.1) A monitor per axis}
-One possible way to generalize the functional in equation \eqref{functional1D} is noting that in $N=1$, $\pdv{x(\xi,t)}{\xi}$ is the variant vector of the $\xi$ axis, the tangent vector to the curve defined by the movement along each label space coordinate $\pdv{\vec{x}(\vec{xi},t)}{\xi_k}$. Its square $\qty(\pdv{x(\xi,t)}{\xi})^2$ could then be interpreted as the (positive) magnitude of this covariant vector, which is the amount by which the grid spacing increases or decreases in that axis. For each small increment of the label space coordinate $\xi_k$, how much the relative distance of those mesh elements has increased or decreased. We could build a generalizing functional for arbitrary $N$ by defining first a set of monitor functions $M_1(\vec{\xi,t}),...,M_N(\vec{\xi},t)$ each of which we pretend to equalize with the grid spacing along each of the $N$ axes.
-\begin{equation}
-I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k=1}^N M_k(\vec{\xi},t) \Big|\Big|\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\Big|\Big|^2 d\vec{\xi}
-\end{equation}
-In general, the system of $N$ Euler-Lagrange equations that minimizes this axis-wise product of the monitors times the mesh enlargement along each axis can be easily seen to be:
-\begin{equation}
-\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_1} )+\cdots+\pdv{}{\xi_N}\qty( M_N(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} )=0
-\end{equation}
-In the $N=2$ case for example, we would have that we are minimizing:
-\begin{equation}
-I[\vec{x}(\xi_1, \xi_2,t)]=\iint_\Omega \Bigg\{M_1(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_1})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_1})^2] +
-\end{equation}
-$$
-M_2(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_2})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_2})^2]\Bigg\} d\xi_1d\xi_2
-$$
-with the transformation that satisfies the two differential equations:
-\begin{equation}
-\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_1} )+\pdv{}{\xi_2}\qty( M_2(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_2} )=0 \quad k\in\{1,2\}
-\end{equation}
-
-However, this is not exactly the equidistribution idea we had in the beginning, by which all the mesh elements are orchestrated in order to equalize a global monitor.
-
-\subsubsection*{\bf (\textgamma.4.2) The N-volume element functional}
-In order to arrive to that idea, we can realize that in equation \eqref{functional1D}, $(\pdv{x(\xi,t)}{\xi})^2$ is also the $N=1$ case of the squared determinant of the Jacobian matrix of the transformation, which gave us the separation increase factor between the trajectories $\vec{x}(\vec{\xi},t)$ of the mesh elements $\vec{\xi}$. How the grid contracts or expands locally in volume. Then, if we try to minimize the product of this Jacobian squared with a monitor function $M(\vec{\xi},t)$, we are trying to find the transformation $\vec{x}(\vec{\xi},t)$ that minimizes the functional:
-\begin{equation}
-I[\vec{x}(\vec{\xi},t)]=\iint_\Omega M(\vec{\xi},t) \qty(det(D_\xi \vec{x}(\vec{\xi},t)))^2 d\vec{\xi}
-\end{equation}
-where note that we choose the square of the Jacobian, because we do not want the sign of the Jacobian to influence our choice for the transformation (the sign gave information about the local inversion of the coordinates).
-
-In $N=1$ this leads to equation \eqref{functional1D}, since $(det(D_\xi \vec{x}(\vec{\xi},t)))^2=\qty(\pdv{x(\xi,t)}{\xi})^2$, and consequently, the differential equation we would need to solve for getting the positions of the mesh elements would be equation \eqref{EL1D}.
-
-In $N=2$, the functional we seek to minimize would be:
-\begin{equation}
-I[\vec{x}(\xi_1,\xi_2 ,t)]=\iint_\Omega M(\xi_1, \xi_2,t) \qty( \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1})^2 d\vec{\xi}
-\end{equation}
-the system of two Euler-Lagrange equations of which (the equation that the searched transformation must obey) is:
-\begin{equation}
-\pdv{}{\xi_1}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_2})-\pdv{}{\xi_2}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_1})=0
-\end{equation}
-with $J(\xi_1,\xi_2,t):=\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1}$, the Jacobian.
-
-What we would achieve by solving this equation system is the time evolution of the grid points, in a way that the local product of the area of each grid-cell and the monitor function is minimized: if one the monitor gets big, the area will contract and viceversa.
-
-In general, for an arbitrary $N$ we will get the $N$ differential equations:
-\begin{equation}
-\sum_{k=1}^N \pdv{}{\xi_k} \qty( M(\vec{\xi},t) J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) \pdv{J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) }{\pdv{x_l}{\xi_j}} )=0
-\end{equation}
-where we need to know the explicit shape of the Jacobian matrix determinant $J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}):=det(D_\xi \vec{x}(\vec{\xi},t))$.
-
-\subsubsection*{\bf (\textgamma.4.3) Forcing the mesh to be orthogonal}
-We could even invent custom functionals that for instance ask the mesh to preserve its orthogonality. A transformation $\vec{x}(\vec{\xi},t)$ will locally preserve the orthogonality if the covariant tangent vectors are mutually orthogonal: $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}=0\ \ \forall k\neq j$. We can try to impose this by looking for the transformation that minimizes the functional:
-\begin{equation}
-I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k\neq j} \qty(\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j})^2 d\vec{\xi}
-\end{equation}
-Again, we consider the squared metric, in order to avoid negative projections between the covariant tangent vectors to make the functional hardly non-convex.
-The system of $N$ Euler-Lagrange equations for this is:
-\begin{equation}
-\sum_{l=1}^N \pdv{}{\xi_l}\qty( \sum_{k=1;\ k\neq l}^N \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_l}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}  )=0
-\end{equation}
-The $N=2$ leaves:
-\begin{equation}
-\pdv{}{\xi_1}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}  )+\pdv{}{\xi_2}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_1}  )=0
-\end{equation}
-For the sake of numerical derivative computation, an orthogonal grid is always of good help. The problem is that there is no valid solution for many possible boundary conditions we could be interested on.
-
-\subsubsection*{\bf (\textgamma.4.4) Using discretized functionals}
-
-Just as we did in the $N=1$ case, instead of finding the time evolution of the mesh elements by solving the differtential equations lead by the Euler-Lagrange equations of the continous functionals, we could find the discretized versions of these functionals, or even invent some discrete functionals and find the minimum by direct optimization, solving non-linear equation systems.
-
-To do this, we formulate the problem in the following way: we seek the set of points $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ where we assume that we choose to have in the first iteration $m$ discrete points per axis (there are a total of $Nm^N$ unknowns), such that a cost function $S(\vec{x}^1,..,\vec{x}^{m^N})$ is minimized. This cost function can be built by discretizing any functional we have considered so far, or by directly considering combinations of monitor functions and unit-cell angles, volumes etc. Once decided that, we write the explicit expression for $S$ and look for the grid $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ that makes its gradient be as close to zero as possible. This can be done by writing the equations explicitly, differentiating explicitly, and thus generating a system of $Nm^N$ coupled non-linear equations, or rather by using a gradient-descent like algorithm for local non-linear optimization.
-
-The big advantage of this approach is that introducing the boundary conditions is typically simpler, since they are just conditions for the search space and can be trivially introduced.
-
-\subsubsection*{\bf (\textgamma.4.5) Mixing different functionals}
-Both in the continous or discrete functional cases, we can build new perhaps more desirable functionals, by choosing a weighted sum of the different functionals we have seen so far. In such a way that we try to minimize the non-orthogonality but we also try to force a certain equalization.
 
 
 
 
-% d) Hybrid approaches, escenarioko zati bet dynamikoki bihurtu finaue edo beste approach batera. Problemas? MBP ezu supereko eta fronterien tratamentue klaro ejem. Ta bai eboluziñoa establiaue izengo da for sure, however, comput complexity ++ kambixo bakoitzeko problema kalro!
 
 
-\subsection*{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}
-\addcontentsline{toc}{subsection}{(III.b.1) The Continuity + The Hamilton-Jacobi Equations}
+
+\subsection*{(II.b) The Continuity and The Hamilton-Jacobi Equations}
+\addcontentsline{toc}{subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}
 
 If we take equations \eqref{HJE} and \eqref{CE}, which are the Hamilton-Jacobi equaiton and the Continuity Equation for the fluid, and we evaluate them along the trajectory $\vec{x}(t;\vec{\xi})$, by identifying and defining:
 \begin{equation}\label{v}
@@ -1288,70 +956,42 @@ which reverting the derivative of a product rule yields the Continuity Equation 
 
 
 }
-\mybox{
 
 
-% So faltan:
-- Ein deribaziñoa del continuity eqt eta komenteu implikaziñoa. 
-- Ein demoa de la cantidad conservada al badozun. Bicer
-- Hasi sekziñioa de derivatives wrt the label space. Bicer+Asteburuen edo
-- Expabndidu dana CWFen sekziñora. Asteburuen
-- Ein koherentzi pute bat eukitzie narraziñoak xD Asteburuen
-- Dibujoak ein. Astelehenien
-- Releidu dana. Martitzenien.
+\subsection*{(II.c) Basis Set Expansions}
+\addcontentsline{toc}{subsubsection}{{\bf (II.c)} Basis Set Expansions?}
 
-- Azken sekziñoa de discrete tangent universes itxi soltien.
-}
 
-\mybox{{\bf About the Fluid Jacobian\\ }
-If we analyse the evolution of the density along the trajectory at equation \eqref{JacPre}, we find that the ratio between the local density a certain fluid element $\vec{\xi}$ perceives at a time $t$ and the initial time is:
+\subsection*{(II.d) Dynamic Equations for Partial Derivatives}
+\addcontentsline{toc}{subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}
+
+
+\subsubsection*{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
+%\addcontentsline{toc}{subsubsection}{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
+
+If we go back to the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, we will notice that there is no partial derivative with respect to space $x_k$ in any place. This means, we can directly evaluate $x=x(\xi,t)$ by first noting that by the chain rule:
 \begin{equation}
-\frac{\rho(\vec{x}^\xi(t),t)}{\rho(\vec{x}^\xi(t_0),t_0)}=\frac{\rho(\vec{\xi},t)}{\rho(\vec{\xi},t_0)}=e^{-\int_{t=t_0}^t \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}
+\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \dv{f(x(\xi,t),t)}{t}-\sum_{s=1}^N \pdv{f(x,t)}{x_s}\Big\rvert_{x_s(\xi,t)}\pdv{x(\xi,t)}{t}
 \end{equation}
-This positive ratio of the density perceived by the fluid element $\vec{\xi}$ in its local surrounding relative to the one at the beginning, which can be smaller than one or greater than one, can be understood in one of the following interpretations: 
-\begin{itemize}
-\item It is the fluid elements that are moving in configuration-space. The number of "Universes" (in the TUM sense) is diminishing -smaller than one- (or increasing -greater than one-) in its surrounding, that is, there is a local divergence (or convergence) of surrounding trajectories. Meaning that given a fluid element labeled $\vec{\xi}_0$, the fluid elements that were closest to it at the time we made the labels: those in the ball $\{\vec{\xi}_1:||\vec{\xi}_0-\vec{\xi}_1||=\varepsilon\}$  for a small enough $\varepsilon>0$, are now getting closer (or further) in space: $||\vec{x}(\vec{\xi}_0,t)-\vec{x}(\vec{\xi}_1,t)||<\varepsilon$ (or $>\varepsilon$) for $t>t_0$.
-\item It is the configuration-space itself that is getting distorted, and the fluid elements follow this distortion. The space around the particles is contracting (or dilating). The increase or decrease of volume locally causes the density to increase or decrease relative to the first instant.
-\end{itemize}
-As we tend to consider physical space to be a fixed affine manifold (in non-relativistic quantum mechanics), the first interpretation is the most straightforward. However, if one regards the continuum of fluid elements at the initial time as the "space" or the grid, then clearly, interpretation 1 means that the continuum of fluid elements are getting more or less contracted, so the volume that the fluid occupies is dilated or contracted. In general this is the way how this quantity is referred to. \\
-
-If we observe the trajectories of the fluid elements as a dynamic variable-change, $\vec{x}(\vec{\xi},t)$, since it must be a bijection for the ensemble of trajectories to avoid crossing, the function must have inverse. In particular, this means that the Jacobian matrix of the function, $D_{\vec{\xi}}\ \vec{x}(\vec{\xi},t)$, is defined. The Jacobian matrix is the linear approximation of the trajectories for a local displacement in the label space $\vec{\xi}$. This can be seen using the Taylor expansion around a certain trajectory of interest $\vec{\xi}^*$:
-\begin{equation}
-\vec{x}(\vec{\xi},t)=\vec{x}(\vec{\xi}^*,t)+D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)+O(||\vec{\xi}-\vec{\xi}^*||^2)
+In the notation we defined in \eqref{defPdv}, we saw $\pdv{f(x,t)}{x_s}=f_{(0,...,1,...,0)}(x,t)$ (with the array full of 0-s except for a 1 in the $s$-th position). Then:
+\begin{equation}\label{matrialTimePdv}
+\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
 \end{equation}
-For $\vec{\xi}\rightarrow \vec{\xi}^*$, neglecting second order terms, we find that:
-\begin{equation}
-\vec{x}(\vec{\xi},t)-\vec{x}(\vec{\xi}^*,t)=D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)
+This would leave \eqref{infchain.SE} in the Lagrangian frame as:
+\begin{equation}\label{infchain.SE}
+i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+
 \end{equation}
-Then, the Jacobian matrix will tell us how the separation of close trajectories evolves. By the geometrical interpretation of the determinant of a linear application as the magnitude by which the unit volume of the space is scaled, we can now see that the determinant of the Jacobian will provide us the scaling factor of the separation between the trajectories, relative to the initial time. If we call this $J(\xi^*,t):=det(D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t))$, we will then realize that it must be equal to the factor we previously found:
-\begin{equation}
-J(\vec{\xi}^*,t)=det(D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t))=e^{-\int_{t=t_0}^t \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}
-\end{equation}}
-\mybox{
-An alternative, less cumbersome way to see this is by first noting that the continuity equation in the Eulerian frame \eqref{CE}, implies a local conservation of the number of fluid elements. As integrating both sides of the equation on a bounded configuration space volume $\Omega\subset\R^N$ and applying the divergence theorem and assuming some regularity for the density we get:
 $$
-\int_{\Omega}\pdv{}{t} \rho(x,t) dx=-\int_{\Omega}\sum_{k=1}^N \pdv{}{x_k}\qty( \rho(x,t)v_k(x,t) )dx=-\int_{\Omega}\vec{\nabla}\cdot \qty( \rho(x,t)\vec{v}(x,t) )dx
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
 $$
-\begin{equation}
-\pdv{}{t} \int_{\Omega} \rho(x,t) dx=-\int_{\partial \Omega} \rho(x,t)\vec{v}(x,t)\cdot d\vec{S}(\vec{x})=-\int_{\partial \Omega} \rho(x,t)v_{normal}(x,t)\cdot dS
-\end{equation}
-The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $\Omega$ (in particles/time-unit). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface. Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes, and thus the density. Universes cannot be destroyed nor created, but they can flow lighter or denser (probability density is conserved). Once seen this, we acknowledge that it must be true that the amount of particles is conserved at al times for a fixed volume in the label space (or initial time position space):
-\begin{equation}
-\int_{\Omega} \rho(\vec{\xi},t_0) d\xi=\int_{\Omega} \rho(\vec{\xi},t) d\xi \quad \forall t>t_0
-\end{equation}
-As the trajectories are bijective, $\vec{x}(\vec{\xi},t)$ must be invertible, such that there exists a function $\vec{\xi}(\vec{x},t)$. If we evaluate it above, after noting:
-\begin{equation}
-\int_{\Omega} \rho(\vec{\xi}(\vec{x},t),t_0) d\vec{\xi}(\vec{x},t)=\int_{\Omega} \rho(\vec{\xi},t) d\xi \quad \forall t>t_0
-\end{equation}
+where all the functions have arguments $(\xi,t)$.
 
-REYNOLDS TRANSPORT THEOREM!!!!!! Coño! Para demostrar ke la continuity eqt tb se puede sacr del flow motion xDDDDD
+This is an infinite system of coupled linear differential equations. Assuming that at a certain $J$, $\pdv[J]{\psi(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for all $k$, we would then have $J^N$ equations. Doing this approximation, we are assuming that the wavefunction in the immediate locality of the fluid element has a roughly constant derivative of $J$-th order. Contrary to the Eulerian case, we are not assuming this for the whole configuration space, which might improve the approximation. The best point about this mehtod is that this equation system would allow us to compute the wavefunction and trajectory of a {\bf single} fluid element $\xi$! With no need to know the partial derivatives in configuration-space $x_k$, there is no need to couple other trajectories to this one.
 
-$$int_{x(xi,t)}: xi\in omega0 rho(x,t)dx = int_{x(xi,t0)=xi}: xi \in omega0 rho(x,to)dx$$
+Certainly, the main problem of this method will be that we will need to choose the truncation $J$, which if chosen to be too small, would make the trajectory blind to nodal points and fluctuating regions that are not in its immediate vicinity, since we would be assuming that high order curvatures around the trajectory are small, when in reality they should influence the trajectory.
 
-Y luego haces derivada temporal y uno de los lados debe ser constante etc.}
-
-\subsubsection*{(III.b.1.1) Dynamics of Partial Derivatives}
-\addcontentsline{toc}{subsubsection}{(III.b.1.1) Dynamics of Partial Derivatives}
+\subsubsection*{(II.d.b) Dynamics of Partial Derivatives For the Density and Action}
+%\addcontentsline{toc}{subsubsection}{(II.d.b) Dynamics of Partial Derivatives}
 
 If we note again equation \eqref{matrialTimePdv}, we see that it is possible to evaluate the partial differential equations for the spatial derivatives of $C$ and $S$, such that $C(x,t)=log(\rho(x,t))/2$, that we got in equations \eqref{infchain.CE} and \eqref{infchain.HJE}. We can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$, over any single fluid element $\xi$ follows:
 
@@ -1375,24 +1015,85 @@ $$
 Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.
 
 
+\subsubsection*{(II.e) Partial Derivatives relative to the Labels}
+\addcontentsline{toc}{subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}
+Clearly one of the main problems with the Lagrangian frame is that the fluid-elements move in directions that end up unstructuring the initial mesh, which could have been a regular Cartesian mesh at the beginning, but not in the next time iterations. To solve this, what we could do is convert the partial derivatives in the configuration-space Eulerian positions $x_k$ into partial derivatives in the label configuration-space positions $\xi_j$, using the fact that since we are evolving trajectories we have knowledge of the function $\vec{x}(\vec{\xi},t)$. As an example, lets analyse how we could compute $\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ for a function $f$ for which we want to know the $x_k$ derivative fora given trajectory $\vec{\xi}$. By the chain rule:
+\begin{equation}
+\pdv{f(\vec{x},t)}{x_k}=\dv{f(\vec{\xi}(\vec{x},t),t)}{x_k}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j}\Big\rvert_{\vec{\xi}(\vec{x},t)} \pdv{\xi_j(\vec{x},t)}{x_k}
+\end{equation}
+which can be evaluated at $\vec{x}=\vec{\xi}(\vec{x},t)$ to get:
+\begin{equation}
+\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\end{equation}
+We see that we can freely change the derivative in $x_k$ by derivatives in $\xi_j$ if we also know how to compute $\pdv{\xi_j(\vec{x},t)}{x_k}$, which are the elements of the Jacobian matrix of $\vec{\xi}(\vec{x},t)$. If we attempt to directly compute them, we immediately acknowledge that these derivatives are still in an unstructured grid. However, as we proved in equation \eqref{inverse}, we have that the Jacobian matrix $D_x \vec{\xi}(\vec{x},t)$ where the element in row $j$ and column $k$ is $\pdv{\xi_j(\vec{x},t)}{x_k}$, is the inverse of the Jacobian matrix $D_\xi \vec{x}(\vec{\xi},t)$, the entries of which are of the shape $\pdv{x_j(\vec{\xi},t)}{\xi_k}$. Observe that the entries of this last Jacobian matrix can actually be computed in a regular grid if we chose the label space to be so, by just knowing the trajectories of the fluid elements! Therefore, if we first compute the elements $\pdv{x_j(\vec{\xi},t)}{\xi_k}$ of the matrix $D_\xi \vec{x}(\vec{\xi},t)$ and then compute the inverse matrix with any possible method, we will have the computed the values $\pdv{\xi_j(\vec{x},t)}{x_k}$ in a structured grid.\\
 
-\subsubsection*{(III.b.1.2) Partial Derivatives relative to the Labels}
-\addcontentsline{toc}{subsubsection}{(III.b.1.2) Partial Derivatives relative to the Labels}
+A possible way to do this would be by using the inverse matrix theorem. Which can be summerized as follows. Let $A$ be an $N\cross N$ invertible (non-singular) matrix. Then:
+\begin{itemize}
+\item Its $i,j$ {\bf minor}, which we will note by $Min(A)_{ij}$, is the $(N-1)\cross (N-1)$ matrix obtained by deleting row and column $j$.
+\item Its $i,j$ {\bf cofactor}, which we will note by $Cof(A)_{ij}$, is: $(-1)^{i+j}det\qty(Min(A)_{ij})$.
+\item Its inverse matrix is:
+\begin{equation}
+A^{-1}=\frac{1}{det(A)} \begin{pmatrix}
+Cof(A)_{11} & Cof(A)_{21}&\cdots& Cof(A)_{N1}\\
+Cof(A)_{12} & Cof(A)_{22}&\cdots& Cof(A)_{N2}\\
+\vdots & \vdots & \ddots & \vdots \\
+Cof(A)_{1N} & Cof(A)_{2N}&\cdots& Cof(A)_{NN}\\
+\end{pmatrix}
+\end{equation}
+Thus, if we denote the $i,j$ element of $A^{-1}$ as $(A^{-1})_{ij}$, we have that:
+\begin{equation}
+(A^{-1})_{ij} = (-1)^{j+i}\ det\qty(Min(A)_{ji} )
+\end{equation}
+\end{itemize}
+Therefore, we have that:
+\begin{equation}
+\pdv{\xi_i(\vec{x},t)}{x_j}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \frac{ (-1)^{i+j}}{det \qty(D_{\xi} \vec{x}(\vec{\xi},t))}\cdot det \qty(D_{\xi} \vec{x}(\vec{\xi},t)\textit{ erasing the row and column of }\pdv{x_j(\vec{\xi},t)}{\xi_i} )
+\end{equation}
+For example in $N=1$ this means in particular that:
+\begin{equation}
+\pdv{\xi(x,t)}{x}=\frac{1}{\pdv{x(\xi,t)}{\xi}}
+\end{equation}
+In $N=2$:
+\begin{equation}
+\begin{pmatrix}
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} \\
+\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2}
+\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
+\pdv{x_2}{\xi_2} & - \pdv{x_1}{\xi_2} \\
+-\pdv{x_2}{\xi_1} & \pdv{x_1}{\xi_1
+} 
+\end{pmatrix}
+\end{equation}
+In $N=3$:
+\begin{equation}
+\begin{pmatrix}
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_1}{x_3} \\
+\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_2}{\xi_3}\\
+\pdv{\xi_3}{x_1} & \pdv{\xi_3}{x_2} & \pdv{\xi_3}{\xi_3}
+\end{pmatrix}= \frac{1}{J} \begin{pmatrix}
+\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_3}-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_2}- \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_2}\pdv{x_2}{\xi_3}-\pdv{x_1}{\xi_3}\pdv{x_2}{\xi_2} \\
 
-Esto es como revertir el Lagrangian into an Eulerian! Ze el grid de los labels es siempre estacionario para las trayectorias! 
+\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_1}-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_3}- \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_3}\pdv{x_2}{\xi_1}-\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_3} \\
 
-Claro, será necesario computar el JAcobiano de la densidad para saber x relativo a las xi, pero se supone que el jacobiano lo puedes sacar de las trayectorias! aSike si eres capaz de mover las trajs pa sacar el jacobiano el problema de las derivadas en y se solucionaria porke ahora son derivadas en chi!
+\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_2}-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_1}- \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2}-\pdv{x_1}{\xi_2}\pdv{x_2}{\xi_1} \\
 
-\subsection*{(III.b.1.3) Adaptive Grid Equations}
-\addcontentsline{toc}{subsubsection}{(III.b.1.3) Adaptive Grid Equations}
+\end{pmatrix}
+\end{equation}
+where $J$ is the {\bf signed} Jacobian determinant of $\vec{x}(\vec{\xi},t)$.\\
 
-If for a moment we forget about evolving Bohmian trajectories, because we are interested on the values of $S,R$ alone at each time, we could force the fluid elements to remain fixed (and go back to the Eulerian frame), or instead, we could manipluate the trajectories so as to get an adaptive grid that obeys our desires. For instance, we could force the trajectories to get more agglomerated around very spikey regions and to go away from very smooth regions, even force them to never avoid nodal regions.
+Then, in any of the differential equations we develop that contain Lagrangian degrees of freedom we will be able to do the following changes and similar ones:
+\begin{equation}
+\sum_{a=1}^N \pdv{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \sum_{a=1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\end{equation}
+or for the Laplacian:
+\begin{equation}
+\sum_{a=1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}]
+\end{equation}
+Taking into account that for each fluid element at each time we will need to compute all those partial derivatives (even if they will be in a regular grid), determinants, products and sums, it is clear that the approach of changing the differential equations to label space is not a miracle, but it is a possible one that can be used at least for computing some of the derivatives.
 
-Note that the decision to define the velocity fields for the fluid element trajectories to be the derivatives of the phase $S$ was quite arbitrary from the numerical standpoint, and was only supported by the analogy with classical mechanics. We could  simply have forced the velocity field to follow a certain monitor function as well. Even if this would lack interpretability within the Bohmian or the TUM vision, it could be computationally interesting. Bohmian trajectories could actually be computed {\em a posteriori}, using the moving mesh values of the phase.
 
-
-\subsection*{(III.b.2) The Bohmian-Newton's Second Law}
-\addcontentsline{toc}{subsection}{(III.b.2) The Bohmian-Newton's Second Law}
+\subsection*{(II.f) The Bohmian Newton's Second Law}
+\addcontentsline{toc}{subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}
 
 If we take the Hamilton-Jacobi Equation in the fully Eulerian frame \eqref{HJE} and do the partial derivative $\pdv{}{x_k}$ at both sides, assuming again \eqref{ImpBohm}, we arrive assuming we can swap cross derivatives by Schwartz's Law (enough regularity for $S$) to:
 \begin{equation}
@@ -1402,17 +1103,264 @@ Which if we evaluate in the Lagrangian frame $\vec{x}(\vec{\xi},t)$, we immediat
 \begin{equation}
 m_k\dv{}{t}v_k(\vec{x}^\xi(t),t)=m_k\dv[2]{}{t}x^\xi_k(t)=-\pdv{}{x_k}\qty[V(\vec{x}^\xi(t),t)+Q(\vec{x}^\xi(t),t) ]
 \end{equation}
-Which is Newton's Second Law for the fluid elements or Bohmian trajectories. This equation can be evolved coupled with \eqref{CE.L} in order to solve the same quantum problem. In this representation however, we will require to compute the spatial derivative of the quantum potential $Q$, which was already a problemtic term due to the $\pdv[2]{}{x_j}R(x,t)$ it contains. Therefore, for numerical purposes it is more stable to use the equations of motion of III.b.1.
+Which is Newton's Second Law for the fluid elements or Bohmian trajectories. This equation can be evolved coupled with \eqref{CE.L} in order to solve the same quantum problem. In this representation however, we will require to compute the spatial derivative of the quantum potential $Q$, which was already a problemtic term due to the $\pdv[2]{}{x_j}R(x,t)$ it contains. Therefore, for numerical purposes it is more stable to use the equations of motion of II.b.
+
+\subsection*{(II.g) Adaptive Grid Equations}
+\addcontentsline{toc}{subsubsection}{{\bf (II.g)} Adaptive Grid Equations}
+
+If for a moment we forget about evolving Bohmian trajectories, because we are interested on the values of $S,R$ alone at each time, we could force the fluid elements to remain fixed (and go back to the Eulerian frame), or instead, we could manipulate the trajectories so as to get an adaptive grid that obeys our desires. For instance, we could force the trajectories to get more agglomerated around very spikey regions and to go away from very smooth regions, even force them to never avoid nodal regions.
+
+Note that the decision to define the velocity fields for the fluid element trajectories to be the derivatives of the phase $S$ was quite arbitrary from the numerical standpoint, and was only supported by the analogy with classical mechanics. Alternatively, we could have forced the velocity field to follow a certain monitor function that depends on the state of the wavefunction, but in a custom way. Even if the resulting trajectories would lack interpretability within the Bohmian or the TUM vision, this can be computationally very interesting. In fact, once the fields were evolved along these custom trajectories, we could still compute Bohmian trajectories {\em a posteriori} by using the phase values of the moving mesh, if this was of any particular interest.
+
+In order to avoid confusion we will use the term "mesh element" to designate fluid elements the trajectories of which are evolved using laws other than the Bohmian probability density flow lines \eqref{ImpBohm}. We will reserve the term "fluid element" to designate the ones that are evolved following the density of the fluid. In fact, the term adaptive grid or moving mesh is used in general to denote the fact that these fluid elements now, away from having a clear ontological nature are useful as components of a mesh that evolves in time adapting to the particular state of the system.
+
+Let us suggest three different appraches we could follow in alternative definitions of the trajectories, inspired by the ones exposed by Ref. \cite{Wyatt}.
+
+\subsubsection*{\bf (\textalpha) Leave the trajectories still}
+ We could directly fix $\vec{x}(t;\vec{\xi})=\vec{\xi}\ \forall t$, meaning that the velocity field for the mesh elements would be null $\dv{}{t}\vec{x}(t;\vec{\xi})=0\ \forall t$. This would make the Advective correlation potential \eqref{Adv} null, and since the grid of fluid elements would preserve its initial regularity, the approach would be identical to a fully Eulerian one. That is, solving the Lagrangian Schrödinger Equation \eqref{KinAdv} would be the same as trying to solve the Eulerian Schrödinger Equation \eqref{SE}. Perhaps an advantage of acknowledging each mesh element can be seen as an independent entity is that it could suggest a Schrödinger Equation solver that could be way more parallelizable. Just like what the standard QTM suggests, one could evolve the value of the quantum fields at each mesh position in parallel, then allow a cross talk to compute the partial derivatives in configuration-space and then again a parallel time step.
+
+\subsubsection*{\bf (\textbeta) Make a moving mesh/support preserving grid spacing}
+Once defined a regular grid of mesh elements, regular in the sense that there is an equal spacing between the grid points, we could allow the mesh to move along the wavefunction but preserving the equal spacing of the grid, which allows an efficient and straightforward computation of the spatial derivatives. To do this we could do the following at each time step after computing the value of the quantum fields at each grid point:
+\begin{enumerate}
+\item Take the vertices of the convex hull of the mesh, e.g. the corners of the parallelogram that the grid supposes. Treat them like Bohmian trajectories and evolve them to their following position.
+\item Compute an equispaced grid inside this domain with the same number of mesh points and geometry as the previous grid. Knowing the positions where the new mesh points should be, compute the velocity of each old mesh point to arrive there. If for example, we are using a simple Euler method to evolve the trajectories, use: $\dv{}{t}x_k(\xi,t_{j})=\frac{x_k(\xi,t_{j+1})-x_k(\xi,t_{j})}{t_{j+1}-t_j}$.
+\item Compute the spatial derivatives at each grid point, using standard equispaced mesh methods.
+\item Employing the computed velocity and spatial derivatives, compute the next value of the fields on each mesh point using the time evolution equations for them.
+\end{enumerate}
+Note how this would allow the mesh to dynamically move wherever most of the probability density goes, avoiding the need to fix a giant grid as a fixed scenario where the wavefunction is restricted to stay. It does not only reduce the number of necessary points to map a scenario (the grid is always more or less dense wherever the wavefunction is most probable), but it also allows the mesh to avoid getting to small or too big when the wavepacket contracts or expands (Bohmian trajectories inflate or deflate). 
+ 
+In a $N>1$ the method is not as straightforward as it might seem, since the mesh looses the straight angles between the edges of the mesh domain: say, in 2D, the rectangle mesh becomes a parallelogram. This is a problem in that now there are more "grid boundaries" for the computation of partial derivatives in space. However, we could make slight modifications to the method in order to make the mesh move, contract and dilate with the probability density, but also preserve the angles at the vertices.
+
+If we did so, we could actually use any sort of regular grid method (like matrix methods) to evolve partial differential equations, where we would only need to change the boundary conditions at each time.
+
+In any case, this method solves the problem of the unstructuring grid (for computing partial derivatives) that Bohmian mesh elements had, with the advantage that the grid still moves along the regions of interest.
+
+\subsubsection*{\bf (\textgamma) Move the mesh using arbitrary monitor functions } 
+One of the typical problems with the methods relying on Bohmian trajectories to guide the mesh elements is that, even if these trajectories typically follow the interesting parts of configuration-space where there is appreciable density, in reality, the quantum potential repels them from regions with spiky densities, both from nodal points and big agglomerations. This means that we will end up having almost no mesh elements in the regions of configuration-space where nodes start to appear, among others. These regions however, are vital not only because they might have theoretical interest, but because the time evolution of the fluid elements depends on spatial derivatives in all directions, and those regions can highly influence them: if we have no representatives from those regions, we will not have enough information to allow a proper time evolution. In order to face this problem, we could force the trajectories to be attracted by regions with high curvature.
+
+\subsubsection*{(\textgamma.1) The equidistribution principle}
+For doing this, a standard approach is to force the mesh elements to get into positions that equalize the integral of a positive monitor function $M(x,t)>0$ in each grid-cell, the so called {\em equidistribution principle}. In $N=1$ the intuition is immediate. It is to find at each time $t$, the grid points $\{x^j\}_{j=1}^m$ that satisfy:
+\begin{equation}
+\int^{x^{j+1}}_{x^j} M(x,t) dx =C \quad \forall j
+\end{equation}
+for a fixed constant $C$. If we discretize the integral, we get:
+\begin{equation}\label{discEq}
+M_j(t)\cdot (x^{j+1}-x^j)=C \quad \forall j
+\end{equation}
+where $M_j(t)$ could be the average of the monitor function evaluated at the edges of the grid-cell, or rather the mid-point interpolated point. We can readily see that if for example the monitor $M$ is chosen to be $M(x,t)=|\pdv{\rho(x,t)}{x}|$, then the bigger the curvature of the density, the denser the grid will become, and viceversa. This would adapt the grid to the curvature of the density, with a higher concentration of mesh points in the most spikey regions of the density. See Figure \ref{fig:equid} to get the full intuition. We should alternatively choose the monitor function to be $M(x,t)=\varepsilon+|\pdv{\rho(x,t)}{x}|$ for some $\varepsilon>0$, to avoid an infinite separation wherever the density is flat. We could also adapt the grid to any other positive monitor of the system like $M(x,t)=1+|\pdv{S(x,t)}{x}|$ etc.
+
+Equation \eqref{discEq} are in reality $m-1$ equations with $m-2$ unknowns, since the boundaries of the grid $x_1, x_m$ are fixed by us (rather being still or following a certain trajectory, for instance a Bohmian one\footnote{This would allow the grid as a whole to follow the region of interest of the wave-function}). This means, we can solve it in two ways: 
+\begin{itemize}
+\item With an interpolation of the monitor by a sum of analytic functions, we can find the exact best grid. This would make the systm of equations non-linear however, and would add the complication of the interpolation.
+
+\item If we grossly approximate the values $M_j(t)$ as the value of the monitor function at say, the left corner of the interval, we could iteratively find the right corners of each grid cell, since the constant $C$ would be fixed.
+\end{itemize}
+
+Any of the two would define the positions of the grid elements such that they allow the equidistribution of the monitor function in each cell. We would then just need to compute the grid element velocities necessary for this using for instance $v^j(t)=\frac{x^j(t+\Delta t)-x^j(t)}{\Delta t}$, where $x^j(t)$ is the position of the mesh element at the last known time and $x^j(t+\Delta t)$ is the position of the mesh element in the following time. The velocities are essential for the computation of the Lagrangian frame dynamical equations.
+
+This approach seems good so far, however, as we try to generalize it to an arbitrary $N$ we will note that it is actually a rather too complicated numerical problem to solve.
+
+A grid-cell for an arbitrary $N$ is the unit discretized volume element, each discrete N-volume chunk in which the considered volume of configuration-space is partitioned. At the beginning, each of them will be a parallelotope, but as we move around the vertices, the cells can loose their regular shape. This would make the discretization of the volume integral in each grid-cell very complicated, so we will restrict ourselves to the case in which we force the grid to be made of parallelotopes. Once fixed that, we can try to generalize the equidistribution idea, by first fixing the boundary grid points (leaving them just fixed or moving them according to some other criterium) and then look for the inside grid points that allow the following integral to be constant:
+
+\begin{equation}
+\int_{x_1^j}^{x_1^{j+1}}\cdots \int_{x_N^k}^{x_N^{k+1}} M(\vec{x},t) dx_1 \cdots dx_N=C \quad \forall j\cdots \forall k
+\end{equation}
+If we discretize the integral we get:
+\begin{equation}\label{monitor}
+ M_{j,...,k}(t)\cdot (x_1^{j+1}-x_1^j)\ \cdots (x_N^{k+1}-x_N^k) =C \quad \forall j\cdots \forall k
+\end{equation}
+
+Where $M_{j,...,k}(t)$ is the local average of the monitor function evaluated at the vertices of the parallelotope-cells. Forcing the parallelotope shape for the unit cells provides us with the following. Each axis will be partitioned in, say, $m$ points, meaning we will have $m^N$ mesh elements. We have about $(m-1)^N$ volume elements, so by fixing the boundaries of the region as we did in $N=1$, we can get the solution for the position of the new grid-elements. Once again, we will be able to do this by interpolating the monitor function with analytic functions and then solving the equation system, or doing some gross approximation and solving in chain the equations.
+
+We should note though, that this approach is not the one generating the most suitable grid, since we do not allow each mesh element to move in arbitrary directions. If we did, note that the volume elements would get shapes the computation of the volume of which is not immediate. In addition, we realize that now each mesh element can move in $N$ directions, meaning we will still have $(m-1)^N$ mesh-cells (if we initially discretize each axis in $m$ points) but there will be $m^N$ nodes each with $N$ numbers to fix. A total of $Nm^N$ unknowns. We should subtract the fixed positions of all the fixed boundary grid-points (which will in principle be chosen to be hyperplanes). However, we still see that there are more unknowns than equations. In addition, the equations are non-linear with no remedy and we must make an $N$ dimensional interpolation of the monitor function. It is this why this is not the way employed in the literature.
+
+\subsubsection*{(\textgamma.2) The continum version of the dynamical mesh}
+The standard approach for treating this is by first noting that we are not looking for independent nodes at each time, but we are looking for a diffeomorphism $\vec{x}(\vec{\xi},t)$, or an ensemble of continuous non-crossing trajectories that map the fluid (the mesh) at the initial time to a suitable mesh that allows us to have the field values evaluated at the points of interest. In this section, we will use the degrees of freedom $\vec{\xi}$, which reflect the initial grid that can be chosen to be a regular cartesian grid, just as a taging system for each mesh element. Such that we can keep track of each node of the grid in a continous manner. Note however, for the coming sections that this also means that if we are able to convert the derivatives in general configuration space variables $\vec{x}$ to derivatives in this initial labelling space variables $\vec{\xi}$, we will actually win a lot.
+
+Note that, as we use $\vec{\xi}$ for the labelling of each mesh element, having in $N=1$ that $x^{j+1}-x^j\rightarrow 0$ means that Equation \eqref{discEq} should have the constant $C$ across all the differences diminished consequently to avoid a mathematical inconsistency. This means that we should choose $C=K(\xi^{j+1}-\xi^j)$, with $K$ a certain constant. Then, equation \eqref{discEq} would become:
+\begin{equation}
+M_j(t)\cdot \frac{x(\xi^{j+1},t)-x(\xi^{j},t)}{\xi^{j+1}-\xi^j}=K \quad \forall j
+\end{equation}
+Taking the limit of a continuous transformation $x(\xi,t)$, with $\xi^{j+1}-\xi^j\rightarrow 0$, this means that we are looking for:
+\begin{equation}\label{contEq}
+M(\xi,t)\cdot \pdv{x(\xi,t)}{\xi}=K \quad \forall \xi\in \Omega\subset \R
+\end{equation}
+If we note that actually the Jacobian of the transformation is: $J(\xi,t)\equiv det(D_{\xi}x(\xi,t)=\pdv{x(\xi,t)}{\xi}$, then the above equation is equivalent to:
+\begin{equation}
+M(\xi,t)\cdot J(\xi,t)=K \quad \forall \xi\in \Omega\subset \R
+\end{equation}
+which is the continuum version of the idea in equation \eqref{discEq}. Namely, the value of the monitor in each mesh element must be inversely proportional to the local divergence or convergence of trajectories, the local expansion or contraction of the grid.
+
+Alternatively, we can get rid of the constant if we make a further derivative:
+\begin{equation}\label{EL1D}
+\pdv{}{\xi}\qty(M(\xi,t)\cdot \pdv{x(\xi,t)}{\xi})=0 \quad \forall \xi\in \Omega\subset \R
+\end{equation}
+which can be manipulated to get:
+\begin{equation}
+\pdv[2]{x(\xi,t)}{\xi}+\pdv{}{\xi}log(M(\xi,t))\pdv{x(\xi,t)}{\xi}=0
+\end{equation}
+with boundary conditions $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$, which are the moving boundaries of the grid we fix.
+
+In particular, we can get the value of $K$ if we integrate equation \eqref{contEq} in $\xi$ in its domain $\Omega=\{\xi\in(\xi_1,\xi_m)\}$:
+\begin{equation}
+\int^{\xi_m}_{\xi_1} M(\xi,t) \pdv{x(\xi,t)}{\xi} d\xi=\int^{\xi_m}_{\xi_1} K d \xi  \Leftrightarrow \int^{x(\xi_m,t)}_{x(\xi_1,t)} M(x(\xi,t),t) dx(\xi,t)=K(\xi_m-\xi_1)
+\end{equation}
+\begin{equation}
+K(t)=\frac{1}{(\xi_m-\xi_1)}\int^{b(t)}_{a(t)} M(x,t) dx
+\end{equation}
+
+Using that $M(\xi,t)>0$ $\forall \xi,t$, we could also integrate a little manipulation of equation \eqref{contEq}:
+\begin{equation}
+\int^{\xi_m}_{\xi_1}  \pdv{x(\xi,t)}{\xi} d\xi=\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)} K d \xi  \Leftrightarrow x(\xi,t)-x(\xi_1,t) =K(t)\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)}  d \xi
+\end{equation}
+\begin{equation}
+x(\xi,t)=a(t)+K(t)\int^\xi_{\xi_1} \frac{1}{M(\xi,t)}d\xi
+\end{equation}
+This would allow us the straightforward computation of the dynamic grid. In fact, we get an alternative, perhaps computationally more tasty formula for $K(t)$ if we use $\xi=\xi_m$:
+\begin{equation}
+K(t)=(b(t)-a(t))\frac{1}{\int^{\xi_m}_{\xi_1} \frac{1}{M(\xi,t)}d\xi}
+\end{equation}
+
+\subsubsection*{\bf (\textgamma.3) Using a variational/optimization approach}
+We will now show, following Ref.\cite{movingGrids} that this could have equivalently been derived from an optimization problem (a variational one), since it will be one of the ways to explain how we can generalize this grid generation to arbitrary $N$.
+
+First let us express a discrete optimization problem, a discrete functional from which we will derive equation \eqref{discEq}. Suppose we are looking for a set of grid points $\{x^j \}_{j=1}^m$ such that the product of the interval lengths they leave and the average value of the monitor $M(x,t)$ is minimum. That is, we are looking for the $\R^m$ minimum of: 
+\begin{equation}\label{discFunc}
+S( x^1,...,x^m;t)=\sum_{j=1}^{m-1} \frac{1}{2} M_j(t) \qty(x^{j+1}-x^j)^2
+\end{equation}
+with the conditions $x^1=a(t)$, $x^m=b(t)$. If we seek $S$ to be minimum, we also seek the products $M_j(t) \qty(x^{j+1}-x^j)^2$ to be minimum, which means that if the monitor $M$ gets big at a certain interval, the length of the interval $\qty(x^{j+1}-x^j)^2$ will get smaller. Just as we wanted.
+
+If we are seeking the vector $(x^1,...,x^m)$ that minimizes $S$ at a certain $t$, we will require that the gradient of $S$ at that point is zero. As such:
+\begin{equation}
+\pdv{S}{x^j}\Big\rvert_{optim}=0\ \ \forall j\Leftrightarrow M_{j-1}(t)(x^j-x^{j-1})-M_j(t)(x^{j+1}-x^j)=0\ \ \forall j
+\end{equation}
+This means that we must have the same product for all the intervals:
+\begin{equation}
+ M_{j-1}(t)(x^j-x^{j-1})=M_j(t)(x^{j+1}-x^j)\ \ \forall j
+\end{equation}
+Which is equivalent to asking that all the products are equal to a same number $C(t)$:
+\begin{equation}
+M_j(t)(x^{j+1}-x^j)=C(t) \quad \forall j
+\end{equation}
+which is exactly equation \eqref{discEq}. In fact, if one computes the Hessian matrix of the function $S$, one can see that the matrix is symmetric and positive semi-definite, meaning $S$ is convex, and has thus a single minimum at most. 
+
+In fact, alternatively using as cost function (or discrete functional) the following one:
+\begin{equation}
+\hat{S}(x^1,...,x^m;t)=\sum_{j=1}^{m-1} \qty{\qty[ M_j(t) \qty(x^{j+1}-x^j)]^2-\qty[ M_j(t) \qty(x^{j}-x^{j-1})]^2}^2
+\end{equation}
+we get that the minimum is the same one. So we see that the discrete functional interpretation is not unique.
+
+Now, let us obtain from here the continuous optimization problem that will lead us to the continuous version \eqref{contEq}. We will seek to minimize a functional $I[x(\xi,t)]$, the minimum of which will be required to satisfy \eqref{contEq}. We could do this by inspection or by making the continuum limit of the discrete functional.
+
+If we divide both sides of equation \eqref{discFunc} by the increment $\Delta \xi$ of the labeling space grid we can have:
+\begin{equation}
+\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\sum_{j=1}^{m-1} \frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi
+\end{equation}
+As we let $\Delta \xi \rightarrow 0$ and $m\rightarrow \infty$, we get:
+\begin{equation}
+I[x(\xi,t)]:=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}}\frac{S( x^1,...,x^m;t)}{\Delta\xi}=\lim\limits_{\substack{\Delta \xi \rightarrow 0\\ m \rightarrow \infty}} \sum_{j=1}^{m-1}\frac{1}{2} M_j(t) \qty(\frac{x^{j+1}-x^j}{\Delta \xi})^2 \Delta \xi=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
+\end{equation}
+\begin{equation}\label{functional1D}
+I[x(\xi,t)]=\int_{\xi^1}^{\xi^m} M(\xi,t) \qty(\pdv{x(\xi,t)}{\xi})^2d\xi
+\end{equation}
+$I$ is a functional, that gives us a number, a score for each admissible $x(\xi,t)$ we input. In analogy with the discrete optimization problem, we will seek to find a diffeomorphism that minimizes the value of $I$, which is nothing more than the Jacobian squared times the monitor function summed over all the domain for $\xi$. Again, the same interpretation holds. The minimization is subject to the requirement that the boundary of the mesh is fixed at $x(\xi_1,t)=a(t)$ and $x(\xi_m,t)=b(t)$.
+
+The Euler-Lagrange equation for this functional (a necessary condition that $x(\xi,t)$ must obey) immediately gives us back equation \eqref{EL1D}, which is what we wanted.
+
+\subsubsection*{\bf (\textgamma.4) The generalization of the dynamic grids to arbitrary N}
+
+Now, in order to generalize this dynamical mesh movement following a monitor function to an arbitrary $N$, we will follow the opposite approach than we tried in the beginning. We will first formulate continuum variational approaches and their related differential equations ruling the dynamics of the mesh. Lastly, we will explain how we could derive discrete functionals and obtain linear equations to solve their minimization.
+
+\subsubsection*{\bf (\textgamma.4.1) A monitor per axis}
+One possible way to generalize the functional in equation \eqref{functional1D} is noting that in $N=1$, $\pdv{x(\xi,t)}{\xi}$ is the variant vector of the $\xi$ axis, the tangent vector to the curve defined by the movement along each label space coordinate $\pdv{\vec{x}(\vec{xi},t)}{\xi_k}$. Its square $\qty(\pdv{x(\xi,t)}{\xi})^2$ could then be interpreted as the (positive) magnitude of this covariant vector, which is the amount by which the grid spacing increases or decreases in that axis. For each small increment of the label space coordinate $\xi_k$, how much the relative distance of those mesh elements has increased or decreased. We could build a generalizing functional for arbitrary $N$ by defining first a set of monitor functions $M_1(\vec{\xi,t}),...,M_N(\vec{\xi},t)$ each of which we pretend to equalize with the grid spacing along each of the $N$ axes.
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k=1}^N M_k(\vec{\xi},t) \Big|\Big|\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\Big|\Big|^2 d\vec{\xi}
+\end{equation}
+In general, the system of $N$ Euler-Lagrange equations that minimizes this axis-wise product of the monitors times the mesh enlargement along each axis can be easily seen to be:
+\begin{equation}
+\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_1} )+\cdots+\pdv{}{\xi_N}\qty( M_N(\vec{\xi},t)\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} )=0
+\end{equation}
+In the $N=2$ case for example, we would have that we are minimizing:
+\begin{equation}
+I[\vec{x}(\xi_1, \xi_2,t)]=\iint_\Omega \Bigg\{M_1(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_1})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_1})^2] +
+\end{equation}
+$$
+M_2(\vec{\xi},t) \qty[\qty(\pdv{x_1(\xi_1,\xi_2,t)}{\xi_2})^2+\qty(\pdv{x_2(\xi_1,\xi_2,t)}{\xi_2})^2]\Bigg\} d\xi_1d\xi_2
+$$
+with the transformation that satisfies the two differential equations:
+\begin{equation}
+\pdv{}{\xi_1} \qty( M_1(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_1} )+\pdv{}{\xi_2}\qty( M_2(\vec{\xi},t)\pdv{x_k(\vec{\xi},t)}{\xi_2} )=0 \quad k\in\{1,2\}
+\end{equation}
+
+However, this is not exactly the equidistribution idea we had in the beginning, by which all the mesh elements are orchestrated in order to equalize a global monitor.
+
+\subsubsection*{\bf (\textgamma.4.2) The N-volume element functional}
+In order to arrive to that idea, we can realize that in equation \eqref{functional1D}, $(\pdv{x(\xi,t)}{\xi})^2$ is also the $N=1$ case of the squared determinant of the Jacobian matrix of the transformation, which gave us the separation increase factor between the trajectories $\vec{x}(\vec{\xi},t)$ of the mesh elements $\vec{\xi}$. How the grid contracts or expands locally in volume. Then, if we try to minimize the product of this Jacobian squared with a monitor function $M(\vec{\xi},t)$, we are trying to find the transformation $\vec{x}(\vec{\xi},t)$ that minimizes the functional:
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega M(\vec{\xi},t) \qty(det(D_\xi \vec{x}(\vec{\xi},t)))^2 d\vec{\xi}
+\end{equation}
+where note that we choose the square of the Jacobian, because we do not want the sign of the Jacobian to influence our choice for the transformation (the sign gave information about the local inversion of the coordinates).
+
+In $N=1$ this leads to equation \eqref{functional1D}, since $(det(D_\xi \vec{x}(\vec{\xi},t)))^2=\qty(\pdv{x(\xi,t)}{\xi})^2$, and consequently, the differential equation we would need to solve for getting the positions of the mesh elements would be equation \eqref{EL1D}.
+
+In $N=2$, the functional we seek to minimize would be:
+\begin{equation}
+I[\vec{x}(\xi_1,\xi_2 ,t)]=\iint_\Omega M(\xi_1, \xi_2,t) \qty( \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1})^2 d\vec{\xi}
+\end{equation}
+the system of two Euler-Lagrange equations of which (the equation that the searched transformation must obey) is:
+\begin{equation}
+\pdv{}{\xi_1}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_2})-\pdv{}{\xi_2}\qty(M(\xi_1,\xi_2,t)J(\xi_1,\xi_2,t)\pdv{\vec{x}}{\xi_1})=0
+\end{equation}
+with $J(\xi_1,\xi_2,t):=\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2} - \pdv{x_1}{\xi_2} \pdv{x_2}{\xi_1}$, the Jacobian.
+
+What we would achieve by solving this equation system is the time evolution of the grid points, in a way that the local product of the area of each grid-cell and the monitor function is minimized: if one the monitor gets big, the area will contract and viceversa.
+
+In general, for an arbitrary $N$ we will get the $N$ differential equations:
+\begin{equation}
+\sum_{k=1}^N \pdv{}{\xi_k} \qty( M(\vec{\xi},t) J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) \pdv{J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}) }{\pdv{x_l}{\xi_j}} )=0
+\end{equation}
+where we need to know the explicit shape of the Jacobian matrix determinant $J\qty(\pdv{x_i(\vec{\xi},t)}{\xi_j}):=det(D_\xi \vec{x}(\vec{\xi},t))$.
+
+\subsubsection*{\bf (\textgamma.4.3) Forcing the mesh to be orthogonal}
+We could even invent custom functionals that for instance ask the mesh to preserve its orthogonality. A transformation $\vec{x}(\vec{\xi},t)$ will locally preserve the orthogonality if the covariant tangent vectors are mutually orthogonal: $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}=0\ \ \forall k\neq j$. We can try to impose this by looking for the transformation that minimizes the functional:
+\begin{equation}
+I[\vec{x}(\vec{\xi},t)]=\iint_\Omega \sum_{k\neq j} \qty(\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_j})^2 d\vec{\xi}
+\end{equation}
+Again, we consider the squared metric, in order to avoid negative projections between the covariant tangent vectors to make the functional hardly non-convex.
+The system of $N$ Euler-Lagrange equations for this is:
+\begin{equation}
+\sum_{l=1}^N \pdv{}{\xi_l}\qty( \sum_{k=1;\ k\neq l}^N \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_l}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_j}  )=0
+\end{equation}
+The $N=2$ leaves:
+\begin{equation}
+\pdv{}{\xi_1}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}  )+\pdv{}{\xi_2}\qty( \qty[\pdv{\vec{x}(\vec{\xi},t)}{\xi_1}\bullet \pdv{\vec{x}(\vec{\xi},t)}{\xi_2}] \pdv{\vec{x}(\vec{\xi},t)}{\xi_1}  )=0
+\end{equation}
+For the sake of numerical derivative computation, an orthogonal grid is always of good help. The problem is that there is no valid solution for many possible boundary conditions we could be interested on.
+
+\subsubsection*{\bf (\textgamma.4.4) Using discretized functionals}
+
+Just as we did in the $N=1$ case, instead of finding the time evolution of the mesh elements by solving the differtential equations lead by the Euler-Lagrange equations of the continous functionals, we could find the discretized versions of these functionals, or even invent some discrete functionals and find the minimum by direct optimization, solving non-linear equation systems.
+
+To do this, we formulate the problem in the following way: we seek the set of points $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ where we assume that we choose to have in the first iteration $m$ discrete points per axis (there are a total of $Nm^N$ unknowns), such that a cost function $S(\vec{x}^1,..,\vec{x}^{m^N})$ is minimized. This cost function can be built by discretizing any functional we have considered so far, or by directly considering combinations of monitor functions and unit-cell angles, volumes etc. Once decided that, we write the explicit expression for $S$ and look for the grid $\{\vec{x}^j\in \Omega\}_{j=1}^{m^N}$ that makes its gradient be as close to zero as possible. This can be done by writing the equations explicitly, differentiating explicitly, and thus generating a system of $Nm^N$ coupled non-linear equations, or rather by using a gradient-descent like algorithm for local non-linear optimization.
+
+The big advantage of this approach is that introducing the boundary conditions is typically simpler, since they are just conditions for the search space and can be trivially introduced.
+
+\subsubsection*{\bf (\textgamma.4.5) Mixing different functionals}
+Both in the continous or discrete functional cases, we can build new perhaps more desirable functionals, by choosing a weighted sum of the different functionals we have seen so far. In such a way that we try to minimize the non-orthogonality but we also try to force a certain equalization.
 
 
-\subsection*{(III.c) Basis Set Expansion}
-\addcontentsline{toc}{subsection}{(III.c) Basis Set Expansion}
-\subsection*{(III.d) Dynamic Equations for Partial Differentials}
-\addcontentsline{toc}{subsection}{(III.d) Dynamic Equations for Partial Differentials}
+
+
+% d) Hybrid approaches, escenarioko zati bet dynamikoki bihurtu finaue edo beste approach batera. Problemas? MBP ezu supereko eta fronterien tratamentue klaro ejem. Ta bai eboluziñoa establiaue izengo da for sure, however, comput complexity ++ kambixo bakoitzeko problema kalro!
+
+
+
+
+
 
 \fancyhead[L]{II . Half Lagrangian Half Eulerian Equations}
-\section*{II . Half Lagrangian Half Eulerian Equations:\\ Conditional Wave-Functions}
-\addcontentsline{toc}{section}{II . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}
+\section*{III . Half Lagrangian Half Eulerian Equations:\\ Conditional Wave-Functions}
+\addcontentsline{toc}{subsection}{\bf III . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}
 In this section, we will explore an intermediate approach between the fully Lagrangian and Eulerian frames. For this, we will consider that part of the system behaves in a Lagrangian frame, while the other part behaves in an Eulerian frame. The degrees of freedom described on an Eulerian frame will be denoted by $\vec{x}=(x_1,...,x_m)$ while the rest of degrees of freedom $\vec{y}=(x_{m+1},...,x_N)$ will be described by a Lagrangian frame. If we need to refer to both kinds of variables at once, we will use $\vec{\x}=(\vec{x}, \vec{y})=(x_1,...,x_N)$.
 
 In general, given we parametrize the fluid elements with labels $\vec{\xi}=(\vec{\xi}_x,\vec{\xi}_y)\in\R^N$ referring to their initial position $\vec{\xi}:=\vec{\x}(t_0, \vec{\xi})$, we define the set of trajectories of the continuum as $\vec{\x}(t;\vec{\xi}) \equiv \vec{\x}^\xi(t) \quad \xi \in \Omega \subset \R^N$. As we said though, we will only treat explicitly in the Lagrangian frame, the degrees of freedom in $\vec{y}$. We will then denote by $\vec{y}^\xi(t)=(x_{m+1}^\xi(t),...,x_N^\xi(t))$ the set of trajectories for the subsystem of degrees of freedom $\vec{y}$.
