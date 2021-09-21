@@ -103,6 +103,21 @@
 \end{tcolorbox}
 }
 
+\usepackage{anyfontsize}
+\newenvironment{kapituloBerria}[1][]
+  {\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{2}}% some space at the top
+   \raggedleft          % flush to the right margin
+   {\textbf{{\fontsize{60}{40}\selectfont \hspace{+9.5cm}#1\newline \newline}}}
+   \bf
+   \fontsize{30}{20}\selectfont
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
 \usepackage{listings}
 \usepackage{xcolor}
 \lstset{language=C++,
@@ -123,7 +138,7 @@
 \pagenumbering{gobble}
 \clearpage
 \pagenumbering{arabic}
-\setcounter{page}{1}
+\setcounter{page}{-1}
 \vspace{-0.3 cm}
 %\section{The Objective}
 %It is well known that the time dependent Schrödinger Equation (TDSE) that predicts the dynamics of a quantum system is a problem that scales exponentially both in space and in time for increasing dimensionality of the problem. This becomes very obvious when interpreting the wave-funtion in terms of an ensemble of tangentially interacting trajectories of the system. That is, quantum mechanical systems (experiments) depend on all their possible realizations in a way that all the possible trajectories of the system interact repulsively among them due to the quantum potential first described by David Bohm. This means that it is equivalent to think on the wavefunction of the system as an ensemble of an infinitely dense set of exactly equivalent systems forming a fluid where each copy of the system cannot cross the trajectory of any other at the same time (they cannot occupy the same point in configuration space-time) and they still have a repelling force pushing the fluid towards the most homogenenous distribution possibel given the manifold described by the potential energy term. 
@@ -138,19 +153,31 @@
 %Osea la cuestion es que la velocidad e duna trayectoria de Bohm solo depende de la derivad de sus CWF-s en cada timepo! de las direcciones ortonormales (ze claro, el campo de velocidades es la derivada parcial (en las dirs cartesianas de la accion) y el qtm potential solo depende de la derivada parcial en las dirs cartesianas de la "densidad" local!). Entonces, dado un t, dada la fk onda completa, sacas condicioanndo las CWF. Ahora de las CWF tu puedes computar a donde se mueve la traj de Bohm en el sigueinte teimpo. Ahora la pregunta es, puedes si supieses toda la traj evolucionar un tiempo la CWF? Si pudieses ya estaria reuslto el problema many body. Pero la resuesta es que las ecuaciones que rigen las CWF dependen de la full wavefunction al parecer!
 %
 %Disclaimer, all the present work will be made for 3 dims but is clearly generalizable to N.
-\pagestyle{fancy}
+\pagestyle{empty}
+
+\section*{Abstract}
+Tal Tal Tal
+
 \section*{Objectives}\vspace{-0.2cm}
-The present document is a review of the panorama we face when talking about quantum dynamics involving both trajectories and wavefunctions. It is especially oriented towards lighting possible paths for the development of new algorithms to surpass difficulties of standard methods.
+The present document is a review of the panorama we face when talking about quantum dynamics involving trajectories and wavefunctions in a same standing. It is particularly oriented towards lighting possible paths for the development of new algorithms to surpass difficulties of standard methods by following a mixed wavefunction-trajectory approach.
 
 
 \section*{Guideline}\vspace{-0.2cm}
 
-In Section 1 we will specify the employed vocabulary on the present essay. 
+It is highly recommended to have the index of contents beside while reading the document in order to have a schematic view of the description, since at some points the details can get a bit technical and the reader may get lost by them.
 
-In the first part of Section 2, a bird eye view will be registered about the paths one could take to approach quantum dynamics involving wavefunctions and/or trajectories. In the second part of Section 2, for each of the approaches mentioned in the previous part, a set of possible methods to face them will be explored in a coarse-grained mode.
+The document is divided in two parts. In the first part we will give a brief qualitative insight for the terms employed throughout the work, concerning the different interpretations of quantum mechanics and concepts in fluid mechanics. After that, we will present a heuristic view of the possible approaches in terms of degrees of freedom, that one can take when dealing with a quantum system. We will consider two extreme cases: considering all the degrees of freedom in the Eulerian frame, or all of them in a Lagrangian frame. Then we will consider a mixed approach, where we will be able to choose arbitrarily between having some degrees in one or the other frame. It is here (in the last part of the document) where our interest focus is actually centered.
 
-In Section 3, we will present all the interesting equations we find for each of the approaches, as exaxt as we can go, trying to do it in a constructive and somewhat didactic way. In this path, we will explore several possible definitions of trajectories and wavefunctions in the context of each understanding.
+In the second part, we will dig into the quantitative equations of quantum dynamics within each of the approaches. We will divide this exposition in three main sections, following the degree of freedom treatments. In the three of them, the same equations will be reviewed but each in their corresponding approach. That is, the section $I.b$ will be the equivalent to the section $II.b$ and $III.b$ but each with their own perspective, as we will see. It is this why it is convenient to have the schematic index at hand at all moment.
 
+\newpage
+
+\begin{kapituloBerria}[Part A]
+Drafting the Panorama
+\addcontentsline{toc}{section}{Part A: Drafting the Panorama}
+\end{kapituloBerria}
+
+\pagestyle{fancy}
 
 \fancyhead[R]{\em On the Employed Vocabulary}
 \section*{Section 1: On the Employed Vocabulary}
@@ -158,7 +185,7 @@ In Section 3, we will present all the interesting equations we find for each of 
 
 Throughout the document concepts of the Orthodox, Bohmian, Hydrodynamic and Tangent Universe interpretations will be employed altogether in order to give names to the mathematical tools we will employ. Let us thus, have a brief brainstorm on them to set things in place.
 
-Given a system whose possible ontological configurations can be labeled by a set of $N$ coordinates or degrees of freedom $(x_1, ...,x_N)\equiv \vec{x}$, each of which can take continuous real values in a certain subset of $\R^N$ (in principle the whole space), say $\Omega$, we call the space of possible values of $\vec{x}$, the {\bf configuration-space} of the system. We introduce an additional labeling axis, called time and the concept of dynamics, as the evolution in time of the quantitative properties of the points in configuration-space. In order to describe a set of quantitative properties of this continuous contingent extension in configuration-space and time, we shall use a set of functions that map points in configuration-space and time to numbers. These properties shall be called the {\bf state variables} of the system, and should be enough as to be able to predict the time evolution of themselves. The state variables, described by scalar functions, could be equivalently interpreted as fields or as fluids. We will mainly use the second approach for it is way more intuitive, not only conceptually with regards to the interpretations of quantum mechanics, but because it will provide us with a mathematical advantage of flipping from two distinct descriptions. 
+Given a system whose possible ontological configurations can be labeled by a set of $N$ coordinates or degrees of freedom $(x_1, ...,x_N)\equiv \vec{x}$, which can take continuous values in a certain subset of $\R^N$, say $\Omega_t\subseteq \R^N$, we call the space of possible values of $\vec{x}$, the {\bf configuration-space} of the system. We introduce an additional labeling axis, called time, $t$, together with the concept of dynamics, which is the evolution in time of the quantitative properties of the points in configuration-space. Note that the subset of $\R^N$ that we consider may vary continously in time, thus the subindex $t$ in $\Omega_t\subseteq \R^N$. In order to describe a set of quantitative properties of this continuous contingent extension in configuration-space and time, we shall use a set of functions that map points in configuration-space $\vec{x}$ and time $t$ to numbers. These properties shall be called the {\bf state variables} of the system, and should be enough as to be able to predict the time evolution of themselves. The state variables, described by scalar functions, could be equivalently interpreted as fields, that have a value per point in configuration-space, or as fluids, where there is an underlying movement of points, each of which carries with it a value of the quantitative properties, among them, their position in configuration-space. We will mainly use the second approach for it is way more intuitive, not only conceptually with regards to the interpretations of quantum mechanics, but because it will provide us with a mathematical advantage of flipping from two distinct descriptions. 
 
 Understanding a field (a scalar quantity as a function of $\vec{x},t$) as the state property of a fluid, means we will consider there is a continuum of uncountable point like particles that move in configuration-space, where each of which will carry a value of the scalar that can change in time. We call these particles, the {\bf fluid elements} or {\bf fluid particles}. Certainly, in order to have a moving set of particles or fluid, we require to have a velocity field for the fluid at each time. If we have so, we will soon realize that we could describe the scalar quantities both in the frame of (as seen as by) the moving particles of the fluid (the so called Lagrangian frame) or rather as seen from each configuration-space point (the Eulerian frame).
 
@@ -255,6 +282,12 @@ This method is perhaps as parallelized as we could get the problem. It would req
 % - Sartun ekuaziñoak dynamical deribatuentzako.
 
 \newpage
+
+\begin{kapituloBerria}[Part B]
+The Equations and Techniques
+\addcontentsline{toc}{section}{Part B: The Equations and Techniques}
+\end{kapituloBerria}
+
 \fancyhead[R]{\em The Equations for Quantum Dynamics }
 \fancyhead[L]{I . Fully Eulerian Equations}
 \section*{Section 3: The Equations for Quantum Dynamics }
