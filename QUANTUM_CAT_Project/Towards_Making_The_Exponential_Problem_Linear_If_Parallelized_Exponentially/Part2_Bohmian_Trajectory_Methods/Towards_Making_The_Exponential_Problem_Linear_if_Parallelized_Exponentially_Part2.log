@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.4)  21 SEP 2021 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.4)  24 SEP 2021 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1681,25 +1681,28 @@ This may cause the page layout to be inconsistent, however.
 
 ] [2] [3] [4] [5] [6] [7] [8
 
+] [9
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 362--362
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--362
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
 
  []
 
-[9
-
-] [10] [11] [12]
-Overfull \hbox (97.99413pt too wide) detected at line 465
-\OT1/cmr/m/n/10.95 + [] []
+[10] [11] [12]
+Overfull \hbox (11.41623pt too wide) in paragraph at lines 476--477
+[]\OT1/cmr/m/n/10.95 If we note that in the terms that do not have an in-te-gra
+l, we can in-tro-duce $1 = [][] ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.9
+5 )^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy$\OT
+1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (45.5196pt too wide) detected at line 469
+Overfull \hbox (45.5196pt too wide) detected at line 479
 [][]\OT1/cmr/m/n/10.95 0 = [][] ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.9
 5 )[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~\OT1/cmr/m
 /n/10.95 ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.95 )[]^^C[](\OML/cmm/m/i
@@ -1709,182 +1712,167 @@ t/10.95 x; t\OT1/cmr/m/n/10.95 ) + []^^C[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n
  []
 
 
-Overfull \hbox (47.6764pt too wide) detected at line 494
-[][][][][] \OMS/cmsy/m/n/10.95 ^^A  \OT1/cmr/m/n/10.95 ^^H[](\OML/cmm/m/it/10.9
-5 y; t\OT1/cmr/m/n/10.95 )[]^^C[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 ) 
-= []\OML/cmm/m/it/10.95 log[] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 =
+Overfull \hbox (36.29549pt too wide) detected at line 504
+[][]| [][][] \OMS/cmsy/m/n/10.95 ^^A  \OT1/cmr/m/n/10.95 ^^H[](\OML/cmm/m/it/10
+.95 y; t\OT1/cmr/m/n/10.95 )[]^^C[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 
+) = []\OML/cmm/m/it/10.95 log[] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 =
+
  []
 
-[13] [14]
-Overfull \hbox (22.5423pt too wide) detected at line 562
-[][]\OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[][] \OT1/cmr/m/n/10.95 = [] [][][] 
-+ \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n
-/10.95 )[] + \OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; t\
-OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
-95 x; t\OT1/cmr/m/n/10.95 ) + 2[][]\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 (\OM
-L/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 )
- []
-
-[15] [16]
-Overfull \hbox (49.57573pt too wide) detected at line 651
-[][]\OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[]\OML/cmm/m/it/10.95  \OT1/cmr/m/n/
-10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/
-cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@ [] [][]\OML/cmm/m/it/10.95  \OT1/cmr/
-m/n/10.95 (\OML/cmm/m/it/10.95 x[]; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t
-\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[][] + \OML/cmm/
-m/it/10.95 U\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OM
-L/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95
- ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m
-/n/10.95 ) + \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~ [] []\OML/cmm/m/it/10.95  
-\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
-t/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[][] \O
-MS/cmsy/m/n/10.95 ^^A []\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
-t/10.95 t\OT1/cmr/m/n/10.95 )
+[13] [14] [15] [16]
+Overfull \hbox (36.77208pt too wide) detected at line 655
+[][]| \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[]\OML/cmm/m/it/10.95  \OT1/cmr/m/
+n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT
+1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@ [] [][]\OML/cmm/m/it/10.95  \OT1/cm
+r/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
+ t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[][] + \OML/cm
+m/m/it/10.95 U\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\
+OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.
+95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr
+/m/n/10.95 ) + \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~ [] []\OML/cmm/m/it/10.95
+  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; []\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[][] 
+\OMS/cmsy/m/n/10.95 ^^A []\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 t\OT1/cmr/m/n/10.95 )
  []
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-
- []
-
-
-LaTeX Warning: Reference `fig:covariant' on page 19 undefined on input line 748
-.
-
-
-LaTeX Warning: Reference `fig:isoline' on page 19 undefined on input line 748.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--748
-
- []
-
-
-LaTeX Warning: Reference `fig:JacobMatrix' on page 19 undefined on input line 7
-64.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 764--764
-
- []
-
-
-LaTeX Warning: Reference `fig:volumeDet' on page 19 undefined on input line 764
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 764--764
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 764--764
-
+Overfull \hbox (8.74213pt too wide) in paragraph at lines 713--714
+\OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 ^^Z\OT1/cmr/m/n/10.95 ([]\OML/cmm/m
+/it/10.95 ; t\OT1/cmr/m/n/10.95 )$, we can im-me-di-ately get the full wave-fun
+c-tion as $\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT
+1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10
+.95 ^^Z\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm
+/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 exp\OT1/cmr/m/n/10.95 
+(\OML/cmm/m/it/10.95 iS\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n
+/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =\U/msb/
+m/n/10.95 ~\OT1/cmr/m/n/10.95 )$. 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
+Underfull \hbox (badness 10000) in paragraph at lines 788--790
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 825.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 825.
+
+
+LaTeX Warning: Reference `fig:covariant' on page 20 undefined on input line 825
+.
+
+
+LaTeX Warning: Reference `fig:isoline' on page 20 undefined on input line 825.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+
+ []
+
+
+LaTeX Warning: Reference `fig:JacobMatrix' on page 20 undefined on input line 8
+40.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
+
+ []
+
+
+LaTeX Warning: Reference `fig:volumeDet' on page 20 undefined on input line 840
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 842--842
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 842--842
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 842--842
+Underfull \hbox (badness 10000) in paragraph at lines 886--886
 
  []
 
 [21]
-Overfull \vbox (7.19167pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 918--918
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 918--918
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 918--918
+
+ []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 874--874
+Underfull \hbox (badness 10000) in paragraph at lines 952--952
 
  []
 
 
-Overfull \vbox (1.25467pt too high) has occurred while \output is active []
-
+Overfull \hbox (21.34515pt too wide) detected at line 952
+[][]| [][][] \OT1/cmr/m/n/10.95 = [][][] = [] + [] [][][][] = [] + [] []\OML/cm
+m/m/it/10.95 v[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95
+ )
+ []
 
 [23]
-Overfull \hbox (41.52696pt too wide) detected at line 927
-[][][]\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; t\OT1/cm
-r/m/n/10.95 ) = [] [][][] [] + [] + [][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 927--927
+Underfull \hbox (badness 10000) in paragraph at lines 999--999
 
  []
-
-
-Overfull \vbox (2.7981pt too high) has occurred while \output is active []
-
 
 [24]
-Overfull \hbox (83.94154pt too wide) detected at line 958
-[][][][][] \OT1/cmr/m/n/10.95 = [][][] = [] + [] [][][][] = [] + [] []\OML/cmm/
-m/it/10.95 v[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
+Overfull \vbox (17.47458pt too high) has occurred while \output is active []
+
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1036
 
  []
 
 
-Overfull \vbox (9.59949pt too high) has occurred while \output is active []
-
-
-[25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1029
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1036
 
  []
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1083
+[26] [27] [28] [29] [30]
 
- []
+LaTeX Warning: Reference `fig:equid' on page 31 undefined on input line 1157.
 
-[29] [30] [31]
-
-LaTeX Warning: Reference `fig:equid' on page 32 undefined on input line 1150.
-
-[32] [33] [34] [35] [36]
-Overfull \hbox (16.62587pt too wide) in paragraph at lines 1321--1323
+[31] [32] [33] [34] [35]
+Overfull \hbox (16.62587pt too wide) in paragraph at lines 1328--1330
 \OT1/cmr/m/n/10.95 where we need to know the ex-plicit shape of the Ja-co-bian 
 ma-trix de-ter-mi-nant $\OML/cmm/m/it/10.95 J[] \OT1/cmr/m/n/10.95 := \OML/cmm/
 m/it/10.95 det\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 D[][]\OT1/cmr/m/n/10.95 (
 []\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ))$. 
  []
 
-[37]
-<Figures/slices.jpg, id=601, 764.8575pt x 532.23843pt>
+[36] [37]
+<Figures/slices.jpg, id=605, 764.8575pt x 532.23843pt>
 File: Figures/slices.jpg Graphic file (type jpg)
 <use Figures/slices.jpg>
-Package pdftex.def Info: Figures/slices.jpg  used on input line 1372.
+Package pdftex.def Info: Figures/slices.jpg  used on input line 1379.
 (pdftex.def)             Requested size: 314.40001pt x 218.77953pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (12.91891pt too wide) detected at line 1382
+Overfull \hbox (12.91891pt too wide) detected at line 1389
 [][]\OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[]\OML/cmm/m/it/10.95  \OT1/cmr/m/n/
 10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/
 cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.9
@@ -1899,180 +1887,183 @@ OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.
 OT1/cmr/m/n/10.95 )[][]
  []
 
-[38]
-Overfull \hbox (0.81467pt too wide) in paragraph at lines 1400--1402
+[38 <./Figures/slices.jpg>]
+Overfull \hbox (0.81467pt too wide) in paragraph at lines 1407--1409
 \OT1/cmr/m/n/10.95 We can see that equa-tion [] rul-ing the mo-tion of the so c
 alled con-di-tional wave-func-tions $\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 ([
 ]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/
 10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )$
  []
 
-[39 <./Figures/slices.jpg>] [40]
-<Figures/unstructure_aligned.png, id=632, 1606.0pt x 788.9475pt>
+[39]
+<Figures/unstructure_aligned.png, id=627, 1606.0pt x 788.9475pt>
 File: Figures/unstructure_aligned.png Graphic file (type png)
 <use Figures/unstructure_aligned.png>
 Package pdftex.def Info: Figures/unstructure_aligned.png  used on input line 14
-29.
+36.
 (pdftex.def)             Requested size: 314.40001pt x 154.44003pt.
-<Figures/aligned.png, id=634, 1606.0pt x 729.72626pt>
+ [40 <./Figures/unstructure_aligned.png (PNG copy)>]
+<Figures/aligned.png, id=637, 1606.0pt x 729.72626pt>
 File: Figures/aligned.png Graphic file (type png)
 <use Figures/aligned.png>
-Package pdftex.def Info: Figures/aligned.png  used on input line 1440.
+Package pdftex.def Info: Figures/aligned.png  used on input line 1447.
 (pdftex.def)             Requested size: 314.40001pt x 142.84721pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[41 <./Figures/unstructure_aligned.png (PNG copy)>]
-<Figures/unstructuring.png, id=646, 1606.0pt x 1159.33125pt>
+<Figures/unstructuring.png, id=642, 1606.0pt x 1159.33125pt>
 File: Figures/unstructuring.png Graphic file (type png)
 <use Figures/unstructuring.png>
-Package pdftex.def Info: Figures/unstructuring.png  used on input line 1468.
+Package pdftex.def Info: Figures/unstructuring.png  used on input line 1475.
 (pdftex.def)             Requested size: 314.40001pt x 226.94434pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42 <./Figures/aligned.png (PNG copy)>]
-<Figures/moving_bohmian.png, id=658, 1606.0pt x 987.69pt>
+[41 <./Figures/aligned.png (PNG copy)>]
+<Figures/moving_bohmian.png, id=655, 1606.0pt x 987.69pt>
 File: Figures/moving_bohmian.png Graphic file (type png)
 <use Figures/moving_bohmian.png>
-Package pdftex.def Info: Figures/moving_bohmian.png  used on input line 1480.
+Package pdftex.def Info: Figures/moving_bohmian.png  used on input line 1487.
 (pdftex.def)             Requested size: 314.40001pt x 193.34479pt.
- [43 <./Figures/unstructuring.png (PNG copy)> <./Figures/moving_bohmian.png (PN
-G copy)>]
-<Figures/bohmian_pair.png, id=665, 1606.0pt x 892.33376pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42 <./Figures/unstructuring.png (PNG copy)>]
+<Figures/bohmian_pair.png, id=664, 1606.0pt x 892.33376pt>
 File: Figures/bohmian_pair.png Graphic file (type png)
 <use Figures/bohmian_pair.png>
-Package pdftex.def Info: Figures/bohmian_pair.png  used on input line 1491.
+Package pdftex.def Info: Figures/bohmian_pair.png  used on input line 1498.
 (pdftex.def)             Requested size: 314.40001pt x 174.67836pt.
-
+ [43 <./Figures/moving_bohmian.png (PNG copy)> <./Figures/bohmian_pair.png (PNG
+ copy)>]
 
 LaTeX Warning: Reference `fig:manyBohmian' on page 44 undefined on input line 1
-511.
+518.
 
-<Figures/many_bohmian.png, id=670, 1606.0pt x 1204.5pt>
+<Figures/many_bohmian.png, id=675, 1606.0pt x 1204.5pt>
 File: Figures/many_bohmian.png Graphic file (type png)
 <use Figures/many_bohmian.png>
-Package pdftex.def Info: Figures/many_bohmian.png  used on input line 1515.
+Package pdftex.def Info: Figures/many_bohmian.png  used on input line 1522.
 (pdftex.def)             Requested size: 314.40001pt x 235.78632pt.
+
+LaTeX Warning: Reference `fig:aligned' on page 44 undefined on input line 1527.
+
+
+<Figures/aligned_original.png, id=678, 1606.0pt x 1132.23pt>
+File: Figures/aligned_original.png Graphic file (type png)
+<use Figures/aligned_original.png>
+Package pdftex.def Info: Figures/aligned_original.png  used on input line 1532.
+
+(pdftex.def)             Requested size: 314.40001pt x 221.63914pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig:aligned' on page 44 undefined on input line 1520.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-[44 <./Figures/bohmian_pair.png (PNG copy)>]
-<Figures/aligned_original.png, id=681, 1606.0pt x 1132.23pt>
-File: Figures/aligned_original.png Graphic file (type png)
-<use Figures/aligned_original.png>
-Package pdftex.def Info: Figures/aligned_original.png  used on input line 1525.
-
-(pdftex.def)             Requested size: 314.40001pt x 221.63914pt.
- [45 <./Figures/many_bohmian.png (PNG copy)> <./Figures/aligned_original.png (P
-NG copy)>] [46]
+[44 <./Figures/many_bohmian.png (PNG copy)>] [45 <./Figures/aligned_original.pn
+g (PNG copy)>]
 LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 1
-577.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pzc.fd
+584.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2001/06/04 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1577
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1584
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <8> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1577
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1584
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <6> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1577
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1584
 .
 
-Overfull \hbox (32.1875pt too wide) detected at line 1580
+Overfull \hbox (32.1875pt too wide) detected at line 1587
 \OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n
 /10.95 ) = [][] = [][]
  []
 
 
-Overfull \hbox (7.99095pt too wide) detected at line 1610
+Overfull \hbox (7.99095pt too wide) detected at line 1617
 [] [] \OMS/cmsy/m/n/10.95 ^^@ [][][] \OT1/cmr/m/n/10.95 + [][][] \OMS/cmsy/m/n/
 10.95 ^^@  []
  []
 
-[47] [48pdfTeX warning (ext4): destination with the same identifier (name{equat
-ion.0.154}) has been already used, duplicate ignored
+[46] [47pdfTeX warning (ext4): destination with the same identifier (name{equat
+ion.0.149}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1654 \begin{equation}
-                       \label{SE.GJ}]pdfTeX warning (ext4): destination with th
-e same identifier (name{equation.0.154}) has been already used, duplicate ignor
-ed
+l.1654 
+       ]pdfTeX warning (ext4): destination with the same identifier (name{equat
+ion.0.149}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1654 \begin{equation}
+l.1661 \begin{equation}
                        \label{SE.GJ}pdfTeX warning (ext4): destination with the
- same identifier (name{equation.0.154}) has been already used, duplicate ignore
+ same identifier (name{equation.0.149}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.1654 \begin{equation}
+l.1661 \begin{equation}
                        \label{SE.GJ}pdfTeX warning (ext4): destination with the
- same identifier (name{equation.0.154}) has been already used, duplicate ignore
+ same identifier (name{equation.0.149}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.1654 \begin{equation}
+l.1661 \begin{equation}
                        \label{SE.GJ}pdfTeX warning (ext4): destination with the
- same identifier (name{equation.0.154}) has been already used, duplicate ignore
+ same identifier (name{equation.0.149}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.1654 \begin{equation}
+l.1661 \begin{equation}
                        \label{SE.GJ}
-Underfull \hbox (badness 10000) in paragraph at lines 1663--1663
+Underfull \hbox (badness 10000) in paragraph at lines 1670--1670
 
  []
 
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <9> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1663
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1670
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <5> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1663
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1670
 .
 
-LaTeX Warning: Citation `NireTFGie' on page 49 undefined on input line 1663.
+LaTeX Warning: Citation `NireTFGie' on page 48 undefined on input line 1670.
 
-<Figures/hyperplaness.png, id=725, 1027.84pt x 986.68625pt>
+<Figures/hyperplaness.png, id=723, 1027.84pt x 986.68625pt>
 File: Figures/hyperplaness.png Graphic file (type png)
 <use Figures/hyperplaness.png>
-Package pdftex.def Info: Figures/hyperplaness.png  used on input line 1667.
+Package pdftex.def Info: Figures/hyperplaness.png  used on input line 1674.
 (pdftex.def)             Requested size: 241.84843pt x 232.15735pt.
+[48]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1681--1681
+
+ []
+
+
+LaTeX Warning: Reference `fig:line' on page 49 undefined on input line 1681.
+
+<Figures/rectas.png, id=728, 1027.84pt x 852.18375pt>
+File: Figures/rectas.png Graphic file (type png)
+<use Figures/rectas.png>
+Package pdftex.def Info: Figures/rectas.png  used on input line 1687.
+(pdftex.def)             Requested size: 241.84843pt x 200.51027pt.
 [49]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1674--1674
+Underfull \hbox (badness 10000) in paragraph at lines 1697--1697
 
  []
 
-
-LaTeX Warning: Reference `fig:line' on page 50 undefined on input line 1674.
-
-[50]
-<Figures/rectas.png, id=736, 1027.84pt x 852.18375pt>
-File: Figures/rectas.png Graphic file (type png)
-<use Figures/rectas.png>
-Package pdftex.def Info: Figures/rectas.png  used on input line 1680.
-(pdftex.def)             Requested size: 241.84843pt x 200.51027pt.
- [51 <./Figures/hyperplaness.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
-
- []
-
-[52 <./Figures/rectas.png (PNG copy)>]
-Overfull \hbox (12.64691pt too wide) in paragraph at lines 1707--1709
+[50 <./Figures/hyperplaness.png (PNG copy)>]
+Overfull \hbox (12.64691pt too wide) in paragraph at lines 1714--1716
 \OT1/cmr/m/n/10.95 Which is a con-ti-nu-ity equa-tion for $\OML/cmm/m/it/10.95 
 ^^Z\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )$ wit
@@ -2081,33 +2072,33 @@ h a source term $\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^Z\OT1/cmr/m/n/10.
 /m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) [][] [][][][]$
  []
 
-[53]
-Overfull \hbox (41.38582pt too wide) detected at line 1740
+[51 <./Figures/rectas.png (PNG copy)>]
+Overfull \hbox (41.38582pt too wide) detected at line 1747
 \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.9
 5 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
 
-Overfull \hbox (13.88828pt too wide) detected at line 1747
+Overfull \hbox (13.88828pt too wide) detected at line 1754
 \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 )
  []
 
-
-Underfull \hbox (badness 1028) in paragraph at lines 1784--1785
+[52]
+Underfull \hbox (badness 1028) in paragraph at lines 1791--1792
 []\OT1/cmr/m/n/10.95 Oyanguren Xa-bier, \OT1/cmr/m/it/10.95 The Quan-tum Many B
 ody Prob-lem\OT1/cmr/m/n/10.95 , Bach-e-lor's The-sis (2020) for the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1786--1787
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
 [][][]\OT1/cmr/m/n/10.95 https://github.com/Oiangu9/The[]Quantum[]Many[]Body[]P
 roblem[]-Bachellors[]Thesis-
  []
 
 
-Underfull \hbox (badness 4673) in paragraph at lines 1793--1794
+Underfull \hbox (badness 4673) in paragraph at lines 1800--1801
 []\OT1/cmr/m/n/10.95 Knupp, Patrick & Stein-berg, Stanly. \OT1/cmr/m/it/10.95 T
 he Fun-da-men-tals of Grid Gen-er-a-tion. \OT1/cmr/m/n/10.95 (1993)
  []
@@ -2116,18 +2107,18 @@ he Fun-da-men-tals of Grid Gen-er-a-tion. \OT1/cmr/m/n/10.95 (1993)
 Package caption Warning: Unused \captionsetup[table] on input line 47.
 See the caption package documentation for explanation.
 
-[54]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1805.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1805.
+[53]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1812.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1812.
 
 (./Towards_Making_The_Exponential_Problem_Linear_if_Parallelized_Exponentially_
 Part2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1805.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1805.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1812.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1812.
 
 Package rerunfilecheck Info: File `Towards_Making_The_Exponential_Problem_Linea
 r_if_Parallelized_Exponentially_Part2.out' has not changed.
-(rerunfilecheck)             Checksum: 5400434019C4B428A4F27F894D46FC70;2212.
+(rerunfilecheck)             Checksum: 082FB79312F54D5DC2FFDEC28F2E57CF;2235.
 
 
 LaTeX Warning: There were undefined references.
@@ -2137,11 +2128,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29683 strings out of 483107
- 548271 string characters out of 5964630
- 1025546 words of memory out of 5000000
- 43794 multiletter control sequences out of 15000+600000
- 557126 words of font info for 107 fonts, out of 8000000 for 9000
+ 29702 strings out of 483107
+ 548518 string characters out of 5964630
+ 1028552 words of memory out of 5000000
+ 43819 multiletter control sequences out of 15000+600000
+ 561340 words of font info for 126 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  62i,23n,100p,3133b,982s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/oiangu/.te
@@ -2153,27 +2144,29 @@ nts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cbfonts/grxn1095.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+onts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/cbfonts/grxn1095.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on Towards_Making_The_Exponential_Problem_Linear_if_Parallelized
-_Exponentially_Part2.pdf (57 pages, 3325733 bytes).
+_Exponentially_Part2.pdf (56 pages, 3347383 bytes).
 PDF statistics:
- 928 PDF objects out of 1000 (max. 8388607)
- 817 compressed objects within 9 object streams
- 315 named destinations out of 1000 (max. 500000)
+ 931 PDF objects out of 1000 (max. 8388607)
+ 819 compressed objects within 9 object streams
+ 308 named destinations out of 1000 (max. 500000)
  263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

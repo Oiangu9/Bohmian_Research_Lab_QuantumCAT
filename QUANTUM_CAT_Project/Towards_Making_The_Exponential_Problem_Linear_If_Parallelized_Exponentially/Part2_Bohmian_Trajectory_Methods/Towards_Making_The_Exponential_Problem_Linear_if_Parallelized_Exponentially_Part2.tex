@@ -86,12 +86,12 @@
 \setlength{\absrightindent}{0mm}
 
 \usepackage{tcolorbox}
-\DeclareRobustCommand{\mybox}[2][gray!20]{%
+\DeclareRobustCommand{\mybox}[2][gray!10]{%
 \begin{tcolorbox}[   %% Adjust the following parameters at will.
-        left=1cm,
-        right=1cm,
-        top=0.5cm,
-        bottom=0.5cm,
+        left=0.2cm,
+        right=0.2cm,
+        top=0.15cm,
+        bottom=0.15cm,
         colback=#1,
         colframe=#1,
         width=\dimexpr\textwidth\relax, 
@@ -306,20 +306,22 @@ The Equations of Quantum Dynamics
 
 \section*{I . Fully Eulerian Equations}
 \addcontentsline{toc}{subsection}{{\bf I . Fully Eulerian Equations }}
-Given a closed quantum system of $N$ degrees of freedom in a potential field $U(x, t)$, with $x\in\R^N$, described by a complex wavefunction with real support $\psi(x,t)$, the time evolution of the system is governed by the Schrödinger Equation:
+Given a closed quantum system of $N$ degrees of freedom evolving in time $t$, where its possible conifgurations in space are given by a vector $x\in\R^N$, such that we know the potential field $U(x, t)$ imposing the interactions between the degrees of freedom, given the dynamics of the system is fully described by a complex wavefunction with real support $\psi(x,t)$, the time evolution of the system is governed by the Schrödinger Equation:
 
 \subsection*{(I.a) The Schrödinger Equation}
 \addcontentsline{toc}{subsubsection}{{\bf (I.a)} The Schrödinger Equation}
 \begin{equation}\label{SE}
 i\hbar \pdv{\psi(x,t)}{t} = \qty[-\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(x,t)]\psi(x,t)
 \end{equation}
+where $i=\sqrt{-1}$ and $\hbar$ is the so called Planck constant.
+
 We define the following operator as the Hamiltonian operator:
 \begin{equation}
 \hat{H}(x, y, t):=\qty[-\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(x,t)]
 \end{equation}
 Due to the unitary nature of the Schrödinger Equation's time evolution, the norm of the wavefunction is preserved in time, such that if at a certain known time $\int^\infty_{-\infty} \psi^\dagger(x,t_0)\psi(x,t_0)dx=1$, then the norm is a constant of motion $\int^\infty_{-\infty} \psi^\dagger(x,t)\psi(x,t)dx=1$ $\forall t>t_0$.
 
-By the Born Rule axiom of Orthodox QM, the quantity $\psi^\dagger\psi=|\psi|^2=:\rho(x,t)$ is the probability density that a spatial observation of the degrees of freedom $x$ follows.
+By the Born Rule axiom of Orthodox QM, the quantity $\psi^\dagger\psi=|\psi|^2=:\rho(x,t)$ is the probability density function that a spatial observation of the degrees of freedom $x$ follows.
 
 \subsection*{(I.b) The Continuity and The Hamilton-Jacobi Equations}
 \addcontentsline{toc}{subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}
@@ -328,50 +330,53 @@ Writing the wavefunction in polar form $\psi(x,t)=R(x,t)exp(iS(x,t)/\hbar)$ with
 \pdv{}{t} \rho(x,t)=-\sum_{k=1}^N \pdv{}{x_k}\qty( \rho(x,t)\frac{1}{m_k}\pdv{}{x_k} S(x,t) )
 \end{equation}
 \begin{equation}\label{HJE}
--\pdv{}{t}S(x,t) = \sum_{j=1}^N \frac{\hbar^2}{2m_j} \qty(\pdv{}{x_j} S(x,t) )^2+ V(x,t)+Q(x,t)
+-\pdv{}{t}S(x,t) = \sum_{j=1}^N \frac{1}{2m_j} \qty(\pdv{}{x_j} S(x,t) )^2+ V(x,t)+Q(x,t)
 \end{equation}
 where:
 \begin{equation}\label{QP}
 Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\frac{1}{R(x,t)}\pdv[2]{}{x_j} R(x,t)
 \end{equation}
-The unknown real fields $R(x,t)$ and $S(x,t)$ have a straight-forward interpretation if we realize that $S(x,t)$ can be identified with Hamilton's principal action function of classical mechanics. If so, then we can define the field:% a field can be seen as properties of points in configuration-space in time, or as properties of point like particles that move in configuration-space following a velocity field.
+The unknown real fields $R(x,t)$ and $S(x,t)$ have a straight-forward interpretation if we realize that $S(x,t)$ can be identified with Hamilton's principal action function of classical mechanics. If so, equation \eqref{HJE} can immediately be identified with the Hamilton-JAcobi Equation of classical mechanics, where we will be able to define the field:% a field can be seen as properties of points in configuration-space in time, or as properties of point like particles that move in configuration-space following a velocity field.
 \begin{equation}
 v_k(x,t):=\frac{1}{m_k}\pdv{}{x_k}S(x,t)
 \end{equation}
-to be the velocity field of a fluid with density $R^2(x,t)=:\rho(x,t)$. This would make equation \eqref{CE} be the conitnuity equation ruling the motion of the density $\rho$ due to the veolcity field $v_k$ in the Eulerian frame, and the eqution \eqref{HJE} would be identified with the Hamilton-Jacobi equation. 
+to be the velocity field for the possible configurations of the system. Then, if we look now at equation \eqref{CE}, we realize that it is a continuity equation for a fluid of density $R^2(x,t)=:\rho(x,t)$. This continuity equation (as we will later derive) simply rules the motion of the density $\rho$ according to the velocity field $v_k$, avoiding any source of sink of density. It just dissolves or concentrates density from a point to its immediate vicinity in a conservative way. Meaning, the density in the whole configuration space must be conserved. This is why the Schrödinger Equation is said to be unitary and the norm of the wavefunction (which is the density) is a constant of motion.
 
-As such, we see that apart from the classical potential $U(x,t)$, the fluid also presents a potential energy-like term \eqref{QP} called the quantum potential. It can be understood as a pressure exerted by regions of peaked density on the regions of relaxed density, exactly as if there was a mutually exclusive repulsive interaction between the fluid elements. 
+The fundamental relevance of these two equations hidden inside the Schrödinger Equation is that they provide us naturally with a velocity field that drives the probability density $\rho$. This immediately suggests a fluid interpretation of the system, where we can think of trajectories for the elements of that fluid moving in configuration-space shaping the flow lines of that velocity field. But then, since the density is interpreted by the Born rule as the probability density function of the possible observable configurations of the system, it is suggestive to think of each trajectory of the fluid  as the time evolution of possible systems in time. With the "spooky paradox" (in the Orthodox interpretation), that each possible reality of the system, each possible experiment, repulsively interacts with the rest, even if only one of them is observed in the end. We say that we observe only one, because we have only observed point like positions for quantum particles.
 
-
-
-
-\mybox{
-This is more simply understood if we re-express the quantum potential as:
-$$
-Q(\vec{x},t) = -\sum_{k=1}^n \frac{\hbar^2}{2m_k R}\pdv[2]{R(\vec{x}, t)}{x_k} =  -\sum_{k=1}^n \frac{\hbar^2}{4m_k} \qty(\frac{1}{\rho}\pdv[2]{\rho}{x_k} -\frac{1}{2\rho^2}\qty(\pdv{\rho}{x_k})^2)
-$$
-Defining the operator nabla $\nabla \equiv \qty(\pdv{}{x_1}, ... , \pdv{}{x_n})$ we have:
-\begin{equation}\label{Q2}
-Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla^2\rho}{\rho} -\frac{1}{2}\frac{\qty(\nabla \rho)^2}{\rho^2})\vspace{-0.2cm}
-\end{equation}
-The first term in $Q$ is the Laplacian ($\nabla^2 = \pdv[2]{}{x_1}+...+\pdv[2]{}{x_n}$) of $\rho(\vec{x},t)$ in each point, normalized by the value of $\rho$ in that point of configuration-space. The Laplacian of a scalar field in a certain point gives the difference between the value of the function in that point and the mean value in its locality. Interpreting this value as a potential, means that the higher the local variation of $\rho$ (the higher the difference between the value in the point and its mean value in the surrounding), the bigger the modulus of the potential will be. In particular, if the Laplacian of $\rho$ is positive, it means that the value in the point is smaller than the mean surrounding density, that is, the density is more convex-like there. This makes the potential at that point be negative -attractive- (noting the minus sign in front of the Laplacian). The fluid element will be more stable there than in points where the variation of the density is more concave-like (where the value of the density is higher than in its local surrounding: $\nabla^2 \rho<0$), as these make a positive -repulsive- contribution to the total potential in their locality.\\
-
-Interpreting $\rho$ as the density of all the possible configurations of the system, this means that the probability of observing each configuration\footnote{ The density $R^2$ and the Bohmian trajectories of the system are evolved using the same velocity field} is repelled by the configurations where there is a locally high agglomeration of probability. If we simply understand $\rho$ as the density of a continuum of possible tangent "Universes", then this simply means that the local agglomeration of possible Universes tends to diverge.\\
-
-The second term in $Q$ is more straight-forward: it is the modulus of the gradient of the density in each point normalized by the magnitude of the density. The fraction is always a positive value, which means the contribution to the potential will always be positive: it is a destabilizing factor (repels trajectories). That is, the higher the local steepness of the density, the more unstable this zone will be for the fluid element.
-}
-
-The fundamental relevance of these two equations hidden inside the Schrödinger Equation is that they provide us naturally with a velocity field that drives the probability density $\rho$. This immediately suggests a fluid interpretation of the system, together with the interpretation of the trajectories of the fluid elements in configuration-space, as the evolution of possible systems in time. In particular, the trajectories of the flow lines of the fluid, the trajectories of the fluid elements, are given by the solutions of the ordinary differential equation:
+ These trajectories, are given by the solutions of the ordinary differential equation:
 \begin{equation}\label{GL}
 v_k(x^\xi(t),t)=\dv{}{t}x^\xi(t)
 \end{equation}
-such that we define the label of each fluid element $\xi$ as the initial position they had. That is:
+such that we define the label of each fluid element $\xi$ as the position they had at a reference time $t_0$. That is:
 \begin{equation}
-x^\xi(t=t_0)=\xi
+x(\xi,t=t_0)=\xi
 \end{equation}
-Due to the fact that equation \eqref{GL} is an ordinary differential equation, the existence and uniqueness theorems for the initial value problem will ensure that these fluid element trajectories never cross each other in configuration space $\R^N$ and thus we will be able to evolve an ensemble of them both {\em a priori} and {\em a posteriori}. Each of these trajectories is a possible Bohmian trajectory in BM (weighted by the density $\rho$, which is a property of the pilot wave). In TUM, each of these trajectories is a "Universe", the relative frequency of which (and thus the probability for it to be ours) is weighted by $\rho$. All this simply reduces to the Born Rule from a purely observational standpoint.
+Now, given \eqref{GL} is an ordinary differential equation, and the velocity field is the derivative of the action $S$, which must at least be twice differentialble (to be the solution of equation \eqref{CE}), making the velocty field differentiable, the Picard-Lindelöf existence and uniqueness theorem for the initial value problem, will ensure that these fluid element trajectories never cross each other in configuration space $\R^N$. Each of these trajectories is a possible Bohmian trajectory in BM (weighted by the density $\rho$, which is a property of the pilot wave). In TUM, each of these trajectories is a "Universe", the relative frequency of which (and thus the probability for it to be our Universe) is weighted by $\rho$. All this simply reduces to the pragmatism of the Born Rule from a purely observational standpoint.
 
-It is interesting to rewrite the two equations we obtained from the Schrödinger Equation in terms of the so called $C$-amplitude, which comes from the following parametrization of the wavefunction:
+We now note that in this quantum version of the Hamilton-Jacobi equation \eqref{HJE}, apart from the classical potential $U(x,t)$ relating the degrees of freedom, this fluid also presents a potential energy-like term \eqref{QP}, which is the so called {\bf quantum potential}. It can be understood as a pressure exerted by regions of peaked density on the regions of relaxed density, exactly as if there was a mutually exclusive repulsive interaction between the fluid elements. See the box bellow for a detailed understanding.
+\vspace{+0.3cm}
+
+\mybox{
+{\bf The Intuition Behind the Quantum Potential\vspace{0.2cm}\\}
+We can intuitively understand the effect of the quantum potential \eqref{QP} if we re-express it as:
+$$
+Q(\vec{x},t) = -\sum_{k=1}^n \frac{\hbar^2}{2m_k R}\pdv[2]{R(\vec{x}, t)}{x_k} =  -\sum_{k=1}^n \frac{\hbar^2}{4m_k} \qty(\frac{1}{\rho}\pdv[2]{\rho}{x_k} -\frac{1}{2\rho^2}\qty(\pdv{\rho}{x_k})^2)
+$$
+By defining the operator nabla $\nabla_x \equiv \qty(\pdv{}{x_1}, ... , \pdv{}{x_n})$ it takes the following look:
+\begin{equation}\label{Q2}
+Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla_x^2\rho}{\rho} -\frac{1}{2}\frac{\qty(\nabla_x \rho)^2}{\rho^2})\vspace{-0.2cm}
+\end{equation}
+}
+\mybox{
+The first term in $Q$ is the Laplacian ($\nabla_x^2 = \pdv[2]{}{x_1}+...+\pdv[2]{}{x_n}$) of $\rho(\vec{x},t)$ in each point, normalized by the value of $\rho$ in that point of configuration-space. The Laplacian of a scalar field in a certain point gives the difference between the value of the function in that point and the mean value in its locality. Interpreting this value as a potential, means that the higher the local variation of $\rho$ (the higher the difference between the value in the point and its mean value in the surrounding), the bigger the modulus of the potential will be. In particular, if the Laplacian of $\rho$ is positive, it means that the value in the point is smaller than the mean surrounding density, that is, the density is more convex-like there. This makes the potential at that point be negative -attractive- (noting the minus sign in front of the Laplacian). The fluid element will be more stable there than in points where the variation of the density is more concave-like (where the value of the density is higher than in its local surrounding: $\nabla_x^2 \rho<0$), as these make a positive -repulsive- contribution to the total potential in their locality.\\
+
+Interpreting $\rho$ as the density of all the possible configurations of the system, this means that the probability of observing each configuration\footnote{ The density $R^2$ and the Bohmian trajectories of the system are evolved using the same velocity field} is repelled by the configurations where there is a locally high agglomeration of probability. If we understand $\rho$ as the density of a continuum of possible tangent "Universes", then this simply means that the local agglomeration of possible Universes tends to diverge.\\
+
+The second term in $Q$ is more straight-forward: it is the modulus of the gradient of the density in each point normalized by the magnitude of the density. This fraction is always a positive value, which means the contribution to the potential will always be positive: it is a destabilizing factor (repels trajectories). That is, the higher the local steepness of the density, the more unstable this zone will be for the fluid element.
+}
+
+Finally, it is interesting to rewrite the two equations we obtained from the Schrödinger Equation in terms of the so called $C$-amplitude, which comes from the following parametrization of the wavefunction:
 \begin{equation}
 \psi(x,t)=e^{C(x,t)}e^{\frac{iS(x,t)}{\hbar}}\ \Longrightarrow\ R(x,t)=e^{C(x,t)} \ \Leftrightarrow \ C(x,t)=log(R(x,t))
 \end{equation}
@@ -386,32 +391,34 @@ where:
 \begin{equation}\label{QP}
 Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty[\qty(\pdv{C(x,t)}{x_j})^2+\pdv[2]{C(x,t)}{x_j}]
 \end{equation}
-The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(x,t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space).
+The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(x,t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space). This makes the $C$-amplitude version of the equations more numerically stable.
 
 \subsection*{(I.c) Basis Set Expansions}
 \addcontentsline{toc}{subsubsection}{{\bf (I.c)} Basis Set Expansions}
+\vspace{-0.4cm}
 \subsubsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
 %\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
+\vspace{-0.25cm}
 
-If we shorthand the "main" degrees of freedom $x=(x_1,..,x_m)$ and we set the transverse degrees of freedom $y=(x_{m+1},...x_N)$, we can decompose the full Hamiltonian as:
+Let us denote $m$ of the $N$ degrees of freedom as "main" degrees using $x\equiv(x_1,..,x_m)$ and the rest as "transverse" degrees using $y\equiv(x_{m+1},...x_N)$. Then we can decompose the full Hamiltonian as:
 \begin{equation}
-\hat{H}(x, y, t)= -\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+G(x, y, t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(x, y, t)+\sum_{j=1}^{m}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+V(x,t)
+\hat{H}(x, y, t):= -\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+G(x, y, t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(x, y, t)+\sum_{j=1}^{m}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+V(x,t)
 \end{equation}
-Where we can define the transversal section Hamiltonian:
+Where we can define the transversal section Hamiltonian:\vspace{-0.05cm}
 \begin{equation}
 \hat{H}_x(y,t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(x, y, t)
-\end{equation} 
-We then define the set of eigenstates $\{\Phi^j_x(y,t)\}_j$ with eigenvalues $\{\varepsilon_x(t)\}_j$ to be the solution to:
-\begin{equation}
+\end{equation} \vspace{-0.2cm}
+We then define the set of eigenstates $\{\Phi^j_x(y,t)\}_{j=0}^\infty$ with eigenvalues $\{\varepsilon_x^j(t)\}_j$ to be the solution of:\vspace{0.2cm}
+\begin{equation}\label{transvE}
 \hat{H}_x(y,t)\Phi^j_x(y,t)=\varepsilon^j_x(t)\Phi^j_x(y,t)
 \end{equation}
-As we know that the hermiticity of the operator $\hat{H}_x(y,t)$ implies its eigenstates form a complete basis of the space $y$ for all times, we could write any wavefunction as a linear combination of them for each $x$:
-\begin{equation}
-\Psi(x,y,t)=\sum_j \Lambda^j(x,t) \Phi^j_x(y,t)
-\end{equation}
-with $\Lambda^j(x,t):= \int_{-\infty}^{\infty}\Phi^{j\ \dagger}_x(y,t) \Psi(x,y,t)dy$ the projection coefficients.
+That is, for each possible value of $x$, we can get a set of energy eigenstates in $y$ for the potential $U(y,t;x)$. We call these $\Phi^j_x(y,t)$, the {\bf transversal section eigenstates}. As we know that the hermiticity of the operator $\hat{H}_x(y,t)$ implies its eigenstates form a complete basis of the space $y$ for all times, we could write any wavefunction in $y$ as a linear combination of them. Then, we will expand each slice of $x$ using them as:\vspace{-0.2cm}
+\begin{equation}\label{BHExp}
+\Psi(x,y,t)=\sum_{j=0}^\infty \Lambda^j(x,t) \Phi^j_x(y,t)
+\end{equation}\vspace{-0.2cm}
+with $\Lambda^j(x,t):= \int_{-\infty}^{\infty}\Phi^{j\ \dagger}_x(y,t) \Psi(x,y,t)dy$ the projection coefficients to the $j$-th section-eigenstates.
 
-If we introduce this shape into the TDSE, we can obtain the differential equations ruling the shape of the coefficients $\Lambda j(x,t)$ by rearranging and multiplying both sides by $\Phi^{k\ \dagger}(y,t)$ and integrating them over all the domain for $y$. Of course we will use here the orthonormality condition $\int_{-\infty}^{\infty}\Phi^{k\ \dagger}(y,t) \Phi^{j}(y,t) dy= \delta_{kj}$. This leaves the equivalent to the Schrödinger Equation:
+If we introduce this ansatz into the Schrödinger Equation \eqref{SE}, we can obtain the differential equations ruling the shape of the coefficients $\Lambda^j(x,t)$ by rearranging and multiplying both sides by $\Phi^{k\ \dagger}(y,t)$, then integrating them over all the domain for $y$. Using the orthonormality condition $\int_{-\infty}^{\infty}\Phi^{k\ \dagger}(y,t) \Phi^{j}(y,t) dy= \delta_{kj}$, this leaves with \eqref{BHExp}, the equivalent to the Schrödinger Equation:
 \begin{equation}\label{XabEq}
 i\hbar \pdv{}{t}\Lambda^k(x,t) = \qty( \varepsilon^k(x,t) + \sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}+V(x,t))\Lambda^k(x,t)+
 \end{equation}
@@ -428,41 +435,44 @@ S^{kj}_s(x,t) = -\frac{\hbar^2}{2m_s}\int_{-\infty}^{\infty}\Phi_x^{k\dagger}(y,
 \begin{equation}\label{F}
 F^{kj}_s(x,t) = -\frac{\hbar^2}{m_s}\int_{-\infty}^{\infty}\Phi_x^{k\dagger}(y,t) \pdv{}{x_s}\Phi^j_x(y,t) dy
 \end{equation}
+These coupling terms can be simplified if the potential $U(x,y,t)$ varies very gently in $x$ and/or $t$ (so called adiabatically), since this will make the eigenstates vary gently as well.
 
-Which is a coupled linear partial differential equation for the $m$ dimensional $\Lambda^j(x,t)$ coefficients, that requires the knowledge of the $N-m$ dimensional transversal section eigenstates $\Phi^k_x(y,t)$ and their coupling integrals $W^{kj}, S^{kj}_s, F^{kj}_s$. These coupling terms can be simplified if the transversal Hamiltonian varies very gently in $x$ and/or $t$ (so called adiabatically).
-
-If the eigenstates are known analytically, then the problem has a complexity only due to the $m$ spatial dimension coefficients $\Lambda^j(x,t)$, which can range from $m=0$ (and $N-m=N$) to $m=N$ (and $N-m=0$), respectively: only coefficients that vary in time (and eigenstates of the full Hamiltonian) and the full Schrödinger Equation (with no eigenstate).
-
-\subsection*{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
+Equation \eqref{XabEq} is a coupled linear partial differential equation system for the $m$ space-dimensional $\Lambda^j(x,t)$ coefficients. It requires the knowledge of the $N-m$ dimensional transversal section eigenstates $\Phi^k_x(y,t)$ and their coupling integrals $W^{kj}, S^{kj}_s, F^{kj}_s$.  If the eigenstates are known a priori, then the problem has a complexity only due to the $m$ spatial dimension coefficients $\Lambda^j(x,t)$, instead of the $N$ dimensions of the Schrödinger Equation. We can thus swing the computational complexity from differential equations to eigenstate problems. If $m=0$ we have an ordinary differential equation for the coefficients, but need eigenstates of the full Hamiltonian. If $m=N$ on the other hand, we recover the full Schrödinger Equation.
+\vspace{-0.3cm}
+\subsection*{(I.c.1.5) A linear coupled system of equations for $\Lambda^j(x,t) \Phi^j_x(y,t)$ }
 %\addcontentsline{toc}{subsubsection}{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
+\vspace{-0.3cm}
 
-Let us retake the equation \eqref{XabEq} and its associated formalism. Remember we considered that $x\equiv (x_1,...,x_m)$ and $y\equiv (y_{m+1},...,y_N)$. Now, if we note the following identity that comes from developing the coupling term definitions \eqref{S} and \eqref{F}:
+Remember we considered that $x\equiv (x_1,...,x_m)$ and $y\equiv (y_{m+1},...,y_N)$. Now, if we note the following identity that comes from developing the coupling term definitions \eqref{S} and \eqref{F}:
 \begin{equation}
 \qty[S^{kj}_s(x,t)+F_s^{kj}]\Lambda^j(x,t)=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty( \Lambda^j(x,t)\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t) ) dy
 \end{equation}
 and the identity that we can get using that $1=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \Phi^k_x(y,t)dy$:
 \begin{equation}
-\qty[-\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}+S^{kk}_s(x,t)+F_s^{kk}]\Lambda^k(x,t)=
+\qty[-\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}+S^{kk}_s(x,t)+F_s^{kk}]\Lambda^k(x,t)=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s} \pdv[2]{}{x_s}\qty(\Lambda^k(x,t)\Phi^k_x(y,t))dy
 \end{equation}
-$$
-=-\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}\Lambda^k(x,t)+\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty( \Lambda^k(x,t)\pdv[2]{\Phi^k_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^k_x(y,t)\pdv{}{x_s}\Lambda^k(x,t) ) dy=
-$$
-
-$$
-=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty(\pdv[2]{}{x_s}\Lambda^k(x,t)+ \Lambda^k(x,t)\pdv[2]{\Phi^k_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^k_x(y,t)\pdv{}{x_s}\Lambda^k(x,t) ) dy=
-$$
-
-$$
-=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s} \pdv[2]{}{x_s}\qty(\Lambda^k(x,t)\Phi^k_x(y,t))dy
-$$
+%$$
+%=-\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}\Lambda^k(x,t)+\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty( \Lambda^k(x,t)\pdv[2]{\Phi^k_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^k_x(y,t)\pdv{}{x_s}\Lambda^k(x,t) ) dy=
+%$$
+%$$
+%=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty(\pdv[2]{}{x_s}\Lambda^k(x,t)+ \Lambda^k(x,t)\pdv[2]{\Phi^k_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^k_x(y,t)\pdv{}{x_s}\Lambda^k(x,t) ) dy=
+%$$
+%$$
+%=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s} \pdv[2]{}{x_s}\qty(\Lambda^k(x,t)\Phi^k_x(y,t))dy
+%$$
 
 We get an alternative shape for \eqref{XabEq}:
 \begin{equation}
 i\hbar \pdv{}{t}\Lambda^k(x,t)=\qty( \varepsilon^k(x,t)+V(x,t) )\Lambda^k(x,t) -\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}\qty[\Lambda^k(x,t)\Phi^k_x(y,t) ]dy+
 \end{equation}
 $$
-+\sum_j\qty{-i\hbar \Lambda^j(x,t)\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t)\pdv{\Phi^j_x(y,t)}{t}dy+\sum_{s=1}^m\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty( \Lambda^j(x,t)\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t) ) dy}
+\hspace*{-1cm}
+    +\sum_j\Bigg\{-i\hbar \Lambda^j(x,t)\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t)\pdv{\Phi^j_x(y,t)}{t}dy+
 $$
+$$
+\sum_{s=1}^m\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \frac{-\hbar}{2m_s}\qty( \Lambda^j(x,t)\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t) ) dy\Bigg\}
+$$
+
 If we note that in the terms that do not have an integral, we can introduce $1=\int_{-\infty}^\infty \Phi^{k\dagger}_x(y,t) \Phi^k_x(y,t)dy$, we can take out the common factor $\int_{-\infty}^\infty\Phi^{k\dagger}_x dy$ to get:
 \begin{equation}
 0=\int_{-\infty}^\infty\Phi^{k\dagger}_x(y,t)\Bigg\{ -i\hbar \Phi^k_x(y,t)\pdv{}{t}\Lambda^k(x,t)+\qty( \varepsilon^k(x,t)+V(x,t) )\Lambda^k(x,t)\Phi^k_x(y,t) -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}\qty[\Lambda^k(x,t)\Phi^k_x(y,t) ]+
@@ -470,7 +480,7 @@ If we note that in the terms that do not have an integral, we can introduce $1=\
 $$
 +\sum_j\qty[-i\hbar \pdv{\Phi^j_x(y,t)}{t}\Lambda^j(x,t)+\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \Lambda^j(x,t)\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t) ) ]\Bigg\}dy
 $$
-This can only be satisfied for an arbitrary set of transversal section eigenstates if:
+Which can only be satisfied for an arbitrary set of transversal section eigenstates if:
 \begin{equation}\label{inter}
  i\hbar \Phi^k_x(y,t)\pdv{}{t}\Lambda^k(x,t)=\qty( \varepsilon^k(x,t)+V(x,t) )\Lambda^k(x,t)\Phi^k_x(y,t) -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}\qty[\Lambda^k(x,t)\Phi^k_x(y,t) ]+
 \end{equation}
@@ -481,19 +491,19 @@ Noting that by the chain rule:
 \begin{equation}
 \pdv{}{t}\qty[\Lambda^k(x,t)\Phi^k_x(y,t)]=\Phi^k_x(y,t)\pdv{}{t}\Lambda^k(x,t)+\Lambda^k(x,t)\pdv{}{t}\Phi^k_x(y,t)
 \end{equation}
-Inserting this in \eqref{inter} and taking out some common factors, we are left with an equivalent system of equations to \eqref{XabEq}:
+by inserting it in \eqref{inter} and taking out some common factors, we are left with an equivalent system of equations to equation \eqref{XabEq}, which was equivalent to the Schrödinger Equation:
 \begin{equation}\label{inter2}
  i\hbar\pdv{}{t}\qty[ \Phi^k_x(y,t)\Lambda^k(x,t)]=\qty[ \varepsilon^k(x,t)+V(x,t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\Lambda^k(x,t)\Phi^k_x(y,t)+
 \end{equation}
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(y,t)\pdv{}{x_s} )\Lambda^j(x,t)
 $$
-We can achieve a really suggestive shape if we use that $1=\frac{\Phi^j_x(y,t)}{\Phi^j_x(y,t)}$ and note the identity:
+We can achieve a really suggestive shape if we use that $1=\frac{\Phi^j_x(y,t)}{\Phi^j_x(y,t)}$ and note the identity:\vspace{-0.2cm}
 \begin{equation}
-\frac{1}{\Phi^j_x(y,t)}\pdv{}{x_s}\qty[\Phi^j_x(y,t)]\cdot\ \Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t)=\pdv{}{x_s}log\qty(\Phi^j_x(y,t))\cdot \qty(\pdv{}{x_s}\qty[\Lambda^j(x,t)\Phi^j_x(y,t)]-\Lambda^j(x,t)\pdv{}{x_s}\Phi^j_x(y,t) )=
-\end{equation}
+\hspace*{-0.4cm} \frac{1}{\Phi^j_x(y,t)}\pdv{}{x_s}\qty[\Phi^j_x(y,t)]\cdot\ \Phi^j_x(y,t)\pdv{}{x_s}\Lambda^j(x,t)=\pdv{}{x_s}log\qty(\Phi^j_x(y,t))\cdot \qty(\pdv{}{x_s}\qty[\Lambda^j(x,t)\Phi^j_x(y,t)]-\Lambda^j(x,t)\pdv{}{x_s}\Phi^j_x(y,t) )=
+\end{equation}\vspace{-0.4cm}
 $$
-\pdv{}{x_s}log\qty(\Phi^j_x(y,t))\cdot \qty(\pdv{}{x_s}\qty[\Lambda^j(x,t)\Phi^j_x(y,t)]-\Lambda^j(x,t)\Phi^j_x(y,t)\pdv{}{x_s}log(\Phi^j_x(y,t)) )
+\pdv{}{x_s}log\qty(\Phi^j_x(y,t))\cdot \qty(\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y,t)) )\Lambda^j(x,t)\Phi^j_x(y,t)
 $$
 Then, equation \eqref{inter2} becomes into the following coupled linear system of equations:
 \begin{equation}\label{XabEq2}
@@ -502,29 +512,28 @@ Then, equation \eqref{inter2} becomes into the following coupled linear system o
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y,t)}\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y,t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y,t))] )\Lambda^j(x,t)\Phi^j_x(y,t)
 $$
-If we define the terms of the expansion for the full wavefunction, the so called adiabatic terms as $\varphi^j(x,y,t):=\Lambda^j(x,t)\Phi^j_x(y,t)$, then the equation \eqref{XabEq2} can be seen to be a system of {\bf linear} equations coupling them:
+If we define the summands of the expansion for the full wavefunction as $\varphi^j(x,y,t):=\Lambda^j(x,t)\Phi^j_x(y,t)$, such that $\psi(x,y,t)=\sum_j \varphi^j(x,y,t)$, then equation \eqref{XabEq2}, an equivalent to the Schrödinger Equation, can be seen to be a system of {\bf linear} equations coupling them:
 \begin{equation}\label{XabEq2.5}
  i\hbar\pdv{}{t}\varphi^k(x,y,t)=\qty[ \varepsilon^k(x,t)+V(x,t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\varphi^k(x,y,t)+
 \end{equation}
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y,t)}\pdv[2]{\Phi^j_x(y,t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y,t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y,t))] )\varphi^j(x,y,t)
 $$
-The usefulness of this coupled system will become evident when we treat the transversal degrees of freedom $y$ in a Lagrangian frame, since it will allow us to compute a single conditional wavefunction using a linear system of equations.
+Equation \eqref{XabEq} was also a linear system of equations that were actually way simpler. However, the usefulness of this last coupled system will become evident when we treat the transversal degrees of freedom $y$ in a Lagrangian frame, since it will allow us to compute a single conditional wavefunction using a linear system of equations (in prinicple infinite, but legitimately truncate-able at some low $J$)!\vspace{-0.3cm}
 
-\subsubsection*{(I.c.2) Arbitrary known orthonormal Base Expansion}
-%\addcontentsline{toc}{subsubsection}{(I.c.2) Arbitrary known orthonormal Base Expansion}
-
-We will build here the analogue of the generalized method \eqref{XabEq} of the previous section. Using the notation $x=(x_1,..,x_m)$ and $y=(x_{m+1},...,x_N)$, we will assume we know an arbitrary orthonormal set of functions $\{ f^j(y,t) \}_j$ spanning the space $y$. They need not depend on time, but for generality we will consider so (the difference will be that the coupling terms would simplify). For the completeness of the basis for the subspace, we could find coefficients $\Lambda^j(x,t)$ such that:
+\subsubsection*{(I.c.2) Arbitrary Orthonormal Base Expansion}
+%\addcontentsline{toc}{subsubsection}{(I.c.2) Arbitrary Orthonormal Base Expansion}
+We will build here an analogue of the generalized method \eqref{XabEq} of section (I.c.1). Using the notation $x=(x_1,..,x_m)$ and $y=(x_{m+1},...,x_N)$, we will assume we know an arbitrary orthonormal set of functions $\{ f^j(y,t) \}_j$ spanning the space $y$. They need not depend on time, but for generality we will consider so (the difference will be that the coupling terms would simplify). Due to the completeness of the basis for the $y$ subspace, we could find coefficients $\Lambda^j(x,t)$ such that expand the sections of $\psi$ as:\vspace{-0.3cm}
 \begin{equation}
-\psi(x,y,t)=\sum_j \Lambda^j(x,t) f^j(y,t)
-\end{equation}
-Note that unlike the transversal section eigenstates, these do not depend on $x$!
+\psi(x,y,t)=\sum_{j=0}^\infty \Lambda^j(x,t) f^j(y,t)
+\end{equation}\vspace{-0.3cm}
+Note that unlike the transversal section eigenstates, these basis functions do not depend on $x$!
 
-Then introducing this ansatz into the full TDSE, we can get the dynamic equations for the coefficients $\Lambda^j(x,t)$. By using the orthonormality condition $\int_{-\infty}^{\infty}f^{k\dagger}(y,t)f^k(y,t)dy=1$ we can get:
+Then introducing this ansatz into the full TDSE, we can get the dynamic equations for the coefficients $\Lambda^j(x,t)$. By using the orthonormality condition $\int_{-\infty}^{\infty}f^{k\dagger}(y,t)f^k(y,t)dy=1$ we can get:\vspace{-0.2cm}
 \begin{equation}
 i\hbar \pdv{}{t}\Lambda^j(x,t)= \sum_{s=1}^m \hat{T}_m \Lambda^j(x,t) + \sum_k \qty( W^{jk}(t)+\sum_{r=m}^NS^{jk}_r(t)+D^{jk}(x,t) )\Lambda^k(x,t)
 \end{equation}
-with:
+with:\vspace{-0.3cm}
 \begin{equation}
 W^{jk}(t):=\int_{-\infty}^{\infty}f^{j\dagger}(y,t) \pdv{f^k(y,t)}{t} dy
 \end{equation}
@@ -536,9 +545,7 @@ D^{jk}(x,t):=\int_{-\infty}^{\infty}f^{j\dagger}(y,t)U(x,y,t) f^k(y,t) dy
 \end{equation}
 Note that if the orthonormal vectors were chosen to be time independent then $W^{jk}(t)$ would vanish and $S^{jk}(t)$ would be time independent. 
 
-We achieve a similar equation to \eqref{XabEq}, where the only task we would need would be to compute the coupling integrals and then evolve the coupled linear system of equations for the coefficients $\Lambda^j(x,t)$. The integrals would be $N-m$ dimensional, while the coupled system would evolve fields with $m$ spatial dimensions. 
-
-If we knew analytically the orthonormal functions, we could be able to compute the integrals symbolically, which would allow us to safe the numerical integration and the complexity would be left to the equation system's, which is the $m$ we fix from $\{0,1,2,...,N\}$.
+We have achieved a similar linear equation system to \eqref{XabEq}, where the only task we would need would be to compute the coupling integrals and then evolve the coupled linear system of equations for the coefficients $\Lambda^j(x,t)$. The integrals would be $N-m$ dimensional, while the coupled system would evolve fields with $m$ spatial dimensions. If we knew analytically the orthonormal functions, we could be able to compute the integrals symbolically, which would allow us to safe the numerical integration and the complexity would be left to the equation system's, which is the $m$ we fix from $\{0,1,2,...,N\}$.
 
 In this case though, we will have lost the possibility to study the adiabaticity and to approximate the coupling terms in consequence. Perhaps, the number of required $J$ will also increase relative to the case in which we used eigenstates of transversal sections.
 
@@ -546,69 +553,65 @@ In this case though, we will have lost the possibility to study the adiabaticity
 
 \subsection*{(I.d) Dynamic Equations for Partial Derivatives}
 \addcontentsline{toc}{subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}
-In the next section, we will find the advantage of having dynamic equations not only for the main waves $\psi$ or $S$ and $R$, but also for their derivatives in space.
+In the Eulerian frame it will not make that much sense, but as soon as we have Lagrangian degrees of freedom, we will find the advantage of having dynamic equations not only for the main waves $\psi$ or $S$ and $R$, but also for their derivatives in space.\vspace{-0.4cm}
 
 \subsubsection*{(I.d.a) For the Wavefunction}
 %\addcontentsline{toc}{subsubsection}{(I.d.a) For the Wavefunction}
+\vspace{-0.2cm}
 If we take the Schrödinger Equation \eqref{SE} and partially derivate it in $x_k$ at each side and we assume the wavefunction is regular enough in all its variables $t$, $\vec{x}$ in order to use Schwartz's Law for crossed partial derivatives, we get:
 \begin{equation}
 i\hbar \pdv{}{t}\qty[\pdv{}{x_k}\psi(x,t)] = \sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}\qty[\pdv{}{x_k}\psi(x,t)]+U(x,t)\pdv{}{x_k}\psi(x,t) + \psi(x,t)\pdv{}{x_k}U(x,t)
 \end{equation}
-Meaning that the function $\psi^{(1)}_k(x,t):=\pdv{}{x_k}\psi(x,t)$ evolves in time just as a Schrödinger Equation, but with an added non-linearity involving its primitive in $x_k$. That is, we could actually evolve the dynamics of the first partial derivatives if we coupled them with the evolution of the wavefunction.
+Meaning that the function $\psi^{(1)}_k(x,t):=\pdv{}{x_k}\psi(x,t)$ evolves in time just as a Schrödinger Equation, but with an added non-linearity involving its primitive in $x_k$. That is, we can evolve the dynamics of the first partial derivatives if we couple them with the evolution of the same wavefunction.
 
 If we repeat the trick, we can get a dynamical equation for the second partial derivative of the wavefunction in space.
-\begin{equation}
-i\hbar \pdv{}{t}\qty[\pdv[2]{}{x_k}\psi(x,t)] = \sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}\qty[\pdv[2]{}{x_k}\psi(x,t)]+U(x,t)\pdv[2]{\psi(x,t)}{x_k} + \psi(x,t)\pdv[2]{}{x_k}U(x,t)+2\pdv{\psi(x,t)}{x_k}\pdv{}{x_k}U(x,t)
-\end{equation}
-Defining $\psi^{(j)}_k(x,t):=\pdv[j]{}{x_k}\psi(x,t)$, this means:
+%\begin{equation}
+%i\hbar \pdv{}{t}\qty[\pdv[2]{}{x_k}\psi(x,t)] = \sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}\qty[\pdv[2]{}{x_k}\psi(x,t)]+U(x,t)\pdv[2]{\psi(x,t)}{x_k} + \psi(x,t)\pdv[2]{}{x_k}U(x,t)+2\pdv{\psi(x,t)}{x_k}\pdv{}{x_k}U(x,t)
+%\end{equation}
+Defining $\psi^{(j)}_k(x,t):=\pdv[j]{}{x_k}\psi(x,t)$, we get:
 \begin{equation}
 i\hbar \pdv{}{t}\psi^{(2)}_k(x,t) = \qty(\sum_{j=1}^N\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(x,t))\psi^{(2)}_k(x,t)+ \psi(x,t)\pdv[2]{}{x_k}U(x,t)+2\psi^{(1)}_k(x,t)\pdv{}{x_k}U(x,t)
 \end{equation}
-Which could be easily generalized to get the dynamical equation for any superior spatial derivative. It is evident that the dynamic equation for $\psi^{(j)}_k(x,t)$ would also involve in the same equation all $\psi^{(s)}_j(x,t)$ with $s<k$. However, it will also include always a second spatial derivative of $\psi^{(s)}_j(x,t)$. Meaning the term $\psi^{(s+2)}_j(x,t)$ will always be coupled to $\psi^{(s)}_j(x,t)$ and at the same time $\psi^{(s+4)}_j(x,t)$ will be coupled to the first. Thus, an inifnite number of partial differential equations in time should be solved in order to avoid explicitly derivating any function in space. 
+Which could be easily generalized to get the dynamical equation for any superior spatial derivative. It is evident that the dynamic equation for $\psi^{(j)}_k(x,t)$ would also involve in the same equation all $\psi^{(s)}_j(x,t)$ with $s<k$. However, it will also include always a second spatial derivative of $\psi^{(s)}_j(x,t)$ due to the kinetic energy term. Meaning the term $\psi^{(s+2)}_j(x,t)$ will always be coupled to $\psi^{(s)}_j(x,t)$ and at the same time $\psi^{(s+4)}_j(x,t)$ will be coupled to the first. Thus, an inifnite number of partial differential equations in time should be solved in order to avoid explicitly derivating any function in space. 
 
-Let us note now that the general formula for the $J-th$ derivative of a product of functions is:
+Let us look for the general equation of this infinite chain. First of all, note that the general formula for the $J-th$ derivative of a product of functions is:
 \begin{equation}
 \dv[J]{}{x}\qty(f(x)g(x))=\sum_{k=0}^J b(J, k)\dv[J-k]{}{x}f(x)\dv[J]{}{x}g(x)
 \end{equation}
 with $b(J,k):=\frac{J!}{k!(J-k)!}$ the binomial coefficients.
 
-Then in general, if we define the most general partial derivative of a function (assuming always enough regularity for being able to apply Schwarz's Theorem) as the function:
+Then, if we define the most general partial derivative of a function $f$ (assuming always enough regularity for being able to apply Schwarz's Theorem) as the function:
 \begin{equation}\label{defPdv}
 f_{(j1,...,jN)}(x,t):=\pdv[j_1]{}{x_1}\cdots\pdv[j_N]{}{x_N} f(x,t) \quad with\quad j_1,...,j_N\in \N\cup \{0\}
 \end{equation}
-We can get the recurrent formula for the time evolution of an arbitrary $\psi_{(j_1,...,j_N)}(x,t)$ by iteratively derivating the Schrödinger Equation \eqref{SE}. In general it is easy to see that:
+We can get the recurrent formula for the time evolution of an arbitrary $\psi_{(j_1,...,j_N)}(x,t)$ by iteratively derivating the Schrödinger Equation \eqref{SE} as we did in the beginning. In general we can get that:
 \begin{equation}\label{infchain.SE}
 i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(x,t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+
 \end{equation}
 $$
 +\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
 $$
-We clearly see that in order to compute $\psi_{(j_1,...,j_N)}$, we need to evolve as well all the functions with smaller degree, but also functions with 2 degrees more. The infinite chain of equations is then clear.
+We can now clearly see that in order to evolve $\psi_{(j_1,...,j_N)}$, we need to evolve as well all the functions with smaller degree, but also functions with 2 degrees more. Thus the infinite chain of equations.
 
-What we could do, in order to avoid having to solve an endless sequence of partial differential equations, is to assume that at some point $\pdv[J]{}{x_a}\psi(x,t)\simeq 0$, which seems reasonable for a big enough $J$. If we assumed so, then we would be left with a finite coupled {\bf linear} system of equations ruling the dynamics of the functions $psi_{(j_1,...,j_N)}$ with all $j_k<J$. These would add up to $J^N$ {\bf linear} differential equations. Exponentially more with dimensions.
+A thing we could do, in order to avoid having to solve an endless sequence of partial differential equations, is to assume that at some point $\pdv[J]{}{x_a}\psi(x,t)\simeq 0\quad \forall a$, which seems reasonable for a big enough $J$. If we assumed so, then we would be left with a finite {\bf linear} system of equations ruling the dynamics of the functions $\psi_{(j_1,...,j_N)}$ with $j_k<J$. These would add up to $J^N$ {\bf linear} differential equations. Exponentially more with dimensions.
 
-Clearly, in the Eulerian frame using these equations makes almost no sense, since each of the $psi_{(j_1,...,j_N)}$ has actually $N+1$ degrees of freedom, so we are not getting any good, but their use will become more suggestive when we go into the Lagrangian frame.
+Clearly, in the Eulerian frame using these equations makes almost no sense, since each of the $\psi_{(j_1,...,j_N)}$ has actually $N+1$ degrees of freedom, making them as difficult to be solved as the Schrödinger Equation itself. Yet their use will become suggestive when we go into the Lagrangian frame, just as will happen with (I.c.1.2).\vspace{-0.3cm}
 
 \subsubsection*{(I.d.b) For the Density and Action}
 %\addcontentsline{toc}{subsubsection}{(I.d.b) For the Density and Action}
-
-Doing the same for the Hamilton-Jacobi and the Continuity Equations \eqref{HJE} and \eqref{CE}, will turn out to be more dramatic. Due to their non-linear nature, each time higher derivative terms will emerge. Again we will have an infinite chain of partial differential equations.
-
-To see this, let us take the derivative in $x_k$ at side and side in both equations and rearrange the terms to get:
-\begin{equation}
-\pdv{}{t} \qty[\pdv{}{x_k}\rho(x,t)]=-\sum_{k=1}^N \pdv{}{x_k}\qty( \qty[ \pdv{}{x_k}\rho(x,t)]\frac{1}{m_k}\pdv{}{x_k} S(x,t)+\rho(x,t)\frac{1}{m_k}\pdv{}{x_k} \qty[\pdv{}{x_k}S(x,t)] )
-\end{equation}
-\begin{equation}
--\pdv{}{t}\qty[\pdv{S(x,t)}{x_k}] = \sum_{j=1}^N \frac{\hbar^2}{m_j}\pdv{S(x,t)}{x_j} \pdv{}{x_j}\qty[\pdv{}{x_k} S(x,t) ]+ \pdv{}{x_k}V(x,t)+\pdv{}{x_k}Q(x,t)
-\end{equation}
-with:
-\begin{equation}
-\pdv{}{x_k}Q(x,t)=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty( -\frac{1}{R^2(x,t)}\qty[\pdv{R(x,t)}{x_k}]\pdv[2]{}{x_j} R(x,t)+\frac{1}{R(x,t)}\pdv[2]{}{x_j} \qty[\pdv{}{x_k}R(x,t)])
-\end{equation}
-
-If we repeat the procedure for higher derivatives, we will obtain again a set of coupled partial differential equations (non-linear in this case), which can only be made a finite number of equations if we assume that for a certain $J$ $\pdv[J]{}{x_k}R(x,t)\simeq 0$ and $\pdv[J]{}{x_k}S(x,t)\simeq 0$ $\forall k$ and some crossed partial derivatives.
-
-In order to have a general equation, we will use the continuity and Hamilton-Jacobi equations in their $C$-amplitude shapes \eqref{CE.C} and \eqref{HJE.C}. Again using the definition \eqref{defPdv}, we can get following the previously mentioned procedure that the derivatives of the field $C(x,t)$ evolve as:
+\vspace{-0.3cm}
+Doing the same for the Hamilton-Jacobi and the Continuity Equations \eqref{HJE} and \eqref{CE}, will turn out to be more dramatic due to their non-linear nature. In order to have a general equation, we will use the continuity and Hamilton-Jacobi equations in their $C$-amplitude shapes \eqref{CE.C} and \eqref{HJE.C}. Using the definition \eqref{defPdv} and iteratively derivating at each side, we can get that the derivatives of the field $C(x,t)$ evolve as:\vspace{-0.2cm}
+%To see this, let us take the derivative in $x_k$ at side and side in both equations and rearrange the terms to get:
+%\begin{equation}
+%\pdv{}{t} \qty[\pdv{}{x_k}\rho(x,t)]=-\sum_{k=1}^N \pdv{}{x_k}\qty( \qty[ \pdv{}{x_k}\rho(x,t)]\frac{1}{m_k}\pdv{}{x_k} S(x,t)+\rho(x,t)\frac{1}{m_k}\pdv{}{x_k} \qty[\pdv{}{x_k}S(x,t)] )
+%\end{equation}
+%\begin{equation}
+%-\pdv{}{t}\qty[\pdv{S(x,t)}{x_k}] = \sum_{j=1}^N \frac{\hbar^2}{m_j}\pdv{S(x,t)}{x_j} \pdv{}{x_j}\qty[\pdv{}{x_k} S(x,t) ]+ \pdv{}{x_k}V(x,t)+\pdv{}{x_k}Q(x,t)
+%\end{equation}
+%with:
+%\begin{equation}
+%\pdv{}{x_k}Q(x,t)=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty( -\frac{1}{R^2(x,t)}\qty[\pdv{R(x,t)}{x_k}]\pdv[2]{}{x_j} R(x,t)+\frac{1}{R(x,t)}\pdv[2]{}{x_j} \qty[\pdv{}{x_k}R(x,t)])
+%\end{equation}
 \begin{equation}\label{infchain.CE}
 \pdv{}{t}C_{(j1,...,jN)}(x,t)=-\sum_{s=1}^N\frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}(x,t) 
 \end{equation}
@@ -626,70 +629,67 @@ $$
 -S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]
 $$
 
-Once again, we have an infinite partial differential equation chain (just that, this time they are non-linar). Each of them is coupled with all of the smaller degree ones and with some of the two degree higher ones.
+We obtain again an infinite partial differential equation chain (just that, this time they are non-linar), since the time evolution of each function is coupled to functions with two orders more. Each of them is also coupled with all of the smaller degree ones.
 
-Again, the use of this will become more clear in the Lagrangian frame.
+Again, the usefulness of this will become more clear in the Lagrangian frame.
 
-
-\fancyhead[L]{III . Fully Lagrangian Equations}
-\section*{III . Fully Lagrangian Equations: Bohmian QM}
-\addcontentsline{toc}{subsection}{\bf II . Fully Lagrangian Equations: Bohmian QM}
-Given we parametrize the fluid elements with labels $\vec{\xi}\in\R^N$ referring to their initial position $\vec{\xi}=x(t_0, \vec{\xi})$, we define the set of trajectories of the continuum as $\vec{x}(t;\vec{\xi}) \equiv \vec{x}^\xi(t)$. We will then denote by $\vec{x}_b=(x_1,...,x_{a-1}, x_{a+1},...,x_N)$ the set of degrees of freedom excluding the $a-th$ $x_a$.
-\subsection*{(II.a) The Schrödinger Equation}
+\newpage
+\fancyhead[L]{II . Fully Lagrangian Equations}
+\section*{II . Fully Lagrangian Equations}\vspace{-0.3cm}
+\addcontentsline{toc}{subsection}{\bf II . Fully Lagrangian Equations}
+Given we parametrize the fluid elements with labels $\vec{\xi}\in\Omega_0\subseteq\R^N$ referring to their initial position $\vec{\xi}=x(\vec{\xi},t=t_0)$, as described in Block A, we have the set of trajectories of the continuum of configuration-space fluid elements as the diffeomorphism $\vec{x}(\vec{\xi},t) \equiv \vec{x}^\xi(t)$.
+Then, let us denote by $\vec{x}_b=(x_1,...,x_{a-1}, x_{a+1},...,x_N)$ the tuple of degrees of freedom excluding the $a-th$ one $x_a$.\vspace{-0.3cm}
+\subsection*{(II.a) The Schrödinger Equation}\vspace{-0.2cm}
 \addcontentsline{toc}{subsubsection}{{\bf (II.a)} The Schrödinger Equation}
-If we evaluate the position in the Lagrangian frame $\vec{x}(t;\vec{\xi})$ in the Schrödinger Equation \eqref{SE}:
+If in the Schrödinger Equation \eqref{SE}, we evaluate the Eulerian position to be the position of the fluid element $\xi$, that is, $\vec{x}=\vec{x}(\vec{\xi},t)$, by denoting $\vec{x}_b(\xi,t)\equiv \vec{x}_b^\xi(t)$ we get:
 \begin{equation}
-i\hbar \pdv{}{t}\psi(\vec{x}^\xi(t),t)=-\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}+U(\vec{x}_b^\xi(t),t)\psi(\vec{x}^\xi(t),t)
+i\hbar \pdv{}{t}\psi(\vec{x}^\xi(t),t)=-\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x_a=x^\xi_a(t)}+U(\vec{x}_b^\xi(t),t)\psi(\vec{x}^\xi(t),t)
 \end{equation}
 Using that by the chain rule:
 \begin{equation}
-\dv{}{t}\psi(\vec{x}^\xi(t), t)=\pdv{}{t}\psi(\vec{x}^\xi(t), t)+\sum_a \pdv{}{x_A}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x^\xi_a(t)}\cdot \dv{}{t}x^\xi_a(t)
+\dv{}{t}\psi(\vec{x}^\xi(t), t)=\pdv{}{t}\psi(\vec{x}^\xi(t), t)+\sum_a \pdv{}{x_a}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x_a=x^\xi_a(t)}\cdot \dv{}{t}x^\xi_a(t)
 \end{equation}
-We arrive at:
+We arrive at:\vspace{-0.1cm}
 \begin{equation}\label{KinAdv}
-i\hbar \dv{}{t}\psi(\vec{x}^\xi(t),t)=-\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}+U(\vec{x}^\xi(t),t)\psi(\vec{x}^\xi(t),t)+i\hbar \sum_{a=1}^N  \pdv{}{x_a}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x^\xi_a(t)}\cdot \dv{}{t}x^\xi_a(t)
+\hspace*{-0.45cm} i\hbar \dv{}{t}\psi(\vec{x}^\xi(t),t)=-\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}+U(\vec{x}^\xi(t),t)\psi(\vec{x}^\xi(t),t)+i\hbar \sum_{a=1}^N  \pdv{}{x_a}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x^\xi_a(t)}\cdot \dv{}{t}x^\xi_a(t)
 \end{equation}
-If we now impose that the trajectories follow the velocity field given by the derivative of the phase of the wavefunction:
-\begin{equation}\label{ImpBohm}
-\dv{}{t}x_a^\xi(t)=\frac{1}{m_a}\pdv{}{x_a}S(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}=\frac{\hbar^2}{m_a}\mathbb{I}m \qty( \psi^{-1}(\vec{x}^\xi(t),t)\pdv{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)})
-\end{equation}
- we will have that the dynamical equation will provide us the time evolution of Bohmian trajectories. Note that we could have chosen an alternative velocity field too.
- 
-Then we have that equation \eqref{KinAdv} describes the motion in time of the wavefunction in the Lagrangian frame, that is, the value of the wavefunction that each fluid element $\vec{\xi}$ observes in time, because note that $\psi(\vec{x}^\xi(t),t)=\psi(t, \vec{\xi})$.
 
-If we now define the terms, Kinetic and Advective Correlation Potentials as:
+This equation describes the motion in time of the wavefunction in the Lagrangian frame: the value of the wavefunction that each fluid element $\vec{\xi}$ observes in time, because note that $\psi(\vec{x}^\xi(t),t)=\psi(t, \vec{\xi})$.
+
+If we now define the terms, Kinetic and Advective Correlation Potentials as:\vspace{-0.1cm}
 \begin{equation}\label{Kin}
 K(\vec{x},t):=\sum_{a=1}^N \frac{\hbar^2}{2m_a}\pdv[2]{}{x_a}\psi(\vec{x},t)
-\end{equation}
+\end{equation}\vspace{-0.1cm}
 \begin{equation}\label{Adv}
 A(\vec{x}^\xi(t),t):=i\hbar \sum_{a=1}^N \pdv{}{x_a}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x^\xi_a(t)}\cdot \dv{}{t}x^\xi_a(t)
 \end{equation}
-Equation \eqref{KinAdv} could be alternatively written as:
+Equation \eqref{KinAdv} can neatly be rewritten as:\vspace{-0.1cm}
 \begin{equation}
-i\hbar \dv{}{t}\psi(\vec{x}^\xi(t),t)=U(\vec{x}^\xi(t),t)\psi(\vec{x}^\xi(t),t)+A(\vec{x}^\xi(t),t)+K(\vec{x}^\xi(t),t)
+i\hbar \dv{}{t}\psi(\vec{x}^\xi(t),t)=U(\vec{x}^\xi(t),t)\psi(\vec{x}^\xi(t),t)+A(\vec{x}^\xi(t),t)+K(\vec{x}^\xi(t),t)\vspace{-0.1cm}
 \end{equation}
-
-Evolving the value of $\psi(t,\vec{\xi})$ for a grid of fluid elements $\{\vec{\xi}_k\}_{k=1}^M$ given equation \eqref{KinAdv} has the clear problem that we require the knowledge of the partial derivatives in space for the wavefunction at each time. However, we only know the value of the wavefunction at the points $\{\vec{x}(\vec{\xi}_k,t)\}_{k=1}^M$, which might be a structured cartesian grid at $t=t_0$ if we choose $\{\vec{\xi}_k\}_{k=1}^M$ to be so, but will become into an unstructured grid very fast, because each fluid element will follow the fluid flow given by equation \eqref{ImpBohm}. Thus, on the one hand, we will not be able to evolve a single fluid element, because we need first order local information in the surrounding of the fluid element in order to get the derivative in each of the directions $x_a$, and we only have information at a "zeroth order" (at the same point). In order to compute this derivatives, we will therefore require to compute them numerically on an unstructured mesh formed by the fluid elements. For this, we could fit an analytical function sum to the Lagrangian frame wavefunction as we explained in the second section. The point is that, many fluid elements will be required to be evolved simultaneously in a way that they affect each other's next value of the wavefunction and next point in their trajectory.
-
-A very interesting alternative that would allow us to evolve a single fluid element would be to also have a dynamical equation for the values of the spatial derivatives along the trajectories of the elements! This is exactly what we seek in the next sub-section.
-
-It would also be interesting to write down equation \eqref{KinAdv} in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$, which we can make sure it will be a regular Cartesian mesh. We will explore this option as well in a coming sub-section. 
-
+Note that we have still not defined a velocity field ruling the trajectories $\vec{x}(\vec{\xi},t)$. In fact, we could chose any well behaved velocity field. But, since we found that a natural velocity field appeared when interpreting equation \eqref{CE}, we shall use that the velocity field is the one we found there, given by the derivative of the phase of the wavefunction:
+\begin{equation}\label{ImpBohm}
+\dv{}{t}x_a^\xi(t)=\frac{1}{m_a}\pdv{}{x_a}S(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}=\frac{\hbar^2}{m_a}\mathbb{I}m \qty( \psi^{-1}(\vec{x}^\xi(t),t)\pdv{}{x_a}\psi(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)})
+\end{equation}
+ If we do so, remember that the transformation $\vec{x}(\vec{\xi},t)$ will describe the so called Bohmian trajectories. That is, each fluid element will shape a Bohmian trajectory of the system. Again, note that we could have chosen an alternative velocity field too. We will analyze its consequences in section (II.g).
 
 
+Now, when it comes to numerically evolve the value of the wavefunction as seen by a fluid element $\vec{\xi}$, $\psi(t,\vec{\xi})$, following equation \eqref{KinAdv}, since we need to compute the partial derivatives in Eulerian configuration-space for the wavefunction at each time $\pdv{}{x_a}\psi(x_a,\vec{x}_b^\xi(t), t)\Big\rvert_{x_a=x^\xi_a(t)}$, we need first order local information in the position $\vec{x}(\vec{\xi},t)$ of that fluid element. We need not only the wavefunction in that position, but in a close enough neighborhood as to compute the numerical derivative. Thus, we will not be able to evolve a {\bf single fluid element} $\vec{\xi}$ and its wavefunction alone. We will require to evolve several fluid elements $\vec{\xi}$ at the same time, such that the values of the wavefunction they carry over their trajectories $\vec{x}^\xi(t)$, allow us to get the derivatives in $\vec{x}$. This is why we talk about simultaneously evolving a grid of fluid elements $\{\vec{\xi}_k\}_{k=1}^M$, that will provide us with an unstructured reconstruction of the wavefunction $\{\psi(\vec{x}(\xi_k,t),t) \}_{k=1}^M$. 
 
+Now, once accepted this way to have first order local information around each fluid element, we can see there is a second problem: we will get the value of the wavefunction at the points $\{\vec{x}(\vec{\xi}_k,t)\}_{k=1}^M$, which might be a structured Cartesian grid at $t=t_0$ if we choose $\{\vec{\xi}_k\}_{k=1}^M$ to be so, but will become into an unstructured grid very fast, because each fluid element will have a different velocity in each time. Thus, we need to compute the derivatives in an {\bf unstructured grid}, which complicates the numerical accuracy. For this, as we commented in the first block, we could fit an analytical function sum to the unstructured wavefunction, and then derive it analytically etc. But the point is that we need to go for additional complexity.
 
+We could actually bypass the unstructured grid problem by writing down equation \eqref{KinAdv} in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$, which we can make sure will be a regular Cartesian mesh. We will explore this option in section (II.e). 
 
-
+Potato potato, in this current shape, we cannot evolve a single trajectory and its associated wavefunction value, even if we might only be interested in doing so. However, if say, we obtain the expressions ruling the time evolution of the derivatives of the wavefunction, we could evolve them along the trajectory as well and problem solved! (There will be other problems). This is exactly what we will explain in section (II.d).
 
 \subsection*{(II.b) The Continuity and The Hamilton-Jacobi Equations}
 \addcontentsline{toc}{subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}
 
-If we take equations \eqref{HJE} and \eqref{CE}, which are the Hamilton-Jacobi equaiton and the Continuity Equation for the fluid, and we evaluate them along the trajectory $\vec{x}(t;\vec{\xi})$, by identifying and defining:
+If we take equations \eqref{HJE} and \eqref{CE}, which are the Hamilton-Jacobi equaiton and the Continuity Equation for the fluid, and we evaluate them along the trajectory $\vec{x}(t;\vec{\xi})$, assuming the trajectories are governed by the Bohmian velocity field:
 \begin{equation}\label{v}
 \dv{}{t}x_a^\xi(t)=\frac{1}{m_a}\pdv{}{x_a}S(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x^\xi_a(t)}=:v_a(\vec{x}^\xi(t),t)
 \end{equation}
-we get immediately after a pair of simplifications and re-orderings that:
+we immediately get after a pair of simplifications and re-orderings that the density and the action, as seen by the fluid element $\vec{\xi}$ evolve as:
 \begin{equation}\label{CE.L}
 \dv{}{t}\rho(\vec{x}^\xi(t),t)=-\rho(\vec{x}^\xi(t),t)\sum_{a=1}^N\pdv{}{x_a} v_a(x_a, \vec{x}_b^\xi(t),t)\Big\rvert_{x_a^\xi(t)}
 \end{equation}
@@ -698,38 +698,115 @@ we get immediately after a pair of simplifications and re-orderings that:
 \end{equation}
 Which we can write in integral form to get the value they should have along each trajectory:
 \begin{equation}\label{JacPre}
-\rho(\vec{x}^\xi(t),t)=e^{-\int_{t=t_0}^t \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}\rho(\vec{x}^\xi(t_0),t_0)
+\rho(\vec{x}^\xi(t),t)=e^{-\int_{t=t_0}^t \vec{\nabla}_x\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}\rho(\vec{x}^\xi(t_0),t_0)
 \end{equation}
-\begin{equation}
+\begin{equation}\label{ActPre}
 S(\vec{x}^\xi(t),t)=\int_{t=t_0}^t \Lg(\vec{x}^\xi(t),t) dt+S(\vec{x}^\xi(t_0),t_0)
 \end{equation}
-Together with \eqref{v}, these three equations allow the coupled evolution of the fields along the trajectories. However, in order to evaluate the quantities $\pdv{}{x_a} v_a(x_a, \vec{x}_b^\xi(t),t)$, $\pdv{}{x_a}S(x_a, \vec{x}_b^\xi(t),t)$, $\pdv[2]{}{x_a}\rho^{1/2}(x_a, \vec{x}_b^\xi(t),t)$ of these equations, we need knowledge in other points surrounding the fluid element. To get them again, we can do one of three things:
+Together with \eqref{v}, these two equations allow the coupled evolution of the fields $S$ and $\rho$ along the trajectories. However, we realize that we face the same trouble as we had with the Schrödinger Equation. In order to evaluate the quantities $\pdv{}{x_a} v_a(x_a, \vec{x}_b^\xi(t),t)$, $\pdv{}{x_a}S(x_a, \vec{x}_b^\xi(t),t)$, $\pdv[2]{}{x_a}\rho^{1/2}(x_a, \vec{x}_b^\xi(t),t)$ on the trajectory spots, we need knowledge in points surrounding the fluid elements. This time we summarize the three potential solutions we suggested in the previous section as:
 \begin{enumerate}
 \item Evolve simultaneously several fluid elements so as to numerically compute the derivatives in the unstructured grid they suppose (by fitting a function etc.).
-\item Evolve more partial differential equations describing the dynamics in time for the partial derivatives, conditioned along the trajectories. This will be drafted in the following section.
-\item Convert the partial deriavtives with respect to space into derivatives with respect to the labels, with the extra cost of computing the Jacobian. As the initial grid where the labels are defined is a uniform grid, typical numerical methods can be used to approximate the derivatives. 
+\item Evolve more partial differential equations describing the dynamics in time for the partial derivatives, conditioned along the trajectories. This will be drafted in the section (II.d).
+\item Convert the partial derivatives with respect to space $\pdv{}{x_k}$ into derivatives with respect to the labels $\pdv{}{\xi_j}$, with the extra cost of computing the Jacobian and its determinants. As the initial grid where the labels are defined is a uniform grid, typical numerical methods can be used to approximate these last derivatives. \vspace{-0.25cm}
 \end{enumerate}
 
-Once we manage to be able to evolve these fields over the trajectories, we can immediately get the full wavefunction as $\psi=Re^{\frac{i}{\hbar}S}$:
+Once we manage to be able to evolve the action and the density fields over the trajectories, $S(\vec{\xi},t)$ and $\rho(\vec{\xi},t)$, we can immediately get the full wavefunction as $\psi(\vec{x}^\xi(t),t)=\rho(\vec{x}^\xi(t),t)^{1/2}exp(iS(\vec{x}^\xi(t),t)/\hbar)$.
+
+In fact, we can ensemble equations \eqref{JacPre} and \eqref{ActPre} to get the time evolution of the wavefunction in an alternative way to the one we glanced by directly integrating the Schrödinger Equaiton in the previous section:
 \begin{equation}
-\psi(\vec{x}^\xi(t),t)=e^{-\int_{t=t_0}^t \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}e^{\frac{i}{\hbar}\int_{t=t_0}^t \Lg(\vec{x}^\xi(t),t) dt}\psi(\vec{x}^\xi(t_0),t_0)
+\psi(\vec{x}^\xi(t),t)=\rho(\vec{x}^\xi(t),t)^{1/2}exp(iS(\vec{x}^\xi(t),t)/\hbar)=e^{-\int_{t=t_0}^t \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} dt}e^{\frac{i}{\hbar}\int_{t=t_0}^t \Lg(\vec{x}^\xi(t),t) dt}\psi(\vec{x}^\xi(t_0),t_0)
 \end{equation}
-This is sometimes called the hydrodynamical wave-function propagator.
+$$
+\psi(\vec{x}^\xi(t),t)=e^{\int_{t=t_0}^t\qty( \frac{i}{\hbar} \Lg(\vec{x}^\xi(t),t)- \vec{\nabla}\cdot \vec{v}(\vec{x},t)\rvert_{\vec{x}^\xi(t)} )dt}\psi(\vec{x}^\xi(t_0),t_0)
+$$
+This is sometimes called the {\bf hydrodynamical wave-function propagator}.\vspace{-0.2cm}
 
-\mybox{{\bf About the Fluid Jacobian\\ }
-Given we have the transformation $\vec{x}(\vec{\xi},t)$ that maps each fluid element in the label space $\vec{\xi}$\footnote{which we decided to identify with the initial position (in configuration-space) of each fluid element ($\vec{x}(\vec{\xi},t=t_0)=\vec{\xi}$)}, to the position of the fluid element at time $t$, we wish to comprehend what the Jacobian determinant of this transformation means, how it can be interpreted and how it could have been used to derive interesting equations.\\
 
+\subsection*{(II.f) The Bohmian Newton's Second Law}
+\addcontentsline{toc}{subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}
+If we take the Hamilton-Jacobi Equation in the fully Eulerian frame \eqref{HJE} and do the partial derivative $\pdv{}{x_k}$ at both sides, by assuming again the particular shape for the velocity field given by \eqref{v} and assuming enough regularity for $S$, we arrive at:
+\begin{equation}
+\pdv{}{t}\pdv{}{x_k}S(x,t)+\sum_{j=1}^N\pdv{}{x_j}\pdv{}{x_k}S(x,t)\cdot v_j(x,t)=-\pdv{}{x_k}\qty(V(x,t)+Q(x,t))
+\end{equation}
+Which if we evaluate in the Lagrangian frame $\vec{x}(\vec{\xi},t)$, we immediately find (assuming \eqref{v}):
+\begin{equation}
+m_k\dv{}{t}v_k(\vec{x}^\xi(t),t)=m_k\dv[2]{}{t}x^\xi_k(t)=-\pdv{}{x_k}\qty[V(\vec{x}^\xi(t),t)+Q(\vec{x}^\xi(t),t) ]\vspace{-0.1cm}
+\end{equation}
+Which is a Newton's Second Law for each fluid element $\vec{\xi}$, which in this case shape Bohmian trajectories. This equation can be evolved coupled with the continuity equation \eqref{CE.L} in order to know the evolution of the density. In this representation however, we will require to compute the spatial derivative of the quantum potential $Q$, which was already a problemtic term due to the $\pdv[2]{}{x_j}R(x,t)$ it contains. Therefore, even if the equation is very insightful in a theoretical basis, for numerical purposes it is more stable to use the equations of motion of (II.b).\vspace{-0.2cm}
+
+%\subsection*{(II.c) Basis Set Expansions}
+%\addcontentsline{toc}{subsubsection}{{\bf (II.c)} Basis Set Expansions?}
+
+\subsection*{(II.d) Dynamic Equations for Partial Derivatives}\vspace{-0.2cm}
+\addcontentsline{toc}{subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}
+
+
+\subsubsection*{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}\vspace{-0.1cm}
+%\addcontentsline{toc}{subsubsection}{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
+
+If we go back to the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, we will notice that there is no partial derivative with respect to space $x_k$ in any place. This means that we can actually evolve a single fluid element by directly evaluating $x=x(\xi,t)$. For this, we must first note that by the chain rule, given a differentiable function $f(x,t)$:
+\begin{equation}\label{ruler}
+\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \dv{f(x(\xi,t),t)}{t}-\sum_{s=1}^N \pdv{f(x,t)}{x_s}\Big\rvert_{x_s(\xi,t)}\pdv{x(\xi,t)}{t}
+\end{equation}
+%In the notation we defined in \eqref{defPdv}, we saw $\pdv{f(x,t)}{x_s}=f_{(0,...,1,...,0)}(x,t)$ (with the array full of 0-s except for a 1 in the $s$-th position). Then:
+%\begin{equation}\label{matrialTimePdv}
+%\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
+%\end{equation}
+Then, retaking the definition of equation \eqref{defPdv}, this would leave \eqref{infchain.SE} in the Lagrangian frame (evaluating $x=x(\xi,t)$) as:\vspace{-0.1cm}
+\begin{equation}\label{infchain.SE}
+i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+\vspace{-0.1cm}
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
+$$
+where all the functions have arguments $(\xi,t)$.
+
+A priori, this is an infinite system of coupled linear differential equations. However, if we assume that at a certain $J$, $\pdv[J]{\psi(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$  $\forall k$, we are left with $J^N$ coupled linear equations. Doing this approximation, we are assuming that the wavefunction in the immediate locality of the fluid element has a roughly constant derivative of $J$-th order. Contrary to the Eulerian case, we are not assuming this for the whole configuration space. Thus depending on the chosen trajectory, a low $J$ may not be a problematic assumption. The best point about this mehtod is that this equation system would allow us to compute the wavefunction and trajectory of a {\bf single} fluid element $\xi$! With no need to know the partial derivatives in configuration-space $x_k$, there is no need to couple other trajectories to this one.
+
+Certainly, the main problem of this method will be that we will need to choose the truncation $J$, which if chosen to be too small, would make the trajectory blind to nodal points and fluctuating regions that are not in its immediate vicinity but should influence the trajectory.\vspace{-0.1cm}
+
+\subsubsection*{(II.d.b) Dynamics of Partial Derivatives For the Density and Action}\vspace{-0.1cm}
+%\addcontentsline{toc}{subsubsection}{(II.d.b) Dynamics of Partial Derivatives}
+
+If we now look back to equations \eqref{infchain.CE} and \eqref{infchain.HJE}, we will see that it is possible to evaluate $x=x(\xi,t)$ directly in the partial differential equations ruling the dynamics of the spatial derivatives of $C$ and $S$ (where $C(x,t)=log(\rho(x,t))/2$). Noting back \eqref{ruler}, we can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$, over any single fluid element $\xi$ follows:\vspace{-0.1cm}
+\begin{equation}\label{infchain.CE.L}
+\pdv{}{t}C_{(j_1,...,j_N)}(\xi,t)=-\sum_{s=1}^N \Bigg(i\hbar C_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t} + \frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}(x,t)+
+\end{equation}
+$$
++2 \sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)} \Bigg]\bigg)
+$$
+
+While the field $S$ and all its derivatives in configuration space $x_k$, follow over any single fluid element $\xi$:\vspace{-0.1cm}
+\begin{equation}\label{infchain.HJE.L}
+-\pdv{}{t}S_{(j_1,...,j_N)}(\xi,t)=V_{(j1,...,jN)}+\sum_{s=1}^N\Bigg\{ i\hbar S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+\vspace{-0.1cm}
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} \vspace{-0.1cm}
+$$
+$$
+-S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]\Bigg\}
+$$
+Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.\\
+
+\mybox{
+\section*{Fundamental Concepts about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
+\addcontentsline{toc}{subsubsection}{\em Parenthesis: Fundamental Concepts about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
+
+Before continuing to the next sections, we will open a little parenthesis to review the relevant concepts that one must have clear when talking about the trajectory bundle of a fluid. These trajectories are given by a transformation $\vec{x}(\vec{\xi},t)$ that maps each fluid element in the label space $\vec{\xi}$, which we decided to identify with the initial position (in configuration-space) of each fluid element ($\vec{x}(\vec{\xi},t=t_0)=\vec{\xi}$), to the position of the fluid element at time $t$. For the reasons we have already seen, it must be a diffeomorphism, that is to be continous, with a continous inverse and differentiable. \vspace{0.2cm}\\
+{\bf Covariant Tangent Vectors\vspace{0.2cm}\\ }
 Let us first realize what the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$ are. Following the definition of partial derivative:
 \begin{equation}
 \pdv{\vec{x}(\vec{\xi},t)}{\xi_k}=\lim_{\Delta \xi \rightarrow \infty} \frac{\vec{x}(\xi_1,...,\xi_k+\Delta \xi,...,\xi_N,t)-\vec{x}(\xi_1,...,\xi_k,...,\xi_N,t,t)}{\Delta \xi}
 \end{equation}
-we can graphically see in Figure \ref{fig:covariant}, that it is in each time, the vector that is locally tangent to the curve defined by fixing all spatial variables $\xi$ except for $\xi_k$, which if varied, shapes the curve $\vec{x}(\xi_k;\xi_1,...,\xi_{k-1},\xi_{k+1},...,\xi_N,t)$. This curve is the image of the straight line corresponding to the $\xi_k$ axis in the original label space, as can be depicted in Figure \ref{fig:isoline}. It is the curve that shows where are the fluid elements that were initially in that straight line. Since, $\vec{x}(\vec{\xi},t)$ must be continous to be a valid diffeomorphism, the fluid elements that were initially close in configuration space, must remain close, but can now be distributed in a curved manner instead of a straight line. Yet, the "distance" between these close points can be contracted or dilated as we will see in a moment. Then, the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$, tangent to these curves, locally defining the grid of fluid elements, are called the {\bf covariant tangent vectors}.\\
+
+we can graphically see in Figure \ref{fig:covariant} that it is in each time, the vector that is locally tangent to the curve defined by fixing all spatial variables of $\vec{\xi}$ except for $\xi_k$, which if varied, shapes the curve $\vec{x}(\xi_k;\xi_1,...,\xi_{k-1},\xi_{k+1},...,\xi_N,t)$. This curve is the image of the straight line corresponding to the $\xi_k$ axis in the original label space, as can be seen in Figure \ref{fig:isoline}. It is the curve that shows where are the fluid elements that were initially in that straight line. Since, $\vec{x}(\vec{\xi},t)$ must be continous to be a valid diffeomorphism, the fluid elements that were initially close in configuration space, must remain close, but can now be distributed in a curved manner instead of a straight line. Yet, the "distance" between these close points can be contracted or dilated as we will see in a moment. Then, the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$, tangent to these curves, locally defining the grid of fluid elements, are called the {\bf covariant tangent vectors}.\\
 
 The set of $N$ vectors $\{\pdv{\vec{x}(\vec{\xi},t)}{\xi_1},...,\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} \}$ at each point, shapes locally the basis to which the initial orthogonal grid has been morphed.\\
 
-We define the Jacobian matrix of $\vec{x}(\vec{\xi},t)$, with respect to the label space $\vec{\xi}$ as the matrix that has these vectors as columns:
+{\bf The Jacobian Matrix\vspace{0.2cm}\\}
+We define the Jacobian matrix of $\vec{x}(\vec{\xi},t)$ with respect to the label space $\vec{\xi}$ as the matrix that has the covariant tangent vectors as columns (or the matrix of all the frist order partial derivatives of $\vec{x}(\vec{\xi},t)$):
 \begin{equation}
-D_\xi\vec{x}(\vec{\xi},t)=\begin{pmatrix}
+D_\xi\vec{x}(\vec{\xi},t):=\begin{pmatrix}
 \pdv{x_1(\vec{\xi},t)}{\xi_1} & \cdots & \pdv{x_1(\vec{\xi},t)}{\xi_N}\\
 \vdots&\ddots&\vdots \\
 \pdv{x_N(\vec{\xi},t)}{\xi_1} & \cdots & \pdv{x_N(\vec{\xi},t)}{\xi_N}
@@ -740,9 +817,9 @@ D_\xi\vec{x}(\vec{\xi},t)=\begin{pmatrix}
 \end{pmatrix}
 \end{equation}
 
-Note that since the transformation $\vec{x}(\vec{\xi},t)$ must be a smooth bijection to be valid as a description of the trajectory ensemble, it must be differentiable. This is why we know that the covariant tangent vectors are defined. Actually the fact that it must also be invertible will guarantee that the Jacobian matrix is non-singular as we will see form its interpretation.\\
+Note that since the transformation $\vec{x}(\vec{\xi},t)$ must be a diffeomorphism, the Jacobian matrix is defined. This is why we know that the covariant tangent vectors were defined in the first place. In fact, we will see from its interpretation that the matrix must be non-singular, meaning the covariant tangent vectors shape a full basis.\\
 
-We can interpret this matrix (at each point $\vec{xi},t$ it will be a different one) as the matrix of a linear application, that takes vectors in an initial canonical basis and sends them to the basis of covariant tangent vectors at this position. To see what this really means, let us write the Taylor expansion of $\vec{x}(\vec{\xi},t)$ around a certain fluid element of interest $\vec{\xi}^*$:
+We can interpret this matrix, which will be different at each point $\vec{\xi},t$, as the matrix of a linear application that takes vectors in an initial canonical basis and sends them to the basis of covariant tangent vectors at the position of $\vec{\xi},t$. To see what this really means, let us write the Taylor expansion of $\vec{x}(\vec{\xi},t)$ around a certain fluid element of interest $\vec{\xi}^*$:
 \begin{equation}
 \vec{x}(\vec{\xi},t)=\vec{x}(\vec{\xi}^*,t)+D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)+O(||\vec{\xi}-\vec{\xi}^*||^2)
 \end{equation}}
@@ -751,43 +828,41 @@ For $\vec{\xi}\rightarrow \vec{\xi}^*$ (that is, for all fluid elements close en
 \begin{equation}
 \vec{x}(\vec{\xi},t)-\vec{x}(\vec{\xi}^*,t)\simeq D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)
 \end{equation}
-As it can be seen in Figure \ref{fig:JacobMatrix}, this means, the Jacobian matrix is the linear application that best approximates in each neighbourhood the effect of the transformation $\vec{x}(\vec{\xi},t)$ at each time. Then, if we regard the Jacobian matrix as the matrix of a linear application, we see that it locally sends the unit orthogonal vectors (in $\vec{\xi}$ space) to the covariant tangent vectors (in $\vec{x}$ space at time $t$). In other words, it measures the conversion of what the unit cube was in $\vec{\xi}$ locally, to the parallelogram that the cube has become to in time $t$. If we knew the volume increase factor of this conversion, we would locally know the amount by which the fluid elements that were intially close to $\vec{\xi}^*$ are dilated or contracted. In fact, we can now see that the magnitude of each covariant tangent vectors $||\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}||$ gives us the separation increase factor at time $t$ of the distance between the fluid element $\vec{\xi}^*$ and the $\vec{\xi}$ that were aligned with it in the $\xi_k$ axis at time $t_0$.\\
+As it can be seen in Figure \ref{fig:JacobMatrix}, this means the Jacobian matrix is the linear application that best approximates in each neighbourhood $\vec{\xi}$ the effect of the transformation $\vec{x}(\vec{\xi},t)$ at each time. Interpreting the Jacobian matrix as the matrix of this linear application, we see that it sends the unit orthogonal vectors around each $\vec{\xi}$ to the covariant tangent vectors at in $\vec{x}$ space at time $t$. Then it must also encode the conversion of a local unit cube of fluid elements in $\vec{\xi}$ at $t=t_0$, to the parallelogram that the elements of the cube shape at time $t$. If we knew the volume increase factor of this conversion, we would know the amount by which the fluid elements that were intially close to $\vec{\xi}^*$ are dilated or contracted. In fact, with this linear application matrix idea, we can now understand that the magnitude of each covariant tangent vector $||\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}||$ gives us the separation increase factor at time $t$ of the distance between the fluid element $\vec{\xi}^*$ and the $\vec{\xi}$ that were aligned with it in the $\xi_k$ axis at time $t_0$.\\
 
-In fact, the magnitude of the determinant of a matrix gives the $N$-volume of the parallelotope formed by its column vectors. To see why this is true, we can do the following heuristic explanation. Assume first that we have a non-zero determinant. Now, the determinant of a matrix does not change if we take a column of the matrix multiplied by any number and sum it to another one. Then, we could in a finite amount of operations convert the matrix into a diagonal matrix by only taking columns of itself, multiplied by necessary factors and adding them to other ones. Just like the typical Gaussian method to solve linear equation systems. The determinant of this diagonal matrix will be the same as the one for the initial matrix. Now, the column vectors of the diagonal matrix, form an orthogonal parallelotope the volume of which is immediately given by the product of the height, width, length etc., which is also the determinant of the diagonal matrix. Finally, realizing that given a set of $N$ vectors that forms an $N$-parallelotope, if we add one vector to another one, even multiplied by any factor, the volume of the resulting parallelotope is the same (since it is a shear transformation), then, the volume of the parallelotope formed by the column vectors of the diagonal matrix and the original matrix must be the same. Thus, the determinant of the original matrix gave in magnitude, the volume of the parallelotope shaped by its column vectors. $o.\varepsilon.\delta$. This intuition is depicted in Figure \ref{fig:volumeDet}.\\
+{\bf The Jacobian Determinant\vspace{0.2cm}\\}
+The magnitude of the determinant of an $N\cross N$ matrix gives the $N$-volume of the parallelotope formed by its column vectors. To see why this is true, we can do the following heuristic explanation. Assume first that we have a non-zero determinant. Now, the determinant of a matrix does not change if we take a column of the matrix multiplied by any number and sum it to another one. Then, we could, in a finite amount of operations, convert the matrix into a diagonal matrix by only taking columns of itself, multiplied by necessary factors and adding them to other ones. Just like the typical Gaussian method to solve linear equation systems. The determinant of this diagonal matrix will be the same as the one for the initial matrix. Now, the column vectors of the diagonal matrix, form an orthogonal parallelotope the volume of which is immediately given by the product of the height, width, length etc., which is also the determinant of the diagonal matrix. Finally, realizing that given a set of $N$ vectors that forms an $N$-parallelotope, if we add one vector to another one, even multiplied by any factor, the volume of the resulting parallelotope is the same (since it is a shear transformation), then, the volume of the parallelotope formed by the column vectors of the diagonal matrix and the original matrix must be the same. Thus, the determinant of the original matrix gave in magnitude, the volume of the parallelotope shaped by its column vectors. $o.\varepsilon.\delta$. This intuition is depicted in Figure \ref{fig:volumeDet}.\\
 
-Therefore, the determinant of the Jacobian matrix of the trajectories of the fluid elements $\vec{x}(\vec{\xi},t)$, gives in magnitude, the local factor by which the volume between nearby fluid elements is scaled (dilated or contracted). Let us denote this quantity the JAcobian determinant:
+Therefore, the determinant of the Jacobian matrix of the trajectories of the fluid elements $\vec{x}(\vec{\xi},t)$, gives in magnitude, the local factor by which the volume between nearby fluid elements is scaled (dilated or contracted). Let us denote this quantity the Jacobian determinant:
 \begin{equation}
 J(\vec{\xi},t):=|det (D_\xi \vec{x}(\vec{\xi},t))|>0
 \end{equation}
-
-Then, if $J(\vec{\xi},t)>1$, locally, the fluid is dilated, meaning that given a fluid element labeled $\vec{\xi}^*$, the fluid elements that were closest to it at the time we made the labels: those in the ball $\{\vec{\xi}\in\R^N:||\vec{\xi}^*-\vec{\xi}||=\varepsilon\}$ for a small enough $\varepsilon>0$, are now getting further in configuration-space: $||\vec{x}(\vec{\xi}_0,t)-\vec{x}(\vec{\xi}_1,t)||>\varepsilon$ for $t>t_0$. If $J<1$, the inverse will happen.\\
- }
- \mybox{
-As a side note, this is why the Jacobian is used in the variable changes of integrals. Say we wish to compute the $N$-volume in configuration space that occupy now the fluid elements that at the time we defined the label space were in a domain $\Omega$. They will now be in a domain $\vec{x}(\Omega,t)$, so we seek the integral: $\iint_{\vec{x}(\Omega,t)}dx_1\cdots dx_N$. If we discretize the space, in the limit of $\Delta x_j, \Delta \xi_j \rightarrow 0$, we will have for each point $\vec{\xi}$ that $\Delta x_1\cdots \Delta x_N= J(\vec{\xi},t)\Delta \xi_1\cdots \Delta\xi_N$, since the Jacobian gives the volume increase factor in the immediate neighbourhood (in the point itself). If we made a continuous sum of these elements over all the volume $\Omega$ in label space, we would find the volume we were looking for:
+If $J(\vec{\xi},t)>1$, in the locality of $\vec{\xi}$, the fluid is dilated. This means that given a fluid element labeled $\vec{\xi}^*$, the fluid elements that were closest to it at the time we made the labels: those in the ball $\{\vec{\xi}\in\R^N:||\vec{\xi}^*-\vec{\xi}||=\varepsilon\}$ for a small enough $\varepsilon>0$, are now getting further in configuration-space: $||\vec{x}(\vec{\xi}_0,t)-\vec{x}(\vec{\xi}_1,t)||>\varepsilon$ for this $t>t_0$. If $J(\vec{\xi},t)<1$, the distance will get smaller.}
+\mybox{
+{\bf The Change of Variables in an Integral\vspace{0.2cm}\\}
+This interpretation of the Jacobian is why it is used in the variable changes of integrals. Say we wish to compute the $N$-volume in configuration-space that occupy at time $t$ the fluid elements that at $t_0$ were in the domain $\Omega_0$. They will now be in a domain $\Omega_t=\vec{x}(\Omega_0,t)$, so we seek the integral: $\iint_{\vec{x}(\Omega,t)}dx_1\cdots dx_N$. If we discretize the space around the point $\vec{\xi}$, in the limit of small discrete steps $\Delta x_j, \Delta \xi_j \rightarrow 0$, we will have for each point $\vec{\xi}$ that $\Delta x_1\cdots \Delta x_N= J(\vec{\xi},t)\Delta \xi_1\cdots \Delta\xi_N$, since the Jacobian gives the volume increase factor in the immediate neighbourhood of the point. If we made a continuous sum of these elements over all the volume $\Omega_0$ in label space, we would find the volume we were looking for:
 \begin{equation}\label{volume}
 \iint_{\vec{x}(\Omega,t)}dx_1\cdots dx_N=\iint_{\Omega} J(\vec{\xi},t) d\xi_1\cdots d\xi_N
 \end{equation}
-More formally, we have that for $\varepsilon \rightarrow 0$:
+More formally, since $\forall \vec{\xi}\in B_\varepsilon(\vec{\xi}^*)$ with $\varepsilon\rightarrow 0$ we have that $\vec{x}(\vec{\xi},t)-\vec{x}(\vec{\xi}^*,t)= D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)$, then for $\varepsilon \rightarrow 0$:
 \begin{equation}
 Vol\qty(\vec{x}(\Omega,t)\cap B_\varepsilon(\vec{x}(\vec{\xi},t)))=J(\vec{\xi},t)Vol\qty(\Omega \cap B_\varepsilon (\vec{\xi}))
 \end{equation}
 \begin{equation}
 Vol\qty(\vec{x}(\Omega))=\lim_{ \varepsilon\rightarrow 0} \sum_{\vec{\xi}\in\Omega} Vol\qty(\vec{x}(\Omega,t)\cap B_\varepsilon(\vec{x}(\vec{\xi},t)))=\lim_{ \varepsilon\rightarrow 0} \sum_{\vec{\xi}\in\Omega} J(\vec{\xi},t)Vol\qty(\Omega \cap B_\varepsilon (\vec{\xi}))
 \end{equation}
-which using the definition of integral, leads to equation \eqref{volume}.\\
+with $B_\varepsilon(x)\subset \R^N$ a ball of center $x\in\R^N$ and radious $\varepsilon>0$. Using the definition of integral, this last equation leads to equation \eqref{volume}.\\
 
 More in general, if what we wanted was to do a weighted sum where each point in configuration space has a scalar value $f(\vec{x},t)$, then we would have enough in the preceding more formal development to multiply each volume contribution by the value of its corresponding scalar. This would yield:
 \begin{equation}\label{integralChange}
 \iint_{\vec{x}(\Omega,t)}f(\vec{x},t)dx_1\cdots dx_N=\iint_{\Omega} f(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}J(\vec{\xi},t) d\xi_1\cdots d\xi_N
 \end{equation}
 
-Note that all of this development is equally valid for the inverse transformation, that gives the label of the trajectory that passes from each configuration space point at each time $\vec{\xi}(\vec{x},t)$. For this, we will need to use the determinant of the Jacobian of that transformation. It turns out however, that the Jacobian matrix of $\vec{\xi}(\vec{x},t)$ is the inverse of the Jacobian of $\vec{\x}(\vec{\xi},t)$. Since one is the inverse map of the other this could have already been suggested. A more immediate prove however, comes from the follwing: since we impose that $\vec{x}(\vec{\xi}(\vec{x},t),t)=\vec{x}$, if we derivate each of its components it by $x_k$ we get:
+{\bf The Inverse Transformation and its Jacobian\vspace{0.2cm}\\}
+Note that all of this development is equally valid for the inverse transformation, that gives the label of the trajectory that passes from each configuration space point at each time $\vec{\xi}(\vec{x},t)$. It turns out there is a very convenient connection: that the Jacobian matrix of $\vec{\xi}(\vec{x},t)$ is the inverse of the Jacobian of $\vec{x}(\vec{\xi},t)$. Since one is the inverse map of the other this could have already been suspected. A more immediate prove however comes from the follwing: since we impose that $\vec{x}(\vec{\xi}(\vec{x},t),t)=\vec{x}$, taking each $k$-th component of the vectors and derivating them by $x_j$ we get applying the chain rule:
 \begin{equation}
-x_k(\vec{\xi}(\vec{x},t),t)=x_k \Rightarrow \pdv{}{x_j}x_k(\vec{\xi}(\vec{x},t),t)=\pdv{}{x_j}x_k \Rightarrow
+\pdv{}{x_j}x_k(\vec{\xi}(\vec{x},t),t)=\pdv{}{x_j}x_k \Rightarrow \sum_{l=1}^N \pdv{x_k(\vec{\xi},t)}{\xi_l}\Big\rvert_{\vec{\xi}(\vec{x},t)}\pdv{\xi_l(\vec{x},t)}{x_j}=\delta_{jk}
 \end{equation}
-$$
-\sum_{l=1}^N \pdv{x_k(\vec{\xi},t)}{\xi_l}\Big\rvert_{\vec{\xi}(\vec{x},t)}\pdv{\xi_l(\vec{x},t)}{x_j}=\delta_{jk}
-$$
 which can be written in matrix form as:
 \begin{equation}\label{inverse}
 \begin{pmatrix}
@@ -807,23 +882,24 @@ which can be written in matrix form as:
 $$
 \Rightarrow D_\xi \vec{x}(\vec{\xi},t)\cdot D_x \vec{\xi}(\vec{x},t) = Id_{NxN}
 $$
-Which means for the uniqueness of the inverse matrix that the Jacobian matrix of $\xi(x,t)$ is the inverse of the Jacobian matrix of $x(\xi,t)$! Namely, $D_x \vec{\xi}(\vec{x},t)=D_\xi \vec{x}(\vec{\xi},t)^{-1}$.
+Which means by the uniqueness of the inverse matrix that the Jacobian matrix of $\xi(x,t)$ is the inverse of the Jacobian matrix of $x(\xi,t)$. Namely, $D_x \vec{\xi}(\vec{x},t)=D_\xi \vec{x}(\vec{\xi},t)^{-1}$.
 }
 \mybox{
 In particular this means that in order to compute the determinant of any of them it is enough to compute the one for the other one, since for any invertible matrix $A$ with inverse $A^{-1}$ we have that $det(A)=1/det(A^{-1})$. This will be relevant, because computing $D_\xi \vec{x}(\vec{\xi},t)$ will be trivial at all times if we choose the label space to be a regular discretized grid, while $D_x \vec{\xi}(\vec{x},t)$ will hardly be in a regular grid.\\
 
-Finally, let us see how useful the Jacobian is, in that we will be able to derive the continuity equation from simple considerations, and we will arrive at equation $\eqref{JacPre}$ identifying a vital relationship between the velocity field driving the fluid elements and the Jacobian. In fact, we will arrive to find which is the conserved quantity along any given trajectory.\\
+{\bf Deriving the Continuity Equation from a simple Assumption \vspace{0.2cm} \\}
+Let us see how useful the Jacobian is, in that we will be able to derive the continuity equation of a fluid from simple considerations, and we will arrive at equation $\eqref{JacPre}$ identifying a vital relationship between the velocity field driving the fluid elements and the Jacobian. In fact, we will arrive to find which is the conserved quantity along any given trajectory, which leads to an alternative way to compute the time evolution of the density.\\
 
-Let us take the continity equation in the Eulerian frame that we got from the Schrödinger Equation \eqref{CE} to see which is the simple consideration we can make. Integrating both sides of the equation on a bounded configuration space volume $V\subset\R^N$ and applying the divergence theorem we get:
+Let us first see what the continuity equation in the Eulerian frame \eqref{CE} is telling us. Integrating both sides of the equation on a bounded configuration space volume $V\subset\R^N$, with boundary $\partial V$, applying the divergence theorem we get:
 $$
-\int_{V}\pdv{}{t} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{V}\vec{\nabla}\cdot \qty( \rho(\vec{x},t)\vec{v}(\vec{x},t) )dx_1\cdots dx_N
+\int_{V}\pdv{}{t} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{V}\vec{\nabla}_x\cdot \qty( \rho(\vec{x},t)\vec{v}(\vec{x},t) )dx_1\cdots dx_N
 $$
 \begin{equation}
 \pdv{}{t} \int_{V} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{\partial V} \rho(\vec{x},t)\vec{v}(\vec{x},t)\cdot d\vec{S}(\vec{x})=-\int_{\partial V} \rho(\vec{x},t)v_{normal}(\vec{x},t)\cdot dS
 \end{equation}
-The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $V$ (in units of fluid-elements/time). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface (in fluid-elements/time). Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes, the variation of its number can only be due to its displacement. Universes cannot be destroyed nor created, but they can flow lighter or denser in density.\\
+The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $V$ (in units of fluid-elements/time). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface (in fluid-elements/time). Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes. The variation of its number can only be due to their displacement to adjacent points of space. Universes cannot be destroyed nor created, but they can flow lighter or denser in density.\\
 
-Then, let us try to derive the continuity equation in the converse way: we acknowledge that the amount of Universes in a initial configuration space $N$-volume $\Omega$, should be the same as the amount of Universes in the volume at which those Universes extend at time $t$, say $\vec{x}(\Omega,t)$. Mathematically this conservation of fluid-elements would mean:
+Then, let us try to derive the continuity equation in the converse way: we acknowledge that the amount of Universes in a initial configuration space $N$-volume $\Omega_0$, should be the same as the amount of Universes in the volume at which those Universes extend at time $t$: $\vec{x}(\Omega_0,t)$. Mathematically this conservation of fluid-elements would mean:
 \begin{equation}
 \iint_\Omega \rho(\vec{\xi},t=t_0) d\xi_1\cdots d\xi_N=\iint_{\vec{x}(\Omega,t)} \rho(\vec{x},t) dx_1\cdots dx_N\quad \forall t
 \end{equation}
@@ -835,7 +911,7 @@ And manipulate it to get:
 \begin{equation}
 \iint_\Omega \qty[ \rho(\vec{\xi},t=t_0) -\rho(\vec{\xi},t) J(\vec{\xi},t) ]d\xi_1\cdots d\xi_N=0
 \end{equation}
-Since this must be true for any possible $\Omega$, it must be that:
+Since this must be true for any possible $\Omega_0$, it must be that:
 \begin{equation}
 \rho(\vec{\xi},t_0) = \rho(\vec{\xi},t) J(\vec{\xi},t)\Longleftrightarrow \rho(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{J(\vec{\xi},t)}\Longleftrightarrow \frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}=J(\vec{\xi},t)
 \end{equation}
@@ -857,10 +933,32 @@ which implies that along any given trajectory $\vec{\xi}$, the quantity $\rho(\v
 J(\vec{\xi},t)\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\pdv{J(\vec{\xi},t)}{t}=0
 \end{equation}
 Then note that:
-\begin{equation}
-\pdv{}{t}J(\vec{\xi},t)=
+\begin{equation}\label{jainkoa}
+\pdv{}{t}J(\vec{\xi},t)=J(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
-To prove this, let us write the definition of determinant in all of its glory:
+We will prove this, after we get to the Continuity Equation to avoid the distraction. By evaluating this identity in  equation \eqref{Jacobproc0} we get:
+\begin{equation}
+J(\vec{\xi},t)\qty(\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)})=0
+\end{equation}
+
+Since we assumed that the Jacobian of the trajectories was never zero to allow its invertibility, we will have that the differential equation multiplying it must be zero:
+\begin{equation}
+\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}=0
+\end{equation}
+which is the Continuity Equation in the Lagrangian frame \eqref{CE.L}. If we now evaluate $\vec{\xi}=\vec{\xi}(\vec{x},t)$ and note:
+\begin{equation}
+\hspace*{-0.6cm}\pdv{\rho(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\dv{\rho(\vec{x}(\vec{\xi},t),t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}\pdv{x_k(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)
+\end{equation}
+}
+\mybox{
+We have that:
+\begin{equation}
+\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)+\rho(\vec{x},t)\pdv{v_k(\vec{x},t)}{x_k}=0
+\end{equation}
+which reverting the derivative of a product, yields the Continuity Equation in the Eulerian frame \eqref{CE}.\\
+
+{\bf What is $\pdv{}{t}J(\vec{\xi},t)$?\vspace{0.2cm}\\}
+Let us prove the identity \eqref{jainkoa}, since it has its very big relevance. Let us first write the definition of determinant in all of its glory:
 \begin{equation}
 J(\vec{\xi},t)=|det \Big( D_\xi \vec{x}(\vec{\xi},t) \Big)|=\sum_p sgn(p) \pdv{x_1}{\xi_{p1}} \cdots \pdv{x_N}{\xi_{pN}}
 \end{equation}
@@ -871,8 +969,6 @@ with the sum running over all the $N!$ possible permutation tuples $p=(p_1,...,p
 $$
 +\pdv{x_1}{\xi_{p1}} \cdots \pdv{x_{N-1}}{\xi_{pN-1}}\qty[\pdv{}{t}\pdv{x_N}{\xi_{pN}}]\Bigg)
 $$
-}
-\mybox{
 Note that since $\pdv{x_j(\vec{\xi},t)}{t}=:v_j(\vec{\xi},t)=v_k(\vec{x}(\vec{\xi},t),t)$:
 \begin{equation}
 \pdv{}{t}\pdv{x_i(\vec{\xi},t)}{\xi_j}=\pdv{}{\xi_j}\pdv{x_i(\vec{\xi},t)}{t}=\pdv{}{\xi_j}v_i(\vec{x}(\vec{\xi},t),t)=
@@ -900,7 +996,9 @@ $$
 $$
 + \sum_{k=1}^N\pdv{v_N(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}\sum_p sgn(p)\pdv{x_1}{\xi_{p1}} \cdots \pdv{x_{N-1}}{\xi_{pN-1}}\pdv{x_k}{\xi_{pN}}
 $$
-where recalling the definition of determinant, we can see that it is a sum of many determinants, many of which will be zero since they will have rows with the same elements and thus the $N$-volume of the parallelotopes that form their rows will be null:
+}
+\mybox{
+where recalling the definition of determinant, we can see that it is a sum of many determinants, many of which will be zero since they will have rows with the same elements and thus the $N$-volume of the parallelotopes that form their rows will be null. We can see clearly from the last equation that:
 \begin{equation}
 \pdv{}{t}J(\vec{\xi},t)=\sum_{k=1}^N \pdv{v_1(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)} \begin{vmatrix}
 \pdv{x_k}{\xi_{1}}&\pdv{x_k}{\xi_{2}} &\cdots &\pdv{x_k}{\xi_{N}}\\
@@ -915,7 +1013,7 @@ where recalling the definition of determinant, we can see that it is a sum of ma
 \pdv{x_k}{\xi_{1}}&\pdv{x_k}{\xi_{2}} &\cdots &\pdv{x_k}{\xi_{N}}
 \end{vmatrix}
 \end{equation}
-Clearly, in each determinant, if the index $k$ is in row $j$, for all the $k\neq j$, the determinant will have two equal rows, leaving only those determinants with $k=j$, which turn out to be the Jacobian matrix determinants! Thus:
+In each determinant, if the index $k$ is in row $j$, for all the $k\neq j$, the determinant will have two equal rows, leaving only those determinants with $k=j$, which turn out to be the Jacobian matrix determinants! Thus:
 \begin{equation}
 \pdv{}{t}J(\vec{\xi},t)=\qty(\pdv{v_1(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}+\cdots+\pdv{v_N(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}) J(\vec{\xi},t))\Leftrightarrow
 \end{equation}
@@ -923,101 +1021,23 @@ Clearly, in each determinant, if the index $k$ is in row $j$, for all the $k\neq
 \pdv{}{t}J(\vec{\xi},t)=J(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
 which is what we wanted to prove.\\
+
 Equation \eqref{EulerDif} is a differential equation stating how the Jacobian of a certain fluid element evolves in time, given we know the velocity field moving those fluid elements.\\
-}
-\mybox{
+
 In particular, this means that:
 \begin{equation}
 J(\vec{\xi},t)=J(\vec{\xi},t_0)e^{\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
 \end{equation}
-where as $J(\vec{\xi},t0)=1$ by definition, we have that:
+where as $J(\vec{\xi},t_0)=1$ by definition, we have that:
 \begin{equation}
 \frac{1}{J(\vec{\xi},t)}=\frac{\rho(\vec{\xi},t)}{\rho(\vec{\xi},t_0)}=e^{-\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
 \end{equation}
-which is the propagator equation we found in equation \eqref{JacPre} from the continuity equaiton i the Lagrangian frame. Yet, we can get the Continuity Equaiton itself by evaluating \eqref{EulerDif} in equation \eqref{Jacobproc0}:
-\begin{equation}
-J(\vec{\xi},t)\qty(\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)})=0
-\end{equation}
-
-Since we assumed that the Jacobian of the trajectories was never zero to allow its invertibility, we will have that the differential equation multiplying it must be zero:
-\begin{equation}
-\pdv{\rho(\vec{\xi},t)}{t}+\rho(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}=0
-\end{equation}
-which is the Continuity Equation in the Lagrangian frame \eqref{CE.L}. If we now evaluate $\vec{\xi}=\vec{\xi}(\vec{x},t)$ and note:
-\begin{equation}
-\pdv{\rho(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\dv{\rho(\vec{x}(\vec{\xi},t),t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}\pdv{x_k(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)
-\end{equation}
-
-We have that:
-\begin{equation}
-\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)+\rho(\vec{x},t)\pdv{v_k(\vec{x},t)}{x_k}=0
-\end{equation}
-which reverting the derivative of a product rule yields the Continuity Equation in the Eulerian frame \eqref{CE}.
-
-
+which is the propagator equation we found in equation \eqref{JacPre} from the continuity equation in the Lagrangian frame. This equation has a very big relevance, since it allows the computation of the Jacobian, the density and the velocity field, just knowing two of them. Also, it is the expression where all the interpretations we were dealing with are summerized.
 }
-
-
-\subsection*{(II.c) Basis Set Expansions}
-\addcontentsline{toc}{subsubsection}{{\bf (II.c)} Basis Set Expansions?}
-
-
-\subsection*{(II.d) Dynamic Equations for Partial Derivatives}
-\addcontentsline{toc}{subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}
-
-
-\subsubsection*{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
-%\addcontentsline{toc}{subsubsection}{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
-
-If we go back to the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, we will notice that there is no partial derivative with respect to space $x_k$ in any place. This means, we can directly evaluate $x=x(\xi,t)$ by first noting that by the chain rule:
-\begin{equation}
-\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \dv{f(x(\xi,t),t)}{t}-\sum_{s=1}^N \pdv{f(x,t)}{x_s}\Big\rvert_{x_s(\xi,t)}\pdv{x(\xi,t)}{t}
-\end{equation}
-In the notation we defined in \eqref{defPdv}, we saw $\pdv{f(x,t)}{x_s}=f_{(0,...,1,...,0)}(x,t)$ (with the array full of 0-s except for a 1 in the $s$-th position). Then:
-\begin{equation}\label{matrialTimePdv}
-\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
-\end{equation}
-This would leave \eqref{infchain.SE} in the Lagrangian frame as:
-\begin{equation}\label{infchain.SE}
-i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+
-\end{equation}
-$$
-+\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
-$$
-where all the functions have arguments $(\xi,t)$.
-
-This is an infinite system of coupled linear differential equations. Assuming that at a certain $J$, $\pdv[J]{\psi(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for all $k$, we would then have $J^N$ equations. Doing this approximation, we are assuming that the wavefunction in the immediate locality of the fluid element has a roughly constant derivative of $J$-th order. Contrary to the Eulerian case, we are not assuming this for the whole configuration space, which might improve the approximation. The best point about this mehtod is that this equation system would allow us to compute the wavefunction and trajectory of a {\bf single} fluid element $\xi$! With no need to know the partial derivatives in configuration-space $x_k$, there is no need to couple other trajectories to this one.
-
-Certainly, the main problem of this method will be that we will need to choose the truncation $J$, which if chosen to be too small, would make the trajectory blind to nodal points and fluctuating regions that are not in its immediate vicinity, since we would be assuming that high order curvatures around the trajectory are small, when in reality they should influence the trajectory.
-
-\subsubsection*{(II.d.b) Dynamics of Partial Derivatives For the Density and Action}
-%\addcontentsline{toc}{subsubsection}{(II.d.b) Dynamics of Partial Derivatives}
-
-If we note again equation \eqref{matrialTimePdv}, we see that it is possible to evaluate the partial differential equations for the spatial derivatives of $C$ and $S$, such that $C(x,t)=log(\rho(x,t))/2$, that we got in equations \eqref{infchain.CE} and \eqref{infchain.HJE}. We can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$, over any single fluid element $\xi$ follows:
-
-\begin{equation}\label{infchain.CE.L}
-\pdv{}{t}C_{(j_1,...,j_N)}(\xi,t)=-\sum_{s=1}^N \Bigg(i\hbar C_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t} + \frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}(x,t)+
-\end{equation}
-$$
-+2 \sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)} \Bigg]\bigg)
-$$
-
-While the field $S$ and all its derivatives in configuration space $x_k$, follow over any single fluid element $\xi$:
-\begin{equation}\label{infchain.HJE.L}
--\pdv{}{t}S_{(j_1,...,j_N)}(\xi,t)=V_{(j1,...,jN)}+\sum_{s=1}^N\Bigg\{ i\hbar S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+
-\end{equation}
-$$
-+\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} 
-$$
-$$
--S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]\Bigg\}
-$$
-Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.
-
-
+\newpage
 \subsubsection*{(II.e) Partial Derivatives relative to the Labels}
 \addcontentsline{toc}{subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}
-Clearly one of the main problems with the Lagrangian frame is that the fluid-elements move in directions that end up unstructuring the initial mesh, which could have been a regular Cartesian mesh at the beginning, but not in the next time iterations. To solve this, what we could do is convert the partial derivatives in the configuration-space Eulerian positions $x_k$ into partial derivatives in the label configuration-space positions $\xi_j$, using the fact that since we are evolving trajectories we have knowledge of the function $\vec{x}(\vec{\xi},t)$. As an example, lets analyse how we could compute $\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ for a function $f$ for which we want to know the $x_k$ derivative fora given trajectory $\vec{\xi}$. By the chain rule:
+As we already commented in (II.a), one of the main problems with the Lagrangian frame is that the fluid-elements move in directions that end up unstructuring the initial mesh, which could have been a regular Cartesian mesh at the beginning, but will not in the next time iterations. To solve this, what we could do is to convert the partial derivatives in the configuration-space Eulerian positions $x_k$ into partial derivatives in the label configuration-space positions $\xi_j$, using the fact that since we are evolving trajectories we have knowledge of the function $\vec{x}(\vec{\xi},t)$. As an example, lets analyse how we could compute $\pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ for a function $f$ for which we want to know the $x_k$ derivative for a given trajectory $\vec{\xi}$. By the chain rule:
 \begin{equation}
 \pdv{f(\vec{x},t)}{x_k}=\dv{f(\vec{\xi}(\vec{x},t),t)}{x_k}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j}\Big\rvert_{\vec{\xi}(\vec{x},t)} \pdv{\xi_j(\vec{x},t)}{x_k}
 \end{equation}
@@ -1025,11 +1045,11 @@ which can be evaluated at $\vec{x}=\vec{\xi}(\vec{x},t)$ to get:
 \begin{equation}
 \pdv{f(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
-We see that we can freely change the derivative in $x_k$ by derivatives in $\xi_j$ if we also know how to compute $\pdv{\xi_j(\vec{x},t)}{x_k}$, which are the elements of the Jacobian matrix of $\vec{\xi}(\vec{x},t)$. If we attempt to directly compute them, we immediately acknowledge that these derivatives are still in an unstructured grid. However, as we proved in equation \eqref{inverse}, we have that the Jacobian matrix $D_x \vec{\xi}(\vec{x},t)$ where the element in row $j$ and column $k$ is $\pdv{\xi_j(\vec{x},t)}{x_k}$, is the inverse of the Jacobian matrix $D_\xi \vec{x}(\vec{\xi},t)$, the entries of which are of the shape $\pdv{x_j(\vec{\xi},t)}{\xi_k}$. Observe that the entries of this last Jacobian matrix can actually be computed in a regular grid if we chose the label space to be so, by just knowing the trajectories of the fluid elements! Therefore, if we first compute the elements $\pdv{x_j(\vec{\xi},t)}{\xi_k}$ of the matrix $D_\xi \vec{x}(\vec{\xi},t)$ and then compute the inverse matrix with any possible method, we will have the computed the values $\pdv{\xi_j(\vec{x},t)}{x_k}$ in a structured grid.\\
+We see that we can freely change the derivative in $x_k$ by derivatives in $\xi_j$ if we also know how to compute $\pdv{\xi_j(\vec{x},t)}{x_k}$, which are the elements of the Jacobian matrix of $\vec{\xi}(\vec{x},t)$. If we attempt to directly compute them, we immediately acknowledge that these derivatives are still in an unstructured grid. However, as we proved in equation \eqref{inverse}, we have that the Jacobian matrix $D_x \vec{\xi}(\vec{x},t)$ where the element in row $j$ and column $k$ is $\pdv{\xi_j(\vec{x},t)}{x_k}$, is the inverse of the Jacobian matrix $D_\xi \vec{x}(\vec{\xi},t)$, the entries of which are of the shape $\pdv{x_j(\vec{\xi},t)}{\xi_k}$. Observe that the entries of this last Jacobian matrix can actually be computed in a regular grid if we chose the label space to be so, by just knowing the trajectories of the fluid elements! Therefore, if we first compute the elements $\pdv{x_j(\vec{\xi},t)}{\xi_k}$ of the matrix $D_\xi \vec{x}(\vec{\xi},t)$ and then compute the inverse matrix with any possible method, we will have computed the values $\pdv{\xi_j(\vec{x},t)}{x_k}$ in a structured grid.
 
-A possible way to do this would be by using the inverse matrix theorem. Which can be summerized as follows. Let $A$ be an $N\cross N$ invertible (non-singular) matrix. Then:
+A possible way to compute the entries of the inverse matrix would be by using the inverse matrix theorem. This theorem can be summerized as follows. Let $A$ be an $N\cross N$ invertible (non-singular) matrix. Then:
 \begin{itemize}
-\item Its $i,j$ {\bf minor}, which we will note by $Min(A)_{ij}$, is the $(N-1)\cross (N-1)$ matrix obtained by deleting row and column $j$.
+\item Its $i,j$ {\bf minor}, which we will note by $Min(A)_{ij}$, is the $(N-1)\cross (N-1)$ matrix obtained by deleting row $i$ and column $j$.
 \item Its $i,j$ {\bf cofactor}, which we will note by $Cof(A)_{ij}$, is: $(-1)^{i+j}det\qty(Min(A)_{ij})$.
 \item Its inverse matrix is:
 \begin{equation}
@@ -1049,17 +1069,17 @@ Therefore, we have that:
 \begin{equation}
 \pdv{\xi_i(\vec{x},t)}{x_j}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \frac{ (-1)^{i+j}}{det \qty(D_{\xi} \vec{x}(\vec{\xi},t))}\cdot det \qty(D_{\xi} \vec{x}(\vec{\xi},t)\textit{ erasing the row and column of }\pdv{x_j(\vec{\xi},t)}{\xi_i} )
 \end{equation}
-For example in $N=1$ this means in particular that:
+For example in $N=1$ this means that:
 \begin{equation}
 \pdv{\xi(x,t)}{x}=\frac{1}{\pdv{x(\xi,t)}{\xi}}
 \end{equation}
 In $N=2$:
 \begin{equation}
 \begin{pmatrix}
-\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} \\
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} \vspace{0.15cm}\\
 \pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2}
 \end{pmatrix}= \frac{1}{J} \begin{pmatrix}
-\pdv{x_2}{\xi_2} & - \pdv{x_1}{\xi_2} \\
+\pdv{x_2}{\xi_2} & - \pdv{x_1}{\xi_2} \vspace{0.15cm}\\
 -\pdv{x_2}{\xi_1} & \pdv{x_1}{\xi_1
 } 
 \end{pmatrix}
@@ -1067,43 +1087,30 @@ In $N=2$:
 In $N=3$:
 \begin{equation}
 \begin{pmatrix}
-\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_1}{x_3} \\
-\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_2}{\xi_3}\\
+\pdv{\xi_1}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_1}{x_3} \vspace{0.15cm}\\
+\pdv{\xi_2}{x_1} & \pdv{\xi_1}{x_2} & \pdv{\xi_2}{\xi_3}\vspace{0.15cm}\\
 \pdv{\xi_3}{x_1} & \pdv{\xi_3}{x_2} & \pdv{\xi_3}{\xi_3}
 \end{pmatrix}= \frac{1}{J} \begin{pmatrix}
-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_3}-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_2}- \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_2}\pdv{x_2}{\xi_3}-\pdv{x_1}{\xi_3}\pdv{x_2}{\xi_2} \\
+\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_3}-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_2}- \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_2}\pdv{x_2}{\xi_3}-\pdv{x_1}{\xi_3}\pdv{x_2}{\xi_2} \vspace{0.15cm}\\
 
-\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_1}-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_3}- \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_3}\pdv{x_2}{\xi_1}-\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_3} \\
+\pdv{x_2}{\xi_3}\pdv{x_3}{\xi_1}-\pdv{x_2}{\xi_1}\pdv{x_3}{\xi_3} & \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_3}- \pdv{x_1}{\xi_3}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_3}\pdv{x_2}{\xi_1}-\pdv{x_1}{\xi_1}\pdv{x_2}{\xi_3} \vspace{0.15cm}\\
 
 \pdv{x_2}{\xi_1}\pdv{x_3}{\xi_2}-\pdv{x_2}{\xi_2}\pdv{x_3}{\xi_1} & \pdv{x_1}{\xi_2}\pdv{x_3}{\xi_1}- \pdv{x_1}{\xi_1}\pdv{x_3}{\xi_2} & \pdv{x_1}{\xi_1}\pdv{x_2}{\xi_2}-\pdv{x_1}{\xi_2}\pdv{x_2}{\xi_1} \\
 
 \end{pmatrix}
 \end{equation}
-where $J$ is the {\bf signed} Jacobian determinant of $\vec{x}(\vec{\xi},t)$.\\
+where by $J$, we mean in this case, the {\bf signed} Jacobian determinant of $\vec{x}(\vec{\xi},t)$,  $J:=det(D_\xi\vec{x}(\vec{\xi},t)$.
 
-Then, in any of the differential equations we develop that contain Lagrangian degrees of freedom we will be able to do the following changes and similar ones:
+Then, in any of the differential equations we develop that contain Lagrangian degrees of freedom we will be able to do the following change for the partial derivatives in Eulerian positions:
 \begin{equation}
 \sum_{a=1}^N \pdv{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{\xi},t)}{\xi_j} \sum_{a=1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
-or for the Laplacian:
+where we now know how to compute all the terms. For the Laplacian we could do much in the same way:
 \begin{equation}
 \sum_{a=1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}]
 \end{equation}
-Taking into account that for each fluid element at each time we will need to compute all those partial derivatives (even if they will be in a regular grid), determinants, products and sums, it is clear that the approach of changing the differential equations to label space is not a miracle, but it is a possible one that can be used at least for computing some of the derivatives.
+Taking into account that for each fluid element at each time we will need to compute all those partial derivatives (even if they will be in a regular grid) and all those determinants, products and sums, it is clear that the approach of changing the differential equations to label space is not a miracle. Yet, it is a possible option that can be used at least for computing some of the derivatives avoiding function fitting, which in high dimensions could be more costly than proceeding with these operations. We are still forced to evolve simultaneously many fluid elements but now the derivatives can be done in a regular grid. Note that we have not assumed any motion rule for the trajectories, so this is a valid approach also for the arbitrary dynamic grids we will explore in Section (II.g).
 
-
-\subsection*{(II.f) The Bohmian Newton's Second Law}
-\addcontentsline{toc}{subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}
-
-If we take the Hamilton-Jacobi Equation in the fully Eulerian frame \eqref{HJE} and do the partial derivative $\pdv{}{x_k}$ at both sides, assuming again \eqref{ImpBohm}, we arrive assuming we can swap cross derivatives by Schwartz's Law (enough regularity for $S$) to:
-\begin{equation}
-\pdv{}{t}\pdv{}{x_k}S(x,t)+\sum_{j=1}^N\pdv{}{x_j}\pdv{}{x_k}S(x,t)\cdot v_j(x,t)=-\pdv{}{x_k}\qty(V(x,t)+Q(x,t))
-\end{equation}
-Which if we evaluate in the Lagrangian frame $\vec{x}(\vec{\xi},t)$, we immediately find (assuming \eqref{v}):
-\begin{equation}
-m_k\dv{}{t}v_k(\vec{x}^\xi(t),t)=m_k\dv[2]{}{t}x^\xi_k(t)=-\pdv{}{x_k}\qty[V(\vec{x}^\xi(t),t)+Q(\vec{x}^\xi(t),t) ]
-\end{equation}
-Which is Newton's Second Law for the fluid elements or Bohmian trajectories. This equation can be evolved coupled with \eqref{CE.L} in order to solve the same quantum problem. In this representation however, we will require to compute the spatial derivative of the quantum potential $Q$, which was already a problemtic term due to the $\pdv[2]{}{x_j}R(x,t)$ it contains. Therefore, for numerical purposes it is more stable to use the equations of motion of II.b.
 
 \subsection*{(II.g) Adaptive Grid Equations}
 \addcontentsline{toc}{subsubsection}{{\bf (II.g)} Adaptive Grid Equations}
@@ -1358,9 +1365,9 @@ Both in the continous or discrete functional cases, we can build new perhaps mor
 
 
 
-\fancyhead[L]{II . Half Lagrangian Half Eulerian Equations}
-\section*{III . Half Lagrangian Half Eulerian Equations:\\ Conditional Wave-Functions}
-\addcontentsline{toc}{subsection}{\bf III . Half Lagrangian Half Eulerian Equations: Conditional Wave-Functions}
+\fancyhead[L]{II . Part Lagrangian Part Eulerian Equations}
+\section*{III . Part Lagrangian Part Eulerian Equations:\\ Conditional Wave-Functions}
+\addcontentsline{toc}{subsection}{\bf III . Part Lagrangian Part Eulerian Equations: Conditional Wave-Functions}
 In this section, we will explore an intermediate approach between the fully Lagrangian and Eulerian frames. For this, we will consider that part of the system behaves in a Lagrangian frame, while the other part behaves in an Eulerian frame. The degrees of freedom described on an Eulerian frame will be denoted by $\vec{x}=(x_1,...,x_m)$ while the rest of degrees of freedom $\vec{y}=(x_{m+1},...,x_N)$ will be described by a Lagrangian frame. If we need to refer to both kinds of variables at once, we will use $\vec{\x}=(\vec{x}, \vec{y})=(x_1,...,x_N)$.
 
 In general, given we parametrize the fluid elements with labels $\vec{\xi}=(\vec{\xi}_x,\vec{\xi}_y)\in\R^N$ referring to their initial position $\vec{\xi}:=\vec{\x}(t_0, \vec{\xi})$, we define the set of trajectories of the continuum as $\vec{\x}(t;\vec{\xi}) \equiv \vec{\x}^\xi(t) \quad \xi \in \Omega \subset \R^N$. As we said though, we will only treat explicitly in the Lagrangian frame, the degrees of freedom in $\vec{y}$. We will then denote by $\vec{y}^\xi(t)=(x_{m+1}^\xi(t),...,x_N^\xi(t))$ the set of trajectories for the subsystem of degrees of freedom $\vec{y}$.
