@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  29 SEP 2021 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  30 SEP 2021 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3917,21 +3917,44 @@ d
                    \relax 
 l.1647 \begin{equation}
                        \label{SE.GJ}
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <9> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1663
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1672
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <5> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1663
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1672
 .
 
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
 
-LaTeX Warning: Citation `NireTFGie' on page 50 undefined on input line 1663.
+ []
 
-<Figures/hyperplaness.png, id=736, 1027.84pt x 986.68625pt>
-File: Figures/hyperplaness.png Graphic file (type png)
-<use Figures/hyperplaness.png>
-Package pdftex.def Info: Figures/hyperplaness.png  used on input line 1667.
-(pdftex.def)             Requested size: 241.84843pt x 232.15735pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1677--1677
+
+ []
+
+
+LaTeX Warning: Citation `NireTFGie' on page 50 undefined on input line 1677.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3940,33 +3963,58 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [50]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1674--1674
-
- []
-
-
-LaTeX Warning: Reference `fig:line' on page 51 undefined on input line 1674.
-
-<Figures/rectas.png, id=744, 1027.84pt x 852.18375pt>
-File: Figures/rectas.png Graphic file (type png)
-<use Figures/rectas.png>
-Package pdftex.def Info: Figures/rectas.png  used on input line 1680.
-(pdftex.def)             Requested size: 241.84843pt x 200.51027pt.
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [51]
+<Figures/hyperplaness.png, id=746, 1027.84pt x 986.68625pt>
+File: Figures/hyperplaness.png Graphic file (type png)
+<use Figures/hyperplaness.png>
+Package pdftex.def Info: Figures/hyperplaness.png  used on input line 1681.
+(pdftex.def)             Requested size: 241.84843pt x 232.15735pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1689--1689
+
+ []
+
+
+LaTeX Warning: Reference `fig:line' on page 53 undefined on input line 1689.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53 <./Figures/hyperplaness.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1691--1692
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
+
+ []
+
+<Figures/rectas.png, id=762, 1027.84pt x 852.18375pt>
+File: Figures/rectas.png Graphic file (type png)
+<use Figures/rectas.png>
+Package pdftex.def Info: Figures/rectas.png  used on input line 1702.
+(pdftex.def)             Requested size: 241.84843pt x 200.51027pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1712
 
  []
 
@@ -3976,8 +4024,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52 <./Figures/hyperplaness.png (PNG copy)>]
-Overfull \hbox (12.64691pt too wide) in paragraph at lines 1707--1709
+[54]
+Overfull \hbox (12.64691pt too wide) in paragraph at lines 1729--1731
 \OT1/cmr/m/n/10.95 Which is a con-ti-nu-ity equa-tion for $\OML/cmm/m/it/10.95 
 ^^Z\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )$ wit
@@ -3992,15 +4040,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53 <./Figures/rectas.png (PNG copy)>]
-Overfull \hbox (41.38582pt too wide) detected at line 1740
+[55 <./Figures/rectas.png (PNG copy)>]
+Overfull \hbox (41.38582pt too wide) detected at line 1762
 \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.9
 5 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
 
-Overfull \hbox (13.88828pt too wide) detected at line 1747
+Overfull \hbox (13.88828pt too wide) detected at line 1769
 \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 )
  []
@@ -4011,27 +4059,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54]
+[56]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[55]
-Underfull \hbox (badness 1028) in paragraph at lines 1800--1801
+[57]
+Underfull \hbox (badness 1028) in paragraph at lines 1822--1823
 []\OT1/cmr/m/n/10.95 Oyanguren Xa-bier, \OT1/cmr/m/it/10.95 The Quan-tum Many B
 ody Prob-lem\OT1/cmr/m/n/10.95 , Bach-e-lor's The-sis (2020) for the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1802--1803
+Underfull \hbox (badness 10000) in paragraph at lines 1824--1825
 [][][]\OT1/cmr/m/n/10.95 https://github.com/Oiangu9/The[]Quantum[]Many[]Body[]P
 roblem[]-Bachellors[]Thesis-
  []
 
 
-Underfull \hbox (badness 4673) in paragraph at lines 1809--1810
+Underfull \hbox (badness 4673) in paragraph at lines 1831--1832
 []\OT1/cmr/m/n/10.95 Knupp, Patrick & Stein-berg, Stanly. \OT1/cmr/m/it/10.95 T
 he Fun-da-men-tals of Grid Gen-er-a-tion. \OT1/cmr/m/n/10.95 (1993)
  []
@@ -4046,18 +4094,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1821.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1821.
+[58]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1843.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1843.
 
 (./Towards_Making_The_Exponential_Problem_Linear_if_Parallelized_Exponentially_
 Part2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1821.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1821.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1843.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1843.
 
 Package rerunfilecheck Info: File `Towards_Making_The_Exponential_Problem_Linea
 r_if_Parallelized_Exponentially_Part2.out' has not changed.
-(rerunfilecheck)             Checksum: 777C3F893D8BF09E3889A4216FE1B79E;2244.
+(rerunfilecheck)             Checksum: 0A3D10DFD8D549514687B722FF7E1EFD;2244.
 
 
 LaTeX Warning: There were undefined references.
@@ -4067,10 +4115,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36595 strings out of 492982
- 684505 string characters out of 6134895
+ 36597 strings out of 492982
+ 684487 string characters out of 6134895
  803621 words of memory out of 5000000
- 39276 multiletter control sequences out of 15000+600000
+ 39274 multiletter control sequences out of 15000+600000
  559292 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,23n,97p,10477b,989s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4102,10 +4150,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on Towards_Making_The_Exponential_Problem_Linear_if_Parallelized
-_Exponentially_Part2.pdf (59 pages, 3364394 bytes).
+_Exponentially_Part2.pdf (61 pages, 3368960 bytes).
 PDF statistics:
- 953 PDF objects out of 1000 (max. 8388607)
- 839 compressed objects within 9 object streams
- 319 named destinations out of 1000 (max. 500000)
+ 963 PDF objects out of 1000 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 323 named destinations out of 1000 (max. 500000)
  263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,7 +19,7 @@
 \contentsline {subsection}{\bf III . Part Lagrangian Part Eulerian Equations}{39}{section*.40}
 \contentsline {subsubsection}{{\bf (III.a.1)} The Schr\IeC {\"o}dinger Equation: Kinetic and Advective Correlation Terms}{47}{section*.55}
 \contentsline {subsubsection}{{\bf (III.a.2)} The Schr\IeC {\"o}dinger Equation: G and J Correlations}{48}{section*.57}
-\contentsline {subsection}{(II.c) Basis Set Expansion}{54}{section*.65}
-\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{54}{section*.66}
-\contentsline {subsection}{\bf IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{56}{section*.69}
-\contentsline {section}{References}{56}{section*.70}
+\contentsline {subsection}{(II.c) Basis Set Expansion}{56}{section*.66}
+\contentsline {subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{56}{section*.67}
+\contentsline {subsection}{\bf IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{58}{section*.70}
+\contentsline {section}{References}{58}{section*.71}
