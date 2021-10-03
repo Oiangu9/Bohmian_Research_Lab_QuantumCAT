@@ -13,13 +13,18 @@
 \BOOKMARK [3][-]{section*.20}{\(II.b\) The Continuity and The Hamilton-Jacobi Equations}{section*.18}% 13
 \BOOKMARK [3][-]{section*.21}{\(II.f\) The Bohmian Newton's Second Law}{section*.18}% 14
 \BOOKMARK [3][-]{section*.22}{\(II.d\) Dynamic Equations for Partial Derivatives}{section*.18}% 15
-\BOOKMARK [3][-]{section*.25}{Parenthesis: Fundamental Concepts about the Diffeomorphism \(,t\)}{section*.18}% 16
+\BOOKMARK [3][-]{section*.25}{Parenthesis: Fundamental Intuitions about the Diffeomorphism \(,t\)}{section*.18}% 16
 \BOOKMARK [3][-]{section*.26}{\(II.e\) Partial Derivatives relative to the Labels}{section*.18}% 17
 \BOOKMARK [3][-]{section*.27}{\(II.g\) Adaptive Grid Equations}{section*.18}% 18
 \BOOKMARK [2][-]{section*.40}{III . Part Lagrangian Part Eulerian Equations}{Item.10}% 19
-\BOOKMARK [3][-]{section*.55}{\(III.a.1\) The Schr\366dinger Equation: Kinetic and Advective Correlation Terms}{section*.40}% 20
-\BOOKMARK [3][-]{section*.57}{\(III.a.2\) The Schr\366dinger Equation: G and J Correlations}{section*.40}% 21
-\BOOKMARK [2][-]{section*.66}{\(II.c\) Basis Set Expansion}{Item.10}% 22
-\BOOKMARK [3][-]{section*.67}{\(I.c.1\) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}{section*.66}% 23
-\BOOKMARK [2][-]{section*.70}{IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{Item.10}% 24
-\BOOKMARK [1][-]{section*.71}{References}{}% 25
+\BOOKMARK [3][-]{section*.55}{\(III.a\) The Schr\366dinger Equation}{section*.40}% 20
+\BOOKMARK [3][-]{section*.63}{\(III.b\) The Continuity and The Hamilton-Jacobi Equations}{section*.40}% 21
+\BOOKMARK [3][-]{section*.64}{\(III.f\) The Bohmian Newton's Second Law}{section*.40}% 22
+\BOOKMARK [3][-]{section*.65}{\(III.d\) Dynamic Equations for Partial Derivatives}{section*.40}% 23
+\BOOKMARK [3][-]{section*.68}{\(III.g\) Dynamic Equations for Correlation Terms}{section*.40}% 24
+\BOOKMARK [3][-]{section*.69}{\(III.c\) Basis Set Expansion}{section*.40}% 25
+\BOOKMARK [3][-]{section*.70}{\(III.e\) Partial Derivatives relative to labels}{section*.40}% 26
+\BOOKMARK [3][-]{section*.71}{\(III.g\) Adaptive Grid Equations}{section*.40}% 27
+\BOOKMARK [3][-]{section*.72}{From exponential time to linear using Lagrangian degrees and parallelization}{section*.40}% 28
+\BOOKMARK [2][-]{section*.76}{IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{Item.10}% 29
+\BOOKMARK [1][-]{section*.77}{References}{}% 30

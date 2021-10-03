@@ -76,7 +76,7 @@
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 %\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
-\title{\vspace{-2cm} {\bf Quantum Dynamics\\  Mixing Wavefunctions and Trajectories}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.3cm}}
+\title{\vspace{-2cm} {\bf Quantum Dynamics\\  Mixing Wavefunctions and Trajectories}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.8cm}}
 \date{\vspace{-11ex}}
 \let\clipbox\relax
 \usepackage{adjustbox}
@@ -133,9 +133,9 @@
 \begin{document}
 
 \maketitle
+\pagenumbering{gobble}
 
 \tableofcontents
-\pagenumbering{gobble}
 \clearpage
 \pagenumbering{arabic}
 \setcounter{page}{-1}
@@ -334,7 +334,7 @@ Writing the wavefunction in polar form $\psi(x,t)=R(x,t)exp(iS(x,t)/\hbar)$ with
 \end{equation}
 where:
 \begin{equation}\label{QP}
-Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\frac{1}{R(x,t)}\pdv[2]{}{x_j} R(x,t)
+Q(x,t):=\sum_{j=1}^N Q_j(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\frac{1}{R(x,t)}\pdv[2]{}{x_j} R(x,t)
 \end{equation}
 The unknown real fields $R(x,t)$ and $S(x,t)$ have a straight-forward interpretation if we realize that $S(x,t)$ can be identified with Hamilton's principal action function of classical mechanics. If so, equation \eqref{HJE} can immediately be identified with the Hamilton-JAcobi Equation of classical mechanics, where we will be able to define the field:% a field can be seen as properties of points in configuration-space in time, or as properties of point like particles that move in configuration-space following a velocity field.
 \begin{equation}
@@ -388,7 +388,7 @@ If we evaluate $R(x,t)=e^{C(x,t)}$ and $\rho(x,t)=e^{2C(x,t)}$ in equations \eqr
 -\pdv{}{t}S(x,t) = \sum_{j=1}^N \frac{\hbar^2}{2m_j} \qty(\pdv{}{x_j} S(x,t) )^2+ V(x,t)+Q(x,t)
 \end{equation}
 where:
-\begin{equation}\label{QP}
+\begin{equation}\label{QP.C}
 Q(x,t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty[\qty(\pdv{C(x,t)}{x_j})^2+\pdv[2]{C(x,t)}{x_j}]
 \end{equation}
 The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(x,t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space). This makes the $C$-amplitude version of the equations more numerically stable.
@@ -753,7 +753,7 @@ If we go back to the coupled system of (infinite) linear differential equations 
 %\pdv{f(x,t)}{t}\Big\rvert_{x(\xi,t)} = \pdv{f(\xi,t)}{t}-\sum_{s=1}^N f_{(0,...,1,...,0)}(\xi,t) \pdv{x_s(\xi,t)}{t}
 %\end{equation}
 Then, retaking the definition of equation \eqref{defPdv}, this would leave \eqref{infchain.SE} in the Lagrangian frame (evaluating $x=x(\xi,t)$) as:\vspace{-0.1cm}
-\begin{equation}\label{infchain.SE}
+\begin{equation}\label{infchain.SE.L}
 i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\xi,t)=\sum_{s=1}^N\qty[-\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}]+\vspace{-0.1cm}
 \end{equation}
 $$
@@ -778,7 +778,7 @@ $$
 
 While the field $S$ and all its derivatives in configuration space $x_k$, follow over any single fluid element $\xi$:\vspace{-0.1cm}
 \begin{equation}\label{infchain.HJE.L}
--\pdv{}{t}S_{(j_1,...,j_N)}(\xi,t)=V_{(j1,...,jN)}+\sum_{s=1}^N\Bigg\{ i\hbar S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+\vspace{-0.1cm}
+-\pdv{}{t}S_{(j_1,...,j_N)}(\xi,t)=V_{(j1,...,jN)}+\sum_{s=1}^N\Bigg\{ i\hbar S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}+\vspace{-0.1cm}
 \end{equation}
 $$
 +\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} \vspace{-0.1cm}
@@ -789,8 +789,8 @@ $$
 Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.\\
 
 \mybox{
-\section*{Fundamental Concepts about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
-\addcontentsline{toc}{subsubsection}{\em Parenthesis: Fundamental Concepts about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
+\section*{Fundamental Intuitions about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
+\addcontentsline{toc}{subsubsection}{\em Parenthesis: Fundamental Intuitions about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
 
 Before continuing to the next sections, we will open a little parenthesis to review the relevant concepts that one must have clear when talking about the trajectory bundle of a fluid. These trajectories are given by a transformation $\vec{x}(\vec{\xi},t)$ that maps each fluid element in the label space $\vec{\xi}$, which we decided to identify with the initial position (in configuration-space) of each fluid element ($\vec{x}(\vec{\xi},t=t_0)=\vec{\xi}$), to the position of the fluid element at time $t$. For the reasons we have already seen, it must be a diffeomorphism, that is to be continous, with a continous inverse and differentiable. \vspace{0.2cm}\\
 {\bf Covariant Tangent Vectors\vspace{0.2cm}\\ }
@@ -1066,7 +1066,7 @@ Thus, if we denote the $i,j$ element of $A^{-1}$ as $(A^{-1})_{ij}$, we have tha
 \end{equation}
 \end{itemize}
 Therefore, we have that:
-\begin{equation}
+\begin{equation}\label{JacobChange}
 \pdv{\xi_i(\vec{x},t)}{x_j}\Big\rvert_{\vec{x}(\vec{\xi},t)} = \frac{ (-1)^{i+j}}{det \qty(D_{\xi} \vec{x}(\vec{\xi},t))}\cdot det \qty(D_{\xi} \vec{x}(\vec{\xi},t)\textit{ erasing the row and column of }\pdv{x_j(\vec{\xi},t)}{\xi_i} )
 \end{equation}
 For example in $N=1$ this means that:
@@ -1513,15 +1513,17 @@ It is however somewhat fallacious to say this, since as we will see, the equatio
 Nonetheless, we will see in a moment a formidable way to hide this dependency even further away from the trajectories, by first defining the $G,J$ correlation potentials, and then defining dynamical equations for them.
 
 \newpage
-\subsection*{(III.a.1) The Schrödinger Equation: Kinetic and Advective Correlation Terms}
-\addcontentsline{toc}{subsubsection}{{\bf (III.a.1)} The Schrödinger Equation: Kinetic and Advective Correlation Terms}
+\subsection*{(III.a) The Schrödinger Equation}
+\addcontentsline{toc}{subsubsection}{{\bf (III.a)} The Schrödinger Equation}
+\subsection*{(III.a.1) Kinetic and Advective Correlation Terms}
+%\addcontentsline{toc}{subsubsection}{{\bf (III.a.1)} The Schrödinger Equation: Kinetic and Advective Correlation Terms}
 If we evaluate $\vec{y}=\vec{y}(t,\vec{\xi})$ in the Schrödinger Equation \eqref{SE}, leaving $\vec{x}$ in the Eulerian frame:
 \begin{equation}
 i\hbar \pdv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=-\sum_{j=1}^m \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y}^\xi(t),t) + U(\vec{x}, \vec{y}^\xi(t),t)\psi(\vec{x}, \vec{y}^\xi(t),t) -\sum_{j=m+1}^N \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
 Using that by the chain rule:
 \begin{equation}
-\dv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=\pdv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)+\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \dv{}{t}x^\xi_j(t)
+\dv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=\pdv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)+\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \pdv{x_j(\vec{\xi},t)}{t}
 \end{equation}
 We get:
 \begin{equation}\label{KinAdvEL}
@@ -1533,7 +1535,7 @@ Where we define the so called Kinetic and Advective correlation potentials:
 K(\vec{x}, \vec{y}^\xi(t),t):=-\sum_{j=m+1}^N \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
 \begin{equation}\label{AdvEL}
-A(\vec{x}, \vec{y}^\xi(t),t):=i\hbar\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \dv{}{t}x^\xi_j(t)
+A(\vec{x}, \vec{y}^\xi(t),t):=i\hbar\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \pdv{x_j(\vec{\xi},t)}{t}
 \end{equation}
 We can see that equation \eqref{KinAdvEL} ruling the motion of the conditional wavefunction $\psi(\vec{x}, \vec{y}^\xi(t),t)$ is almost a Schrödinger Equation for a system of $m$ (instead of $N$) dimensions. The difference is that we now have two additional affine terms that actually depend on derivatives of the full wavefunction in the axes that we are considering in the Lagrangian frame. As we already anticipated that would happen, if we want to evolve a single conditional wavefunction (or the complementary conditional wavefunction set it is part of), we do not have enough with themselves. We would require the knowledge of complementary conditional wavefunctions of other trajectories. It is just the same problem that we faced with the fully Lagrangian picture. As such, to solve this problem we will be able to use the same strategies: 
 \begin{itemize}
@@ -1552,8 +1554,8 @@ To do this we could change the derivatives in $x_k$ to derivatives in the label 
 \end{figure}
 
 
-\subsection*{(III.a.2) The Schrödinger Equation: G and J Correlations}
-\addcontentsline{toc}{subsubsection}{{\bf (III.a.2)} The Schrödinger Equation: G and J Correlations}
+\subsection*{(III.a.2) G and J Correlation Potentials}
+%\addcontentsline{toc}{subsubsection}{{\bf (III.a.2)} The Schrödinger Equation: G and J Correlations}
 In this section we will develop a Schrödinger-like equation for the conditional wavefunctions (CWF) that this time will be a linear one, unlike the Kinetic and Advective equation \eqref{KinAdvEL}. An interesting part will be that the Lagrangian degrees of freedom will be required in density and action shape, while the Eulerian part will be required in wavefunction shape. 
 
 Following the development in Chp.1 V 6 of \cite{JordiXO}, we can try to find a Schrödinger like equation for the CWF-s employing the following "trick". An arbitrary non-zero single valued complex function $f(x, t):\R^m \rightarrow \C$ can be imposed to be the solution of an mD Schrödinger equation:\vspace{-0.3cm}
@@ -1607,7 +1609,7 @@ $$
 $$
 \begin{equation*}
 \begin{split}
-\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}- \ \sum_{k=m+1}^N \qty( \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\beta(t)}{t})\ + \\ \ +\sum_{k=1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} ] + V(x, y^\xi(t),t)
+\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}- \ \sum_{k=m+1}^N \qty( \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t})\ + \\ \ +\sum_{k=1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} ] + V(x, y^\xi(t),t)
 \end{split}
 \end{equation*}
 Observe that in the last sum, the $k=a$ terms are equal to the two initial terms, which cancel each other out and we are left with the final expression:\vspace{-0.3cm}\label{ReW}
@@ -1616,7 +1618,7 @@ Observe that in the last sum, the $k=a$ terms are equal to the two initial terms
 \end{equation*}
 We now have defined $\R e(W^\xi)$ without using $\psi^\xi(\vec{x},t)$ in the same definition, at the cost of introducing the full wave-function to it. In particular, what we see is that it entirely depends on derivatives of the action and density in the Lagrangian directions. Essentially we can recognize in this potential the kinetic energy of the Lagrangian axes and their quantum potentials. The real part of $W^\xi$ also includes the classical conditional potential $V^\xi$, which introduces the geometric constraints between the Eulerian coordinates as a function of the position of the Lagrangian parts. Let us define the first part, the one introducing the correlations with the Lagrangian degrees as the correlation potential $G$:
 \begin{equation}\label{G}\tag{G}
-G(x, y^\xi(t),t):=  \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\beta(t)}{t} ]
+G(x, y^\xi(t),t):=  \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} ]
 \end{equation}
 
 We could further define each of the summands as $G_k(x,y^\xi(t),t)$, since each summand is the correlation with the $x_k$ Lagrangian degree. Its implication in the evolution of the conditional function is embodied there.
@@ -1633,9 +1635,9 @@ $$
 $$
 As the whole wave-function follows the Schrödinger Equation \eqref{SE}, the density must follow the continuity equation of the configuration-space fluid \eqref{CE}. Evaluating it at $\pdv{R(x,t, \vec{x}_b)^2}{t}$, we will notice there is a cancellation of the $k=a$ terms (as happened with the real part). We then arrive at an expression independent of $\psi_a^\beta$ for the imaginary part. We will define the potential energy term $J(x, y^\xi(t),t):=\mathbb{I}m\{\W(x, y^\xi(t),t)\}$, that is:
 \begin{equation}\label{J}\tag{J}
-J(x, y^\xi(t),t):= \frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \sum_{k=m+1}^N \qty[ \pdv{R^2}{x_k}\Big\rvert_{y^\xi(t)} \dv{x_k^\xi(t)}{t} - \frac{1}{m_k} \pdv{}{x_k} \qty(R^2 \pdv{S}{x_k} )\Big\rvert_{y^\xi(t)} ]
+J(x, y^\xi(t),t):= \frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \sum_{k=m+1}^N \qty[ \pdv{R^2}{x_k}\Big\rvert_{y^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} - \frac{1}{m_k} \pdv{}{x_k} \qty(R^2 \pdv{S}{x_k} )\Big\rvert_{y^\xi(t)} ]
 \end{equation}
-These terms as well depend on derivatives of $R$ and $S$ in the directions of the Lagrangian degrees of freedom. In particular, they account for the variations of the norm of the CWF due to the displacement of the trajectory and the movement of the overall fluid. This is clear from the geometrical understanding of the CWF as a slice of the full wavefunction. 
+These terms as well depend on derivatives of $R$ and $S$ in the directions of the Lagrangian degrees of freedom. In particular, they account for the variations of the norm of the CWF due to the displacement of the trajectory and the movement of the overall fluid. We will understand the term further in the next section.
 
 Once again, we will encapsulate all the summands concerning spatial variations of the Lagrangian degree of freedom $x_k$ in a sub-potential $J_k$. Doing so, we mark the terms that could be approximated in an {\em ad hoc} way as a function of the relative nature of each Lagrangian degree.
 
@@ -1648,113 +1650,169 @@ In a nutshell, we have taken the N dimensional Schrödinger Equation \eqref{SE} 
 i \hbar \pdv{\psi^\xi (x,t)}{t} = \qty[\sum_{a=1}^m\frac{\hbar^2}{2m_a} \pdv[2]{}{x_a} +  U(x, y^\xi(t),t) + G(x, y^\xi(t),t)+i\ J(x, y^\xi(t),t)] \psi^\xi (x,t)
 \end{equation}
 
-Note that there is a functional relationship between the Kinetic and Advective Terms \eqref{KinEL} and \eqref{AdvEL}, and the $G$ and $J$ correlation potentials we just described: 
+Note that there is a functional relationship between the Kinetic and Advective correlation terms \eqref{KinEL} and \eqref{AdvEL}, and the $G$ and $J$ correlation potentials we just described: 
 \begin{equation}
 \qty(G(x, y^\xi(t),t)+iJ(x, y^\xi(t),t))\psi(x, y^\xi(t),t)=K(x, y^\xi(t),t)+A(x, y^\xi(t),t)
 \end{equation}
-
-% Hemen sartun lo de Norsen para esconder todavía más las cosas
-\subsection*{(III.g) Dynamic Equations for G and J}
-Enlace con lo de desarrollar dianmicas de las propias derivadas o dinamicas de las correlation potentials. Ta batezbe enlace con la ontologia que le atribuyen algunos autores Bohmianos aka O and N a esta chapuza.
-
-EN CONDIITONAL WAVEUFNCTIONS ES CASI LA PARTICULA AL QUE GUIA A LAS FUNCIONES DE ONDA CONDICIONADAS, A SUS PILOT WAVES...
-
-Lo que queda pensjant en la partially lagrnagian de hje y ce es precisamente el G y la J! Lol.
-\mybox{
-\subsection*{Swinging From exponential time to linear using Lagrangian degrees and (exponential) parallelization}
-In this box we will show how changing the Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a linear one if we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). We will see that the partially Lagrangian frame allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability (which we have already commented), and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.\\
-
-In what follows we will analyze qualitatively the two limit cases where there are still both Lagrangian and Eulerian degrees: having a single Lagrangian one and having them all but one.\\
-
-In all the equations so far we have seen that it is roughly mandatory that we evolve an ensemble of complementary conditional wavefunctions (or actions and densities) with their respective trajectories (unless we adopt another strategy like evolving the derivatives). This was because all the dynamical equation for each complementary function (wavefunction, action or density) required the knowledge of the derivatives in the directions we evaluate in the trajectory. Having complementary functions for them give us an idea of how the function works in that direction, but only for the Lagrangian axes traversing the Eulerian position where the trajectory coupling the complementary set of functions is. Thus we required to evolve several trajectories, such that we end up having an image of the full functions and thus be able to know its variation in any direction. That said, we see that there is a freedom of choosing complementary conditional functions with more or less Lagrangian degrees. What will the price be?\\
-
-{\bf Only one Lagrangian degree\\ \\}
-If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t))$ is a slice of the full function whose support is a hyperplane of $\R^N$.\footnote{In all the explanation, it is convenient to imagine $N=3$. As such, if we consider as Lagrangian degree the $x_3$, the support of the conditional functions of shape $f(x_1,x_2,x_3^\xi(t),t)$ will be a moving plane in $x_1,x_2$, sliced at $x_3=x_3^\xi(t)$).} To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point $(x_1,...,x_{N-1})$ we consider, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centered at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivative. See Figure \ref{fig:hyperplane}.\\
-
-The approach would then follow to first compute the correlation terms (that include the derivatives in the Lagrangian axes\footnote{Which is why they are called correlation terms, they introduce the correlation of the active conditional function with the rest of conditional functions paralllel and transversal to it} of one time step in parallel for each hyperplane labeled by each underlying fluid element $\vec{xi}^j$ and each considered point $x_1,...,x_N$ in each hyperplane. Then in parallel execute one time step evolution for the conditional functions as given in the equations above, employing the necessary algorithm for an $m$ dimensional Eulerian function (in the case of $G$ and $J$ for instance, we could emlpoy a Crnack Nicholson algorithm). Then once all the hyperplane-conditional functions are updated, compute again the correlation potentials in parallel, and repeat the loop.}
-
-\mybox{
-As a little computational detail, if we choose the Lagrangian degrees to move (say, according to the Bohmian velocity field), an initially regular grid in the $x_N$ axis (of different hyperplanes) will get unstructured. The distances between the hyperplanes will become irrelgular. This will make the following derivatives in the Lagrangian axis be more difficult to compute. We could then use fitting techniques among others, or instead, we could change the derivatives to derivatives in the label space as explained in Section (III.e). Alternatively, we could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>0$ (since remember the equations do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could trivially be computed  numerically. This would be a subtle way to turn back to the Eulerian fixed grid though.\\
-
-To have an example of the complexity reduction, we will assume to use the $G$ and $J$ correlation potential method \eqref{SE.GJ}. As explained in \cite{NireTFGie}, evolving a time step of the full $N$ dimensional Schrödinger Equation \eqref{SE} has an exponential complexity $O(M^N)$ with $M$ the average number of points considered in the discretization of each axis. A time step of the $N-1$ dimensional Schrödinger Equation that would be left for the Eulerian degrees after computing the correlation potentials in the $G$, $J$ method has a complexity $O(M^{N-1})$. Computing the numerical derivatives on the axis of the Lagrangian degree has a complexity of about $O(M)$ operations (we consider there are $M$ fluid elements distributed in $x_N$) per each of the $O(M^{N-1})$ points in a hyperplane. These derivatives are independent between them, so if we compute the $O(M)$ derivatives derivatives of each hyperplane point in parallel, using $O(M^{N-1})$ threads, we can compute the correlation potentials for the next iteration. Then each hyperplane-conditional wavefunction is evolved in parallel using $O(M)$ threads taking each again $O(M^{N-1})$ time. Overall, using $O(M^{N-1})$ parallel threads, the exact evolution of the Schrödinger Equation can be obtained in $O(M+M^{N-1})=O(M^{N-1})$ time, one $M$ factor less than using all the degrees as Eulerian.}
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.5\linewidth]{hyperplaness.png}
-  \caption{The $M$ hyperplanes in blue depict the $N-1$ dimensional supports of the CWF-s with a single Lagrangian degree ($x_3$). Each hyperplane is labeled by the initial position in the $x_3$ axis, the labels $\xi_j$. The yellow dots represent the $M_{x1}xM_{x2}$ discretized points of each hyperplane CWF. As it can be seen, the yellow points of the different hyperplanes are aligned, since the trajectories are fixed. This means that derivatives in the Lagrangian axis can be computed numerically at all times for any considered point in the hyperplanes.}
-  \label{fig:hyperplane}
-\end{figure}
-\mybox{
-{\bf Two Lagrangian degrees \\}
-We could do the same but instead of considering a single Lagrangian axis, we could consider two. In such a case, each CWF would have support in an affine $N-2$D manifold. Now about $O(M^2)$ CWF-s would be required, but each of them would take $O(M^{N-2})$ time to get evolved if we knew the correlation potentials. Now the derivatives to compute the correlation potentials would be required to be done in two directions, menaing we would require $O(2M^{N-2})$ threads computing each $O(M)$ operations. A total time of $O(M^{N-2})$ would be enough, at the expense of using more parallel threads.\\
-
-If we wanted to minimize the computational time, what we could do is the following: consider all but one degree as Lagrangian, considering this way CWF-s like $\psi(x_1,x_2^\xi(t), ...,x_N^\xi(t))$, the support of which would be a line moving in $\R^N$. See Figure \ref{fig:line}. If we build a regular grid in the space $x_2,...x_N$, for each point in the grid, we could consider a line-CWF extending in $x_1$ (the labels $\xi$ of each CWf would be their positions on this initial grid).}
-
-{\bf All Lagrangian but one\\}
-
-{\bf Using all degrees as Lagrangian\\}
-
-{\bf Was it really impossible to achieve this with the fully Eulerian frame? No.\\}
-Si trajs still kalro, teknikamente es lo mismo que si fuese Euleriano, pero puedes hacer el mismo algorithm. asike bueno, esto es solo una forma posible de pensar las cosas.
-
-\mybox{ Taking $O(M^{N-1})$ line-CWFs of those (each in a different thread), we would have a value of the WF per point in the whole configuration space (considering each CWF is discretized in $O(M)$ points, we would have a regular grid for the full wave-function). Then, in order to compute the correlation potentials, we would require for each of the $O(M)$ points of the line-CWF (the Eulerian axis), the derivative in each of the $N-1$ directions of the Lagrangian axes. If there are $M^{N-1}$ CWF-s, the same $O(M^{N-1})$ threads could compute the $O(M[N-1])$ derivatives. In total a perfect parallelization in those $O(M^{N-1})$ threads would take then $O(M[N-1]+M)=O(MN)$ operations. If we assume there is an overhead per message pass between the threads, each thread needs to send and receive $O(NM)$ values, leaving a total complexity in time that is $O(MN)$ to compute a single time iteration of the full wavefunction. This is linear in time wiht increasing precision and number of spatial dimensions, but is exponential in the number of threads required for it.}
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.5\linewidth]{rectas.png}
-  \caption{In blue, the $M_{x2}xM_{x3}$ CWF-s, the supports of which are 1D manifolds. In yellow, the $M_{x1}$ discrete points we consider in each CWF. Note how the yellow points in $x_2$ and $x_3$ are aligned in a regular grid, meaning they can be used to compute numerically the derivatives in the Lagrangian directions.  }
-  \label{fig:lines}
-\end{figure}
-
-\mybox{
-For any intermediate arrangement of Eulerian and Lagrangian degrees of freedom, we could balance the computational complexity from temporal to spatial at will. The more Lagrangian coordinates we choose the more parallel threads will be required, but the less time it will take.\\
-
-This approach is in principle legitimate for both the approach described in II.a.1 or II.a.2, the differences are the following ones though: the equation in II.a.1 has affine terms that impede the usage of reliable methods like the Crank Nicolson one. However, in II.a.2 we need to compute terms where we have $R$ dividing. This is prone to introduce big errors where the density is small.
-
-}
-
-Es la salvacion, y la unica "ventaja" de las CWF kizas. Ze sale una ecuacion lienal, solucionable de forma estable (aunke no preserve la norma, ze hay potencial complejo). Y es un mix de la full SE y la CE+HJE es un intermitx ke solo es concebible en CWF-s.
-% TODO: 
-- Generalize G,J zuk guzuzen beste Eulerianera 1h
-- Ein Basis Set thing eta por fin harek ekuaziñoiek idatzi 3h
-- Leidú Adaptive Gridsen kapituloa 
-- Idatzi ALE+suggestion de hacerlas lienales haciendo trajs ke siguen la densidad? 3h
-- Leidú dynamical equations for partial derivatives eta idatzi euren atala. 3h
-- Leidu lo de Jacobianena eta idatzi suggestion para hacer derivadas respecto a las material coordinates. 3h
-- Eing marrazkixek. 3h
-
-
-\subsection*{(II.b.1) The Continuity + The Hamilton-Jacobi Equations}
-If we evaluate the trajectory $\vec{y}(t;\vec{\xi})$ in the Continuity equation \eqref{CE}, we obtain:
-\begin{equation}
-\dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) \frac{1}{m_j}\pdv{S(\vec{x}, \vec{y}^\xi(t), t)}{x_j}) - \rho(\vec{x}, \vec{y}^\xi(t),t) \sum_{j=m+1}^N \frac{1}{m_j}\pdv[2]{S(\vec{x}, \vec{y}, t)}{x_j}\Big\rvert_{\vec{x}^\xi(t)}
+\subsection*{What are really the correlation potentials G and J?}
+In order to interpret them, note that if we assume that the fluid elements follow Bohmian trajectories, defining their velocity field as \eqref{v}, we will get a more appealing shape for both $G$ and $J$. After some simplifications, we are left with the following for $G$:
+\begin{equation}\label{G.Bohm}
+G(\vec{x},\vec{y}(\vec{\xi},t),t)=\sum_{j=m+1}^N\qty{-\frac{1}{2}m_j\qty(v_j(\vec{x},\vec{y}^\xi(t),t))^2+Q_j(\vec{x},\vec{y}^\xi(t),t)}
 \end{equation}
-Which is a continuity equation for $\rho(\vec{x},\vec{y}^\xi(t),t)$ with a source term $- \rho(\vec{x}, \vec{y}^\xi(t),t) \sum_{j=m+1}^N \frac{1}{m_j}\pdv[2]{S(\vec{x}, \vec{y}, t)}{x_j}\Big\rvert_{\vec{x}^\xi(t)}$ that drains or injects density as a function of the sign of the gradient of the velocity field in the Lagrangian axes (the contraction or dilation of the volume element, the determinant of the Jacobian of the density for the Lagrangian degrees). This is why the time evolution of the CWF-s is non-unitary. This was already clear in the fully Lagrangian scheme, because the density of the fluid was not a conserved quantity along the trajectories, meaning that the density that each fluid element perceives can vary in time. We actually found that the amount of density a fluid element perceived changed in time with the dilatation and contraction of the trajectory bundle, as given by the Jacobian of the mesh.
-
-Evaluating the trajectory for the Lagrangian axes in the Hamilton-Jacobi equation \eqref{HJE} we get the ugly equation:
+which is the difference between the kinetic energy of each Lagrangian degree and the quantum potential of the same degree $Q_j$ defined at \eqref{QP}. More in general, this means that the sum of the conditional potential and the correlation potential $G$ is the Lagrangian of each transversal section of the system, the difference between the kinetic energy and potential energy of the moving section $\vec{y}(\vec{\xi},t)$:
 \begin{equation}
--\dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2-\sum_{j=m+1}^N\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2+U(\vec{x},\vec{y}^\xi(t),t)+
+G(\vec{x},\vec{y}(\vec{\xi},t),t)+U(\vec{x},\vec{y}^\xi(t),t)=:-\Lg^y(\vec{x},\vec{y}^\xi(t),t)
+\end{equation}
+Meanwhile, the potential $J$ will take the simpler shape:
+\begin{equation}\label{J.Bohm}
+J(\vec{x},\vec{y}(\vec{\xi},t),t)=-\sum_{j=m+1}^N\frac{\hbar}{2m_j}\pdv[2]{}{x_j}S(\vec{x},\vec{y}^\xi(t),t)=-\frac{\hbar}{2}\sum_{j=m+1}^N\pdv{}{x_j}v_j(\vec{x},\vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
+\end{equation}
+which is the negative divergence (convergence?) of the velocity field in the Lagrangian degrees, along the trajectory. We already saw how this quantity was related to the Jacobian of a moving grid, which was the factor by which the density at each point had to be diluted, so the interpretation comes thereof.
+\subsection*{G and J Correlation Potentials in terms of the C amplitude}
+It is computationally more interesting to rewrite the correlation potentials in terms of the so called C amplitude as we did in the Fully Lagrangian case. If we use the change $R(\vec{x},\vec{y},t)=e^{C(\vec{x},\vec{y},t)}$, we are left with the following expressions for them:
+\begin{equation}
+G(\vec{x}, \vec{y}^\xi(t),t)=  \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_k}\qty(\pdv[2]{C}{x_k}+\qty(\pdv{C}{x_k})^2)\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} ]
+\end{equation}
+\begin{equation}
+J(\vec{x}, \vec{y}^\xi(t),t)= \hbar\sum_{k=m+1}^N \qty[ \pdv{C}{x_k}\Big\rvert_{y^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} - \frac{1}{2m_k} \pdv[2]{S}{x_k}\Big\rvert_{y^\xi(t)}-\frac{1}{m_k}\pdv{C}{x_k}\Big\rvert_{y^\xi(t)}  \pdv{S}{x_k} \Big\rvert_{y^\xi(t)} ]
+\end{equation}
+
+\subsection*{(III.b) The Continuity and The Hamilton-Jacobi Equations}
+\addcontentsline{toc}{subsubsection}{{\bf (III.b)} The Continuity and The Hamilton-Jacobi Equations}
+If we take the Continuity Equation \eqref{CE} and evaluate $\vec{y}$ along the trajectory $\vec{y}(\vec{\xi},t)$, using the chain rule for the time derivative we get:
+\begin{equation}
+\dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) \frac{1}{m_j}\pdv{S(\vec{x}, \vec{y}^\xi(t), t)}{x_j}) + 
 \end{equation}
 $$
--\sum_{j=1}^m \frac{\hbar^2}{2m_jR(\vec{x},\vec{y}^\xi(t),t)}\pdv[2]{R(\vec{x},\vec{y}^\xi(t),t)}{x_j}-\sum_{j=m+1}^N \frac{\hbar^2}{2m_jR(\vec{x},\vec{y}^\xi(t),t)}\pdv[2]{R(\vec{x},\vec{y},t)}{x_j}\Big\rvert_{\vec{x}^\xi(t)}
+\sum_{j=m+1}^N\qty{ -\frac{1}{m_j}\pdv{}{x_j}\Big(\rho(\vec{x},\vec{y},t)S(\vec{x}, \vec{y}, t)\Big)\Big\rvert_{\vec{y}^\xi(t)}+\pdv{\rho(\vec{x}, \vec{y}, t)}{x_k}\Big\rvert_{\vec{y}^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t}}
 $$
-Which is the Hamilton-Jacobi equation for the CWF, except that there are two terms extracting energy: the kinetic energy of Lagrangian frame and the quantum potential contribution due to the agglomeration in that axis.
+We can recognise the correlation potential $J$ defined in \eqref{J} in the second line of the equation, such that in the part Lagrangian part Eulerian Picture, the equation ruling the conditional density is:
+\begin{equation}\label{CE.EL}
+\dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) \frac{1}{m_j}\pdv{S(\vec{x}, \vec{y}^\xi(t), t)}{x_j}) + \frac{2\rho(\vec{x},\vec{y}^\xi(t),t)}{\hbar}J(\vec{x},\vec{y}^\xi(t),t)
+\end{equation}
+or if we assume the trajectories are Bohmian trajectories, guided by the velocity field \eqref{v}:
+\begin{equation}\label{CE.EL.Bohm}
+\dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) v_j(\vec{x}, \vec{y}^\xi(t),t)) - \rho(\vec{x},\vec{y}^\xi(t),t)\sum_{j+1}^N \pdv{}{x_j}v_j(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
+\end{equation}
+It is a conservation equation for the conditional density that allows the density to be created or destroyed at a point $\vec{x}$ in proportion to the product between the density and the correlation potential $J$ (it is a source/sink term). In the case the trajectories are Bohmian trajectories, then the subtracting term is the divergence of the velocity of the trajectories in the Lagrangian axes. We already saw that this quantity was related to the Jacobian of the trajectories, such that it gave the dilution factor for the density necessary for the trajectories to move preserving their number in the whole configuration space. It is this term that dilutes or injects density to the conditional density at each Eulerian point $\vec{x}$.
 
-%\subsection*{(II.b.2) The Bohmian-Newton's Second Law}
-%Evaluating the trajectory $\vec{y}(t;\vec{\xi})$ in the Continuity equation \eqref{CE}, we obtain:
+Evaluating the trajectory for the Lagrangian axes in the Hamilton-Jacobi equation \eqref{HJE} we get the equation:
+\begin{equation}
+-\dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2-\sum_{j=1}^m \frac{\hbar^2}{2m_jR(\vec{x},\vec{y}^\xi(t),t)}\pdv[2]{R(\vec{x},\vec{y}^\xi(t),t)}{x_j}+U(\vec{x},\vec{y}^\xi(t),t)+
+\end{equation}
+$$
+\hspace{-0.4cm} +\sum_{j=m+1}^N\qty{\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y},t)}{x_j})^2\Big\rvert_{\vec{y}^\xi(t)}-\frac{\hbar^2}{2m_jR(\vec{x},\vec{y}^\xi(t),t)}\pdv[2]{R(\vec{x},\vec{y},t)}{x_j}\Big\rvert_{\vec{y}^\xi(t)}-\pdv{}{x_j}S(\vec{x},\vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\pdv{}{t}x_j(\vec{\xi},t)}
+$$
+where we can identify in the second line the correlation potential $G$ defined in \eqref{G}, such that the equation ruling the time evolution of the conditional action is left as:
+\begin{equation}\label{HJE.EL}
+-\dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\qty(\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2+Q_j(\vec{x},\vec{y}^\xi(t),t))+U(\vec{x},\vec{y}^\xi(t),t)+G(\vec{x},\vec{y}^\xi(t),t)
+\end{equation}
+or if we assume the trajectories are Bohmian trajectories, guided by the velocity field \eqref{v}:
+\begin{equation}\label{HJE.EL.Bohm}
+\dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\qty(-\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2-Q_j(\vec{x},\vec{y}^\xi(t),t))+\Lg^y(\vec{x},\vec{y}(\vec{\xi},t),t) 
+\end{equation}
+Which is taking a Hamilton-Jacobi equation for the conditional action, just that we have an additional Lagrangian accounting for the difference in kinetic energy and potential energies (quantum and classical) for each Eulerian position $\vec{x}$ along the position in $\vec{y}$ of the trajectory. The interpretation is immediate for the underlying fluid element mesh.
 
-\subsection*{(III.b.1.2) Adaptive Grid Equations}
+\subsection*{(III.f) The Bohmian Newton's Second Law}
+\addcontentsline{toc}{subsubsection}{{\bf (III.f)} The Bohmian Newton's Second Law}
+If we take the Hamilton-Jacobi equation \eqref{CE} and we make the partial derivative $\pdv{}{x_k}$ for $k\in\{m+1,...,N\}$ in both sides of the equation, then assuming that the velocity field of the trajectories is the Bohmian velocity field \eqref{v}, we find that some terms are cancelled out (the kinetic energy gradients getting from the chian rule and the inherent one) and we are left with:
+\begin{equation}
+\hspace{-0.6cm} m_k\dv{}{t}v_k(\vec{x},\vec{y}(\vec{\xi},t),t)=-\pdv{}{x_k}\qty[U(\vec{x},\vec{y}^\xi(t),t)+Q(\vec{x},\vec{y}^\xi(t),t)+\sum_{j=1}^m \frac{1}{2m_j}\qty(\pdv{}{x_j}S(\vec{x},\vec{y}^\xi(t),t))^2]\quad;\   k\in\{m+1,...,N\}
+\end{equation}
+Which is a Newton's Second Law-like equation ruling the time evolution of the conditional Bohmian velocity fields for the Lagrangian axes. We can see that there is an additional potential, which is actually the kinetic energy of the Eulerian axes, to account for the fact that at each Eulerian position $\vec{x}$ there should be as well a fluid element representative.
+
+This equation, could be evolved coupled with the continuity equation \eqref{CE.EL.Bohm} for the mixed picture as an alternative to the Hamilton-Jacobi Equation \eqref{HJE.EL.Bohm} coupled to the same equation. Computationally it does not seem that appealing however, due to the additional derivative of the quantum potential it presents.
+
 % como puedes controlar als trayectorias dada una monitor function, por ejemplo podrias hacer que conservasen la densidad no? OStyras esa sería muy buena! De fet para esas trayectorias saldria una continuity equation exacta! Y las CWF-s tendrian una time evolution unitaria!!!! Pa sacar cual es el velocity field que deberian seguir quizas podrias mirar cuando la Lagrangian frame equation para las trajs te da que es constante la densidad. Y creo que es cuando la derivada en el espacio de la dSdx aka la velocidad (?) es constante a lo largo de la trayectoria...Y claro como es una fk continua tb deberia funcionar ke exista esa trayectoria no? 
 
+\subsection*{(III.d) Dynamic Equations for Partial Derivatives}\vspace{-0.2cm}
+\addcontentsline{toc}{subsubsection}{{\bf (III.d)} Dynamic Equations for Partial Derivatives}
 
 
-\subsection*{(II.c) Basis Set Expansion}
-\addcontentsline{toc}{subsection}{(II.c) Basis Set Expansion}
-\subsubsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
-\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
-In this section we will develop an equation that will allow us the time evolution of a {\bf single} CWF, without the need of evolving several of them in parallel, at the cost of knowing the eigenstates of the Lagrangian axes!
+\subsubsection*{(III.d.a) Dynamics of Partial Derivatives For the Wavefunction}\vspace{-0.1cm}
+%\addcontentsline{toc}{subsubsection}{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
+Following the exact same procedure of (II.d), by taking the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, and noting there is no partial derivative with respect to space $x_k$ in any place, we can directly evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$. Noting the chain rule for the time derivative we get \eqref{infchain.SE} in the partially Lagrangian frame:\vspace{-0.1cm}
+\begin{equation}\label{infchain.SE.EL}
+i\hbar \dv{}{t}\psi_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+\sum_{s=m+1}^N i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}+\vspace{-0.1cm}
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
+$$
+where all the functions have arguments $(\vec{x},\vec{y}^\xi(t),t)$.
 
-If we recover the equation \eqref{XabEq} and the formalism we employed in its derivation, we had that the full WF could be decomposed as $\Psi(x,y,t)=\sum_{j=0}^\infty\Lambda^j(x,t)\Phi^j_x(y,t)=\sum_{j=0}^\infty \varphi_j(x,y,t)$. We defined $\Phi^j_x(y,t)$ as the transversal section eigenstates of the subsystem due to the degrees of freedom $y=(x_{m+1},...,x_N)$, which depend on the slice $x=(x_1,...,x_m)$ we are looking at. Now, if we know these eigenstates and we evaluate the wavefunction along a trajectory for the "transversal" degrees of freedom $y^\xi(t)$, we note that equation \eqref{XabEq2.5} becomes:
+We could use this chain of partial differential equations alone to evolve {\bf a single} conditional wavefunction (as we already explained, by truncating the series at a high enough $J$ etc.). We would not require the parallel computation with cross talk of several conditional wavefunctions of different adjacent trajectories, since we do not need the first order local information to compute derivatives in the Lagrangian axes. In addition the equation system is {\bf linear}, which makes things way simpler to compute.
+
+Alternatively what we could do is to only evolve in this way the derivatives of the wavefunction in the Lagrangian axes, such that we can then use them to compute the Kinetic and Advective correlation terms and evolve the conditional wavefunction using $\eqref{KinAdvEL}$ (or the $G$ and $J$ correlation potentials and use $\eqref{SE.GJ}$). This would mean we would only be interested in computing the functions $\psi_{(j_1,...,j_m,...,j_N)}$ with $j_1,...,j_m=0$ using the chain of equations. Then, since at each time we would know $\psi$ in an Eulerian frame for the first $m$ degrees of freedom, their first and second derivatives, required to compute \eqref{infchain.SE.EL}, we would be able to compute them directly using simple finite differences. This second method as well, would allow us to compute a {\bf single} conditional wavefunction with all {\bf linear} coupled equations (using \eqref{SE.GJ}), which can be solved with a Crank-Nicolson method for instance. The precision of the method would then solely rely on the truncation $J$ we chose. 
+
+In fact, a method of this kind, assuming a fixed $J$ can be used for increasing dimensionality $N$ would not scale expoentially in time nor parallel processes as is explained in the last subsection of the partially Lagrangian picture.
+
+\vspace{-0.1cm}
+
+\subsubsection*{(II.d.b) Dynamics of Partial Derivatives For the Density and Action}\vspace{-0.1cm}
+%\addcontentsline{toc}{subsubsection}{(II.d.b) Dynamics of Partial Derivatives}
+
+If we now look back to equations \eqref{infchain.CE} and \eqref{infchain.HJE}, we will evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$ directly in the partial differential equations ruling the dynamics of the spatial derivatives of $C$ and $S$ (where $C(x,t)=log(\rho(x,t))/2$). We can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$ follows:\vspace{-0.1cm}
+\begin{equation}\label{infchain.CE.EL}
+\dv{}{t}C_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)=-\sum_{s=m+1}^N C_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t} - \sum_{s=1}^N\Big(\frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}+
+\end{equation}
+$$
++2 \sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)} \Bigg]\bigg)
+$$
+
+While the field $S$ and all its derivatives in configuration space $x_k$, follow over any single fluid element $\xi$:\vspace{-0.1cm}
+\begin{equation}\label{infchain.HJE.EL}
+-\dv{}{t}S_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)=V_{(j1,...,jN)}+\sum_{s=m+1}^N S_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t}-\sum_{s=1}^N\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(x,t)+\vspace{-0.1cm}
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} \vspace{-0.1cm}
+$$
+$$
+-S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]
+$$
+Following the same ideas we just commented for the conditional wavefunction, we could employ this system of (infinite) equations truncated at a certain reasonable $J$ to evolve the conditional action and density of a {\bf single} trajectory without the need to couple an ensemble. We could also use them just to compute the derivatives in the Lagrangian axes, for which we would only be interested on those $j_1,...,j_m=0$. Then we would use that we know the conditional wavefunctions in the Lagrangian frame for the first $m$ degrees to compute the necessary derivatives for them directly in a regular grid, or just use methods like \eqref{SE.GJ} or \eqref{KinAdvEL} all along.
+
+
+\subsection*{(III.g) Dynamic Equations for Correlation Terms}
+\addcontentsline{toc}{subsubsection}{{\bf (III.g)} Dynamic Equations for Correlation Terms}
+Let us rewrite the Schrödinger Equation \eqref{KinAdvEL} in the part Lagrangian picture in the following terms:
+\begin{equation}
+i\hbar \dv{}{t}\psi(\vec{x},\vec{y}^\xi(t),t)=\Bigg[-\sum_{j=1}^m \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(\vec{x},\vec{y}^\xi(t),t)+
+\end{equation}
+$$
+\sum_{s=m+1}^N\qty{ -\frac{\hbar^2}{2m_j}P^{(0,...,j_s=2,...,0)}+i\hbar \pdv{x_j(\vec{\xi},t)}{t} P^{(0,...,j_s=1,...,0)} } \Bigg]\psi(\vec{x},\vec{y}^\xi(t),t)
+$$
+where we will define the coupled $m$ dimensional $P$ potentials as:
+\begin{equation}\label{Norsen}
+P^{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t):=\frac{\psi_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)}{\psi(\vec{x},\vec{y}^\xi(t),t)}
+\end{equation}
+Making the total time derivative of the P potentials and inserting the equation ruling the motion of $\psi_{(j_1,...,j_N)}$, after recognizing the appearance of additional $P$ potentials, we find that, the $P$ potentials are ruled by the non-linear system of differential equations:
+\begin{equation}
+\dv{P^{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)}{t}=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}P^{(j_1,...,j_s+2,...,j_N)}+\sum_{s=m+1}^Ni\hbar \pdv{x_s(\vec{\xi},t)}{t} P^{(j_1,...,j_s+1,...,j_N)}+\vspace{-0.3cm}
+\end{equation}
+$$
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}P^{(k_1,...,k_N)}-
+$$
+$$
+-P^{(j_1,...,j_N)}\qty{ \sum_{s=1}^N\frac{\hbar^2}{2m_s} P^{(0,...,j_s=2,...,0)}+U+i\hbar\sum_{s=m+1}^N \pdv{x_s(\vec{\xi},t)}{t}P^{(0,...,j_s=1,...,0)} }
+$$
+The time evolution of each one is coupled with $P$ potentials of two and one degree more, and all the potentials of less degree, making this an infinite chain of potential energy terms.
+
+In this shape, equation \eqref{Norsen} is a Schrödinger Equation ruling the dynamics of a single conditional wavefunction, which can be used to evolve a coupled Bohmian (or custom) trajectory, which is propagated in a total potential energy field that is the sum of potential energies that depend on a ladder of infinite potential energies that only depend on this particular trajectory.
+
+Clearly, this development has no theoretical appeal at all. The interest of this is just to acknowledge a theoretical/philosophical observation of Ref. \cite{Norse}, which we have generalized to an arbitrary $N$ dimensional system, that a single Bohmian trajectory of a Universe made of $N/3$ physical space (3 dimensional) particles could be fully determined without referencing the full wavefunction at all. Instead, each physical space particle would be defined by its position in physical space, a 3D field piloting its trajectory (the conditional wavefunctions having $m=3$) and a set of (infinite) coupled complex potential energies $P$ surrounding each of them, such that these potentials only depend on each physical space trajectory independently. Therefore, it is indeed possible to understand physical space particles without talking about the configuration space, if we allow a set of coupled (inifnite) potential terms interpretable as self-sustained potential energy fields surrounding the pilot wave of each particle. Thus, the self-sustained potential energies rule the dynamics of the real space pilot wave (the conditional wavefunction or action and density) piloting independently the trajectory of each 3D particle. The only interaction between the physical space particles would then be due to the classical potential $U(\vec{\x},t)$, which would be defined in general as in classical mechanics is.
+
+It is perhaps this particular theoretical possibility that makes some Bohmian experts be happy with their theory. They might have found a (local) relief from the metaphysical anxiety with this development or a similar one. The thing is they get comfortable with the wavefunction living in configuration space, by instead viewing it as if each physical space particle was living indeed in 3 dimensional physical space, affecting the rest of particles only through physical space, just that they are each surrounded by an infinite self-produced and self-sustained chain of potential energies.
+
+Isn't it simpler to just understand that we humans happen to perceive the degrees of freedom of the Universe in triplets? Possibly they would say no, because that would imply that there is a configuration space interaction between them. Then, the author would argue that the Tangent Universe Interpretation has none of these problems, so far as we accept we live in a trajectory among a continuity of tangentially influencing Universes. They might not be ready to accept this though.
+
+
+\subsection*{(III.c) Basis Set Expansion}
+\addcontentsline{toc}{subsubsection}{{\bf (III.c)} Basis Set Expansion}
+%\subsubsection*{(III.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
+%\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
+In this section we will develop an equation that will allow us the time evolution of a {\bf single} CWF, without the need of evolving several of them in parallel, at the cost of knowing the eigenstates of the Lagrangian axes.
+
+If we recover the equation \eqref{XabEq} and the formalism we employed in its derivation, we had that the full wavefunction could be decomposed as $\Psi(x,y,t)=\sum_{j=0}^\infty\Lambda^j(x,t)\Phi^j_x(y,t)=\sum_{j=0}^\infty \varphi_j(x,y,t)$. We defined $\Phi^j_x(y,t)$ as the transversal section eigenstates of the subsystem due to the degrees of freedom $y=(x_{m+1},...,x_N)$, which depend on the slice $x=(x_1,...,x_m)$ we are looking at. Now, if we know these eigenstates and we evaluate the wavefunction along a trajectory for the "transversal" degrees of freedom $y^\xi(t)$, we note that equation \eqref{XabEq2.5} becomes:
 
 \begin{equation}
  i\hbar\pdv{}{t}\varphi^k(x,y^\xi(t),t)=\qty[ \varepsilon^k(x,t)+V(x,t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\varphi^k(x,y^\xi(t),t)+
@@ -1769,9 +1827,92 @@ Denoting $\varphi^k_\xi(x,t)=\varphi^k(x,y^\xi(t),t)$ and thus the CWF $\Psi^\xi
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y^\xi(t),t)}\pdv[2]{\Phi^j_x(y^\xi(t),t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))] )\varphi^j_\xi(x,t)
 $$
-This is a coupled system of {\bf linear} equations that allows the time evolution of a {\bf single CWF}, if we truncate the series $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$ at a convenient point. Since it is linear, a Crank Nicolson like stable algorithm can be used to evolve it in a time in the order of the resolution of an $m$ dimensional Schrödinger Equation. Of course, the trick to overcome the many body problem is in that we know a priori the transversal section eigenstates $\Phi^j_x(y,t)$ for the particular potential energy. Obtaining these $N-m$ dimensional eigenstates numerically presents the same exponential nature as the full Schrödinger Equation.
+This is a coupled system of {\bf linear} equations that allows the exact time evolution of a {\bf single CWF}, if we truncate the series $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$ at a convenient point. Since it is linear, a Crank Nicolson like stable algorithm can be used to evolve it in a time in the order of the resolution of an $m$ dimensional Schrödinger Equation. Of course, the trick to overcome the many body problem is in that we know a priori the transversal section eigenstates $\Phi^j_x(y,t)$ for the particular potential energy. Obtaining these $N-m$ dimensional eigenstates numerically presents the same exponential nature as the full Schrödinger Equation.
 
-However, it is really interesting to note that this is in practice the only approach that allow the exact (with no theoretical approximation) time evolution of a single CWF!
+
+\subsection*{(III.e) Partial Derivatives relative to labels}
+\addcontentsline{toc}{subsubsection}{{\bf (III.e)} Partial Derivatives relative to labels}
+We have seen manifestly clear that the derivatives of the conditional functions in the Lagrangian axes ($\pdv{}{x_k}$ for $k\in\{m+1,...,N \}$) are the main problem when evolving in time the conditional functions, since all the dynamic equations involve them (except the ones that offer additional (infinite) dynamic equations to implicitly compute them). To surpass it, we said the standard way was to evolve several conditional functions of different trajectories and using the function in unstructured slices we get, try to fit a function to compute the deriavtives. Alternatively we could change the derivatives relative to $x_k$ to derivatives relative to the label space variables $\xi_k$.
+
+To do this, we will need to follow the exact same procedure as the one described in section (II.e), since we chose the same underlying diffeomorphism $\vec{\x}(\vec{\xi},t)$ of the whole $\R^N$ space. In this case though, some façade changes will come. By the chain rule, for $j\in\{m+1,...,N \}$:
+\begin{equation}
+\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\end{equation}
+with $\pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ obtainable using equation \eqref{JacobChange}.
+
+Then, the follwoing operators would adopt the shape:
+\begin{equation}
+\sum_{a=m+1}^N \pdv{f(\vec{x}, \vec{y},t)}{x_a}\Big\rvert_{\vec{y}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{x}, \vec{y}(\vec{\xi},t),t)}{\xi_j} \sum_{a=m+1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{\x}(\vec{\xi},t)}
+\end{equation}
+
+\begin{equation}
+\sum_{a=m+1}^N \pdv[2]{f(\vec{x},t)}{x_a}\Big\rvert_{\vec{x}(\vec{\xi},t)}=\frac{1}{J} \sum_{j=1}^N\pdv{}{\xi_j} \qty[ J\sum_{k=1}^N\pdv{f}{\xi_k}\sum_{a=m+1}^N\pdv{\xi_k}{x_a}\pdv{\xi_j}{x_a}\Big\rvert_{\vec{\x}(\vec{\xi},t)}]
+\end{equation}
+
+
+Note that if we had really chosen a diffeomorphism $\vec{y}(\vec{\xi}_y,t)$ with $\vec{\xi}_y\in\R^{N-m}$, without considering implicitly the whole $\R^N$ as a fluid, the expressions would be analogous, but would require less terms (the Jacobian matrix would have $(N-m)\times (N-m)$ terms instead of $N\times N$). The only thing that would then change in the formulas is that the subindices for $\xi_k$ would run from $m+1$ to $N$ alone, instead of $1$ to $N$. 
+
+
+
+\subsection*{(III.g) Adaptive Grid Equations}
+\addcontentsline{toc}{subsubsection}{{\bf (III.g)} Adaptive Grid Equations}
+All the theory derived in section (II.g) can freely be used in any partially Lagrangian frame as well, just by noting the subtlety about the diffeomorphism we discussed in the beginning of the partially Lagrangian frame chapter. That is, we could use an underlying whole space diffeomorphism $\vec{\x}(\vec{\xi},t)$ with $\vec{\xi}\in\Omega_t\subseteq\R^N$, implicitly assuming that the fluid occupies the whole space, or we could consider that only the Lagrangian axes are part of a fluid, with their trajectory diffeomorphism being $\vec{y}(\vec{\xi}_y,t)$ with $\vec{\xi}_y\in\Gamma_t\subseteq\R^{N-m}$. Doing the second should be the natural thing because it is that way that we can "slice" the full function in unique slices. However we saw that if we wanted to deal with Bohmian trajectories, the first thing was the only way, and we also understood that the first thing allowed a thing we called complementary conditional functions, which were a philosophically interesting set, because they fully determined the Bohmian trajectory.
+
+Since for the generation of an adaptive grid, we are not willing to get information about Bohmian trajectories, the most convenient thing is to treat only the subsystem $\vec{y}$ as a fluid, to avoid superfluously repeating the information of the full function we are trying to describe with the moving mesh. Of course, this means only the degrees of freedom of the mesh points in $\vec{y}$ will move. For this, we can then employ all the adaptive grid generating equations seen in section (II.g) verbatim, just changing $\vec{x}$ for $\vec{y}$.
+
+
+
+\section*{From exponential time to linear using Parallelization}
+\addcontentsline{toc}{subsubsection}{\em From exponential time to linear using Lagrangian degrees and parallelization}
+
+In this box we will show how {\bf conceptually} changing the Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a linear one if we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). We will see that the partially Lagrangian picture allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability (which we have already commented), and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.\\
+
+In what follows we will analyze qualitatively the two limit cases where there are still both Lagrangian and Eulerian degrees: having a single Lagrangian one and having them all but one.\\
+
+In all the equations so far we have seen that it is roughly mandatory that we evolve an ensemble of complementary conditional wavefunctions (or actions and densities) with their respective trajectories (unless we adopt another strategy like evolving the derivatives). This was because all the dynamical equation for each complementary function (wavefunction, action or density) required the knowledge of the derivatives in the directions in which we slice the functions. Having complementary functions for them give us an idea of how the function works in that direction, but only for the Lagrangian axes traversing the Eulerian position where the trajectory coupling the complementary set of functions is. Thus we required to evolve several trajectories, such that we end up having an image of the full functions and thus be able to know its variation in any direction. That said, we see that there is a freedom of choosing complementary conditional functions with more or less Lagrangian degrees. What will the price be?\\
+
+{\bf Only one Lagrangian degree\\ \\}
+If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t))$ is a slice of the full function whose support is a hyperplane of $\R^N$.\footnote{In all the explanation, it is convenient to imagine $N=3$. As such, if we consider as Lagrangian degree the $x_3$, the support of the conditional functions of shape $f(x_1,x_2,x_3^\xi(t),t)$ will be a moving plane in $x_1,x_2$, sliced at $x_3=x_3^\xi(t)$).} To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point $(x_1,...,x_{N-1})$ we consider, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centred at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivatives. See Figure \ref{fig:hyperplane}.\\
+
+The approach would then follow to first compute {\em in parallel} the correlation terms of the current time step (which were the reason why we needed the derivatives in the Lagrangian axes\footnote{Which is why they are called correlation terms, they introduce the correlation of the active conditional function with the rest of conditional functions parallel and transversal to itself.}) for each hyperplane-conditional function labelled by its underlying fluid element $\vec{\xi}^j$. Within each conditional function, per each considered point $x_1,...,x_N$ in the hyperplane we will need to compute these correlation terms (their underlying derivatives) employing the adjacent slices (message pass between the slice processes). Then in parallel, execute one time step evolution for the conditional functions as given in the equations, employing the necessary algorithm for an $m$ dimensional Eulerian function (in the case of $G$ and $J$ for instance, we could employ a Crank-Nicolson algorithm). Once all the hyperplane-conditional functions are updated, compute again the correlation potentials (the derivatives in Lagrangian axes) in parallel by sharing the information of each slice between the processes, and repeat the loop.
+
+
+As a little computational detail, if we choose the Lagrangian degrees to move (say, according to the Bohmian velocity field), an initially regular grid in the $x_N$ axis (constituted by the different hyperplanes) will get unstructured. The distances between the hyperplanes will become irregular. This will make the following derivatives in the Lagrangian axis be more difficult to compute. We could then use fitting techniques among others, or instead, we could change the derivatives to derivatives in the label space as explained in Section (III.e). Alternatively, we could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>0$ (since remember the equations for conditional functions do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could be computed easily with advanced finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary.\\
+
+To have an example of the complexity reduction, we will assume to use the $G$ and $J$ correlation potential method \eqref{SE.GJ}. As explained in \cite{NireTFGie}, evolving a time step of the full $N$ dimensional Schrödinger Equation \eqref{SE} has an exponential complexity $O(M^N)$ with $M$ the average number of points considered in the discretization of each axis. A time step of the $N-1$ dimensional Schrödinger Equation that would be left for the Eulerian degrees after computing the correlation potentials in the $G$, $J$ method, has in the same way, a complexity $O(M^{N-1})$. Computing the numerical derivatives on the axis of the Lagrangian degree has a complexity of about $O(M)$ operations (we consider there are $M$ fluid elements distributed in $x_N$) per each of the $O(M^{N-1})$ points in a hyperplane. These derivatives are independent between them, so if we compute the $O(M)$ derivatives of each hyperplane point in parallel, using $O(M^{N-1})$ threads, we can compute the correlation potentials for the next iteration. Then each hyperplane-conditional wavefunction is evolved in parallel using $O(M)$ threads taking each again $O(M^{N-1})$ time. Overall, using $O(M^{N-1})$ parallel processes, the exact evolution of the Schrödinger Equation can be obtained in $O(M+M^{N-1})=O(M^{N-1})$ effective runtime, one $M$ factor less than using all the degrees as Eulerian.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\linewidth]{hyperplaness.png}
+  \caption{The $M$ hyperplanes in blue depict the $N-1$ dimensional supports of the CWF-s with a single Lagrangian degree ($x_3$). Each of the $M$ hyperplanes is labelled by its initial position in the $x_3$ axis, the labels $\xi_j$. The yellow dots represent the $M_{x1}xM_{x2}$ discretized points of each hyperplane CWF. As it can be seen, the yellow points of the different hyperplanes are aligned, since they are the Eulerian grid part. This means that derivatives in the Lagrangian axis can be computed numerically at all times for any considered point in the hyperplanes by taking the information in each of these beams.}
+  \label{fig:hyperplane}
+\end{figure}
+
+{\bf Two Lagrangian degrees \\}
+We could do the same but instead of considering a single Lagrangian axis, we could consider two. In such a case, each conditional function would have as support, as seen form $\R^N$, an affine $N-2$ dimensional manifold. Assuming again we discretize the Lagrangian degrees with $M$ points per axis, we would need about $O(M^2)$ conditional functions and trajectories to have a representative view of the full function. $O(NM^2/2)$, if we consider complementary conditional functions of two dimensions per each trajectory. $M$ times more. However, each conditional function would be an $m-2$ dimensional Eulerian function, which could be evolved in  $O(M^{N-2})$ time units, if we knew the correlation terms (to evolve them all in $O(M^{N-2})$ we would require $O(M^2)$ processes. The derivatives to compute these correlation terms in turn, would be required to be done in two directions, meaning that following the previous strategy, we would require $O(2M^{N-2})$ threads computing each $O(M)$ operations. Overall, a total effective computation time of $O(M+M^{N-2})=O(M^{N-2})$ would be enough, two $M$ factors less, at the expense of using about $O(M^2+2M^{N-2})$ parallel threads.\\
+
+{\bf All Lagrangian but one\\}
+If we now considered all the degrees of freedom to be Lagrangian except for one, the support of each conditional function $f(x_1,x_2^\xi(t),...,x_N^\xi(t))$ would be as seen from $\R^N$, a straight line moving in configuration space, a one dimensional affine manifold. See Figure \ref{fig:lines} for an intuition. Again, discretizing each of the Lagrangian axes in $M$ points would mean considering $O(M^{N-1})$ line-conditional functions. The time evolution of each of them, as one dimensional Eulerian functions they are would be only $O(M)$ time units, employing a parallel process for each conditional function, a total of $O(M^{N-1})$ processes. The derivates to compute the correlation terms in turn would be required in $N-1$ directions, in each direction having $M$ points, at each of the $M$ Eulerian points of the condiitonal functions, a total of $O((N-1)M^2)$ threads computing $O(M)$ operations.  of the Eulerian axis of each conditional function. This would be $O(NM)$ threads each computing $O(M)$ operations.
+
+{\bf Using all degrees as Lagrangian\\}
+
+{\bf Was it really impossible to achieve this with the fully Eulerian frame? No.\\}
+Si trajs still kalro, teknikamente es lo mismo que si fuese Euleriano, pero puedes hacer el mismo algorithm. asike bueno, esto es solo una forma posible de pensar las cosas.
+
+Taking $O(M^{N-1})$ line-CWFs of those (each in a different thread), we would have a value of the WF per point in the whole configuration space (considering each CWF is discretized in $O(M)$ points, we would have a regular grid for the full wave-function). Then, in order to compute the correlation potentials, we would require for each of the $O(M)$ points of the line-CWF (the Eulerian axis), the derivative in each of the $N-1$ directions of the Lagrangian axes. If there are $M^{N-1}$ CWF-s, the same $O(M^{N-1})$ threads could compute the $O(M[N-1])$ derivatives. In total a perfect parallelization in those $O(M^{N-1})$ threads would take then $O(M[N-1]+M)=O(MN)$ operations. If we assume there is an overhead per message pass between the threads, each thread needs to send and receive $O(NM)$ values, leaving a total complexity in time that is $O(MN)$ to compute a single time iteration of the full wavefunction. This is linear in time wiht increasing precision and number of spatial dimensions, but is exponential in the number of threads required for it.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\linewidth]{rectas.png}
+  \caption{In blue, the $M_{x2}xM_{x3}$ CWF-s, the supports of which are 1D manifolds. In yellow, the $M_{x1}$ discrete points we consider in each CWF. Note how the yellow points in $x_2$ and $x_3$ are aligned in a regular grid, meaning they can be used to compute numerically the derivatives in the Lagrangian directions.  }
+  \label{fig:lines}
+\end{figure}
+
+
+For any intermediate arrangement of Eulerian and Lagrangian degrees of freedom, we could balance the computational complexity from temporal to spatial at will. The more Lagrangian coordinates we choose the more parallel threads will be required, but the less time it will take.\\
+
+This approach is in principle legitimate for both the approach described in II.a.1 or II.a.2, the differences are the following ones though: the equation in II.a.1 has affine terms that impede the usage of reliable methods like the Crank Nicolson one. However, in II.a.2 we need to compute terms where we have $R$ dividing. This is prone to introduce big errors where the density is small.
+
 
 
 
@@ -1793,7 +1934,6 @@ The advantage is that we might be able to get the best of both worlds: the Euler
 
 
 
-\subsection*{(III.d) Dynamic Equations for Partial Differentials}
 
 \newpage
 \section*{IV . No Continuous Fluid: Finite Tangent Universe Mechanics}
@@ -1825,7 +1965,7 @@ R. E. Wyatt, {\em Quantum Dynamics with Trajectories} (Springer, Berlin, 2006)
 
 \href{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}
 
-\bibitem{physicalOriols}
+\bibitem{Norsen}
 Norsen, T., Marian, D. \& Oriols, X. {\em Can the wave function in configuration space be replaced by single-particle wave functions in physical space?.} Synthese 192, 3125–3151 (2015). \href{https://doi.org/10.1007/s11229-014-0577-0}{https://doi.org/10.1007/s11229-014-0577-0}
 
 
