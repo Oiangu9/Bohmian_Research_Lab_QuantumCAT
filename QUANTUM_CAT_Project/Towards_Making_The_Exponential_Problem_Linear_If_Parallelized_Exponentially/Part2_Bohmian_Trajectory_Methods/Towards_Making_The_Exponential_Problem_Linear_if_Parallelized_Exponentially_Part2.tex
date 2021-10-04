@@ -850,22 +850,35 @@ $$
 $$
 Again, these equations allow us the computation of the wavefunction and the trajectory of a single fluid element at any time. For a numerical implementation however, we will need to assume that at a certain $J$, $\pdv[J]{f(x,t)}{x_k}\Big\rvert_{x(\xi,t)}\simeq 0$ for $f\in\{ C,S\}$. This means we will need to assume that in the locality of the trajectory the $C$ amplitude's (and the density's) and the action's curvatures get close to zero.\\
 
-\mybox{
-\section*{Fundamental Intuitions about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
+
+\section*{{\em Parenthesis: }Fundamental Intuitions about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
 \addcontentsline{toc}{subsubsection}{\em Parenthesis: Fundamental Intuitions about the Diffeomorphism $\vec{x}(\vec{\xi},t)$}
 
-Before continuing to the next sections, we will open a little parenthesis to review the relevant concepts that one must have clear when talking about the trajectory bundle of a fluid. These trajectories are given by a transformation $\vec{x}(\vec{\xi},t)$ that maps each fluid element in the label space $\vec{\xi}$, which we decided to identify with the initial position (in configuration-space) of each fluid element ($\vec{x}(\vec{\xi},t=t_0)=\vec{\xi}$), to the position of the fluid element at time $t$. For the reasons we have already seen, it must be a diffeomorphism, that is to be continous, with a continous inverse and differentiable. \vspace{0.2cm}\\
-{\bf Covariant Tangent Vectors\vspace{0.2cm}\\ }
+Before continuing to the next sections, we will open a little parenthesis to review the relevant concepts that one must have clear when talking about the trajectory bundle of a fluid. These trajectories are given by a transformation $\vec{x}(\vec{\xi},t)$ that maps each fluid element in the label space $\vec{\xi}$, which we decided to identify with the initial position (in configuration-space) of each fluid element ($\vec{x}(\vec{\xi},t=t_0)=\vec{\xi}$), to the position of the fluid element at time $t$. For the reasons we have already seen, it must be a diffeomorphism, that is to be continous, with a continous inverse and differentiable. \vspace{-0.3cm}
+\subsection*{ Covariant Tangent Vectors \vspace{-0.3cm}}
 Let us first realize what the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$ are. Following the definition of partial derivative:
 \begin{equation}
 \pdv{\vec{x}(\vec{\xi},t)}{\xi_k}=\lim_{\Delta \xi \rightarrow \infty} \frac{\vec{x}(\xi_1,...,\xi_k+\Delta \xi,...,\xi_N,t)-\vec{x}(\xi_1,...,\xi_k,...,\xi_N,t,t)}{\Delta \xi}
 \end{equation}
 
-we can graphically see in Figure \ref{fig:covariant} that it is in each time, the vector that is locally tangent to the curve defined by fixing all spatial variables of $\vec{\xi}$ except for $\xi_k$, which if varied, shapes the curve $\vec{x}(\xi_k;\xi_1,...,\xi_{k-1},\xi_{k+1},...,\xi_N,t)$. This curve is the image of the straight line corresponding to the $\xi_k$ axis in the original label space, as can be seen in Figure \ref{fig:isoline}. It is the curve that shows where are the fluid elements that were initially in that straight line. Since, $\vec{x}(\vec{\xi},t)$ must be continous to be a valid diffeomorphism, the fluid elements that were initially close in configuration space, must remain close, but can now be distributed in a curved manner instead of a straight line. Yet, the "distance" between these close points can be contracted or dilated as we will see in a moment. Then, the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$, tangent to these curves, locally defining the grid of fluid elements, are called the {\bf covariant tangent vectors}.\\
+we can graphically see in Figure \ref{fig:covariant} that it is in each time, the vector that is locally tangent to the curve defined by fixing all spatial variables of $\vec{\xi}$ except for $\xi_k$, which if varied, shapes the curve $\vec{x}(\xi_k;\xi_1,...,\xi_{k-1},\xi_{k+1},...,\xi_N,t)$. This curve, called {\bf iso-label curve} or iso-curve, is the image of the straight line corresponding to the $\xi_k$ axis in the original label space, as can be seen in Figure \ref{fig:isoline}. It is the curve that shows where are the fluid elements that were initially in that straight line. Since, $\vec{x}(\vec{\xi},t)$ must be continous to be a valid diffeomorphism, the fluid elements that were initially close in configuration space, must remain close, but can now be distributed in a curved manner instead of a straight line. Yet, the "distance" between these close points can be contracted or dilated as we will see in a moment. Then, the vectors $\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}$, tangent to these curves, locally defining the grid of fluid elements, are called the {\bf covariant tangent vectors}.
 
-The set of $N$ vectors $\{\pdv{\vec{x}(\vec{\xi},t)}{\xi_1},...,\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} \}$ at each point, shapes locally the basis to which the initial orthogonal grid has been morphed.\\
+The set of $N$ vectors $\{\pdv{\vec{x}(\vec{\xi},t)}{\xi_1},...,\pdv{\vec{x}(\vec{\xi},t)}{\xi_N} \}$ at each point, shapes locally the basis to which the initial orthogonal grid has been morphed.
 
-{\bf The Jacobian Matrix\vspace{0.2cm}\\}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{5isolines.png}
+  \caption{Depiction of the iso-label curves. They are the set of points that have one of the label space coordinate with the same number. Considering that the label space represents the initial positions for the fluid elements, the iso-curve at any time $t$ represents the set of positions where the fluid elements that were once aligned have moved. Since their displacement is given by a diffeomorphism, the iso-label curves will be continous curves at all times. angles between the iso-curves do not need to be preserved however. }
+  \label{fig:isoline}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.75\linewidth]{3covariant_tangent_vectors.png}
+  \caption{{\bf (a)} Depiction of the label space positions (initial positions) for two points, with the same $\xi_2, \xi_3$ coordinates but a distance in $\xi_3$ of $\Delta \xi$. Notice the yellow iso-line $\gamma_1$ that passes crossing them both.\\ {\bf (b)} The same two points but in their configuration space positions after a time $t$ has passed. Note that the iso-line has been curved with their motion. Note however that in any time, the vector linking the two trajectories $\vec{x}(\xi_1+\Delta\xi,\xi_2,\xi_3)-\vec{x}(\xi_1,\xi_2,\xi_3)$, if $\Delta \xi$ is made sufficiently small, will be tangent to the yellow curved iso-$\xi_1$ label curve at the point $\vec{x}(\xi_1,\xi_2,\xi_3)$. If we take this difference, divide it by $\Delta \xi$ and make it tend to zero $\Delta \xi\rightarrow 0$, in the limit we will get the locally tangent vector to the iso-curve $\xi_1$ the magnitude of which expresses the rate of change of the arc-length of the iso-curve at that point. This is a covariant tangent vector.\\ {\bf (c)} Note we could do the same for the three directions in label space, to get the three covariant tangent vectors, tangent to each of the iso-label curves crossing the point. Since the Jacobian determinant for a diffeomorphism must be non zero, these vectors must be linearly independent, forming a basis of the vector space. }
+  \label{fig:covariant}
+\end{figure}
+
+\subsection*{The Jacobian Matrix\vspace{-0.2cm}}
 We define the Jacobian matrix of $\vec{x}(\vec{\xi},t)$ with respect to the label space $\vec{\xi}$ as the matrix that has the covariant tangent vectors as columns (or the matrix of all the frist order partial derivatives of $\vec{x}(\vec{\xi},t)$):
 \begin{equation}
 D_\xi\vec{x}(\vec{\xi},t):=\begin{pmatrix}
@@ -879,29 +892,50 @@ D_\xi\vec{x}(\vec{\xi},t):=\begin{pmatrix}
 \end{pmatrix}
 \end{equation}
 
-Note that since the transformation $\vec{x}(\vec{\xi},t)$ must be a diffeomorphism, the Jacobian matrix is defined. This is why we know that the covariant tangent vectors were defined in the first place. In fact, we will see from its interpretation that the matrix must be non-singular, meaning the covariant tangent vectors shape a full basis.\\
+Note that since the transformation $\vec{x}(\vec{\xi},t)$ must be a diffeomorphism, the Jacobian matrix is defined. This is why we know that the covariant tangent vectors were defined in the first place. In fact, we will see from its interpretation that the matrix must be non-singular, meaning the covariant tangent vectors shape a full basis.
 
 We can interpret this matrix, which will be different at each point $\vec{\xi},t$, as the matrix of a linear application that takes vectors in an initial canonical basis and sends them to the basis of covariant tangent vectors at the position of $\vec{\xi},t$. To see what this really means, let us write the Taylor expansion of $\vec{x}(\vec{\xi},t)$ around a certain fluid element of interest $\vec{\xi}^*$:
 \begin{equation}
 \vec{x}(\vec{\xi},t)=\vec{x}(\vec{\xi}^*,t)+D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)+O(||\vec{\xi}-\vec{\xi}^*||^2)
-\end{equation}}
-\mybox{
+\end{equation}
+
 For $\vec{\xi}\rightarrow \vec{\xi}^*$ (that is, for all fluid elements close enough to $\vec{\xi}^*$ at the initial time), neglecting second order terms, we find that:
 \begin{equation}
 \vec{x}(\vec{\xi},t)-\vec{x}(\vec{\xi}^*,t)\simeq D_{\vec{\xi}}\vec{x}(\vec{\xi}^*,t)\cdot (\vec{\xi}-\vec{\xi}^*)
 \end{equation}
-As it can be seen in Figure \ref{fig:JacobMatrix}, this means the Jacobian matrix is the linear application that best approximates in each neighbourhood $\vec{\xi}$ the effect of the transformation $\vec{x}(\vec{\xi},t)$ at each time. Interpreting the Jacobian matrix as the matrix of this linear application, we see that it sends the unit orthogonal vectors around each $\vec{\xi}$ to the covariant tangent vectors at in $\vec{x}$ space at time $t$. Then it must also encode the conversion of a local unit cube of fluid elements in $\vec{\xi}$ at $t=t_0$, to the parallelogram that the elements of the cube shape at time $t$. If we knew the volume increase factor of this conversion, we would know the amount by which the fluid elements that were intially close to $\vec{\xi}^*$ are dilated or contracted. In fact, with this linear application matrix idea, we can now understand that the magnitude of each covariant tangent vector $||\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}||$ gives us the separation increase factor at time $t$ of the distance between the fluid element $\vec{\xi}^*$ and the $\vec{\xi}$ that were aligned with it in the $\xi_k$ axis at time $t_0$.\\
+As it can be seen in Figure \ref{fig:JacobMatrix}, this means the Jacobian matrix is the linear application that best approximates in each neighbourhood $\vec{\xi}$ the effect of the transformation $\vec{x}(\vec{\xi},t)$ at each time. Interpreting the Jacobian matrix as the matrix of this linear application, we see that it sends the unit orthogonal vectors around each $\vec{\xi}$ to the covariant tangent vectors at in $\vec{x}$ space at time $t$. See this depicted in Figure \ref{fig:localContinuum}. Then it must also encode the conversion of a local unit cube of fluid elements in $\vec{\xi}$ at $t=t_0$, to the local parallelogram that the elements of the cube shape at time $t$. If we knew the volume increase factor of this conversion, we would know the amount by which the fluid elements that were intially close to $\vec{\xi}^*$ are dilated or contracted. In fact, with this linear application matrix idea, we can now understand that the magnitude of each covariant tangent vector $||\pdv{\vec{x}(\vec{\xi},t)}{\xi_k}||$ gives us the separation increase factor at time $t$ of the distance between the fluid element $\vec{\xi}^*$ and the $\vec{\xi}$ that were aligned with it in the $\xi_k$ axis at time $t_0$.
 
-{\bf The Jacobian Determinant\vspace{0.2cm}\\}
-The magnitude of the determinant of an $N\cross N$ matrix gives the $N$-volume of the parallelotope formed by its column vectors. To see why this is true, we can do the following heuristic explanation. Assume first that we have a non-zero determinant. Now, the determinant of a matrix does not change if we take a column of the matrix multiplied by any number and sum it to another one. Then, we could, in a finite amount of operations, convert the matrix into a diagonal matrix by only taking columns of itself, multiplied by necessary factors and adding them to other ones. Just like the typical Gaussian method to solve linear equation systems. The determinant of this diagonal matrix will be the same as the one for the initial matrix. Now, the column vectors of the diagonal matrix, form an orthogonal parallelotope the volume of which is immediately given by the product of the height, width, length etc., which is also the determinant of the diagonal matrix. Finally, realizing that given a set of $N$ vectors that forms an $N$-parallelotope, if we add one vector to another one, even multiplied by any factor, the volume of the resulting parallelotope is the same (since it is a shear transformation), then, the volume of the parallelotope formed by the column vectors of the diagonal matrix and the original matrix must be the same. Thus, the determinant of the original matrix gave in magnitude, the volume of the parallelotope shaped by its column vectors. $o.\varepsilon.\delta$. This intuition is depicted in Figure \ref{fig:volumeDet}.\\
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{2Jacob_as_lin_app.png}
+  \caption{Up left a depiction of the label space vector $\vec{\xi}-\vec{\xi}^*$, which is the position vector of fluid element $\vec{\xi}$ relative to the fluid element $\vec{\xi}^*$ at time $t_0$. Below the depiction of the relative position vector at time $t$: $\vec{x}(\vec{\xi},t)-\vec{x}(\vec{\xi}^*,t)$. This relative position vector at time $t$ should be roughly the same vector as the one to which the linear application matrix $D_\xi \vec{x}(\vec{\xi},t)$ sends the initial relative vector $\vec{\xi}-\vec{\xi}^*$ if $\vec{\xi}\rightarrow \vec{\xi}^*$. The closer the fluid elements the less erroneous it should be, until in the immediate locality of $\vec{\xi}^*$, the Jacobian matrix exactly determines the transformation of the fluid as a linear application (centered at the point $\vec{\xi}^*$.  }
+  \label{fig:JacobMatrix}
+\end{figure}
 
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{4each_locality.png}
+  \caption{A deptiction of how at each time $t$ and each point of label space $\vec{\xi}$, there is a linear application $D_\xi\vec{x}(\vec{\xi},t)$, which locally gives the transofrmation that best fits the distortion of the fluid mesh. In particular, the linear application sends the basis vectors (centered at each $\vec{\xi}$), in green, to the basis of covariant tangent vectors, green as well. This is nothing but a restatement that the covariant basis vectors must be locally tangent to the iso-label curves, in yellow. These curves are directed by the canonical basis vectors in the label space (where they are straight orthogonal lines) and are directed by the continuity of covariant tangent vectors in the general configuration space. We can see in pink how the Jacobian matrix of each point, as a linear application, is precise in the immediate vicinity of the points (since there their effect matches the yellow curves), but get more and more wrong as we get further away (the pink dotted lines deviate from the iso-label curves). }
+  \label{fig:localContinuum}
+\end{figure}
+
+
+\subsection*{ The Jacobian Determinant\vspace{-0.2cm}}
+The magnitude of the determinant of an $N\cross N$ matrix gives the $N$-volume of the parallelotope formed by its column vectors. To see why this is true, we can do the following heuristic explanation. Assume first that we have a non-zero determinant. Now, the determinant of a matrix does not change if we take a column of the matrix multiplied by any number and sum it to another one. Then, we could, in a finite amount of operations, convert the matrix into a diagonal matrix by only taking columns of itself, multiplied by necessary factors and adding them to other ones. Just like the typical Gaussian method to solve linear equation systems. The determinant of this diagonal matrix will be the same as the one for the initial matrix. Now, the column vectors of the diagonal matrix, form an orthogonal parallelotope the volume of which is immediately given by the product of the height, width, length etc., which is also the determinant of the diagonal matrix. Finally, realizing that given a set of $N$ vectors that forms an $N$-parallelotope, if we add one vector to another one, even multiplied by any factor, the volume of the resulting parallelotope is the same (since it is a shear transformation), then, the volume of the parallelotope formed by the column vectors of the diagonal matrix and the original matrix must be the same. Thus, the determinant of the original matrix gave in magnitude, the volume of the parallelotope shaped by its column vectors. $o.\varepsilon.\delta$. This intuition is depicted in Figure \ref{fig:volumeDet}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{10parallelepipid.png}
+  \caption{ A visual proof that a parallelogram does not change its area if we take any of the vectors delimiting its edges  and sum it to the other vector, even if we multiply it by any real factor $\alpha> 0$. In particular, if $\alpha\in(0,1]$, we can identify the area of the new parallelogram that is not over the old parallelogram to be the area of the old that is not under the new one. Thus their areas must be the same. For any $\alpha>1$, we could some $\beta_i\in(0,1]$ such that $\alpha=\sum_i\beta_i$, and apply recursively the rule that the area does not change for each of the additions, relative to the previous parallelogram. The proof then is also valid for any parallelepiped, since its faces are parallelograms, to any 4-parallelotope since its 4-faces are parallelepipeds and so on, to any parallelogram.  }
+  \label{fig:volumeDet}
+\end{figure}
 Therefore, the determinant of the Jacobian matrix of the trajectories of the fluid elements $\vec{x}(\vec{\xi},t)$, gives in magnitude, the local factor by which the volume between nearby fluid elements is scaled (dilated or contracted). Let us denote this quantity the Jacobian determinant:
 \begin{equation}
 J(\vec{\xi},t):=|det (D_\xi \vec{x}(\vec{\xi},t))|>0
 \end{equation}
-If $J(\vec{\xi},t)>1$, in the locality of $\vec{\xi}$, the fluid is dilated. This means that given a fluid element labeled $\vec{\xi}^*$, the fluid elements that were closest to it at the time we made the labels: those in the ball $\{\vec{\xi}\in\R^N:||\vec{\xi}^*-\vec{\xi}||=\varepsilon\}$ for a small enough $\varepsilon>0$, are now getting further in configuration-space: $||\vec{x}(\vec{\xi}_0,t)-\vec{x}(\vec{\xi}_1,t)||>\varepsilon$ for this $t>t_0$. If $J(\vec{\xi},t)<1$, the distance will get smaller.}
-\mybox{
-{\bf The Change of Variables in an Integral\vspace{0.2cm}\\}
+If $J(\vec{\xi},t)>1$, in the locality of $\vec{\xi}$, the fluid is dilated. This means that given a fluid element labeled $\vec{\xi}^*$, the fluid elements that were closest to it at the time we made the labels: those in the ball $\{\vec{\xi}\in\R^N:||\vec{\xi}^*-\vec{\xi}||=\varepsilon\}$ for a small enough $\varepsilon>0$, are now getting further in configuration-space: $||\vec{x}(\vec{\xi}_0,t)-\vec{x}(\vec{\xi}_1,t)||>\varepsilon$ for this $t>t_0$. If $J(\vec{\xi},t)<1$, the distance will get smaller.
+
+\subsection*{ The Change of Variables in an Integral\vspace{-0.2cm}}
 This interpretation of the Jacobian is why it is used in the variable changes of integrals. Say we wish to compute the $N$-volume in configuration-space that occupy at time $t$ the fluid elements that at $t_0$ were in the domain $\Omega_0$. They will now be in a domain $\Omega_t=\vec{x}(\Omega_0,t)$, so we seek the integral: $\iint_{\vec{x}(\Omega,t)}dx_1\cdots dx_N$. If we discretize the space around the point $\vec{\xi}$, in the limit of small discrete steps $\Delta x_j, \Delta \xi_j \rightarrow 0$, we will have for each point $\vec{\xi}$ that $\Delta x_1\cdots \Delta x_N= J(\vec{\xi},t)\Delta \xi_1\cdots \Delta\xi_N$, since the Jacobian gives the volume increase factor in the immediate neighbourhood of the point. If we made a continuous sum of these elements over all the volume $\Omega_0$ in label space, we would find the volume we were looking for:
 \begin{equation}\label{volume}
 \iint_{\vec{x}(\Omega,t)}dx_1\cdots dx_N=\iint_{\Omega} J(\vec{\xi},t) d\xi_1\cdots d\xi_N
@@ -913,14 +947,14 @@ Vol\qty(\vec{x}(\Omega,t)\cap B_\varepsilon(\vec{x}(\vec{\xi},t)))=J(\vec{\xi},t
 \begin{equation}
 Vol\qty(\vec{x}(\Omega))=\lim_{ \varepsilon\rightarrow 0} \sum_{\vec{\xi}\in\Omega} Vol\qty(\vec{x}(\Omega,t)\cap B_\varepsilon(\vec{x}(\vec{\xi},t)))=\lim_{ \varepsilon\rightarrow 0} \sum_{\vec{\xi}\in\Omega} J(\vec{\xi},t)Vol\qty(\Omega \cap B_\varepsilon (\vec{\xi}))
 \end{equation}
-with $B_\varepsilon(x)\subset \R^N$ a ball of center $x\in\R^N$ and radious $\varepsilon>0$. Using the definition of integral, this last equation leads to equation \eqref{volume}.\\
+with $B_\varepsilon(x)\subset \R^N$ a ball of center $x\in\R^N$ and radious $\varepsilon>0$. Using the definition of integral, this last equation leads to equation \eqref{volume}.
 
 More in general, if what we wanted was to do a weighted sum where each point in configuration space has a scalar value $f(\vec{x},t)$, then we would have enough in the preceding more formal development to multiply each volume contribution by the value of its corresponding scalar. This would yield:
 \begin{equation}\label{integralChange}
 \iint_{\vec{x}(\Omega,t)}f(\vec{x},t)dx_1\cdots dx_N=\iint_{\Omega} f(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}J(\vec{\xi},t) d\xi_1\cdots d\xi_N
 \end{equation}
 
-{\bf The Inverse Transformation and its Jacobian\vspace{0.2cm}\\}
+\subsection*{ The Inverse Transformation and its Jacobian\vspace{-0.2cm}}
 Note that all of this development is equally valid for the inverse transformation, that gives the label of the trajectory that passes from each configuration space point at each time $\vec{\xi}(\vec{x},t)$. It turns out there is a very convenient connection: that the Jacobian matrix of $\vec{\xi}(\vec{x},t)$ is the inverse of the Jacobian of $\vec{x}(\vec{\xi},t)$. Since one is the inverse map of the other this could have already been suspected. A more immediate prove however comes from the follwing: since we impose that $\vec{x}(\vec{\xi}(\vec{x},t),t)=\vec{x}$, taking each $k$-th component of the vectors and derivating them by $x_j$ we get applying the chain rule:
 \begin{equation}
 \pdv{}{x_j}x_k(\vec{\xi}(\vec{x},t),t)=\pdv{}{x_j}x_k \Rightarrow \sum_{l=1}^N \pdv{x_k(\vec{\xi},t)}{\xi_l}\Big\rvert_{\vec{\xi}(\vec{x},t)}\pdv{\xi_l(\vec{x},t)}{x_j}=\delta_{jk}
@@ -945,12 +979,11 @@ $$
 \Rightarrow D_\xi \vec{x}(\vec{\xi},t)\cdot D_x \vec{\xi}(\vec{x},t) = Id_{NxN}
 $$
 Which means by the uniqueness of the inverse matrix that the Jacobian matrix of $\xi(x,t)$ is the inverse of the Jacobian matrix of $x(\xi,t)$. Namely, $D_x \vec{\xi}(\vec{x},t)=D_\xi \vec{x}(\vec{\xi},t)^{-1}$.
-}
-\mybox{
-In particular this means that in order to compute the determinant of any of them it is enough to compute the one for the other one, since for any invertible matrix $A$ with inverse $A^{-1}$ we have that $det(A)=1/det(A^{-1})$. This will be relevant, because computing $D_\xi \vec{x}(\vec{\xi},t)$ will be trivial at all times if we choose the label space to be a regular discretized grid, while $D_x \vec{\xi}(\vec{x},t)$ will hardly be in a regular grid.\\
 
-{\bf Deriving the Continuity Equation from a simple Assumption \vspace{0.2cm} \\}
-Let us see how useful the Jacobian is, in that we will be able to derive the continuity equation of a fluid from simple considerations, and we will arrive at equation $\eqref{JacPre}$ identifying a vital relationship between the velocity field driving the fluid elements and the Jacobian. In fact, we will arrive to find which is the conserved quantity along any given trajectory, which leads to an alternative way to compute the time evolution of the density.\\
+In particular this means that in order to compute the determinant of any of them it is enough to compute the one for the other one, since for any invertible matrix $A$ with inverse $A^{-1}$ we have that $det(A)=1/det(A^{-1})$. This will be relevant, because computing $D_\xi \vec{x}(\vec{\xi},t)$ will be trivial at all times if we choose the label space to be a regular discretized grid, while $D_x \vec{\xi}(\vec{x},t)$ will hardly be in a regular grid.
+
+\subsection*{Deriving the Continuity Equation from a simple Assumption \vspace{-0.2cm} }
+Let us see how useful the Jacobian is, in that we will be able to derive the continuity equation of a fluid from simple considerations, and we will arrive at equation $\eqref{JacPre}$ identifying a vital relationship between the velocity field driving the fluid elements and the Jacobian. In fact, we will arrive to find which is the conserved quantity along any given trajectory, which leads to an alternative way to compute the time evolution of the density.
 
 Let us first see what the continuity equation in the Eulerian frame \eqref{CE} is telling us. Integrating both sides of the equation on a bounded configuration space volume $V\subset\R^N$, with boundary $\partial V$, applying the divergence theorem we get:
 $$
@@ -959,7 +992,7 @@ $$
 \begin{equation}
 \pdv{}{t} \int_{V} \rho(\vec{x},t) dx_1\cdots dx_N=-\int_{\partial V} \rho(\vec{x},t)\vec{v}(\vec{x},t)\cdot d\vec{S}(\vec{x})=-\int_{\partial V} \rho(\vec{x},t)v_{normal}(\vec{x},t)\cdot dS
 \end{equation}
-The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $V$ (in units of fluid-elements/time). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface (in fluid-elements/time). Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes. The variation of its number can only be due to their displacement to adjacent points of space. Universes cannot be destroyed nor created, but they can flow lighter or denser in density.\\
+The quantity in the left-hand side is the variation in time of the amount of Universes/Bohmian-trajectories inside the configuration space volume $V$ (in units of fluid-elements/time). The one in the right is the outward flux of Universes/Bohmian-trajectories across the surface (in fluid-elements/time). Thus, the continuity equation is equivalent to imposing that there is no source or sink for the number of Universes. The variation of its number can only be due to their displacement to adjacent points of space. Universes cannot be destroyed nor created, but they can flow lighter or denser in density.
 
 Then, let us try to derive the continuity equation in the converse way: we acknowledge that the amount of Universes in a initial configuration space $N$-volume $\Omega_0$, should be the same as the amount of Universes in the volume at which those Universes extend at time $t$: $\vec{x}(\Omega_0,t)$. Mathematically this conservation of fluid-elements would mean:
 \begin{equation}
@@ -977,14 +1010,12 @@ Since this must be true for any possible $\Omega_0$, it must be that:
 \begin{equation}
 \rho(\vec{\xi},t_0) = \rho(\vec{\xi},t) J(\vec{\xi},t)\Longleftrightarrow \rho(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{J(\vec{\xi},t)}\Longleftrightarrow \frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}=J(\vec{\xi},t)
 \end{equation}
-}
 
-\mybox{
 Or equivalently if we evaluate $\vec{\xi}=\vec{\xi}(\vec{x},t)$:
 \begin{equation}
 \rho(\vec{x},t_0) = \rho(\vec{x},t) J(\vec{x},t)\Longleftrightarrow \rho(\vec{x},t)=\frac{\rho(\vec{\xi},t_0)}{J(\vec{x},t)}\Longleftrightarrow \frac{\rho(\vec{x},t_0)}{\rho(\vec{x},t)}=J(\vec{x},t)
 \end{equation}
-On the one hand, this gives us a way to compute the density in any time by just knowing the density at the initial time $\rho(\vec{\xi},t_0)$ and $\vec{x}(\vec{\xi},t)$ (which lets us compute the derivatives in label space $\pdv{x_k}{\xi_j}$ and thus the Jacobian determinant $J$). On the other hand, it lets us interpret the Jacobian in fluid terms: $J(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}$. The Jacobian determinant of $\vec	{x}(\vec{\xi},t)$ is the (positive) ratio of the density perceived by the fluid element $\vec{\xi}$ in its local surrounding relative to the one at the beginning. This can be smaller than one or greater than one. If the ratio is greater than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, meaning that the fluid of configuration-space "Universes" has been diluted around $\vec{\xi}$, the density has been decreased, which is in accordance with the fact that a positive Jacobian meant the trajectories in that locality get more spaced between them. If on the other hand the ratio is smaller than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, the density gets concentrated locally, in accordance with the convergence of trajectories in the surrounding. Note though that there is no source of Universes, since the Jacobian, accounting only for the movement of trajectories is the only factor influencing the density change. This is precisely what we imposed with the integral above.\\
+On the one hand, this gives us a way to compute the density in any time by just knowing the density at the initial time $\rho(\vec{\xi},t_0)$ and $\vec{x}(\vec{\xi},t)$ (which lets us compute the derivatives in label space $\pdv{x_k}{\xi_j}$ and thus the Jacobian determinant $J$). On the other hand, it lets us interpret the Jacobian in fluid terms: $J(\vec{\xi},t)=\frac{\rho(\vec{\xi},t_0)}{\rho(\vec{\xi},t)}$. The Jacobian determinant of $\vec	{x}(\vec{\xi},t)$ is the (positive) ratio of the density perceived by the fluid element $\vec{\xi}$ in its local surrounding relative to the one at the beginning. This can be smaller than one or greater than one. If the ratio is greater than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, meaning that the fluid of configuration-space "Universes" has been diluted around $\vec{\xi}$, the density has been decreased, which is in accordance with the fact that a positive Jacobian meant the trajectories in that locality get more spaced between them. If on the other hand the ratio is smaller than one, then $\rho(\vec{\xi},t_0)>\rho(\vec{\xi},t)$, the density gets concentrated locally, in accordance with the convergence of trajectories in the surrounding. Note though that there is no source of Universes, since the Jacobian, accounting only for the movement of trajectories is the only factor influencing the density change. This is precisely what we imposed with the integral above.
 
 Now, let us finish deriving from here the continuity equation as we can get from the Schrödinger Equation. Let us take $\rho(\vec{\xi},t_0) = \rho(\vec{\xi},t) J(\vec{\xi},t)$ and derivate it at each side in time. Since the left hand side is time independent, we get:
 \begin{equation}
@@ -1011,15 +1042,14 @@ which is the Continuity Equation in the Lagrangian frame \eqref{CE.L}. If we now
 \begin{equation}
 \hspace*{-0.6cm}\pdv{\rho(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\dv{\rho(\vec{x}(\vec{\xi},t),t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}\pdv{x_k(\vec{\xi},t)}{t}\Big\rvert_{\vec{\xi}(\vec{x},t)}=\pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)
 \end{equation}
-}
-\mybox{
+
 We have that:
 \begin{equation}
 \pdv{\rho(\vec{x},t)}{t}+\sum_{k=1}^N\pdv{\rho(\vec{x},t)}{x_k}v_k(\vec{x},t)+\rho(\vec{x},t)\pdv{v_k(\vec{x},t)}{x_k}=0
 \end{equation}
-which reverting the derivative of a product, yields the Continuity Equation in the Eulerian frame \eqref{CE}.\\
+which reverting the derivative of a product, yields the Continuity Equation in the Eulerian frame \eqref{CE}.
 
-{\bf What is $\pdv{}{t}J(\vec{\xi},t)$?\vspace{0.2cm}\\}
+\subsection*{ What is $\pdv{}{t}J(\vec{\xi},t)$?\vspace{-0.2cm}}
 Let us prove the identity \eqref{jainkoa}, since it has its very big relevance. Let us first write the definition of determinant in all of its glory:
 \begin{equation}
 J(\vec{\xi},t)=|det \Big( D_\xi \vec{x}(\vec{\xi},t) \Big)|=\sum_p sgn(p) \pdv{x_1}{\xi_{p1}} \cdots \pdv{x_N}{\xi_{pN}}
@@ -1058,8 +1088,7 @@ $$
 $$
 + \sum_{k=1}^N\pdv{v_N(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}\sum_p sgn(p)\pdv{x_1}{\xi_{p1}} \cdots \pdv{x_{N-1}}{\xi_{pN-1}}\pdv{x_k}{\xi_{pN}}
 $$
-}
-\mybox{
+
 where recalling the definition of determinant, we can see that it is a sum of many determinants, many of which will be zero since they will have rows with the same elements and thus the $N$-volume of the parallelotopes that form their rows will be null. We can see clearly from the last equation that:
 \begin{equation}
 \pdv{}{t}J(\vec{\xi},t)=\sum_{k=1}^N \pdv{v_1(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)} \begin{vmatrix}
@@ -1082,9 +1111,9 @@ In each determinant, if the index $k$ is in row $j$, for all the $k\neq j$, the 
 \begin{equation}\label{EulerDif}
 \pdv{}{t}J(\vec{\xi},t)=J(\vec{\xi},t)\vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}
 \end{equation}
-which is what we wanted to prove.\\
+which is what we wanted to prove. $o.\varepsilon.\delta$.
 
-Equation \eqref{EulerDif} is a differential equation stating how the Jacobian of a certain fluid element evolves in time, given we know the velocity field moving those fluid elements.\\
+Equation \eqref{EulerDif} is a differential equation stating how the Jacobian of a certain fluid element evolves in time, given we know the velocity field moving those fluid elements.
 
 In particular, this means that:
 \begin{equation}
@@ -1095,7 +1124,7 @@ where as $J(\vec{\xi},t_0)=1$ by definition, we have that:
 \frac{1}{J(\vec{\xi},t)}=\frac{\rho(\vec{\xi},t)}{\rho(\vec{\xi},t_0)}=e^{-\int_{t0}^t \vec{\nabla}_x\cdot\vec{v}(\vec{x},t)\Big\rvert_{\vec{x}(\vec{\xi},t)}dt}
 \end{equation}
 which is the propagator equation we found in equation \eqref{JacPre} from the continuity equation in the Lagrangian frame. This equation has a very big relevance, since it allows the computation of the Jacobian, the density and the velocity field, just knowing two of them. Also, it is the expression where all the interpretations we were dealing with are summerized.
-}
+
 \newpage
 \subsubsection*{(II.e) Partial Derivatives relative to the Labels}
 \addcontentsline{toc}{subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}
@@ -1204,6 +1233,12 @@ In $N>1$ the method is not as straightforward as it might seem, since the mesh l
 \begin{enumerate}
 \item Numerically compute the new center of mass of the probability density.
 \item Taking the center of mass, compute the numerical integral of the density around it in hypercubes of each time a bigger grid element width, until you find the hypercube surrounding the center of mass with, say, $99\%$ of the normalized density inside (or another custom value).
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{9orthotope.png}
+  \caption{ An intuition of how the orthotope mesh would evolve to the next time step, preserving the orthogonality of the edges of the domain but adapting itself in size (and even aspect-ratio) to the state of the evolved function. }
+  \label{fig:ortho}
+\end{figure}
 \item Define the $2^N$ corners of this hypercube as the vertices of the grid in the next time and compute the new regular grid inside it with the same number of points. Knowing the positions where the mesh points should be in the next time, compute the velocity of each old mesh point to arrive there. If for example, we are using a simple Euler method to evolve the trajectories, use: $\pdv{}{t}x_k(\xi,t_{j})=\frac{x_k(\xi,t_{j+1})-x_k(\xi,t_{j})}{t_{j+1}-t_j}$.
 \item Compute the spatial derivatives $\pdv{}{x_k}$ of the quantum fields at each old grid point, using standard equispaced mesh methods.
 \item Employing the computed velocity and spatial derivatives, compute the value of the fields on each new mesh point using the time evolution equations described earlier for them.
@@ -1226,6 +1261,13 @@ for a fixed constant $C$. If we discretize the integral, we get:
 M_j(t)\cdot (x^{j+1}-x^j)=C \quad \forall j
 \end{equation}
 where $M_j(t)$ could be the average of the monitor function evaluated at the edges of the grid-cell, or rather the mid-point interpolation. If for example, the monitor $M$ is chosen to be $M(x,t)=|\pdv{\rho(x,t)}{x}|$, then the bigger the curvature of the density around a grid cell, the denser the grid will become, since equation \eqref{discEq} would require a smaller step between nodes. If on the other hand, the curvature (and thus $M$) gets flatter, the grid will try to space more the nodes. See Figure \ref{fig:equid} to get a visual intuition. Note that we should alternatively choose the monitor function to be $M(x,t)=\varepsilon+|\pdv{\rho(x,t)}{x}|$ for some $\varepsilon>0$, to avoid an infinite separation wherever the density is exactly flat. 
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{8equidistribution.png}
+  \caption{ A visual intuition of the equidistribution principle. Above the function at an initial reference time in which we define the labels of the mesh elements $\vec{\xi}$. We have defined them equispaced. Below left, we see the representation of where the same mesh elements should be in $x$ space in order to make the sum of the curvature of the function $f$ times their distance be constant. The result (below right) is that the function at time $t$ as seen from the mesh element frame is still well behaved, with no big variations. }
+  \label{fig:equid}
+\end{figure}
 
 Additionally, we could also adapt the grid to any other positive monitor of the system like $M(x,t)=\varepsilon+|\pdv{S(x,t)}{x}|$, $M(x,t)=\varepsilon+|\pdv[2]{S(x,t)}{x}|$, $M(x,t)=\varepsilon+c_1*|\pdv{S(x,t)}{x}|+c_2*|\pdv{\rho(x,t)}{x}|$ etc. Each would make the grid satisfy a different requirement.
 
@@ -1441,23 +1483,23 @@ Both in the continous or discrete functional cases, we can build new, perhaps mo
 \newpage
 
 \fancyhead[L]{III . Part Lagrangian Part Eulerian Equations}
-\section*{III . Part Lagrangian Part Eulerian Equations}
+\section*{III . Part Lagrangian Part Eulerian Equations \vspace{-0.2cm}}
 \addcontentsline{toc}{subsection}{\bf III . Part Lagrangian Part Eulerian Equations}
-In this section, we will explore an intermediate approach between the Lagrangian and Eulerian frames. For this, we will consider that part of the system is observed in a Lagrangian frame, while the other part is considered in an Eulerian frame. The degrees of freedom described on the Eulerian frame will be denoted by $\vec{x}=(x_1,...,x_m)\in\R^m$ while the rest of degrees of freedom $\vec{y}=(x_{m+1},...,x_N)\in\R^{N-m}$ will be described as seen by Lagrangian frame fluid elements. If we need to refer to both kinds of variables at once, we will use $\vec{\x}=(\vec{x}, \vec{y})=(x_1,...,x_N)\in \R^N$.
+In this section, we will explore an intermediate approach between the Lagrangian and Eulerian frames. For this, we will consider that part of the system is observed in a Lagrangian frame, while the other part is considered in an Eulerian frame. The degrees of freedom described on the Eulerian frame will be denoted by $\vec{x}=(x_1,...,x_m)\in\R^m$ while the rest of degrees of freedom $\vec{y}=(x_{m+1},...,x_N)\in\R^{N-m}$ will be described as seen by Lagrangian frame fluid elements. If we need to refer to both kinds of variables at once, we will use $\vec{\x}=(\vec{x}, \vec{y})=(x_1,...,x_N)\in \R^N$.\vspace{-0.4cm}
 
-\subsection*{If Only a subsystem is a Lagrangian fluid}
+\subsection*{If Only a subsystem is a Lagrangian fluid\vspace{-0.3cm}}
 
-The most natural way (but not the one we will follow) to consider only a subsystem in the Lagrangian frame would be considering that only the degrees $\vec{y}$ represent a fluid. If so, we would label each fluid element using real vectors $\vec{\xi_y}\in\Gamma_0\subseteq \R^{N-m}$ representing their position $\vec{y}$ in the Lagrangian configuration-space at a reference time $t_0$, thus $\vec{\xi_x}:=\vec{y}( \vec{\xi_y},t_0)$. Since we would assume each fluid element follows the trajectory given by a {\em continuous} velocity field in configuration-space, by the Picard-Lindelöf theorem, there would exist a diffeomorphism $\vec{y}(\vec{\xi_y},t)\equiv \vec{y}^\xi(t) \quad \xi_y \in \Gamma_0 \subset \R^N$ giving their trajectories at all times. 
+The most natural way (but not the one we will typically follow) to consider only a subsystem in the Lagrangian frame would be considering that only the degrees $\vec{y}$ represent a fluid. If so, we would label each fluid element using real vectors $\vec{\xi_y}\in\Gamma_0\subseteq \R^{N-m}$ representing their position $\vec{y}$ in the Lagrangian configuration-space at a reference time $t_0$, thus $\vec{\xi_x}:=\vec{y}( \vec{\xi_y},t_0)$. Since we would assume each fluid element follows the trajectory given by a {\em continuous} velocity field in configuration-space, by the Picard-Lindelöf theorem, there would exist a diffeomorphism $\vec{y}(\vec{\xi_y},t)\equiv \vec{y}^\xi(t) \quad \xi_y \in \Gamma_0 \subset \R^N$ giving their trajectories at all times. \vspace{-0.4cm}
 
-\subsection*{Conditional Functions}
+\subsection*{Conditional Functions\vspace{-0.3cm}}
 
-In order to have a geometric understanding of what having only part of the system in a Lagrangian frame means, before we dig deeper, consider a field $f(\vec{\x},t)$, where we evaluate its $\vec{y}$ coordinates at each time along the positions given by the trajectory $\vec{y}^\xi(t)$. We would then be considering the so called {\bf conditional function} $f(\vec{x}, \vec{y}^\xi(t),t)=f(\vec{x}, \vec{\xi}_y,t)\equiv f^\xi(\vec{x},t)$. Depending on the trajectory $\vec{\xi}_y$ we choose, the function $f(\vec{x}, \vec{y}^\xi(t),t)$ will represent a different moving   $m$ dimensional {\bf slice} of the $N$ dimensional field $f(\vec{\x},t)$. It is this why we will also call each possible set of degrees of freedom $\vec{y}$ a "transversal section" or "slice" of the system. You can see in Figure \ref{fig:slices} a visual representation of some real conditional fields along different trajectories. Among others, we will deal with conditional wavefunctions $\psi(\vec{x}, \vec{y}^\xi(t),t)$, conditional densities $\rho(\vec{x}, \vec{y}^\xi(t),t)$ and actions $S(\vec{x}, \vec{y}^\xi(t),t)$ as defined in the previous sections.
+In order to have a geometric understanding of what having only part of the system in a Lagrangian frame means, before we dig deeper, consider a field $f(\vec{\x},t)$, where we evaluate its $\vec{y}$ coordinates at each time along the positions given by the trajectory $\vec{y}^\xi(t)$. We would then be considering the so called {\bf conditional function} $f(\vec{x}, \vec{y}^\xi(t),t)=f(\vec{x}, \vec{\xi}_y,t)\equiv f^\xi(\vec{x},t)$. Depending on the trajectory $\vec{\xi}_y$ we choose, the function $f(\vec{x}, \vec{y}^\xi(t),t)$ will represent a different moving   $m$ dimensional {\bf slice} of the $N$ dimensional field $f(\vec{\x},t)$. It is this why we will also call each possible set of degrees of freedom $\vec{y}$ a "transversal section" or "slice" of the system. You can see in Figure \ref{fig:slices} a visual representation of some conditional fields along different trajectories. Among others, we will deal with conditional wavefunctions $\psi(\vec{x}, \vec{y}^\xi(t),t)$, conditional densities $\rho(\vec{x}, \vec{y}^\xi(t),t)$ and actions $S(\vec{x}, \vec{y}^\xi(t),t)$ as defined in the previous sections.
 
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.65\linewidth]{slices.jpg}
-  \caption{Depiction of the probability density of a 2D quantum system ($N=2$). In red the probability density of the full wave-function $\Psi(x,y,t)$ for a given time. In blue the pair of conditional wave-functions associated to two Bohmian trajectories $(x^{(1)}(t),y^{(1)}(t))$ and $(x^{(2)}(t),y^{(2)}(t))$ at a given time. Note that actually they coincide with other two trajectory's CWF-s at that time. }
+    \includegraphics[width=0.75\linewidth]{6slices_1d.png}
+  \caption{Depiction of conditional functions in $N=2$, where the $y$ axis is considered in the Lagrangian frame and $x$ in the Eulerian one. In the center left, there are two axes representing the initial distribution of points $\xi_y$ in $y$ in an equidistant fashion, and their (non-equidistant) positions $y(\xi_y,t)$ after a time $t$. Each fluid element in $y$ has its own associated conditional function $f(x,y(\xi_y,t),t)$. If we see the conditional functions from the full function's $f(x,y,t)$ perspective, we can acknowledge they are slices, as depicted in the right (above the initial function and below the function at time $t$). These slices can give us an intuition of the full function.  }
   \label{fig:slices}
 \end{figure}
 
@@ -1540,7 +1582,7 @@ Therefore, for both allowing a homogeneous interpretation of physics and allowin
 
 For this, we will use $\vec{\xi}_x=(\xi_1,...,\xi_m)$ to denote the Lagrangian labels of the degrees of freedom treated in the Eulerian frame $\vec{x}$, while $\vec{\xi}_y=(\xi_{m+1},...,\xi_N)$ will denote the labels of the Lagrangian degrees of freedom. In general, to uniquely identify a fluid element and its associated conditional function, we will not have enough with $\vec{\xi}_y$, but will require the full label $\vec{\xi}=(\vec{\xi}_x,\vec{\xi}_y)\in \Omega_0\subseteq\R^N$. This means that now the continuous velocity field driving the fluid elements can be dependent on $\vec{x}$, meaning there will be a diffeomorphism describing the trajectories for the full system $\vec{\x}(\vec{\xi},t)=(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t))$. 
 
-Very importantly, whenever we consider a conditional function $f(\vec{x},\vec{y}(\vec{\xi},t),t)$, we will also be able to conceive another conditional function "coupled" to the first through the trajectory of a same fluid element $\vec{\xi}$, namely $f(\vec{x}(\vec{\xi},t),\vec{y},t)$. In fact, we could consider several conditional functions, until $N$, each with a different dimensionality. For example, we could consider $f(x_1(\vec{\xi},t),x_2(\vec{\xi},t),x_3,...,x_N,t)$, $f(x_1, x_2, x_3(\vec{\xi},t), x_4,...,x_N)$ and $f(x_1, x_2, x_3, x_4(\vec{\xi},t),...,x_N(\vec{\xi},t))$. In general, we will call these conditional functions coupled by parts of the same trajectory, {\bf complementary conditional functions}. Interesting particular cases will be:
+Very importantly, whenever we consider a conditional function $f(\vec{x},\vec{y}(\vec{\xi},t),t)$, we will also be able to conceive another conditional function "coupled" to the first through the trajectory of a same fluid element $\vec{\xi}$, namely $f(\vec{x}(\vec{\xi},t),\vec{y},t)$. In fact, we could consider several conditional functions, until $N$, each with a different dimensionality. For example, we could consider $f(x_1(\vec{\xi},t),x_2(\vec{\xi},t),x_3,...,x_N,t)$, $f(x_1, x_2, x_3(\vec{\xi},t), x_4,...,x_N)$ and $f(x_1, x_2, x_3, x_4(\vec{\xi},t),...,x_N(\vec{\xi},t))$. In general, we will call these conditional functions coupled by parts of the same trajectory, {\bf complementary conditional functions} (see Figure \ref{fig:complementary}). Interesting particular cases will be:
 \begin{itemize}
 \item Having $N$ complementary conditional functions, one per each degree $x_k$, describing the function conditioned to the rest of the system being in a given trajectory. Meaning that each degree of freedom will be described by a 1D Eulerian function and a point-like position $x_k(\vec{\xi},t)$.
 \item Having $N/3$ complementary conditional functions, one per triad of degrees of freedom. This way, we could have a 3D function describing each physical space particle, together with its 3D position $(x_{k}(\vec{\xi},t), x_{k+1}(\vec{\xi},t),x_{k+2}(\vec{\xi},))$, where $\vec{\xi}$ would reflect its initial position and the initial position of the rest of the particles in the system. For each possible initial position of the system, we would have a different set of 3D functions and trajectories for the system, which unfortunately from the ontological perspective, will influence each other contingently (they will push each other as we already saw).
@@ -1548,14 +1590,18 @@ Very importantly, whenever we consider a conditional function $f(\vec{x},\vec{y}
 \end{itemize} 
 Hereafter, we will assume when describing a conditional function that along with it, we also evolve the rest of complementary conditional functions associated to its trajectory.
 
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.75\linewidth]{7slices_complementary.png}
+  \caption{ Visual intuition about the complementary conditional functions in $N=2$. In the center left, we see the implicit grid of fluid elements of the whole quantum system. The red dots symbolize each a fluid element we will evolve in time. Each will have associated its own conditional function in $x$ and in $y$. If they are Bohmian trajectories and $f=\psi$, then these two slices of the full wavefucntion are enough to know the velocity of the Bohmian trajectory. In the right we see how several of these complementary conditional functions (each having its trajectory $\vec{x}(\vec{\xi},t)$) gives us an intuition of the full function $f(x,y,t)$ (in blue above) in terms of crossed slices moving in $\R^N$. Note that in the intersection between the conditional functions of different trajectories, the value of the conditional function should be exactly the same. This could be a numerical indicator of the goodness of the time evolution. }
+  \label{fig:slices}
+\end{figure}
 Note that if we consider the set of complementary conditional functions for a given discretized grid of fluid elements $\{\vec{\xi}^j\}_{j=1}^M$, we will have that for all the fluid elements that at a certain time turn to be aligned along any $x_k$ axis, their conditional functions in that axis will be exactly the same. See Figure \ref{fig:over} for a visual understanding. This means that we will have an over-representation of the "slices" of the full function. In the numerical/computational approaches, this will not be something to really worry about, since the positions being real numbers makes it is hardly impossible to have more than one trajectory passing from the same $x_k$ point at the same time. However, in theory an infinite amount of trajectories cross the same point in $x_k$ at the same time, which is why we rise up this over-representation warning.
-
-
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.65\linewidth]{many_bohmian.png}
-  \caption{In blue we can see the affine supports of several pairs of CWF-s (slices of the WF) built by following \eqref{d}. In each intersection we have enough information as for evolving a Bohmian trajectory. }
+  \caption{In blue we can see the affine supports of several pairs of CWF-s (slices of the WF) built by following the complementary function idea. In each intersection we have enough information as for evolving a Bohmian trajectory. }
   \label{fig:over}
 \end{figure}
 
@@ -1953,16 +1999,16 @@ As a little computational detail, if we choose the Lagrangian degrees to move, a
 \item Compute the derivatives relative to the label space, which can be chosen to be regular, as explained in (III.e). It involves all the Jacobian determinant (or inverse Jacobian) computation burden.
 \item We could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>t_0$ (since remember the equations for conditional functions do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could be computed easily with advanced finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary! It is this why we said in an Eulerian grid all this parallelization was actually possible as well, just that we needed the fluid view to realize it.
 \end{itemize} 
-\begin{figure}[h!]
+\begin{figure}[p!]
   \centering
-    \includegraphics[width=0.5\linewidth]{hyperplaness.png}
-  \caption{The $M$ hyperplanes in blue depict the $N-1$ dimensional supports of the CWF-s with a single Lagrangian degree ($x_3$). Each of the $M$ hyperplanes is labelled by its initial position in the $x_3$ axis, the labels $\xi_j$. The yellow dots represent the $M_{x1}xM_{x2}$ discretized points of each hyperplane CWF. As it can be seen, the yellow points of the different hyperplanes are aligned, since they are the Eulerian grid part. This means that derivatives in the Lagrangian axis can be computed numerically at all times for any considered point in the hyperplanes by taking the information in each of these beams.}
+    \includegraphics[width=1\linewidth]{11one_Lagrangian.png}
+  \caption{In the left we see an intuition of the $N=3$ case of the single Lagrangian degree case. Above we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and bellow a time $t$ afterwards, how they are distributed in $x_3$, following their trajectory $x_3(\xi,t)$. Each of these fluid fluid elements has associated a conditional function over a plane in $x_1,x_2$, discretized in a regular Eulerian grid. All these planes have the same number of points in $x_1,x_2$, and, very importantly, at the same positions. The relevance of them being in the same positions, can be more clearly seen bellow, where all these planes as slices of the support of the full function $f(x_1,x_2,x_3,t)$ are stacked in parallel each in the $x_3=x_3(\xi,t)$ position. Since the Eulerian discrete points (in yellow) are in the same $x_1,x_2$ points, they are aligned across the planes, meaning that the computation of the partial derivative $\pdv{}{x_3}$ in the Lagrangian axis will be computable from plane to plane even if the distance between the planes varies due to the movement of the coupled fluid element in $x_3$. Each of these lines traversing the planes along the same Eulerian points is what in the text we call a derivative {\bf beam}. In the right, we can see a depiction with the same particularities, just that we represent a $N=4$ quantum system, where the support of each conditional function is a discretized $\R^4$ hyperplane, a 3D box. It is filled with Eulerian nodes, which again have the same positions between the different trajectories to allow the derivatives in the $x_4$ (Lagrangian) axis. This is aimed to be represented by noting in blue that all the hyperplane-boxes have the same point $(a,b,c)$ just with $x_4$ equaling their trajectory position. }
   \label{fig:hyperplane}
 \end{figure}
 
 
 \subsection*{N-m Lagrangian degrees}
-In order to generalize the algorithm, we will use as examples the 2 and 3 Lagrangian degree cases, which will provide us a visual imagination and allow us find the pattern and induce the generalization. You can find their geometrical illustration in Figures \ref{fig:hyper1} and \ref{fig:hyper2}. We will explain the things with allusion to them. The algorithm itself will have almost no modification. Given we have an initial ensemble of $M_L^{N-m}$ conditional functions\footnote{We will choose to have as many conditional functions as for having representatives from an initial regular grid in the whole Lagrangian axis subspace. We will have $M_L$ points in each axis, meaning a total of $M_L^{N-m}$ Lagrangian fluid elements.} and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
+In order to generalize the algorithm, we will use as examples the 2 and 3 Lagrangian degree cases, which will provide us a visual imagination and allow us find the pattern and induce the generalization. You can find the geometrical illustration of 2 in Figure \ref{fig:hyper1} (the one for 3 is immediate thereof). We will explain the things with allusion to them. The algorithm itself will have almost no modification. Given we have an initial ensemble of $M_L^{N-m}$ conditional functions\footnote{We will choose to have as many conditional functions as for having representatives from an initial regular grid in the whole Lagrangian axis subspace. We will have $M_L$ points in each axis, meaning a total of $M_L^{N-m}$ Lagrangian fluid elements.} and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
 \begin{enumerate}
 \item Share the information of the conditional functions in the necessary parallel processors.
 \item Compute {\em in parallel} the derivatives in the Lagrangian axes for each conditional function $\vec{\xi}^j$. In this case, this is a bit more subtle, since we have problematic partial derivatives in the $N-m$ different Lagrangian directions. We need for each possible point in the $m$ dimensional support of each conditional function, each $(x_1,...,x_{m})$ point of each slice, the variation of the function between the conditional functions whose Lagrangian degrees are aligned in the Lagrangian direction. There are $N-m$ Lagrangian directions, and we need the deriavtive in all of them. Then, compute the necessary derivatives (first and/or second) to get the correlation terms.
@@ -1971,6 +2017,12 @@ In order to generalize the algorithm, we will use as examples the 2 and 3 Lagran
 \item Gather the correlation terms to time evolve in parallel to the next time step each conditional function, using one process per $\vec{\xi}^j$. This will be done with the necessary algorithm for an $m$ dimensional conditional function.
 \item Go back to 1.
 \end{enumerate}
+\begin{figure}[p!]
+  \centering
+    \includegraphics[width=1\linewidth]{12_N6.png}
+  \caption{This is a visual intuition of the $N=5$ case of the two Lagrangian degree case. Above left we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and above right, a time $t$ afterwards, how they are distributed in the $x_4,x_5$ plane, following their trajectories $\vec{y}(\vec{\xi},t)=(x_4(\vec{\xi},t),x_5(\vec{\xi},t))$. Each of these fluid fluid elements has associated a conditional function over a 3D space in $x_1,x_2,x_3$, discretized in a regular Eulerian grid as a box. All these Eulerian boxes have the same number of points in $x_1,x_2,x_3$, and, very importantly, at the same positions, which is represented in blue as saying that all of them have the corner $\vec{x}=(a,b,c)$ with $\vec{y}=\vec{y}(\vec{\xi},t)$. The relevance of them being in the same positions is that when we move from a conditional function to the next (to the one aligned in the Lagrangian space with the first) to compute Lagrangian space derivatives, the same points in each conditional function define what we called a derivative {\bf beam} (depicted in pink lines with arrows joining the boxes). The beam's description is completed by selecting a line joining these conditional functions in Lagrangian axis space. This last thing is depicted in blue in the planes above. We can see that in the label space, any derivative beam contains many representatives, but when the grid gets distorted the beams only catch some few conditional functions aligned. That is, the grid for derivatives gets unstructured. It is this why it is way more convenient if we simply change the derivatives in configuration space to derivatives in label space. The beams are full of representatives for numerical derivative computations.  }
+  \label{fig:hyperplane}
+\end{figure}
 
 The derivatives this time will be required to be computed in a grid where not only the distance between the conditional functions in the Lagrangian degrees will get irregular, but where also, the alignment in the Lagrangian directions for the conditional functions will be distorted. That is, we will have a totally unstructured mesh. To solve these derivatives:
 \begin{itemize}
