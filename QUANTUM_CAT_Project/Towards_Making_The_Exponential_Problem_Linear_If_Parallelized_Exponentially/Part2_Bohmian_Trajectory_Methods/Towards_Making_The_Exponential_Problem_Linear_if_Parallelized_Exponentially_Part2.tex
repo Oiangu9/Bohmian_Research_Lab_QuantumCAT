@@ -72,11 +72,14 @@
 \newtheorem{defi}{Definition} %so I can use corollaries
 
 \makeatother % all this is for the epigraph
+%\usepackage{tocloft}
+
 \usepackage{imakeidx} % make index
+
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 %\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
-\title{\vspace{-2cm} {\bf Quantum Dynamics\\  Mixing Wavefunctions and Trajectories}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.8cm}}
+\title{\vspace{-2cm} {\bf Quantum Dynamics\\  With Trajectories}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.8cm}}
 \date{\vspace{-11ex}}
 \let\clipbox\relax
 \usepackage{adjustbox}
@@ -132,9 +135,61 @@
 
 \begin{document}
 
+\clearpage
+%% temporary titles
+% command to provide stretchy vertical space in proportion
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+% To improve spacing on titlepages
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{empty}
+\begin{center}
+\bfseries
+\nbvspace[1]
+\Huge
+{\nbtitlestretch\huge
+QUANTUM DYNAMICS \\WITH TRAJECTORIES}
+
+\nbvspace[1]
+\normalsize
+
+WHAT IF A QUANTUM SYSTEM\\
+IS A FLUID ELEMENT?\\
+\nbvspace[1]
+A Guide to the Equations \\Governing Quantum Dynamics
+
+\nbvspace[1]
+\small BY\\
+\Large Xabier Oyanguren Asua\\[0.5em]
+%\footnotesize Can we really foresee the future of the Universe?"\\
+
+
+\nbvspace[6]
+
+\includegraphics[width=2.5in]{UAB.png}
+\normalsize
+\vspace{-0.5cm}
+%\small Thesis Directors: \\
+%\nbvspace[0.2]
+%\large Jordi Mompart Penina \\
+%Xavier Oriols Pladevall\\
+%\nbvspace[1]
+
+%Universitat Autònoma de Barcelona\\
+\large
+%DEGREE FINAL DISSERTATION \\
+\small
+%Bachelor's degree in Nanoscience and Nanotechnology \\
+\small
+$\ $2020-2021 
+\nbvspace[1]
+\end{center}
+\clearpage
 \maketitle
 \pagenumbering{gobble}
-
+%\setlength{\cftbeforesecskip}{0.1cm}
+%\setlength{\cftbeforesubsecskip}{0.3cm}
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -190,6 +245,13 @@ Given a system whose possible ontological configurations can be labeled by a set
 The state variables, described by scalar functions, could be interpreted as properties of configuration-space, where the scalar values per point $\vec{x}$ in configuration-space are intrinsic properties of that point. These values may change in time. Alternatively, we could understand these scalar functions as properties of a fluid, where there is an underlying movement of points in configuration-space, each of which carries with it its value of the quantitative properties. Among the properties of those points moving in configuration-space, there is their position. This means that according to this fluid vision, we will observe a certain value for a state variable in a configuration-space point, not because the value is telling us something about that point $\vec{x}$, but because it describes a property of the fluid element crossing that point at that time.
 
 Before talking about anything else, we see thus a necessity to formalize the continuum of uncountably infinite point like "particles" moving in configuration-space. An $\R^N$ particle is actually a possible configuration of the whole system. As we will see later, if for example, $N$ are all the degrees of freedom in the Universe, a particle in $\R^N$ is a possible position for all the $3D$ particles in it (where there would be $N/3$ particles). Thus, each fluid element could be seen as a possible Universe, and its movement in configuration-space $\R^N$, would mean tracking the change of the positions of all the $3D$ particles in the Universe. We would have the trajectory of a Universe. We will call these consitituent poarticles of the $R^N$ fluid, {\bf fluid elements} or {\bf Universes}. Since we are talking about an uncountably infinite amount of moving points in configuration-space, but we assume that each fluid element occupies a unique point like position in configuration-space at each time, we could label each of this fluid elements by their position at a reference time $t_0$ (which we shall call the initial time). We will then label the fluid element that is in the position $\vec{\xi}\in\Omega_0\subseteq \R^N$ at time $t=t_0$, the fluid element $\vec{\xi}$. Since we assume that these elements never cross each other (never collide and occupy the same configuration-space point at the same time), we assume there is a continuous function $\vec{x}(\vec{\xi},t)\equiv \vec{x}^\xi(t)$ that tells us where in $\Omega_t$ each fluid element $\vec{\xi}\in\Omega_0$ is at each time $t$.\footnote{Note that we call $\Omega_0$ the subset of $\R^N$ where there are fluid elements at the reference time $t=t_0$. } This is what we call the {\bf trajectory} of the fluid element. Since each fluid element $\vec{\xi}$ has a different position in $\Omega_t$ at each time, we see that the function $\vec{x}(\vec{\xi},t)$ must have an inverse function $\vec{\xi}(\vec{x},t)$ telling which is the label of the fluid element crossing the configuration-space point $\vec{x}$ in time $t$. This inverse must be continous, since the transformation $\vec{x}(\vec{\xi},t)$ is required to be continuous in time (we will see there are quantum reasons for it, but for now it is a convenience). Thus, $\Omega_t$ must be homeomorphic to $\Omega_0$ at all times. In fact, since we will achieve the description of the time evolution of the positions of the fluid elements through the integration of a velocity field, we will require that the transformation $\vec{x}(\vec{\xi},t)$ is differentiable, meaning it must be a diffeomorphism.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.65\linewidth]{1deforma.png}
+  \caption{Depiction of the $N=3$ case of a diffeomorphism representing the trajectory ensemble of a fluid following the notation presented in the text. }
+  \label{fig:deform}
+\end{figure}
 
 We can now realize that we will be able to describe a state varaible, or property both by reference to a specific configuration-space position $\vec{x}$ at a certain time $t$ or by reference to a specific fluid element (or Universe or experiment) $\vec{\xi}$ at a certain time. These will be respectively the Eulerian and the Lagrangian frames. 
 
@@ -1862,25 +1924,35 @@ Since for the generation of an adaptive grid, we are not willing to get informat
 
 
 
-\section*{From exponential time to linear using Parallelization}
-\addcontentsline{toc}{subsubsection}{\em From exponential time to linear using Lagrangian degrees and parallelization}
+\section*{Exponential Time Polynomialized with Exponential Parallelization}
+\addcontentsline{toc}{subsubsection}{\em Exponential Time Polynomialized with Exponential Parallelization}
 
-In this box we will show how {\bf conceptually} changing the Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a linear one if we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). We will see that the partially Lagrangian picture allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability (which we have already commented), and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.\\
+In this section we will show how {\bf conceptually} changing the Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a linear one if we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). As we will also see, this was readily possible with a fixed grid, just that the explicit fluid treatment makes it evident. In this line, the partially Lagrangian picture easily allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability, and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.
 
-In what follows we will analyze qualitatively the two limit cases where there are still both Lagrangian and Eulerian degrees: having a single Lagrangian one and having them all but one.\\
+In what follows we will analyse qualitatively the two limit cases where there are still both Lagrangian and Eulerian degrees: having a single Lagrangian one and having them all but one. We will generalize to the case of an arbitrary number of Lagrangian degrees.
 
-In all the equations so far we have seen that it is roughly mandatory that we evolve an ensemble of complementary conditional wavefunctions (or actions and densities) with their respective trajectories (unless we adopt another strategy like evolving the derivatives). This was because all the dynamical equation for each complementary function (wavefunction, action or density) required the knowledge of the derivatives in the directions in which we slice the functions. Having complementary functions for them give us an idea of how the function works in that direction, but only for the Lagrangian axes traversing the Eulerian position where the trajectory coupling the complementary set of functions is. Thus we required to evolve several trajectories, such that we end up having an image of the full functions and thus be able to know its variation in any direction. That said, we see that there is a freedom of choosing complementary conditional functions with more or less Lagrangian degrees. What will the price be?\\
+In all the equations so far we have seen that unless we evolve the derivatives in the Lagrangian axes (which had the problem of choosing the truncation point for the infinite series of equations), it is roughly mandatory that we evolve an ensemble of conditional wavefunctions (or actions and densities) with their respective different trajectories (or underlying fluid elements). This was because all the dynamical equations required the knowledge of the derivatives in the directions in which we slice the functions. Evolving complementary functions instead of single conditional functions, gives us an idea of how the function works in the Lagrangian directions of each conditional function, but only for the Eulerian position where the trajectory coupling the complementary set of functions is. Thus we required to evolve several trajectories even in this case, such that we end up having an image of the full functions and thus be able to compute their variation in any direction. That said, we have freedom to choose conditional functions with more or less Lagrangian degrees. What will the price be?
 
-{\bf Only one Lagrangian degree\\ \\}
-If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t))$ is a slice of the full function whose support is a hyperplane of $\R^N$.\footnote{In all the explanation, it is convenient to imagine $N=3$. As such, if we consider as Lagrangian degree the $x_3$, the support of the conditional functions of shape $f(x_1,x_2,x_3^\xi(t),t)$ will be a moving plane in $x_1,x_2$, sliced at $x_3=x_3^\xi(t)$).} To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point $(x_1,...,x_{N-1})$ we consider, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centred at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivatives. See Figure \ref{fig:hyperplane}.\\
+\subsection*{Only one Lagrangian degree}
+If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t))$ is a slice of the full function whose support is a hyperplane of $\R^N$. To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point of the hyperplanes $(x_1,...,x_{N-1})$, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$ we consider in the grid discretization. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centred at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivatives. See Figure \ref{fig:hyperplane} for a geometrical understanding.
 
-The approach would then follow to first compute {\em in parallel} the correlation terms of the current time step (which were the reason why we needed the derivatives in the Lagrangian axes\footnote{Which is why they are called correlation terms, they introduce the correlation of the active conditional function with the rest of conditional functions parallel and transversal to itself.}) for each hyperplane-conditional function labelled by its underlying fluid element $\vec{\xi}^j$. Within each conditional function, per each considered point $x_1,...,x_N$ in the hyperplane we will need to compute these correlation terms (their underlying derivatives) employing the adjacent slices (message pass between the slice processes). Then in parallel, execute one time step evolution for the conditional functions as given in the equations, employing the necessary algorithm for an $m$ dimensional Eulerian function (in the case of $G$ and $J$ for instance, we could employ a Crank-Nicolson algorithm). Once all the hyperplane-conditional functions are updated, compute again the correlation potentials (the derivatives in Lagrangian axes) in parallel by sharing the information of each slice between the processes, and repeat the loop.
+Then an algorithm to evolve the ensemble of hyperplane-conditional functions could be the following. Given we have an initial ensemble of $M$ hyperplane-conditional functions and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
+\begin{enumerate}
+\item Share the information of the conditional functions in the necessary parallel processors.
+\item Compute {\em in parallel} the derivatives in the Lagrangian axes for each hyperplane-conditional function $\vec{\xi}^j$. For this, access the same $(x_1,...,x_{N-1})$ point in each adjacent slice. Compute the necessary derivatives (first and/or second) to get the correlation terms. See the formula.
+\item Evaluate the correlation terms of the current time step for each point $(x_1,...,x_{N-1})$ in each hyperplane\footnote{Remember we call the correlation terms, because they are the ones introducing the effect of the rest of conditional functions parallel and transversal to the active one.}.
+\item Gather the correlation terms to time evolve in parallel to the next time step each hyperplane-conditional function, using one process per $\vec{\xi}^j$. This will be done with the necessary algorithm for an $m$ dimensional function.
+\item Go back to 1.
+\end{enumerate}
 
 
-As a little computational detail, if we choose the Lagrangian degrees to move (say, according to the Bohmian velocity field), an initially regular grid in the $x_N$ axis (constituted by the different hyperplanes) will get unstructured. The distances between the hyperplanes will become irregular. This will make the following derivatives in the Lagrangian axis be more difficult to compute. We could then use fitting techniques among others, or instead, we could change the derivatives to derivatives in the label space as explained in Section (III.e). Alternatively, we could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>0$ (since remember the equations for conditional functions do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could be computed easily with advanced finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary.\\
-
-To have an example of the complexity reduction, we will assume to use the $G$ and $J$ correlation potential method \eqref{SE.GJ}. As explained in \cite{NireTFGie}, evolving a time step of the full $N$ dimensional Schrödinger Equation \eqref{SE} has an exponential complexity $O(M^N)$ with $M$ the average number of points considered in the discretization of each axis. A time step of the $N-1$ dimensional Schrödinger Equation that would be left for the Eulerian degrees after computing the correlation potentials in the $G$, $J$ method, has in the same way, a complexity $O(M^{N-1})$. Computing the numerical derivatives on the axis of the Lagrangian degree has a complexity of about $O(M)$ operations (we consider there are $M$ fluid elements distributed in $x_N$) per each of the $O(M^{N-1})$ points in a hyperplane. These derivatives are independent between them, so if we compute the $O(M)$ derivatives of each hyperplane point in parallel, using $O(M^{N-1})$ threads, we can compute the correlation potentials for the next iteration. Then each hyperplane-conditional wavefunction is evolved in parallel using $O(M)$ threads taking each again $O(M^{N-1})$ time. Overall, using $O(M^{N-1})$ parallel processes, the exact evolution of the Schrödinger Equation can be obtained in $O(M+M^{N-1})=O(M^{N-1})$ effective runtime, one $M$ factor less than using all the degrees as Eulerian.
-
+As a little computational detail, if we choose the Lagrangian degrees to move, an initially regular grid in the $x_N$ axis (constituted by the different hyperplanes) will get unstructured. The distances between the hyperplanes will become irregular. This will make the following derivatives in the Lagrangian axis be more difficult to compute. We could then take one of these solutions to compute the derivatives:
+\begin{itemize}
+\item Fit an analytical function sum to each locality (each stencil of elements we will use to compute the derivatives), and get their symbolical derivative. It involves all the fitting burden.
+\item Use some finite difference method in not equispaced grids (this will only work in the case of a single Lagrangian axis, since otherwise the fluid elements will not be aligned in $t>t_0$).
+\item Compute the derivatives relative to the label space, which can be chosen to be regular, as explained in (III.e). It involves all the Jacobian determinant (or inverse Jacobian) computation burden.
+\item We could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>t_0$ (since remember the equations for conditional functions do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could be computed easily with advanced finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary! It is this why we said in an Eulerian grid all this parallelization was actually possible as well, just that we needed the fluid view to realize it.
+\end{itemize} 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.5\linewidth]{hyperplaness.png}
@@ -1888,18 +1960,70 @@ To have an example of the complexity reduction, we will assume to use the $G$ an
   \label{fig:hyperplane}
 \end{figure}
 
-{\bf Two Lagrangian degrees \\}
-We could do the same but instead of considering a single Lagrangian axis, we could consider two. In such a case, each conditional function would have as support, as seen form $\R^N$, an affine $N-2$ dimensional manifold. Assuming again we discretize the Lagrangian degrees with $M$ points per axis, we would need about $O(M^2)$ conditional functions and trajectories to have a representative view of the full function. $O(NM^2/2)$, if we consider complementary conditional functions of two dimensions per each trajectory. $M$ times more. However, each conditional function would be an $m-2$ dimensional Eulerian function, which could be evolved in  $O(M^{N-2})$ time units, if we knew the correlation terms (to evolve them all in $O(M^{N-2})$ we would require $O(M^2)$ processes. The derivatives to compute these correlation terms in turn, would be required to be done in two directions, meaning that following the previous strategy, we would require $O(2M^{N-2})$ threads computing each $O(M)$ operations. Overall, a total effective computation time of $O(M+M^{N-2})=O(M^{N-2})$ would be enough, two $M$ factors less, at the expense of using about $O(M^2+2M^{N-2})$ parallel threads.\\
 
-{\bf All Lagrangian but one\\}
-If we now considered all the degrees of freedom to be Lagrangian except for one, the support of each conditional function $f(x_1,x_2^\xi(t),...,x_N^\xi(t))$ would be as seen from $\R^N$, a straight line moving in configuration space, a one dimensional affine manifold. See Figure \ref{fig:lines} for an intuition. Again, discretizing each of the Lagrangian axes in $M$ points would mean considering $O(M^{N-1})$ line-conditional functions. The time evolution of each of them, as one dimensional Eulerian functions they are would be only $O(M)$ time units, employing a parallel process for each conditional function, a total of $O(M^{N-1})$ processes. The derivates to compute the correlation terms in turn would be required in $N-1$ directions, in each direction having $M$ points, at each of the $M$ Eulerian points of the condiitonal functions, a total of $O((N-1)M^2)$ threads computing $O(M)$ operations.  of the Eulerian axis of each conditional function. This would be $O(NM)$ threads each computing $O(M)$ operations.
+\subsection*{N-m Lagrangian degrees}
+In order to generalize the algorithm, we will use as examples the 2 and 3 Lagrangian degree cases, which will provide us a visual imagination and allow us find the pattern and induce the generalization. You can find their geometrical illustration in Figures \ref{fig:hyper1} and \ref{fig:hyper2}. We will explain the things with allusion to them. The algorithm itself will have almost no modification. Given we have an initial ensemble of $M_L^{N-m}$ conditional functions\footnote{We will choose to have as many conditional functions as for having representatives from an initial regular grid in the whole Lagrangian axis subspace. We will have $M_L$ points in each axis, meaning a total of $M_L^{N-m}$ Lagrangian fluid elements.} and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
+\begin{enumerate}
+\item Share the information of the conditional functions in the necessary parallel processors.
+\item Compute {\em in parallel} the derivatives in the Lagrangian axes for each conditional function $\vec{\xi}^j$. In this case, this is a bit more subtle, since we have problematic partial derivatives in the $N-m$ different Lagrangian directions. We need for each possible point in the $m$ dimensional support of each conditional function, each $(x_1,...,x_{m})$ point of each slice, the variation of the function between the conditional functions whose Lagrangian degrees are aligned in the Lagrangian direction. There are $N-m$ Lagrangian directions, and we need the deriavtive in all of them. Then, compute the necessary derivatives (first and/or second) to get the correlation terms.
+\item Evaluate the correlation terms of the current time step for each point $(x_1,...,x_{m})$ in each $m$ dimensional affine manifold (each conditional function).
 
-{\bf Using all degrees as Lagrangian\\}
+\item Gather the correlation terms to time evolve in parallel to the next time step each conditional function, using one process per $\vec{\xi}^j$. This will be done with the necessary algorithm for an $m$ dimensional conditional function.
+\item Go back to 1.
+\end{enumerate}
 
-{\bf Was it really impossible to achieve this with the fully Eulerian frame? No.\\}
-Si trajs still kalro, teknikamente es lo mismo que si fuese Euleriano, pero puedes hacer el mismo algorithm. asike bueno, esto es solo una forma posible de pensar las cosas.
+The derivatives this time will be required to be computed in a grid where not only the distance between the conditional functions in the Lagrangian degrees will get irregular, but where also, the alignment in the Lagrangian directions for the conditional functions will be distorted. That is, we will have a totally unstructured mesh. To solve these derivatives:
+\begin{itemize}
+\item Fit an analytical function sum to each locality (each stencil of elements we will use to compute the derivatives), and get their symbolical derivative. It involves all the fitting burden.
+\item Compute the derivatives relative to the label space, which can be chosen to be regular, as explained in (III.e). It involves all the Jacobian determinant (or inverse Jacobian) computation burden.
+\item We could chose to fix the trajectories $\vec{y}(\vec{\xi}_x, \vec{\xi}_y,t)=\vec{\xi}_y\ \forall t>t_0$. In such a case, the derivatives would always be in a regular grid and could be computed easily with finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary! It is this why we said in an Eulerian grid all this parallelization was actually possible as well, just that we needed the fluid view to realize it.
+\end{itemize}
 
-Taking $O(M^{N-1})$ line-CWFs of those (each in a different thread), we would have a value of the WF per point in the whole configuration space (considering each CWF is discretized in $O(M)$ points, we would have a regular grid for the full wave-function). Then, in order to compute the correlation potentials, we would require for each of the $O(M)$ points of the line-CWF (the Eulerian axis), the derivative in each of the $N-1$ directions of the Lagrangian axes. If there are $M^{N-1}$ CWF-s, the same $O(M^{N-1})$ threads could compute the $O(M[N-1])$ derivatives. In total a perfect parallelization in those $O(M^{N-1})$ threads would take then $O(M[N-1]+M)=O(MN)$ operations. If we assume there is an overhead per message pass between the threads, each thread needs to send and receive $O(NM)$ values, leaving a total complexity in time that is $O(MN)$ to compute a single time iteration of the full wavefunction. This is linear in time wiht increasing precision and number of spatial dimensions, but is exponential in the number of threads required for it.
+In order to have an idea of the complexity of a possible algorithm following these steps, we we will exemplify it with the $G$ and $J$ correlation potential method \eqref{SE.GJ}, where to compute the derivatives, we will use the conversion to label space derivatives (it would be way simpler if we just left the trajectories still, but this way we will get a bigger picture).
+
+Consider as we said, we take $M_L^{N-m}$ trajectories, such that they discretize each Lagrangian axis in $M_{L}$ different discrete points, making an equidistant regular mesh of the $\vec{y}$ subspace. Then, consider we discretize each conditional function of $m$ Eulerian dimensions in $M_E^m$ points in $\R^m$, also as a regular and equispaced mesh with $M_E$ points per axis.
+
+Lets now follow the algorithm step by step manifesting a possible complexity of each time step we evolve the ensemble of conditional functions (and derive which is the total linear effective time complexity and necessary number of processes). The movement of data will not be efficient at all, but it is intended to be illustrative:
+\begin{enumerate}
+\item Have all the $M_L^{N-m}$ conditional wavefunctions in a central memory accessible for $O(M_L^{N-m})$ distributed processors.
+\item Make each processor compute the conditional action and C amplitudes of each wavefunction, for which each will require in parallel $O(M_E^m)$ operations, since they will require to consult each point of the conditional wavefunction.
+\item In order to compute the potentials $G$ and $J$ of each one of the $M_L^{N-m}$ conditional functions, we need to compute 4 different derivatives ($\pdv{S}{x_k}$, $\pdv[2]{S}{x_k}$, $\pdv{C}{x_k}$, $\pdv[2]{C}{x_k}$) per Lagrangian axis, a total of $4(N-m)$ derivatives of the conditional functions in the Lagrangian axes. Since we will change them to the label space using $\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=m+1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$, we will only compute the $\pdv{f}{\xi_k}$ once, then we will share them for the computation of all the Lagrangian axis $x_k$ derivatives. For the second derivatives we will compute the derivatives of the first derivatives sequentially. We have here the following tasks then:
+\begin{enumerate}
+\item Compute for $f\in\{S,C\}$ the $N-m$ derivatives $\pdv{f(\vec{x},\vec{y}(\vec{\xi}_y,t),t)}{\xi_j}$. For this, notice that if we fix all the variables except for one $\xi_j$, this defines a line in $\R^N$ where we have all the necessary function values to compute the derivative $\pdv{}{\xi_j}$ in each value of $\xi_j$. Let us call this line a partial derivative {\bf beam}. Then, for each value of the rest of labels and each Eulerian position $\vec{x}$, we have a different beam of these. For an intuition look at the Figures \ref{fig:hyper1} and \ref{fig:hyper2}. In total we have $M_L^{N-m}M_E^m$ beams like this one for each of the $(N-L)$ directions $\vec{\xi_j}$ in label space. Each beam contains all the information to compute the derivatives in a regular equispaced grid for the points of the different conditional functions along the beam. If we use for example a five point finite difference method, this can be done by running over each beam of $M_L$ elements five times, which means $O(M_L^5)$ operations. Thus, we could have in parallel $O(2(N-L)M_L^{N-m-1}M_E^m)$ processes each computing $O(M_L^5)$ operations. Then in $O(M_L^5)$ linear time, all the derivatives $\pdv{f}{\xi_k}$ at all points would be computed for $f\in\{S,C\}$. Of course, to do this, each process that has its conditional function would need to send the elements to each processor that will take care for a beam. Since each conditional function point is part of $N-m$ beams, $2(N-m)M_E^m$ messages would be required to be sent, taking $O(2\theta (N-m)M_E^m)$ time, where $\theta$ is the time for each double number sending.
+\item The derivatives $\pdv{\xi_j(\vec{x},t)}{x_k}$ would also be required to be computed. To do this, we saw in (II.e) that we could first compute the Jacobian matrix, composed of derivatives $\pdv{\x_k(\vec{\xi},t)}{\xi_j}$ in label space for the trajectories, and then invert the matrix. In order to compute these derivatives, we can do the same strategy as before (just that now we will only have a single representative in each Lagrangian position). There are a total of $O(M^{N-m})$ beams per Lagrangian $\xi_k$, a total of $O((N-m)M_L^{N-m})$. Since they are $N$ trajectory positions as much, we could make one every $M_E^m$ processes of the previous step take $N$ of these beams. Each would compute the derivatives in $O(NM_L^5)$ operations. Each process that had the conditional functions has its own trajectory value (composed by maximum $N$ numbers), each has to be shared with $N-m$ processes, meaning a messaging time of $O(N\theta (N-m))$.
+\item Once $(a)$ and $(b)$ are done, each process that in the beginning had a complete conditional function, receives the derivatives $\pdv{S}{\xi_k}$, $\pdv[2]{S}{\xi_k}$, $\pdv{C}{\xi_k}$, $\pdv[2]{C}{\xi_k}$ at their Lagrangian position $\vec{\xi}^j$ and each of their $M_E^m$ Eulerian positions $\vec{x}$ from processes that worked in $(a)$. Then they also receive a maximum of $N$ values of $\pdv{\vec{x}}{\xi_k}$ for their trajectory. To receive all of this, they will require again $O(4\theta (N-m)M_E^m+N\theta (N-m))$ message reception time (for the sender they will only need to send asynchronously $(N+4)M_L$ messages, which is less).
+\item Each of these $M_L^{N-m}$ processes has now an entire conditional wavefunction and the derivatives of the conditional action and C amplitude in label space, along their trajectory position, together with the derivative of the trajectory diffeomorphism along their trajectory position, which are a maximum of $N\times N$ numbers. They could now compute the inverse Jacobain matrix at their trajectory's position in $O(N^3)$ operations using the well known Gauss-Jordan Elimination algorithm. This inverse, would grant them, the values of $\pdv{\xi_j}{x_k}$ in their trajectory position. With this, they would be able to compute $\pdv{f}{x_k}$ in their trajectory position for $f\in\{S,C\}$ for all the Lagrangian $x_k$. To do this, they would require a maximum of $N$ products and $N$ sums per conditional function point. A total of $O(2NM_E^m)$ operations.
+\item The whole (a) to (d) would be repeated to compute the second derivatives.
+\end{enumerate}
+This would leave the computation of the derivatives in the Lagrangian spatial axes in a total of:
+$$
+\hspace{-0.9cm}O\qty(2\qty[6\theta(N-m)M_E^m+M_L^5+NM^5_L+2N\theta(N-m) +2NM_E^m])=
+$$
+$$
+=O\qty(M_E^m(N(\theta+1)+\theta m)+N(M_L^5+\theta(m+N)))
+$$
+
+\item Then each process that has a whole conditional function and the computed derivatives for its trajectory would be able to obtain the correlation potentials $G$ and $J$ for its Eulerian positions. These are ten products and four sums times $(N-m)$ per Eulerian position. A total of $O(14(N-m)M_E^m)$ operations.
+\item Finally, each of these $M_L^{N-m}$ processes would only need to evolve one time step of their conditional wavefunctions using the computed correlation potentials. Using a Crank Nicolson algorithm, this would take $O(M_E^m)$ operations. They would then get the conditional wavefunction for the next time step and with it, evolve their trajectories to the next step with $O(1)$ operations.
+\end{enumerate}
+If we consider that in reality, it was not just a conditional wavefunction per trajectory but a set of about $N/m$ complementary conditional wavefunctions (for instance, to allow the evolution of a Bohmian trajectory with no further interpolation), we would just need to multiply all the computational time by $N/m$ and assume wherever we said there was a conditional wavefunction, that there were all its complementary ones.
+
+Even in this case, the total linear time that all the process would take is:
+\begin{equation}
+T_{N,m}:=O\qty(M_E^m(N(\theta+1)+\theta m)+N(M_L^5+\theta(m+N))+M_E^m+14(N-m)M_E^m+N^3)=
+\end{equation}
+$$
+=O\qty(M_E^m\qty[1+N(\theta+1)+m(\theta+1)]+N\qty[N^2+M_L^5+\theta(m+N) ])
+$$
+For this, the number of parallel processes we have used is $O((N-m)M_L^{N-m}M_E^{m})$, which if $M_L=M_E=M$ means $O((N-m)M^{N-1})$ processes.
+
+Therefore, we have that we will need expoenentially more parallel processes $O((N-m)M^{N-1})$ for bigger dimensional quantum systems, for bigger $N$, but it will only take a polynomial time more, since $T_{N,m}$ only increases as $O(N^3)$ for a fixed number of Eulerian degrees $m$ (and leaving the rest of parameters fixed as well).
+
+Actually, by looking at these results, we clearly see that as we increase the relative number of Lagrangian degrees of freedom (we reduce $m$), we will require linearly more parallel processes, but the effective sequential computation time will be reduced exponentially. In the limit of $m=0$, we will have the minimum effective computational time. This would be the case of the fully Lagrangian picture. However, as we increase the relative number of Eulerian degrees of freedom (increse $m$), we see that the computational time will increase exponentially and we will need less parallel processes. In the limit of the fully Eulerian Schrödinger Equation with no fluid treatment, we would have that its computation time is $O(M_E^N)$ exponential with dimensions. This is the case for the Fully Eulerian picture with no fluid consideration.
+
+An easier algorithm would be to consider the trajectories are stationary, which would not distort the grid and the derivatives would be computable at all times without the Jacobian matrix endeavour and easier finite difference terms. Its parallelization is left as an exercise.
+
+
 
 \begin{figure}[h!]
   \centering
@@ -1909,27 +2033,23 @@ Taking $O(M^{N-1})$ line-CWFs of those (each in a different thread), we would ha
 \end{figure}
 
 
-For any intermediate arrangement of Eulerian and Lagrangian degrees of freedom, we could balance the computational complexity from temporal to spatial at will. The more Lagrangian coordinates we choose the more parallel threads will be required, but the less time it will take.\\
-
-This approach is in principle legitimate for both the approach described in II.a.1 or II.a.2, the differences are the following ones though: the equation in II.a.1 has affine terms that impede the usage of reliable methods like the Crank Nicolson one. However, in II.a.2 we need to compute terms where we have $R$ dividing. This is prone to introduce big errors where the density is small.
 
 
 
-
-\subsubsection*{What could be the advantage of the Part Lagrangian Part Eulerian approach?}
-The advantage is that we might be able to get the best of both worlds: the Eulerian and the Lagrangian.
+\subsubsection*{What could the advantage of the Part Lagrangian Part Eulerian approach be?}
+Appart from theoretical considerations, we might be able to get the best of both worlds: the Eulerian and the Lagrangian...even if also the worst of both worlds since, we would still need matrix methods like in Eulerian but also still need function fitting, Jacobian matrices and determinants or infinte equation chains as in Lagrangian... In any case, here are some of the positive points we can offer:
 
 \begin{itemize}
-\item The more dimensional the CWF's Eulerian degrees are, the smaller the space for sampling the trajectories of the Lagrangian part will be. This means that the less CWF-s will be required to reproduce the full wavefunction or to achieve a certain precision in the derivatives in Lagrangian directions. However, the more computationally complex will be the CWF-s to evolve, so the problem gets more complex to be parallelized. In the limit, of $m=N$ we would recover the linear Schrödinger equation in the Eulerian frame, which scales exponentially in time with dimensions.
+\item The more Eulerian degrees we consider, the smaller the space for sampling the trajectories of the Lagrangian part will be. This means that the less conditional functions will be required to reproduce the full functions or to achieve a certain precision in the derivatives in Lagrangian directions. However, the more computationally complex will be the conditional functions to evolve, so the problem gets more complex to be parallelized. In the limit, of $m=N$ we would recover the linear Schrödinger equation in the Eulerian frame, which scales exponentially in time with dimensions.
 
-\item The less dimensional the CWF's Eulerian degrees, the more trajectories we will need to reconstruct the full wavefunction and to get the derivatives in the Lagrangian directions, in fact, presumably exponentially more. However, the CWF-s will be simpler to evolve and as the trajectories can (and must) be computed coupled but in parallel, the more of exponential complexity we will transfer to parallel threads. In the limit of $m=0$, we recover the fully Lagrangian frame, where we achieve the apparently highest parallelizability of the Quantum many body problem.
+\item The more Lagrangian degrees we consider, the more trajectories we will need to reconstruct the full functions and to get the derivatives in the Lagrangian directions, exponentially more. However, the conditional functions will be simpler to evolve and as the trajectories can (and must) be computed coupled but in parallel, the more of exponential complexity we will transfer to parallel threads. In the limit of $m=0$, we recover the fully Lagrangian frame, where we achieve the apparently highest parallelizability of the Quantum many body problem.
 
-\item Unlike the fully Lagrangian frame, in this case, each Bohmian trajectory is accompanied by lots of wavefunction points (not just one) and therefore, interpolating the full wavefunction is way simpler, by for instance a nearest neighbour approach. Each CWF is a full $mD$ affine hyperplane of values for the wavefunction.
+\item Unlike the fully Lagrangian frame, in this case, each trajectory is accompanied by lots of full function points (not just one) and therefore, interpolating the full function is way simpler if this is the objective. For instance a nearest neighbour approach will be way more precise in the reconstruction.
 
-\item The grid is preserved in a structured manner at all times for the Eulerian degrees, while it gets unstructured for the Lagrangian axes. However, if coupled CWF-s are present, there are parts of the Lagrangian axes for one CWF that are Eulerian for the other, so there is always track of the wavefunction in all the extent of the simulation domain. The intersting thing is that the points in x of different trajectory CWF-s are always aligned, so the numerical derivatives in y or interpolations are ways impler than in a fully unstructured grid.
+\item The grid is preserved in a structured manner at all times for the Eulerian degrees, while it gets unstructured for the Lagrangian axes. However, if complementary conditional functions are present, there are parts of the Lagrangian axes for one conditional function that are Eulerian for the other, so there is always track of the function in all the extent of the simulation domain. The interesting thing is that the points in $\vec{x}$ of different trajectory conditional functions are always in the same hyperplanes, so the interpolations are way simpler than in a fully unstructured grid.
 
-\item {\bf Fast and Slow Degrees of Freedom}: CWF-s provide a natural way to treat the slow degrees of freedom separated form the fast ones, like an atom nuclei from the orbiting electrons. It is common in molecular dynamics algorithm to consider classical trajectories for parts of the quantum system and quantum wavefunctions for other parts. We will see how we could do this using CWF-s in the Bohmian Newton's Equation.
-\item Aproximaziñoak eitzeko de puta madre daulea
+\item {\bf Fast and Slow Degrees of Freedom}: conditional functions provide a natural way to treat the slow degrees of freedom separated form the fast ones and in terms of trajectories, like an atom nuclei from the orbiting electrons. It is common in molecular dynamics algorithm to consider classical trajectories for parts of the quantum system while quantum wavefunctions for other parts. The partially Lagrangian approach (which is fully quantum) could be used to improve these methods and provide them with an {\em ab initio} look.
+\item It is a perfect sandbox for performing approximations to different degrees of freedom in different manners.
 \end{itemize}
 
 
