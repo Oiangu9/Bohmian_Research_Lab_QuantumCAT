@@ -154,8 +154,8 @@ QUANTUM DYNAMICS \\WITH TRAJECTORIES}
 \nbvspace[1]
 \normalsize
 
-WHAT IF A QUANTUM SYSTEM\\
-IS A FLUID ELEMENT?\\
+WHAT IF THE OBSERVED QUANTUM\\
+SYSTEM IS A FLUID ELEMENT?\\
 \nbvspace[1]
 A Guide to the Equations \\Governing Quantum Dynamics
 
@@ -252,7 +252,7 @@ Before talking about anything else, we see thus a necessity to formalize the con
   \caption{Depiction of the $N=3$ case of a diffeomorphism representing the trajectory ensemble of a fluid following the notation presented in the text. }
   \label{fig:deform}
 \end{figure}
-
+\newpage
 We can now realize that we will be able to describe a state varaible, or property both by reference to a specific configuration-space position $\vec{x}$ at a certain time $t$ or by reference to a specific fluid element (or Universe or experiment) $\vec{\xi}$ at a certain time. These will be respectively the Eulerian and the Lagrangian frames. 
 
 If again, the configuration-space represents a tuple of all the positions in 3D space of each particle in the Universe, then each point $\vec{x}\in \R^N$ will represent a particular macroscopically observable configuration of the Universe. Tracking the fluid elements in $\R^N$ would then mean that we can track the time evolution of each particular initial configuration of the Universe $\vec{\xi}$ in time, along with the properties of the quantitative scalars perceived from each of them (Lagrangian frame). Alternatively, we could see the value of the properties at each time from a particular preferred Universe configuration $\vec{x}$ (Eulerian). The interesting part of talking about the Universe as a whole is that in reality, for a true descrition of natural pehnomena, we require taking into account all the degrees of freedom in the Universe and their mutual interactions. Thus, taking as system the whole possible system, should be the preferred approach for an interpretation of a fundamental theory of nature. 
@@ -1493,23 +1493,31 @@ The most natural way (but not the one we will typically follow) to consider only
 
 \subsection*{Conditional Functions\vspace{-0.3cm}}
 
-In order to have a geometric understanding of what having only part of the system in a Lagrangian frame means, before we dig deeper, consider a field $f(\vec{\x},t)$, where we evaluate its $\vec{y}$ coordinates at each time along the positions given by the trajectory $\vec{y}^\xi(t)$. We would then be considering the so called {\bf conditional function} $f(\vec{x}, \vec{y}^\xi(t),t)=f(\vec{x}, \vec{\xi}_y,t)\equiv f^\xi(\vec{x},t)$. Depending on the trajectory $\vec{\xi}_y$ we choose, the function $f(\vec{x}, \vec{y}^\xi(t),t)$ will represent a different moving   $m$ dimensional {\bf slice} of the $N$ dimensional field $f(\vec{\x},t)$. It is this why we will also call each possible set of degrees of freedom $\vec{y}$ a "transversal section" or "slice" of the system. You can see in Figure \ref{fig:slices} a visual representation of some conditional fields along different trajectories. Among others, we will deal with conditional wavefunctions $\psi(\vec{x}, \vec{y}^\xi(t),t)$, conditional densities $\rho(\vec{x}, \vec{y}^\xi(t),t)$ and actions $S(\vec{x}, \vec{y}^\xi(t),t)$ as defined in the previous sections.
+In order to have a geometric understanding of what having only part of the system in a Lagrangian frame means, before we dig deeper, consider a field $f(\vec{\x},t)$, where we evaluate its $\vec{y}$ coordinates at each time along the positions given by the trajectory $\vec{y}^\xi(t)$. We would then be considering the so called {\bf conditional function} $f(\vec{x}, \vec{y}^\xi(t),t)=f(\vec{x}, \vec{\xi}_y,t)\equiv f^\xi(\vec{x},t)$. Depending on the trajectory $\vec{\xi}_y$ we choose, the function $f(\vec{x}, \vec{y}^\xi(t),t)$ will represent a different moving   $m$ dimensional {\bf slice} of the $N$ dimensional field $f(\vec{\x},t)$. It is this why we will also call each possible set of degrees of freedom $\vec{y}$ a "transversal section" or "slice" of the system. You can see in Figure \ref{fig:slices} a visual representation of some conditional fields along different trajectories. Among others, we will deal with conditional wavefunctions $\psi(\vec{x}, \vec{y}^\xi(t),t)$, conditional densities $\rho(\vec{x}, \vec{y}^\xi(t),t)$ and actions $S(\vec{x}, \vec{y}^\xi(t),t)$ as defined in the previous sections.\vspace{-0.3cm}
 
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.75\linewidth]{6slices_1d.png}
-  \caption{Depiction of conditional functions in $N=2$, where the $y$ axis is considered in the Lagrangian frame and $x$ in the Eulerian one. In the center left, there are two axes representing the initial distribution of points $\xi_y$ in $y$ in an equidistant fashion, and their (non-equidistant) positions $y(\xi_y,t)$ after a time $t$. Each fluid element in $y$ has its own associated conditional function $f(x,y(\xi_y,t),t)$. If we see the conditional functions from the full function's $f(x,y,t)$ perspective, we can acknowledge they are slices, as depicted in the right (above the initial function and below the function at time $t$). These slices can give us an intuition of the full function.  }
+    \includegraphics[width=0.70\linewidth]{6slices_1d.png}
+  \caption{Conditional functions in $N=2$, where the $y$ axis is considered in the Lagrangian frame and $x$ in the Eulerian. In the center left, two axes represent the initial equidistant distribution of points $\xi_y$ in $y$ and their (non-equidistant) positions $y(\xi_y,t)$ after a time $t$. Each fluid element in $y$ has its own associated conditional function $f(x,y(\xi_y,t),t)$. If these are seen from the full function's $f(x,y,t)$ perspective, we can acknowledge they are slices, as depicted in the right (above the initial function and below the function at time $t$). These slices can give us an intuition of the full function.  }
   \label{fig:slices}
 \end{figure}
 
 
-\subsection*{Implicitly the full system is a Lagrangian fluid but explicitly only a susbsystem}
-In principle, considering only $\vec{y}$ as a moving continuum would be enough to describe the complete function $f(\vec{x},\vec{y},t)$ in the Eulerian frame, employing the conditional functions $f(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. Taking enough $\vec{\xi}_y$ we would have a slice of the full function at almost all the sections of interest. However, there are several reasons that will lead us to consider that in fact, the degrees of freedom $\vec{x}$ are part of a fluid as well (just as we did in the fully Lagrangian case), just that considering them Eulerian will be convenient.
+\subsection*{Implicitly the full system is a Lagrangian fluid but explicitly only a susbsystem\vspace{-0.2cm}}
+In principle, considering only $\vec{y}$ as a moving continuum would be enough to describe the complete function $f(\vec{x},\vec{y},t)$ employing the conditional functions $f(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. Taking enough $\vec{\xi}_y$ we would have a slice of the full function at almost all the sections of interest. However, there are several reasons that will lead us to consider the degrees of freedom $\vec{x}$ as part of a fluid as well (as we did in the fully Lagrangian case), just that we will consider them as seen from an Eulerian frame for the mixed view.
 
-If we want to give physical meaning to the trajectories $\vec{y}(\vec{\xi}_y,t)$, each of which carries a different slice of the full function, we will have a hard interpretative dilemma. If for example, $\vec{y}$ describe the degrees of freedom of the environment and $\vec{x}$ describes the degrees of our quantum experiment: for each possible point-like configuration of the environment, moving along its trajectory $\vec{y}(\vec{\xi}_y,t)$, we will have that our Lab system is described by a continuous wavefunction $\psi(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. However, we should be able to symmetrically describe the environment using the Eulerian degrees $\vec{x}$ and our Lab in the Lagrangian degrees $\vec{y}$, since we are working with physical laws that should not depend on the region of space we are looking at (this is the main reason of all this). If we did so, then our Lab would be described by point-like configurations $\vec{y}(\vec{\xi}_y,t)$, while the environment would be a continous wavefunction $\psi(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. It seems clear that rather we describe it all using a continuity of possibilities (a wavefunction) and/or all using a set of discrete configuration trajectories. This assertion is especially sustented by the fact that each time we realize an experiment, we just find point like particles both in our Lab and in the environment, and at the same time, we observe there is interference between the continuity of possible observed configurations in both the Lab and the environment. This is precisely the justification of Bohmian Mechanics or the Tangent Universe Interpretation. 
+{\bf Reason 1: Theoretical Homogeneity.} If we want to give physical meaning to the trajectories $\vec{y}(\vec{\xi}_y,t)$ alone, without viewing them as part of a trajectory of the full system, we will have a hard interpretative dilemma. If for example, $\vec{y}$ describes the degrees of freedom of the environment and $\vec{x}$ describes the degrees of our quantum experiment: for each possible point-like configuration of the environment, moving along its trajectory $\vec{y}(\vec{\xi}_y,t)$, we will have that our lab system is described by a continuous wavefunction $\psi(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. However, we should be able to symmetrically describe the environment using the Eulerian degrees $\vec{x}$ and our lab in the Lagrangian degrees $\vec{y}$, since we are working with physical laws that should not depend on the region of space we are looking at. If we did so, then our lab would be described by point-like configurations $\vec{y}(\vec{\xi}_y,t)$, while the environment would be a continous wavefunction $\psi(\vec{x},\vec{y}(\vec{\xi}_y,t),t)$. It seems clear that rather we describe it all using a continuity of possibilities (a wavefunction) and/or all using a set of discrete configuration trajectories. This assertion is especially sustained by the fact that each time we conduct an experiment, we just find point like particles both in our lab and in the environment, and at the same time, we observe there is interference between the continuity of possible observed configurations in both the lab and the environment. Thus we should consider a whole trajectory of the lab and the environment together, and only then if we prefer it so, regard the lab in an Eulerian frame as a continuous wavefunction.
 
-In fact, if we try to describe the trajectory $\vec{y}(\vec{\xi}_y,t)$ using Bohmian trajectories, it will be badly undefined, because for each possible $\vec{x}$, we have a different velocity $\pdv{}{t}\vec{y}(\vec{\xi}_y,t)$ for the $\vec{\xi}_y$-th trajectory. This means that an initially univalued trajectory of the fluid element $\vec{\xi}_y$ will become multivalued, as a function of $\vec{x}$. We would be forced to describe it as $\vec{y}(\vec{\xi}_y, \vec{x},t)$. But what is the difference between this and considering directly that each position in $\vec{x}$ is as well part of a fluid element? None.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.64\linewidth]{labEnvironment.png}
+  \caption{A cartoon showing the strange Universe in which we would live if depending on our choice of observation part of the Universe would behave as a fluid of discrete particles and part as a continuous wavefunction. }
+  \label{fig:jocoso}
+\end{figure}
+
+{\bf Reason 2: Reconciliation with Bohmian Trajectories.} If we try to describe the trajectory $\vec{y}(\vec{\xi}_y,t)$ using Bohmian trajectories, the trajectory will be badly defined, because for each possible $\vec{x}$, we will have a different velocity $\pdv{}{t}\vec{y}(\vec{\xi}_y,t)$ for the $\vec{\xi}_y$-th trajectory. This means that an initially univalued trajectory of the fluid element $\vec{\xi}_y$ will become multivalued, as a function of $\vec{x}$. We would be forced to describe it as $\vec{y}(\vec{\xi}_y, \vec{x},t)$. But what is the difference between this and considering directly that each position in $\vec{x}$ is as well part of a fluid element? None. As we will conclude from the following gray boxes, in order to describe Bohmian trajectories, we rather describe a trajectory for the full $N$ degree system, or we cannot have Bohmian trajectories. It makes no sense to talk about them for only a subsystem, without allusion to a trajectory of the whole.
+\vspace{0.2cm}
 
 \mybox{
 \subsubsection*{What if we only considered Bohmian trajectory in $\vec{y}$?}
@@ -1520,18 +1528,21 @@ If we define the velocity field for $\vec{y}^\xi(t)=(x_{m+1}^\xi(t), ...,x_N^\xi
 \begin{equation}
 \dv{}{t}x_j^\xi(t)=\frac{1}{m_j}\pdv{S(\vec{x}, \vec{y})}{x_j}\Big\rvert_{\vec{y}^\xi(t)}=\frac{\hbar^2}{m_j}\Im\qty( \psi^{-1} \pdv{\psi}{x_j})\Big\rvert_{\vec{y}^\xi(t)} \quad j\in\{m+1,...,N\}
 \end{equation}
-We will see that for each value of $\vec{x}=(x_1,...,x_m)$, the Eulerian degrees, we have a different velocity with which to move the trajectory in $\vec{y}$. This immediately tells us that the multivalued trajectory of the fluid element $\vec{\xi}_y$, that is $\vec{y}(\vec{\xi}_y,t)$, will need to be parametrized not only by its initial position $\vec{\xi}_y$, but also by a parameter representing the point $\vec{x}$, thus $\vec{y}(\vec{\xi}_y,t; \vec{x})$. Let us re-define this parameter as $\vec{\xi}_x\equiv \vec{x}$ (for obvious reasons). Since each $\vec{\xi}_x$, or equivalently, each $\vec{x}$  only has a value of the conditional function over it, the conditional function $f(\vec{x},\vec{y}^\xi(\vec{\xi}_y,t; \vec{x}),t)$ is still a proper function in the Eulerian frame $f(\vec{x},\vec{y}^\xi(\vec{\xi}_y,t; \vec{x}),t)=f(\vec{x},t; \vec{\xi}_y)$. However, if we suddenly view what is happening from the full function's perspective, we will have started with an affine slice of the full function, but in the moment we allow each $\vec{x}$ to have a different position in $\vec{y}$, what we know about the full function is a curved slice, as can be seen in Figure \ref{fig:only_y}.
+We will see that for each value of $\vec{x}=(x_1,...,x_m)$, the Eulerian degrees, we have a different velocity with which to move the trajectory in $\vec{y}$. This immediately tells us that the trajectory of the fluid element $\vec{\xi}_y$, that is $\vec{y}(\vec{\xi}_y,t)$, will get multivalued, at each $\vec{x}$ it will move to a different point in $\vec{y}$. This means we will need to parametrize the trajectory not only with its initial position $\vec{\xi}_y$ in $\vec{y}$, but also with a parameter representing the point $\vec{x}$ we are looking at to get the velocity. Thus using something like $\vec{y}(\vec{\xi}_y,t; \vec{x})$. Let us re-define this parameter as $\vec{\xi}_x\equiv \vec{x}$ (for obvious reasons). Since each $\vec{\xi}_x$, or equivalently, each $\vec{x}$ of this trajectory initially labeled by $\vec{\xi}_y$, only has a value of the conditional function over it, the conditional function $f(\vec{x},\vec{y}^\xi(\vec{\xi}_y,t; \vec{x}),t)$ is still a proper function in the Eulerian frame $f(\vec{x},\vec{y}^\xi(\vec{\xi}_y,t; \vec{x}),t)=f(\vec{x},t; \vec{\xi}_y)$. It is univalued for each Eulerian $\vec{x}$. However, if we view what is happening from the full function's perspective, we will have started with an affine slice of the full function, but in the moment we allow the trajectory position in $\vec{y}$ to have a different value per $\vec{x}$, what we know about the full function is a curved slice, as can be seen in Figure \ref{fig:only_y}.
 
 }
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.65\linewidth]{unstructure_aligned.png}
-  \caption{The blue line represents the $m$ dimensional support of the CWF that is conditioned to have $y=\xi^y_0$ at $t=t_0$ (in the left). In green we see the magnitude of the complex CWF plotted over the support of the CWF (the slice of the full WF). In yellow we see the velocity vectors that will move each element of the CWF, each parametrized $\xi^x_j$. We see in the right the time $t_1>t_0$. Note haow the elements $\xi^x_j$ always preserve their $x=\xi^x_j$ value, that is, they strictly move in $y$. }
+  \caption{A conditional function for the fluid element $\vec{\xi}_y$. In the left, at time $t_0$, we see it has an $m$ dimensional affine support, but since each Eulerian degree is allowed to have its own version of the trajectory in $\vec{y}$, we get the curved slice in the right at time $t$. For each $\vec{x}$ There is still a single function value, but are the trajectories $\vec{y}(\vec{\xi}_y,t;\vec{x})$ Bohmian? %No as explained in the text.
+  }
   \label{fig:only_y}
 \end{figure}
 \mybox{
-In principle there is no problem, since as said, the conditional function has still a single value per $\vec{x}$, so it would be a valid Eulerian function. Does this mean we really achieve the evolution of Bohmian trajectories of the sub-system $\vec{y}$ only evolving this subsystem in a Lagrangian way? Not really. We are restricting the movement of the fluid elements to be still in $\vec{x}$, but the Bohmian velocity in $\vec{y}$ also depends on $\vec{x}$, so if in reality there should be displacement in $\vec{x}$ and we do not account for it, whatever the trajectories we get, they are not Bohmian.\footnote{
-Even if it will not be the approach we will use because it has a big problem to reconcile with Bohmian trajectories, as the equations for the conditional functions will be equivalent considering only $\vec{y}$ as a fluid or not, let us remark the main computational benefit of considering as a fluid only the subsystem $\vec{y}$. If we evolved several conditional functions for different initial positions in $y^\xi(t_0)=\xi^y_k$, the discretized $x$ points would always be aligned between the conditional functions, with the advantage that computing derivatives $\pdv{}{y}$ or interpolating in $y$ would be way simpler, even if the $y$ grid for each $x$ would get not equispaced with time. See Figure \ref{fig:only_y_grid}} From the Fully Lagrangian perspective, what we are doing is:
+In principle there is no problem, since the conditional function is still univalued per $\vec{x}$. But the concern comes when asking what are the trajectories we are obtaining: are we really knowing the Bohmian trajectories of the sub-system $\vec{y}$? The answer is no. If we view it from the full system Bohmian trajectory perspective, we are restricting the movement of the fluid elements to be still in $\vec{x}$, but the Bohmian velocity in $\vec{y}$ also depends on $\vec{x}$, and in reality, a full system trajectory should also be displaced in $\vec{x}$. The velocity for the degrees in $\vec{y}$ will be different if we allow moving in $\vec{x}$ or we restrict it. Thus, the obtained trajectories are not the subsystem part of the Bohmian trajectories.}%\footnote{
+%Even if it will not be the approach we will use because it has a big problem to reconcile with Bohmian trajectories, as the equations for the conditional functions will be equivalent considering only $\vec{y}$ as a fluid or not, let us remark the main computational benefit of considering as a fluid only the subsystem $\vec{y}$. If we evolved several conditional functions for different initial positions in $y^\xi(t_0)=\xi^y_k$, the discretized $x$ points would always be aligned between the conditional functions, with the advantage that computing derivatives $\pdv{}{y}$ or interpolating in $y$ would be way simpler, even if the $y$ grid for each $x$ would get not equispaced with time. See Figure \ref{fig:only_y_grid}}
+\mybox{
+From the Fully Lagrangian perspective, what we are doing is:
 \begin{equation}\label{a}
 \begin{cases}
 \vec{x}(\vec{\xi}_y, \vec{\xi}_x,t)=\vec{\xi}_x \quad \forall t\geq t_0\\
@@ -1539,16 +1550,16 @@ Even if it will not be the approach we will use because it has a big problem to 
 v_j(\vec{x}, \vec{y},t)=\frac{1}{m_j}\pdv{S(\vec{x}, \vec{y},t)}{x_j}\quad j\in\{m+1,...,N \}
 \end{cases}
 \end{equation}
-}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.65\linewidth]{aligned.png}
-  \caption{Blue lines represent the suppoort of CWF-s with different initial time $\xi^y_j$ after they evolve in time following  \eqref{a}. Note how the discretized points of all the CWF-s, the yellow dots, are aligned even at $t>t_0$, meaning operations like $\pdv{}{y}$ on each yellow element can be trivially done numerically. }
-  \label{fig:only_y_grid}
-\end{figure}
-\mybox{
+
+%\begin{figure}[h!]
+ % \centering
+ %   \includegraphics[width=0.65\linewidth]{aligned.png}
+ % \caption{Blue lines represent the suppoort of CWF-s with different initial time $\xi^y_j$ after they evolve in time following  \eqref{a}. Note how the discretized points of all the CWF-s, the yellow dots, are aligned even at $t>t_0$, meaning operations like $\pdv{}{y}$ on each yellow element can be trivially done numerically. }
+  %\label{fig:only_y_grid}
+%\end{figure}
+
 \subsection*{Falling back to the Fully Lagrangian Picture}
-Thus, to really get Bohmian trajectories, we should allow the points in $\vec{x}$ to move as well, this would allow the fluid elements in $\vec{y}$ to have the correct Bohmian velocity. But what if we allowed {\bf all of them} to move in the direction given by the Bohmian velocity field? We would have that:
+Thus, to really get Bohmian trajectories, we concluded that we should not only allow the trajectory $\vec{\xi}_y$ in $\vec{y}$ to branch in a different value per $\vec{x}$, but we should also keep track of their movement in $\vec{x}$. This means we would implicitly assume that the full system is a fluid, and then we would only consider part in a Lagrnagian frame. Doing so, we would have that the points over which we consider the conditional function would be:
 \begin{equation}
 \begin{cases}\label{b}
 \vec{x}^\xi(t)=\vec{\xi}_x +\int_{t_0}^t \vec{v}_x(\vec{x}(t), \vec{y}(t),t)dt\quad \forall t\geq t_0\\
@@ -1557,133 +1568,150 @@ v_j(\vec{x}, \vec{y},t)=\frac{1}{m_j}\pdv{S(\vec{x}, \vec{y},t)}{x_j}\quad j\in\
 \end{cases}
 \end{equation}
 
-As it can be seen in Figure \ref{fig:fallback}, each element of the initially affine Eulerian support of the conditional function (blue in the Figures), would move in different directions in the $N$ axes of configuration-space. We would end up having a varying number of values of the same function $f$ for a same $x$, which is incompatible with the Eulerian view. The function in $\vec{x}$ would become multivalued. The support would still be an $m$ dimensional manifold, meaning the parametrization given by $\vec{\xi}_x$ would still be valid, and we would still have one point in the wavefunction per each $\vec{\xi}_x$ in the initial manifold. However, a value per fluid element is exactly what we had in the Fully Lagrangian Picture $f(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t),t)=f(\vec{\xi},t)$.
+
+If we did so, as it can be seen in Figure \ref{fig:fallback}, each element of the initially affine Eulerian support of the conditional function would move in different directions in the $N$ axes of configuration-space. We would end up having a varying number of values of the same function $f$ for a same $x$, which is incompatible with a proper univalued Eulerian function description. Thus we would require now to parametrize as well the conditional function support as a function of the initial position in $\vec{x}$, say using a parameter $\vec{\xi}_x$. The support would still be an $m$ dimensional manifold, meaning the parametrization given by $\vec{\xi}_x$ would be one to one for a certain $\vec{\xi}_y$, having one point in the wavefunction per each $\vec{\xi}_x$ in the initial manifold. However, this is exactly the definition of the Fully Lagrangian Picture, where there is a value of the function per point in the initial support manifold $f(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t),t)=f(\vec{\xi},t)$.
 }
+
+
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.65\linewidth]{unstructuring.png}
-  \caption{Left $t=t_0$, right $t=t_1$. In blue, the $m$ dimensional support of the CWF. In green the field value at each point (say the phase or magnitude of the WF). In yellow the elements of the CWF we consider, together with the velocity vectors we will use to move them according to \eqref{b}. Note how each fluid element moves independently, unstructuring the grid they compose not only in $y$ as happened in (a), but also in $x$, just like with the fully Lagrangian study-case. }
+  \caption{A conditional function for the initial trajectory position $\vec{y}=\vec{\xi}_y$ in the left, with an affine support, but where each considered point will be evolved with a different velocity in $\R^N$. The result in a time $t>t_0$ can be seen in the right, where the support over which we are looking at the full function is a curve that can pass from the same value in $\vec{x}$ multiple times. To describe this conditional function, we will then require to parametrize the positions in $\vec{x}$ as well. We essentially fall back to the fully Lagrangian view of the function. }
   \label{fig:fallback}
 \end{figure}
 
 \mybox{
 \subsection*{Solution: Evolve a single $\R^N$ Bohmian trajectory per conditional function}
-We have found that having really Bohmian trajectories move each point of the conditional function resulted in the fully Lagrangian frame. However, notice that this was only because we allowed each point of the support to move independently. What if we forced all the points of the support of the conditional function to move along a single Bohmian trajectory? We would then achieve our original idea. If we only associate a single Bohmian trajectory to the evolution of a conditional function, we will have a partially Eulerian description consistent with Bohmian trajectories. See Figure \ref{fig:singleTraj}. 
+We have found that even if we are only interested in Bohmian trajectories for the subsystem in $\vec{y}$, Bohmian trajectories require the implicit parameterization of the initial support of the conditional function both in $\vec{x}$ and $\vec{y}$ for a proper time evolution. That is, we need to describe implicitly the whole system as a fluid even if we will then see some degrees in the Eulerian frame. However, having each point of the support of the conditional function move according to Bohmian trajectories resulted in the fully Lagrangian frame. A solution to this impasse is to avoid all the points of the support to move independently. What if we forced all the points of the support of the conditional function to move along a {\bf single} Bohmian trajectory? We would then achieve our original idea. The wavefunction would remain univalued per each $\vec{x}$ at all times, meaning we could describe it in Eulerian terms, but at the same time we would get a Bohmian trajectory. See Figure \ref{fig:singleTraj}. 
+
+Note very importantly that this leaves us a free choice to select which will be the initial $\vec{\xi}_x$ position in the Eulerian degrees for the single trajectory. We could choose it randomly using the Born rule for the section for example.
 
 }
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.65\linewidth]{moving_bohmian.png}
-  \caption{Right $t=t_0$, left $t=t_1$. In blue, the support of the CWF, which can be seen to have its affinity preserved at all times. This is because the whole CWF is displaced following the same Bohmian trajectory as explained in (c): the one for $(\xi^x_0, \xi^y_0)$. In green the value of a property of the WF over the support of the CWF. We see that the $x$ velocity of the trajectory is fully given by the variation of the CWF. For the velocity in $y$ however, we still have the problem that we are only dealing with a single slice and thus cannot have local information of first or higher order. }
+    \includegraphics[width=0.64\linewidth]{moving_bohmian.png}
+  \caption{A conditional function that is evaluated in $\vec{y}$ along a single Bohmian trajectory. In the left at time $t_0$ and in the right at time $t$ . The velocity with which the slice is moved in $\vec{y}$ is the same for all the Eulerian positions, meaning the initially affine support will be affine at all times. Note that the slice itself always occupies all the domain in $\vec{x}$, it does not move in $\vec{x}$ with the Bohmian trajectory, only in $\vec{y}$. Yet the track in $\vec{x}$ for the Bohmian trajectory is essential for its proper univalued evolution in $\vec{y}$. }
   \label{fig:singleTraj}
 \end{figure}
 
-Therefore, for both allowing a homogeneous interpretation of physics and allowing the coupled description of a conditional function with Bohmian trajectories in the full configuration-space (which seem ontologically the most interesting trajectories we can get), we will consider the whole space $\vec{\x}\in\Omega_t\subseteq\R^N$ to be a fluid composed of $N$-dimensional point-like fluid elements, just that we will still consider conditional functions, for their potential benefits.
+Therefore, for both allowing a homogeneous interpretation of physics and allowing the coupled description of a conditional function with Bohmian trajectories in the full configuration-space (which seem philosophically the most interesting trajectories we can get), we will consider the whole space $\vec{\x}\in\Omega_t\subseteq\R^N$ to be a fluid composed of $N$-dimensional point-like fluid elements, just that we will still consider conditional functions with some Eulerian degrees, for their potential benefits.
 
-For this, we will use $\vec{\xi}_x=(\xi_1,...,\xi_m)$ to denote the Lagrangian labels of the degrees of freedom treated in the Eulerian frame $\vec{x}$, while $\vec{\xi}_y=(\xi_{m+1},...,\xi_N)$ will denote the labels of the Lagrangian degrees of freedom. In general, to uniquely identify a fluid element and its associated conditional function, we will not have enough with $\vec{\xi}_y$, but will require the full label $\vec{\xi}=(\vec{\xi}_x,\vec{\xi}_y)\in \Omega_0\subseteq\R^N$. This means that now the continuous velocity field driving the fluid elements can be dependent on $\vec{x}$, meaning there will be a diffeomorphism describing the trajectories for the full system $\vec{\x}(\vec{\xi},t)=(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t))$. 
+For this, we will use $\vec{\xi}_x=(\xi_1,...,\xi_m)$ to denote the implicit Lagrangian labels of the degrees of freedom treated in the Eulerian frame $\vec{x}$, while $\vec{\xi}_y=(\xi_{m+1},...,\xi_N)$ will denote the labels of the explicit Lagrangian degrees of freedom. In general, to uniquely identify a fluid element and its associated conditional function, we will not have enough with $\vec{\xi}_y$, as seen in the boxes, but will require the full label $\vec{\xi}=(\vec{\xi}_x,\vec{\xi}_y)\in \Omega_0\subseteq\R^N$. This means that now the velocity field driving the fluid elements can be dependent on $\vec{x}$. Since we assume the velocity field will be continuous, by the Picard-Lindelöf theorem, there will be a diffeomorphism describing the trajectories for the full system, which we will denote again by $\vec{\x}(\vec{\xi},t)=(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t))=(\vec{x}^\xi(t),\vec{y}^\xi(t))$. 
 
-Very importantly, whenever we consider a conditional function $f(\vec{x},\vec{y}(\vec{\xi},t),t)$, we will also be able to conceive another conditional function "coupled" to the first through the trajectory of a same fluid element $\vec{\xi}$, namely $f(\vec{x}(\vec{\xi},t),\vec{y},t)$. In fact, we could consider several conditional functions, until $N$, each with a different dimensionality. For example, we could consider $f(x_1(\vec{\xi},t),x_2(\vec{\xi},t),x_3,...,x_N,t)$, $f(x_1, x_2, x_3(\vec{\xi},t), x_4,...,x_N)$ and $f(x_1, x_2, x_3, x_4(\vec{\xi},t),...,x_N(\vec{\xi},t))$. In general, we will call these conditional functions coupled by parts of the same trajectory, {\bf complementary conditional functions} (see Figure \ref{fig:complementary}). Interesting particular cases will be:
-\begin{itemize}
-\item Having $N$ complementary conditional functions, one per each degree $x_k$, describing the function conditioned to the rest of the system being in a given trajectory. Meaning that each degree of freedom will be described by a 1D Eulerian function and a point-like position $x_k(\vec{\xi},t)$.
-\item Having $N/3$ complementary conditional functions, one per triad of degrees of freedom. This way, we could have a 3D function describing each physical space particle, together with its 3D position $(x_{k}(\vec{\xi},t), x_{k+1}(\vec{\xi},t),x_{k+2}(\vec{\xi},))$, where $\vec{\xi}$ would reflect its initial position and the initial position of the rest of the particles in the system. For each possible initial position of the system, we would have a different set of 3D functions and trajectories for the system, which unfortunately from the ontological perspective, will influence each other contingently (they will push each other as we already saw).
-\item Having 2 complementary conditional functions: one for our lab system and one for the rest of the particles in the Universe (the environment). We would then have a wavefunction for the lab system and a wavefunction for the environment, both coupled through the common global trajectory of the system.
-\end{itemize} 
-Hereafter, we will assume when describing a conditional function that along with it, we also evolve the rest of complementary conditional functions associated to its trajectory.
+\subsection*{Complementary Conditional Functions}
+
+Whenever we consider a conditional function $f(\vec{x},\vec{y}(\vec{\xi},t),t)$, since we implicitly assume a trajectory for all the degrees of freedom $(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t))$, we will also be able to conceive another conditional function "coupled" to the first through the trajectory of the same fluid element $\vec{\xi}$, namely $f(\vec{x}(\vec{\xi},t),\vec{y},t)$. In fact, we could consider several conditional functions, until $N$, each with a different dimensionality, all of which are conditioned to parts of the same global trajectory. For example, we could consider the three complementary conditional functions $\{f(x_1(\vec{\xi},t),x_2(\vec{\xi},t),x_3,...,x_N,t)$, $f(x_1, x_2, x_3(\vec{\xi},t), x_4,...,x_N), f(x_1, x_2, x_3, x_4(\vec{\xi},t),...,x_N(\vec{\xi},t))\}$, where the first one has $N-2$ Eulerian dimensions, the second one has $N-1$ and the third has three. 
+
+In general, we will call these conditional functions coupled by parts of the same trajectory, {\bf complementary conditional functions} (see Figure \ref{fig:complementary} for an intuition).
+\vspace{0.3cm}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.75\linewidth]{7slices_complementary.png}
-  \caption{ Visual intuition about the complementary conditional functions in $N=2$. In the center left, we see the implicit grid of fluid elements of the whole quantum system. The red dots symbolize each a fluid element we will evolve in time. Each will have associated its own conditional function in $x$ and in $y$. If they are Bohmian trajectories and $f=\psi$, then these two slices of the full wavefucntion are enough to know the velocity of the Bohmian trajectory. In the right we see how several of these complementary conditional functions (each having its trajectory $\vec{x}(\vec{\xi},t)$) gives us an intuition of the full function $f(x,y,t)$ (in blue above) in terms of crossed slices moving in $\R^N$. Note that in the intersection between the conditional functions of different trajectories, the value of the conditional function should be exactly the same. This could be a numerical indicator of the goodness of the time evolution. }
-  \label{fig:slices}
+  \caption{ Visual intuition about the complementary conditional functions in $N=2$. In the center left, we see the implicit grid of fluid elements of the whole quantum system. The red dots symbolize each a fluid element we will evolve in time. Each will have its own conditional functions associated, one in $x$ and one in $y$. If they are Bohmian trajectories and $f=\psi$, then these two slices of the full wavefucntion are enough to know the velocity of the Bohmian trajectory. In the right we see how several of these complementary conditional functions (each set having its trajectory $\vec{\x}(\vec{\xi},t)$) gives us an intuition of the full function $f(x,y,t)$ (in blue above) in terms of crossed slices moving in $\R^N$. Note that in the intersection between the conditional functions of different trajectories, the value of the conditional function should be exactly the same. This could be a numerical indicator of the goodness of the time evolution. }
+  \label{fig:complementary}
 \end{figure}
-Note that if we consider the set of complementary conditional functions for a given discretized grid of fluid elements $\{\vec{\xi}^j\}_{j=1}^M$, we will have that for all the fluid elements that at a certain time turn to be aligned along any $x_k$ axis, their conditional functions in that axis will be exactly the same. See Figure \ref{fig:over} for a visual understanding. This means that we will have an over-representation of the "slices" of the full function. In the numerical/computational approaches, this will not be something to really worry about, since the positions being real numbers makes it is hardly impossible to have more than one trajectory passing from the same $x_k$ point at the same time. However, in theory an infinite amount of trajectories cross the same point in $x_k$ at the same time, which is why we rise up this over-representation warning.
+
+Interesting particular cases will be:
+\begin{itemize}
+\item Having $N$ complementary conditional functions. One per each degree $x_k$. Each conditional function would describe the full function conditioned to the rest of the system being in the given trajectory $f(x_1,x_2^\xi(t),...,x_N^\xi(t))$. Meaning that each degree of freedom will be described by a 1D Eulerian function $f(x_k;\vec{y}^\xi(t))$ and a point-like position $x_k(\vec{\xi},t)$.
+\item Having $N/3$ complementary conditional functions, one per triad of degrees of freedom. This way, we could have a three Eulerian dimension function describing each three dimensional physical space particle $f(x_k,x_{k+1},x_{k+2}; \vec{y}^\xi(t))$, together with the 3D position of the particle $(x_{k}(\vec{\xi},t), x_{k+1}(\vec{\xi},t),x_{k+2}(\vec{\xi},))$ with support exclusively in the physical space coordinates of the particle. $\vec{\xi}$ would reflect the initial position of the particle and the initial position of the rest of the particles in the system and there would be a global trajectory describing the motion of all. For each possible initial position of the system, we would have a different set of 3D functions and trajectories per particle\footnote{ This suggests a very intersting philosophical understanding of quantum physics, which we will start to discuss here and continue later on. Note however that all these {\bf possible} physical space functions and trajectories for each particle will influence each other contingently even if only one of them is "really existing physically" (they will push each other in configuration-space through the correlation potentials).}.
+\item Having 2 complementary conditional functions: one for our lab system and one for the rest of the particles in the Universe (the environment). We would then have a wavefunction for the lab system and a wavefunction for the environment, both coupled through the common global trajectory of the system.
+\end{itemize} 
+Hereafter, we will assume when describing a conditional function that along with it, we can also consider the rest of complementary conditional functions associated to its trajectory.
+
+Note that if we consider a whole set of complementary conditional functions for each fluid element in a given discretized grid of $\R^N$, $\{\vec{\xi}^j\}_{j=1}^M$, we will have that for all the fluid elements that at a certain time turn to be aligned along any $x_k$ axis, their conditional functions in that axis will be exactly the same. See Figure \ref{fig:over} for a visual understanding. This means that we will have an over-representation of the "slices" of the full function. In the numerical/computational approaches, this will not be something to really worry about, since the positions being real numbers makes it is hardly impossible to have more than one trajectory passing from the same $x_k$ point at the same time. However, in theory an infinite amount of trajectories cross the same point in $x_k$ at the same time, which is why we rise up this over-representation warning.\vspace{0.5cm}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.65\linewidth]{many_bohmian.png}
-  \caption{In blue we can see the affine supports of several pairs of CWF-s (slices of the WF) built by following the complementary function idea. In each intersection we have enough information as for evolving a Bohmian trajectory. }
+  \caption{In blue we can see the affine supports of several pairs of complementary functions. In each intersection we would have enough information as for evolving a Bohmian trajectory. Note that if each intersection represents a Bohmian trajectory with its complementary $x$ and $y$ conditional functions, then all the trajectories that in a certain time turn out to be aligned in any of the blue lines ($x$ or $y$ axes), then they will have an exactly same conditional function in that axis. This means that their complementary conditional function sets will share an element. There is an over-representation of slices of the full function. }
   \label{fig:over}
 \end{figure}
-
-\subsection*{Why some Bohmian believe the Complementary Conditional Functions and their Trajectory are the {\em arkhe}?}
-
-Following the expression for the velocity field guiding the fluid elements \eqref{v}, for the movement in any Eulerian axis $x_k$, the velocity field only depends on the derivative of the action in that same direction $\pdv{}{x_k}$. This means that we have enough with the conditional wavefunction $\psi(\vec{x},\vec{y}(\vec{\xi},t),t)$ to know the trajectory of the coupled fluid element $\vec{\xi}$ in the $\vec{x}$ degrees of freedom. This somewhat suggests that if the Bohmian trajectory is the ultimate ontological reality and if the complementary conditional functions (the wavefunction or the aciton and density) of a certain trajectory are the only necessary functions to predict its motion, then there must be some serious weight in those complementary conditional functions. 
+\newpage
+\subsection*{Why some Bohmian believe the Complementary Conditional Functions and their Trajectory are the {\em arkhe} of the Quantum world?}
+There is a very relevant observation from the philosophical standpoint about the complementary wavefunctions of a certain global trajectory. Following the Bohmian velocity fields \eqref{v}, the velocity piloting the movement of the trajectory, in any Eulerian axis $x_k$, only depends on the derivative of the action in that same direction $\pdv{}{x_k}$ evaluated at the current position of the trajectory. This means that we have enough with a set of complementary conditional wavefunctions (say $\psi(\vec{x},\vec{y}(\vec{\xi},t),t)$ and $\psi(\vec{x}(\vec{\xi},t),\vec{y},t)$) in order to know the velocity of the trajectory in all the $N$ directions, since these conditional functions give us the variation of the full function exactly in the directions we need. We have enough with these slices, as can be seen depicted in Figure \ref{fig:pair_bohm}. This suggests that if the Bohmian trajectory of the system is the ultimate reality and if the complementary conditional functions (the wavefunction or the aciton and density) of a certain trajectory are the only necessary functions to predict its motion, then there must be some serious weight in those complementary conditional functions. 
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.65\linewidth]{bohmian_pair.png}
-  \caption{Following the same caption of Figure \ref{fig:singleTraj}, we see that having a complementary CWF that has as Lagrangian degrees of freedom the Eulerian ones of the first, allows the evolution of the common trajectory with no further requirements. Note how the WF value at the trajectory position for both CWF-s should coincide. The difference of these could be a metric to be used in numerical simulations.  }
+  \caption{Following the same caption of Figure \ref{fig:singleTraj}, we see that having a complementary function that has as Lagrangian degrees of freedom the Eulerian ones of the first, gives us all the information we need to evolve the Bohmian trajectory to the next time step. The velocity of the Bohmian trajectory is the partial derivative in $x$ and in $y$ of the full function, just over the position of the trajectory, which is precisely the information provided by the complementary slices (in pink). }
   \label{fig:pair_bohm}
 \end{figure}
 
-It is however somewhat fallacious to say this, since as we will see, the equations that predict the motion of those complementary conditional functions that are the only thing affecting the trajectory, actually depend on the rest of possible complementary conditional functions. This will be because their time evolution will require the knowledge of the derivatives $\pdv{}{x_k}$ of the Lagrangian axes, but since we are considering with each conditional function a single slice, we will not have enough information. We will have it at the exact point of the trajectory $\vec{x}^\xi(t)$ coupling them, but not in all the rest of positions in $\vec{x}$.
+It is however somewhat fallacious to say this, since as we will see, the equations that predict the motion of those complementary conditional functions, the only things affecting the trajectory, actually depend on the rest of possible complementary conditional functions. This will be because their time evolution will require the knowledge of the derivatives $\pdv{}{x_k}$ on the Lagrangian axes, for all the Eulerian positions of the slice. Since we are considering with each conditional function a single slice, we will not have enough information. We will have this information at the exact point of the trajectory $\vec{\x}^\xi(t)$, thanks to the complementary conditional functions (which is why we can evolve the Bohmian trajectory), but not in all the rest of Eulerian positions of any of the complementary conditional functions. And we need that to evolve them as a whole. Thus, we do not need the full function (or equivalently, the rest of slices, to evolve the Bohmian trajectory, but we do need them to evolve the complementary conditional functions themselves).
 
-Nonetheless, we will see in a moment a formidable way to hide this dependency even further away from the trajectories, by first defining the $G,J$ correlation potentials, and then defining dynamical equations for them.
+We will see in a moment however, a formidable way to hide this dependency and actually make it a self-related problem, and perhaps we will realize that this believe has actually big epistemological importance. We will come back to the discussion there.
 
 \newpage
-\subsection*{(III.a) The Schrödinger Equation}
+
+
+\section*{(III.a) The Schrödinger Equation}
 \addcontentsline{toc}{subsubsection}{{\bf (III.a)} The Schrödinger Equation}
+The Schrödinger Equation \eqref{SE} will provide us after some manipulation, some equations to predict the time evolution of the conditional functions. The resulting equations will turn out to depend on variations of the functions in the Lagrangian axes $\vec{y}$, meaning the evolution of each conditional function will depend on the rest of adjacent possible conditional functions (the rest of slices of the full function). In general we will call the terms correlating the conditional functions, {\bf correlation terms}.
 \subsection*{(III.a.1) Kinetic and Advective Correlation Terms}
 %\addcontentsline{toc}{subsubsection}{{\bf (III.a.1)} The Schrödinger Equation: Kinetic and Advective Correlation Terms}
-If we evaluate $\vec{y}=\vec{y}(t,\vec{\xi})$ in the Schrödinger Equation \eqref{SE}, leaving $\vec{x}$ in the Eulerian frame:
+If we evaluate $\vec{y}=\vec{y}(t,\vec{\xi})$ in the Schrödinger Equation \eqref{SE}, leaving $\vec{x}$ in the Eulerian frame, we get:
 \begin{equation}
 i\hbar \pdv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=-\sum_{j=1}^m \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y}^\xi(t),t) + U(\vec{x}, \vec{y}^\xi(t),t)\psi(\vec{x}, \vec{y}^\xi(t),t) -\sum_{j=m+1}^N \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
-Using that by the chain rule:
+Then, since by the chain rule:
 \begin{equation}
 \dv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=\pdv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)+\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \pdv{x_j(\vec{\xi},t)}{t}
 \end{equation}
-We get:
+We get the following equation ruling the motion of the conditional wavefunctions:
 \begin{equation}\label{KinAdvEL}
 i\hbar \dv{}{t}\psi(\vec{x}, \vec{y}^\xi(t),t)=\qty[-\sum_{j=1}^m \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(\vec{x}, \vec{y}^\xi(t),t)]\psi(\vec{x}, \vec{y}^\xi(t),t)+K(\vec{x}, \vec{y}^\xi(t),t)+A(\vec{x}, \vec{y}^\xi(t),t)
 \end{equation}
 
-Where we define the so called Kinetic and Advective correlation potentials:
+Where we define the so called Kinetic and Advective correlation terms:
 \begin{equation}\label{KinEL}
 K(\vec{x}, \vec{y}^\xi(t),t):=-\sum_{j=m+1}^N \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} \psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
 \begin{equation}\label{AdvEL}
 A(\vec{x}, \vec{y}^\xi(t),t):=i\hbar\sum_{j=m+1}^N \pdv{}{x_j}\psi(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\cdot \pdv{x_j(\vec{\xi},t)}{t}
 \end{equation}
-We can see that equation \eqref{KinAdvEL} ruling the motion of the conditional wavefunction $\psi(\vec{x}, \vec{y}^\xi(t),t)$ is almost a Schrödinger Equation for a system of $m$ (instead of $N$) dimensions. The difference is that we now have two additional affine terms that actually depend on derivatives of the full wavefunction in the axes that we are considering in the Lagrangian frame. As we already anticipated that would happen, if we want to evolve a single conditional wavefunction (or the complementary conditional wavefunction set it is part of), we do not have enough with themselves. We would require the knowledge of complementary conditional wavefunctions of other trajectories. It is just the same problem that we faced with the fully Lagrangian picture. As such, to solve this problem we will be able to use the same strategies: 
-\begin{itemize}
-\item Evolve several trajectories and their conditional wavefunctions and use them as a discretized version of the full wavefunction to get the derivatives for each trajectory. We would still have the problem that the grid would become non-equispaced, even if the unstructuring in this case would be better, since each single conditional function is already a whole set of points of what the Fully Lagrangian picture allowed.
+Equation \eqref{KinAdvEL}, ruling the motion of the conditional wavefunctions $\psi(\vec{x}, \vec{y}^\xi(t),t)$ is almost a Schrödinger Equation for a system of $m$ (instead of $N$) dimensions. The difference is that we now have two additional affine terms in the equation, that actually depend on derivatives of the full wavefunction in the axes that we are considering in the Lagrangian frame. As we already anticipated that would happen, if we want to evolve a single conditional wavefunction (or the complementary conditional wavefunction set it is part of), we do not have enough with themselves. We would require the knowledge of complementary conditional wavefunctions of other nearby trajectories. It is just the same problem that we faced with the fully Lagrangian picture. As such, to solve this problem we will be able to use the same strategies: 
+\begin{enumerate}
+\item[($\alpha$)] Evolve several trajectories and their conditional wavefunctions and use them as a discretized version of the full wavefunction to get the derivatives for each trajectory. We would have the problem that the grid would become non-equispaced (like in the fully Lagrangian case), even if the unstructuring in this case would be better behaved, since each single conditional function already gives us a whole set of structured (Eulerian) points occasionally.
 
-To do this we could change the derivatives in $x_k$ to derivatives in the label space $\xi_k$, which we could choose to be equispaced, fit a sum of analytic functions and compute the derivatives symbolically or use a $K$ nearest neighbourgh apporach to predict the full wavefunction and make numerical derivatives etc.
+To face the derivatives in the Lagrangian axes in this unstructured grid, among others, we could:
+\begin{enumerate}
+\item Change the derivatives in $x_k$ to derivatives in the label space $\xi_k$, which we could choose to be equi-spaced.
+\item Fit a sum of analytic functions and compute the derivatives symbolically.
+\item Use a $K$ nearest neighbour approach to predict the full wavefunction and make numerical derivatives.
+\end{enumerate}
 
-\item Evolve the derivatives of the wavefunction along the trajectories with a chain of infinite differential equations, or similarly evolve the Kinetic and Advective correlation potentials.
-\end{itemize}
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.65\linewidth]{aligned_original.png}
-  \caption{In blue we can see several CWF-s (their supports). Yellow dots show the discrete elements of the CWF-s we will consider. This image shows two things: 1. parallel CWF-s (CWF-s with the same Lagrangian degrees but different initial positions) can be used to approximate derivatives in the Lagrangian directions $\pdv{}{y}$. 2. Crossed CWF-s with complementary Lagrangian degrees can be used also to approximate derivatives in the Lagrangian directions with a higher degree of precision than using parallel CWF-s.  }
-  \label{fig:aligned2}
-\end{figure}
+\item[($\beta$)] Evolve the derivatives of the wavefunction along the trajectories, using a chain of infinite differential equations. Similarly one could evolve the Kinetic and Advective correlation potentials themselves in time.
+\end{enumerate}
+%Klaro figura honen pblmie da ke en N mas grnades no tienen porke kedar alineados los cwf differentes asike pf no es tan inmediato
+%\begin{figure}[h!]
+ % \centering
+ %   \includegraphics[width=0.65\linewidth]{aligned_original.png}
+%  \caption{Depiction of several complementary conditional functions. The yellow dots show the discrete elements of the Eulerian degrees of each conditional function. This image shows two things: 1. parallel conditional functions (conditional functions with the same Lagrangian degrees but different initial trajectory positions) can be used to approximate derivatives in the Lagrangian directions $\pdv{}{y}$. 2. Crossed CWF-s with complementary Lagrangian degrees can be used also to approximate derivatives in the Lagrangian directions with a higher degree of precision than using parallel CWF-s.  }
+%  \label{fig:aligned2}
+%\end{figure}
 
 
 \subsection*{(III.a.2) G and J Correlation Potentials}
 %\addcontentsline{toc}{subsubsection}{{\bf (III.a.2)} The Schrödinger Equation: G and J Correlations}
-In this section we will develop a Schrödinger-like equation for the conditional wavefunctions (CWF) that this time will be a linear one, unlike the Kinetic and Advective equation \eqref{KinAdvEL}. An interesting part will be that the Lagrangian degrees of freedom will be required in density and action shape, while the Eulerian part will be required in wavefunction shape. 
+In this section we will develop a Schrödinger-like equation for the conditional wavefunctions (CWF) that this time will at least resemble to be linear, unlike the Kinetic and Advective equation \eqref{KinAdvEL}.
 
-Following the development in Chp.1 V 6 of \cite{JordiXO}, we can try to find a Schrödinger like equation for the CWF-s employing the following "trick". An arbitrary non-zero single valued complex function $f(x, t):\R^m \rightarrow \C$ can be imposed to be the solution of an mD Schrödinger equation:\vspace{-0.3cm}
-$$
+Following the development in Chapter 1 of \cite{JordiXO}, an arbitrary non-zero and single valued complex function $f(x, t):\R^m \rightarrow \C$ can be imposed to be the solution of an m dimensional Schrödinger equation:
+\begin{equation}
 i \hbar \pdv{f(x,t)}{t} = -\sum_{k=1}^m\frac{\hbar^2}{2 m_k}\pdv[2]{f(x,t)}{x_k} + W(x,t) f(x,t)
-$$
-if the potential term $W(x, t)$ is defined as:\vspace{-0.3cm}
-$$
-W(x, t) := \qty(i \hbar \pdv{f(x,t)}{t} +\sum_{k=1}^m\frac{\hbar^2}{2 m_k}\pdv[2]{f(x,t)}{x_k} ) \frac{1}{f(x,t)}\vspace{-0.3cm}
-$$
-The proof is immediate. An observation that we must note is that for an arbitrary $f(x,t)$, the potential $W(x,t)$ can be complex. This is not the case in the usual Schrödinger Equation.
+\end{equation}
+if the potential term $W(x, t)$ is defined as:
+\begin{equation}
+W(x, t) := \qty(i \hbar \pdv{f(x,t)}{t} +\sum_{k=1}^m\frac{\hbar^2}{2 m_k}\pdv[2]{f(x,t)}{x_k} ) \frac{1}{f(x,t)}
+\end{equation}
+The proof is immediate. An observation that we must note is that for an arbitrary $f(x,t)$, the potential $W(x,t)$ can be complex, which was not the case in the usual Schrödinger Equation.
 
-If we now take the CWF where we had $m$ Eulerian degrees of freedom $x$ and $N-m$ Lagrangian degrees of freedom $y$ and write it in polar form: $\psi(x, y^\xi(t),t)=:\psi^\xi (x,t)=\p^\xi(x,t) e^{i\z^\xi(x,t) / \hbar}$, we can introduce it in this general complex potential $W^\xi(x,t)$:
-$$
-W^\xi(x, t) = \qty(i \hbar \pdv{\psi^\xi (x,t)}{t} +\sum_{k=1}^m\frac{\hbar^2}{2 m_k}\pdv[2]{\psi^\xi (x,t)}{x_k} ) \frac{1}{\psi^\xi (x,t)} = \qty(i \hbar \pdv{\qty(\p^\xi e^{i\z^\xi/\hbar})}{t} +\sum_{k=1}^m\frac{\hbar^2}{2 m_k}\pdv[2]{\qty(\p^\xi e^{i\z^\xi/\hbar})}{x_k} ) \frac{1}{\p^\xi e^{i\z^\xi/\hbar}}
-$$
-using the Leibniz derivation rule several times and an inverse chain rule, rearranging we arrive at:
-$$
-W^\xi(x, t)=-\sum_{k=1}^m\frac{1}{2m_k} \qty( \qty(\pdv{\z^\xi}{x_k})^2 -\frac{\hbar^2}{\p^\xi}\pdv[2]{\p^\xi}{x_k})\ -\pdv{\z^\xi}{t}+ \ i \ \frac{\hbar}{\p^{\xi\ 2}} \qty(\pdv{\p^{\xi\ 2}}{t}+\sum_{k=1}^m\pdv{}{x_k}\qty(\frac{\p^{\xi\ 2}}{m_k}\pdv{\z^\xi}{x_k}))
-$$
+If we now take the conditional wavefunction,  and write it in polar form: $\psi(x, y^\xi(t),t)=:\psi^\xi (x,t)=\p^\xi(x,t) e^{i\z^\xi(x,t) / \hbar}$, by introducing it in $W^\xi(x,t)$ we will get what the complex potential should be for the conditional wavefunction be ruled by a Schrödinger-like equation:
+\begin{equation}\label{Wxi}
+W^\xi(x, t) = -\sum_{k=1}^m\frac{1}{2m_k} \qty( \qty(\pdv{\z^\xi}{x_k})^2 -\frac{\hbar^2}{\p^\xi}\pdv[2]{\p^\xi}{x_k})\ -\pdv{\z^\xi}{t}+ \ i \ \frac{\hbar}{\p^{\xi\ 2}} \qty(\pdv{\p^{\xi\ 2}}{t}+\sum_{k=1}^m\pdv{}{x_k}\qty(\frac{\p^{\xi\ 2}}{m_k}\pdv{\z^\xi}{x_k}))
+\end{equation}
+where we used the Leibniz derivation rule and an inverse chain rule. Note that the potential term depends on the trajectory we choose. In general we will use $:=\W(x,y^\xi(t),t):=W^\xi(x,t)$.
 %Separating the real and imaginary parts:
 %$$
 %\begin{cases}
@@ -1694,88 +1722,84 @@ $$
 %Where we can recognize the \ref{QHJE} for a single particle in 1D. As such, the real part of W is simply the scalar real potential, then the Hamiltonian, followed by the kinetic energy and the quantum potential of a 1D particle.
 %Which is clearly a modified particle conservation equation \ref{CE}. Note how if  $Im\{W(x_a, t)\} =0$ then we get the common continuity equation, which would mean that probability is conserved, and the solution $\Phi(x,t)$ would preserve its norm at all times (the conditional $r_a^2$ would integrate a same norm at all times in its spatial dimension $x_a$). Nonetheless, if $Im\{W(x_a, t)\} \neq 0$, then particles/probability are NOT conserved, and their source or sink will be quantified by $\frac{2 \_a^2}{\hbar} Im\{W(x_a, t)\}$. Therefore, the norm of $\psi^\xi (x,t)$ will not need to be preserved in the time evolution. \vspace{-0.3cm}\\
 
-If $W^\xi$ has that shape, $\psi^\xi (x,t)$ will be the solution of the differential equation:\vspace{-0.2cm}
-$$
-i \hbar \pdv{\psi^\xi (x,t)}{t} = -\sum_{k=1}^m \frac{\hbar^2}{2 m_k}\pdv[2]{\psi^\xi (x,t)}{x_k} + W^\xi(x,t) \psi^\xi (x,t)\vspace{-0.2cm}
-$$
-which if $\mathbb{I}m\{W^\xi\} =0$ would look like an actual mD Schrödinger Equation. However, $W^k$ depends on parts of the CWF itself, so the differential equation is  {\bf non-linear} even in that case.
+%If $W^\xi$ has that shape, $\psi^\xi (x,t)$ will be the solution of the $m$ dimensional Schrödinger-like Equation:\vspace{-0.2cm}
+%$$
+%i \hbar \pdv{\psi^\xi (x,t)}{t} = -\sum_{k=1}^m \frac{\hbar^2}{2 m_k}\pdv[2]{\psi^\xi (x,t)}{x_k} + W^\xi(x,t) \psi^\xi (x,t)\vspace{-0.2cm}
+%$$
+%which if $\mathbb{I}m\{W^\xi\} =0$ would look like an actual mD Schrödinger Equation. However, $W^k$ depends on parts of the CWF itself, so the differential equation is  {\bf non-linear} even in that case.
 
-We can further develop the expression of $W^\xi$ using the conditional definition of $\psi^\xi$. Note that $\psi^\xi ( x, t) := \Psi(x, y^\xi(t),t)$ means that $\z^\xi(x,t)=S(x, y^\xi(t),t)$ and $\p^\xi (x,t)=R(x, y^\xi(t),t)$, where we have that the full wavefunction in polar form is $\Psi(x,y,t)=R(x,y,t)e^{iS(x,y,t)/\hbar}$. Carefully evaluating them in $W^\xi$ and applying the chain rule, the real part of $W^\xi(x,t):=\W(x,y^\xi(t),t)$ yields:
+Using that $\psi^\xi ( x, t) := \Psi(x, y^\xi(t),t)$ means that $\z^\xi(x,t)=S(x, y^\xi(t),t)$ and $\p^\xi (x,t)=R(x, y^\xi(t),t)$, where we have that the full wavefunction in polar form is $\Psi(x,y,t)=R(x,y,t)e^{iS(x,y,t)/\hbar}$, applying the chain rule, the real part of $W^\xi(x,t)$ yields:
+\begin{equation}
+\R e\{\W(x, y^\xi(t),t)\}=
+\sum_{a=1}^m \Big\{-\frac{1}{2m_a} \qty(\pdv{S(x, y^\xi(t),t)}{x_a})^2 +\frac{\hbar^2}{2m_aR(x,y^\xi(t),t)}\pdv[2]{R(x, y^\xi(t),t)}{x_a}\Big\}-\dv{S(x,y^\xi(t),t)}{t}=
+\end{equation}
 $$
-\R e\{W(x,t)\}=\R e\{\W(x, y^\xi(t),t)\}=\vspace{-0.12cm}
-$$
-$$
-\sum_{a=1}^m \Big\{-\frac{1}{2m_a} \qty(\pdv{S(x, y^\xi(t),t)}{x_a})^2 +\frac{\hbar^2}{2m_aR(x,y^\xi(t),t)}\pdv[2]{R(x, y^\xi(t),t)}{x_a}\Big\}-\dv{S(x,y^\xi(t),t)}{t}=\vspace{-0.1cm}
-$$
-$$
-\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}- \ \qty(\pdv{S(x,y,t)}{t}\Big\rvert_{y^\xi(t)}+\sum_{k=m+1}^N \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t})\vspace{-0.12cm}
+\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}- \ \qty(\pdv{S(x,y,t)}{t}\Big\rvert_{y^\xi(t)}+\sum_{k=m+1}^N \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t})
 $$
 
-Note how the terms introducing coupling of the Eulerian degrees $x$ with the Lagrangian ones $y$, are the last two. They are the source of the {\bf entanglement}, {\bf exchange} and {\bf correlations} with the other fluid elements of the Lagrangian dimensions. Now, knowing that the full wave-function follows the Schrödinger Equation \eqref{SE} and thus the Quantum Hamilton-Jacobi Equation \eqref{HJE}, we can evaluate \eqref{HJE} in place of $-\pdv{S(x,y,t)}{t}$ to get:\vspace{-0.2cm}
+Now, knowing that the action follows the Quantum Hamilton-Jacobi Equation \eqref{HJE}, we can evaluate it in place of $-\pdv{S(x,y,t)}{t}$ to get:
+\newpage
+\begin{equation}
+Re\{\W(x, y^\xi(t),t)\}=\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}-
+\end{equation}
 $$
-\R e\{W^\xi(x,t)\}=\ Re\{\W(x, y^\xi(t),t)\}=\vspace{-0.14cm}
+-\sum_{k=m+1}^N \qty( \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t})\ + \sum_{k=1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} ] + V(x, y^\xi(t),t)
 $$
+Observe that in the last sum, the $k=a$ terms are equal to the two initial terms, which cancel each other out and we are left with the final expression:\vspace{-0.1cm}\label{ReW}
 \begin{equation*}
-\begin{split}
-\sum_{a=1}^m\Big\{-\frac{1}{2m_a} \qty(\pdv{\z^\xi(x,t)}{x_a})^2 +\frac{\hbar^2}{2m_a\p^\xi(x,t)}\pdv[2]{\p_a(x_a, t)}{x_a}\Big\}- \ \sum_{k=m+1}^N \qty( \pdv{S(x,y,t)}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t})\ + \\ \ +\sum_{k=1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} ] + V(x, y^\xi(t),t)
-\end{split}
+\R e\{\W(x, y^\xi(t),t)\}= \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t} ] + U(x, y^\xi(t),t)
 \end{equation*}
-Observe that in the last sum, the $k=a$ terms are equal to the two initial terms, which cancel each other out and we are left with the final expression:\vspace{-0.3cm}\label{ReW}
-\begin{equation*}
-\R e\{\W(x, y^\xi(t),t)\}= \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \dv{x_k^\xi(t)}{t} ] + V(x, y^\xi(t),t)
-\end{equation*}
-We now have defined $\R e(W^\xi)$ without using $\psi^\xi(\vec{x},t)$ in the same definition, at the cost of introducing the full wave-function to it. In particular, what we see is that it entirely depends on derivatives of the action and density in the Lagrangian directions. Essentially we can recognize in this potential the kinetic energy of the Lagrangian axes and their quantum potentials. The real part of $W^\xi$ also includes the classical conditional potential $V^\xi$, which introduces the geometric constraints between the Eulerian coordinates as a function of the position of the Lagrangian parts. Let us define the first part, the one introducing the correlations with the Lagrangian degrees as the correlation potential $G$:
-\begin{equation}\label{G}\tag{G}
+We now have re-expressed $\R e(W^\xi)$ without using $\psi^\xi(\vec{x},t)$ to compute it. Instead the dependence on the derivatives in the Lagrangian axes has explicitly emerged. Essentially we can recognize in this potential the kinetic energy of the Lagrangian axes and their quantum potentials. The real part of $W^\xi$ also includes the classical conditional potential $U^\xi$, which introduces the geometric constraints between the Eulerian coordinates as a function of the position of the Lagrangian parts. 
+
+Let us define the part introducing the correlations between the different conditional functions as the correlation potential $G$:
+\begin{equation}\label{G}
 G(x, y^\xi(t),t):=  \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x_k}\Big\rvert_{y^\xi(t)})^2 -\frac{\hbar^2}{2m_kR}\pdv[2]{R}{x_k}\Big\rvert_{y^\xi(t)} -\pdv{S}{x_k}\Big\rvert_{x_k^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} ]
 \end{equation}
+We could further define each of the summands as $G_k(x,y^\xi(t),t)$, for a matter of organization, since each summand encapsulates the correlation with the $x_k$ Lagrangian degree.
 
-We could further define each of the summands as $G_k(x,y^\xi(t),t)$, since each summand is the correlation with the $x_k$ Lagrangian degree. Its implication in the evolution of the conditional function is embodied there.
+Performing the same development for the imaginary part of $W^\xi$ in \eqref{Wxi}: evaluating the conditional function in $\mathbb{I}m\{W^\xi(x,t)\}$ and applying the chain rule, we get:
+\begin{equation}
+\hspace{-0.7cm}Im\{\W(x, y^\xi(t),t)\}=\frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \qty( \pdv{R(x,y,t)^2}{t}\Big\rvert_{y^\xi(t)} + \sum_{k=m+1}^N \pdv{R^2}{x_k}\Big\rvert_{y^\xi(t)} \dv{x_k^\xi(t)}{t} + \sum_{a=1}^m\Big\{\pdv{}{x_a} \qty(\frac{R^2}{m_a} \pdv{S(x, y^\xi(t),t)}{x_a} ) \Big\})
+\end{equation}
 
-Performing the same development for the imaginary part of $W^\xi$, that is, evaluating the definition of CWF in $\mathbb{I}m\{W^\xi(x,t)\}$ and applying the chain rule:
-$$
-Im\{W(x,t)\}=Im\{\W(x, y^\xi(t),t)\}=\vspace{-0.1cm}
-$$
-$$
-\frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \qty( \dv{R(x, y^\xi(t),t)^2}{t} + \sum_{a=1}^m\pdv{}{x_a} \qty(\frac{R^2}{m_a} \pdv{S(x, y^\xi(t),t)}{x_a} ))=\vspace{-0.1cm}
-$$
-$$
-\frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \qty( \pdv{R(x,y,t)^2}{t}\Big\rvert_{y^\xi(t)} + \sum_{k=m+1}^N \pdv{R^2}{x_k}\Big\rvert_{y^\xi(t)} \dv{x_k^\xi(t)}{t} + \sum_{a=1}^m\Big\{\pdv{}{x_a} \qty(\frac{R^2}{m_a} \pdv{S(x, y^\xi(t),t)}{x_a} ) \Big\})
-$$
-As the whole wave-function follows the Schrödinger Equation \eqref{SE}, the density must follow the continuity equation of the configuration-space fluid \eqref{CE}. Evaluating it at $\pdv{R(x,t, \vec{x}_b)^2}{t}$, we will notice there is a cancellation of the $k=a$ terms (as happened with the real part). We then arrive at an expression independent of $\psi_a^\beta$ for the imaginary part. We will define the potential energy term $J(x, y^\xi(t),t):=\mathbb{I}m\{\W(x, y^\xi(t),t)\}$, that is:
-\begin{equation}\label{J}\tag{J}
+As the full density must follow the continuity equation of the configuration-space fluid \eqref{CE}, evaluating it at $\pdv{R(x,t, \vec{x}_b)^2}{t}$, we will notice there is a cancellation of the $k=a$ terms (as happened with the real part). We then arrive at an expression of the imaginary part, which we will call the $J$ correlation potential, that is, $J(x, y^\xi(t),t):=\mathbb{I}m\{\W(x, y^\xi(t),t)\}$, which is given by:
+\begin{equation}\label{J}
 J(x, y^\xi(t),t):= \frac{\hbar}{2R^2}\Big\rvert_{y^\xi(t)} \sum_{k=m+1}^N \qty[ \pdv{R^2}{x_k}\Big\rvert_{y^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} - \frac{1}{m_k} \pdv{}{x_k} \qty(R^2 \pdv{S}{x_k} )\Big\rvert_{y^\xi(t)} ]
 \end{equation}
-These terms as well depend on derivatives of $R$ and $S$ in the directions of the Lagrangian degrees of freedom. In particular, they account for the variations of the norm of the CWF due to the displacement of the trajectory and the movement of the overall fluid. We will understand the term further in the next section.
+This is a correlation term as well, because it also depends on derivatives of $R$ and $S$ in the directions of the Lagrangian axes. A complex potential in the Schrödinger Equation makes the evolution not necessarily unitary, so this potential will account for the variations of the norm of the conditional wavefunction. This norm variation is due to the displacement of the Lagrangian part's trajectory and the movement of the slice along the overall fluid. Once again, we can encapsulate all the summands concerning spatial variations of the Lagrangian degree of freedom $x_k$ in a sub-potential $J_k$. 
 
-Once again, we will encapsulate all the summands concerning spatial variations of the Lagrangian degree of freedom $x_k$ in a sub-potential $J_k$. Doing so, we mark the terms that could be approximated in an {\em ad hoc} way as a function of the relative nature of each Lagrangian degree.
-
-With all, we have that the complex potential is decomposed in the following potential terms:
-$$
+With all, we have that the complex potential ruling the motion of the conditional wavefunction is decomposed in the following terms:
+\begin{equation}
 W^\xi(x,t)=\W(x, y^\xi(t),t)= V(x, y^\xi(t),t) + \sum_{k=m+1}^N\Big\{ G_k(x, y^\xi(t),t)+i\ J_k(x, y^\xi(t),t)\Big\}
-$$
-In a nutshell, we have taken the N dimensional Schrödinger Equation \eqref{SE} dictating the time evolution of the full wave-function and converted it into an $m$ dimensional Schrödinger-like Equation dictating the time evolution of the CWF. Unfortunately the potentials depend on variations of the full wavefunction around the Lagrangian trajectory in the Lagrangian axes, which cannot be known by only evolving a single CWF nor evolving all its complementary CWF-s.
+\end{equation}
+Then the conditonal wavefunction is ruled in time by:
 \begin{equation}\label{SE.GJ}
 i \hbar \pdv{\psi^\xi (x,t)}{t} = \qty[\sum_{a=1}^m\frac{\hbar^2}{2m_a} \pdv[2]{}{x_a} +  U(x, y^\xi(t),t) + G(x, y^\xi(t),t)+i\ J(x, y^\xi(t),t)] \psi^\xi (x,t)
 \end{equation}
+which is an $m$ dimensional Schrödinger-like Equation.
 
 Note that there is a functional relationship between the Kinetic and Advective correlation terms \eqref{KinEL} and \eqref{AdvEL}, and the $G$ and $J$ correlation potentials we just described: 
 \begin{equation}
-\qty(G(x, y^\xi(t),t)+iJ(x, y^\xi(t),t))\psi(x, y^\xi(t),t)=K(x, y^\xi(t),t)+A(x, y^\xi(t),t)
+\qty(G(x, y^\xi(t),t)+iJ(x, y^\xi(t),t))\psi(x, y^\xi(t),t)=K(x, y^\xi(t),t)+A(x, y^\xi(t),t)\vspace{-0.2cm}
 \end{equation}
-\subsection*{What are really the correlation potentials G and J?}
+\subsection*{How can we interpret the correlation potentials G and J?}
 In order to interpret them, note that if we assume that the fluid elements follow Bohmian trajectories, defining their velocity field as \eqref{v}, we will get a more appealing shape for both $G$ and $J$. After some simplifications, we are left with the following for $G$:
 \begin{equation}\label{G.Bohm}
 G(\vec{x},\vec{y}(\vec{\xi},t),t)=\sum_{j=m+1}^N\qty{-\frac{1}{2}m_j\qty(v_j(\vec{x},\vec{y}^\xi(t),t))^2+Q_j(\vec{x},\vec{y}^\xi(t),t)}
 \end{equation}
-which is the difference between the kinetic energy of each Lagrangian degree and the quantum potential of the same degree $Q_j$ defined at \eqref{QP}. More in general, this means that the sum of the conditional potential and the correlation potential $G$ is the Lagrangian of each transversal section of the system, the difference between the kinetic energy and potential energy of the moving section $\vec{y}(\vec{\xi},t)$:
+which is the difference along the trajectory, between the kinetic energy of each Lagrangian degree and the quantum potential of the same degree $Q_j$ defined at \eqref{QP} (all this per Eulerian point in the conditional function).
+
+More in general, this means that the sum of the conditional potential $U$ and the correlation potential $G$ (the difference between the Lagrangian kinetic energy and quantum potential) is the Lagrangian of each transversal section of the system. Since it gives the difference between the kinetic energy and total potential energy concerning the Lagrangian degrees of the moving section $\vec{y}(\vec{\xi},t)$ at each Eulerian point:
 \begin{equation}
 G(\vec{x},\vec{y}(\vec{\xi},t),t)+U(\vec{x},\vec{y}^\xi(t),t)=:-\Lg^y(\vec{x},\vec{y}^\xi(t),t)
 \end{equation}
-Meanwhile, the potential $J$ will take the simpler shape:
+%\sum_{j=m+1}^N\qty{\frac{-1}{2}m_j\qty(v_j(\vec{x},\vec{y}^\xi(t),t))^2-Q_j(\vec{x},\vec{y}^\xi(t),t)}+U(\vec{x},\vec{y}^\xi(t),t)
+
+Meanwhile, assuming the Bohmian velocity field, the potential $J$ will take the simpler shape:
 \begin{equation}\label{J.Bohm}
 J(\vec{x},\vec{y}(\vec{\xi},t),t)=-\sum_{j=m+1}^N\frac{\hbar}{2m_j}\pdv[2]{}{x_j}S(\vec{x},\vec{y}^\xi(t),t)=-\frac{\hbar}{2}\sum_{j=m+1}^N\pdv{}{x_j}v_j(\vec{x},\vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
-which is the negative divergence (convergence?) of the velocity field in the Lagrangian degrees, along the trajectory. We already saw how this quantity was related to the Jacobian of a moving grid, which was the factor by which the density at each point had to be diluted, so the interpretation comes thereof.
+which is the negative divergence (the convergence) of the velocity field in the Lagrangian degrees, along the trajectory. It gives the convergence at each Eulerian point of the slice. We already saw how the divergence of the velocity was related to the Jacobian of a moving grid. It was the factor by which the density at each point had to be diluted for the total number of fluid elements in configuration-space to be preserved. Thus, the role of the $J$ potential in managing the norm of the conditional wavefunction, aka, the value of the conditional density at each Eulerian point comes thereof.
 \subsection*{G and J Correlation Potentials in terms of the C amplitude}
 It is computationally more interesting to rewrite the correlation potentials in terms of the so called C amplitude as we did in the Fully Lagrangian case. If we use the change $R(\vec{x},\vec{y},t)=e^{C(\vec{x},\vec{y},t)}$, we are left with the following expressions for them:
 \begin{equation}
@@ -1785,7 +1809,7 @@ G(\vec{x}, \vec{y}^\xi(t),t)=  \sum_{k=m+1}^N \qty[\frac{1}{2m_k} \qty(\pdv{S}{x
 J(\vec{x}, \vec{y}^\xi(t),t)= \hbar\sum_{k=m+1}^N \qty[ \pdv{C}{x_k}\Big\rvert_{y^\xi(t)} \pdv{x_k(\vec{\xi},t)}{t} - \frac{1}{2m_k} \pdv[2]{S}{x_k}\Big\rvert_{y^\xi(t)}-\frac{1}{m_k}\pdv{C}{x_k}\Big\rvert_{y^\xi(t)}  \pdv{S}{x_k} \Big\rvert_{y^\xi(t)} ]
 \end{equation}
 
-\subsection*{(III.b) The Continuity and The Hamilton-Jacobi Equations}
+\section*{(III.b) The Continuity and The Hamilton-Jacobi Equations}
 \addcontentsline{toc}{subsubsection}{{\bf (III.b)} The Continuity and The Hamilton-Jacobi Equations}
 If we take the Continuity Equation \eqref{CE} and evaluate $\vec{y}$ along the trajectory $\vec{y}(\vec{\xi},t)$, using the chain rule for the time derivative we get:
 \begin{equation}
@@ -1798,11 +1822,13 @@ We can recognise the correlation potential $J$ defined in \eqref{J} in the secon
 \begin{equation}\label{CE.EL}
 \dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) \frac{1}{m_j}\pdv{S(\vec{x}, \vec{y}^\xi(t), t)}{x_j}) + \frac{2\rho(\vec{x},\vec{y}^\xi(t),t)}{\hbar}J(\vec{x},\vec{y}^\xi(t),t)
 \end{equation}
-or if we assume the trajectories are Bohmian trajectories, guided by the velocity field \eqref{v}:
+It is a conservation equation for the conditional density that allows the density to be created or destroyed at a point $\vec{x}$ in proportion to the product between the density and the correlation potential $J$ (it is a source/sink term).
+
+If we assume the trajectories are Bohmian trajectories, guided by the velocity field \eqref{v}, then we will have that:
 \begin{equation}\label{CE.EL.Bohm}
 \dv{}{t}\rho(\vec{x},\vec{y}^\xi(t),t)=-\sum_{j=1}^m\pdv{}{x_j}\qty(\rho(\vec{x}, \vec{y}^\xi(t), t) v_j(\vec{x}, \vec{y}^\xi(t),t)) - \rho(\vec{x},\vec{y}^\xi(t),t)\sum_{j+1}^N \pdv{}{x_j}v_j(\vec{x}, \vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}
 \end{equation}
-It is a conservation equation for the conditional density that allows the density to be created or destroyed at a point $\vec{x}$ in proportion to the product between the density and the correlation potential $J$ (it is a source/sink term). In the case the trajectories are Bohmian trajectories, then the subtracting term is the divergence of the velocity of the trajectories in the Lagrangian axes. We already saw that this quantity was related to the Jacobian of the trajectories, such that it gave the dilution factor for the density necessary for the trajectories to move preserving their number in the whole configuration space. It is this term that dilutes or injects density to the conditional density at each Eulerian point $\vec{x}$.
+ Here the subtracting sink for the conditional density is the divergence of the velocity of the trajectories in the Lagrangian axes. We already saw that this quantity was related to the Jacobian of the trajectories, such that it gave the dilution factor for the density necessary for the trajectories to move preserving their number in the whole configuration space. It is this term that dilutes or injects density to the conditional density function at each Eulerian point $\vec{x}$.
 
 Evaluating the trajectory for the Lagrangian axes in the Hamilton-Jacobi equation \eqref{HJE} we get the equation:
 \begin{equation}
@@ -1811,7 +1837,7 @@ Evaluating the trajectory for the Lagrangian axes in the Hamilton-Jacobi equatio
 $$
 \hspace{-0.4cm} +\sum_{j=m+1}^N\qty{\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y},t)}{x_j})^2\Big\rvert_{\vec{y}^\xi(t)}-\frac{\hbar^2}{2m_jR(\vec{x},\vec{y}^\xi(t),t)}\pdv[2]{R(\vec{x},\vec{y},t)}{x_j}\Big\rvert_{\vec{y}^\xi(t)}-\pdv{}{x_j}S(\vec{x},\vec{y},t)\Big\rvert_{\vec{y}^\xi(t)}\pdv{}{t}x_j(\vec{\xi},t)}
 $$
-where we can identify in the second line the correlation potential $G$ defined in \eqref{G}, such that the equation ruling the time evolution of the conditional action is left as:
+where we can now identify in the second line the correlation potential $G$ defined in \eqref{G}, such that the equation ruling the time evolution of the conditional action is left as:
 \begin{equation}\label{HJE.EL}
 -\dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\qty(\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2+Q_j(\vec{x},\vec{y}^\xi(t),t))+U(\vec{x},\vec{y}^\xi(t),t)+G(\vec{x},\vec{y}^\xi(t),t)
 \end{equation}
@@ -1819,47 +1845,51 @@ or if we assume the trajectories are Bohmian trajectories, guided by the velocit
 \begin{equation}\label{HJE.EL.Bohm}
 \dv{}{t}S(\vec{x}, \vec{y}^\xi(t),t)=\sum_{j=1}^m\qty(-\frac{1}{2m_j}\qty(\pdv{S(\vec{x},\vec{y}^\xi(t),t)}{x_j})^2-Q_j(\vec{x},\vec{y}^\xi(t),t))+\Lg^y(\vec{x},\vec{y}(\vec{\xi},t),t) 
 \end{equation}
-Which is taking a Hamilton-Jacobi equation for the conditional action, just that we have an additional Lagrangian accounting for the difference in kinetic energy and potential energies (quantum and classical) for each Eulerian position $\vec{x}$ along the position in $\vec{y}$ of the trajectory. The interpretation is immediate for the underlying fluid element mesh.
+Which is taking a Hamilton-Jacobi equation for the conditional action, just that we have an additional Lagrangian term accounting for the difference in kinetic energy and potential energies (quantum and classical) for each Eulerian position $\vec{x}$, along the position in $\vec{y}$ of the trajectory. The interpretation is immediate for the underlying fluid element mesh.
 
-\subsection*{(III.f) The Bohmian Newton's Second Law}
+\section*{(III.f) The Bohmian Newton's Second Law}
 \addcontentsline{toc}{subsubsection}{{\bf (III.f)} The Bohmian Newton's Second Law}
-If we take the Hamilton-Jacobi equation \eqref{CE} and we make the partial derivative $\pdv{}{x_k}$ for $k\in\{m+1,...,N\}$ in both sides of the equation, then assuming that the velocity field of the trajectories is the Bohmian velocity field \eqref{v}, we find that some terms are cancelled out (the kinetic energy gradients getting from the chian rule and the inherent one) and we are left with:
+If we take the Hamilton-Jacobi equation \eqref{CE} and we make a partial derivative $\pdv{}{x_k}$ for $k\in\{m+1,...,N\}$ in both sides of the equation, then assuming that the velocity field of the trajectories is the Bohmian velocity field \eqref{v}, we find that some terms are cancelled out. the cancelled terms are the kinetic energy gradients getting from the chian rule and the inherent one. Then we are left with:
 \begin{equation}
-\hspace{-0.6cm} m_k\dv{}{t}v_k(\vec{x},\vec{y}(\vec{\xi},t),t)=-\pdv{}{x_k}\qty[U(\vec{x},\vec{y}^\xi(t),t)+Q(\vec{x},\vec{y}^\xi(t),t)+\sum_{j=1}^m \frac{1}{2m_j}\qty(\pdv{}{x_j}S(\vec{x},\vec{y}^\xi(t),t))^2]\quad;\   k\in\{m+1,...,N\}
+m_k\dv{v_k(\vec{x},\vec{y}(\vec{\xi},t),t)}{t}=-\pdv{}{x_k}\qty[U(\vec{x},\vec{y}^\xi(t),t)+Q(\vec{x},\vec{y}^\xi(t),t)+\sum_{j=1}^m \frac{1}{2m_j}\qty(\pdv{}{x_j}S(\vec{x},\vec{y}^\xi(t),t))^2]
 \end{equation}
-Which is a Newton's Second Law-like equation ruling the time evolution of the conditional Bohmian velocity fields for the Lagrangian axes. We can see that there is an additional potential, which is actually the kinetic energy of the Eulerian axes, to account for the fact that at each Eulerian position $\vec{x}$ there should be as well a fluid element representative.
+for  $k\in\{m+1,...,N\}$. This is a Newton's Second Law-like equation ruling the time evolution of the conditional Bohmian velocity fields for the Lagrangian axes. We can see that there is an additional potential energy term than expected (apart from the classical and quantum potentials), which is actually the kinetic energy of the Eulerian axes. This allows accounting the fact that at each Eulerian position $\vec{x}$ there is implicitly a fluid element representative.
 
-This equation, could be evolved coupled with the continuity equation \eqref{CE.EL.Bohm} for the mixed picture as an alternative to the Hamilton-Jacobi Equation \eqref{HJE.EL.Bohm} coupled to the same equation. Computationally it does not seem that appealing however, due to the additional derivative of the quantum potential it presents.
+This equation, could be evolved coupled with the continuity equation \eqref{CE.EL.Bohm} as an alternative to the Hamilton-Jacobi Equation \eqref{HJE.EL.Bohm} coupled to the continuity equation  \eqref{CE.EL.Bohm}. Computationally it does not seem that appealing however, due to the derivative of the quantum potential it presents, since the quantum potential is already a hard term to be computed.
 
 % como puedes controlar als trayectorias dada una monitor function, por ejemplo podrias hacer que conservasen la densidad no? OStyras esa sería muy buena! De fet para esas trayectorias saldria una continuity equation exacta! Y las CWF-s tendrian una time evolution unitaria!!!! Pa sacar cual es el velocity field que deberian seguir quizas podrias mirar cuando la Lagrangian frame equation para las trajs te da que es constante la densidad. Y creo que es cuando la derivada en el espacio de la dSdx aka la velocidad (?) es constante a lo largo de la trayectoria...Y claro como es una fk continua tb deberia funcionar ke exista esa trayectoria no? 
 
-\subsection*{(III.d) Dynamic Equations for Partial Derivatives}\vspace{-0.2cm}
+\section*{(III.d) Dynamic Equations for Partial Derivatives}\vspace{-0.2cm}
 \addcontentsline{toc}{subsubsection}{{\bf (III.d)} Dynamic Equations for Partial Derivatives}
+We have seen that the time evolution of the conditional fields requires the knowledge of derivatives in the Lagrangian axes, which we called correlation terms, since they introduce a dependence between adjacent conditional functions in those axes.
 
+If we had dynamical equations for the evolution of Lagrangian axis derivatives themselves, we could directly compute the correlation terms with them, thus allowing the evolution of individual conditional functions independently of the rest. In this section we will describe this equations and find we will have left aside the correlation terms to embrace infinite chains of differential equations.
 
 \subsubsection*{(III.d.a) Dynamics of Partial Derivatives For the Wavefunction}\vspace{-0.1cm}
 %\addcontentsline{toc}{subsubsection}{(II.d.a) Dynamics of Partial Derivatives For the Wavefunction}
-Following the exact same procedure of (II.d), by taking the coupled system of (infinite) linear differential equations \eqref{infchain.SE}, and noting there is no partial derivative with respect to space $x_k$ in any place, we can directly evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$. Noting the chain rule for the time derivative we get \eqref{infchain.SE} in the partially Lagrangian frame:\vspace{-0.1cm}
+Following the exact same procedure as (II.d), we can take the coupled system of (infinite) linear differential equations \eqref{infchain.SE} we developed in the fully Eulerian picture and note there was no spatial partial derivative in any place. Thus, we could directly evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$. Noting the chain rule for the time derivative, we get in the partially Lagrangian frame:\vspace{-0.1cm}
 \begin{equation}\label{infchain.SE.EL}
 i\hbar \dv{}{t}\psi_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+\sum_{s=m+1}^N i\hbar \psi_{(j_1,...,1+j_s,...,j_N)} \pdv{x_s(\xi,t)}{t}+\vspace{-0.1cm}
 \end{equation}
 $$
 +\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
 $$
-where all the functions have arguments $(\vec{x},\vec{y}^\xi(t),t)$.
+where all the functions have arguments $(\vec{x},\vec{y}^\xi(t),t)$ and we are using the notation of section (I.d).
 
-We could use this chain of partial differential equations alone to evolve {\bf a single} conditional wavefunction (as we already explained, by truncating the series at a high enough $J$ etc.). We would not require the parallel computation with cross talk of several conditional wavefunctions of different adjacent trajectories, since we do not need the first order local information to compute derivatives in the Lagrangian axes. In addition the equation system is {\bf linear}, which makes things way simpler to compute.
+We could use this chain of partial differential equations alone to evolve {\bf a single} conditional wavefunction by truncating the series at a high enough $J$. We would not require the computation of an ensemble of conditional wavefunctions of different adjacent trajectories, since we do not need the first order local information to compute derivatives in the Lagrangian axes. In addition the equation system is {\bf linear}, which makes things way simpler to compute.
 
-Alternatively what we could do is to only evolve in this way the derivatives of the wavefunction in the Lagrangian axes, such that we can then use them to compute the Kinetic and Advective correlation terms and evolve the conditional wavefunction using $\eqref{KinAdvEL}$ (or the $G$ and $J$ correlation potentials and use $\eqref{SE.GJ}$). This would mean we would only be interested in computing the functions $\psi_{(j_1,...,j_m,...,j_N)}$ with $j_1,...,j_m=0$ using the chain of equations. Then, since at each time we would know $\psi$ in an Eulerian frame for the first $m$ degrees of freedom, their first and second derivatives, required to compute \eqref{infchain.SE.EL}, we would be able to compute them directly using simple finite differences. This second method as well, would allow us to compute a {\bf single} conditional wavefunction with all {\bf linear} coupled equations (using \eqref{SE.GJ}), which can be solved with a Crank-Nicolson method for instance. The precision of the method would then solely rely on the truncation $J$ we chose. 
+Alternatively, instead of using these equations to compute the conditional wavefunctions themselves, we could evolve this way only the derivatives of the wavefunction in the Lagrangian axes and then use them to compute the Kinetic and Advective correlation terms or the $G$ and $J$ potentials, to finally evolve the conditional wavefunction using $\eqref{KinAdvEL}$ or $\eqref{SE.GJ}$. This would mean we would only be interested in computing the functions $\psi_{(j_1,...,j_m,...,j_N)}$ with $j_1,...,j_m=0$ using the chain of equations. Then, since at each time we would know $\psi$ in an Eulerian frame for the first $m$ degrees of freedom, their first and second derivatives, required to compute \eqref{infchain.SE.EL}, would be easily computable with finite differences. 
 
-In fact, a method of this kind, assuming a fixed $J$ can be used for increasing dimensionality $N$ would not scale expoentially in time nor parallel processes as is explained in the last subsection of the partially Lagrangian picture.
+This second method as well, would allow us to compute a {\bf single} conditional wavefunction using only {\bf linear} coupled equations (using \eqref{SE.GJ}). The precision of the method would then solely rely on the truncation $J$ we chose. 
+
+In fact, a method of this kind, assuming a fixed $J$ and $m$ would not scale exponentially in time for increasing $N$, so it could be a potential bypass for the quantum many body problem.
 
 \vspace{-0.1cm}
 
 \subsubsection*{(II.d.b) Dynamics of Partial Derivatives For the Density and Action}\vspace{-0.1cm}
 %\addcontentsline{toc}{subsubsection}{(II.d.b) Dynamics of Partial Derivatives}
 
-If we now look back to equations \eqref{infchain.CE} and \eqref{infchain.HJE}, we will evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$ directly in the partial differential equations ruling the dynamics of the spatial derivatives of $C$ and $S$ (where $C(x,t)=log(\rho(x,t))/2$). We can see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$ follows:\vspace{-0.1cm}
+If we now go back to equations \eqref{infchain.CE} and \eqref{infchain.HJE}, we will see that we can evaluate $\vec{y}=\vec{y}(\vec{\xi},t)$ directly. This way we will get the partial differential equations ruling the dynamics of the spatial derivatives of the conditional $C$ and $S$ (where $C(x,t)=log(\rho(x,t))/2$). In particular, we will see that the time evolution of the field $C$ (thus $\rho$) and all of its derivatives in configuration space $x_k$ follows:\vspace{-0.1cm}
 \begin{equation}\label{infchain.CE.EL}
 \dv{}{t}C_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)=-\sum_{s=m+1}^N C_{(j_1,...,1+j_s,...,j_N)}\pdv{x_s(\xi,t)}{t} - \sum_{s=1}^N\Big(\frac{1}{m_s} \Bigg[S_{(j1,...,2+j_s,...,jN)}+
 \end{equation}
@@ -1879,21 +1909,22 @@ $$
 $$
 Following the same ideas we just commented for the conditional wavefunction, we could employ this system of (infinite) equations truncated at a certain reasonable $J$ to evolve the conditional action and density of a {\bf single} trajectory without the need to couple an ensemble. We could also use them just to compute the derivatives in the Lagrangian axes, for which we would only be interested on those $j_1,...,j_m=0$. Then we would use that we know the conditional wavefunctions in the Lagrangian frame for the first $m$ degrees to compute the necessary derivatives for them directly in a regular grid, or just use methods like \eqref{SE.GJ} or \eqref{KinAdvEL} all along.
 
+Note a important thing about evolving conditional functions this way: not only we need not evolve several different trajectory slices, but we do not even require the evolution of a complementary conditional function set. A single conditional function has already got the knowledge to evolve the trajectory in the Eulerian $\vec{x}$ axes, and the knowledge for the evolution in $\vec{y}$ we will get it from the infinite chain, so we would be done!
 
-\subsection*{(III.g) Dynamic Equations for Correlation Terms}
+\section*{(III.g) Dynamic Equations for Correlation Terms\vspace{-0.15cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (III.g)} Dynamic Equations for Correlation Terms}
-Let us rewrite the Schrödinger Equation \eqref{KinAdvEL} in the part Lagrangian picture in the following terms:
-\begin{equation}
+Let us rewrite the Schrödinger Equation in the part Lagrangian picture \eqref{KinAdvEL} in the following terms:
+\begin{equation}\label{Norsen}
 i\hbar \dv{}{t}\psi(\vec{x},\vec{y}^\xi(t),t)=\Bigg[-\sum_{j=1}^m \frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(\vec{x},\vec{y}^\xi(t),t)+
 \end{equation}
 $$
 \sum_{s=m+1}^N\qty{ -\frac{\hbar^2}{2m_j}P^{(0,...,j_s=2,...,0)}+i\hbar \pdv{x_j(\vec{\xi},t)}{t} P^{(0,...,j_s=1,...,0)} } \Bigg]\psi(\vec{x},\vec{y}^\xi(t),t)
 $$
-where we will define the coupled $m$ dimensional $P$ potentials as:
-\begin{equation}\label{Norsen}
-P^{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t):=\frac{\psi_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)}{\psi(\vec{x},\vec{y}^\xi(t),t)}
+where we will define the coupled $m$ dimensional {\bf P potentials} as:\vspace{-0.1cm}
+\begin{equation}\label{P}
+P^{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t):=\frac{\psi_{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)}{\psi(\vec{x},\vec{y}^\xi(t),t)}\vspace{-0.1cm}
 \end{equation}
-Making the total time derivative of the P potentials and inserting the equation ruling the motion of $\psi_{(j_1,...,j_N)}$, after recognizing the appearance of additional $P$ potentials, we find that, the $P$ potentials are ruled by the non-linear system of differential equations:
+Making the total time derivative of the P potentials using the equation ruling the motion of $\psi_{(j_1,...,j_N)}$ given in \eqref{infchain.SE.EL}, after recognizing the appearance of additional $P$ potentials, we find that the $P$ potentials are ruled by the non-linear system of differential equations:\vspace{-0.15cm}
 \begin{equation}
 \dv{P^{(j_1,...,j_N)}(\vec{x},\vec{y}^\xi(t),t)}{t}=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}P^{(j_1,...,j_s+2,...,j_N)}+\sum_{s=m+1}^Ni\hbar \pdv{x_s(\vec{\xi},t)}{t} P^{(j_1,...,j_s+1,...,j_N)}+\vspace{-0.3cm}
 \end{equation}
@@ -1903,52 +1934,55 @@ $$
 $$
 -P^{(j_1,...,j_N)}\qty{ \sum_{s=1}^N\frac{\hbar^2}{2m_s} P^{(0,...,j_s=2,...,0)}+U+i\hbar\sum_{s=m+1}^N \pdv{x_s(\vec{\xi},t)}{t}P^{(0,...,j_s=1,...,0)} }
 $$
-The time evolution of each one is coupled with $P$ potentials of two and one degree more, and all the potentials of less degree, making this an infinite chain of potential energy terms.
+The time evolution of each P potential is coupled with potentials of two and one degree more, together with all the potentials of less degree. This makes it an infinite chain of potential energy terms.
 
-In this shape, equation \eqref{Norsen} is a Schrödinger Equation ruling the dynamics of a single conditional wavefunction, which can be used to evolve a coupled Bohmian (or custom) trajectory, which is propagated in a total potential energy field that is the sum of potential energies that depend on a ladder of infinite potential energies that only depend on this particular trajectory.
+In this shape, equation \eqref{P} is a Schrödinger Equation ruling the dynamics of a {\bf single} conditional wavefunction, which can be used to evolve a Bohmian (or custom) trajectory. This equation describes the time evolution of the conditional wavefunction as the propagation of an $m$ dimensional wavefunction in a total potential energy that is the sum of some P potentials, which depend on a ladder of infinite P potential fields. These potential energies {\bf only} depend on the trajectory of the subsystem $\vec{y}$ and the classical potential energy, with no appearance of the rest of possible slices of the full wavefunction. Thus, the consequences are two: there is no need to talk about any full configuration-space function, and the P potentials are inherent to, or self-sustained by, each individual trajectory of the system. We just have to take into account that, in order to evolve the trajectroy in $\vec{y}$ we will require the knowledge of the complementary conditional wavefunctions. But just those, and not all the wavefunction.
 
-Clearly, this development has no theoretical appeal at all. The interest of this is just to acknowledge a theoretical/philosophical observation of Ref. \cite{Norse}, which we have generalized to an arbitrary $N$ dimensional system, that a single Bohmian trajectory of a Universe made of $N/3$ physical space (3 dimensional) particles could be fully determined without referencing the full wavefunction at all. Instead, each physical space particle would be defined by its position in physical space, a 3D field piloting its trajectory (the conditional wavefunctions having $m=3$) and a set of (infinite) coupled complex potential energies $P$ surrounding each of them, such that these potentials only depend on each physical space trajectory independently. Therefore, it is indeed possible to understand physical space particles without talking about the configuration space, if we allow a set of coupled (inifnite) potential terms interpretable as self-sustained potential energy fields surrounding the pilot wave of each particle. Thus, the self-sustained potential energies rule the dynamics of the real space pilot wave (the conditional wavefunction or action and density) piloting independently the trajectory of each 3D particle. The only interaction between the physical space particles would then be due to the classical potential $U(\vec{\x},t)$, which would be defined in general as in classical mechanics is.
+Given the alternatives, this development has no computational appeal at all. It has however a very big theoretical/philosophical interest. It was an observation initally made by Ref. \cite{Norsen}, which we have here generalized to an arbitrary $N$ dimensional system. What this equations show is that it is possible to describe the time evolution of a set of complementary conditional wavefunctions and their associated system trajectory without allusion to any other thing. Just by invoking an infinite chain of potential energies affecting each conditional function, that only depend on the trajectory of the rest of the system and the classical potential energy. This suggests an almost classical view of the world. It means that we are rigorously allowed to think on physical space (3D space) particles as just physical space particles that interact with the rest of particles according to their physical space positions alone. 
 
-It is perhaps this particular theoretical possibility that makes some Bohmian experts be happy with their theory. They might have found a (local) relief from the metaphysical anxiety with this development or a similar one. The thing is they get comfortable with the wavefunction living in configuration space, by instead viewing it as if each physical space particle was living indeed in 3 dimensional physical space, affecting the rest of particles only through physical space, just that they are each surrounded by an infinite self-produced and self-sustained chain of potential energies.
+That is, if we take a Universe made of $N/3$ physical space particles, then the Bohmian trajectory of the Universe can be fully determined by a three dimensional (physical space) wave $\psi^\xi(x_k,x_{k+1},x_{k+2})$ and a position in three dimensions (in physical space) $(x_k(t),x_{k+1}(t),x_{k+2}(t))$ for each $k$-th particle. By only specifying the classical potential energy describing their physical space interaction, each wave will be evolved in its three dimensions by an effective potential energy that only depends on the position of the rest of particles and the classical potential energy. The three dimensional wave is enough to determine the trajectory of the particle itself following the Bohmian velocity. So effectively, the physical space particles will only interact between them through physical space, will live in physical space, will be piloted by a physical space wave, but will each be surrounded by a chain of self-produced and self-sustained potential energies (the $P$ potentials).
 
-Isn't it simpler to just understand that we humans happen to perceive the degrees of freedom of the Universe in triplets? Possibly they would say no, because that would imply that there is a configuration space interaction between them. Then, the author would argue that the Tangent Universe Interpretation has none of these problems, so far as we accept we live in a trajectory among a continuity of tangentially influencing Universes. They might not be ready to accept this though.
+No need to talk about the full wavefunction nor interactions in configuration space.
 
+It is this why some Bohmian experts feel thes complementary conditional functions and  their associated system trajectory is the {\em arkhé}. They just need to embrace that each physical space particle is surrounded by an infinite self-produced and self-sustained chain of potential energies. We could call this interpretation of quantum mechanics: the Physical Space Pilot Wave Interpretation.
 
-\subsection*{(III.c) Basis Set Expansion}
+Perhaps it would be simpler to believe we live in a Universe among a continuity of tangentially influencing Universes and that we humans happen to perceive the degrees of freedom of the Universe in triplets, as the Tangent Universe Interpretation suggests. But they might not be ready to accept this.
+\vspace{-0.25cm}
+
+\section*{(III.c) Basis Set Expansion\vspace{-0.2cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (III.c)} Basis Set Expansion}
 %\subsubsection*{(III.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
 %\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
-In this section we will develop an equation that will allow us the time evolution of a {\bf single} CWF, without the need of evolving several of them in parallel, at the cost of knowing the eigenstates of the Lagrangian axes.
+In this section we will develop an additional equation that will allow us the time evolution of a {\bf single} conditional wavefunction, without the need of evolving an ensemble. This time it will be at the cost of knowing the eigenstates of the Lagrangian axes.
 
-If we recover the equation \eqref{XabEq} and the formalism we employed in its derivation, we had that the full wavefunction could be decomposed as $\Psi(x,y,t)=\sum_{j=0}^\infty\Lambda^j(x,t)\Phi^j_x(y,t)=\sum_{j=0}^\infty \varphi_j(x,y,t)$. We defined $\Phi^j_x(y,t)$ as the transversal section eigenstates of the subsystem due to the degrees of freedom $y=(x_{m+1},...,x_N)$, which depend on the slice $x=(x_1,...,x_m)$ we are looking at. Now, if we know these eigenstates and we evaluate the wavefunction along a trajectory for the "transversal" degrees of freedom $y^\xi(t)$, we note that equation \eqref{XabEq2.5} becomes:
-
+If we recover the equation \eqref{XabEq} and the formalism we employed in its derivation, we had that the full wavefunction could be decomposed as $\Psi(x,y,t)=\sum_{j=0}^\infty\Lambda^j(x,t)\Phi^j_x(y,t)=\sum_{j=0}^\infty \varphi_j(x,y,t)$. We defined $\Phi^j_x(y,t)$ as the transversal section eigenstates of the subsystem due to the degrees of freedom $y=(x_{m+1},...,x_N)$. These eigenstates depend on the slice $x=(x_1,...,x_m)$ we are looking at. Now, if we know these eigenstates and we evaluate the wavefunction along a trajectory for the "transversal" degrees of freedom $y^\xi(t)$, we note that equation \eqref{XabEq2.5} becomes in:
 \begin{equation}
  i\hbar\pdv{}{t}\varphi^k(x,y^\xi(t),t)=\qty[ \varepsilon^k(x,t)+V(x,t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\varphi^k(x,y^\xi(t),t)+
 \end{equation}
 $$
-+\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y^\xi(t),t)}\pdv[2]{\Phi^j_x(y^\xi(t),t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))] )\varphi^j(x,y^\xi(t),t)
+\hspace{-0.6cm}+\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y^\xi(t),t)}\pdv[2]{\Phi^j_x(y^\xi(t),t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))] )\varphi^j(x,y^\xi(t),t)
 $$
-Denoting $\varphi^k_\xi(x,t)=\varphi^k(x,y^\xi(t),t)$ and thus the CWF $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$, by using the chain rule for the time derivative we get:
+Denoting $\varphi^k_\xi(x,t):=\varphi^k(x,y^\xi(t),t)$, we can write the conditional wavefunction as $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$. Then, by using the chain rule for the time derivative we get:
 \begin{equation}\label{XabEq3}
  i\hbar\pdv{}{t}\varphi^k_\xi(x,t)=\qty[-\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}+ \varepsilon^k(x,t)+V(x,t)   +i\hbar \dv{}{t}log(\Phi^k_x(y^\xi(t),t))]\varphi^k_\xi(x,t)+
 \end{equation}
 $$
-+\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y^\xi(t),t)}\pdv[2]{\Phi^j_x(y^\xi(t),t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))] )\varphi^j_\xi(x,t)
+\hspace{-0.4cm}+\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(y^\xi(t),t)}\pdv[2]{\Phi^j_x(y^\xi(t),t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(y^\xi(t),t))] )\varphi^j_\xi(x,t)
 $$
-This is a coupled system of {\bf linear} equations that allows the exact time evolution of a {\bf single CWF}, if we truncate the series $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$ at a convenient point. Since it is linear, a Crank Nicolson like stable algorithm can be used to evolve it in a time in the order of the resolution of an $m$ dimensional Schrödinger Equation. Of course, the trick to overcome the many body problem is in that we know a priori the transversal section eigenstates $\Phi^j_x(y,t)$ for the particular potential energy. Obtaining these $N-m$ dimensional eigenstates numerically presents the same exponential nature as the full Schrödinger Equation.
+whcih is a coupled system of infinite {\bf linear} equations that allows the exact time evolution of a {\bf single} $m$ dimensional conditional wavefunction. For its usage we shall truncate the series $\Psi^\xi(x,t)=\sum_j \varphi^j_\xi(x,t)$ at a convenient point (for instance at a point where the norm is close enough to unity). The truncated system would require the same order of operations as an $m$ dimensional Schrödinger Equation. Of course, the trick to overcome the many body problem is in that we know a priori the transversal section eigenstates $\Phi^j_x(y,t)$ for the particular potential energy. Obtaining these $N-m$ dimensional eigenstates numerically presents the same exponential nature as the full Schrödinger Equation as was discussed in a previous work.
 
-
-\subsection*{(III.e) Partial Derivatives relative to labels}
+\newpage
+\section*{(III.e) Partial Derivatives relative to labels\vspace{-0.1cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (III.e)} Partial Derivatives relative to labels}
-We have seen manifestly clear that the derivatives of the conditional functions in the Lagrangian axes ($\pdv{}{x_k}$ for $k\in\{m+1,...,N \}$) are the main problem when evolving in time the conditional functions, since all the dynamic equations involve them (except the ones that offer additional (infinite) dynamic equations to implicitly compute them). To surpass it, we said the standard way was to evolve several conditional functions of different trajectories and using the function in unstructured slices we get, try to fit a function to compute the deriavtives. Alternatively we could change the derivatives relative to $x_k$ to derivatives relative to the label space variables $\xi_k$.
+We have seen manifestly clear that the derivatives of the conditional functions in the Lagrangian axes ($\pdv{}{x_k}$ for $k\in\{m+1,...,N \}$) are the main problem when evolving in time the conditional functions, since all the dynamic equations involve them (except the ones that offer additional (infinite) dynamic equations to implicitly compute them). To surpass it, we said the standard way was to evolve several conditional functions of different trajectories and use them as an usntructured grid of slices. Then we could try to fit a function to compute the deriavtives, or alternatively, we could change the derivatives relative to $x_k$ to derivatives relative to the label space variables $\xi_k$.
 
-To do this, we will need to follow the exact same procedure as the one described in section (II.e), since we chose the same underlying diffeomorphism $\vec{\x}(\vec{\xi},t)$ of the whole $\R^N$ space. In this case though, some façade changes will come. By the chain rule, for $j\in\{m+1,...,N \}$:
+To do this, we will need to follow the exact same procedure as the one described in section (II.e), since we chose the same underlying diffeomorphism $\vec{\x}(\vec{\xi},t)$ of the whole $\R^N$ space. In this case though, some façade changes will come. By the chain rule, for $j\in\{m+1,...,N \}$ we will have that:
 \begin{equation}
-\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}
+\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{\x},t)}{x_k}\Big\rvert_{\vec{\x}(\vec{\xi},t)}
 \end{equation}
 with $\pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$ obtainable using equation \eqref{JacobChange}.
 
-Then, the follwoing operators would adopt the shape:
+Then, the main operators appearing in the dynamical equations would adopt the following shapes:
 \begin{equation}
 \sum_{a=m+1}^N \pdv{f(\vec{x}, \vec{y},t)}{x_a}\Big\rvert_{\vec{y}(\vec{\xi},t)} = \sum_{j=1}^N \pdv{f(\vec{x}, \vec{y}(\vec{\xi},t),t)}{\xi_j} \sum_{a=m+1}^N \pdv{\xi_j(\vec{x},t)}{x_a}\Big\rvert_{\vec{\x}(\vec{\xi},t)}
 \end{equation}
@@ -1959,34 +1993,45 @@ Then, the follwoing operators would adopt the shape:
 
 
 Note that if we had really chosen a diffeomorphism $\vec{y}(\vec{\xi}_y,t)$ with $\vec{\xi}_y\in\R^{N-m}$, without considering implicitly the whole $\R^N$ as a fluid, the expressions would be analogous, but would require less terms (the Jacobian matrix would have $(N-m)\times (N-m)$ terms instead of $N\times N$). The only thing that would then change in the formulas is that the subindices for $\xi_k$ would run from $m+1$ to $N$ alone, instead of $1$ to $N$. 
+\vspace{-0.25cm}
 
 
-
-\subsection*{(III.g) Adaptive Grid Equations}
+\section*{(III.g) Adaptive Grid Equations\vspace{-0.1cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (III.g)} Adaptive Grid Equations}
-All the theory derived in section (II.g) can freely be used in any partially Lagrangian frame as well, just by noting the subtlety about the diffeomorphism we discussed in the beginning of the partially Lagrangian frame chapter. That is, we could use an underlying whole space diffeomorphism $\vec{\x}(\vec{\xi},t)$ with $\vec{\xi}\in\Omega_t\subseteq\R^N$, implicitly assuming that the fluid occupies the whole space, or we could consider that only the Lagrangian axes are part of a fluid, with their trajectory diffeomorphism being $\vec{y}(\vec{\xi}_y,t)$ with $\vec{\xi}_y\in\Gamma_t\subseteq\R^{N-m}$. Doing the second should be the natural thing because it is that way that we can "slice" the full function in unique slices. However we saw that if we wanted to deal with Bohmian trajectories, the first thing was the only way, and we also understood that the first thing allowed a thing we called complementary conditional functions, which were a philosophically interesting set, because they fully determined the Bohmian trajectory.
+All the theory derived in section (II.g) can freely be used in any partially Lagrangian frame as well, just by noting the subtlety that we are free to choose rather: considering an underlying whole space diffeomorphism $\vec{\x}(\vec{\xi},t)$ with $\vec{\xi}\in\Omega_t\subseteq\R^N$ (implicitly assuming that the fluid occupies the whole space), or considering that only the Lagrangian axes are part of a fluid, with their trajectory diffeomorphism being $\vec{y}(\vec{\xi}_y,t)$ with $\vec{\xi}_y\in\Gamma_t\subseteq\R^{N-m}$. Doing the second should be the natural thing because it is that way that we can "slice" the full function in unique slices. However we saw that if we wanted to deal with Bohmian trajectories, the first one was the only way.
 
-Since for the generation of an adaptive grid, we are not willing to get information about Bohmian trajectories, the most convenient thing is to treat only the subsystem $\vec{y}$ as a fluid, to avoid superfluously repeating the information of the full function we are trying to describe with the moving mesh. Of course, this means only the degrees of freedom of the mesh points in $\vec{y}$ will move. For this, we can then employ all the adaptive grid generating equations seen in section (II.g) verbatim, just changing $\vec{x}$ for $\vec{y}$.
+Since for the generation of an adaptive grid, we are not willing to get information about Bohmian trajectories, the most convenient thing is to treat only the subsystem $\vec{y}$ as a fluid, to avoid superfluously repeating the information of the full function we are trying to describe with the moving mesh. Of course, this means only the degrees of freedom of the mesh points in $\vec{y}$ will move and that the adaptive grid equations (and the changes to the label space derivatives if we needed) would be way simpler, only involving $N-m$ spatial variables. For this, we can then employ all the adaptive grid generating equations seen in section (II.g) verbatim, just changing $\vec{x}$ for $\vec{y}$.
+
 
 
 
 \section*{Exponential Time Polynomialized with Exponential Parallelization}
 \addcontentsline{toc}{subsubsection}{\em Exponential Time Polynomialized with Exponential Parallelization}
 
-In this section we will show how {\bf conceptually} changing the Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a linear one if we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). As we will also see, this was readily possible with a fixed grid, just that the explicit fluid treatment makes it evident. In this line, the partially Lagrangian picture easily allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability, and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.
+In this section we will show how {\bf conceptually} changing from an Eulerian to a Lagrangian frame leaves us turn the temporally exponential problem of the quantum many body into a polynomial one, if in exchange, we parallelize exponentially in parallel processes for which we allow messaging (with reasonable overhead). As we will also see, this was readily possible with a fixed grid, just that the explicit fluid treatment makes it evident, that is why we underline that the step is rather "conceptual". In this line, the partially Lagrangian picture easily allows us decide whether we put more weight in the temporal complexity of each process (setting more of the degrees in the Eulerian frame), or use more processes in exchange of simpler computations for them (relatively more Lagrangian degrees). In the limit of the Fully Lagrangian frame, we will have maximal parallelizability, and in the limit of the Fully Eulerian frame we will have a more monolithic computation thread.
 
-In what follows we will analyse qualitatively the two limit cases where there are still both Lagrangian and Eulerian degrees: having a single Lagrangian one and having them all but one. We will generalize to the case of an arbitrary number of Lagrangian degrees.
+The quantum many body problem might not be avoidable using exact equations: the computational complexity will always be exponential with increasing number of spatial dimensions $N$. However, while humans cannot wait exponentially more time for simulations to be completed, we can build more parallel processors. Thus the trade-off has big philosophical interest.
 
-In all the equations so far we have seen that unless we evolve the derivatives in the Lagrangian axes (which had the problem of choosing the truncation point for the infinite series of equations), it is roughly mandatory that we evolve an ensemble of conditional wavefunctions (or actions and densities) with their respective different trajectories (or underlying fluid elements). This was because all the dynamical equations required the knowledge of the derivatives in the directions in which we slice the functions. Evolving complementary functions instead of single conditional functions, gives us an idea of how the function works in the Lagrangian directions of each conditional function, but only for the Eulerian position where the trajectory coupling the complementary set of functions is. Thus we required to evolve several trajectories even in this case, such that we end up having an image of the full functions and thus be able to compute their variation in any direction. That said, we have freedom to choose conditional functions with more or less Lagrangian degrees. What will the price be?
+Remember that in all the equations so far we have seen that unless we evolve the derivatives in the Lagrangian axes (which had the problem of choosing the truncation point for the infinite series of equations), it is roughly mandatory that we evolve an ensemble of conditional wavefunctions (or actions and densities) with their respective different trajectories (or underlying fluid elements). That said, we have freedom to choose conditional functions with more or less Lagrangian degrees, but what is the price of each choice?
+%This was because all the dynamical equations required the knowledge of the derivatives in the directions in which we slice the full functions, for every Eulerian point we considered. 
+
+In what follows we will analyse qualitatively the case where we have a single Lagrangian degree and then generalize it to an arbitrary number of Lagrangian degrees.
 
 \subsection*{Only one Lagrangian degree}
-If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t))$ is a slice of the full function whose support is a hyperplane of $\R^N$. To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point of the hyperplanes $(x_1,...,x_{N-1})$, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$ we consider in the grid discretization. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centred at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivatives. See Figure \ref{fig:hyperplane} for a geometrical understanding.
+If we left only one of the degrees of freedom as Lagrangian, say $x_N$, we would have that a conditional function $f(x_1,...,x_{N-1},x_N^\xi(t),t)$ is a slice of the full function whose support is a hyperplane of $\R^N$. To know the variation $\pdv{}{x_N}f(x_1,...,x_{N-1},x_N)$ for $x_N=x_N^\xi(t)$ in each point of the hyperplanes $(x_1,...,x_{N-1})$, we will have to pay attention to the variation of the function along $x_N$ per each $(x_1,...,x_{N-1})$ we consider in the grid discretization. This means that, as we will have a collection of trajectories $\{\vec{\xi}^j\}_{j=1}^M$ each of which has its own conditional-hyperplane function $f(x_1,...,x_{N-1},x_N^\xi(t))$ centred at $\{x_N=x_N(\vec{\xi}^j,t)\}_j$, we could consult the different contiguous hyperplanes and numerically compute the derivatives. See Figure \ref{fig:hyperplane} for a geometrical understanding.
+
+\begin{figure}[p!]
+  \centering
+    \includegraphics[width=1\linewidth]{11one_Lagrangian.png}
+  \caption{In the left we see an intuition of the $N=3$ case of the single Lagrangian degree case. Above we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and below a time $t$ afterwards, how they are distributed in $x_3$, following their trajectory $x_3(\xi,t)$. Each of these fluid fluid elements has associated a conditional function over a plane in $x_1,x_2$, discretized in a regular Eulerian grid. All these planes have the same number of points in $x_1,x_2$, and, very importantly, at the same positions. The relevance of them being in the same positions, can be more clearly seen below, where all these planes as slices of the support of the full function $f(x_1,x_2,x_3,t)$ are stacked in parallel each in the $x_3=x_3(\xi,t)$ position. Since the Eulerian discrete points (in yellow) are in the same $x_1,x_2$ points, they are aligned across the planes, meaning that the computation of the partial derivative $\pdv{}{x_3}$ in the Lagrangian axis will be computable from plane to plane even if the distance between the planes varies due to the movement of the coupled fluid element in $x_3$. Each of these lines traversing the planes along the same Eulerian points is what in the text we call a derivative {\bf beam}. In the right, we can see a depiction with the same particularities, just that we represent a $N=4$ quantum system, where the support of each conditional function is a discretized $\R^4$ hyperplane, a 3D box. It is filled with Eulerian nodes, which again have the same positions between the different trajectories to allow the derivatives in the $x_4$ (Lagrangian) axis. This is aimed to be represented by noting in blue that all the hyperplane-boxes have the same point $(a,b,c)$ just with $x_4$ equaling their trajectory position. }
+  \label{fig:hyperplane}
+\end{figure}
 
 Then an algorithm to evolve the ensemble of hyperplane-conditional functions could be the following. Given we have an initial ensemble of $M$ hyperplane-conditional functions and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
 \begin{enumerate}
 \item Share the information of the conditional functions in the necessary parallel processors.
 \item Compute {\em in parallel} the derivatives in the Lagrangian axes for each hyperplane-conditional function $\vec{\xi}^j$. For this, access the same $(x_1,...,x_{N-1})$ point in each adjacent slice. Compute the necessary derivatives (first and/or second) to get the correlation terms. See the formula.
-\item Evaluate the correlation terms of the current time step for each point $(x_1,...,x_{N-1})$ in each hyperplane\footnote{Remember we call the correlation terms, because they are the ones introducing the effect of the rest of conditional functions parallel and transversal to the active one.}.
+\item Evaluate the correlation terms of the current time step for each point $(x_1,...,x_{N-1})$ in each hyperplane\footnote{Note we called them correlation terms, because they introduce the effects of the rest of possible conditional functions.}.
 \item Gather the correlation terms to time evolve in parallel to the next time step each hyperplane-conditional function, using one process per $\vec{\xi}^j$. This will be done with the necessary algorithm for an $m$ dimensional function.
 \item Go back to 1.
 \end{enumerate}
@@ -1999,16 +2044,21 @@ As a little computational detail, if we choose the Lagrangian degrees to move, a
 \item Compute the derivatives relative to the label space, which can be chosen to be regular, as explained in (III.e). It involves all the Jacobian determinant (or inverse Jacobian) computation burden.
 \item We could chose to fix the trajectory $x_N^\xi(t)=\xi\ \forall t>t_0$ (since remember the equations for conditional functions do not force us to make them be Bohmian trajectories). In such a case, the derivatives would always be in a regular grid and could be computed easily with advanced finite differences. This would be a subtle way to turn back to the Eulerian fixed grid though, where the grid is stationary! It is this why we said in an Eulerian grid all this parallelization was actually possible as well, just that we needed the fluid view to realize it.
 \end{itemize} 
-\begin{figure}[p!]
-  \centering
-    \includegraphics[width=1\linewidth]{11one_Lagrangian.png}
-  \caption{In the left we see an intuition of the $N=3$ case of the single Lagrangian degree case. Above we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and bellow a time $t$ afterwards, how they are distributed in $x_3$, following their trajectory $x_3(\xi,t)$. Each of these fluid fluid elements has associated a conditional function over a plane in $x_1,x_2$, discretized in a regular Eulerian grid. All these planes have the same number of points in $x_1,x_2$, and, very importantly, at the same positions. The relevance of them being in the same positions, can be more clearly seen bellow, where all these planes as slices of the support of the full function $f(x_1,x_2,x_3,t)$ are stacked in parallel each in the $x_3=x_3(\xi,t)$ position. Since the Eulerian discrete points (in yellow) are in the same $x_1,x_2$ points, they are aligned across the planes, meaning that the computation of the partial derivative $\pdv{}{x_3}$ in the Lagrangian axis will be computable from plane to plane even if the distance between the planes varies due to the movement of the coupled fluid element in $x_3$. Each of these lines traversing the planes along the same Eulerian points is what in the text we call a derivative {\bf beam}. In the right, we can see a depiction with the same particularities, just that we represent a $N=4$ quantum system, where the support of each conditional function is a discretized $\R^4$ hyperplane, a 3D box. It is filled with Eulerian nodes, which again have the same positions between the different trajectories to allow the derivatives in the $x_4$ (Lagrangian) axis. This is aimed to be represented by noting in blue that all the hyperplane-boxes have the same point $(a,b,c)$ just with $x_4$ equaling their trajectory position. }
-  \label{fig:hyperplane}
-\end{figure}
+
 
 
 \subsection*{N-m Lagrangian degrees}
-In order to generalize the algorithm, we will use as examples the 2 and 3 Lagrangian degree cases, which will provide us a visual imagination and allow us find the pattern and induce the generalization. You can find the geometrical illustration of 2 in Figure \ref{fig:hyper1} (the one for 3 is immediate thereof). We will explain the things with allusion to them. The algorithm itself will have almost no modification. Given we have an initial ensemble of $M_L^{N-m}$ conditional functions\footnote{We will choose to have as many conditional functions as for having representatives from an initial regular grid in the whole Lagrangian axis subspace. We will have $M_L$ points in each axis, meaning a total of $M_L^{N-m}$ Lagrangian fluid elements.} and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
+In order to generalize the algorithm, we will use as an example the 2 Lagrangian degree case, which will provide us with a visual intuition, allowing us to find a pattern and induce the generalization. You can find a visual understanding of the 2 Lagrangian degree case in Figure \ref{fig:hyper1}.
+
+\begin{figure}[p!]
+  \centering
+    \includegraphics[width=1\linewidth]{12_N6.png}
+  \caption{This is a visual intuition of a quantum system with $N=5$, where there are two Lagrangian degrees. Above left we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and above right, a time $t$ afterwards, how they are distributed in the $x_4,x_5$ plane, following their trajectories $\vec{y}(\vec{\xi},t)=(x_4(\vec{\xi},t),x_5(\vec{\xi},t))$. Each of these fluid fluid elements has associated a conditional function over a 3D space in $x_1,x_2,x_3$, discretized in a regular Eulerian grid as a box. All these Eulerian boxes have the same number of points in $x_1,x_2,x_3$, and, very importantly, at the same positions, which is represented in blue as saying that all of them have the corner $\vec{x}=(a,b,c)$ with $\vec{y}=\vec{y}(\vec{\xi},t)$. The relevance of them being in the same positions is that when we move from a conditional function to the next (to the one aligned in the Lagrangian space with the first) to compute Lagrangian space derivatives, the same points in each conditional function define what we called a derivative {\bf beam} (depicted in pink lines with arrows joining the boxes). The beam's description is completed by selecting a line joining these conditional functions in Lagrangian axis space. This last thing is depicted in blue in the planes above. We can see that in the label space, any derivative beam contains many representatives, but when the grid gets distorted the beams only catch some few conditional functions aligned. That is, the grid for derivatives gets unstructured. It is this why it is way more convenient if we simply change the derivatives in configuration space to derivatives in label space. The beams in label space are full of representatives for numerical derivative computations.  }
+  \label{fig:hyperplane2}
+\end{figure}
+
+
+The algorithm would be left almost the same: given we have an initial ensemble of $M_L^{N-m}$ conditional functions\footnote{We will choose to have as many conditional functions as to have a representatives per point in an initial regular grid in the whole Lagrangian axis subspace. We will have $M_L$ points in each axis, meaning a total of $M_L^{N-m}$ Lagrangian fluid elements and their conditional functions will be considered.} and initial trajectory positions (rather $\vec{x}(\vec{\xi},t)$ or $\vec{y}(\vec{\xi}_y,t)$ depending on our choice of underlying fluid) labelled by their underlying fluid element $\vec{\xi}^j$:
 \begin{enumerate}
 \item Share the information of the conditional functions in the necessary parallel processors.
 \item Compute {\em in parallel} the derivatives in the Lagrangian axes for each conditional function $\vec{\xi}^j$. In this case, this is a bit more subtle, since we have problematic partial derivatives in the $N-m$ different Lagrangian directions. We need for each possible point in the $m$ dimensional support of each conditional function, each $(x_1,...,x_{m})$ point of each slice, the variation of the function between the conditional functions whose Lagrangian degrees are aligned in the Lagrangian direction. There are $N-m$ Lagrangian directions, and we need the deriavtive in all of them. Then, compute the necessary derivatives (first and/or second) to get the correlation terms.
@@ -2017,14 +2067,9 @@ In order to generalize the algorithm, we will use as examples the 2 and 3 Lagran
 \item Gather the correlation terms to time evolve in parallel to the next time step each conditional function, using one process per $\vec{\xi}^j$. This will be done with the necessary algorithm for an $m$ dimensional conditional function.
 \item Go back to 1.
 \end{enumerate}
-\begin{figure}[p!]
-  \centering
-    \includegraphics[width=1\linewidth]{12_N6.png}
-  \caption{This is a visual intuition of the $N=5$ case of the two Lagrangian degree case. Above left we see two axes, representing the equidistant distribution of the Lagrangian axis points in label space, and above right, a time $t$ afterwards, how they are distributed in the $x_4,x_5$ plane, following their trajectories $\vec{y}(\vec{\xi},t)=(x_4(\vec{\xi},t),x_5(\vec{\xi},t))$. Each of these fluid fluid elements has associated a conditional function over a 3D space in $x_1,x_2,x_3$, discretized in a regular Eulerian grid as a box. All these Eulerian boxes have the same number of points in $x_1,x_2,x_3$, and, very importantly, at the same positions, which is represented in blue as saying that all of them have the corner $\vec{x}=(a,b,c)$ with $\vec{y}=\vec{y}(\vec{\xi},t)$. The relevance of them being in the same positions is that when we move from a conditional function to the next (to the one aligned in the Lagrangian space with the first) to compute Lagrangian space derivatives, the same points in each conditional function define what we called a derivative {\bf beam} (depicted in pink lines with arrows joining the boxes). The beam's description is completed by selecting a line joining these conditional functions in Lagrangian axis space. This last thing is depicted in blue in the planes above. We can see that in the label space, any derivative beam contains many representatives, but when the grid gets distorted the beams only catch some few conditional functions aligned. That is, the grid for derivatives gets unstructured. It is this why it is way more convenient if we simply change the derivatives in configuration space to derivatives in label space. The beams are full of representatives for numerical derivative computations.  }
-  \label{fig:hyperplane}
-\end{figure}
 
-The derivatives this time will be required to be computed in a grid where not only the distance between the conditional functions in the Lagrangian degrees will get irregular, but where also, the alignment in the Lagrangian directions for the conditional functions will be distorted. That is, we will have a totally unstructured mesh. To solve these derivatives:
+
+The derivatives this time will be required to be computed in a grid where not only the distance between the conditional functions in the Lagrangian degrees will get irregular, but where also, the alignment in the Lagrangian directions for the conditional functions will be distorted (as can be understood in the Figure \ref{fig:hyperplane2}). That is, we will have a totally unstructured mesh. To solve these derivatives:
 \begin{itemize}
 \item Fit an analytical function sum to each locality (each stencil of elements we will use to compute the derivatives), and get their symbolical derivative. It involves all the fitting burden.
 \item Compute the derivatives relative to the label space, which can be chosen to be regular, as explained in (III.e). It involves all the Jacobian determinant (or inverse Jacobian) computation burden.
@@ -2035,15 +2080,15 @@ In order to have an idea of the complexity of a possible algorithm following the
 
 Consider as we said, we take $M_L^{N-m}$ trajectories, such that they discretize each Lagrangian axis in $M_{L}$ different discrete points, making an equidistant regular mesh of the $\vec{y}$ subspace. Then, consider we discretize each conditional function of $m$ Eulerian dimensions in $M_E^m$ points in $\R^m$, also as a regular and equispaced mesh with $M_E$ points per axis.
 
-Lets now follow the algorithm step by step manifesting a possible complexity of each time step we evolve the ensemble of conditional functions (and derive which is the total linear effective time complexity and necessary number of processes). The movement of data will not be efficient at all, but it is intended to be illustrative:
+Lets now follow the algorithm step by step manifesting a possible complexity of each step if we allow an arbitrary number of parallel processes. The movement of data and the management of the processes will not be efficient at all, it is instead just intended to be illustrative:
 \begin{enumerate}
-\item Have all the $M_L^{N-m}$ conditional wavefunctions in a central memory accessible for $O(M_L^{N-m})$ distributed processors.
-\item Make each processor compute the conditional action and C amplitudes of each wavefunction, for which each will require in parallel $O(M_E^m)$ operations, since they will require to consult each point of the conditional wavefunction.
-\item In order to compute the potentials $G$ and $J$ of each one of the $M_L^{N-m}$ conditional functions, we need to compute 4 different derivatives ($\pdv{S}{x_k}$, $\pdv[2]{S}{x_k}$, $\pdv{C}{x_k}$, $\pdv[2]{C}{x_k}$) per Lagrangian axis, a total of $4(N-m)$ derivatives of the conditional functions in the Lagrangian axes. Since we will change them to the label space using $\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=m+1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$, we will only compute the $\pdv{f}{\xi_k}$ once, then we will share them for the computation of all the Lagrangian axis $x_k$ derivatives. For the second derivatives we will compute the derivatives of the first derivatives sequentially. We have here the following tasks then:
+\item Have all the $M_L^{N-m}$ conditional wavefunctions distributed each in $M_L^{N-m}$ parallel processors.
+\item Make each processor compute the conditional action and C amplitudes of each wavefunction, for which each will require in parallel $O(M_E^m)$ operations, since they will require to consult each point of the conditional wavefunction $O(1)$ times.
+\item In order to compute the potentials $G$ and $J$ of each one of the $M_L^{N-m}$ conditional functions, we need to compute 4 different derivatives ($\pdv{S}{x_k}$, $\pdv[2]{S}{x_k}$, $\pdv{C}{x_k}$, $\pdv[2]{C}{x_k}$) per Lagrangian axis $k\in\{m+1,...,N\}$, a total of $4(N-m)$ derivatives of the conditional functions in the Lagrangian axes are required. Since we will change them to the label space using $\pdv{f(\vec{x}, \vec{y},t)}{x_k}\Big\rvert_{\vec{y}(\vec{\xi},t)}=\sum_{j=m+1}^N \pdv{f(\vec{x},\vec{y}(\vec{\xi},t),t)}{\xi_j} \pdv{\xi_j(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(\vec{\xi},t)}$, we will only compute the $\pdv{f}{\xi_k}$ once, then we will share them for the computation of all the Lagrangian axis $x_k$ derivatives. For the second derivatives we will compute the derivatives of the first derivatives sequentially. We have the following tasks then:
 \begin{enumerate}
-\item Compute for $f\in\{S,C\}$ the $N-m$ derivatives $\pdv{f(\vec{x},\vec{y}(\vec{\xi}_y,t),t)}{\xi_j}$. For this, notice that if we fix all the variables except for one $\xi_j$, this defines a line in $\R^N$ where we have all the necessary function values to compute the derivative $\pdv{}{\xi_j}$ in each value of $\xi_j$. Let us call this line a partial derivative {\bf beam}. Then, for each value of the rest of labels and each Eulerian position $\vec{x}$, we have a different beam of these. For an intuition look at the Figures \ref{fig:hyper1} and \ref{fig:hyper2}. In total we have $M_L^{N-m}M_E^m$ beams like this one for each of the $(N-L)$ directions $\vec{\xi_j}$ in label space. Each beam contains all the information to compute the derivatives in a regular equispaced grid for the points of the different conditional functions along the beam. If we use for example a five point finite difference method, this can be done by running over each beam of $M_L$ elements five times, which means $O(M_L^5)$ operations. Thus, we could have in parallel $O(2(N-L)M_L^{N-m-1}M_E^m)$ processes each computing $O(M_L^5)$ operations. Then in $O(M_L^5)$ linear time, all the derivatives $\pdv{f}{\xi_k}$ at all points would be computed for $f\in\{S,C\}$. Of course, to do this, each process that has its conditional function would need to send the elements to each processor that will take care for a beam. Since each conditional function point is part of $N-m$ beams, $2(N-m)M_E^m$ messages would be required to be sent, taking $O(2\theta (N-m)M_E^m)$ time, where $\theta$ is the time for each double number sending.
+\item Compute for $f\in\{S,C\}$ the $N-m$ derivatives $\pdv{f(\vec{x},\vec{y}(\vec{\xi}_y,t),t)}{\xi_j}$. For this, notice that if we fix all the variables except for one $\xi_j$, this defines a line in $\R^N$ where we have all the necessary function values to compute the derivative $\pdv{}{\xi_j}$ in each value of $\xi_j$. Let us call this line a partial derivative {\bf beam}. Then, for each value of the rest of labels and each Eulerian position $\vec{x}$, we have a different beam of these. For an intuition look at the Figures \ref{fig:hyperplane} and \ref{fig:hyperplane2}. In total we have $M_L^{N-m}M_E^m$ beams like this one for each of the $(N-m)$ directions $\vec{\xi_j}$ in label space. Each beam contains all the information to compute the derivatives in a regular equispaced grid for the points of the different conditional functions along the beam. If we use for example a five point finite difference method, this can be done by running over each beam of $M_L$ elements five times, which means $O(M_L^5)$ operations. Thus, we could have in parallel $O(2(N-m)M_L^{N-m-1}M_E^m)$ processes each computing $O(M_L^5)$ operations. Then in $O(M_L^5)$ linear time, all the derivatives $\pdv{f}{\xi_k}$ at all points would be computed for $f\in\{S,C\}$. Of course, to begin with this, each process that in (1) had its conditional function would need to send all the elements to each processor that will take care for each beam. Since each conditional function point is part of $N-m$ beams, $2(N-m)M_E^m$ messages would be required to be sent, taking $O(2\theta (N-m)M_E^m)$ time, where $\theta$ is the average time for each number delivery.
 \item The derivatives $\pdv{\xi_j(\vec{x},t)}{x_k}$ would also be required to be computed. To do this, we saw in (II.e) that we could first compute the Jacobian matrix, composed of derivatives $\pdv{\x_k(\vec{\xi},t)}{\xi_j}$ in label space for the trajectories, and then invert the matrix. In order to compute these derivatives, we can do the same strategy as before (just that now we will only have a single representative in each Lagrangian position). There are a total of $O(M^{N-m})$ beams per Lagrangian $\xi_k$, a total of $O((N-m)M_L^{N-m})$. Since they are $N$ trajectory positions as much, we could make one every $M_E^m$ processes of the previous step take $N$ of these beams. Each would compute the derivatives in $O(NM_L^5)$ operations. Each process that had the conditional functions has its own trajectory value (composed by maximum $N$ numbers), each has to be shared with $N-m$ processes, meaning a messaging time of $O(N\theta (N-m))$.
-\item Once $(a)$ and $(b)$ are done, each process that in the beginning had a complete conditional function, receives the derivatives $\pdv{S}{\xi_k}$, $\pdv[2]{S}{\xi_k}$, $\pdv{C}{\xi_k}$, $\pdv[2]{C}{\xi_k}$ at their Lagrangian position $\vec{\xi}^j$ and each of their $M_E^m$ Eulerian positions $\vec{x}$ from processes that worked in $(a)$. Then they also receive a maximum of $N$ values of $\pdv{\vec{x}}{\xi_k}$ for their trajectory. To receive all of this, they will require again $O(4\theta (N-m)M_E^m+N\theta (N-m))$ message reception time (for the sender they will only need to send asynchronously $(N+4)M_L$ messages, which is less).
+\item Once $(a)$ and $(b)$ are done, each process that in $(1)$ had a complete conditional function, receives the derivatives $\pdv{S}{\xi_k}$ and $\pdv{C}{\xi_k}$ at their Lagrangian position $\vec{\xi}^j$ and each of their $M_E^m$ Eulerian positions $\vec{x}$ from processes that worked in $(a)$. Then they also receive a maximum of $N$ values of $\pdv{\vec{x}}{\xi_k}$ for their trajectory. To receive all of this, they will require again $O(4\theta (N-m)M_E^m+N\theta (N-m))$ message reception time (the senders only need to send asynchronously $(N+4)M_L$ messages, which is less time than the reception time).
 \item Each of these $M_L^{N-m}$ processes has now an entire conditional wavefunction and the derivatives of the conditional action and C amplitude in label space, along their trajectory position, together with the derivative of the trajectory diffeomorphism along their trajectory position, which are a maximum of $N\times N$ numbers. They could now compute the inverse Jacobain matrix at their trajectory's position in $O(N^3)$ operations using the well known Gauss-Jordan Elimination algorithm. This inverse, would grant them, the values of $\pdv{\xi_j}{x_k}$ in their trajectory position. With this, they would be able to compute $\pdv{f}{x_k}$ in their trajectory position for $f\in\{S,C\}$ for all the Lagrangian $x_k$. To do this, they would require a maximum of $N$ products and $N$ sums per conditional function point. A total of $O(2NM_E^m)$ operations.
 \item The whole (a) to (d) would be repeated to compute the second derivatives.
 \end{enumerate}
@@ -2056,7 +2101,7 @@ $$
 $$
 
 \item Then each process that has a whole conditional function and the computed derivatives for its trajectory would be able to obtain the correlation potentials $G$ and $J$ for its Eulerian positions. These are ten products and four sums times $(N-m)$ per Eulerian position. A total of $O(14(N-m)M_E^m)$ operations.
-\item Finally, each of these $M_L^{N-m}$ processes would only need to evolve one time step of their conditional wavefunctions using the computed correlation potentials. Using a Crank Nicolson algorithm, this would take $O(M_E^m)$ operations. They would then get the conditional wavefunction for the next time step and with it, evolve their trajectories to the next step with $O(1)$ operations.
+\item Finally, each of these $M_L^{N-m}$ processes would only need to evolve one time step of their conditional wavefunctions using the computed correlation potentials. Using a Crank Nicolson algorithm, this would take $O(M_E^m)$ operations. They would then get the conditional wavefunction at the next time step and with it, they could evolve their trajectories as well in $O(1)$ operations.
 \end{enumerate}
 If we consider that in reality, it was not just a conditional wavefunction per trajectory but a set of about $N/m$ complementary conditional wavefunctions (for instance, to allow the evolution of a Bohmian trajectory with no further interpolation), we would just need to multiply all the computational time by $N/m$ and assume wherever we said there was a conditional wavefunction, that there were all its complementary ones.
 
@@ -2067,41 +2112,48 @@ T_{N,m}:=O\qty(M_E^m(N(\theta+1)+\theta m)+N(M_L^5+\theta(m+N))+M_E^m+14(N-m)M_E
 $$
 =O\qty(M_E^m\qty[1+N(\theta+1)+m(\theta+1)]+N\qty[N^2+M_L^5+\theta(m+N) ])
 $$
-For this, the number of parallel processes we have used is $O((N-m)M_L^{N-m}M_E^{m})$, which if $M_L=M_E=M$ means $O((N-m)M^{N-1})$ processes.
+For this, the number of parallel processes we have used is $O((N-m)M_L^{N-m}M_E^{m})$, which if $M_L=M_E=M$ means $O((N-m)M^{N})$ processes.
 
-Therefore, we have that we will need expoenentially more parallel processes $O((N-m)M^{N-1})$ for bigger dimensional quantum systems, for bigger $N$, but it will only take a polynomial time more, since $T_{N,m}$ only increases as $O(N^3)$ for a fixed number of Eulerian degrees $m$ (and leaving the rest of parameters fixed as well).
+In a nutshell, we will require expoenentially more parallel processes $O((N-m)M^{N})$ to simulate quantum systems with more dimensions $N$. In exchange, in terms of linear time, the simulaiton will only take a polynomial time more, since $T_{N,m}$ only increases as $O(N^3)$ for a fixed number of Eulerian degrees $m$ (and leaving the rest of parameters fixed as well).
 
-Actually, by looking at these results, we clearly see that as we increase the relative number of Lagrangian degrees of freedom (we reduce $m$), we will require linearly more parallel processes, but the effective sequential computation time will be reduced exponentially. In the limit of $m=0$, we will have the minimum effective computational time. This would be the case of the fully Lagrangian picture. However, as we increase the relative number of Eulerian degrees of freedom (increse $m$), we see that the computational time will increase exponentially and we will need less parallel processes. In the limit of the fully Eulerian Schrödinger Equation with no fluid treatment, we would have that its computation time is $O(M_E^N)$ exponential with dimensions. This is the case for the Fully Eulerian picture with no fluid consideration.
+Actually, by looking at these results, we clearly see that as we increase the relative number of Lagrangian degrees of freedom (we reduce $m$), we will require linearly more parallel processes, but the effective sequential computation time will be reduced exponentially. In the limit of $m=0$, we will have the minimum effective computational time. This would be the case of the fully Lagrangian picture. Conversely, as we increase the relative number of Eulerian degrees of freedom (increase $m$), we see that the computational time will increase exponentially and we will need less parallel processes. In the limit of the fully Eulerian Schrödinger Equation with no fluid treatment, we would have that its computation time is exponential with dimensions $O(M_E^N)$, but we will have enough with a single process.
 
-An easier algorithm would be to consider the trajectories are stationary, which would not distort the grid and the derivatives would be computable at all times without the Jacobian matrix endeavour and easier finite difference terms. Its parallelization is left as an exercise.
-
-
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.5\linewidth]{rectas.png}
-  \caption{In blue, the $M_{x2}xM_{x3}$ CWF-s, the supports of which are 1D manifolds. In yellow, the $M_{x1}$ discrete points we consider in each CWF. Note how the yellow points in $x_2$ and $x_3$ are aligned in a regular grid, meaning they can be used to compute numerically the derivatives in the Lagrangian directions.  }
-  \label{fig:lines}
-\end{figure}
+An easier algorithm would be to consider the trajectories are stationary. This would make the Lagrangian grid regular at all times, making the derivatives computable with finite differences, without the need for the Jacobian matrix endeavour.
 
 
 
+%\begin{figure}[h!]
+%  \centering
+%    \includegraphics[width=0.5\linewidth]{rectas.png}
+%  \caption{In blue, the $M_{x2}xM_{x3}$ CWF-s, the supports of which are 1D manifolds. In yellow, the $M_{x1}$ discrete points we consider in each CWF. Note how the yellow points in $x_2$ and $x_3$ are aligned in a regular grid, meaning they can be used to compute numerically the derivatives in the Lagrangian directions.  }
+ % \label{fig:lines}
+%\end{figure}
 
 
+
+
+\newpage
 \subsubsection*{What could the advantage of the Part Lagrangian Part Eulerian approach be?}
-Appart from theoretical considerations, we might be able to get the best of both worlds: the Eulerian and the Lagrangian...even if also the worst of both worlds since, we would still need matrix methods like in Eulerian but also still need function fitting, Jacobian matrices and determinants or infinte equation chains as in Lagrangian... In any case, here are some of the positive points we can offer:
+Apart from theoretical considerations, we might be able to get the best of both worlds at once: the Eulerian and the Lagrangian. It must be noted however that we would also get the worst of both worlds at once. We would still need matrix methods like in the Eulerian frame and at the same time we would need function fitting, Jacobian matrices and determinants or infinite equation chains as in the Lagrangian frame.
+
+Among the relevant positive points, here are some of the most interesting ones:
+
+\begin{itemize}
+\item We have simple control over the parallelization-sequential computation tread-off:
 
 \begin{itemize}
 \item The more Eulerian degrees we consider, the smaller the space for sampling the trajectories of the Lagrangian part will be. This means that the less conditional functions will be required to reproduce the full functions or to achieve a certain precision in the derivatives in Lagrangian directions. However, the more computationally complex will be the conditional functions to evolve, so the problem gets more complex to be parallelized. In the limit, of $m=N$ we would recover the linear Schrödinger equation in the Eulerian frame, which scales exponentially in time with dimensions.
 
 \item The more Lagrangian degrees we consider, the more trajectories we will need to reconstruct the full functions and to get the derivatives in the Lagrangian directions, exponentially more. However, the conditional functions will be simpler to evolve and as the trajectories can (and must) be computed coupled but in parallel, the more of exponential complexity we will transfer to parallel threads. In the limit of $m=0$, we recover the fully Lagrangian frame, where we achieve the apparently highest parallelizability of the Quantum many body problem.
+\end{itemize} 
 
-\item Unlike the fully Lagrangian frame, in this case, each trajectory is accompanied by lots of full function points (not just one) and therefore, interpolating the full function is way simpler if this is the objective. For instance a nearest neighbour approach will be way more precise in the reconstruction.
 
-\item The grid is preserved in a structured manner at all times for the Eulerian degrees, while it gets unstructured for the Lagrangian axes. However, if complementary conditional functions are present, there are parts of the Lagrangian axes for one conditional function that are Eulerian for the other, so there is always track of the function in all the extent of the simulation domain. The interesting thing is that the points in $\vec{x}$ of different trajectory conditional functions are always in the same hyperplanes, so the interpolations are way simpler than in a fully unstructured grid.
 
-\item {\bf Fast and Slow Degrees of Freedom}: conditional functions provide a natural way to treat the slow degrees of freedom separated form the fast ones and in terms of trajectories, like an atom nuclei from the orbiting electrons. It is common in molecular dynamics algorithm to consider classical trajectories for parts of the quantum system while quantum wavefunctions for other parts. The partially Lagrangian approach (which is fully quantum) could be used to improve these methods and provide them with an {\em ab initio} look.
-\item It is a perfect sandbox for performing approximations to different degrees of freedom in different manners.
+\item Unlike the fully Lagrangian frame, for $m\neq 0$, each trajectory will be accompanied by lots of full function points (proportionally more to the amount of Eulerian degrees). Interpolating the full function or knowing information about it would therefore be simpler. For instance, a nearest neighbour approach would be more accurate in the reconstruction task.
+
+\item The grid is preserved in a structured manner at all times for the Eulerian degrees, while it gets unstructured for the Lagrangian axes. If complementary conditional functions are present, there are parts of the Lagrangian axes for one conditional function that are Eulerian for the other, so there is always track of the function in all the extent of the simulation domain in variable precisions.
+\item {\bf Fast and Slow Degrees of Freedom}: conditional functions provide a natural way to treat the slow degrees of freedom separated form the fast ones, where the slow ones are treated in terms of trajectories. This is the case in a nuclei relative to its orbiting electrons. It is common in molecular dynamics algorithms to consider classical trajectories for parts of the quantum system while quantum wavefunctions for other parts. The partially Lagrangian approach (which is fully quantum) could be used to improve these methods and dress them with an {\em ab initio} look.
+\item It is a perfect sandbox for performing {\em ad-hoc} {\bf approximations} to different degrees of freedom in different ways, allowing us to select a subsystem $m$ of interest and treat it as if it really had $m$ dimensions, without the need to directly neglect the environment. The correlation terms separately show the effects and interactions with each Lagrangian degree axis, so we could apply different approximations or different a priori knowledge about the correlations as a function of the Lagrangian degree.
 \end{itemize}
 
 
