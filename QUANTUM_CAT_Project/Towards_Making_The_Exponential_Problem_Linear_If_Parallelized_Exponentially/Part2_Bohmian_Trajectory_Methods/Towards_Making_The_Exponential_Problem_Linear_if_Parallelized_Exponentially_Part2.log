@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  6 OCT 2021 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  7 OCT 2021 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2625,26 +2625,63 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 \c@cor=\count342
 \c@defi=\count343
 
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip84
+\cftbeforetoctitleskip=\skip85
+\cftaftertoctitleskip=\skip86
+\cftbeforepartskip=\skip87
+\cftpartnumwidth=\skip88
+\cftpartindent=\skip89
+\cftbeforesecskip=\skip90
+\cftsecindent=\skip91
+\cftsecnumwidth=\skip92
+\cftbeforesubsecskip=\skip93
+\cftsubsecindent=\skip94
+\cftsubsecnumwidth=\skip95
+\cftbeforesubsubsecskip=\skip96
+\cftsubsubsecindent=\skip97
+\cftsubsubsecnumwidth=\skip98
+\cftbeforeparaskip=\skip99
+\cftparaindent=\skip100
+\cftparanumwidth=\skip101
+\cftbeforesubparaskip=\skip102
+\cftsubparaindent=\skip103
+\cftsubparanumwidth=\skip104
+\cftbeforeloftitleskip=\skip105
+\cftafterloftitleskip=\skip106
+\cftbeforefigskip=\skip107
+\cftfigindent=\skip108
+\cftfignumwidth=\skip109
+\c@lofdepth=\count344
+\c@lotdepth=\count345
+\cftbeforelottitleskip=\skip110
+\cftafterlottitleskip=\skip111
+\cftbeforetabskip=\skip112
+\cfttabindent=\skip113
+\cfttabnumwidth=\skip114
+)
 (/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
 Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchro
 nous mode
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
-\c@tracingmulticols=\count344
+\c@tracingmulticols=\count346
 \mult@box=\box56
 \multicol@leftmargin=\dimen296
-\c@unbalance=\count345
-\c@collectmore=\count346
-\doublecol@number=\count347
-\multicoltolerance=\count348
-\multicolpretolerance=\count349
+\c@unbalance=\count347
+\c@collectmore=\count348
+\doublecol@number=\count349
+\multicoltolerance=\count350
+\multicolpretolerance=\count351
 \full@width=\dimen297
 \page@free=\dimen298
 \premulticols=\dimen299
 \postmulticols=\dimen300
-\multicolsep=\skip84
-\multicolbaselineskip=\skip85
+\multicolsep=\skip115
+\multicolbaselineskip=\skip116
 \partial@page=\box57
 \last@line=\box58
 \maxbalancingoverflow=\dimen301
@@ -2669,14 +2706,14 @@ Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \@tempa=\box77
 \@tempa=\box78
 \@tempa=\box79
-\c@columnbadness=\count350
-\c@finalcolumnbadness=\count351
+\c@columnbadness=\count352
+\c@finalcolumnbadness=\count353
 \last@try=\dimen302
 \multicolovershoot=\dimen303
 \multicolundershoot=\dimen304
 \mult@nat@firstbox=\box80
 \colbreak@box=\box81
-\mc@col@check@num=\count352
+\mc@col@check@num=\count354
 ))
 \Towards_Making_The_Exponential_Problem_Linear_if_Parallelized_Exponentially_Pa
 rt2@idxfile=\write3
@@ -2716,22 +2753,22 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count353
+\c@checkoddpage=\count355
 )
 (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box83
-\sift@deathcycles=\count354
+\sift@deathcycles=\count356
 \@vwid@loff=\dimen313
 \@vwid@roff=\dimen314
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/abstract/abstract.sty
 Package: abstract 2009/06/08 v1.2a configurable abstracts
-\abstitleskip=\skip86
-\absleftindent=\skip87
-\absrightindent=\skip88
-\absparindent=\skip89
-\absparsep=\skip90
+\abstitleskip=\skip117
+\absleftindent=\skip118
+\absrightindent=\skip119
+\absparindent=\skip120
+\absparsep=\skip121
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2018/01/12 version 4.12 text color boxes
@@ -2770,10 +2807,10 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yc=\dimen324
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
-\c@pgf@counta=\count355
-\c@pgf@countb=\count356
-\c@pgf@countc=\count357
-\c@pgf@countd=\count358
+\c@pgf@counta=\count357
+\c@pgf@countb=\count358
+\c@pgf@countc=\count359
+\c@pgf@countd=\count360
 \t@pgf@toka=\toks48
 \t@pgf@tokb=\toks49
 \t@pgf@tokc=\toks50
@@ -2793,8 +2830,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count359
-\pgfsyssoftpath@bigbuffer@items=\count360
+\pgfsyssoftpath@smallbuffer@items=\count361
+\pgfsyssoftpath@bigbuffer@items=\count362
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -2840,7 +2877,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box85
 \pgf@hbox=\box86
 \pgf@layerbox@main=\box87
-\pgf@picture@serial@count=\count361
+\pgf@picture@serial@count=\count363
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -2873,7 +2910,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen348
-\pgf@sys@shading@range@num=\count362
+\pgf@sys@shading@range@num=\count364
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -2926,9 +2963,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box91
 \tcb@lowerbox=\box92
 \tcb@phantombox=\box93
-\c@tcbbreakpart=\count363
-\c@tcblayer=\count364
-\tcolorbox@number=\count365
+\c@tcbbreakpart=\count365
+\c@tcblayer=\count366
+\tcolorbox@number=\count367
 \tcb@temp=\box94
 \tcb@temp=\box95
 \tcb@temp=\box96
@@ -2940,23 +2977,23 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count366
+\lst@mode=\count368
 \lst@gtempboxa=\box98
 \lst@token=\toks53
-\lst@length=\count367
+\lst@length=\count369
 \lst@currlwidth=\dimen351
-\lst@column=\count368
-\lst@pos=\count369
+\lst@column=\count370
+\lst@pos=\count371
 \lst@lostspace=\dimen352
 \lst@width=\dimen353
-\lst@newlines=\count370
-\lst@lineno=\count371
+\lst@newlines=\count372
+\lst@lineno=\count373
 \lst@maxwidth=\dimen354
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count372
-\lst@skipnumbers=\count373
+\c@lstnumber=\count374
+\lst@skipnumbers=\count375
 \lst@framebox=\box99
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -3005,16 +3042,16 @@ LaTeX Font Info:    ... okay on input line 136.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count374
+\scratchcounter=\count376
 \scratchdimen=\dimen355
 \scratchbox=\box100
-\nofMPsegments=\count375
-\nofMParguments=\count376
+\nofMPsegments=\count377
+\nofMParguments=\count378
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count377
+\MPscratchCnt=\count379
 \MPscratchDim=\dimen356
-\MPnumerator=\count378
-\makeMPintoPDFobject=\count379
+\MPnumerator=\count380
+\makeMPintoPDFobject=\count381
 \everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -3163,7 +3200,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count380
+\c@section@level=\count382
 )
 LaTeX Info: Redefining \ref on input line 136.
 LaTeX Info: Redefining \pageref on input line 136.
@@ -3178,8 +3215,8 @@ Part2.out)
 nentially_Part2.out'.
 
  ABD: EveryShipout initializing macros
-\c@lstlisting=\count381
-\c__siunitx_mathsf_int=\count382
+\c@lstlisting=\count383
+\c__siunitx_mathsf_int=\count384
 LaTeX Font Info:    Try loading font information for U+msa on input line 136.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -3195,7 +3232,7 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 136.
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-\c__siunitx_mathtt_int=\count383
+\c__siunitx_mathtt_int=\count385
 <Figures/UAB.png, id=127, 1229.59375pt x 569.12625pt>
 File: Figures/UAB.png Graphic file (type png)
 <use Figures/UAB.png>
@@ -3227,30 +3264,32 @@ nentially_Part2.toc'.
 
  [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.194 \clearpage
-                 [2] [-1
+]
+
+LaTeX Warning: Citation `conditional1' on page -1 undefined on input line 216.
+
+
+LaTeX Warning: Citation `conditional2' on page -1 undefined on input line 216.
+
+[-1
 
 ] [0
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 239.
+(hyperref)                than one, level fixed on input line 245.
 
 
-Overfull \hbox (5.00539pt too wide) in paragraph at lines 245--246
+Overfull \hbox (5.00539pt too wide) in paragraph at lines 251--252
 []\OT1/cmr/m/n/10.95 The state vari-ables, de-scribed by scalar func-tions, cou
 ld be in-ter-preted as prop-er-ties of configuration-
  []
 
-<Figures/1deforma.png, id=191, 2312.64pt x 1619.69824pt>
+<Figures/1deforma.png, id=189, 2312.64pt x 1619.69824pt>
 File: Figures/1deforma.png Graphic file (type png)
 <use Figures/1deforma.png>
-Package pdftex.def Info: Figures/1deforma.png  used on input line 251.
+Package pdftex.def Info: Figures/1deforma.png  used on input line 257.
 (pdftex.def)             Requested size: 314.40001pt x 220.18213pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -3265,7 +3304,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.255 \newpage
+l.261 \newpage
                [1
 
 ]
@@ -3329,12 +3368,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
+Underfull \hbox (badness 10000) in paragraph at lines 445--445
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
+Underfull \hbox (badness 10000) in paragraph at lines 445--445
 
  []
 
@@ -3359,29 +3398,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13]
-Overfull \hbox (11.41623pt too wide) in paragraph at lines 538--539
+Overfull \hbox (11.41623pt too wide) in paragraph at lines 544--545
 []\OT1/cmr/m/n/10.95 If we note that in the terms that do not have an in-te-gra
-l, we can in-tro-duce $1 = [][] ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.9
-5 )^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy$\OT
-1/cmr/m/n/10.95 ,
+l, we can in-tro-duce $1 = [][] ^^H[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.
+95 )^^H[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy$\
+OT1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (45.5196pt too wide) detected at line 541
-[][]\OT1/cmr/m/n/10.95 0 = [][] ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.9
-5 )[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~\OT1/cmr/m
-/n/10.95 ^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.95 )[]^^C[](\OML/cmm/m/i
-t/10.95 x; t\OT1/cmr/m/n/10.95 ) + []^^C[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n
-/10.95 )^^H[](\OML/cmm/m/it/10.95 y; t\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 
-^^@ [] [][][]\OT1/cmr/m/n/10.95 +
+Overfull \hbox (45.5196pt too wide) detected at line 547
+[][]\OT1/cmr/m/n/10.95 0 = [][] ^^H[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.
+95 )[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~\OT1/cmr/
+m/n/10.95 ^^H[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )[]^^C[]([]\OML/cmm
+/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) + []^^C[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr
+/m/n/10.95 )^^H[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/1
+0.95 ^^@ [] [][][]\OT1/cmr/m/n/10.95 +
  []
 
 
-Overfull \hbox (36.29549pt too wide) detected at line 566
-[][]| [][][] \OMS/cmsy/m/n/10.95 ^^A  \OT1/cmr/m/n/10.95 ^^H[](\OML/cmm/m/it/10
-.95 y; t\OT1/cmr/m/n/10.95 )[]^^C[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 
-) = []\OML/cmm/m/it/10.95 log[] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 =
-
+Overfull \hbox (36.29549pt too wide) detected at line 572
+[][]| [][][] \OMS/cmsy/m/n/10.95 ^^A  \OT1/cmr/m/n/10.95 ^^H[]([]\OML/cmm/m/it/
+10.95 ; t\OT1/cmr/m/n/10.95 )[]^^C[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.9
+5 ) = []\OML/cmm/m/it/10.95 log[] \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95
+ =
  []
 
 
@@ -3412,7 +3451,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17]
-Overfull \hbox (36.77208pt too wide) detected at line 717
+Overfull \hbox (39.58734pt too wide) detected at line 723
 [][]| \OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[]\OML/cmm/m/it/10.95  \OT1/cmr/m/
 n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT
 1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@ [] [][]\OML/cmm/m/it/10.95  \OT1/cm
@@ -3442,7 +3481,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19]
-Overfull \hbox (8.74213pt too wide) in paragraph at lines 775--776
+Overfull \hbox (12.99219pt too wide) in paragraph at lines 797--798
 \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 ^^Z\OT1/cmr/m/n/10.95 ([]\OML/cmm/m
 /it/10.95 ; t\OT1/cmr/m/n/10.95 )$, we can im-me-di-ately get the full wave-fun
 c-tion as $\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT
@@ -3461,25 +3500,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 850--852
-
- []
-
-
-Overfull \hbox (3.97093pt too wide) in paragraph at lines 854--854
-[][]\OT1/cmr/bx/it/14.4 Parenthesis: \OT1/cmr/bx/n/14.4 Fun-da-men-tal In-tu-it
-ions about the Dif-feo-mor-phism $[]\OT1/cmr/m/n/14.4 ([]\OML/cmm/m/it/14.4 ; t
-\OT1/cmr/m/n/14.4 )$ 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 855.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 855.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3487,19 +3507,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-<Figures/5isolines.png, id=441, 2312.64pt x 1659.37589pt>
+Underfull \hbox (badness 10000) in paragraph at lines 872--874
+
+ []
+
+
+Overfull \hbox (3.97093pt too wide) in paragraph at lines 876--876
+[][]\OT1/cmr/bx/it/14.4 Parenthesis: \OT1/cmr/bx/n/14.4 Fun-da-men-tal In-tu-it
+ions about the Dif-feo-mor-phism $[]\OT1/cmr/m/n/14.4 ([]\OML/cmm/m/it/14.4 ; t
+\OT1/cmr/m/n/14.4 )$ 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 877.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 877.
+
+<Figures/5isolines.png, id=442, 2312.64pt x 1659.37589pt>
 File: Figures/5isolines.png Graphic file (type png)
 <use Figures/5isolines.png>
-Package pdftex.def Info: Figures/5isolines.png  used on input line 870.
+Package pdftex.def Info: Figures/5isolines.png  used on input line 892.
 (pdftex.def)             Requested size: 314.40001pt x 225.57591pt.
-<Figures/3covariant_tangent_vectors.png, id=442, 2312.64pt x 1214.41942pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Figures/3covariant_tangent_vectors.png, id=443, 2312.64pt x 1214.41942pt>
 File: Figures/3covariant_tangent_vectors.png Graphic file (type png)
 <use Figures/3covariant_tangent_vectors.png>
 Package pdftex.def Info: Figures/3covariant_tangent_vectors.png  used on input 
-line 876.
+line 898.
 (pdftex.def)             Requested size: 362.77264pt x 190.49379pt.
 
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
@@ -3508,34 +3549,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <./Figures/5isolines.png>]
+[22]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23 <./Figures/3covariant_tangent_vectors.png>]
-<Figures/2Jacob_as_lin_app.png, id=466, 2312.64pt x 1683.46588pt>
+[23 <./Figures/5isolines.png> <./Figures/3covariant_tangent_vectors.png>]
+<Figures/2Jacob_as_lin_app.png, id=465, 2312.64pt x 1683.46588pt>
 File: Figures/2Jacob_as_lin_app.png Graphic file (type png)
 <use Figures/2Jacob_as_lin_app.png>
-Package pdftex.def Info: Figures/2Jacob_as_lin_app.png  used on input line 910.
+Package pdftex.def Info: Figures/2Jacob_as_lin_app.png  used on input line 932.
 
 (pdftex.def)             Requested size: 314.40001pt x 228.85071pt.
-<Figures/4each_locality.png, id=467, 2312.64pt x 1439.02324pt>
+<Figures/4each_locality.png, id=466, 2312.64pt x 1439.02324pt>
 File: Figures/4each_locality.png Graphic file (type png)
 <use Figures/4each_locality.png>
-Package pdftex.def Info: Figures/4each_locality.png  used on input line 917.
+Package pdftex.def Info: Figures/4each_locality.png  used on input line 939.
 (pdftex.def)             Requested size: 314.40001pt x 195.62112pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Figures/10parallelepipid.png, id=469, 2312.64pt x 1689.84265pt>
-File: Figures/10parallelepipid.png Graphic file (type png)
-<use Figures/10parallelepipid.png>
-Package pdftex.def Info: Figures/10parallelepipid.png  used on input line 928.
-(pdftex.def)             Requested size: 314.40001pt x 229.71758pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -3546,20 +3579,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [24 <./Figures/2Jacob_as_lin_app.png>]
+<Figures/10parallelepipid.png, id=479, 2312.64pt x 1689.84265pt>
+File: Figures/10parallelepipid.png Graphic file (type png)
+<use Figures/10parallelepipid.png>
+Package pdftex.def Info: Figures/10parallelepipid.png  used on input line 950.
+(pdftex.def)             Requested size: 314.40001pt x 229.71758pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25 <./Figures/4each_locality.png> <./Figures/10parallelepipid.png>]
+[25 <./Figures/4each_locality.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
+[26 <./Figures/10parallelepipid.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3588,13 +3630,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [30]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1143
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1165
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1143.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1165.
 
 
 
@@ -3618,10 +3660,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [33]
-<Figures/9orthotope.png, id=595, 2312.64pt x 1518.37852pt>
+<Figures/9orthotope.png, id=596, 2312.64pt x 1518.37852pt>
 File: Figures/9orthotope.png Graphic file (type png)
 <use Figures/9orthotope.png>
-Package pdftex.def Info: Figures/9orthotope.png  used on input line 1238.
+Package pdftex.def Info: Figures/9orthotope.png  used on input line 1260.
 (pdftex.def)             Requested size: 314.40001pt x 206.4087pt.
 
 
@@ -3631,10 +3673,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [34 <./Figures/9orthotope.png>]
-<Figures/8equidistribution.png, id=609, 2312.64pt x 1458.15353pt>
+<Figures/8equidistribution.png, id=610, 2312.64pt x 1458.15353pt>
 File: Figures/8equidistribution.png Graphic file (type png)
 <use Figures/8equidistribution.png>
-Package pdftex.def Info: Figures/8equidistribution.png  used on input line 1267
+Package pdftex.def Info: Figures/8equidistribution.png  used on input line 1289
 .
 (pdftex.def)             Requested size: 314.40001pt x 198.22171pt.
 
@@ -3676,7 +3718,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [39]
-Overfull \hbox (13.5842pt too wide) in paragraph at lines 1431--1433
+Overfull \hbox (13.5842pt too wide) in paragraph at lines 1453--1455
 \OT1/cmr/m/n/10.95 where we need to know the ex-plicit shape of the Ja-co-bian 
 ma-trix de-ter-mi-nant $\OML/cmm/m/it/10.95 J[] \OT1/cmr/m/n/10.95 := \OML/cmm/
 m/it/10.95 det\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 D[][]\OT1/cmr/m/n/10.95 (
@@ -3704,10 +3746,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [42]
-<Figures/6slices_1d.png, id=714, 2312.64pt x 1682.04883pt>
+<Figures/6slices_1d.png, id=715, 2312.64pt x 1682.04883pt>
 File: Figures/6slices_1d.png Graphic file (type png)
 <use Figures/6slices_1d.png>
-Package pdftex.def Info: Figures/6slices_1d.png  used on input line 1501.
+Package pdftex.def Info: Figures/6slices_1d.png  used on input line 1523.
 (pdftex.def)             Requested size: 338.58632pt x 246.23927pt.
 
 
@@ -3717,13 +3759,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [43 <./Figures/6slices_1d.png>]
-<Figures/labEnvironment.png, id=723, 2312.64pt x 1599.8594pt>
+<Figures/labEnvironment.png, id=724, 2312.64pt x 1599.8594pt>
 File: Figures/labEnvironment.png Graphic file (type png)
 <use Figures/labEnvironment.png>
-Package pdftex.def Info: Figures/labEnvironment.png  used on input line 1514.
+Package pdftex.def Info: Figures/labEnvironment.png  used on input line 1536.
 (pdftex.def)             Requested size: 309.56569pt x 214.14081pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1533--1533
+Underfull \hbox (badness 10000) in paragraph at lines 1555--1555
 
  []
 
@@ -3738,12 +3780,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: Figures/unstructure_aligned.png Graphic file (type png)
 <use Figures/unstructure_aligned.png>
 Package pdftex.def Info: Figures/unstructure_aligned.png  used on input line 15
-36.
+58.
 (pdftex.def)             Requested size: 314.40001pt x 189.64943pt.
 <Figures/unstructuring.png, id=735, 2312.64pt x 1506.33353pt>
 File: Figures/unstructuring.png Graphic file (type png)
 <use Figures/unstructuring.png>
-Package pdftex.def Info: Figures/unstructuring.png  used on input line 1578.
+Package pdftex.def Info: Figures/unstructuring.png  used on input line 1600.
 (pdftex.def)             Requested size: 314.40001pt x 204.7713pt.
 
 
@@ -3753,10 +3795,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [45 <./Figures/unstructure_aligned.png>]
-<Figures/moving_bohmian.png, id=745, 2312.64pt x 1653.70764pt>
+<Figures/moving_bohmian.png, id=746, 2312.64pt x 1653.70764pt>
 File: Figures/moving_bohmian.png Graphic file (type png)
 <use Figures/moving_bohmian.png>
-Package pdftex.def Info: Figures/moving_bohmian.png  used on input line 1592.
+Package pdftex.def Info: Figures/moving_bohmian.png  used on input line 1614.
 (pdftex.def)             Requested size: 309.56569pt x 221.34839pt.
 
 
@@ -3773,11 +3815,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [47 <./Figures/moving_bohmian.png>]
-<Figures/7slices_complementary.png, id=763, 3276.24pt x 2457.18pt>
+<Figures/7slices_complementary.png, id=764, 3276.24pt x 2457.18pt>
 File: Figures/7slices_complementary.png Graphic file (type png)
 <use Figures/7slices_complementary.png>
 Package pdftex.def Info: Figures/7slices_complementary.png  used on input line 
-1610.
+1632.
 (pdftex.def)             Requested size: 362.77264pt x 272.05283pt.
 
 
@@ -3787,10 +3829,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [48 <./Figures/7slices_complementary.png>]
-<Figures/many_bohmian.png, id=773, 1606.0pt x 1062.97125pt>
+<Figures/many_bohmian.png, id=774, 1606.0pt x 1062.97125pt>
 File: Figures/many_bohmian.png Graphic file (type png)
 <use Figures/many_bohmian.png>
-Package pdftex.def Info: Figures/many_bohmian.png  used on input line 1627.
+Package pdftex.def Info: Figures/many_bohmian.png  used on input line 1649.
 (pdftex.def)             Requested size: 314.40001pt x 208.08144pt.
 
 
@@ -3800,10 +3842,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [49 <./Figures/many_bohmian.png (PNG copy)>]
-<Figures/bohmian_pair.png, id=783, 2312.64pt x 1492.16295pt>
+<Figures/bohmian_pair.png, id=784, 2312.64pt x 1492.16295pt>
 File: Figures/bohmian_pair.png Graphic file (type png)
 <use Figures/bohmian_pair.png>
-Package pdftex.def Info: Figures/bohmian_pair.png  used on input line 1637.
+Package pdftex.def Info: Figures/bohmian_pair.png  used on input line 1659.
 (pdftex.def)             Requested size: 314.40001pt x 202.84496pt.
 
 
@@ -3813,7 +3855,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [50 <./Figures/bohmian_pair.png>]
-Overfull \hbox (12.91891pt too wide) detected at line 1657
+Overfull \hbox (19.86342pt too wide) detected at line 1679
 [][]\OML/cmm/m/it/10.95 i\U/msb/m/n/10.95 ~[]\OML/cmm/m/it/10.95  \OT1/cmr/m/n/
 10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/
 cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.9
@@ -3829,37 +3871,45 @@ OT1/cmr/m/n/10.95 )[][]
  []
 
 
+Overfull \hbox (1.1668pt too wide) in paragraph at lines 1695--1698
+\OT1/cmr/m/n/10.95 Equation [], rul-ing the mo-tion of the con-di-tional wave-f
+unc-tions $\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []\
+OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95
+ ; t\OT1/cmr/m/n/10.95 )$ is al-most a Schr^^?odinger
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [51]
-LaTeX Font Info:    Try loading font information for OT1+pzc on input line 1710
+LaTeX Font Info:    Try loading font information for OT1+pzc on input line 1732
 .
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2001/06/04 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1710
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1732
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <8> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1710
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1732
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <6> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1710
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 1732
 .
 
-Overfull \hbox (19.62166pt too wide) detected at line 1735
+Overfull \hbox (26.7051pt too wide) detected at line 1757
 [][]\U/msb/m/n/10.95 R\OML/cmm/m/it/10.95 e\OMS/cmsy/m/n/10.95 f\U/msb/m/n/10.9
-5 W\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m
+5 W\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OMS/
 cmsy/m/n/10.95 g \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 ^^@ [][][] \OT1
 /cmr/m/n/10.95 + [][][] \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 =
  []
 
 
-Overfull \hbox (7.99095pt too wide) detected at line 1738
+Overfull \hbox (9.2687pt too wide) detected at line 1760
 [] [] \OMS/cmsy/m/n/10.95 ^^@ [][][] \OT1/cmr/m/n/10.95 + [][][] \OMS/cmsy/m/n/
 10.95 ^^@  []
  []
@@ -3871,9 +3921,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [52]
-Overfull \hbox (26.65695pt too wide) detected at line 1763
+Overfull \hbox (33.3236pt too wide) detected at line 1785
 [][] \OML/cmm/m/it/10.95 Im\OMS/cmsy/m/n/10.95 f\U/msb/m/n/10.95 W\OT1/cmr/m/n/
-10.95 (\OML/cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/
+10.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/
 cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 g
  \OT1/cmr/m/n/10.95 = [][][][]
  []
@@ -3892,6 +3942,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [54]
+Overfull \hbox (3.18997pt too wide) detected at line 1858
+[][] \OMS/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/10.95 S\OT1/cmr/m/n/10.95 ([]\OML/
+cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) = [] [][][] \OMS/cmsy/m/n/10.95 ^^
+@ [] [][] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 ([]\OML/
+cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )+
+ []
+
+
+Overfull \hbox (0.86755pt too wide) detected at line 1861
+ \OT1/cmr/m/n/10.95 + [] []
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3906,13 +3970,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [56]
-Overfull \hbox (9.893pt too wide) detected at line 1903
+Overfull \hbox (11.3097pt too wide) detected at line 1925
 [][] \OMS/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 ([]\OM
 L/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.9
 5 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 V[] \OT1/c
 mr/m/n/10.95 + [] \OML/cmm/m/it/10.95 S[][] \OMS/cmsy/m/n/10.95 ^^@ [] [][]\OML
-/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.
-95 )+
+/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10
+.95 )+
  []
 
 
@@ -3929,27 +3993,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [58]
-Overfull \hbox (24.314pt too wide) detected at line 1964
- \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML
-/cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.
+Overfull \hbox (31.39743pt too wide) detected at line 1986
+ \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\O
+ML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.
 95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
 
-Overfull \hbox (3.15448pt too wide) in paragraph at lines 1964--1966
-\OT1/cmr/m/n/10.95 Denoting $\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/cm
-m/m/it/10.95 x; t\OT1/cmr/m/n/10.95 ) := \OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10
-.95 (\OML/cmm/m/it/10.95 x; y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cm
-r/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )$, we can write the con
--di-tional wave-func-tion as $	[](\OML/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 ) 
-= [][] \OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; t\OT1/
-cmr/m/n/10.95 )$.
+Overfull \hbox (4.57117pt too wide) in paragraph at lines 1986--1988
+\OT1/cmr/m/n/10.95 Denoting $\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\OML/
+cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 ) := \OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/1
+0.95 ([]\OML/cmm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/c
+mr/m/n/10.95 )\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )$, we can write the co
+n-di-tional wave-func-tion as $	[]([]\OML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 
+) = [][] \OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; t\O
+T1/cmr/m/n/10.95 )$.
  []
 
 
-Overfull \hbox (2.50735pt too wide) detected at line 1971
- \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\OML
-/cmm/m/it/10.95 x; t\OT1/cmr/m/n/10.95 )
+Overfull \hbox (8.1741pt too wide) detected at line 1993
+ \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\O
+ML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
 
@@ -3966,17 +4030,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [60]
-<Figures/11one_Lagrangian.png, id=933, 3276.24pt x 2457.18pt>
+<Figures/11one_Lagrangian.png, id=934, 3276.24pt x 2457.18pt>
 File: Figures/11one_Lagrangian.png Graphic file (type png)
 <use Figures/11one_Lagrangian.png>
-Package pdftex.def Info: Figures/11one_Lagrangian.png  used on input line 2025.
+Package pdftex.def Info: Figures/11one_Lagrangian.png  used on input line 2047.
 
 (pdftex.def)             Requested size: 483.69687pt x 362.7496pt.
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <9> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 2026
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 2048
 .
 LaTeX Font Info:    Font shape `OT1/pzc/m/it' in size <5> not available
-(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 2026
+(Font)              Font shape `OT1/pzc/mb/it' tried instead on input line 2048
 .
 
 
@@ -3994,12 +4058,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [62 <./Figures/11one_Lagrangian.png>]
 
-LaTeX Warning: Reference `fig:hyper1' on page 63 undefined on input line 2051.
+LaTeX Warning: Reference `fig:hyper1' on page 63 undefined on input line 2073.
 
 <Figures/12_N6.png, id=952, 3276.24pt x 2457.18pt>
 File: Figures/12_N6.png Graphic file (type png)
 <use Figures/12_N6.png>
-Package pdftex.def Info: Figures/12_N6.png  used on input line 2055.
+Package pdftex.def Info: Figures/12_N6.png  used on input line 2077.
 (pdftex.def)             Requested size: 483.69687pt x 362.7496pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4015,6 +4079,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [64 <./Figures/12_N6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2111--2112
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -4022,6 +4090,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [65]
+Underfull \hbox (badness 10000) in paragraph at lines 2113--2114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2115--2116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2117--2118
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -4043,19 +4125,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [68]
-Underfull \hbox (badness 1028) in paragraph at lines 2188--2189
+Underfull \hbox (badness 1028) in paragraph at lines 2214--2215
 []\OT1/cmr/m/n/10.95 Oyanguren Xa-bier, \OT1/cmr/m/it/10.95 The Quan-tum Many B
 ody Prob-lem\OT1/cmr/m/n/10.95 , Bach-e-lor's The-sis (2020) for the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2190--2191
+Underfull \hbox (badness 10000) in paragraph at lines 2216--2217
 [][][]\OT1/cmr/m/n/10.95 https://github.com/Oiangu9/The[]Quantum[]Many[]Body[]P
 roblem[]-Bachellors[]Thesis-
  []
 
 
-Underfull \hbox (badness 4673) in paragraph at lines 2197--2198
+Underfull \hbox (badness 4673) in paragraph at lines 2223--2224
 []\OT1/cmr/m/n/10.95 Knupp, Patrick & Stein-berg, Stanly. \OT1/cmr/m/it/10.95 T
 he Fun-da-men-tals of Grid Gen-er-a-tion. \OT1/cmr/m/n/10.95 (1993)
  []
@@ -4071,27 +4153,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [69]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2209.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2209.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2235.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2235.
 
 (./Towards_Making_The_Exponential_Problem_Linear_if_Parallelized_Exponentially_
 Part2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2209.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2235.
 
 Package rerunfilecheck Info: File `Towards_Making_The_Exponential_Problem_Linea
 r_if_Parallelized_Exponentially_Part2.out' has not changed.
-(rerunfilecheck)             Checksum: BE5095009CF3290BE0133574C5F3AE4E;2675.
+(rerunfilecheck)             Checksum: 1EBEA59B14FB8527E2DAD394F726F09C;2674.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 36729 strings out of 492982
- 686646 string characters out of 6134895
- 797910 words of memory out of 5000000
- 39321 multiletter control sequences out of 15000+600000
+ 36989 strings out of 492982
+ 690520 string characters out of 6134895
+ 801487 words of memory out of 5000000
+ 39574 multiletter control sequences out of 15000+600000
  560573 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,12n,97p,10477b,1010s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4126,10 +4211,10 @@ nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/z
 apfchan/uzcmi8a.pfb>
 Output written on Towards_Making_The_Exponential_Problem_Linear_if_Parallelized
-_Exponentially_Part2.pdf (74 pages, 17156652 bytes).
+_Exponentially_Part2.pdf (73 pages, 17158761 bytes).
 PDF statistics:
- 1203 PDF objects out of 1440 (max. 8388607)
- 1038 compressed objects within 11 object streams
- 408 named destinations out of 1000 (max. 500000)
+ 1205 PDF objects out of 1440 (max. 8388607)
+ 1041 compressed objects within 11 object streams
+ 411 named destinations out of 1000 (max. 500000)
  348 words of extra memory for PDF output out of 10000 (max. 10000000)
 
