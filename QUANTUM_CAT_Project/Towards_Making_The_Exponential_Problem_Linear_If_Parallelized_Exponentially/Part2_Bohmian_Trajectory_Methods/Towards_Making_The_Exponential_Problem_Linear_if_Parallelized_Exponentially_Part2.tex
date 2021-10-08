@@ -185,7 +185,10 @@ A Guide to the Equations \\Governing Quantum Dynamics
 $\ $2020-2021 
 \nbvspace[1]
 \end{center}
+\newpage
+\null
 \clearpage
+
 \maketitle
 \pagenumbering{gobble}
 \setlength{\cftbeforesecskip}{0.4cm}
@@ -195,7 +198,7 @@ $\ $2020-2021
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
-\setcounter{page}{-1}
+\setcounter{page}{-2}
 \vspace{-0.3 cm}
 %\section{The Objective}
 %It is well known that the time dependent Schrödinger Equation (TDSE) that predicts the dynamics of a quantum system is a problem that scales exponentially both in space and in time for increasing dimensionality of the problem. This becomes very obvious when interpreting the wave-funtion in terms of an ensemble of tangentially interacting trajectories of the system. That is, quantum mechanical systems (experiments) depend on all their possible realizations in a way that all the possible trajectories of the system interact repulsively among them due to the quantum potential first described by David Bohm. This means that it is equivalent to think on the wavefunction of the system as an ensemble of an infinitely dense set of exactly equivalent systems forming a fluid where each copy of the system cannot cross the trajectory of any other at the same time (they cannot occupy the same point in configuration space-time) and they still have a repelling force pushing the fluid towards the most homogenenous distribution possibel given the manifold described by the potential energy term. 
@@ -235,13 +238,16 @@ In the second block, we will dig into the quantitative equations of quantum dyna
 
 \begin{kapituloBerria}[Part A]
 Drafting the Panorama
-\addcontentsline{toc}{section}{Part A: Drafting the Panorama}
 \end{kapituloBerria}
+\newpage
+\null
+\clearpage
 
 \pagestyle{fancy}
 
 \fancyhead[R]{\em On the Employed Notation and Vocabulary}
 \section*{On the Employed Notation and Vocabulary}
+\addcontentsline{toc}{section}{Part A: Drafting the Panorama}
 \addcontentsline{toc}{subsubsection}{On the Employed Notation and Vocabulary}
 
 Throughout the document concepts of the Orthodox, Bohmian, Hydrodynamic and Tangent Universe interpretations will be employed altogether in order to give names to the mathematical tools we will employ. Let us thus, have a brief brainstorm on them to set things in place.
@@ -286,12 +292,12 @@ There is finally a {\bf discrete} version of the last interpretation, suggesting
 Let us list the main four approaches we can adopt in the context of quantum dynamics involving trajectories and wavefunctions. Approach I gives predominance to waves, while II gives it to trajectories. Approach III gives a weighted predominance to both, while IV forgets about continuous waves.
 \vspace{-0.2cm}
 \begin{enumerate}
-\item[\bf ( I )] {\bf Mainly a Wavefunction: } We could consider a fully wave-like picture, where the properties of the fields are intrinsic to configuration-space points, we just forget about the underlying fluid elements. This implies considering just the dynamics of an N+1 dimensional wavefunction in configuration-space $\psi(\vec{x},t)$. We will call this approach the {\bf Fully Eulerian Picture}. If we present trajectories in the description, these will only be computed {\em a posteriori} and will not be required to know the time evolution of the system. This approach is the typical one within Orthodox Quantum Mechanics (if only considering the wavefunction) and can be understood within Bohmian Mechanics (BM) or Tangent Universe Mechanics (TUM) (by considering also the {\em a posteriori} trajectories).
+\item[\bf ( I )] {\bf Mainly a Wave: } We could consider a fully wave-like picture, where the properties of the fields are intrinsic to configuration-space points, we just forget about the underlying fluid elements. This implies considering just the dynamics of an N+1 dimensional wavefunction in configuration-space $\psi(\vec{x},t)$. We will call this approach the {\bf Fully Eulerian Picture}. If we present trajectories in the description, these will only be computed {\em a posteriori} and will not be required to know the time evolution of the system. This approach is the typical one within Orthodox Quantum Mechanics (if only considering the wavefunction) and can be understood within Bohmian Mechanics (BM) or Tangent Universe Mechanics (TUM) (by considering also the {\em a posteriori} trajectories).
 
 
 \item[\bf ( II )]{\bf Mainly Trajectories:} We could view the quantum system as a fluid of moving fluid elements in configuration-space. The values of the field will now be relevant at the positions of {\bf Lagrangian frame} trajectories $\{\vec{x}^{\, \xi}(t)\}_\xi$. These last will be computed "a priori" together with the other state variables perceived by the fluid elements. The wavefunction will be just implicitly acting, but will also be computed "a priori". This is what we will call the {\bf Fully Lagrangian Picture}. This approach is easiest to interpret through TUM. It is also the most consistent one with BM even if there is no explicit pilot wave. BM would understand these elements as possible Bohmian trajectories (or as a granulation of the pilot wave).
 
-\item[{\bf ( III )}]{\bf Wavefunctions and Trajectories in Equal footing: } We could consider a scheme where {\bf part} of the quantum system is considered to be described by fluid elements in $\R^{N-m}$, in the Lagrangian-frame and {\bf part} of the system is a field in the Eulerian-frame. This will imply considering several waves $\{ f(\vec{x}, \vec{y}(\vec{\xi}_y,t), t) \}_{\vec{\xi}_y}$ which will describe the state properties in a Lagrangian frame for the fluid elements $\vec{\xi}_y$ describing the $N-m$ axes $\vec{y}$, together with a description of the state properties in an {\bf Eulerian frame} for the other $m$ degrees $\vec{x}$. These are the so called {\bf conditional functions}. Note that we will need to compute the trajectories $\vec{y}(\vec{\xi}_b,t)$ that will describe the motion of the {\bf Lagrangian frame} elements "a priori", together with the conditional waves. 
+\item[{\bf ( III )}]{\bf Waves and Trajectories in Equal footing: } We could consider a scheme where {\bf part} of the quantum system is considered to be described by fluid elements in $\R^{N-m}$, in the Lagrangian-frame and {\bf part} of the system is a field in the Eulerian-frame. This will imply considering several waves $\{ f(\vec{x}, \vec{y}(\vec{\xi}_y,t), t) \}_{\vec{\xi}_y}$ which will describe the state properties in a Lagrangian frame for the fluid elements $\vec{\xi}_y$ describing the $N-m$ axes $\vec{y}$, together with a description of the state properties in an {\bf Eulerian frame} for the other $m$ degrees $\vec{x}$. These are the so called {\bf conditional functions}. Note that we will need to compute the trajectories $\vec{y}(\vec{\xi}_b,t)$ that will describe the motion of the {\bf Lagrangian frame} elements "a priori", together with the conditional waves. 
 %It is a mixed approach between evolving a wave equation and evolving purely trajectory equations. If we wish to assign to it a preferred interpretation, possibly BM would be comfortable with this, since it would see the Eulerian degrees as the Pilot Wave itself. For this however, it would be necessary to define complementary conditional wavefunctions $\{ \psi(\vec{x}_a(\vec{\xi}_a,t), \vec{x}_b, t) \}_{\vec{\xi}_b}$, so as to get simultaneously, Bohmian trajectories (fully Lagrangian) and the pilot wave (which is acceptable in a fully Eulerian frame). Both trajectories and wavefunctions are "a priori".
 
 
@@ -303,58 +309,67 @@ Very importantly, note that for all the interpretations all these approaches are
 
 \section*{Panorama of the Methods We Can Study \vspace{-0.15cm}}
 \addcontentsline{toc}{subsubsection}{Panorama of the Methods We Can Study}
-Quantum Mechanics is well known for its many body problem, where the number of operations needed to simulate its dynamics grows exponentially with the number of degrees of freedom $N$. This wall is unbreakable. However, we can deliver these operations in sequential time, thus leading to an exponentially bigger time complexity for simulating bigger quantum systems, or deliver them in parallel threads that can share information, in order to make the problem linearly scaling in time, at the cost of using exponentially more threads (in space)\footnote{Assuming always that the overhead of the thread cross talk does not grow exponentially with dimensions $N$}. The fully Eulerian approaches are typically solved in an exponential time (we will see some technical ways to avoid it), but trajectory based methods are naturally parallelizable, thus allowing us to put the many body problem almost entirely there. The thing is that, we cannot wait years for a computation, but we can always build bigger supercomputers with more parallel processors. Thus the interest on this tread-off.
+Quantum Mechanics is well known for its many body problem, where the number of operations needed to simulate its dynamics grows exponentially with the number of degrees of freedom $N$. This wall is unbreakable in terms of operations. However, we can rather deliver these operations in sequential time or deliver them in parallel threads that can share information, in order to make the problem faster in terms of effective sequential time. In particular, as we will prove in the last section, we can obtain a polynomial scaling in sequential time, at the cost of using exponentially more parallel processes\footnote{Assuming always that the overhead of the process messaging does not grow exponentially with dimensions $N$}. In this line, fully Eulerian approaches are typically solved in an exponential time (even if we we will see some technical ways to avoid it), but trajectory based methods are naturally parallelizable. The philosophical argument that weights the tread-off is that we cannot wait years for a computation, but we can always build bigger supercomputers with more parallel processors.
 
-There are still some techniques that try to make the exponential problem be linear by applying approximations to the equations (the Hermitian approximation, density functional theory etc.) or if we do not use external knowledge about the system (knowing the eigenstates of the Hamiltonian of the system, knowing the expected quantum correlations etc.)\footnote{Or both things at once, as we did in the Truncated Born-Huang Expansion of the tensor product of conditional wavefunctions for a particle in a channel}. These could also be useful even if they are not really generalizable.
+It turns out that there are some techniques that try to make the exponential operation problem be polynomial, but those are based on rather applying approximations to the equations (the Hermitian approximation, density functional theory etc.) or on having a priori knowledge about the system (knowing the eigenstates of the Hamiltonian of the system, knowing the expected quantum correlations etc.)\footnote{Or both things at once, as we did in the Truncated Born-Huang Expansion of the tensor product of conditional wavefunctions for a particle in a channel}. These methods are also useful, even if they are not really arbitrarily generalizable.
 
-In the second part of the treatise, we will formalize the exact equations employed within each degree of freedom approach, and we will have the option to suggest numerical methods thereof. However, for an initial brainstorm, let us review here for each approach, some of the main numerical methods employed:\vspace{-0.2cm}
+In the second block of the treatise, we will formalize the exact equations employed within each degree of freedom approach, and we will have the option to suggest numerical methods thereof. However, for an initial brainstorm, let us review here for each approach, some of the main numerical methods employed:\vspace{-0.25cm}
 \begin{enumerate}
-\item[\bf ( I )] {\bf Mainly a Wavefunction - Eulerian Picture}: There are lots of fixed grid methods, ranging from using naive finite differences to Crank Nicolson or Runge-Kutta Methods. Also, expressing the wavefunction in a certain function basis and then evolving the coefficients could be considered a kind of method. Then there are the Spectral and Pseudo-Spectral methods based on changing the Schrödinger Equation to other representations, like the momentum representation, involving the Fourier transform, related conceptually with the basis representation methods. 
+\item[\bf ( I )] {\bf Mainly a Wave - Eulerian Picture}:\vspace{0.15cm}
 
-Except in the case where we know analytically the Hamiltonian eigenstates or some sub-system Hamiltonian eigenstates, in general the approach to the Eulerian wavefunction allows no escape from the exponential time barrier and are methods hard to be parallelized.
+There are lots of fixed grid methods, ranging from using naive finite differences, Runge-Kutta Methods, to matrix methods like Crank Nicolson. Also, expressing the wavefunction in a certain function basis and then evolving the coefficients could be considered a kind of method (we will see this). Then there are the Spectral and Pseudo-Spectral methods based on changing the Schrödinger Equation to other representations, like the momentum representation, involving the Fourier transform, related conceptually with the basis representation methods. 
 
-\item [\bf ( II )] {\bf Mainly Trajectories - Lagrangian Picture :} This approach basically consists on a dynamical grid of points or fluid elements that move according to the fluid flow. Each fluid element will know the evaluation of the relevant fields like the polar phase and magnitude of the wavefunction along the trajectory it traces. Fluid elements encode the field at the points they are and at the same time, the values of the fluid they discover as an ensemble, serve as feedback for them to know how to move. It is known in general as the family of Quantum Trajectory Methods (QTM), which was boosted by {\em Wyatt et al.} at the beginning of this century. It has essentially two main variations, according to the law of motion for the fluid elements that we choose:
+Except in the case where we know analytically the Hamiltonian eigenstates or some sub-system Hamiltonian eigenstates, in general the approach to the Eulerian wavefunction allows no escape from the exponential sequential-time barrier and are methods hard to be parallelized. Even though we will see that understanding the system in terms of fluid elements will allow us a parallelizable framework with a fixed grid.\vspace{0.2cm}
+
+\item [\bf ( II )] {\bf Mainly Trajectories - Lagrangian Picture :}\vspace{0.15cm}
+
+This approach basically consists on a dynamical grid of points or fluid elements that move according to some velocity field. Each fluid element will know the evaluation of the relevant fields along the trajectory it traces, like the polar phase and magnitude of the wavefunction. Fluid elements encode the field at the points they are on. The ensemble of values over each trajectory will serve as feedback for each fluid element to individually know the next values and positions they will take. It is known in general as the family of Quantum Trajectory Methods (QTM), which was boosted by {\em Wyatt et al.} at the beginning of this century. A very good reference, in which the present work was partially inspired is his handbook \cite{Wyatt}. QTM-s have essentially two main variations, according to the law of motion for the fluid elements that we choose:
 \begin{enumerate}
-\item Driving the fluid elements or points of the dynamical grid  according to the configuration-spatial gradient of the action as velocity field. If done so, the trajectories are driven by the probability density flow lines, so they shape Bohmian trajectories. One of their problems is that Bohmian trajectories avoid nodal regions of the pilot wave, so the grid of points gets under-sampled or over-sampled for different regions in an uncontrolled manner. At the same time this is an interesting property, since the mesh as a whole will follow the densest parts of the wavefunction. The second problem is that the grid gets very unstructured, which can be problematic to compute the spatial gradient of the action, or other properties they carry.
+\item Driving the fluid elements or points of the dynamical grid  according to the configuration-spatial gradient of the action as velocity field. If done so, the trajectories are driven by the probability density flow lines, so they shape Bohmian trajectories. This assumption makes some dynamical equations and correlation terms simpler. However, Bohmian trajectories avoid nodal regions of the pilot wave, so the grid of points can get under-sampled or over-sampled for different regions in an uncontrolled manner. At the same time this can be an interesting property, since the mesh as a whole will follow the densest parts of the wavefunction. The second problem that Bohmian trajectories have (as many others will) is that the grid of elements gets very unstructured, which can be problematic to compute the spatial gradient of the action among other essential terms.
 
-\item Using adaptive grids. Choosing the velocity field of the fluid elements so as to trace custom trajectories designed by the user. For instance it can be chosen such that the fluid elements preserve certain monitor functions in each path, so the grid distorts itself to become denser around high fluctuation regions. Many additional methods like adding a viscosity or friction term are very useful here in order to avoid unstabilizing the evolution due to spiky fluctuations of the quantum potential.
+\item Using adaptive grids. Choosing the velocity field of the fluid elements so as to trace custom trajectories designed by the user. For instance it can be chosen such that the fluid elements preserve certain monitor functions in each path, so the grid distorts itself to become denser around high fluctuation regions. We will dig into these methods in the second block. Many additional methods, like adding a viscosity or friction term, are very useful here in order to avoid unstabilizing the evolution due to spiky fluctuations of the quantum potential.
 \end{enumerate}
 
-Both methods have the problem that in order to compute the time evolution of the properties carried by the fluid elements, configuration-spatial derivatives $\pdv{}{x_k}$ of these fields they drive are required along the trajectories. This means that the single value of the field they drive is not enough to know their rate of change. This is the reason why it is necessary to simulate several trajectories in parallel with cross talk. In order to cope with this problem four approaches can be taken.
+Both choices of velocity fields have the problem that in order to compute the time evolution of the properties carried by the fluid elements, configuration-spatial derivatives $\pdv{}{x_k}$ are required along the trajectories. This means that the single value of the field each element drives is not enough to know its spatial variation. This problem, sometimes called the {\em Quantum Wholeness}, can in general be faced in two different ways: by evolving an ensemble of fluid elements that can serve as a moving grid to reconstruct the full function and then allow numerical derivatives, or rather by treating the derivatives as additional fields of interest over the trajectories. In general ensemble methods allow us to compute the derivatives in one of the following two ways:
 
 \begin{enumerate}
-\item Using the values of the field over the trajectories as an unstructured grid, fit a linear sum of analytic functions (by maximum likelihood, least squares, gradient descent etc.). This sum can be analytically derivated and integrated or else numerically. Alternatively a K nearest-neighbour interpolation could also be very useful, which would avoid the need of function fitting. Using the unstructured grid in the Eulerian frame for computing spatial derivatives is the simplest way to go but makes the time evolution more costly than what initially looked like.
+\item Using the values of the field over the trajectories as an unstructured grid, one can fit a linear sum of analytic functions (by maximum likelihood, least squares, gradient descent etc.) at each locality of each trajectory. This sum can be symbolically derivated and integrated. Alternatively a K nearest-neighbour interpolation could also be useful, in particular avoiding the need of function fitting. Clearly the function fitting or neighbour computation has its own complexity.
 
-\item Generate dynamical equations for the derivatives of the required field quantities. Then evolve the derivatives of the fields along the trajectories too. This increases the number of partial differential equations in play, but allows to evolve {\bf a single trajectory} fully independently of the rest. Conceptually it seems the most interesting idea for a Bohmian. However, it turns out that when trying to get the equations governing the dynamics of those derivatives, infinite chains of equations coupling higher derivatives with lower are obtained. Thus, approximating a certain maximum degree of them will be required.
-
-\item Convert the derivatives with respect to configuration-space $\vec{x}$ variables to derivatives with respect to label space $\vec{\xi}$. If we choose the initial grid to be a regular Cartesian grid, then these derivatives will be in a regular grid and will be simple to compute using local finite differences. To do this change we will require the knowledge of the Jacobian matrix for the transformation $\vec{x}(\vec{\xi},t)$ and its determinants. The time evolution will still get more costly than what initially looked like.
-
-
-\item Knowing the problem a priori, approximate shapes can be obtained as {\em ansatz} for those derivatives of the fields (for the quantum potential etc.).
+\item Employing the chain rule, one can convert the derivatives with respect to configuration-space $\vec{x}$ variables to derivatives with respect to label space $\vec{\xi}$. If we choose the initial grid to be a regular Cartesian grid, then these last derivatives will be in a regular grid at all times and will be simple to compute using finite differences. To do this change however, we will require the knowledge of the Jacobian matrix for the transformation $\vec{x}(\vec{\xi},t)$ and its determinants. The time evolution will still get more costly than what initially looked like.
 
 \end{enumerate}
-All of these methods are in general very parallelizable allowing cross-talk in each time. It is possibly only here, in the fully Lagrangian picture, that where we can achieve full parallelization of the many body problem.
+All of these methods are in general very parallelizable if we allow messaging between the processes in each time step, but non of them is clearly a miracle. Finally, if we trwat the derivatives themselves as well as functions of interest to be computed along the trajectories, one can avoid computing a whole ensemble of fluid elements (with its consequences) by, among others:
+\begin{enumerate}
+\item Finding dynamical equations for the derivatives of the required field quantities. Then one can evolve the derivatives of the fields along each trajectory, allowing the individual fluid element evolution. The cost of this will be that the number of partial differential equations in play will be increased, actually, as we will see, an infinite number of them will appear. To face this, truncating the series at some point will be necessary, with all its consequences.
 
-\item [\bf ( III )] {\bf Wavefunctions and Trajectories in Equal Footing - Part Lagrangian, Part Eulerian Picture:} We will have that part of the problem to be solved (the Eulerian one) is similar to case (I) and part (the Lagrangian one) similar to case (II). Therefore, we will have the freedom to use one of the methods mentioned in (I) to solve the partial differential equations of the Eulerian parts, mixed with the approaches used for (III) in order to account for derivatives in the axes where we only consider Lagrangian elements. We will have control over the degree at which we place more or less weight into one or the other problem. Thus, we could arrive at a compromise that has all the main advantages of both methods but ideally less of their problems.
+\item By deeply knowing the problem and employing {\em ad hoc} shapes for the derivatives of the fields (for the quantum potential, the correlation terms etc.), one would get by without the need for an ensemble. However, this way lacks generalizability and one could argue that we are externally introducing part of the solution.\vspace{0.2cm}
+\end{enumerate}
+
+
+\item [\bf ( III )] {\bf Waves and Trajectories in Equal Footing - Part Lagrangian, Part Eulerian Picture:}\vspace{0.15cm}
+
+We will have that part of the problem to be solved (the Eulerian one) is similar to case (I) and part (the Lagrangian one) similar to case (II). Therefore, we will have the freedom to use one of the methods mentioned in (I) to solve the partial differential equations of the Eulerian parts, mixed with the approaches used for (III) in order to account for derivatives in the axes where we only consider Lagrangian elements. We will have control over the degree at which we place more or less weight into one or the other problem. Thus, we could arrive at a compromise that has all the main advantages of both methods but ideally less of their problems.
 
 Following the discussion in the previous section, the trajectories could be chosen to be Bohmian, if they follow the fluid flow, but could also be chosen to be otherwise, in order to achieve an adaptive grid that explores the regions of configuration space we are most interested on.
 
 Following the same ideas, we will be able to solve the derivative problem in several ways:
 \begin{enumerate}
-\item Evolve many of these CWF-s with coupled trajectories in order to be able to rebuild the derivatives in the Eulerian frame necessary to move the trajectories. This could be done by fitting functions or using nearest neighbour approaches. Exponentially less CWF-s will be required to be computed for increasing dimensionality of their Eulerian part. However, they will also be each time more complex to compute. On the other hand, exponentially more CWF-s will be needed for decreasing dimensionality of their Eulerian degrees.
+\item Evolve many of these conditional functions with coupled trajectories in order to be able to rebuild the derivatives in $x_k$ for the Lagrangian axes. This could be done by fitting functions or using nearest neighbour approaches. Exponentially less conditional functions will be required to be computed for increasing dimensionality of their Eulerian part. However, they will also be each time more complex to compute. On the other hand, exponentially more conditional functions will be needed for decreasing dimensionality of their Eulerian degrees.
 
-\item Generate dynamical equations for those derivatives in the trajectory axes, that can be evolved as well along the trajectories. This would allow to evolve a single conditional wavefunction "exactly". It turns out that an infinite chain of equations will emerge here too.
+\item Convert the derivatives with respect to undesired Eulerian degrees $x_k$ into derivatives with respect to label space or Lagrangian degrees $\xi_j$. If we choose the Lagrangian elements to shape a regular grid at the initial time, then we will always have the option to compute derivatives in a regular grid using the information of the different conditional functions. We will also need to evolve several conditional functions for this.
 
-\item Convert the derivatives with respect to undesired Eulerian degrees $x_k$ into derivatives with respect to label space or Lagrangian degrees $\xi_j$. If we choose the Lagrangian elements to shape a regular grid at the initial time, then we will always have the option to compute derivatives in a regular grid using the information of the different CWF-s.
+\item Generate dynamical equations the derivatives in the Lagrangian axes, that can be evolved as well along the trajectories. This would allow to evolve a single conditional wavefunction "exactly". It turns out that an infinite chain of equations will emerge here too.
 
-\item Knowing the problem, approximate the problematic terms at the theoretical level, {\em ad hoc}, for the given system. This is what we tried so far.
+\item Knowing the problem, approximate the problematic terms at the theoretical level, {\em ad hoc}, for the given system.
 \end{enumerate}
 
-Clearly, approach III is the generalization of approach I and II, those last being the two extreme cases. Condition it all or condition nothing.
+Clearly, approach III is the generalization of approach I and II, those last being the two extreme cases. Condition it all or condition nothing.\vspace{0.2cm}
 
-\item [\bf ( IV )] {\bf Only Trajectories:} In this approach, we can choose a large enough number of configuration space trajectories and evolve them using classical mechanics, introducing the necessary repulsive potential between all the trajectories as to replicate Quantum Dynamics. If the number is large enough, then the theory will be a good enough approximation of continuum quantum mechanics. The point is that there will be no need for the trajectories to "carry" any information about any wave. They are ontologically sufficient to describe quantum phenomena. If we need information of quantum nature, we just need to see the wavefunction as the ensemble limit of the trajectories. From the moving histogram we can fit a density function, or else use the Jacobian determinant of the trajectory mapping function to approximate it, and the velocities will provide the action field likewise.
+\item [\bf ( IV )] {\bf Only Trajectories:}\vspace{0.15cm}
 
-It is worth noting, that this method is also highly parallelizable if we allow cross-talk.
+In this approach, we can choose a large enough number of configuration space trajectories and evolve them using classical mechanics, introducing the necessary repulsive potential between all the trajectories so as to replicate Quantum Dynamics. If the number is large enough, then the theory will be a good enough approximation of continuum Quantum Mechanics. The point is that there will be no need for the trajectories to "carry" any information about any wave. They are ontologically sufficient to describe quantum phenomena. If we need information of quantum nature, we will just see the wavefunction (the density and action) as the ensemble limit of the trajectories. From the moving histogram we can fit a density function, or else use the Jacobian determinant of the trajectory mapping function to approximate it. The velocities will provide the action field likewise.
+
+It is worth noting, that this method is also highly parallelizable if we allow messaging between processes.
 
 \end{enumerate}
 
@@ -363,20 +378,24 @@ It is worth noting, that this method is also highly parallelizable if we allow c
 % - Sartun ekuaziñoak dynamical deribatuentzako.
 
 \newpage
+\null
+\clearpage
 
 \begin{kapituloBerria}[Part B]
 The Equations of Quantum Dynamics
 \addcontentsline{toc}{section}{Part B: The Equations of Quantum Dynamics}
 \end{kapituloBerria}
-
+\newpage
+\null
+\clearpage
 \fancyhead[R]{\em The Equations for Quantum Dynamics }
 \fancyhead[L]{I . Fully Eulerian Equations}
 
 \section*{I . Fully Eulerian Equations}
 \addcontentsline{toc}{subsection}{{\bf I . Fully Eulerian Equations }}
-Given a closed quantum system of $N$ degrees of freedom evolving in time $t$, where its possible configurations in space are given by a vector $x\in\R^N$, such that we know the potential field $U(\vec{x}, t)$ imposing the interactions between the degrees of freedom, given the dynamics of the system is fully described by a complex wavefunction with real support $\psi(\vec{x},t)$, the time evolution of the system is governed by the Schrödinger Equation:
+Given a closed quantum system of $N$ degrees of freedom evolving in time, where its possible configurations in space are given by a vector $\vec{x}\in\R^N$, let us assume we know the potential field $U(\vec{x}, t)$ imposing the interactions between the degrees of freedom. Given the dynamics of the system are fully described by a complex wavefunction with real support $\psi(\vec{x},t)$, the time evolution of the system is governed by the Schrödinger Equation:
 
-\subsection*{(I.a) The Schrödinger Equation}
+\section*{(I.a) The Schrödinger Equation}
 \addcontentsline{toc}{subsubsection}{{\bf (I.a)} The Schrödinger Equation}
 \begin{equation}\label{SE}
 i\hbar \pdv{\psi(\vec{x},t)}{t} = \qty[-\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(\vec{x},t)]\psi(\vec{x},t)
@@ -387,11 +406,11 @@ We define the following operator as the Hamiltonian operator:
 \begin{equation}
 \hat{H}(\vec{x}, y, t):=\qty[-\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j} + U(\vec{x},t)]
 \end{equation}
-Due to the unitary nature of the Schrödinger Equation's time evolution, the norm of the wavefunction is preserved in time, such that if at a certain known time $\int^\infty_{-\infty} \psi^\dagger(\vec{x},t_0)\psi(\vec{x},t_0)dx=1$, then the norm is a constant of motion $\int^\infty_{-\infty} \psi^\dagger(\vec{x},t)\psi(\vec{x},t)dx=1$ $\forall t>t_0$.
+Due to the unitary nature of the Schrödinger Equation's time evolution, the norm of the wavefunction is preserved in time, such that if at a certain known time $\int^\infty_{-\infty} \psi^\dagger(\vec{x},t_0)\psi(\vec{x},t_0)dx=1$, then the norm is a constant of motion $\int^\infty_{-\infty} \psi^\dagger(\vec{x},t)\psi(\vec{x},t)dx=1$ $\forall t>t_0$. We will prove this assertion later on.
 
-By the Born Rule axiom of Orthodox QM, the quantity $\psi^\dagger\psi=|\psi|^2=:\rho(\vec{x},t)$ is the probability density function that a spatial observation of the degrees of freedom $x$ follows.
+By the Born Rule axiom of Orthodox QM, the quantity $\psi^\dagger\psi=|\psi|^2=:\rho(\vec{x},t)$ is the probability density function that a spatial observation of the degrees of freedom $\vec{x}$ follows.
 
-\subsection*{(I.b) The Continuity and The Hamilton-Jacobi Equations}
+\section*{(I.b) The Continuity and The Hamilton-Jacobi Equations}
 \addcontentsline{toc}{subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}
 Writing the wavefunction in polar form $\psi(\vec{x},t)=R(\vec{x},t)exp(iS(\vec{x},t)/\hbar)$ with $R(\vec{x},t)$ and $S(\vec{x},t)$ real fields (note that $|\psi|^2=R^2=:\rho(\vec{x},t)$), it is easy to see that the Schrödinger Equation is simply coupling in a single complex equation the following pair of real partial differential equations:
 \begin{equation}\label{CE}
@@ -408,19 +427,19 @@ The unknown real fields $R(\vec{x},t)$ and $S(\vec{x},t)$ have a straight-forwar
 \begin{equation}
 v_k(\vec{x},t):=\frac{1}{m_k}\pdv{}{x_k}S(\vec{x},t)
 \end{equation}
-to be the velocity field for the possible configurations of the system. Then, if we look now at equation \eqref{CE}, we realize that it is a continuity equation for a fluid of density $R^2(\vec{x},t)=:\rho(\vec{x},t)$. This continuity equation (as we will later derive) simply rules the motion of the density $\rho$ according to the velocity field $v_k$, avoiding any source of sink of density. It just dissolves or concentrates density from a point to its immediate vicinity in a conservative way. Meaning, the density in the whole configuration space must be conserved. This is why the Schrödinger Equation is said to be unitary and the norm of the wavefunction (which is the density) is a constant of motion.
+This is a velocity field for the possible configurations of the system, the so called Bohmian velocity. Then, if we look now at equation \eqref{CE}, we realize that it is a continuity equation for a fluid of density $R^2(\vec{x},t)=:\rho(\vec{x},t)$. This continuity equation (as we will later derive) simply rules the motion of the density $\rho$ according to the velocity field $v_k$, avoiding any source of sink of density. The velocity field just dissolves or concentrates density from a point to its immediate vicinity in a conservative way. Meaning that the density in the whole configuration space must be conserved. This is why the Schrödinger Equation is said to be unitary and the norm of the wavefunction (which is the density) is a constant of motion.
 
-The fundamental relevance of these two equations hidden inside the Schrödinger Equation is that they provide us naturally with a velocity field that drives the probability density $\rho$. This immediately suggests a fluid interpretation of the system, where we can think of trajectories for the elements of that fluid moving in configuration-space shaping the flow lines of that velocity field. But then, since the density is interpreted by the Born rule as the probability density function of the possible observable configurations of the system, it is suggestive to think of each trajectory of the fluid  as the time evolution of possible systems in time. With the "spooky paradox" (in the Orthodox interpretation), that each possible reality of the system, each possible experiment, repulsively interacts with the rest, even if only one of them is observed in the end. We say that we observe only one, because we have only observed point like positions for quantum particles.
+The fundamental relevance of these two equations hidden inside the Schrödinger Equation is that they provide us naturally with a velocity field that drives the probability density $\rho$. This immediately suggests a fluid interpretation of the system, where we can think of trajectories for the elements of that fluid moving in configuration-space shaping the flow lines of that velocity field. But then, since the density is interpreted by the Born rule as the probability density function of the possible observable configurations of the system, it is suggestive to think of each trajectory of the fluid  as the time evolution of possible systems in time. With the "spooky paradox" (in the Orthodox interpretation), that each possible reality of the system, each possible experiment, repulsively interacts with the rest, even if only one of them is observed in the end. We say that we observe only one, because so far, in all experiments, we have only observed point like positions for quantum particles.
 
- These trajectories, are given by the solutions of the ordinary differential equation:
+ These trajectories, are given by the solutions of the ordinary differential equation:\vspace{-0.1cm}
 \begin{equation}\label{GL}
-v_k(x^\xi(t),t)=\dv{}{t}x^\xi(t)
+v_k(x^\xi(t),t)=\dv{}{t}x_k^\xi(t)\vspace{-0.1cm}
 \end{equation}
-such that we define the label of each fluid element $\xi$ as the position they had at a reference time $t_0$. That is:
+such that we define the label of each fluid element $\vec{\xi}$ as the position it had at a reference time $t_0$:\vspace{-0.1cm}
 \begin{equation}
-x(\xi,t=t_0)=\xi
+\vec{x}(\xi,t=t_0)=\vec{\xi}\vspace{-0.1cm}
 \end{equation}
-Now, given \eqref{GL} is an ordinary differential equation, and the velocity field is the derivative of the action $S$, which must at least be twice differentiable (to be the solution of equation \eqref{CE}), making the velocity field differentiable, the Picard-Lindelöf existence and uniqueness theorem for the initial value problem, will ensure that these fluid element trajectories never cross each other in configuration space $\R^N$. Each of these trajectories is a possible Bohmian trajectory in BM (weighted by the density $\rho$, which is a property of the pilot wave). In TUM, each of these trajectories is a "Universe", the relative frequency of which (and thus the probability for it to be our Universe) is weighted by $\rho$. All this simply reduces to the pragmatism of the Born Rule from a purely observational standpoint.
+Now, given \eqref{GL} is an ordinary differential equation, and the velocity field is the derivative of the action $S$, which must at least be twice differentiable (to be the solution of equation \eqref{CE}), making the velocity field differentiable, the Picard-Lindelöf existence and uniqueness theorem for the initial value problem, will ensure that these fluid element trajectories never cross each other in configuration space $\R^N$ and that the function $\vec{x}(\xi,t)$ is a homeomorphism defined at all times. Each of these trajectories is a possible Bohmian trajectory in BM (weighted by the density $\rho$, which is a property of the pilot wave). In TUM, each of these trajectories is a "Universe", the relative frequency of which (and thus the probability for it to be our Universe) is weighted by $\rho$. All this simply reduces to the pragmatism of the Born Rule from a purely observational standpoint.
 
 We now note that in this quantum version of the Hamilton-Jacobi equation \eqref{HJE}, apart from the classical potential $U(\vec{x},t)$ relating the degrees of freedom, this fluid also presents a potential energy-like term \eqref{QP}, which is the so called {\bf quantum potential}. It can be understood as a pressure exerted by regions of peaked density on the regions of relaxed density, exactly as if there was a mutually exclusive repulsive interaction between the fluid elements. See the box bellow for a detailed understanding.
 \vspace{+0.3cm}
@@ -460,33 +479,32 @@ where:
 Q(\vec{x},t):=-\sum_{j=1}^N \frac{\hbar^2}{2m_j}\qty[\qty(\pdv{C(\vec{x},t)}{x_j})^2+\pdv[2]{C(\vec{x},t)}{x_j}]
 \end{equation}
 The advantage relative to the previously derived versions is that the quantum potential no longer depends on $1/R(\vec{x},t)$, which leads to big numerical errors in the regions where the density gets small (which is typically almost everywhere in configuration space). This makes the $C$-amplitude version of the equations more numerically stable.
-
-\subsection*{(I.c) Basis Set Expansions}
+\newpage
+\section*{(I.c) Basis Set Expansions}
 \addcontentsline{toc}{subsubsection}{{\bf (I.c)} Basis Set Expansions}
 \vspace{-0.4cm}
-\subsubsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
+\subsection*{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion\vspace{-0.25cm}}
 %\addcontentsline{toc}{subsubsection}{(I.c.1) Hamiltonian and Sub-Hamiltonian Eigenstate Expansion}
-\vspace{-0.25cm}
 
-Let us denote $m$ of the $N$ degrees of freedom as "main" degrees using $x\equiv(x_1,..,x_m)$ and the rest as "transverse" degrees using $y\equiv(x_{m+1},...x_N)$. Then we can decompose the full Hamiltonian as:
+Let us denote $m$ of the $N$ degrees of freedom as "main" degrees using $\vec{x}\equiv(x_1,..,x_m)$ and the rest as "transverse" degrees using $\vec{y}\equiv(x_{m+1},...x_N)$. Then we can decompose the full Hamiltonian as:
 \begin{equation}
 \hat{H}(\vec{x}, y, t):= -\sum_{j=1}^N\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+G(\vec{x}, y, t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(\vec{x}, y, t)+\sum_{j=1}^{m}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+V(\vec{x},t)
 \end{equation}
 Where we can define the transversal section Hamiltonian:\vspace{-0.05cm}
 \begin{equation}
-\hat{H}_x(\vec{y},t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(\vec{x}, y, t)
+\hat{H}_x(\vec{y},t)=\sum_{j=m+1}^{N}-\frac{\hbar^2}{2m_j}\pdv[2]{}{x_j}+U(\vec{x}, y, t)\vspace{-0.1cm}
 \end{equation} \vspace{-0.2cm}
 We then define the set of eigenstates $\{\Phi^j_x(\vec{y},t)\}_{j=0}^\infty$ with eigenvalues $\{\varepsilon_x^j(t)\}_j$ to be the solution of:\vspace{0.2cm}
 \begin{equation}\label{transvE}
 \hat{H}_x(\vec{y},t)\Phi^j_x(\vec{y},t)=\varepsilon^j_x(t)\Phi^j_x(\vec{y},t)
 \end{equation}
-That is, for each possible value of $x$, we can get a set of energy eigenstates in $y$ for the potential $U(y,t;x)$. We call these $\Phi^j_x(\vec{y},t)$, the {\bf transversal section eigenstates}. As we know that the hermiticity of the operator $\hat{H}_x(\vec{y},t)$ implies its eigenstates form a complete basis of the space $y$ for all times, we could write any wavefunction in $y$ as a linear combination of them. Then, we will expand each slice of $x$ using them as:\vspace{-0.2cm}
+That is, for each possible value of $\vec{x}$, we can get a set of energy eigenstates in $\vec{y}$ for the potential $U(\vec{y},t;\vec{x})$. We call these $\Phi^j_x(\vec{y},t)$, the {\bf transversal section eigenstates}. As we know that the hermiticity of the operator $\hat{H}_x(\vec{y},t)$ implies its eigenstates form a complete basis of the space $\vec{y}$ for all times, we could write any wavefunction in $\vec{y}$ as a linear combination of them. Then, we will expand each slice of $\vec{x}$ using them as:\vspace{-0.2cm}
 \begin{equation}\label{BHExp}
 \Psi(\vec{x},\vec{y},t)=\sum_{j=0}^\infty \Lambda^j(\vec{x},t) \Phi^j_x(\vec{y},t)
 \end{equation}\vspace{-0.2cm}
 with $\Lambda^j(\vec{x},t):= \int_{-\infty}^{\infty}\Phi^{j\ \dagger}_x(\vec{y},t) \Psi(\vec{x},\vec{y},t)dy$ the projection coefficients to the $j$-th section-eigenstates.
 
-If we introduce this ansatz into the Schrödinger Equation \eqref{SE}, we can obtain the differential equations ruling the shape of the coefficients $\Lambda^j(\vec{x},t)$ by rearranging and multiplying both sides by $\Phi^{k\ \dagger}(\vec{y},t)$, then integrating them over all the domain for $y$. Using the orthonormality condition $\int_{-\infty}^{\infty}\Phi^{k\ \dagger}(\vec{y},t) \Phi^{j}(\vec{y},t) dy= \delta_{kj}$, this leaves with \eqref{BHExp}, the equivalent to the Schrödinger Equation:
+If we introduce this ansatz into the Schrödinger Equation \eqref{SE}, we can obtain the differential equations ruling the shape of the coefficients $\Lambda^j(\vec{x},t)$ by rearranging and multiplying both sides by $\Phi^{k\ \dagger}(\vec{y},t)$, then integrating them over all the domain for $\vec{y}$. Using the orthonormality condition $\int_{-\infty}^{\infty}\Phi^{k\ \dagger}(\vec{y},t) \Phi^{j}(\vec{y},t) dy= \delta_{kj}$, this leaves with \eqref{BHExp}, the equivalent to the Schrödinger Equation:\vspace{-0.1cm}
 \begin{equation}\label{XabEq}
 i\hbar \pdv{}{t}\Lambda^k(\vec{x},t) = \qty( \varepsilon^k(\vec{x},t) + \sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s}+V(\vec{x},t))\Lambda^k(\vec{x},t)+
 \end{equation}
@@ -503,7 +521,7 @@ S^{kj}_s(\vec{x},t) = -\frac{\hbar^2}{2m_s}\int_{-\infty}^{\infty}\Phi_x^{k\dagg
 \begin{equation}\label{F}
 F^{kj}_s(\vec{x},t) = -\frac{\hbar^2}{m_s}\int_{-\infty}^{\infty}\Phi_x^{k\dagger}(\vec{y},t) \pdv{}{x_s}\Phi^j_x(\vec{y},t) dy
 \end{equation}
-These coupling terms can be simplified if the potential $U(\vec{x},\vec{y},t)$ varies very gently in $x$ and/or $t$ (so called adiabatically), since this will make the eigenstates vary gently as well.
+These coupling terms can be simplified if the potential $U(\vec{x},\vec{y},t)$ varies very gently in $\vec{x}$ and/or $t$ (so called adiabatically), since this will make the eigenstates vary gently as well.
 
 Equation \eqref{XabEq} is a coupled linear partial differential equation system for the $m$ space-dimensional $\Lambda^j(\vec{x},t)$ coefficients. It requires the knowledge of the $N-m$ dimensional transversal section eigenstates $\Phi^k_x(\vec{y},t)$ and their coupling integrals $W^{kj}, S^{kj}_s, F^{kj}_s$.  If the eigenstates are known a priori, then the problem has a complexity only due to the $m$ spatial dimension coefficients $\Lambda^j(\vec{x},t)$, instead of the $N$ dimensions of the Schrödinger Equation. We can thus swing the computational complexity from differential equations to eigenstate problems. If $m=0$ we have an ordinary differential equation for the coefficients, but need eigenstates of the full Hamiltonian. If $m=N$ on the other hand, we recover the full Schrödinger Equation.
 \vspace{-0.3cm}
@@ -511,7 +529,7 @@ Equation \eqref{XabEq} is a coupled linear partial differential equation system 
 %\addcontentsline{toc}{subsubsection}{(I.c.1.5) A linear coupled system of equations ruling the expansion terms}
 \vspace{-0.3cm}
 
-Remember we considered that $x\equiv (x_1,...,x_m)$ and $y\equiv (y_{m+1},...,y_N)$. Now, if we note the following identity that comes from developing the coupling term definitions \eqref{S} and \eqref{F}:
+Remember we considered that $\vec{x}\equiv (x_1,...,x_m)$ and $\vec{y}\equiv (y_{m+1},...,y_N)$. Now, if we note the following identity that comes from developing the coupling term definitions \eqref{S} and \eqref{F}:
 \begin{equation}
 \qty[S^{kj}_s(\vec{x},t)+F_s^{kj}]\Lambda^j(\vec{x},t)=\int_{-\infty}^\infty \Phi^{k\dagger}_x(\vec{y},t) \frac{-\hbar}{2m_s}\qty( \Lambda^j(\vec{x},t)\pdv[2]{\Phi^j_x(\vec{y},t)}{x_s}+2\pdv{}{x_s}\Phi^j_x(\vec{y},t)\pdv{}{x_s}\Lambda^j(\vec{x},t) ) dy
 \end{equation}
@@ -575,27 +593,27 @@ $$
 $$
 Then, equation \eqref{inter2} becomes into the following coupled linear system of equations:
 \begin{equation}\label{XabEq2}
- i\hbar\pdv{}{t}\qty[ \Phi^k_x(\vec{y},t)\Lambda^k(\vec{x},t)]=\qty[ \varepsilon^k(\vec{x},t)+V(\vec{x},t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\Lambda^k(\vec{x},t)\Phi^k_x(\vec{y},t)+
+ i\hbar\pdv{}{t}\qty[ \Phi^k_x(\vec{y},t)\Lambda^k(\vec{x},t)]=\qty[ \varepsilon^k(\vec{x},t)+V(\vec{x},t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\Lambda^k(\vec{x},t)\Phi^k_x(\vec{y},t)+\vspace{-0.1cm}
 \end{equation}
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(\vec{y},t)}\pdv[2]{\Phi^j_x(\vec{y},t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(\vec{y},t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(\vec{y},t))] )\Lambda^j(\vec{x},t)\Phi^j_x(\vec{y},t)
 $$
 If we define the summands of the expansion for the full wavefunction as $\varphi^j(\vec{x},\vec{y},t):=\Lambda^j(\vec{x},t)\Phi^j_x(\vec{y},t)$, such that $\psi(\vec{x},\vec{y},t)=\sum_j \varphi^j(\vec{x},\vec{y},t)$, then equation \eqref{XabEq2}, an equivalent to the Schrödinger Equation, can be seen to be a system of {\bf linear} equations coupling them:
 \begin{equation}\label{XabEq2.5}
- i\hbar\pdv{}{t}\varphi^k(\vec{x},\vec{y},t)=\qty[ \varepsilon^k(\vec{x},t)+V(\vec{x},t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\varphi^k(\vec{x},\vec{y},t)+
+ i\hbar\pdv{}{t}\varphi^k(\vec{x},\vec{y},t)=\qty[ \varepsilon^k(\vec{x},t)+V(\vec{x},t)  -\sum_{s=1}^m\frac{\hbar^2}{2m_s}\pdv[2]{}{x_s} ]\varphi^k(\vec{x},\vec{y},t)+\vspace{-0.1cm}
 \end{equation}
 $$
 +\sum_{j=0}^\infty\sum_{s=1}^m \frac{-\hbar}{2m_s}\qty( \frac{1}{\Phi^j_x(\vec{y},t)}\pdv[2]{\Phi^j_x(\vec{y},t)}{x_s}+2\pdv{}{x_s}log(\Phi^j_x(\vec{y},t))\qty[\pdv{}{x_s}-\pdv{}{x_s}log(\Phi^j_x(\vec{y},t))] )\varphi^j(\vec{x},\vec{y},t)
 $$
-Equation \eqref{XabEq} was also a linear system of equations that were actually way simpler. However, the usefulness of this last coupled system will become evident when we treat the transversal degrees of freedom $y$ in a Lagrangian frame, since it will allow us to compute a single conditional wavefunction using a linear system of equations (in principle infinite, but legitimately truncate-able at some low $J$)!\vspace{-0.3cm}
+Equation \eqref{XabEq} was also a linear system of equations that were actually way simpler. However, the usefulness of this last coupled system will become evident when we treat the transversal degrees of freedom $\vec{y}$ in a Lagrangian frame, since it will allow us to compute a single conditional wavefunction using a linear system of equations (in principle infinite, but legitimately truncate-able at some low $J$)!\vspace{-0.3cm}
 
-\subsubsection*{(I.c.2) Arbitrary Orthonormal Base Expansion}
+\subsection*{(I.c.2) Arbitrary Orthonormal Base Expansion}
 %\addcontentsline{toc}{subsubsection}{(I.c.2) Arbitrary Orthonormal Base Expansion}
-We will build here an analogue of the generalized method \eqref{XabEq} of section (I.c.1). Using the notation $x=(x_1,..,x_m)$ and $y=(x_{m+1},...,x_N)$, we will assume we know an arbitrary orthonormal set of functions $\{ f^j(\vec{y},t) \}_j$ spanning the space $y$. They need not depend on time, but for generality we will consider so (the difference will be that the coupling terms would simplify). Due to the completeness of the basis for the $y$ subspace, we could find coefficients $\Lambda^j(\vec{x},t)$ such that expand the sections of $\psi$ as:\vspace{-0.3cm}
+We will build here an analogue of the generalized method \eqref{XabEq} of section (I.c.1). Using the notation $\vec{x}=(x_1,..,x_m)$ and $\vec{y}=(x_{m+1},...,x_N)$, we will assume we know an arbitrary orthonormal set of functions $\{ f^j(\vec{y},t) \}_j$ spanning the space $\vec{y}$. They need not depend on time, but for generality we will consider so (the difference will be that the coupling terms would simplify). Due to the completeness of the basis for the $\vec{y}$ subspace, we could find coefficients $\Lambda^j(\vec{x},t)$ such that expand the sections of $\psi$ as:\vspace{-0.3cm}
 \begin{equation}
 \psi(\vec{x},\vec{y},t)=\sum_{j=0}^\infty \Lambda^j(\vec{x},t) f^j(\vec{y},t)
 \end{equation}\vspace{-0.3cm}
-Note that unlike the transversal section eigenstates, these basis functions do not depend on $x$!
+Note that unlike the transversal section eigenstates, these basis functions do not depend on $\vec{x}$!
 
 Then introducing this ansatz into the full TDSE, we can get the dynamic equations for the coefficients $\Lambda^j(\vec{x},t)$. By using the orthonormality condition $\int_{-\infty}^{\infty}f^{k\dagger}(\vec{y},t)f^k(\vec{y},t)dy=1$ we can get:\vspace{-0.2cm}
 \begin{equation}
@@ -616,14 +634,14 @@ Note that if the orthonormal vectors were chosen to be time independent then $W^
 We have achieved a similar linear equation system to \eqref{XabEq}, where the only task we would need would be to compute the coupling integrals and then evolve the coupled linear system of equations for the coefficients $\Lambda^j(\vec{x},t)$. The integrals would be $N-m$ dimensional, while the coupled system would evolve fields with $m$ spatial dimensions. If we knew analytically the orthonormal functions, we could be able to compute the integrals symbolically, which would allow us to safe the numerical integration and the complexity would be left to the equation system's, which is the $m$ we fix from $\{0,1,2,...,N\}$.
 
 In this case though, we will have lost the possibility to study the adiabaticity and to approximate the coupling terms in consequence. Perhaps, the number of required $J$ will also increase relative to the case in which we used eigenstates of transversal sections.
+\vspace{-0.1cm}
 
 
-
-\subsection*{(I.d) Dynamic Equations for Partial Derivatives}
+\section*{(I.d) Dynamic Equations for Partial Derivatives\vspace{-0.2cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}
 In the Eulerian frame it will not make that much sense, but as soon as we have Lagrangian degrees of freedom, we will find the advantage of having dynamic equations not only for the main waves $\psi$ or $S$ and $R$, but also for their derivatives in space.\vspace{-0.4cm}
 
-\subsubsection*{(I.d.a) For the Wavefunction}
+\subsection*{(I.d.a) For the Wavefunction}
 %\addcontentsline{toc}{subsubsection}{(I.d.a) For the Wavefunction}
 \vspace{-0.2cm}
 If we take the Schrödinger Equation \eqref{SE} and partially derivate it in $x_k$ at each side and we assume the wavefunction is regular enough in all its variables $t$, $\vec{x}$ in order to use Schwartz's Law for crossed partial derivatives, we get:
@@ -648,13 +666,13 @@ Let us look for the general equation of this infinite chain. First of all, note 
 \end{equation}
 with $b(J,k):=\frac{J!}{k!(J-k)!}$ the binomial coefficients.
 
-Then, if we define the most general partial derivative of a function $f$ (assuming always enough regularity for being able to apply Schwarz's Theorem) as the function:
+Then, if we define the most general partial derivative of a function $f$ (assuming always enough regularity for being able to apply Schwarz's Theorem) as the function:\vspace{-0.1cm}
 \begin{equation}\label{defPdv}
-f_{(j1,...,jN)}(\vec{x},t):=\pdv[j_1]{}{x_1}\cdots\pdv[j_N]{}{x_N} f(\vec{x},t) \quad with\quad j_1,...,j_N\in \N\cup \{0\}
+f_{(j1,...,jN)}(\vec{x},t):=\pdv[j_1]{}{x_1}\cdots\pdv[j_N]{}{x_N} f(\vec{x},t) \quad with\quad j_1,...,j_N\in \N\cup \{0\}\vspace{-0.1cm}
 \end{equation}
 We can get the recurrent formula for the time evolution of an arbitrary $\psi_{(j_1,...,j_N)}(\vec{x},t)$ by iteratively derivating the Schrödinger Equation \eqref{SE} as we did in the beginning. In general we can get that:
 \begin{equation}\label{infchain.SE}
-i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\vec{x},t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+
+i\hbar \pdv{}{t}\psi_{(j_1,...,j_N)}(\vec{x},t)=-\sum_{s=1}^N\frac{\hbar^2}{2m_s}\psi_{(j_1,...,2+j_s,...,j_N)}+\vspace{-0.1cm}
 \end{equation}
 $$
 +\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N)U_{(j_1-k_1,...,j_N-k_N)}\psi_{(k_1,...,k_N)}
@@ -665,7 +683,7 @@ A thing we could do, in order to avoid having to solve an endless sequence of pa
 
 Clearly, in the Eulerian frame using these equations makes almost no sense, since each of the $\psi_{(j_1,...,j_N)}$ has actually $N+1$ degrees of freedom, making them as difficult to be solved as the Schrödinger Equation itself. Yet their use will become suggestive when we go into the Lagrangian frame, just as will happen with (I.c.1.2).\vspace{-0.3cm}
 
-\subsubsection*{(I.d.b) For the Density and Action}
+\subsection*{(I.d.b) For the Density and Action}
 %\addcontentsline{toc}{subsubsection}{(I.d.b) For the Density and Action}
 \vspace{-0.3cm}
 Doing the same for the Hamilton-Jacobi and the Continuity Equations \eqref{HJE} and \eqref{CE}, will turn out to be more dramatic due to their non-linear nature. In order to have a general equation, we will use the continuity and Hamilton-Jacobi equations in their $C$-amplitude shapes \eqref{CE.C} and \eqref{HJE.C}. Using the definition \eqref{defPdv} and iteratively derivating at each side, we can get that the derivatives of the field $C(\vec{x},t)$ evolve as:\vspace{-0.2cm}
@@ -688,10 +706,10 @@ $$
 $$
 While the field $S(\vec{x},t)$ and its derivatives evolve as:
 \begin{equation}\label{infchain.HJE}
--\pdv{}{t}S_{(j1,...,jN)}(\vec{x},t)=V_{(j1,...,jN)}-\sum_{s=1}^N\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(\vec{x},t)+
+-\pdv{}{t}S_{(j1,...,jN)}(\vec{x},t)=V_{(j1,...,jN)}-\sum_{s=1}^N\frac{\hbar^2}{2m_s} \Bigg[ C_{(j1,...,2+j_s,...,jN)}(\vec{x},t)+\vspace{-0.1cm}
 \end{equation}
 $$
-+\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} 
++\sum_{k_1=0}^{j_1}\cdots\sum_{k_N=0}^{j_N} b(j_1,k_1)\cdots b(j_N,k_N) \Bigg( C_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}C_{(k_1,...,1+k_s,...,k_N)} \vspace{-0.1cm}
 $$
 $$
 -S_{(j_1-k_1,...,1+j_s-k_s,...,j_N-k_N)}S_{(k_1,...,1+k_s,...,k_N)}  \Bigg)\Bigg]
@@ -738,25 +756,25 @@ i\hbar \dv{}{t}\psi(\vec{x}^{\, \xi}(t),t)=U(\vec{x}^{\, \xi}(t),t)\psi(\vec{x}^
 \end{equation}
 Following equation \eqref{KinAdv}, when we wish to evolve numerically the value of the wavefunction  $\psi(t,\vec{\xi})$ as seen by a fluid element $\vec{\xi}$, we notice that we need to compute the partial derivatives in Eulerian configuration-space for the wavefunction at each time: $\pdv{}{x_a}\psi(x_a,\vec{x}_b^{\, \xi}(t), t)\Big\rvert_{x_a=x^\xi_a(t)}$. That is, we need to know the curvature of the wavefunction around the fluid element, meaning we also need to know the value of the wavefunction, not only in the position $\vec{x}(\vec{\xi},t)$, but also in a close enough neighbourhood. This implies that we will not be able to evolve a {\bf single fluid element} $\vec{\xi}$ and its wavefunction alone. 
 
-A possible option for the obtention of the wavefunction values carried by nearby fluid elements, is precisely to evolve several fluid elements $\{\vec{\xi}_k\}_{k=1}^M$ at the same time. The values of the wavefunction they carry over their trajectories $\vec{x}^{\, \xi}(t)$, allow us to have a reconstruction of the full wavefunction $\{\psi(\vec{x}(\xi_k,t),t) \}_{k=1}^M$. With this, we will be able to get the derivatives in $\vec{x}$.
+A possible option for the obtention of the wavefunction values carried by nearby fluid elements, is precisely to evolve several fluid elements $\{\vec{\xi}_k\}_{k=1}^M$ at the same time. The values of the wavefunction they carry over their trajectories $\vec{x}^{\, \xi}(t)$, allow us to have a reconstruction of the full wavefunction $\{\psi(\vec{x}(\xi_k,t),t) \}_{k=1}^M$. With this, we will be able to get the derivatives in $\vec{x}$.\vspace{-0.1cm}
 
-Another possibility is to find dynamical equations for the Eulerian space derivatives over the trajectories and evolve these as well. This would technically allow us to evolve a single trajectory. As we will discover in section (II.d) this approach will have its own price.
+Another possibility is to find dynamical equations for the Eulerian space derivatives over the trajectories and evolve these as well. This would technically allow us to evolve a single trajectory. As we will discover in section (II.d) this approach will have its own price.\vspace{-0.1cm}
 
-Note that we called \eqref{Kin} and \eqref{Adv}, {\bf correlation} terms, since all the terms correlating the different fluid elements were encapsulated within them.
+Note that we called \eqref{Kin} and \eqref{Adv}, {\bf correlation} terms, since all the terms correlating the different fluid elements were encapsulated within them.\vspace{-0.1cm}
 
-Notice that if we choose to evolve several fluid elements in order to get first order information in each neighbourhood, we will get the value of the wavefunction at the points $\{\vec{x}(\vec{\xi}_k,t)\}_{k=1}^M$ which are not required to preserve a regular grid structure. They might form a structured Cartesian grid at $t=t_0$ if we choose $\{\vec{\xi}_k\}_{k=1}^M$ to be so, but in general the mesh will get unstructured very fast, because in general, each fluid element will have a different velocity in each time. This implies that we would need to compute the derivatives for the correlation terms in an {\bf unstructured grid}, which is not as convenient numerically. See Figure \ref{fig:unstructure_fluid}. For this, among others, we could fit an analytical function sum to the unstructured wavefunction, and then derivate it symbolically. Alternatively, we could move the grid points in some convenient way (remember we have not fixed any rule for the motion of the trajectories) as we will see in Section (II.g), or we could actually bypass the unstructured grid problem by writing down the partial derivatives in Eulerian space in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$. We can make sure that the label space will be a regular Cartesian mesh, so we will be able to employ simple finite differences there. We will explore this option in section (II.e). 
+Notice that if we choose to evolve several fluid elements in order to get first order information in each neighbourhood, we will get the value of the wavefunction at the points $\{\vec{x}(\vec{\xi}_k,t)\}_{k=1}^M$ which are not required to preserve a regular grid structure. They might form a structured Cartesian grid at $t=t_0$ if we choose $\{\vec{\xi}_k\}_{k=1}^M$ to be so, but in general the mesh will get unstructured very fast, because in general, each fluid element will have a different velocity in each time. This implies that we would need to compute the derivatives for the correlation terms in an {\bf unstructured grid}, which is not as convenient numerically. See Figure \ref{fig:unstructure_fluid}. For this, among others, we could fit an analytical function sum to the unstructured wavefunction, and then derivate it symbolically. Alternatively, we could move the grid points in some convenient way (remember we have not fixed any rule for the motion of the trajectories) as we will see in Section (II.g), or we could actually bypass the unstructured grid problem by writing down the partial derivatives in Eulerian space in terms of partial derivatives in the label space (initial positions) $\vec{\xi}$. We can make sure that the label space will be a regular Cartesian mesh, so we will be able to employ simple finite differences there. We will explore this option in section (II.e). \vspace{0.1cm}
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.65\linewidth]{1deforma.png}
-  \caption{Depiction of the $N=3$ case of a diffeomorphism representing the trajectory ensemble of a fluid following the notation presented in the text. }
+    \includegraphics[width=0.65\linewidth]{azkena.png}
+  \caption{Above left, the grid of fluid elements (in red) at the reference time $t_0$. Below, their positions at time $t$, note how the grid gets irregular. The partial derivatives require the knowledge of the points in the blue lines, but as it can be seen, in the unstructured grid, rerely will two fluid elements be aligned this way. In the right, we can see in blue the full function and in green the values each fluid element carries over it. Clearly, with enough fluid elements we could reconstruct the full function.   \vspace{-0.3cm}}
   \label{fig:unstructure_fluid}
 \end{figure}
 
-Finally, note that we have still not defined a velocity field ruling the trajectories $\vec{x}(\vec{\xi},t)$. We could choose any continuous velocity field. A deeper exposition of some convenient velocity fields we can choose will be provided in section (II.g), but in general an interesting choice will be the Bohmian velocity field we found when interpreting equation \eqref{CE}:
+Finally, note that we have still not defined a velocity field ruling the trajectories $\vec{x}(\vec{\xi},t)$. We could choose any continuous velocity field. A deeper exposition of some convenient ones will be provided in section (II.g), but in general an interesting choice will be the Bohmian velocity field we found when interpreting equation \eqref{CE}. If we choose it, the transformation $\vec{x}(\vec{\xi},t)$ will describe Bohmian trajectories:
 \begin{equation}\label{ImpBohm}
 \dv{}{t}x_a^\xi(t)=\frac{1}{m_a}\pdv{}{x_a}S(x_a, \vec{x}_b^{\, \xi}(t),t)\Big\rvert_{x^\xi_a(t)}=\frac{\hbar^2}{m_a}\mathbb{I}m \qty( \psi^{-1}(\vec{x}^{\, \xi}(t),t)\pdv{}{x_a}\psi(x_a, \vec{x}_b^{\, \xi}(t),t)\Big\rvert_{x^\xi_a(t)})
 \end{equation}
- If choose to do so, remember that the transformation $\vec{x}(\vec{\xi},t)$ will describe the so called Bohmian trajectories.
+
 \newpage
 \section*{(II.b) The Continuity and The Hamilton-Jacobi Equations\vspace{-0.3cm}}
 \addcontentsline{toc}{subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}
@@ -1373,7 +1391,7 @@ which can be manipulated to get:
 \end{equation}
 with boundary conditions $x(\xi^1,t)=a(t)$ and $x(\xi^m,t)=b(t)$, which are the moving boundaries of the grid, that we are free to choose.
 
-In particular, we can get the value of $K$ if we integrate equation \eqref{contEq} in $\xi$, in its domain $\Omega_0=\{\xi\in(\xi^1,\xi^m)\}$:
+In particular, we can get the value of $K$ if we integrate equation \eqref{contEq} in $\vec{\xi}$, in its domain $\Omega_0=\{\xi\in(\xi^1,\xi^m)\}$:
 \begin{equation}
 \int^{\xi^m}_{\xi^1} M(\xi,t) \pdv{x(\xi,t)}{\xi} d\xi=\int^{\xi^m}_{\xi^1} K d \xi  \Leftrightarrow \int^{x(\xi^m,t)}_{x(\xi^1,t)} M(x(\xi,t),t) dx(\xi,t)=K(\xi^m-\xi^1)
 \end{equation}
@@ -1618,7 +1636,7 @@ v_j(\vec{x}, \vec{y},t)=\frac{1}{m_j}\pdv{S(\vec{x}, \vec{y},t)}{x_j}\quad j\in\
 \end{equation}
 
 
-If we did so, as it can be seen in Figure \ref{fig:fallback}, each element of the initially affine Eulerian support of the conditional function would move in different directions in the $N$ axes of configuration-space. We would end up having a varying number of values of the same function $f$ for a same $x$, which is incompatible with a proper univalued Eulerian function description. Thus we would require now to parametrize as well the conditional function support as a function of the initial position in $\vec{x}$, say using a parameter $\vec{\xi}_x$. The support would still be an $m$ dimensional manifold, meaning the parametrization given by $\vec{\xi}_x$ would be one to one for a certain $\vec{\xi}_y$, having one point in the wavefunction per each $\vec{\xi}_x$ in the initial manifold. However, this is exactly the definition of the Fully Lagrangian Picture, where there is a value of the function per point in the initial support manifold $f(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t),t)=f(\vec{\xi},t)$.
+If we did so, as it can be seen in Figure \ref{fig:fallback}, each element of the initially affine Eulerian support of the conditional function would move in different directions in the $N$ axes of configuration-space. We would end up having a varying number of values of the same function $f$ for a same $\vec{x}$, which is incompatible with a proper univalued Eulerian function description. Thus we would require now to parametrize as well the conditional function support as a function of the initial position in $\vec{x}$, say using a parameter $\vec{\xi}_x$. The support would still be an $m$ dimensional manifold, meaning the parametrization given by $\vec{\xi}_x$ would be one to one for a certain $\vec{\xi}_y$, having one point in the wavefunction per each $\vec{\xi}_x$ in the initial manifold. However, this is exactly the definition of the Fully Lagrangian Picture, where there is a value of the function per point in the initial support manifold $f(\vec{x}(\vec{\xi},t), \vec{y}(\vec{\xi},t),t)=f(\vec{\xi},t)$.
 }
 
 
@@ -2216,6 +2234,11 @@ Among the relevant positive points, here are some of the most interesting ones:
 \section*{IV . No Continuous Fluid: Finite Tangent Universe Mechanics}
 \addcontentsline{toc}{subsection}{\bf IV . No Continuous Fluid: Finite Tangent Universe Mechanics}
 
+Work in progress...
+
+Actually there is already a research line working on this! This one seems one of the first papers on this:
+
+Hall, M. J., Deckert, D. A., \& Wiseman, H. M. (2014). {\em Quantum phenomena modeled by interactions between many classical worlds.} Physical Review X, 4(4), 041013.
 
 
 

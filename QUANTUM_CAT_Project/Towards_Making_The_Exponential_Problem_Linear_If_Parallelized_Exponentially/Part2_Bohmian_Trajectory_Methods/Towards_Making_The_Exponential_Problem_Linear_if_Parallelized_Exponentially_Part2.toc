@@ -1,30 +1,30 @@
-\contentsline {section}{Part A: Drafting the Panorama}{0}{section*.3}%
-\contentsline {subsubsection}{On the Employed Notation and Vocabulary}{1}{section*.4}%
-\contentsline {subsubsection}{Approaches with Respect to the Degrees of Freedom}{4}{section*.6}%
-\contentsline {subsubsection}{Panorama of the Methods We Can Study}{5}{section*.7}%
-\contentsline {section}{Part B: The Equations of Quantum Dynamics}{8}{Item.10}%
-\contentsline {subsection}{{\bf I . Fully Eulerian Equations }}{9}{section*.8}%
-\contentsline {subsubsection}{{\bf (I.a)} The Schrödinger Equation}{9}{section*.9}%
-\contentsline {subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}{9}{section*.10}%
-\contentsline {subsubsection}{{\bf (I.c)} Basis Set Expansions}{12}{section*.11}%
-\contentsline {subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}{15}{section*.15}%
-\contentsline {subsection}{\bf II . Fully Lagrangian Equations}{17}{section*.18}%
-\contentsline {subsubsection}{{\bf (II.a)} The Schrödinger Equation}{17}{section*.19}%
-\contentsline {subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}{19}{section*.22}%
-\contentsline {subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}{21}{section*.25}%
-\contentsline {subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}{21}{section*.26}%
-\contentsline {subsubsection}{\em Parenthesis: Fundamental Intuitions about the Diffeomorphism $\vec {x}(\vec {\xi },t)$}{23}{section*.29}%
-\contentsline {subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}{31}{section*.42}%
-\contentsline {subsubsection}{{\bf (II.g)} Adaptive Grid Equations}{33}{section*.43}%
-\contentsline {subsection}{\bf III . Part Lagrangian Part Eulerian Equations}{42}{section*.58}%
-\contentsline {subsubsection}{{\bf (III.a)} The Schrödinger Equation}{50}{section*.75}%
-\contentsline {subsubsection}{{\bf (III.b)} The Continuity and The Hamilton-Jacobi Equations}{54}{section*.80}%
-\contentsline {subsubsection}{{\bf (III.f)} The Bohmian Newton's Second Law}{55}{section*.81}%
-\contentsline {subsubsection}{{\bf (III.d)} Dynamic Equations for Partial Derivatives}{55}{section*.82}%
-\contentsline {subsubsection}{{\bf (III.g)} Dynamic Equations for Correlation Terms}{57}{section*.85}%
-\contentsline {subsubsection}{{\bf (III.c)} Basis Set Expansion}{58}{section*.86}%
-\contentsline {subsubsection}{{\bf (III.e)} Partial Derivatives relative to labels}{59}{section*.87}%
-\contentsline {subsubsection}{{\bf (III.g)} Adaptive Grid Equations}{59}{section*.88}%
-\contentsline {subsubsection}{\em Exponential Time Polynomialized with Exponential Parallelization}{60}{section*.89}%
-\contentsline {subsection}{\bf IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{68}{section*.95}%
-\contentsline {section}{References}{68}{section*.96}%
+\contentsline {section}{Part A: Drafting the Panorama}{1}{section*.4}
+\contentsline {subsubsection}{On the Employed Notation and Vocabulary}{1}{section*.5}
+\contentsline {subsubsection}{Approaches with Respect to the Degrees of Freedom}{4}{section*.7}
+\contentsline {subsubsection}{Panorama of the Methods We Can Study}{5}{section*.8}
+\contentsline {section}{Part B: The Equations of Quantum Dynamics}{9}{Item.10}
+\contentsline {subsection}{{\bf I . Fully Eulerian Equations }}{11}{section*.9}
+\contentsline {subsubsection}{{\bf (I.a)} The Schr\IeC {\"o}dinger Equation}{11}{section*.10}
+\contentsline {subsubsection}{{\bf (I.b)} The Continuity and The Hamilton-Jacobi Equations}{11}{section*.11}
+\contentsline {subsubsection}{{\bf (I.c)} Basis Set Expansions}{14}{section*.12}
+\contentsline {subsubsection}{{\bf (I.d)} Dynamic Equations for Partial Derivatives}{17}{section*.16}
+\contentsline {subsection}{\bf II . Fully Lagrangian Equations}{19}{section*.19}
+\contentsline {subsubsection}{{\bf (II.a)} The Schr\IeC {\"o}dinger Equation}{19}{section*.20}
+\contentsline {subsubsection}{{\bf (II.b)} The Continuity and The Hamilton-Jacobi Equations}{21}{section*.23}
+\contentsline {subsubsection}{{\bf (II.f)} The Bohmian Newton's Second Law}{23}{section*.26}
+\contentsline {subsubsection}{{\bf (II.d)} Dynamic Equations for Partial Derivatives}{23}{section*.27}
+\contentsline {subsubsection}{\em Parenthesis: Fundamental Intuitions about the Diffeomorphism $\mathaccentV {vec}17E{x}(\mathaccentV {vec}17E{\xi },t)$}{25}{section*.30}
+\contentsline {subsubsection}{{\bf (II.e)} Partial Derivatives relative to the Labels}{33}{section*.43}
+\contentsline {subsubsection}{{\bf (II.g)} Adaptive Grid Equations}{35}{section*.44}
+\contentsline {subsection}{\bf III . Part Lagrangian Part Eulerian Equations}{44}{section*.59}
+\contentsline {subsubsection}{{\bf (III.a)} The Schr\IeC {\"o}dinger Equation}{52}{section*.76}
+\contentsline {subsubsection}{{\bf (III.b)} The Continuity and The Hamilton-Jacobi Equations}{56}{section*.81}
+\contentsline {subsubsection}{{\bf (III.f)} The Bohmian Newton's Second Law}{57}{section*.82}
+\contentsline {subsubsection}{{\bf (III.d)} Dynamic Equations for Partial Derivatives}{57}{section*.83}
+\contentsline {subsubsection}{{\bf (III.g)} Dynamic Equations for Correlation Terms}{59}{section*.86}
+\contentsline {subsubsection}{{\bf (III.c)} Basis Set Expansion}{60}{section*.87}
+\contentsline {subsubsection}{{\bf (III.e)} Partial Derivatives relative to labels}{61}{section*.88}
+\contentsline {subsubsection}{{\bf (III.g)} Adaptive Grid Equations}{61}{section*.89}
+\contentsline {subsubsection}{\em Exponential Time Polynomialized with Exponential Parallelization}{62}{section*.90}
+\contentsline {subsection}{\bf IV . No Continuous Fluid: Finite Tangent Universe Mechanics}{70}{section*.96}
+\contentsline {section}{References}{70}{section*.97}
