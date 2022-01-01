@@ -1,0 +1,491 @@
+\documentclass[11pt, a4paper]{article} % , draft
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem} % customiçe item dots etc
+\usepackage{textgreek} % obv
+\usepackage{physics} % for easy derivative notation
+\usepackage{amsmath}
+\usepackage{amsthm} %theorems
+\usepackage{amssymb}
+\usepackage{mathtools} % for matrices with blocks inside
+\usepackage[scr=boondoxo]{mathalfa}
+\usepackage{pst-node}%
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Holo}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\z}{\mathpzc{s}}
+\newcommand{\p}{\mathpzc{r}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\Lg}{\mathscr{L}}
+\newcommand{\x}{\mathcal{X}}
+
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\setlength{\parskip}{0.3 cm}
+
+\usepackage{fancyhdr}
+
+%\usepackage{nath} % authomatic parenthesis stuff
+%\delimgrowth=1
+\usepackage[left=2cm, right=2cm, top=2.1cm, bottom=2.1cm]{geometry} % set custom margins
+\usepackage{graphicx} % to insert figures
+\usepackage{grffile}
+\graphicspath{{Figures/}} % define the figure folder path
+\usepackage{subcaption} % for multiple figures at once each with a caption
+\usepackage{multirow} %multirow in tables
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize} %adjust caption size
+\captionsetup[table]{font=footnotesize} %adjust caption size
+
+\usepackage{booktabs} % for pretty tabs in tables
+\usepackage{siunitx} % Required for alignment
+\captionsetup{labelfont=bf} % bold face captations
+
+\usepackage{hyperref} % makes every reference a hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    filecolor=[rgb]{0.69, 0.19, 0.38},      
+    urlcolor=[rgb]{0.0, 0.81, 0.82},
+    citecolor=[rgb]{0.69, 0.19, 0.38}
+}
+
+\usepackage{epigraph} % for quotations in teh begginig
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\renewcommand{\qedsymbol}{o.\textepsilon.\textdelta}
+
+\newtheorem{prop}{Proposition} %so I can use propositions
+\newtheorem{cor}{Corollary} %so I can use corollaries
+\newtheorem{defi}{Definition} %so I can use corollaries
+
+\makeatother % all this is for the epigraph
+\usepackage{tocloft}
+
+\usepackage{imakeidx} % make index
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+%\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
+\title{\vspace{-2cm} {\bf An Intuitive Narrative for\\ Open Quantum Systems?}\\{\small by {\em Xabier Oyanguren Asua}}\vspace{-0.8cm}}
+\date{\vspace{-11ex}}
+\let\clipbox\relax
+\usepackage{adjustbox}
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+
+\usepackage{tcolorbox}
+\DeclareRobustCommand{\mybox}[2][gray!10]{%
+\begin{tcolorbox}[   %% Adjust the following parameters at will.
+        left=0.2cm,
+        right=0.2cm,
+        top=0.15cm,
+        bottom=0.15cm,
+        colback=#1,
+        colframe=#1,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=0pt,outer arc=0pt,
+        ]
+        #2
+\end{tcolorbox}
+}
+
+
+\usepackage{anyfontsize}
+
+\NewDocumentEnvironment{kapituloBerria}{mm}
+{\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{2}}% some space at the top
+   \raggedleft          % flush to the right margin
+   {\textbf{{\fontsize{60}{40}\selectfont \hspace{+9.5cm}#1 \newline \newline}}}
+   \bf
+   \fontsize{30}{20}\selectfont
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \normalfont
+      \fontsize{15}{20}\selectfont
+      \vspace{-1cm}
+   \begin{flushleft}{ \textit{#2}  }
+   \end{flushleft}
+   \clearpage           % finish off the page
+  }
+  
+%\newenvironment{kapituloBerria}[2]
+  
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\begin{document}
+
+\clearpage
+%% temporary titles
+% command to provide stretchy vertical space in proportion
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+% To improve spacing on titlepages
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{empty}
+\begin{center}
+\bfseries
+\nbvspace[1]
+\Huge
+{\nbtitlestretch\huge
+AN INTUITIVE NARRATIVE FOR\\
+OPEN QUANTUM SYSTEMS?
+}
+
+\nbvspace[1]
+\normalsize
+
+TOWARDS A NARRATIVE TO \\
+MAKE QUANTUM MEASUREMENTS\\ 
+AND OPEN SYSTEM DYNAMICS\\ INTUITIVE \\
+
+\nbvspace[1]
+
+Drafting a Quantum Intuition\\
+that minimizes unjustified assumptions
+
+\nbvspace[1]
+\small BY\\
+\Large Xabier Oyanguren Asua\\[0.5em]
+%\footnotesize Can we really foresee the future of the Universe?"\\
+
+
+\nbvspace[6]
+
+\includegraphics[width=2.5in]{UAB.png}
+\normalsize
+\vspace{-0.5cm}
+%\small Thesis Directors: \\
+%\nbvspace[0.2]
+%\large Jordi Mompart Penina \\
+%Xavier Oriols Pladevall\\
+%\nbvspace[1]
+
+%Universitat Autònoma de Barcelona\\
+\large
+%DEGREE FINAL DISSERTATION \\
+\small
+%Bachelor's degree in Nanoscience and Nanotechnology \\
+\small
+$\ $Winter 2021-2022
+\nbvspace[1]
+\end{center}
+\newpage
+\null
+\clearpage
+
+\maketitle
+\pagenumbering{gobble}
+\setlength{\cftbeforesecskip}{0.4cm}
+\setlength{\cftbeforesubsecskip}{0.4cm}
+\setlength{\cftbeforesubsubsecskip}{0.25cm}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{-2}
+\vspace{-0.3 cm}
+
+\pagestyle{empty}
+
+\section*{Abstract}
+
+
+\section*{Objectives}\vspace{-0.2cm}
+
+
+
+\section*{Guideline}\vspace{-0.2cm}
+
+
+\newpage
+
+\begin{kapituloBerria}{Part A}{" Quantum Mechanics is Ontologically\\ Deterministic but Epistemologically Stochastic."}
+The Axioms 
+\end{kapituloBerria}
+\newpage
+\fancyhead[L]{\null}
+\fancyhead[R]{\null}
+\null
+\clearpage
+
+\pagestyle{fancy}
+\fancyhead[L]{The Axioms}
+
+\fancyhead[R]{\em The State of the Universe}
+\section*{A.1. The State of the Universe}
+\addcontentsline{toc}{section}{Part A: The Axioms}
+\addcontentsline{toc}{subsection}{1. The State of the Universe}
+% Azaldu configuration space y el fluido multiversal etc como lo hacía en el otro tratado
+\subsection*{A.1.1. Configuration Space and the Measurable space}
+
+\addcontentsline{toc}{subsubsection}{1.1 Configuration Space - the Measurable One}
+
+\subsection*{A.1.2. A Fluid of Universes}
+
+\addcontentsline{toc}{subsubsection}{1.2. A Fluid of Universes}
+
+\subsection*{A.1.3. Our Universe and the Single Measurement Axiom}
+
+\addcontentsline{toc}{subsubsection}{1.3. Our Universe and the Single Measurement Axiom}
+% Why QMs seem to be a non-deterministic theory, where in reality it is! (Since it can be formulated with only unitary deterministic time evolution!)
+
+
+\newpage
+\fancyhead[R]{\em The Dynamics of the Universe}
+\section*{A.2. The Dynamics of the Universe}
+\addcontentsline{toc}{subsection}{2. The Dynamics of the Universe}
+% Las ecuaciones dinámicas de la densidad y de la acción. La ecuación de Schrödinger
+
+\subsection*{A.2.1. The Quantum Action Principle}
+
+\addcontentsline{toc}{subsubsection}{2.1. The Quantum Action Principle}
+
+\subsection*{A.2.2. The Dynamics of the Density of Universes}
+
+\addcontentsline{toc}{subsubsection}{2.2. The Dynamics of the Density of Universes}
+
+
+\subsection*{A.2.3. The Dynamics of the Action Density}
+
+\addcontentsline{toc}{subsubsection}{2.3. The Dynamics of the Action Density}
+
+\subsection*{A.2.4. The Dynamics of The Wavefuntion}
+
+\addcontentsline{toc}{subsubsection}{2.4. The Dynamics of The Wavefunction}
+
+
+\newpage
+\fancyhead[R]{\em The State of a Partition of the Universe}
+\section*{A.3. The State of a Partition of the Universe}
+\addcontentsline{toc}{subsection}{ 3. The State of a Partition of the Universe}
+% Azaldu la función de onda efectiva y la conditional wave-function
+
+\subsection*{A.3.1. An Effective Wavefunction}
+
+\addcontentsline{toc}{subsubsection}{3.1. An Effective Wavefunction}
+
+\subsection*{A.3.2. The Conditional Wavefunction}
+
+\addcontentsline{toc}{subsubsection}{3.2. The Conditional Wavefunction}
+
+\newpage
+\begin{kapituloBerria}{Part B}{" Measuring a Quantum System means knowing\\ the state of the system after the measurement, with\\ probabilities due to the state before the measurement."}
+The Measurement 
+\end{kapituloBerria}
+\newpage
+\fancyhead[L]{\null}
+\fancyhead[R]{\null}
+\null
+\clearpage
+
+\fancyhead[L]{The Measurement}
+
+\fancyhead[R]{\em The Von Neumann Chain and Perturbing the System}
+\section*{B.1. The Von Neumann Chain and Perturbing the System}
+\addcontentsline{toc}{section}{Part B: The Measurement}
+\addcontentsline{toc}{subsection}{1. The Von Neumann Chain and Perturbing the System}
+
+\fancyhead[R]{\em The Apparently Collapsing Measurement}
+\section*{B.2. The Apparently Collapsing Measurement}
+\addcontentsline{toc}{subsection}{2. The Apparently Collapsing Measurement}
+
+\subsection*{B.2.1. Discrete Spectrum Measurement}
+\addcontentsline{toc}{subsubsection}{2.1. Discrete Spectrum Measurement}
+\subsection*{B.2.2. Continuous Spectrum Measurement}
+\addcontentsline{toc}{subsubsection}{2.2. Continuous Spectrum Measurement}
+
+\fancyhead[R]{\em The Generalized Measurement}
+\section*{B.3. The Generalized Measurement}
+\addcontentsline{toc}{subsection}{3. The Generalized Measurement}
+
+\subsection*{B.3.1. A Strong Measurement}
+\addcontentsline{toc}{subsubsection}{3.1 A Strong Measurement}
+\subsection*{B.3.2. A Weak Measurement}
+\addcontentsline{toc}{subsubsection}{3.2. A Weak Measurement}
+
+\fancyhead[R]{\em Properties of the Wavefunction vs Properties of the Trajectory}
+\section*{B.4. Properties of the Wavefunction vs Properties of the Trajectory}
+\addcontentsline{toc}{subsection}{4.  Properties of the Wavefunction vs Properties of the Trajectory}
+
+\subsection*{B.4.1 The In Position Weak Values as Trajectory Properties}
+\addcontentsline{toc}{subsubsection}{4.1. The Weak Values}
+
+\newpage
+
+
+
+\newpage
+\begin{kapituloBerria}{Part C}{" A wavefunction keeps track of\\ Tangent Universes while a Density Matrix\\ keeps track of Parallel Wavefunctions."}
+The Density Matrix 
+\end{kapituloBerria}
+\newpage
+\null
+\fancyhead[L]{\null}
+\fancyhead[R]{\null}
+\clearpage
+
+\fancyhead[L]{The Density Matrix}
+
+\fancyhead[R]{\em The Way to Keep Track of Parallel Realities}
+\section*{C.1. The Way to Keep Track of Parallel Realities}
+
+\addcontentsline{toc}{section}{Part C: The Density Matrix}
+\addcontentsline{toc}{subsection}{1. The Way to Keep Track of Parallel Realities}
+
+\fancyhead[R]{\em The Reduced Density Matrix}
+\section*{C.2. The Reduced Density Matrix}
+\addcontentsline{toc}{subsection}{2. The Reduced Density Matrix}
+
+\fancyhead[R]{\em  The Unconditional Measurement and the Choice of Basis}
+\section*{C.3. The Unconditional Measurement and the Choice of Basis}
+\addcontentsline{toc}{subsection}{3. The Unconditional Measurement and the Choice of Basis}
+
+\fancyhead[R]{\em  Pure Unravellings}
+\section*{C.4. Pure Unravellings}
+\addcontentsline{toc}{subsection}{4. Pure Unravellings}
+
+
+
+\fancyhead[R]{\em  Pure Unravellings}
+\section*{C.5. Complete Positive Maps: Any Quantum Operation is a Measurement}\addcontentsline{toc}{subsection}{5.  Complete Positive Maps: Any Quantum Operation is a Measurement}
+% Explicar lo que es la operacion mas general que se le puede hacer a un state y ver que siempre se puede ver como una measurement con el Naimark Theorem
+
+
+\fancyhead[R]{\em  Pure Unravellings}
+\section*{C.6. Noise, Decoherence and the Environment}\addcontentsline{toc}{subsection}{6. Noise, Decoherence and the Environment}
+% Zelan noise beti al dozun ulertu como una measurement realizada en el entorno, aka coupling and decoupling del entorno y el systema after unitary etc.
+
+
+\begin{kapituloBerria}{Part D}{" The Quantum Measurement and the Decohering Noise have\\ exactly the same mathematical formulation. Are they the same thing?"}
+Markovianity and\\ Master Equations
+\end{kapituloBerria}
+\newpage
+\fancyhead[L]{\null}
+\fancyhead[R]{\null}
+\null
+\clearpage
+
+\fancyhead[L]{Markovianity and Master Equations}
+
+\fancyhead[L]{Markovianity and Master Equations}
+\section*{D.1. Some Possible Quantum Markovianity Definitions}
+
+\addcontentsline{toc}{section}{Part D: Markovianity and Master Equations}
+\addcontentsline{toc}{subsection}{1. Some Possible Quantum Markovianity Definitions}
+
+\subsection*{D.1.1. Past-Future Independence}\addcontentsline{toc}{subsubsection}{1.1. Past-Future Independence}
+
+\subsection*{D.1.2. Etc.}\addcontentsline{toc}{subsubsection}{1.2. Etc.}
+
+
+\fancyhead[R]{\em  Continuous Measurements}
+\section*{D.2. Continuous Measurements:\\ Introduction to Master and Stochastic Schrödinger Equations}\addcontentsline{toc}{subsection}{2. Continuous Measurements: Introduction to Master and Stochastic Schrödinger Equations}
+
+\fancyhead[R]{\em The Lindblad Equations}
+\section*{D.3. The Most General Markovian Master Equations:\\ The Lindblad Equations}\addcontentsline{toc}{subsection}{3. The Most General Markovian Master Equations: the Lindblad Equations}
+
+\fancyhead[R]{\em Markovian Stochastic Schrödinger Equations}
+\section*{D.4. Markovian Stochastic Schrödinger Equations:\\ Pure Unravellings}\addcontentsline{toc}{subsection}{4. Markovian Stochastic Schrödinger Equations: Pure Unravellings}
+
+\fancyhead[R]{\em  The Nakajima-Zwanzig Equation}
+\section*{D.5. The Most General non-Markovian Master Equation:\\ The Nakajima-Zwanzig Equation}\addcontentsline{toc}{subsection}{5. The Most General non-Markovian Master Equation: the Nakajima-Zwanzig Equation}
+
+
+\fancyhead[R]{\em Non-Markovian Stochastic Schrödinger Equations}
+\section*{D.6. Non-Markovian Stochastic Schrödinger Equations:\\ the Conditional Wavefunction}\addcontentsline{toc}{subsection}{6. Non-Markovian Stochastic Schrödinger Equations: the Conditional Wavefunction}
+
+\subsection*{D.6.1 Wiseman's}\addcontentsline{toc}{subsubsection}{6.1. Non-Markovian Stochastic Schrödinger Equations: the Conditional Wavefunction}
+
+\subsection*{D.6.2 Ours}\addcontentsline{toc}{subsubsection}{6.2. Ours}
+% Guk eztogu en el interaction frame consideretan sino ke en general. Asike azaldu zelan al dan gure cwfakaz rekonstruidu la full reduced density adibidez ta gero redirigidu nire tratadoko part Lagrangian part Eulerian kapitulora!
+
+
+
+
+
+\newpage
+ 
+\fancyhead[R]{\em References}
+\fancyhead[L]{\null}
+
+
+\begin{thebibliography}{1}
+\addcontentsline{toc}{section}{References}
+
+\bibitem{JordiXO}
+	Oriols X, Mompart J, {\em Applied Bohmian Mechanics: From Nanoscale Systems to Cosmology} Pan Stanford, Singapore (2012)
+	
+%\bibitem{XO}
+%	Oriols X. 2007 {\em Quantum-trajectory approach to time-dependent transport in mesoscopic systems with electron-electron interactions} Phys. Rev. Lett. 98 066803
+
+\bibitem{Wyatt}
+Wyatt R. E., {\em Quantum Dynamics with Trajectories} (Springer, Berlin, 2006)
+
+%\bibitem{Dev}
+%	Devashish Pandey, Xavier Oriols, and Guillermo Albareda. {\em Effective 1D Time-Dependent Schrödinger Equations for 3D Geometrically Correlated Systems.} Materials 13.13 (2020): 3033.
+
+\bibitem{movingGrids}
+Knupp, P. \& Steinberg, S.. {\em The Fundamentals of Grid Generation.} (1993) \href{https://www.researchgate.net/publication/265361548_The_Fundamentals_of_Grid_Generation}{https://www.researchgate.net/publication/265361548\_The\_Fundamentals\_of\_Grid\_Generation} 
+
+\bibitem{Norsen}
+Norsen, T., Marian, D. \& Oriols, X. {\em Can the wave function in configuration space be replaced by single-particle wave functions in physical space?.} Synthese 192, 3125–3151 (2015). \href{https://doi.org/10.1007/s11229-014-0577-0}{https://doi.org/10.1007/s11229-014-0577-0}
+
+
+\bibitem{conditional1}
+Norsen T., {\em Bohmian Conditional Wave Functions (and the status of the quantum state)}, 2016 J. Phys.: Conf. Ser. 701 012003
+
+\bibitem{conditional2}
+	Oriols X. 2007 {\em Quantum-trajectory approach to time-dependent transport in mesoscopic systems with electron-electron interactions} Phys. Rev. Lett. 98 066803
+	
+\bibitem{nireTFGie}
+	Oyanguren X., {\em The Quantum Many Body Problem}, Bachelor's Thesis (2020) for the Nanoscience and Nanotechnology Degree (UAB).
+\href{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}{https://github.com/Oiangu9/The\_Quantum\_Many\_Body\_Problem\_-Bachellors\_Thesis-/blob/master/TheQuantumManyBodyProblem\_\_BachelorsThesis\_XabierOyangurenAsua.pdf}
+
+
+%\bibitem{conditional2}
+%Albareda, G., Lively, K., Sato, S. A., Kelly, A., \& Rubio, A. (2021). {\em Conditional wavefunction theory: a unified treatment of molecular structure and nonadiabatic dynamics.} arXiv preprint arXiv: 2107.01094.
+
+
+%\bibitem{Albareda}
+%	Albareda G, Kelly A, Rubio A. {\em Nonadiabatic quantum dynamics without potential energy surfaces.} Phys Rev Materials. 2019; 3: 023803. 
+
+%\bibitem{DATA}
+%	All the animations employed for the analysis of Section 3.2 can be found in the following link:\\
+%	\href{https://drive.google.com/drive/folders/1vnNDZrIYDlAhd-kVmmnVJgXmcdE2gxAV?usp=sharing}{https://drive.google.com/drive/folders/1vnNDZrIYDlAhd-kVmmnVJgXmcdE2gxAV?usp=sharing}
+	
+\end{thebibliography}
+
+
+\end{document}
