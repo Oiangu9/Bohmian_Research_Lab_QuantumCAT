@@ -1,42 +1,47 @@
-\contentsline {section}{Part A: The Axioms}{1}{section*.4}
-\contentsline {subsection}{1. The State of the Universe}{1}{section*.5}
-\contentsline {subsubsection}{1.1 Configuration Space - the Measurable One}{1}{section*.6}
-\contentsline {subsubsection}{1.2. A Fluid of Universes}{1}{section*.7}
-\contentsline {subsubsection}{1.3. Our Universe and the Single Measurement Axiom}{1}{section*.8}
-\contentsline {subsection}{2. The Dynamics of the Universe}{2}{section*.9}
-\contentsline {subsubsection}{2.1. The Quantum Action Principle}{2}{section*.10}
-\contentsline {subsubsection}{2.2. The Dynamics of the Density of Universes}{2}{section*.11}
-\contentsline {subsubsection}{2.3. The Dynamics of the Action Density}{2}{section*.12}
-\contentsline {subsubsection}{2.4. The Dynamics of The Wavefunction}{2}{section*.13}
-\contentsline {subsection}{ 3. The State of a Partition of the Universe}{3}{section*.14}
-\contentsline {subsubsection}{3.1. An Effective Wavefunction}{3}{section*.15}
-\contentsline {subsubsection}{3.2. The Conditional Wavefunction}{3}{section*.16}
-\contentsline {section}{Part B: The Measurement}{6}{section*.17}
-\contentsline {subsection}{1. The Von Neumann Chain and Perturbing the System}{6}{section*.18}
-\contentsline {subsection}{2. The Apparently Collapsing Measurement}{6}{section*.19}
-\contentsline {subsubsection}{2.1. Discrete Spectrum Measurement}{6}{section*.20}
-\contentsline {subsubsection}{2.2. Continuous Spectrum Measurement}{6}{section*.21}
-\contentsline {subsection}{3. The Generalized Measurement}{6}{section*.22}
-\contentsline {subsubsection}{3.1 A Strong Measurement}{6}{section*.23}
-\contentsline {subsubsection}{3.2. A Weak Measurement}{6}{section*.24}
-\contentsline {subsection}{4. Properties of the Wavefunction vs Properties of the Trajectory}{6}{section*.25}
-\contentsline {subsubsection}{4.1. The Weak Values}{6}{section*.26}
-\contentsline {section}{Part C: The Density Matrix}{9}{section*.27}
-\contentsline {subsection}{1. The Way to Keep Track of Parallel Realities}{9}{section*.28}
-\contentsline {subsection}{2. The Reduced Density Matrix}{9}{section*.29}
-\contentsline {subsection}{3. The Unconditional Measurement and the Choice of Basis}{9}{section*.30}
-\contentsline {subsection}{4. Pure Unravellings}{9}{section*.31}
-\contentsline {subsection}{5. Complete Positive Maps: Any Quantum Operation is a Measurement}{9}{section*.32}
-\contentsline {subsection}{6. Noise, Decoherence and the Environment}{9}{section*.33}
-\contentsline {section}{Part D: Markovianity and Master Equations}{12}{section*.34}
-\contentsline {subsection}{1. Some Possible Quantum Markovianity Definitions}{12}{section*.35}
-\contentsline {subsubsection}{1.1. Past-Future Independence}{12}{section*.36}
-\contentsline {subsubsection}{1.2. Etc.}{12}{section*.37}
-\contentsline {subsection}{2. Continuous Measurements: Introduction to Master and Stochastic Schr\IeC {\"o}dinger Equations}{12}{section*.38}
-\contentsline {subsection}{3. The Most General Markovian Master Equations: the Lindblad Equations}{12}{section*.39}
-\contentsline {subsection}{4. Markovian Stochastic Schr\IeC {\"o}dinger Equations: Pure Unravellings}{12}{section*.40}
-\contentsline {subsection}{5. The Most General non-Markovian Master Equation: the Nakajima-Zwanzig Equation}{12}{section*.41}
-\contentsline {subsection}{6. Non-Markovian Stochastic Schr\IeC {\"o}dinger Equations: the Conditional Wavefunction}{12}{section*.42}
-\contentsline {subsubsection}{6.1. Non-Markovian Stochastic Schr\IeC {\"o}dinger Equations: the Conditional Wavefunction}{12}{section*.43}
-\contentsline {subsubsection}{6.2. Ours}{12}{section*.44}
-\contentsline {section}{References}{13}{section*.45}
+\contentsline {section}{Philosophical Prolegomena}{1}{section*.4}
+\contentsline {subsection}{On the Noumenon and Phenomenon}{1}{section*.5}
+\contentsline {subsection}{On Models, Interpretations and Narratives}{4}{section*.6}
+\contentsline {section}{Part A: The Axioms}{8}{section*.8}
+\contentsline {subsection}{1. The State of the Universe}{8}{section*.9}
+\contentsline {subsubsection}{1.1. Reviving Postulates of Classical Mechanics}{8}{section*.10}
+\contentsline {subsubsection}{1.1. A Fluid of Tangent Universes}{9}{section*.11}
+\contentsline {subsubsection}{1.3. The Lagrangian and Eulerian Frames}{10}{section*.13}
+\contentsline {subsubsection}{1.4. The Measurement Axiom}{11}{section*.14}
+\contentsline {subsection}{2. The Dynamics of the Universe}{12}{section*.15}
+\contentsline {subsubsection}{2.1. The Quantum Action Principle}{12}{section*.16}
+\contentsline {subsubsection}{2.2. The Dynamics of the Density of Universes}{12}{section*.17}
+\contentsline {subsubsection}{2.3. The Dynamics of the Action Density}{12}{section*.18}
+\contentsline {subsubsection}{2.4. The Dynamics of The Wavefunction}{12}{section*.19}
+\contentsline {subsection}{ 3. The State of a Partition of the Universe}{13}{section*.20}
+\contentsline {subsubsection}{3.1. The Epistemology of the Model}{13}{section*.21}
+\contentsline {subsubsection}{3.2. An Effective Wavefunction}{13}{section*.22}
+\contentsline {subsubsection}{3.3. The Conditional Wavefunction}{13}{section*.23}
+\contentsline {section}{Part B: The Measurement}{16}{section*.24}
+\contentsline {subsection}{1. The Von Neumann Chain and Perturbing the System}{16}{section*.25}
+\contentsline {subsection}{2. The Apparently Collapsing Measurement}{16}{section*.26}
+\contentsline {subsubsection}{2.1. Discrete Spectrum Measurement}{16}{section*.27}
+\contentsline {subsubsection}{2.2. Continuous Spectrum Measurement}{16}{section*.28}
+\contentsline {subsection}{3. The Generalized Measurement}{16}{section*.29}
+\contentsline {subsubsection}{3.1. A Strong Measurement}{16}{section*.30}
+\contentsline {subsubsection}{3.2. A Weak Measurement}{16}{section*.31}
+\contentsline {subsection}{4. Properties of the Wavefunction vs Properties of the Trajectory}{16}{section*.32}
+\contentsline {subsubsection}{4.1. The Weak Values}{16}{section*.33}
+\contentsline {section}{Part C: The Density Matrix}{19}{section*.34}
+\contentsline {subsection}{1. The Way to Keep Track of Parallel Realities}{19}{section*.35}
+\contentsline {subsection}{2. The Reduced Density Matrix}{19}{section*.36}
+\contentsline {subsection}{3. The Unconditional Measurement and the Choice of Basis}{19}{section*.37}
+\contentsline {subsection}{4. Pure Unravellings}{19}{section*.38}
+\contentsline {subsection}{5. Complete Positive Maps: Any Quantum Operation is a Measurement}{19}{section*.39}
+\contentsline {subsection}{6. Noise, Decoherence and the Environment}{19}{section*.40}
+\contentsline {section}{Part D: Markovianity and Master Equations}{22}{section*.41}
+\contentsline {subsection}{1. Some Possible Quantum Markovianity Definitions}{22}{section*.42}
+\contentsline {subsubsection}{1.1. Past-Future Independence}{22}{section*.43}
+\contentsline {subsubsection}{1.2. Etc.}{22}{section*.44}
+\contentsline {subsection}{2. Continuous Measurements: Introduction to Master and Stochastic Schr\IeC {\"o}dinger Equations}{22}{section*.45}
+\contentsline {subsection}{3. The Most General Markovian Master Equations: the Lindblad Equations}{22}{section*.46}
+\contentsline {subsection}{4. Markovian Stochastic Schr\IeC {\"o}dinger Equations: Pure Unravellings}{22}{section*.47}
+\contentsline {subsection}{5. The Most General non-Markovian Master Equation: the Nakajima-Zwanzig Equation}{22}{section*.48}
+\contentsline {subsection}{6. Non-Markovian Stochastic Schr\IeC {\"o}dinger Equations: the Conditional Wavefunction}{22}{section*.49}
+\contentsline {subsubsection}{6.1. Wiseman's}{22}{section*.50}
+\contentsline {subsubsection}{6.2. Ours}{22}{section*.51}
+\contentsline {section}{References}{23}{section*.52}
