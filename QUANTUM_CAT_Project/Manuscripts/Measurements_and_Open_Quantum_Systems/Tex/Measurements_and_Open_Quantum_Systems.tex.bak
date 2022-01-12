@@ -412,21 +412,21 @@ Given a property $f$ of the fluid (like the density, the velocity or any other d
 \addcontentsline{toc}{subsubsection}{1.4. The Measurement Axiom}
 % Why QMs seem to be a non-deterministic theory, where in reality it is! (Since it can be formulated with only unitary deterministic time evolution!)
 
-If we knew $\vec{\xi}\in\R^N$ was the position of every particle our Universe at an arbitrary single time, say at time $t_0$, we could then deterministically predict the time evolution of our Universe using the trajectory ensemble $\vec{x}(\vec{\xi},t)$. However, knowning the position of every particle in the Universe at the same time is far from being possible. Therefore, we cannot exactly know which of the tangent Universes is ours. From our point of view, the configuration of our Universe is thus an unknown, a random variable. 
+If we knew $\vec{\xi}\in\R^N$ was the position of every particle of our Universe at an arbitrary single time, say at time $t_0$, we could then deterministically predict the time evolution of our Universe using the trajectory ensemble $\vec{x}(\vec{\xi},t)$. However, knowning the position of every particle in the Universe at the same time is far from being possible. Therefore, we cannot exactly know which of the tangent Universes is ours. From our point of view, the configuration of our Universe is thus an unknown, a random variable. 
 
 Since a priori, we have no information about which of the Universes is ours, we can refer to the tangent Universes as {\bf possible Universes}. A priori then, the best guess we can make is giving the same probability to each of the possible Universes to be ours. As the relative amount of Universes is given by the density $\rho(\vec{x},t)$, which we conveniently decided to normalize to unity, this would mean that we could identify the probability density of the configuration of our Universe with the density of tangent Universes (assigning a same probability to each possible Universe, we will have a weight due to their relative amount). That is, for a domain $V\subseteq \R^N$:
 \begin{equation}
 P\qty(\text{our Universe has its configuration in }V\text{ at time }t)=P(\vec{x}\in V\ |\ t) := \iint_{V}\rho(\vec{x},t)\ dx_1\cdots dx_N
 \end{equation}
 
-If instead we are only interested on the probability that a subset of the particles of our Universe $\vec{y}=(x_1,...,x_m)$ such that $m<N$, have their configuration in $V_y\subseteq \R^m$, we would simply use the marginal probability density derived from the global density:
+If instead we are only interested on the probability that a subset of the particles of our Universe $\vec{y}=(x_1,...,x_m)$ such that $m<N$, have their configuration in $V_y\subseteq \R^m$, we would simply use the marginal probability density derived from the global prior density:
 $$
 P(\vec{y}\in V_y\ |\ t) := \iint_{V_y}\qty(\iint_{\Omega_t}\rho(\vec{x},t)\ dx_{m+1}\cdots dx_N)dx_1\cdots dx_m
 $$
 \mybox{
-Note that for the introduction of the narrative, we have been saying that ontologically our Universe has a discrete trajectory $\vec{x}(\vec{\xi},t)$, however, since in practice it is not possible to know the position of a particle with infinite precision (since we are dealing with continuous variables and not a variable with a countable support), the tangent Universes we consider ontologically are those ones weighted by the density $\rho(\vec{\xi},t)$ and not the actual discrete ones. It is just the discussion many authors have posed on the meaninglessness of observing a discrete value for a continuous probability density variable. We will see the relevance of this when we talk about the local conservation of the amount of Universes in the next section.
+Note that for the introduction of the narrative, we have been saying that ontologically our Universe has a discrete trajectory $\vec{x}(\vec{\xi},t)$, however, since in practice it is not possible to know the position of a particle with infinite precision (since we are dealing with continuous variables and not a variable with a countable support), the tangent Universes we should consider ontologically are those ones weighted by the density $\rho(\vec{\xi},t)$ and not the actual discrete ones. That is to say, the density of Universes will not need to be preserved along the trajectories. Instead they will need to be preserved in subsets of $R^N$ that move along with the trajectories! This is related to the typical discussion on the meaninglessness of observing a discrete value for a continuous probability density variable. We will see the relevance of this when we talk about the local conservation of the amount of Universes in the next section.\\
 
-It is interesting however that this opens the question of whether quentum theory is just the continous limit of a more fundamental theory where ther is actually a countably infinite number of possible Universes! If their number if very big, most predictions would coincide at a big degree. However, they could have different predictions for some very fine experiments. This alternative Discrete Tangent Universe Quantum theory was discussed for instance in Ref. \cite{TangentWiseman}.
+It is interesting however that this observation opens the question of whether quantum theory is just the continous limit of a more fundamental theory where there is actually a countable number of possible Universes! If their number is very big, most predictions would coincide at a big degree with the theory were there is an uncountable number of Universes. However, they could clearly have different predictions for some very fine experiments. Different predictions that could be perceived in the phenomenon and thus help falsify the underlying theory. It is here where we can see the relevance of a narrative given to a physical theory. It can open ways to search for alternative theories and test non-trivial limits of the current theory. Actually, such an alternative Discrete Tangent Universe Quantum Theory was discussed very recently in Ref. \cite{TangentWiseman} by Wiseman et al.
 }
 
 \newpage
@@ -435,9 +435,123 @@ It is interesting however that this opens the question of whether quentum theory
 \addcontentsline{toc}{subsection}{2. The Dynamics of the Universe}
 % Las ecuaciones dinámicas de la densidad y de la acción. La ecuación de Schrödinger
 
-\subsection*{A.2.1. The Quantum Action Principle}
+After understanding the way in which we can define the state of the Universal fluid, let us now derive the equations of motion for its defining fields. For this, we will first derive the equations of motion of the particles in the physical space of each Universe from symmetry considerations about the nature of physical space and time. Then we will introduce the possibility of interaction between different Universes, and an axiom similar to the Second Law of Thermodynamics, which will lead us to the well known Schrödinger Equation, evolving both the configuration-space velocity field and the Universe density at once.
 
-\addcontentsline{toc}{subsubsection}{2.1. The Quantum Action Principle}
+\subsection*{A.2.1. The Action Principle for each Universe}
+
+\addcontentsline{toc}{subsubsection}{2.1. The Action Principle for each Universe}
+
+Let us first focus on a single Universe of the ensemble of Tangent Universes and the particles observed within it by us in physical space.
+
+Let us denote the degrees of freedom of the $k$-th particle as $\vec{q}_k=(x_{3k-2},\ x_{3k-1},\ x_{3k} )$ with $k\in\{1,...,n\}$ such that $\vec{x}=(x_1,...,x_N)\equiv (\vec{q}_{1},...,\vec{q}_n)$.
+
+The Stationary Action Axiom states that there exists some function $L(t, \vec{x}, \dv{\vec{x}}{t})$, called the {\bf Lagrangian}, such that given the boundary values for the trajectory of the ensemble of particles $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$ for some fixed $t_0<t_f\in\R$, $\vec{x}_0, \vec{x}_f\in\R^N$, the trajectory followed by the ensemble of particles $\vec{x}(t)$, what we will call the physical trajectory, is that yielding a critical point for the so called action functional, which is the integral of the Lagrangian along the positions and velocities taken by the trajectory:
+\begin{equation}
+\s\qty[\vec{x}(t);\ t_0,t_f,x_0, x_f] = \int_{t_0}^{t_f} L\qty(t, \vec{x}(t),\dv{\vec{x}(t)}{t}(t))\ dt
+\end{equation}
+By a critical point, we mean a trajectory $\vec{x}(t)$ which if perturbed to the valid trajectories closest to it (the ones satisfying the boundaries), yields an action that is a critical point, aka, the variation of the action is zero in the locality of the trajectory taken by the system (the action is stationary).
+
+It is a simple result of variational calculus that a necessary condition for such a trajectory is to obey the $N$, so called, Euler-Lagrange equations:
+\begin{equation}
+\pdv{L}{x_j}-\dv{}{t}\pdv{L}{\qty(\dv{\vec{x_j}}{t})}=0\quad \quad \forall j\in\{1,...,N\}
+\end{equation}
+It turns out that the symmetries of the Lagrangian $L$ are transferred to symmetries in the resulting differential equations. This means that if we choose a Lagrangian with the postulates about symmetries of the Universe that we like, then the resulting laws of motion will obey them as well.
+
+Let us first consider an isolated Universe (from the rest of Universes in the fluid) where there is only one particle, $\vec{x}=\vec{q}$. If there is only one particle (and one Universe, or the density of Universes is homogeneous), there should not be any influences on its motion, other than the ones caused by the structure of the physical space and time. We can introduce them by applying their particularities to the Lagrangian. 
+
+First of all we will assume the Universal {\bf time} axis is {\bf homogeneous} with respect to the laws of physics: no matter where in time we are, the same equations of motion should work. This means that the Lagrangian should not depend on time:
+\begin{equation}
+L\qty(t+\tau, \vec{q}, \dv{\vec{q}}{t})=L\qty(t, \vec{q}, \dv{\vec{q}}{t})\quad \forall t,\tau\in \R \Longrightarrow L\qty(t, \vec{q}, \dv{\vec{q}}{t})=L\qty(\vec{q}, \dv{\vec{q}}{t})
+\end{equation}
+\mybox{
+Technically, for the resulting equations to be invariant under a symmetry, we would have enough with the Lagrangian getting the same up to an additive divergence term (with respect to the independent variables). In particular, we would have enough if:
+\begin{equation}
+L\qty(t+\tau, \vec{q}(t), \dv{\vec{q}(t)}{t})=L\qty(t, \vec{q}, \dv{\vec{q})}{t})+\dv{}{t}f(t,\vec{q})\quad \forall \tau,t
+\end{equation}
+However, the simplest Lagrangian could be obtained by further assuming that the Lagrangian itself is invariant under such a symmetry.
+}
+Now, similarly, physical space should be homogeneous, meaning that wherever we center the coordinate system (apply a shift to the positions), the laws of physics should look the same. This means that we are imposing the Lagrangian to avoid an explicit dependence on the position of the particle:
+\begin{equation}
+L\qty( \vec{q}+\vec{c}, \dv{\vec{q}}{t})=L\qty( \vec{q}, \dv{\vec{q}}{t})\quad \forall \vec{c},\vec{q}\in \R^3 \Longrightarrow L\qty( \vec{q}, \dv{\vec{q}}{t})=L\qty( \dv{\vec{q}}{t})
+\end{equation}
+% En + de una particle ojo ke space homogenenous nahi dozu esan +(c,c,c,c) eitzie a (q1,q2,q3,q4)!!!!!!
+% The same for rotations! Es la misma rotacion en R3 a cada partícula!
+
+We will also assume the natural axiom that the physical space is isotropic, meaning that if we rotate the coordinate system, the equations of motion should look the same. Assuming the Lagrangian as well should be invariant, this will avoid the Lagrangian to depend on the direction of the velocities $\dv{\vec{q}}{t}$, leaving it only to depend potentially on its magnitude\footnote{Since $||\dv{\vec{q}}{t}||$ has its image in $[0,\infty)\subset\R$, and $f(s)=s^2$ is a homeomorphism from $[0,\infty)\subset\R$ to itself, we can equivalently consider the dependence on $||\dv{\vec{q}}{t}||$ or on $||\dv{\vec{q}}{t}||^2$ with a little notational abuse for the Lagrangian $L$.} $||\dv{\vec{q}}{t}||^2=\dv{x_1}{t}^2+\dv{x_1}{t}^2+\dv{x_1}{t}^2$. Denoting a rotation of angle $\phi$ about an axis $\vec{u}\in\R^3$ for a vector in $\R^3$ as $Rot(\cdot;\phi, \vec{u})$:
+\begin{equation}
+L\qty( Rot\qty( \dv{\vec{q}}{t}; phi, \vec{u} ))=L\qty( \dv{\vec{q}}{t})\quad \forall \phi\in\R\ \forall \vec{u}\in \R^3 \Longrightarrow L\qty(\dv{\vec{q}}{t})=L\qty( \Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)
+\end{equation}
+Finally, we will assume Galilean relativity. That the equations of motion should be invariant under a constant velocity transformation for the coordinate system. That is, any observer moving at a constant velocity should observe the same physical laws. This will lead us to conclude that $L\qty( ||\dv{\vec{q}}{t}||^2)=k ||\dv{\vec{q}}{t}||^2$ for some real constant $k$.
+
+To see why, consider an infinitesimal Galilean transformation of the coordinate system by a constant velocity $\vec{\varepsilon}$, with $\vec{\varepsilon}$ in an $\R^3$ ball centered at $\vec{0}$ with an arbitrarily small radious $\delta>0$. Defining $\vec{v}:=\dv{\vec{q}}{t}+\vec{\varepsilon}$, let us expand $L\qty( ||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2)=L(||\vec{v}||^2)$ in power series, centered at $\vec{\varepsilon}=\vec{0}$:
+\begin{equation}
+L(||\vec{v}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L(||\vec{v}||^2)}{||\vec{v}||^2}\Big\rvert_{\vec{v}=\dv{\vec{q}}{t}}\cdot\qty(||\vec{v}||^2-||\dv{\vec{q}}{t}||^2)+o\qty(\qty(||\vec{v}||^2-||\dv{\vec{q}}{t}||^2)^2  )
+\end{equation}
+Using that:
+\begin{equation}
+||\vec{v}||^2-||\dv{\vec{q}}{t}||^2=||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2-||\dv{\vec{q}}{t}||^2=||\dv{\vec{q}}{t}||^2+||\vec{\varepsilon}||^2+2\vec{q}\cdot \vec{\varepsilon}-||\dv{\vec{q}}{t}||^2=2\dv{\vec{q}}{t}\cdot \vec{\varepsilon}
+\end{equation}
+we get that:
+\begin{equation}
+L(||\vec{v}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})+o\qty((||\vec{\varepsilon}||)^2  )
+\end{equation}
+Since, we could choose $||\vec{\varepsilon}||^2$ arbitrarily small, we could take the expression to first order, such that:
+\begin{equation}
+L(||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})
+\end{equation}
+This Lagrangian for the Galilean transformation of the coordinate system will lead to the same equations of motion as $L(||\dv{\vec{q}}{t}||^2)$ if the additional term is a total time derivative. That is:
+\begin{equation}
+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})=\dv{f(\vec{q}(t),t)}{t}
+\end{equation}
+for some arbitrary well behaved function $f$. That is:
+$$
+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty( \vec{\varepsilon}\cdot \dv{\vec{q}}{t})=\pdv{f(\vec{q},t)}{t}+\vec{\nabla}_qf(\vec{q},t)\cdot \dv{\vec{q}}{t}
+$$
+the only variable in the left hand side is $\dv{\vec{q}}{t}$, no dependence on $t$ nor $\vec{q}$. Therefore, the right hand side will need to be so, meaning $\pdv{f(\vec{q},t)}{t}$ is a constant $a$ and $\vec{\nabla}_qf(\vec{q},t)$ another constant $\vec{b}$. This means that the left hand side should at most be linear in $\dv{\vec{q}}{t}$. Since the $\dv{\vec{q}}{t}$ term is already present in the left-hand-side, $\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}$ will need to be constant. Therefore:
+\begin{equation}
+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}=C \Longrightarrow L\qty(||\dv{\vec{q}}{t}||^2) = C||\dv{\vec{q}}{t}||^2+c
+\end{equation}
+for some constants $C,c\in\R$. Since the constant $c$ can be regraded as a total time derivative as well, the resulting equations of motion will be the same setting $c=0$. This would leave the Lagrangian for a free particle as:
+\begin{equation}
+L\qty(t, \vec{q}, \dv{\vec{q}}{t})=C||\dv{\vec{q}}{t}||^2
+\end{equation}
+We call this term the {\bf kinetic energy} of the particle.
+
+Now, if we had more free particles in this Universe without interaction between them, we could repeat the argument for each of their degrees of freedom and would have that the Lagrangian of the Universe would be a sum of their kinetic energies, just that the constants would not need to be the same.
+\begin{equation}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}C_k||\dv{\vec{q_k}}{t}||^2
+\end{equation}
+The Lagrangian will provide the same equations of motion for any non-zero multiplicative global factor, which means we could establish one of the $C_k=1$ and the rest measure them relative to that one. That is, we could use the constant of one of the particles as a standard and scale the rest accordingly. This would result in a very particular choice of units, which we will not do. Instead, for historical reasons that will become clear in a moment, we will write $C_k=m_k/2$.
+
+Now, if there was any kind of spatial influence that the position of one particle could exert on the position of the rest, we could model this influence of the $k$-th particle on the $j$-th one as an arbitrary function $V_{kj}(\vec{q}_k, \vec{q}_j)$ in the Lagrangian giving a constraint between their positions. This would leave:
+\begin{equation}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}\frac{1}{2}m_k||\dv{\vec{q_k}}{t}||^2+\sum_{k<j}V_{kj}(\vec{q}_k, \vec{q}_j)
+\end{equation}
+Rearranging their position variables as:
+\begin{equation}
+\vec{w_{kj}}=\frac{m_k\vec{q}_k+m_j\vec{q}_j}{m_k+m_j} \quad \vec{r_{kj}}=\vec{q}_1-\vec{q}_2
+\end{equation}
+where $\vec{w_{kj}}$ is the weighted center of mass between the particles and $\vec{r_{kj}}$ is the relative position. This would leave the influence function abusing notation as $V_{kj}(\vec{w_{kj}}, \vec{r_{kj}})$. Now, translational invariance due to homogeneity of space would require that if the coordinate system is displaced by $\vec{c}\in\R^3$, meaning that the relative position of the particles $\vec{r_{kj}}$ is left the same but the gravicenter is displaced to $\vec{w_{kj}}+\vec{c}$, the Lagrangian be the same (up to a total time derivative that we will set to zero for simplicity). That is $V_{kj}(\vec{w_{kj}}+\vec{c},\vec{r_{kj}})=V_{kj}(\vec{w_{kj}},\vec{r_{kj}})$ $\forall \vec{c}\in\R^3$. Then this means that $V_{kj}$ cannot be a function of $\vec{w_{kj}}$. Then, due tot he rotational invariance of the Lagrangian required by the isotropy of space, $V_{kj}(Rot(\vec{r_{kj}};\phi, \vec{u}))=V_{kj}(\vec{r_{kj}})$ for any rotation angle $\phi$ and axis $\vec{u}$. This could only be true if the mutual restriction was a function of the magnitude $||\vec{r_{kj}}||$ and not the direction. Thus the only allowed potential interaction term should be as a function of the relative distance of the particles $V(||\vec{q}_k-\vec{q}_j||)$. Leaving a total Universe Lagrangian as:
+\begin{equation}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}\frac{1}{2} m_k||\dv{\vec{q}_k}{t}||^2+\sum_{k<j} V_{kj}(||\vec{q}_k-\vec{q}_j||)
+\end{equation}
+Substituting this Lagrangian in the Euler-Lagrange Equation would leave that the physical trajectory followed by the Universe would need to be given by the system of partial differential equations:
+\begin{equation}
+m_k \dv[2]{\vec{q}_k(t)}{t} = -\sum_{j\neq k}\vec{\nabla}_{\vec{q}_k} V_{kj}(||\vec{q}_k(t)-\vec{q}_j(t)||)
+\end{equation}
+Which is the well known Newton's Second Law of classical mechanics.
+
+More conveniently % en plan configuration space al dala exprese tal ke así, pam!
+% Queda un signo - que poner a los potenciales y comentar que llamamos masa a las m_k y energí apotencial a las V
+
+% Oin sería introducir la opción de que diferentes Universos se afecten entre ellos en función de la densidad de Universos. Introduces el potencial Q() incluso podrías justificar que sea en función de rho/xi, x/xi, y podrías demostrar que sigue cumpliendo que el espacio sea tal y cual...o no
+% Oin sería introducir el momento y el desarrollo para tener la Hmailton principal function, y decir lo conveniente que es para una posición incial y tiempo inicial dado.
+% cuando lo tengas mete el postulado de Fisher Information y de que el potencial cuántico sea cte. y optimiza el meta lagrangiano del universo para obtener las eqt of motion que querías.
+% haz muchas más sub-secciones xD
+% Y lo de la masa en el Q...bueno, ya veremos. Podrzias intentar justificarlo mirando back a cuando tenías un Universo de una so
+
+
+
 
 \subsection*{A.2.2. The Dynamics of the Density of Universes}
 
