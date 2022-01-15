@@ -232,7 +232,7 @@ $\ $Winter 2021-2022
 \newpage
 \pagestyle{fancy}
 \fancyhead[L]{Philosophical Prolegomena}
-\fancyhead[R]{\em On the Nnoumenon and Phenomenon}
+\fancyhead[R]{\em On the Noumenon and Phenomenon}
 
 \section*{\centering \huge{Philosophical Prolegomena}} %Preface
 \addcontentsline{toc}{section}{Philosophical Prolegomena}
@@ -437,112 +437,136 @@ It is interesting however that this observation opens the question of whether qu
 
 After understanding the way in which we can define the state of the Universal fluid, let us now derive the equations of motion for its defining fields. For this, we will first derive the equations of motion of the particles in the physical space of each Universe from symmetry considerations about the nature of physical space and time. Then we will introduce the possibility of interaction between different Universes, and an axiom similar to the Second Law of Thermodynamics, which will lead us to the well known Schrödinger Equation, evolving both the configuration-space velocity field and the Universe density at once.
 
-\subsection*{A.2.1. The Action Principle for each Universe}
+\subsection*{A.2.1. The Stationary Action Axiom within each Universe}
 
-\addcontentsline{toc}{subsubsection}{2.1. The Action Principle for each Universe}
+\addcontentsline{toc}{subsubsection}{2.1. The Stationary Action Axiom within each Universe}
 
-Let us first focus on a single Universe of the ensemble of Tangent Universes and the particles observed within it by us in physical space.
+Let us first focus on a single Universe of the ensemble of Tangent Universes and the particles observed within its physical space.
 
-Let us denote the degrees of freedom of the $k$-th particle as $\vec{q}_k=(x_{3k-2},\ x_{3k-1},\ x_{3k} )$ with $k\in\{1,...,n\}$ such that $\vec{x}=(x_1,...,x_N)\equiv (\vec{q}_{1},...,\vec{q}_n)$.
+Let us denote the degrees of freedom of the $k$-th particle as $\vec{q}_k=(x_{3k-2},\ x_{3k-1},\ x_{3k} )$ with $k\in\{1,...,n\}$, such that we denote the degrees of the ensemble of particles as $\vec{x}=(x_1,...,x_N)\equiv (\vec{q}_{1},...,\vec{q}_n)$.
 
-The Stationary Action Axiom states that there exists some function $L(t, \vec{x}, \dv{\vec{x}}{t})$, called the {\bf Lagrangian}, such that given the boundary values for the trajectory of the ensemble of particles $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$ for some fixed $t_0<t_f\in\R$, $\vec{x}_0, \vec{x}_f\in\R^N$, the trajectory followed by the ensemble of particles $\vec{x}(t)$, what we will call the physical trajectory, is that yielding a critical point for the so called action functional, which is the integral of the Lagrangian along the positions and velocities taken by the trajectory:
-\begin{equation}
+The {\bf Stationary Action Axiom} within each Universe states that given the boundary values for the trajectory of the ensemble of particles $\vec{x}(t)$ (for a single Universe) as $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$ for some fixed $t_0<t_f\in\R$, $\vec{x}_0, \vec{x}_f\in\R^N$, there exists some function $L(t, \vec{x}, \dv{\vec{x}}{t})$, called the {\bf Lagrangian} of the Universe, such that, the trajectory taken by the ensemble $\vec{x}(t)$, which we call the {\bf physical trajectory}, is that yielding a critical point of the so called {\bf action functional}, which is the integral of the Lagrangian along the positions and velocities taken by the trajectory:
+\begin{equation}\label{action}
 \s\qty[\vec{x}(t);\ t_0,t_f,x_0, x_f] = \int_{t_0}^{t_f} L\qty(t, \vec{x}(t),\dv{\vec{x}(t)}{t}(t))\ dt
 \end{equation}
 By a critical point, we mean a trajectory $\vec{x}(t)$ which if perturbed to the valid trajectories closest to it (the ones satisfying the boundaries), yields an action that is a critical point, aka, the variation of the action is zero in the locality of the trajectory taken by the system (the action is stationary).
 
 It is a simple result of variational calculus that a necessary condition for such a trajectory is to obey the $N$, so called, Euler-Lagrange equations:
-\begin{equation}
-\pdv{L}{x_j}-\dv{}{t}\pdv{L}{\qty(\dv{\vec{x_j}}{t})}=0\quad \quad \forall j\in\{1,...,N\}
+\begin{equation}\label{EL}
+\pdv{L}{x_j}-\dv{}{t}\pdv{L}{\qty(\dv{x_j}{t})}=0\quad \quad \forall j\in\{1,...,N\}
 \end{equation}
-It turns out that the symmetries of the Lagrangian $L$ are transferred to symmetries in the resulting differential equations. This means that if we choose a Lagrangian with the postulates about symmetries of the Universe that we like, then the resulting laws of motion will obey them as well.
+These partial differential equations are the {\bf equations of motion} of the system.
+\mybox{
+{\bf Derivation of the Euler-Lagrange Equations}
+}
 
-Let us first consider an isolated Universe (from the rest of Universes in the fluid) where there is only one particle, $\vec{x}=\vec{q}$. If there is only one particle (and one Universe, or the density of Universes is homogeneous), there should not be any influences on its motion, other than the ones caused by the structure of the physical space and time. We can introduce them by applying their particularities to the Lagrangian. 
+\subsection*{A.2.1.1. The Lagrangian of a Universe from symmetries of physical space and time}
 
-First of all we will assume the Universal {\bf time} axis is {\bf homogeneous} with respect to the laws of physics: no matter where in time we are, the same equations of motion should work. This means that the Lagrangian should not depend on time:
+It turns out that the symmetries of the Lagrangian $L$ are transferred to symmetries of the resulting differential equations. This means that if we construct a Lagrangian obeying the postulates about symmetries of the Universe that we prefer, then the resulting laws of motion will obey them as well.
+
+\subsection*{A Single Universe and a Single Particle}
+Let us first consider an isolated Universe (from the rest of Universes in the fluid) where there is only one particle, $\vec{x}=\vec{q}$. If there is only one particle (and one Universe), there should not be any influences on its motion, other than the ones caused by the structure of the physical space and time in which it lies.
+
+First of all we will assume the Universal {\bf time} axis is {\bf homogeneous} with respect to the laws of physics: no matter where in time we are, the same equations of motion should work, the laws of physics should be the same. This means that the Lagrangian should not depend on time:
 \begin{equation}
-L\qty(t+\tau, \vec{q}, \dv{\vec{q}}{t})=L\qty(t, \vec{q}, \dv{\vec{q}}{t})\quad \forall t,\tau\in \R \Longrightarrow L\qty(t, \vec{q}, \dv{\vec{q}}{t})=L\qty(\vec{q}, \dv{\vec{q}}{t})
+L\qty(t+\tau,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})\quad \forall t,\tau\in \R \Longrightarrow L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(\vec{q},\ \dv{\vec{q}}{t})
 \end{equation}
 \mybox{
-Technically, for the resulting equations to be invariant under a symmetry, we would have enough with the Lagrangian getting the same up to an additive divergence term (with respect to the independent variables). In particular, we would have enough if:
+Technically, the resulting equations of motion are the same for a Lagrangian and the same Lagrangian with an additive divergence term (with respect to the independent variables), in this case a total time derivative. That is, the Lagrangian $L(t, \vec{q}, \dv{\vec{q}})$ and $L(t, \vec{q}, \dv{\vec{q}})+\dv{}{t}f(t,\vec{q})$ for any "well behaved" function $f$ of time and position, would yield the same equations of motion. Therefore, for this first symmetry, we would have had enough if:
 \begin{equation}
-L\qty(t+\tau, \vec{q}(t), \dv{\vec{q}(t)}{t})=L\qty(t, \vec{q}, \dv{\vec{q})}{t})+\dv{}{t}f(t,\vec{q})\quad \forall \tau,t
+L\qty(t+\tau,\ \vec{q}(t),\  \dv{\vec{q}(t)}{t})=L\qty(t,\  \vec{q},\  \dv{\vec{q}(t)}{t})+\dv{}{t}f(t,\ \vec{q}(t))\quad \forall \tau,t
 \end{equation}
-However, the simplest Lagrangian could be obtained by further assuming that the Lagrangian itself is invariant under such a symmetry.
+for some "well behaved" function $f$ of time and position.\\
+
+However, the simplest Lagrangian could be obtained by further assuming if possible that the Lagrangian itself is invariant under such a symmetry, which we will assume by Occam's Razor\footnote{If there is a simpler yet equivalent explanation for a same phenomeonon, the simplest one should be preferred.} for all symmetries but the last one.\\
+
+The same happens for a global multiplicative constant in the Lagrangian. The resulting equations of motion will be the same irrespective of the multiplied global constant.
+
+
 }
-Now, similarly, physical space should be homogeneous, meaning that wherever we center the coordinate system (apply a shift to the positions), the laws of physics should look the same. This means that we are imposing the Lagrangian to avoid an explicit dependence on the position of the particle:
+Now, similarly, {\bf physical space} should be {\bf homogeneous}, meaning that wherever we center the coordinate system (apply a shift to the positions), the laws of physics should look the same. This means that we are imposing the Lagrangian to avoid an explicit dependence on the position of the particle:
 \begin{equation}
 L\qty( \vec{q}+\vec{c}, \dv{\vec{q}}{t})=L\qty( \vec{q}, \dv{\vec{q}}{t})\quad \forall \vec{c},\vec{q}\in \R^3 \Longrightarrow L\qty( \vec{q}, \dv{\vec{q}}{t})=L\qty( \dv{\vec{q}}{t})
 \end{equation}
 % En + de una particle ojo ke space homogenenous nahi dozu esan +(c,c,c,c) eitzie a (q1,q2,q3,q4)!!!!!!
 % The same for rotations! Es la misma rotacion en R3 a cada partícula!
 
-We will also assume the natural axiom that the physical space is isotropic, meaning that if we rotate the coordinate system, the equations of motion should look the same. Assuming the Lagrangian as well should be invariant, this will avoid the Lagrangian to depend on the direction of the velocities $\dv{\vec{q}}{t}$, leaving it only to depend potentially on its magnitude\footnote{Since $||\dv{\vec{q}}{t}||$ has its image in $[0,\infty)\subset\R$, and $f(s)=s^2$ is a homeomorphism from $[0,\infty)\subset\R$ to itself, we can equivalently consider the dependence on $||\dv{\vec{q}}{t}||$ or on $||\dv{\vec{q}}{t}||^2$ with a little notational abuse for the Lagrangian $L$.} $||\dv{\vec{q}}{t}||^2=\dv{x_1}{t}^2+\dv{x_1}{t}^2+\dv{x_1}{t}^2$. Denoting a rotation of angle $\phi$ about an axis $\vec{u}\in\R^3$ for a vector in $\R^3$ as $Rot(\cdot;\phi, \vec{u})$:
+We will also assume the natural axiom that the {\bf physical space} is {\bf isotropic}, meaning that if we rotate the coordinate system, the equations of motion should look the same. Assuming the Lagrangian as well should be invariant, this will avoid the Lagrangian to depend on the direction of the velocities $\dv{\vec{q}}{t}$, leaving it only to depend potentially on its magnitude\footnote{Since $||\dv{\vec{q}}{t}||$ has its image in $[0,\infty)\subset\R$, and $f(s)=s^2$ is a homeomorphism from $[0,\infty)\subset\R$ to itself, we can equivalently consider the dependence on $||\dv{\vec{q}}{t}||$ or on $||\dv{\vec{q}}{t}||^2$ with a little notational abuse for the Lagrangian $L$.} $||\dv{\vec{q}}{t}||^2=\dv{x_1}{t}^2+\dv{x_1}{t}^2+\dv{x_1}{t}^2$. Denoting a rotation of angle $\phi$ about an axis $\vec{u}\in\R^3$ for a vector in $\R^3$ as $Rot(\cdot;\phi, \vec{u})$, we are imposing:
 \begin{equation}
 L\qty( Rot\qty( \dv{\vec{q}}{t}; phi, \vec{u} ))=L\qty( \dv{\vec{q}}{t})\quad \forall \phi\in\R\ \forall \vec{u}\in \R^3 \Longrightarrow L\qty(\dv{\vec{q}}{t})=L\qty( \Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)
 \end{equation}
-Finally, we will assume Galilean relativity. That the equations of motion should be invariant under a constant velocity transformation for the coordinate system. That is, any observer moving at a constant velocity should observe the same physical laws. This will lead us to conclude that $L\qty( ||\dv{\vec{q}}{t}||^2)=k ||\dv{\vec{q}}{t}||^2$ for some real constant $k$.
+Finally, we will assume {\bf Galilean relativity}. That the equations of motion should be invariant under a constant velocity transformation for the coordinate system. That is, any observer moving at a constant velocity with respect to one another, should observe the same physical laws. This will lead us to conclude that $L\qty( ||\dv{\vec{q}}{t}||^2)=C ||\dv{\vec{q}}{t}||^2$ for some real constant $C$.
 
 To see why, consider an infinitesimal Galilean transformation of the coordinate system by a constant velocity $\vec{\varepsilon}$, with $\vec{\varepsilon}$ in an $\R^3$ ball centered at $\vec{0}$ with an arbitrarily small radious $\delta>0$. Defining $\vec{v}:=\dv{\vec{q}}{t}+\vec{\varepsilon}$, let us expand $L\qty( ||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2)=L(||\vec{v}||^2)$ in power series, centered at $\vec{\varepsilon}=\vec{0}$:
 \begin{equation}
-L(||\vec{v}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L(||\vec{v}||^2)}{||\vec{v}||^2}\Big\rvert_{\vec{v}=\dv{\vec{q}}{t}}\cdot\qty(||\vec{v}||^2-||\dv{\vec{q}}{t}||^2)+o\qty(\qty(||\vec{v}||^2-||\dv{\vec{q}}{t}||^2)^2  )
+L(||\vec{v}||^2)=L\qty(\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)+\pdv{L(||\vec{v}||^2)}{||\vec{v}||^2}\Big\rvert_{\vec{v}=\dv{\vec{q}}{t}}\qty(||\vec{v}||^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)+o\qty(\qty(||\vec{v}||^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)^2  )
 \end{equation}
-Using that:
+Denoting by $\cdot$ the scalar dot product between two vectors and using that:
 \begin{equation}
-||\vec{v}||^2-||\dv{\vec{q}}{t}||^2=||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2-||\dv{\vec{q}}{t}||^2=||\dv{\vec{q}}{t}||^2+||\vec{\varepsilon}||^2+2\vec{q}\cdot \vec{\varepsilon}-||\dv{\vec{q}}{t}||^2=2\dv{\vec{q}}{t}\cdot \vec{\varepsilon}
+||\vec{v}||^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}+\vec{\varepsilon}\ \Big|\Big|^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2+||\vec{\varepsilon}||^2+2\vec{q}\cdot \vec{\varepsilon}-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=2\dv{\vec{q}}{t}\cdot \vec{\varepsilon}
 \end{equation}
 we get that:
 \begin{equation}
-L(||\vec{v}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})+o\qty((||\vec{\varepsilon}||)^2  )
+L(||\vec{v}||^2)=L\qty(\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})+o\qty(||\vec{\varepsilon}\ ||^2  )
 \end{equation}
-Since, we could choose $||\vec{\varepsilon}||^2$ arbitrarily small, we could take the expression to first order, such that:
+Since, we could choose $||\vec{\varepsilon}\ ||^2$ arbitrarily small, we could take the expression to first order, such that:
 \begin{equation}
-L(||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2)=L\qty(||\dv{\vec{q}}{t}||^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})
+L\qty(\Big|\Big|\dv{\vec{q}}{t}+\vec{\varepsilon}\ \Big|\Big|^2)=L\qty(\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})
 \end{equation}
-This Lagrangian for the Galilean transformation of the coordinate system will lead to the same equations of motion as $L(||\dv{\vec{q}}{t}||^2)$ if the additional term is a total time derivative. That is:
+As it was explained in the last gray-box, this Lagrangian for the Galilean transformation of the coordinate system will lead to the same equations of motion as $L(||\dv{\vec{q}}{t}||^2)$ if the additional term is a total time derivative. That is:
 \begin{equation}
 \pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty(\dv{\vec{q}}{t}\cdot \vec{\varepsilon})=\dv{f(\vec{q}(t),t)}{t}
 \end{equation}
-for some arbitrary well behaved function $f$. That is:
-$$
-\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\qty( \vec{\varepsilon}\cdot \dv{\vec{q}}{t})=\pdv{f(\vec{q},t)}{t}+\vec{\nabla}_qf(\vec{q},t)\cdot \dv{\vec{q}}{t}
-$$
-the only variable in the left hand side is $\dv{\vec{q}}{t}$, no dependence on $t$ nor $\vec{q}$. Therefore, the right hand side will need to be so, meaning $\pdv{f(\vec{q},t)}{t}$ is a constant $a$ and $\vec{\nabla}_qf(\vec{q},t)$ another constant $\vec{b}$. This means that the left hand side should at most be linear in $\dv{\vec{q}}{t}$. Since the $\dv{\vec{q}}{t}$ term is already present in the left-hand-side, $\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}$ will need to be constant. Therefore:
+for some arbitrary "well behaved" function $f$ of time and position. If we denote the gradient vector with respect to the variables $\vec{q}$ symbolically as:
 \begin{equation}
-\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}=C \Longrightarrow L\qty(||\dv{\vec{q}}{t}||^2) = C||\dv{\vec{q}}{t}||^2+c
+\vec{\nabla}_{\vec{q}}\equiv(\pdv{}{q_1},\pdv{}{q_2}, \pdv{}{q_3})
+\end{equation}
+along the trajectory:
+\begin{equation}
+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}\Big\rvert_{\dv{\vec{q}(t)}{t}}\qty( \vec{\varepsilon}\cdot \dv{\vec{q}(t)}{t})=\pdv{f(\vec{q},t)}{t}\Big\rvert_{\vec{q}(t)}+\vec{\nabla}_{\vec{q}}f(\vec{q},t)\Big\rvert_{\vec{q}(t)}\cdot \dv{\vec{q}(t)}{t}
+\end{equation}
+The only explicit variable in the left hand side is $\dv{\vec{q}}{t}$, no explicit dependence on $t$ nor $\vec{q}$ beyond it. Therefore, the right hand side will need to be so, meaning $\pdv{f(\vec{q},t)}{t}$ is a constant $a$ (since a partial derivative in time of a function of $t$ and $\vec{q}$ cannot get a term as a function of $\dv{\vec{q}(t)}{t}$) and $\vec{\nabla}_qf(\vec{q},t)$ will be a constant $\vec{b}$ as well, for the same reason. This means that the left hand side should at most be linear in $\dv{\vec{q}}{t}$. Since the $\dv{\vec{q}}{t}$ term is already present in the left hand side, $\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}$ will need to be constant. This means:
+\begin{equation}
+\pdv{L\qty(||\dv{\vec{q}}{t}||^2)}{||\dv{\vec{q}}{t}||^2}=C \Longrightarrow L\qty(\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2) = C\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2+c
 \end{equation}
 for some constants $C,c\in\R$. Since the constant $c$ can be regraded as a total time derivative as well, the resulting equations of motion will be the same setting $c=0$. This would leave the Lagrangian for a free particle as:
 \begin{equation}
-L\qty(t, \vec{q}, \dv{\vec{q}}{t})=C||\dv{\vec{q}}{t}||^2
+L\qty(t, \vec{q}, \dv{\vec{q}}{t})=C\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2
 \end{equation}
 We call this term the {\bf kinetic energy} of the particle.
 
-Now, if we had more free particles in this Universe without interaction between them, we could repeat the argument for each of their degrees of freedom and would have that the Lagrangian of the Universe would be a sum of their kinetic energies, just that the constants would not need to be the same.
-\begin{equation}
-L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}C_k||\dv{\vec{q_k}}{t}||^2
-\end{equation}
-The Lagrangian will provide the same equations of motion for any non-zero multiplicative global factor, which means we could establish one of the $C_k=1$ and the rest measure them relative to that one. That is, we could use the constant of one of the particles as a standard and scale the rest accordingly. This would result in a very particular choice of units, which we will not do. Instead, for historical reasons that will become clear in a moment, we will write $C_k=m_k/2$.
+\subsection*{A Single Universe and Many Non-Interacting Particles}
 
-Now, if there was any kind of spatial influence that the position of one particle could exert on the position of the rest, we could model this influence of the $k$-th particle on the $j$-th one as an arbitrary function $V_{kj}(\vec{q}_k, \vec{q}_j)$ in the Lagrangian giving a constraint between their positions. This would leave:
+Now, if we had more free particles in this Universe without interaction between them (lets say $n$), we could repeat the space-time symmetry arguments for each of their degrees of freedom and would get that the Lagrangian of the Universe would be a sum of their kinetic energies. The subtle point would be that the constant $C$ would not need to be the same for each particle (we do not have any symmetry telling us so). Thus, the Universe would have a Lagrangian:
 \begin{equation}
-L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}\frac{1}{2}m_k||\dv{\vec{q_k}}{t}||^2+\sum_{k<j}V_{kj}(\vec{q}_k, \vec{q}_j)
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k=1}^n C_k\Big|\Big|\dv{\vec{q}_k}{t}\Big|\Big|^2
 \end{equation}
-Rearranging their position variables as:
-\begin{equation}
-\vec{w_{kj}}=\frac{m_k\vec{q}_k+m_j\vec{q}_j}{m_k+m_j} \quad \vec{r_{kj}}=\vec{q}_1-\vec{q}_2
-\end{equation}
-where $\vec{w_{kj}}$ is the weighted center of mass between the particles and $\vec{r_{kj}}$ is the relative position. This would leave the influence function abusing notation as $V_{kj}(\vec{w_{kj}}, \vec{r_{kj}})$. Now, translational invariance due to homogeneity of space would require that if the coordinate system is displaced by $\vec{c}\in\R^3$, meaning that the relative position of the particles $\vec{r_{kj}}$ is left the same but the gravicenter is displaced to $\vec{w_{kj}}+\vec{c}$, the Lagrangian be the same (up to a total time derivative that we will set to zero for simplicity). That is $V_{kj}(\vec{w_{kj}}+\vec{c},\vec{r_{kj}})=V_{kj}(\vec{w_{kj}},\vec{r_{kj}})$ $\forall \vec{c}\in\R^3$. Then this means that $V_{kj}$ cannot be a function of $\vec{w_{kj}}$. Then, due tot he rotational invariance of the Lagrangian required by the isotropy of space, $V_{kj}(Rot(\vec{r_{kj}};\phi, \vec{u}))=V_{kj}(\vec{r_{kj}})$ for any rotation angle $\phi$ and axis $\vec{u}$. This could only be true if the mutual restriction was a function of the magnitude $||\vec{r_{kj}}||$ and not the direction. Thus the only allowed potential interaction term should be as a function of the relative distance of the particles $V(||\vec{q}_k-\vec{q}_j||)$. Leaving a total Universe Lagrangian as:
-\begin{equation}
-L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}\frac{1}{2} m_k||\dv{\vec{q}_k}{t}||^2+\sum_{k<j} V_{kj}(||\vec{q}_k-\vec{q}_j||)
-\end{equation}
-Substituting this Lagrangian in the Euler-Lagrange Equation would leave that the physical trajectory followed by the Universe would need to be given by the system of partial differential equations:
-\begin{equation}
-m_k \dv[2]{\vec{q}_k(t)}{t} = -\sum_{j\neq k}\vec{\nabla}_{\vec{q}_k} V_{kj}(||\vec{q}_k(t)-\vec{q}_j(t)||)
-\end{equation}
-Which is the well known Newton's Second Law of classical mechanics.
+Since a Lagrangian will provide the same equations of motion for any non-zero multiplicative global factor, we could establish one of the $C_k=1$ and the rest measure them relative to that one. That is, we could use the constant of one of the particles as a standard $C$ and scale the rest accordingly. This would result in a very particular choice of units, which we will not do. Instead, for historical reasons, we will write these constants as $C_k=m_k/2$, and call $m_k$ the {\bf mass} of the $k$-th particle.
 
-More conveniently % en plan configuration space al dala exprese tal ke así, pam!
-% Queda un signo - que poner a los potenciales y comentar que llamamos masa a las m_k y energí apotencial a las V
+\subsection*{A Single Universe and Many Interacting Particles}
+
+Now, if there was any kind of spatial influence that the position of one particle could exert on the position of the rest, we could model this influence of the $k$-th particle on the $j$-th one as an arbitrary function $V_{kj}(\vec{q}_k, \vec{q}_j)$ in the Lagrangian, including here a constraint between their positions. Note that we do not allow a time dependence for time should be homogeneous. For reasons that will become clear in a few paragraphs, we will choose to write these arbitrary constraint functions with a negative sign. This would leave a Universal Lagrangian:
+\begin{equation}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k=1}^n\frac{1}{2}m_k\Big|\Big|\dv{\vec{q}_k}{t}\Big|\Big|^2-\sum_{k<j}V_{kj}(\vec{q}_k, \vec{q}_j)
+\end{equation}
+We could further simplify it by recurring back to the axioms. Rearranging their position variables as:
+\begin{equation}
+\vec{w}_{kj}:=\frac{m_k\vec{q}_k+m_j\vec{q}_j}{m_k+m_j} \quad \vec{r}_{kj}:=\vec{q}_1-\vec{q}_2
+\end{equation}
+where $\vec{w}_{kj}$ is the center of mass between the particles and $\vec{r}_{kj}$ is their relative position, we could have abusing notation, the influence functions written as $V_{kj}(\vec{w}_{kj}, \vec{r}_{kj})$. Now, translational invariance due to homogeneity of space requires that if the coordinate system is displaced by $\vec{c}\in\R^3$, the Lagrangian is left invariant. Such a translation of the coordinate system would leave the relative position of the particles $\vec{r}_{kj}$ the same, but would displace the gravicenter to $\vec{w}_{kj}+\vec{c}$. This means we would be requiring for the homogeneity of space that $V_{kj}(\vec{w}_{kj}+\vec{c},\vec{r}_{kj})=V_{kj}(\vec{w}_{kj},\vec{r}_{kj})$ $\forall \vec{c}\in\R^3$, which implies $V_{kj}(\vec{w}_{kj},\vec{r}_{kj})$ cannot be a function of $\vec{w_{kj}}$. Leaving $V_{kj}(\vec{w}_{kj},\vec{r}_{kj})=V_{kj}(\vec{r}_{kj})$.
+
+Finally, due to the rotational invariance of the Lagrangian required by the isotropy of space, $V_{kj}(Rot(\vec{r}_{kj};\phi, \vec{u}))=V_{kj}(\vec{r}_{kj})$ for any rotation angle $\phi$ and axis $\vec{u}$. This could only be true if the mutual restriction $V_{kj}$ was exclusively a function of the magnitude $||\vec{r}_{kj}||$ and not its direction. Thus the only allowed potential interaction term should be as a function of the relative distance of the particles $V(||\vec{q}_k-\vec{q}_j||)$. Leaving a total Universe Lagrangian as:
+\begin{equation}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k}\frac{1}{2} m_k\Big|\Big|\dv{\vec{q}_k}{t}\Big|\Big|^2-\sum_{k<j} V_{kj}(\ ||\vec{q}_k-\vec{q}_j||\ )
+\end{equation}
+Substituting this Lagrangian in the Euler-Lagrange equation would leave that the physical trajectory followed by the Universe would need to be given by the system of partial differential equations:
+\begin{equation}
+m_k \dv[2]{\vec{q}_k(t)}{t} = -\sum_{j\neq k}\vec{\nabla}_{\vec{q}_k} V_{kj}\qty(\ ||\vec{q}_k(t)-\vec{q}_j(t)||\ )\quad\quad \forall k\in\{1,...,n\}
+\end{equation}
+which is the well known {\bf Newton's Second Law} of classical mechanics. As such, we identify the interaction terms $V_{kj}(||\vec{q}_k(t)-\vec{q}_j(t)||)$ as the so called {\bf potential energy} terms. The minus sign we introduced was such that we can view the dynamics of this system as the acceleration vector of each particle pointing towards the minimum of the total potential energy (instead of the maximum). In fact, in classical mechanics, the gradient $\vec{\nabla}_{\vec{q}_k} V_{kj}\qty(\ ||\vec{q}_k(t)-\vec{q}_j(t)||\ )=:\vec{F}_{kj}(\vec{q}_k(t);\ \vec{q}_j(t))$ is called the {\bf force} exerted by the particle $j$ on the $k$-th.
+
+% More conveniently % en plan configuration space al dala exprese tal ke así, pam!
+
 
 % Oin sería introducir la opción de que diferentes Universos se afecten entre ellos en función de la densidad de Universos. Introduces el potencial Q() incluso podrías justificar que sea en función de rho/xi, x/xi, y podrías demostrar que sigue cumpliendo que el espacio sea tal y cual...o no
 % Oin sería introducir el momento y el desarrollo para tener la Hmailton principal function, y decir lo conveniente que es para una posición incial y tiempo inicial dado.
@@ -550,6 +574,312 @@ More conveniently % en plan configuration space al dala exprese tal ke así, pam
 % haz muchas más sub-secciones xD
 % Y lo de la masa en el Q...bueno, ya veremos. Podrzias intentar justificarlo mirando back a cuando tenías un Universo de una sola partícula. Igualmente igual alzu intente justifiketan Q-ren dependentzixe de isotropy etc. 
 % Ta arregle notaziñoko barrak tu eske vaya bazofia jajaj
+
+% direction of time is not defined!!!!
+% Introduce un potential energy term for influences that could come from outside the Universe
+
+\subsection*{An influence in the motion of the Universe by external factors (like other Universes)}
+Let us now loosen the assumption that the dynamics of the Universe (the motion of its particles) is only due to the properties of its space-time and the positions of its particles, and introduce the option to have some external factor to this Universe affect the dynamics inside it. This external factor should affect the trajectory of the Universe as a function of where its particles are, and it could actually vary in time for more generality. We could include such an influence by an arbitrary function $-Q(\vec{x},t)$ of the positions and time in the Lagrangian (the minus sign would be just a convenience for having a classical Newton's second law). This would leave the Universe Lagrangian as:
+\begin{equation}\label{genLag}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k=1}^n\frac{1}{2} m_k\Big|\Big|\dv{\vec{q}_k}{t}\Big|\Big|^2-\qty[\sum_{k<j} V_{kj}(\ ||\vec{q}_k-\vec{q}_j||\ )+Q(\vec{q}_1,...,\vec{q}_N,t)]
+\end{equation}
+Let us call $Q(\vec{x},t)$ the {\bf external potential energy}. The equations of motion would be:
+\begin{equation}\label{NewtOneUn}
+m_k \dv[2]{\vec{q}_k(t)}{t} = -\vec{\nabla}_{\vec{q}_k}\qty[\sum_{j\neq k} V_{kj}\qty(\ ||\vec{q}_k-\vec{q}_j||\ )+ Q(\vec{q}_1,...,\vec{q}_N,t)]\Big\rvert_{\vec{q}=\vec{q}(t)}\quad\quad \forall k\in\{1,...,n\}
+\end{equation}
+We could actually define a {\bf total potential energy} function $U$ as:
+\begin{equation}
+U(\vec{x},t):=\sum_{k<j} V_{kj}(\ ||\vec{q}_k-\vec{q}_j||\ )+Q(\vec{q}_1,...,\vec{q}_N,t)
+\end{equation}
+
+Having the packs of degrees of freedom for a same particle $\vec{q}_k$ jiggling around is a bit cumbersome. For notational ease we will just write it all for each individual degree of freedom $x_k$. This would leave us the Lagrangian and equation of motion for each Universe as:
+\begin{equation}\label{genLag2}
+L\qty(t, \vec{x}, \dv{\vec{x}}{t})=\sum_{k=1}^N\frac{1}{2} m_k\qty(\dv{x_k}{t})^2-U(\vec{x},t)
+\end{equation}
+\begin{equation}
+m_k \dv[2]{x_k(t)}{t} = -\pdv{}{x_k}U(\vec{x},t)\Big\rvert_{\vec{x}=\vec{x}(t)}\quad\quad \forall k\in\{1,...,N\}
+\end{equation}
+where we identify the masses of the same particle $m_{3j}=m_{3j-1}=m_{2j-2}$ for $j\in\{1,...,n\}$.
+\mybox{
+Note now that in reality the external potential could be seen as the potential for a bigger system in which we forget about the things that are not the Universe of interest. That is, imagine for instance, that we have two Universes that interact between them, an alpha Universe of trajectory $\vec{x}^\alpha(t)=(x_1^\alpha(t),...,x_N^\alpha(t))$ and a beta Universe of trajectory $\vec{x}^\beta(t)=(x_1^\beta(t),...,x_M^\beta(t))$, with $N$, $M$ not necessarily the same numbers (either the particle numbers $n=N/3$ and $m=M/3$). A potential of interaction between them, that depended on the positions of one and the other one alone, since time is isotropic (at any time the laws of physic should be the same), could be introduced in the joint Lagrangian for the two Universes as a function $Q(\vec{x}^\alpha, \vec{x}^\beta)$ of their positions. The total Lagrangian would be:
+\begin{equation}
+L\qty(t, \vec{x}^\alpha, \dv{\vec{x}^\alpha}{t}, \vec{x}^\beta, \dv{\vec{x}^\beta}{t})=\sum_{k=1}^n\frac{1}{2} m^\alpha_k\Big|\Big|\dv{\vec{q}^\alpha_k}{t}\Big|\Big|^2+\sum_{k=1}^m\frac{1}{2} m^\beta_k\Big|\Big|\dv{\vec{q}^\beta_k}{t}\Big|\Big|^2-
+\end{equation}
+$$
+-\qty[\sum_{k<j} V^\alpha_{kj}(\ ||\vec{q}^\alpha_k-\vec{q}^\alpha_j||\ )+\sum_{k<j} V^\beta{kj}(\ ||\vec{q}^\beta_k-\vec{q}^\beta_j||\ )+ Q(\vec{x}^\alpha, \vec{x}^\beta)]
+$$
+
+With the equations of motion for each Universe $\vartheta\in\{\alpha, \beta\}$
+\begin{equation}
+m_k \dv[2]{\vec{x}^\vartheta(t)}{t} = -\vec{\nabla}_{\vec{x}^\vartheta}\qty[\sum_{j< k} V^\vartheta{kj}(\ ||\vec{q}^\vartheta_k-\vec{q}^\vartheta_j||\ )+ Q(\vec{x}^\alpha, \vec{x}^\beta)]{\Bigg\rvert}\null_{  \footnotesize    \begin{array}{r@{}}
+\vec{x}^\alpha=\vec{x}^\alpha(t)\\\vec{x}^\beta=\vec{x}^\beta(t) \end{array}}\quad\quad \vartheta\in\{\alpha, \beta\}
+\end{equation}
+Then, if we simply wanted to forget about the existence of the Universe $\beta$ and only contemplate the dynamics of $\alpha$, since the gradient is only on the degrees of freedom of the Universe of interest, we could directly evaluate the trajectory of the uninteresting Universe, such that:
+\begin{equation}\label{trick1}
+\vec{\nabla}_{\vec{x}^\alpha}Q(\vec{x}^\alpha, \vec{x}^\beta){\Big\rvert}\null_{  \footnotesize    \begin{array}{r@{}}
+\vec{x}^\alpha=\vec{x}^\alpha(t)\\\vec{x}^\beta=\vec{x}^\beta(t) \end{array}}=\vec{\nabla}_{\vec{x}^\alpha}Q(\vec{x}^\alpha, \vec{x}^\beta(t)){\Big\rvert}\null_{ \vec{x}^\alpha=\vec{x}^\alpha(t) }
+\end{equation}
+where we could then write with a notational abuse:
+\begin{equation}\label{trick2}
+Q(\vec{x}^\alpha, \vec{x}^\beta(t))=Q(\vec{x}^\alpha, t)
+\end{equation}
+Which is the "external influence" potential we introduced. Leaving an equation of motion for the $\alpha$-th Universe as:
+\begin{equation}
+m_k \dv[2]{\vec{x}^\alpha(t)}{t} = -\vec{\nabla}_{\vec{x}^\alpha}\qty[\sum_{j< k} V^\vartheta{kj}(\ ||\vec{q}^\alpha_k-\vec{q}^\alpha_j||\ )+ Q(\vec{x}^\alpha,t)]{\Bigg\rvert}\null_{
+\vec{x}^\alpha=\vec{x}^\alpha(t)}
+\end{equation}
+which is exactly the equation of motion (and Lagrangian) we had in equation \eqref{NewtOneUn}.\\
+
+In fact, we could also introduce interaction potentials between an arbitrary number of Universes and we would be able to do the same trick of equations \eqref{trick1} and \eqref{trick2} to get the external potential shape. Not only that, but we could introduce an interaction between all the Universes at a same potential, or for a continuity of Universes, and from the perpective of each single Universe, the influence would still look like a simple external potential in time $Q(\vec{x}^\alpha,t)$. It is this why we are not dropping the homogeneity of the global time axis $t$ by introducing the external potential that can depend on time. It is the {\bf laws of physics for the fluid of Universes that have the same shape under time translations} (not each single Universe clearly). It would happen the same if we only considered a particle in a Universe with more, that interacted with them. From the perspective of the single particle there would be an external time dependent potential and time would not look homogeneous. It must be the time of the outermost system (the most global perspective) for which time must be homogeneous.
+}
+
+% Introdyce un potential ke influencia desde fuera del Universo el movimiento de las partículas!!!!
+In order to have the velocity of the possible trajectories and their energy all gathered in a same function, in a convenient way in which we will not need anything else to define the dynamic state of the Universes, we will need to introduce some additional notation delving around with the Lagrangian. One will be the notion of momentum and the Hamiltonian, and the other will be the Hamilton-Jacobi action function.
+
+\subsubsection*{The Momentum and the Hamiltonian (the Total Energy of a Universe)}
+First of all, let us define what we will call the {\bf momentum} of the $k$-th degree of freedom of the Universe. It is the partial derivative of the Lagrangian with respect to the velocity of the $k$-th degree of freedom. That is:
+\begin{equation}
+p_k\qty(t,\vec{x},\dv{\vec{x}}{t}):=\pdv{L(t,x,\dv{x_k}{t})}{\dv{x_k}{t}}
+\end{equation}
+Evaluating the most general Lagrangian for a Universe that we got, equation \eqref{genLag} or \eqref{genLag2}, we see that the $k$-th momentum is only a function of the $k$-th velocity for this Lagrangian:
+\begin{equation}\label{mom}
+p_k\qty(\dv{x_k}{t})=m_k\dv{x_k}{t}
+\end{equation}
+Now, since the Lagrangian is a quadratic function with respect to any of the velocities $\dv{x_k}{t}$ (the potentials do not depend on velocity explicitly), it has a positive second partial derivative with respect to them. This means that the first partial derivative of the Lagrangian with respect to these velocities is a monotonically increasing function (strictly increases). This means that there is a one to one (and continuous) correspondence between the derivative of the Lagrangian with respect to a velocity (the momentum) and the value of the velocity. That is, by fixing the rest of variables, there is a one to one correspondence between the momentum $p_k$ and the velocity variable $\dv{x_k}{t}$. This means that the relation in equation \eqref{mom} is like a change of variables. That is, there exists an expression to get the momentum from the velocity $p_k(\dv{x_k}{t})$ and an inverse one $\dv{\vec{x}}{t} (p_k)$, to get the velocity from  the value of the momentum. In our case the relation is very simple indeed:
+\begin{equation}
+p_k\qty(\dv{x_k}{t})=m_k\dv{x_k}{t}\quad \quad \dv{x_k}{t} (p_k)=\frac{1}{m_k}p_k
+\end{equation}
+We could now define the Lagrangian as a function of the momentum by simply evaluating $\dv{x_k}{t}=\dv{\vec{x}}{t} (p_k)$. Instead however, we are looking for a function such that the inverse relation holds. We are looking for a function $H(t, \vec{x}, \vec{p})$ such that the derivative with respect to the $k$-th momentum, evaluated in $p_k(\dv{x_k}{t})$ gives us back the velocity $\dv{x_k}{t}$. This is the so called {\bf Hamiltonian} of the Universe:
+\begin{equation}
+H(t, x_1,...,x_N,p_1,...,p_N):=\sum_{k=1}^N p_k \dv{x_k}{t} (p_k)-L(t, x_1,...,x_N, \dv{x_1}{t} (p_1),... \dv{x_N}{t} (p_N))
+\end{equation}
+You can check with the chain rule that this and the Lagrangian are the functions relating the momenta and the velocity by their slopes. That is:
+\begin{equation}
+\pdv{H}{p_k}=\dv{x_k}{t}(p_k)\quad \pdv{L}{\dv{x_k}{t}}=p_k(\dv{x_k}{t})
+\end{equation}
+We call this procedure of getting the so called Hamiltonian from the Lagrangian as a {\bf Legendre transformation} with respect to the velocity. In fact, this transformation is defined such that it is its own inverse: the Hamiltonian is the Legendre transformation of the Lagrangian with respect to the velocities, and the Lagrangian is the Legendre transformation of the Hamiltonian with respect to the momentum. The interest of such a transformation is that the Hamiltonian formalism with the momentum and positions instead of velocities and positions, gives us an alternative set of equations of motion to those ones offered by the Euler-Lagrange equations as follows.
+
+If we take the partial derivative of the Hamiltonian with respect to the $k$-th position:
+\begin{equation}
+\pdv{H}{x_k}=\pdv{}{x_k}\qty(\sum_{k=1}^N p_k \dv{x_k}{t} (p_k)-L(t, x_1,...,x_N, \dv{x_1}{t} (p_1),... \dv{x_N}{t} (p_N)))=-\pdv{L}{x_k}
+\end{equation}
+The physical trajectory (the one extremizing the action) needed to obey the Euler-Lagrange equations \eqref{EL}. Then, introducing them in this expression, and applying the definition of $k$-th momentum we get:
+\begin{equation}
+\pdv{H}{x_k}=-\dv{}{t}\pdv{L}{(\dv{x_k}{t})}=-\dv{}{t}p_k
+\end{equation}
+Therefore, we have that instead of using the Euler-Lagrange equations to evolve the trajectory in time $\vec{x}(t)$, we could use the set of equations (the Hamiltonian equations) for the same solution trajectory (just that now it will be a trajectory in the so called phase space $(\vec{x}(t), \vec{p}(t))$):
+\begin{equation}
+\pdv{H(t,\vec{x}(t),\vec{p}(t))}{p_k}=\dv{x_k(t)}{t}\quad\quad \pdv{H(t,\vec{x}(t),\vec{p}(t))}{x_k}=-\dv{p_k(t)}{t}\quad \quad k\in\{1,...,N\}
+\end{equation}
+The practical advantage of these equations in front of the Euler-Lagrange equations (which should yield the same solutions), is that while the Euler-Lagrange equations are $N$ second order differential equations, Hamilton's equations are $2N$ first order differential equations, which might provide a better insight in some problems. In particular, if a coordinate $x_k$ does not appear in the Hamiltonian, its corresponding momentum is conserved in time and thus the coordinate can be ignored in the other equations, effectively reducing th enumber of equations to $N-1$. If some momentum is conserved however, the velocities in the Lagrangian might still occur, avoiding it to reduce the number of equations to be solved.
+
+Aside from this practical point, the Hamiltonian has also a very interesting feature: it is the definition of the total energy of the system in a given time, configuration and momentum. For the most general Lagrangian we got from equation \eqref{genLag2}:
+\begin{equation}
+H(t, \vec{x},\vec{p}\ )=\sum_{k=1}^N \frac{p_k}{2m_k}^2+U(\vec{x},t)
+\end{equation}
+which using that $p_k=m_k\dv{x_k}{t}$ can be seen to be the sum of the total kinetic and potential energies (inter-particle and external ones).
+
+\subsection*{Introducing the Hamilton-Jacobi Action function}
+It turns out that even if the action functional for an optimal path \eqref{action} is complicated to be computed analytically, it turns out that we can compute the variation of the action if we vary the end point of the physical trajectory in space or time (the point $\vec{x}_f$ or $t_f$).
+
+Let us name the physical trajectory for end-points $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$ as $\vec{x}_{old}(t)$. Let us now consider what happens if we slightly vary the end point of the trajectory $\vec{x}_f$ to $\vec{x}_f+\Delta\vec{x}$, with $\Delta\vec{x}_f=(\Delta x_{1_f}, ..., \Delta x_{N_f})$ a vector of small displacements in configuration space $\R^N$. If we keep fixed the starting point $\vec{x}(t_0)=\vec{x}_0$, the new trajectory for the Universe will be the previous physical one $\vec{x}_{old}(t)$ plus a variation $\delta \vec{x}(t)=(\delta x_1(t),...,\delta x_N(t))$ at each time, such that the new trajectory $\vec{x}(t)=\vec{x}_{old}+\delta \vec{x}(t)$ will have $\delta \vec{x}(t_0)=0$ and $\delta \vec{x}(t_f)=\Delta\vec{x}$. If we now expand the Lagrangian in Taylor series for the trajectory $\vec{x}(t)=\vec{x}_{old}(t)+\delta\vec{x}(t)$ such that $\dv{\vec{x}}{t}(t)=\dv{\vec{x}_{old}}{t} (t)+\dv{}{t}\delta \vec{x}(t)$, centered at the trajectory $\vec{x}_{old}(t)$:
+\begin{equation}
+L\qty(t, \vec{x}(t), \dv{\vec{x}(t)}{t})=L\qty(t, \vec{x}_{old}(t), \dv{\vec{x}_{old}(t)}{t})+\sum_{k=1}^N \pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{x_k}\Big\rvert_{\vec{x}_{old}(t)}\qty(x_k(t)-x_{k_{old}}(t))+
+\end{equation}
+$$
++\sum_{k=1}^N \pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old} (t)}\qty(\dv{}{t}x_k(t)-\dv{}{t}x_{k_{old}}(t))+
+o\qty(||\vec{x}(t)-\vec{x}_{old}(t)||^2+||\dv{\vec{x}}{t} (t)-\dv{\vec{x}_{old}}{t} (t) ||^2)=
+$$
+$$
+=L\qty(t, \vec{x}_{old}(t), \dv{\vec{x}_{old}(t)}{t})+\sum_{k=1}^N \qty{\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{x_k}\Big\rvert_{\vec{x}_{old}(t)}\delta x_k(t)+\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)}\dv{}{t}\delta x_k(t)}
+$$
+$$
++o\qty(||\delta\vec{x}(t)||^2+||\dv{\delta \vec{x}(t)}{t}||^2)
+$$
+Since the displacement of the end-point $\Delta \vec{x}_f$ can be taken arbitrarily small, the variation in the action for the old and the new trajectory (differing in their end point slightly) will then be given to first order by:
+\begin{equation}
+\Delta \s:=\s[\vec{x}(t)]-\s[\vec{x}_{old}(t)]=\int_{t_0}^{t_f} L\qty(t, \vec{x}(t), \dv{\vec{x}}{t})\ dt - \int_{t_0}^{t_f} L\qty(t, \vec{x}_{old}(t), \dv{\vec{x}}{t})\ dt=
+\end{equation}
+$$
+= \int_{t_0}^{t_f}  \sum_{k=1}^N \qty{\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{x_k}\Big\rvert_{\vec{x}_{old}(t)}\delta x_k(t)+\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)}\dv{}{t}\delta x_k(t)}
+\ dt
+$$
+Since $\vec{x}_{old}(t)$ is a physical trajectory, it follows the Euler-Lagrange equations \eqref{EL}, meaning we can evaluate $\pdv{L}{x_k}$ to get:
+\begin{equation}
+\Delta \s=\int_{t_0}^{t_f}  \sum_{k=1}^N \qty{\dv{}{t}\qty(\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)})\delta x_k(t)+\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)}\dv{}{t}\delta x_k(t)}
+\ dt=
+\end{equation}
+$$
+= \sum_{k=1}^N \int_{t_0}^{t_f} \dv{}{t}\qty(\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)}\delta x_k(t))
+\ dt=
+$$
+$$
+=\sum_{k=1}^N\qty[\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}_{old}(t)}\delta x_k(t)]^{t_f}_{t_0}=\sum_{k=1}^N\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}(t_f)}\Delta x_{k_f}
+$$
+where we used the derivative of a product rule and the fact that $\delta \vec{x}(t_f)=\Delta \vec{x}_f$ and $\delta \vec{x}(t_0)=0$.
+
+Now, choosing the displacement to be $\Delta x_{j_f}=0$ $\forall j\neq k$:
+\begin{equation}
+\frac{\Delta \s(\vec{x}_f)}{\Delta x_{k_f}}=\pdv{L\qty(t, \vec{x}, \dv{\vec{x}}{t})}{\dv{x_k}{t}}\Big\rvert_{\vec{x}(t_f)}=:p\qty(\dv{\vec{x}(t_f)}{t})
+\end{equation}
+As we make the limit $\Delta x_{k_f}\rightarrow 0$, we get that the first order approximation we made turns to be exact and:
+\begin{equation}\label{momS}
+\pdv{S(\vec{x},t)}{x_k}=p_k(t)
+\end{equation}
+where we defined the {\bf Hamilton-Jacobi action function} as:
+\begin{equation}
+S(\vec{x},t):=\int_{t_0;\ \vec{x}_0}^{t; \ \vec{x}} L\qty(\tau, \vec{x}(\tau),\dv{\vec{x}(\tau)}{t} )\ d\tau
+\end{equation}
+where $t_0$ and $\vec{x}_0$ are fixed undetermined constants and $\vec{x},t$ represent the final end-points of the trajectory.
+
+This means that the variation in the action with respect to space gives the momentum (and thus velocity) field for the trajectory.
+
+Finally, let us understand what happens if we vary the end-time of the trajectory by an arbitrarily small amount $\Delta t$ (ensuring that the same point $\vec{x}_f$ is crossed at time $t_f$:
+\begin{equation}
+\Delta \s[t_f]:=\s[\vec{x}(t); \vec{x}(t_f),t_f]-\s[\vec{x}(t); \vec{x}(t_f+\Delta t), t_f+\Delta t]=\int_{t_0}^{t_f+\Delta t} L\qty(t, \vec{x}(t), \dv{\vec{x}}{t})\ dt - \int_{t_0}^{t_f} L\qty(t, \vec{x}(t), \dv{\vec{x}}{t})\ dt
+\end{equation}
+$$
+\lim_{\Delta t\rightarrow 0}\Delta \s[t_f]= \lim_{\Delta t\rightarrow 0}\int_{t_f}^{\Delta t} L\qty(t, \vec{x}(t), \dv{\vec{x}}{t})\ dt=\lim_{\Delta t\rightarrow 0}  L\qty(t_f, \vec{x}(t_f), \dv{\vec{x}}{t_f})\Delta t
+$$
+where we used the definition of integral as a limit of Riemann sums. Then, these would leave:
+\begin{equation}
+lim_{\Delta t\rightarrow 0}\qty(\frac{\Delta \s[t_f]}{\Delta t} )= L\qty(t_f, \vec{x}(t_f), \dv{\vec{x}}{t_f})
+\end{equation}
+such that:
+\begin{equation}\label{azk}
+\dv{S(\vec{x},t)}{t}=L(t,\vec{x},\dv{\vec{x}}{t})
+\end{equation}
+Now, using that along the trajectory $\vec{x}(t)$ by the chain rule:
+\begin{equation}
+\dv{S(\vec{x}(t),t)}{t} = \pdv{S(\vec{x}(t),t)}{t}+\sum_{k=1}^N\pdv{S(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}(t)}\dv{x_k(t)}{t}
+\end{equation}
+and using that if the trajectory $\vec{x}(t)$ is a physical trajectory, following the Euler-Lagrange equations, then equations \eqref{momS} and \ref{azk} hold, we can evaluate them here to get:
+\begin{equation}
+L\qty(t, \vec{x}(t), \dv{\vec{x}(t)}{t})=\pdv{S(\vec{x}(t),t)}{t}+\sum_{k=1}^N p_k\qty(\dv{x_k(t)}{t})\dv{x_k(t)}{t}
+\end{equation}
+Then, by writing the velocity as a function of the momentum $\dv{\vec{x}}{t} (\vec{p})$ and rearranging terms, we can see that the Hamiltonian emerges:
+\begin{equation}
+-\pdv{S(\vec{x}(t),t)}{t}=\sum_{k=1}^N p_k\dv{x_k}{t} (p_k(t))-L\qty(t, \vec{x}(t), \dv{\vec{x}(\vec{p}(t))}{t})=H(t, \vec{x}(t), \vec{p}(t))
+\end{equation}
+Thus:
+\begin{equation}\label{hamS}
+\pdv{S(\vec{x},t)}{t}=-H(t, \vec{x}, \vec{p})
+\end{equation}
+saying that the variation of the action if we move a time step along the trajectory is (minus) the energy of the Universe at that time.
+
+The two equations \eqref{momS} and \eqref{hamS}, lead us to a third way to get the motion of the Universe:
+\begin{equation}
+\pdv{S(\vec{x},t)}{t}=-H\qty(t, \vec{x}, \vec{p}=\vec{\nabla}_{x}S(\vec{x},t))
+\end{equation}
+which lets us evolve the field $S(\vec{x},t)$ given an initial relative action field $S(\vec{x},t_0)=s_0(\vec{x})$. This is called the {\bf Hamilton-Jacobi equation}. 
+
+Note that when solving this equation, one cannot simply evolve a single trajectory, as allowed us the Euler-Lagrange (Newton's law) and Hamiltonian equations. Instead, we here evolve a field in configuration space $S(\vec{x},t)$, the spatial derivative of which will provide us the momentum and thus velocity field to evolve the trajectories. That is, solving the Hamilton-Jacobi equation means getting all the possible trajectories of the system provided a relative initial action field. This is why it is not typically employed as a practical tool for calculations, since normally we are only interested in getting a single trajectory for the system, and not all the possible trajectories. It turns out however, that this will be the perfect tool for evolving all the trajectories of the different Universes at once! Thus the relevance of its introduction for us to arrive to quantum mechanics.
+
+\subsection*{A.2.2. The Stationary Action Axiom at the Universe Fluid level}
+
+\addcontentsline{toc}{subsubsection}{2.2. The Stationary Action Axiom at the Universe Fluid level}
+
+The equations until now assumed that if there were more than one Universe they were not able to interact with each other. Within each of the Universes then, the trajectory of its particles was predictable by just knowing the position of its particles at any particular time and integrating the equations of motion. 
+
+Now, let us introduce the assumption that for any possible configuration $\vec{x}\in\Omega_t\subseteq\R^N$, there are $\rho(\vec{x},t)dx_1\cdots dx_N$ actual physical Universes with the same number of particles and relative interaction potentials, with their physical spaces having the same symmetries as the ones required to derive the equations of motion of the previous section. If so, all of them would have {\bf the same} Hamilton-Jacobi action $S(\vec{x},t)$. The derivative $\pdv{S(\vec{x},t)}{x_k}$ would yield {\bf the same} field of momentums for their possible physical trajectories, and thus their velocity fields, and $-\pdv{S(\vec{x},t)}{t}$ would yield {\bf the same} total energy for a trajectory at $\vec{x}$ and time $t$. This means that, assuming that each Universe has a different and defined configuration $\vec{\xi}$ at a time $t_0$, we will have that the single {\bf same} function $S(\vec{x},t)$ will encode the energy and velocities (and thus the trajectory) of all the different Universe's trajectories. We will express these trajectories with a function configuration $\vec{x}(\vec{\xi},t)$, where the label $\vec{\xi}$ tags the trajectory that was at $\vec{\xi}$ at time $t_0$ with that vector. That is, using $\vec{x}(\vec{\xi},t_0)=\vec{\xi}$. Then, since all of them have the same $S(\vec{x},t)$, we will be able to get the different trajectories by integrating the velocity field as:
+\begin{equation}
+\dv{x_k(\vec{\xi},\,t )}{t} = v_k(\vec{x}(\vec{\xi},t),t)= \frac{1}{m_k} \pdv{S(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}=\vec{x}( \vec{\xi},t)}\quad \forall k\in\{1,...,N\}
+\end{equation}
+
+This is why we have enough with a single field $S(\vec{x},t)$ for all the Universes.
+
+Note how for now nothing seems to avoid the trajectories $\vec	{x}(\vec{\xi},t)$ to get multivalued (cross each other). This will be ensured by the fact that we will assume $S$ is differentiable with continous first derivatives\footnote{Lipschitz-continous in $\vec{x}$ and continous in $t$.}, such that the velocity field for the trajectories will be continous. Then, by the Picard-Lindelöf theorem for the existence and uniqueness of the initial value problem, the trajectories will exist and will be unique for a given initial condition. Meaning, only a single trajectory will cross each configuration-space and time point. 
+
+\mybox{
+If nothing else was said about the fluid of Universes, the narrative till this point would be a valid but quite convoluted interpretation of classical particle mechanics (relaxing the continuity of the velocity field). We would be saying that there are many tangent Universes, that they do not interact with ours, and their only interest to us would be that since we cannot know a priori which of them is our Universe, having the chance to compute them all would be good. To reflect this uncertainty we could introduce the density of Universes as a probability density and evolve the density with some sort of continuity equation for its local preservation. The density however, would not be able to affect the trajectories of the Universes, which is what we expect in classical mechanics, and why the typical "only one version of reality" interpretation works. The present would then be an overcomplicated interpretation clearly.
+}
+
+Now, let us introduce the possibility for the trajectories of the particles in each Universe to be affected by the same particles of the other Universes. That is, let us the density of Universes to affect the action. We will introduce an interaction between these Tangent Universes via the extra potential energy term $Q(\vec{x},t)$ we left for influences that could come from outside each single Universe. Its shape will be determined by the two last axioms of the narrative.
+
+\subsection*{The "Second Law of Thermodynamics" for the Fluid of Universes}
+
+We will force the density of Universes to tend towards an homogeneous distribution as time goes forward. That is, we will introduce a constraint such that the natural tendency of the fluid of Universes is towards having the same number of Universes in each possible configuration. This, from our perspective would mean that the a priori knowledge about which of them is our Universe would be each time more uncertain, a priori attributing to all of them the same likelihood and thus using the density of Universes as probability density of our Universe. This could be translated in the gradual loss of some information measure, such as an increase in Shannon entropy of the density $\rho(\vec{x},t)$, or decrease of its Fisher information.
+
+We have the Shannon entropy for the density as:
+\begin{equation}
+s[\rho(\vec{x},t);\ t]=\iint_{\Omega_t} \rho(\vec{x},t)\ log\qty(\frac{1}{\rho(\vec{x},t)}) dx_1\cdots dx_N
+\end{equation}
+while the Fisher Information would be:
+\begin{equation}
+I[\rho(\vec{x},t);\ t]=\iint_{\Omega_t} \rho(\vec{x},t)\ \Big|\Big|\vec{\nabla}_{x}log\qty(\frac{1}{\rho(\vec{x},t))})\Big|\Big|^2 dx_1\cdots dx_N
+\end{equation}
+They both have a similar look, just that in the Fisher information we are integrating the absolute value of the {\bf variation} of the information in each support point, while in the Shannon entropy we integrate the information in the whole support globally\footnote{Note that the information density is defined as $i[\rho(\vec{x})])=log\qty(\frac{1}{\rho(\vec{x})})$. This gives the logarithm of the relative uncertainty cleared out when the outcome of the random variable is known to be $\vec{x}$ (well, technically the integral in a domain gives that, since it is a density). In the discrete analogy, if an event has probability $P=2/3$, then it happens in $2$ out of $3$ alternative Universes. If we knew that this event has happened, we would have gained $3/2=1.5$ Universes worth information.}.
+
+Both metrics are extremized with the most uncertain of the densities, which would be a uniform probability density, where every "point" in the support is equally likely. As such, an increase in entropy or decrease in Fisher information could be contemplated as an approach of the density towards a uniform distribution. However, in the case of Shannon entropy, this statement is only loosely held, since it only gives us a global perception of the proximity of the density to a uniform distribution. That is, it is not sensitive to small intervals of the support getting closer to uniformity, it is only a global metric in this sense. Unlike entropy, since Fisher information can be rewritten as:
+\begin{equation}
+I[\rho(\vec{x},t);\ t]=\iint_{\Omega_t} \frac{1}{\rho(\vec{x},t)}\ \sum_{k=1}^N \qty(\pdv{\rho(\vec{x},t)}{x_k})^2 dx_1\cdots dx_N=\iint_{\Omega_t} \frac{1}{\rho(\vec{x},t)}\ \Big|\Big|\vec{\nabla}_{x}\rho(\vec{x},t)\Big|\Big|^2 dx_1\cdots dx_N
+\end{equation}
+we can see that it measures precisely how flat the density is in each locality, by weighting the integral in each volume element by the absolute value of the gradient of density at that point. The flatter the density in {\em all} directions, the smaller the magnitude of the gradient will be in this locality (the gradient measures the directional derivative in the maximum increasing direction), meaning if there is even a single direction in which the density is not flat, the gradient's magnitude will capture it. Then the flatter the locality of a volume element, it will contribute less. Being the continuous sum of the contribution of each locality to the global flatness, it provides us a more local metric of uniformity of the density. Note that this sum is weighted by the inverse of the density at that locality as means of normalization for its local variation.
+
+Following this line of reasoning, we will add the axiom that given the boundary density functions $\rho(\vec{x},t_0)=w_0(\vec{x})$ and $\rho(\vec{x},t_f)=w_f(\vec{x})$ with $t_0<t_f$, {\bf the density will need to evolve in a way that minimizes its total Fisher information}. That is, we will look for the minimization of the functional:
+\begin{equation}\label{discomfort}
+\M[\rho(\vec{x},t);\ t_0,t_f,w_0(\vec{x}), w_f(\vec{x})]=\int_{t_0}^{t_f} I[\rho(\vec{x},t);t]\ dt=
+\end{equation} 
+$$
+=\int_{t_0}^{t_f} \iint_{\Omega_t} \frac{1}{\rho(\vec{x},t)}\ \sum_{k=1}^N \qty(\pdv{\rho(\vec{x},t)}{x_k})^2 dx_1\cdots dx_N\ dt
+$$
+
+Now, instead of considering the axiom from an information theoretic point of view, we could have also introduced it as a claim on the behaviour of the Tangent Universes. We could have posed the axiom in these other words: the Tangent Universes evolve in a repulsive manner between each other, such that they try to avoid their agglomeration and instead tend towards homogenizing the number of Universes in each patch of configuration-space. They tend to get relatively dispersed as much as possible. Then, we would contemplate the magnitude of the gradient of the density of Universes as a measure of the discomfort of the Universes in a certain locality of configuration-space, as a measure of the possibility for the Universes in that locality to get more evenly dispersed. We would try to minimize it normalized by the relative amount of Universes in that locality. If so, we would arrive to the same functional to be minimized: equation \eqref{discomfort}.
+
+Before we jump into the last axiom, note how subtlely we have here introduced a very big assumption about time. Until here time was isotropic, meaning that the laws of physics were the same in any of the directions of time we could look at, both forwards or backwards, implying that the fundamental laws of physics did not have any preference for our perceived flow direction of time. However, we have here introduced the postulate that {\bf time goes in the direction in which the Fisher Information of the fluid of Tangent Universes is minimized}, which turns out to be the direction of time we are used to. A direction in which energy get irreversibly dispersed (as we will see in the next sub-section).
+
+At this point it is clear the analogy of this axiom with the Second Law of Thermodynamics. In fact, since thermodynamics is a theory for the emergent macro-world states from the underlying micro-world dynamics, the Second Law could possibly be related to this axiom ruling the dispersive evolution of the Universes in a more fundamental level.
+
+\subsection*{The Total Energy in the Fluid of Universes is Preserved}
+% Esan zelan en classical mechanics si no hubiese Q(x,t) la energía total se preservaría, pero ke al permitir interacción entre universos deja de ser cierto. Lo que sí however buscaremos, es que la energía total del multiverso se preserve, lo que supondrá que la parte de energía debida al multiverso sea constante. Lo que no quiere decir que vaya a ser ocnstante la energía de cada Universo!
+First of all, notice that if there was no external potential energy $Q(\vec{x},t)$, the total energy of a single Universe, which we defined in equation \eqref{totalE} would be a constant of motion (energy would not be created nor destroyed, just transferred between the particles). If $Q(\vec{x},t)=0$:
+\begin{equation}Zuzendu apur bat hau ALONG THE TRAJECTORY IZEN BIDE!
+\pdv{}{t} H(t,\vec{x},\vec{\nabla}_x S)=\pdv{}{t}-\pdv{S(\vec{x},t)}{t}=0
+\end{equation}
+However, when an external potential is introduced, its time dependence would act as a source or sink of energy of the single Universe in time.
+% Igual hemen al dozu ikusi Q badauen zein dan total time derivative eta de hecho igual integrala hortik naturalmente urtetan da
+
+ In particular, the amount of energy traded into or off the single Universe could be quantified by integrating in time the difference between the total energy in the absence of external potential and the total energy including it. That is:
+\begin{equation}
+\Delta E [S(\vec{x},t);\ \vec{x}(t), t_0, t_f] = \int_{t_0}^{t_f} E_{Universe}-E_{Total\ Energy}\ dt=
+\end{equation}
+$$
+\int_{t_0}^{t_f}\qty[ \qty(\sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t))-H\qty(t, \vec{x}(t), \vec{\nabla}_x S\Big\rvert_{\vec{x}(t)}) ]\ dt = 
+$$
+$$
+\int_{t_0}^{t_f}\qty[ \sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t)+\pdv{S}{t} ]\ dt
+$$
+
+What we will assume is that since the fluid of Tangent Universes as a whole should be an isolated system (that is, there is nothing "more external" to it), the total energy moving between its Universes should be constant. This could be assured by asking that the total variation of energies in the fluid due to the external potentials, which are the ones representing the energy trade between the Universes (the kinetic and potential energies of each Universe are already under control), be constant.
+$$
+E_{fluid}=\int E_{Universes} + E_{moving between them}=E_{Universes} + E_{total}-E_{Universes}
+$$
+\begin{equation}
+\dv{}{t}\Delta E [S(\vec{x},t);\ \vec{x}(\vec{\xi},t)]=0
+\end{equation}
+$$
+\dv{}{t} \iint_{\Omega_t} \rho(\vec{x},t) \qty[ \sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t)+\pdv{S}{t} ] dx_1\cdots dx_N = 0
+$$
+
+$$
+\iint_{\Omega_t} \rho(\vec{x},t) \qty[ \sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t)+\pdv{S}{t} ] dx_1\cdots dx_N = c
+$$
+
+$$
+\int_{t_0}^{t_f}\iint_{\Omega_t} \rho(\vec{x},t) \qty[ \sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t)+\pdv{S}{t} ] dx_1\cdots dx_N dt= (t_f-t_0)c=K
+$$% Ke es una total time derivative la constante esa!
+
+Then, if we are trying to look for the density $\rho$ that minimizes the functional of equation \eqref{discomfort}, constrained by this total surplus energy to be constant, the variational problem is equivalent to the minimization of the functional with the constant Lagrange multiplier $\lambda$:
+\begin{equation}\label{discomfort}
+\M[\rho(\vec{x},t), S(\vec{x},t);\ t_0,t_f,w_0(\vec{x}), w_f(\vec{x}), s_0(\vec{x},t), s_f(\vec{x},t)]=
+\end{equation} 
+$$
+=\int_{t_0}^{t_f} \iint_{\Omega_t} \frac{1}{\rho(\vec{x},t)}\ \sum_{k=1}^N \qty(\pdv{\rho(\vec{x},t)}{x_k})^2 + \lambda \rho(\vec{x},t) \qty[ \sum_{k=1}^N \frac{1}{2m_k} \pdv{S}{x_k}+V(\vec{x},t)+\pdv{S}{t} ]  dx_1\cdots dx_N\ dt
+$$
+We will call this functional $\M$ the action of the fluid of Universes, while the integrand will be called the Lagrangian density of the fluid of Universes.
+
+% Faltaría meter unas constantes en el sumatorio de la Fisher information, como para decir que no tiene porke ponderar igual cada partícula. Luego resultará que los tendremos que fijar a las constantes masa. Ein komentario bat de ke posiblemente saldrían naturalmente como la masa si tal. Ta buneo, gero la constante lambda será la so called Planck constant.
+
 
 
 
