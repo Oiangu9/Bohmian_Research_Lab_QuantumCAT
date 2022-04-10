@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  15 JAN 2022 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  1 FEB 2022 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3233,10 +3233,10 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 146.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 \c__siunitx_mathtt_int=\count385
-<Figures/UAB.png, id=199, 1229.59375pt x 569.12625pt>
+<Figures/UAB.png, id=212, 1229.59375pt x 569.12625pt>
 File: Figures/UAB.png Graphic file (type png)
 <use Figures/UAB.png>
-Package pdftex.def Info: Figures/UAB.png  used on input line 186.
+Package pdftex.def Info: Figures/UAB.png  used on input line 185.
 (pdftex.def)             Requested size: 180.67499pt x 83.61974pt.
  [1
 Non-PDF special ignored!
@@ -3265,7 +3265,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.215 \clearpage
+l.214 \clearpage
                  [2] [0
 
 ]
@@ -3279,19 +3279,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.249 
+l.248 
        [1]
-Underfull \hbox (badness 10000) in paragraph at lines 257--257
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--257
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 261--261
 
  []
 
@@ -3305,7 +3305,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.264 T
+l.263 T
        hen, just realize that how {\em we} perceive sound or images or any o...
 [2]
 
@@ -3333,13 +3333,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [6
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 318.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 317.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 318.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 317.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3352,7 +3352,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 330.
+(hyperref)                be the same. Added a new anchor on input line 329.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3361,10 +3361,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-<Figures/1deforma.png, id=337, 2312.64pt x 1619.69824pt>
+<Figures/1deforma.png, id=354, 2312.64pt x 1619.69824pt>
 File: Figures/1deforma.png Graphic file (type png)
 <use Figures/1deforma.png>
-Package pdftex.def Info: Figures/1deforma.png  used on input line 365.
+Package pdftex.def Info: Figures/1deforma.png  used on input line 364.
 (pdftex.def)             Requested size: 275.71075pt x 193.09496pt.
 
 
@@ -3384,12 +3384,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10 <./Figures/1deforma.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 430--430
+Underfull \hbox (badness 10000) in paragraph at lines 429--429
 
  []
 
 
-LaTeX Warning: Citation `TangentWiseman' on page 11 undefined on input line 430
+LaTeX Warning: Citation `TangentWiseman' on page 11 undefined on input line 429
 .
 
 
@@ -3406,12 +3406,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
 
  []
 
@@ -3456,7 +3461,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16]
-Overfull \vbox (8.01157pt too high) has occurred while \output is active []
+Overfull \vbox (21.61157pt too high) has occurred while \output is active []
 
 
 
@@ -3480,7 +3485,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19]
-Overfull \hbox (12.63916pt too wide) detected at line 740
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+Overfull \hbox (12.63916pt too wide) detected at line 742
 [][]\OT1/cmr/m/n/10.95 ^^A\U/msb/m/n/10.95 S\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/1
 0.95 t[]\OT1/cmr/m/n/10.95 ] := \U/msb/m/n/10.95 S\OT1/cmr/m/n/10.95 [[](\OML/c
 mm/m/it/10.95 t\OT1/cmr/m/n/10.95 ); [](\OML/cmm/m/it/10.95 t[]\OT1/cmr/m/n/10.
@@ -3498,14 +3510,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3521,22 +3535,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [23]
 
-LaTeX Warning: Reference `totalE' on page 24 undefined on input line 835.
-
-
-Overfull \hbox (4.95995pt too wide) detected at line 838
-[][]\OML/cmm/m/it/10.95 ZuzenduapurbathauALONGTHETRAJECTORYIZENBIDE\OT1/cmr/m/n
-/10.95 ![]\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t; []; [
-]S\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 = 0
- []
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [24]
+
+LaTeX Warning: Reference `integralChange' on page 25 undefined on input line 87
+2.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3550,7 +3558,133 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26] [27
+[26]
+
+LaTeX Warning: Reference `variableChange' on page 27 undefined on input line 93
+3.
+
+
+Overfull \hbox (1.34067pt too wide) detected at line 955
+[][][]\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/
+m/n/10.95 ) = [] [][] []\OML/cmm/m/it/10.95 d^^X[] [] d^^X[]
+ []
+
+
+LaTeX Warning: Reference `variableChange' on page 27 undefined on input line 96
+3.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+
+LaTeX Warning: Reference `hamDef' on page 28 undefined on input line 973.
+
+
+Overfull \hbox (6.51283pt too wide) detected at line 1007
+\OT1/cmr/m/n/10.95 = [][] [] [][] []\OML/cmm/m/it/10.95 dx[] [] dx[] dt
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+
+LaTeX Warning: Reference `QP' on page 29 undefined on input line 1063.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1063
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1063
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39] [40
 
 ]
 
@@ -3559,12 +3693,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28
+[41
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 934.
+(hyperref)                be the same. Added a new anchor on input line 1308.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3572,9 +3706,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29
+[42
 
-] [30
+] [43
 
 ]
 
@@ -3583,12 +3717,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31
+[44
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 981.
+(hyperref)                be the same. Added a new anchor on input line 1355.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3596,9 +3730,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32
+[45
 
-] [33
+] [46
 
 ]
 
@@ -3607,12 +3741,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34
+[47
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1022.
+(hyperref)                be the same. Added a new anchor on input line 1396.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3620,11 +3754,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35
+[48
 
 ]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 1075.
+LaTeX Warning: Empty `thebibliography' environment on input line 1449.
 
 
 Package caption Warning: Unused \captionsetup[table] on input line 47.
@@ -3636,16 +3770,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1078.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1078.
+[49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1452.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1452.
  (./Measurements_and_Open_Quantum_Systems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1078.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1078.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1452.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1452.
 
 Package rerunfilecheck Info: File `Measurements_and_Open_Quantum_Systems.out' h
 as not changed.
-(rerunfilecheck)             Checksum: 4E58BD0C03255F5B7D9D47F2D3539CE8;4135.
+(rerunfilecheck)             Checksum: 91B9417F6E0AA473EADBFA90271FBA34;4435.
 
 
 LaTeX Warning: There were undefined references.
@@ -3655,10 +3789,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36570 strings out of 492982
- 683696 string characters out of 6134895
- 794373 words of memory out of 5000000
- 39405 multiletter control sequences out of 15000+600000
+ 36683 strings out of 492982
+ 684951 string characters out of 6134895
+ 797373 words of memory out of 5000000
+ 39444 multiletter control sequences out of 15000+600000
  550802 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,12n,97p,10433b,850s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3681,12 +3815,14 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on Measurements_and_Open_Quantum_Systems.pdf (41 pages, 1303854 
+amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsf
+s/rsfs10.pfb>
+Output written on Measurements_and_Open_Quantum_Systems.pdf (54 pages, 1359280 
 bytes).
 PDF statistics:
- 671 PDF objects out of 1000 (max. 8388607)
- 597 compressed objects within 6 object streams
- 178 named destinations out of 1000 (max. 500000)
- 407 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 782 compressed objects within 8 object streams
+ 252 named destinations out of 1000 (max. 500000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 
