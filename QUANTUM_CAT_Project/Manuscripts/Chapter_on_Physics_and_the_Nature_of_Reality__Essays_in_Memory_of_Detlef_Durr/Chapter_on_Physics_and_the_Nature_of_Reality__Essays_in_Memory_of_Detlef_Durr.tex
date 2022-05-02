@@ -1,0 +1,463 @@
+\documentclass[11pt, a4paper]{article} % , draft
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem} % customiçe item dots etc
+\usepackage{textgreek} % obv
+\usepackage{physics} % for easy derivative notation
+\usepackage{amsmath}
+\usepackage{amsthm} %theorems
+\usepackage{amssymb}
+\usepackage{mathtools} % for matrices with blocks inside
+\usepackage[scr=boondoxo]{mathalfa}
+\usepackage{pst-node}%
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Holo}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\z}{\mathpzc{s}}
+\newcommand{\p}{\mathpzc{r}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\Lg}{\mathscr{L}}
+\newcommand{\x}{\mathcal{X}}
+
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\setlength{\parskip}{0.3 cm}
+
+\usepackage{fancyhdr}
+
+%\usepackage{nath} % authomatic parenthesis stuff
+%\delimgrowth=1
+\usepackage[left=2cm, right=2cm, top=2.1cm, bottom=2.1cm]{geometry} % set custom margins
+\usepackage{graphicx} % to insert figures
+\usepackage{grffile}
+\graphicspath{{Figures/}} % define the figure folder path
+\usepackage{subcaption} % for multiple figures at once each with a caption
+\usepackage{multirow} %multirow in tables
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize} %adjust caption size
+\captionsetup[table]{font=footnotesize} %adjust caption size
+
+\usepackage{booktabs} % for pretty tabs in tables
+\usepackage{siunitx} % Required for alignment
+\captionsetup{labelfont=bf} % bold face captations
+
+\usepackage{hyperref} % makes every reference a hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    filecolor=[rgb]{0.69, 0.19, 0.38},      
+    urlcolor=[rgb]{0.0, 0.81, 0.82},
+    citecolor=[rgb]{0.69, 0.19, 0.38}
+}
+
+\usepackage{epigraph} % for quotations in teh begginig
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\renewcommand{\qedsymbol}{o.\textepsilon.\textdelta}
+
+\newtheorem{prop}{Proposition} %so I can use propositions
+\newtheorem{cor}{Corollary} %so I can use corollaries
+\newtheorem{defi}{Definition} %so I can use corollaries
+
+\makeatother % all this is for the epigraph
+\usepackage{tocloft}
+
+\usepackage{imakeidx} % make index
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+%\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
+\title{\vspace{-2cm} {\bf Reality and Causality in the Microscopic World:\\ A Discussion from Quantum Transport Theories}%\\{\small by {\em Xabier Oyanguren Asua}}
+\vspace{-0.4cm}}
+\date{\vspace{-11ex}}
+\let\clipbox\relax
+\usepackage{adjustbox}
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+
+\usepackage{tcolorbox}
+\DeclareRobustCommand{\mybox}[2][gray!10]{%
+\begin{tcolorbox}[   %% Adjust the following parameters at will.
+        left=0.2cm,
+        right=0.2cm,
+        top=0.15cm,
+        bottom=0.15cm,
+        colback=#1,
+        colframe=#1,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=0pt,outer arc=0pt,
+        ]
+        #2
+\end{tcolorbox}
+}
+
+\usepackage{anyfontsize}
+\newenvironment{kapituloBerria}[1][]
+  {\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{2}}% some space at the top
+   \raggedleft          % flush to the right margin
+   {\textbf{{\fontsize{60}{40}\selectfont \hspace{+9.5cm}#1\newline \newline}}}
+   \bf
+   \fontsize{30}{20}\selectfont
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+
+
+\maketitle
+
+
+
+
+
+
+{\bf Chapter on {\em “Physics and the Nature of Reality: Essays in Memory of Detlef Dürr”.}}
+
+\begin{center}
+{\bf Abstract }
+\end{center}
+Paraphrasing Feynmann, perhaps, the main reason why the so-called Copenhagen (or orthodox) quantum theory is so popular among the physicists and engineers is because “I can safely say that nobody understands [it]”. Many physicists and engineers take profit of the mathematical machinery of the Copenhagen theory without paying attention to its ontology, which implies that a quantum object has no microscopic properties (unless a property is measured, or the quantum object is an eigenstate of some property). Such an orthodox view of a microscopic world, empty of properties, is specially unsuitable to understand and to develop approaches to predict modern nanoelectronics, as we discuss along this chapter. As an alternative, physicists dealing with the foundations of quantum transport and open systems have developed different approaches in terms of some type of causal motion of electrons. When dealing with nanodevices, the Copenhagen ontology affirms that electrons are nowhere since their positions are undefined until measured, while causal motion approaches say that electrons can be perfectly understood as particles traversing a device with well-defined positions, independently of the measurement. This last view certainly holds true for treatments based on the Bohmian theory. Even for quantum phenomena of light, such as spontaneous emission or photon partition noise, the Bohmian theory allows an explanation from well-defined electromagnetic fields interacting with electrons, which is contrary to the standard Copenhagen approach. The above examples, developed in this chapter, emphasize that the main merit of the Bohmian theory is eliminating the observer/measurement as the “creator” of the microscopic reality, showing that a well-defined description at all times, of the microscopic properties of a quantum system, is available (where particles are particles and fields are fields at all times). Such a microscopic description does not only provide conceptual advantages, but also important numerical ones when electron devices are understood, in general, as non-Markovian open quantum systems.   
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\subsection*{Introduction}
+In front of the incapacity of the standard quantum theory (so called orthodox or Copenhagen interpretation), to answer whether there are electrons actually crossing the transistors of ones phone or not, any physicist or engineer that needs to consider that this is indeed the case for the practical development of cutting edge devices, resorts to alternative explanations of quantum phenomena in terms of electrons that actually cross their transistors \cite{where}. The well known Bohmian explanation is one such alternative to the Orthodox interpretation. The reader unfamiliar with the fundamentals is directed to the literature for a thorough introduction \cite{Durr} \cite{JordiXavier}.
+
+The dilemma about when, for how long or whether the electrons are crossing the transistors at all, seems to be an illustrative joke, yet, for the nano-electronics community it is far from being so \cite{where}. Questions about the dwell time of an electron, the predictions about displacement currents in nano-electronic devices, the results of current measurements at high frequencies and especially their computational treatment, are still obscure from an orthodox approach. This is not only for interpretative issues of the meaning of the time an electron takes to cross this or that region, but for practical issues like the search of an operator for the multi-electron current observable, or high frequency current measurements that imply the measurement apparatus needs to be considered explicitly as a non-Markovian environment. As we will discuss along the chapter, satisfying explanations for these, apparently seem to demand the use of modal theories like Bohmian mechanics.
+
+The essential tool for reaching these conclusions relies on the concept of conditional wave-function (CWF) and effective wave-function (EWF) introduced by {\em Dürr et al.} in Ref \cite{Absolute}, together with the understanding of the measurement dilemma they enlighten. Let us first shortly review this, to then find three applications in nano-electronics, that prove the practical usability of all the Bohmian theoretical framework.
+
+\subsection*{The Conditional and Effective Wavefunctions}
+
+Given a quantum system of $N$ degrees of freedom described by the real coordinate vector $\vec{X}=(x_1,...,x_N)\in\Omega_t\subseteq\R^N$, we can describe its evolution in continuous time $t\in\R$, with the use of a complex wavefunction $\Psi(\vec{X},t)=\rho^{1/2}(\vec{X},t)e^{iS(\vec{X},t)/\hbar}$ (encoding the two real fields $S$ and $\rho$), and an associated Bohmian trajectory $\vec{X}^{\vec{\xi}}(t)\equiv \vec{X}(\vec{\xi},t)$ the initial condition of which is given by the label space vector $\vec{\xi}\in\Omega_0\subseteq\R^N$ such that $\vec{X}^{\vec{\xi}}(t=0)=\vec{\xi}$. This trajectory is guided by the wavefunction with the guidance law, while the wavefunction itself is guided by the Schrödinger Equation. Respectively:
+\begin{equation}\label{GL}
+\dv{x_k^\xi(t)}{t} = v_k(\vec{X},t)\Big\rvert_{\vec{X}=\vec{X}^\xi(t)}=\frac{1}{m_k} \pdv{S(\vec{x},t)}{x_k}\Big\rvert_{\vec{X}=\vec{X}^\xi(t)}
+\end{equation}
+\begin{equation}\label{SE}
+i\hbar\pdv{\Psi(\vec{X},t)}{t}=\qty[ \sum_{k=1}^N \frac{\hbar^2}{2m_k}\pdv[2]{}{x_k}+U(\vec{x},\vec{y})]\Psi(\vec{X},t)
+\end{equation}
+where $U$ denotes the classical potential describing the interaction between the degrees of freedom (since we consider an isolated system there is no time dependence), $m_k$ is the mass associated with the $k$-th degree of freedom and $v_k$ is the velocity field piloting the $k$-th degree of the Bohmian trajectories.
+
+The most general isolated system we could consider is the whole Universe, where $\vec{X}$ would reflect its degrees of freedom or {\bf configurations}. Then, if we were only interested on describing a subsystem of say $n<N$ degrees of freedom, which we label by $\vec{x}=(x_1,...,x_n)$ and we let $\vec{y}=(x_{n+1},...,x_N)$ denote the rest of the Universe (the environment), we could associate a wavefunction for each of these two partitions of the Universe, by using that the trajectory for the Universe can be rewritten as the joint trajectory of the sub-system and the environment: $\vec{X}^\xi(t)=(\vec{x}^\xi(t), \vec{y}^\xi(t))$. These wavefunctions, parametrized by the initial coniditons of the Universe's configuration $\vec{\xi}$, would be respectively, $\psi^\xi(\vec{x},t)=\Psi(\vec{x},\vec{y}^\xi(t),t)$ and $\phi^\xi(\vec{y},t)=\Psi(\vec{x}^\xi(t),\vec{y},t)$. These are particular cases of the so called {\bf conditional wavefunctions} (CWF-s), where some degrees of freedom of a wavefunction are considered evaluated along a trajectory. A conidtional wavefunction in general is just considering the support of a wavefunction as a fluid where Bohmian trajectories are the flow-lines, then leaving some of the degrees of freedom in the Lagrangian frame while some in the Eulerian frame. Now, as it is proved in \cite{GJ}, the full Schrödinger Equation, ruling the dynamics of the whole isolated system (the whole Universe as the most general case), can be re-written exactly into two coupled dynamical equations ruling the motion of the two presented conditional wavefunctions:
+\begin{equation}\label{SE.GJ}
+i \hbar \pdv{\psi^\xi (\vec{x},t)}{t} = \qty[\sum_{k=1}^n\frac{\hbar^2}{2m_k} \pdv[2]{}{x_k} +  U(\vec{x}, \vec{y}^{\, \xi}(t),t) + G(\vec{x}, \vec{y}^{\, \xi}(t),t)+i\ J(\vec{x}, \vec{y}^{\, \xi}(t),t)] \psi^\xi (\vec{x},t)
+\end{equation}
+with $G$ and $J$ {\bf correlation potentials} such that:
+\begin{equation}\label{G.Bohm}
+G(\vec{x},\vec{y}(\vec{\xi},t),t)=\sum_{j=n+1}^N\qty{-\frac{1}{2}m_j\qty(v_j(\vec{x},\vec{y}^{\, \xi}(t),t))^2+Q_j(\vec{x},\vec{y}^{\, \xi}(t),t)}
+\end{equation}
+\begin{equation}\label{Q.Bohm}
+Q_j(\vec{x}, \vec{y}^\xi(t),t) = -\frac{\hbar^2}{4m_j} \qty(\frac{1}{\rho}\pdv[2]{\rho}{x_j} -\frac{1}{2\rho^2}\qty(\pdv{\rho}{x_j})^2)\Big\rvert_{\vec{y}=\vec{y}^\xi(t)}
+\end{equation}
+\begin{equation}\label{J.Bohm}
+J(\vec{x},\vec{y}(\vec{\xi},t),t)=-\frac{\hbar}{2}\sum_{j=n+1}^N\pdv{}{x_j}v_j(\vec{x},\vec{y},t)\Big\rvert_{\vec{y}^{\, \xi}(t)}
+\end{equation}
+with a guidance equation for the Bohmian trajectory of the sub-system $\vec{x}$ such that if in polar form $\psi^\xi (\vec{x},t)=r^\xi(\vec{x},t)e^{iz(\vec{x},t)/\hbar}$, then we have that:
+\begin{equation}
+\dv{}{t}x_k(t)=\frac{1}{m_k}\pdv{z(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}=\vec{x}^\xi(t)} \quad k\in\{1,...,n\}
+\end{equation}
+The same set of equations for the environment (with the proper changes of indices and CWF), together with these, would yield a description of the dynamics of the whole Universe in two partitions, that are coupled classically through $U$ and quantically through $G$ and $J$.
+
+It is clear that the time evolution of the two CWF-s is not independent, nor they are independent to the full wavefunction. This is because knowledge of the derivatives of the full wavefunction in the evaluated axes $\vec{y}$, $\pdv{\Psi(\vec{X},t)}{x_k}\Big\rvert_{y^\xi(t)}$ for $k\in\{m+1,...,N\}$, is necessary to compute $G$ and $J$, which means that all the CWF-s $\Psi(\vec{x},\vec{y}^\eta(t),t)$ with $\vec{y}^\eta(t)$ close to $\vec{y}^\xi(t)$ are required (not just one CWF over the trajectory). This means, that in general the sub-system will evolve differently as a function of the environment trajectory and the full wavefunction's evolution.
+
+However, if the imaginary potential $J$ vanished for the sub-system, we can see that the CWF for the sub-system would behave as if it was a closed quantum system wavefunction, ruled by the unitary evolution of a Schrödinger Equation like \eqref{SE}, but where the potential energy would now be allowed to be time dependent. The influence of the environment from the point of view of the sub-system, would at most be a time dependent potential energy $U+G$, where the time dependence would be due to the environment's trajectory on $U$ and the immediate CWF-s in the environment axes on $G$. That is, if $J$ vanished, we see that the CWF alone would serve as a closed qunatum system descriptor of the sub-system. Yet, computationally, we would still require a quantum description for the environment in order to evaluate $G$. It turns out however that if $G$ was also negligible, then the sub-system would for all purposes be a closed quantum system, only interacting with the environment classically (through $U$). Whenever this is the case, we say then that the CWF along the Bohmian trajectory of the environment is the {\bf effective wavefunction} (EWF) of the subsystem. The question would then be: when are $J$ and $G$ (the quantum influences of the environment on the subsystem) negligible? It turns out, as qualitatively explained by the influential Ref. \cite{Absolute}, when the full wavefunction's variation along the environment's axes $\vec{y}$, in the neighborhood of the environment's trajectory $\vec{y}^\xi(t)$, is negligible: 
+\begin{equation}
+\pdv{\Psi(\vec{x},\vec{y},t)}{x_j}\Big\rvert_{\vec{y}=\vec{y}^\xi(t)}\simeq 0  \quad \forall k\in\{1,...,n\}, \ \forall j\in\{n+1,...,N\}
+\end{equation}
+we will have that the terms involving derivatives of the magnitude $\rho^{1/2}$ or the phase $S$ of the wavefunction $\Psi$ in the environment's axes $\vec{y}$ will vanish.
+
+Graphically, this happens for instance when the full wavefunction $\Psi$ is composed of disjoint and macroscopically separated stackings of almost similar CWF-s in $\vec{x}$ \footnote{More quantitatively, the statement "macroscopically far" means that the variation of the (normalized) conditional wavefunction in the $\vec{y}$ axes happens only if a macroscopically big distance is considered. This implies that for any significant time for the subsystem, the evolution of the environment (the dynamics of the wavefunction in the $y$ axes) will not affect the current shape of the CWF in $x$.} (this will be useful to see why countable spectrum projective measurements effectively generate "collapsed" eigenstates). The same can happen as well if the variation of the full wavefunction in $y$ is arbitrarily slower than the variations in $x$ (which will be useful to see why continous measurement schemes generate very narrow gaussians as "collapsed" wavefunctions).
+
+\subsection*{Measurement understood as unitary evolution using Bohmian CWFs and EWFs}
+%The concept of CWF and EWF allow a Bohmian explanation of the quantum measurement without the need of any sort of so called "collapse", as formulated by the Orthodox explanation to break the von Neumann chain of coupling. This is essential for the following discussion of the chapter, so we will quickly review it as well.
+
+Given a closed quantum system $S$ and its EWF $\psi(\vec{x},t)$, if we wish to do a projective measurement of the property $A$, as suggested by Von Neumann in \cite{VonNeumann}, we can consider the position of the dial of the measuring apparatus $M$ observed by the experimenter (or the generalized degree of freedom of the measurement result indicator), lets call it $z\equiv x_{n+1}$ (as part of the environment of the subsystem). We prepare the indicator's EWF to be a fiducial state that will make sure its Bohmian position at the first time of the measurement $t=0$, that is $z^\xi(t=0)$, is reliably around the rest position of the dial $z=0$ with a high precision and accuracy. For example $\varphi(z,t=0)=\alpha e^{z^2/4\sigma^2}$, or in ket notation $\ket{\varphi(t=0)}_M=\int_\R\varphi(z,t=0) \ket{z}dz$,  with $\alpha$ a normalization constant and $\sigma$ not macroscopically distinguishable. We now let the sub-system's EWF, which in ket notation is $\ket{\psi(t=0)}_S=\int_{\R^N}\psi(\vec{x},t=0)\ket{\vec{x}}dx$, interact with the measurement ancilla through a Hamiltonian $\hat{H}_{MS}=g(t)\hat{p}_M\otimes \hat{A}_S$, where $\hat{p}_M$ is the momentum operator of the ancilla degree of freedom $z$ and $\hat{A}_S$ is the operator related with the property of the subsystem we wish to measure. $g(t)$ is the interaction strength which has support only in $t\in(0,T)$ (the interaction time), such that $g:=\int_0^Tg(t)dt$. 
+
+If the observable $A$ has countable spectrum, such that $\hat{A}_S=\sum_k a_k \ket{a_k}_S\bra{a_k}_S$ with $\{\ket{a_k}_S\}_k$ an orthonormal basis of S and $\ket{\psi(0)}_S=\sum_k \alpha_k(0)\ket{a_k}_S$, at the last interaction time $t=T$, the unitary Schrödinger evolution $\hat{U} \null_{0}^T=exp(-iT \hat{H}_{MS}/\hbar)$ will leave the composed state $\ket{\Phi(0)}_{MS}=\ket{\varphi(0)}_M\otimes\ket{\psi(0)}_S$ as:
+\begin{equation}
+\ket{\Phi(T)}_{MS}=\sum_k \alpha_k(0)\qty(\int e^{-\frac{(z-a_kgT)^2}{4\sigma^2}}\ket{z}_M dz )\ket{a_k}_S
+\end{equation}
+This means, as graphically shown in Figure \ref{fig:collapse}, that if the interaction strength $g$ or time $T$ are big enough, or $\sigma$ is small enough, the probability density for the Bohmian position of the dial $z$, will be exclusively concentrated in several roughly disjoint Gaussians of weights $|\alpha_k(0)|^2$, each centered in a different $a_k gT$ position, around which, the CWF for the sub-system (evaluating a particular value for $z$, say, the observed $z\sim a_k gT$) would be roughly constantly $\ket{a_k}$ for all the wavefunction with significant probability in that region of configuration space. The different CWF-s (the different Gaussians disjointly separating them) have been macroscopically separated in $z$, since other-wise the dial would not be able to let us know the result of the measurement. Then we see that the CWF obtained by evaluating the observed Bohmian trajectory of $z$ is at $t=T$ an EWF that is the eigenstate of $\hat{A}$ linked with the eigenvalue $a_k$ that was indicated by the observed $z$, $\ket{a_k}_S$. Not only that, but the observation of $z$ for an ensemble of identical experiments but microscopically different inital Bohmian positions for the dial $z$, will record $a_k$ with probability $|\alpha_k(0)|^2$, and leave the sub-system in an EWF $\ket{a_k}_S$, just as stated by the measurement postulate in Orthodox quantum mechanics. This is because the weight of the Gaussian enveloping in $z$ the state $\ket{a_k}_S$ has cumulative probability $|\alpha_k|^2$. Now, since the interaction between $M$ and $S$ is off for times $t>T$, the Hamiltonian of the joint system becomes factorisable for $t>T$, meaning we will be able again to evolve for all subsequent times the sub-system as an independent closed quantum system. 
+
+In summary, as seen from the subsystem alone, it will have looked like the unitarily evolved state $\ket{\psi}_S$ "collapsed" into one of the eigenstates of $\hat{A}_S$, with a probability equal to the magnitude squared of the projections to those eigenstates $|\alpha_k(0)|^2$, and will now continue to be unitarily evolvable (for it is an EWF with no interaction with M). The randomness arises due to the fact that we cannot know $z^\xi(0)$ with an arbitrary precision, unless we made a projective measurement on it before the experiment. But to measure a continous observable, we need yet another ancilla coupling and measurement, as explained in what follows. The thing is that this chain of couplings allows us to decide where arbitrarily between the observer's mind and the subsystem we place the "collapse", just as required by Von Neumann himself in \cite{VonNeumann}\footnote{Von Neumann did not believe in a physical collapse as explained by \cite{NeumannNoCollapse}, he instead believed an explanation of the measurement should be possible setting an apparent collapse at an arbitrary point of the measurement Neumann chain.}, without the need of a physical collapse, just with a unitary evolution coupling bigger partitions of the Universe, that we can reasonably decide at which point to consider as EWF-s.
+
+If the observable $A$ had a continuous spectrum, such that $\hat{A}_S=\int a\ket{a}_S\bra{a}_Sda$ with $\{\ket{a}_S\}_a$ an improper state Rigged Hilbert space orthonormal basis associated with $S$, with $\ket{\psi(0)}_S=\int\psi(a,0)\ket{a}da$, then the unitary coupling evolution will yield a composed state at time $t=T$:
+\begin{equation}
+\ket{\Phi(T)}_{MS}=\int\qty(\int\psi(a,0)e^{-\frac{(a-\frac{z}{gT})^2}{4\Delta^2}}\ket{a}_S da)\ket{z}_Mdz\quad \text{with} \quad \Delta:=\frac{\sigma}{gT}
+\end{equation}
+where, as graphically shown in Figure \ref{fig:collapse}, if $g$ or $T$ are big enough, or $\sigma$ is small enough, the resulting wavefunction is stretched in $z$ such that the variation is so slow in $z$, that if the interaction between the S and M is stopped for $t>T$, the subsystem will be in an EWF equal to the CWF sliced by evaluating $z$ in the observed Bohmian position $z^\xi(T)$. This EWF will be a very narrow Gaussian (tending towards a Dirac delta), and will be the EWF of the subsystem with a probability density roughly equal to $|\psi(a,0)|^2$, as stated by the "collapse" postulate of Orthodox quantum mechanics. We know the state will need to be macroscopically stretched for our measuring dial to show significantly different positions, which is the reason why the measurement seems to result in a "collapse" as seen from the subsystem.
+
+Now, either the assumption that for time $t>T$, $M$ does not interact anymore with $S$, or that the environment entanglement with the subsystem is lost by some sort of thermalization, mean that the information of the subsystem that was "leaked" to the environment (the so called "empty waves", which are the rest of CWF-s that are not sliced at $z^\xi(T)$\footnote{Empty waves that technically could interact back with the CWF selected by $z^\xi(T)$ if their macroscopic separation was made microscopic again.}), do not interact back with the EWF of the subsystem. Any of these two assumptions then mean that the environment effectively forgets the entanglement achieved with the subsystem. This is an environment behavior we could call Markovian or memory-less.
+
+Then, since the environment description will only be useful for the measurement time, and we can then discard it (as we consider it for an ideal measurement to be Markovian), we can explain the projection of the state of S to a subspace of the Hilbert space of S directly with a set of effective-"collapse" projectors $\{\hat{\Pi}_k\}_k$ without the need to formalize M, as is typically done, just without forgetting that this is a short-cut in the explanation. In quantum mechanics we "measure" the a posteriori state of the system with probabilities due to the a priori state. 
+
+If we were now interested on the post-measurement description of the sub-system alone, but irrespective of the measured result, we could independently unitarily evolve each of the possible projected states (EWF-s), rememebering which was the probability for each of them. Then if a second measurement is performed at a later point, we could simply treat a measurement on each of the independent states and weight them with the joint probability of the previous and the current measurements. Perhaps more compactly, we could instead build a "matrix" where each "column" (each slot that will save a state-vector independently of the rest under linear operations) would be a possible effective state-vector, where we could also save the probabilities as the coefficient of the state-vector. If we now apply linear operations we wish to apply (say the unitary evolution) in both sides of the "matrix" (with an Herminitan conjugate in the right), we will be applying the operation to each state-vector (each "column") independently of the rest. That is, we could define some operators on state-vectors, that will serve as state containers like:
+\begin{equation}\label{dens}
+\hat{\rho}_S(T) =\sum_k |\alpha_k(0)|^2\ket{a_k}_S\bra{a_k}_S \quad \text{or} \quad \hat{\rho}_S(T)=\int |\psi(a,0)|^2\ket{a}_S\bra{a}_S da
+\end{equation}
+This is the so called {\bf density matrix} of the subsystem S. Notice that for subsequent unconditional measurements, the density matrix will get more and more mixed (the squared trace will diminish).\footnote{Also, note that these are "diagonal" representations of the density matrix but we could equivalently express it in other orthonormal bases, which means we can loose the microscopic deterministic detail of what is happening if we only specify a density matrix. For a probabilistic operational description of S (an epistemological description), this will suffice, but we have just seen that an ontologically meaningful view of the matrix is always available.}
+
+\subsection*{A Bohmian Narrative for General Quantum Operations}
+At this point, notice that the MS coupling and subsystem EWF ramification due to a macroscopic separation in configuration space for different CWF-s, is not necessary to be part of a measurement by an observer. Such an apparent collapse on the subsystem could also happen as the effect of a more general environment for the system. From the perspective of the subsystem alone, such an interaction with the environment could be seen as a non-unitary evolution that makes the density matrix of the system get more mixed. Yet, a requirement for this environment, that acts as an ideal projective measurement, is that the portion of the enviornment that got entangled with the subsystem and caused its effective collapse rapidly thermalizes or never again interacts with the subsystem. This is a possible narrative for a general Markovian environment.
+
+Given a density matrix $\hat{\rho}_{MS}$ for a composed MS system (which can be pure if say $\hat{\rho}_{MS}=\ket{\Psi(T)}_{MS}\bra{\Psi(T)}_{MS}$), its partial trace over M is, given an arbitrary orthonormal base of M $\{\ket{b}\}_b$, defined as:
+\begin{equation}
+tr_{M}[\hat{\rho}_{MS}] = \sum_k \bra{b}\otimes \hat{I}_S(\hat{\rho}_{MS})\ket{b}\otimes \hat{I}_S
+\end{equation}
+where it would be an integral if the base is made of improper states. It can be proven that the resulting S density matrix, so called {\bf reduced density matrix}, is the same irrespective of the employed basis. Now, note that the partial trace of M on the pure state $\ket{\Psi(T)}_{MS}\bra{\Psi(T)}_{MS}$ under the effective "collapse" conditions for $g,T,\sigma$, precisely yields the unconditional post-measaurement density matrices of equation \eqref{dens}. 
+
+In general, this indicates that the partial trace of a partition A of a composite Hilbert space AS can always be interpreted as how S would be left if an unconditional ideal projective measurement was performed on A. That is, if we coupled an ancilla M to A to ideally measure an observable of A and performed the effective collapse of A. The effective collapse of A would cause the effective collapse of the CWF-s of S entangled with each collapsed orthonormal state of A. The resulting density operator of S would exactly be the partial trace of A. Note very importantly that if the traced out partition is not really projectively measured (coupling a measurement ancilla to it and evolving until macroscopic distinguish-ability is achieved) and the interaction between A and S is not thermalized or does not cease indeterminately, then the obtained reduced density matrix for S will not evolve unitarily: each CWF of the subsystem will still interact with the different adjacent slices of the full wavefunction. That is, these CWF-s will not be EWF-s. Yet, for statistical predictions about S at that time, the information in the reduced density matrix will be enough. Thus, the reduced density matrix is just a structure that allows punctual measurement statistics on S to be predicted, but in general the environment's effect will need to be taken into account in its time evolution. Unless of course, a real unconditional measurement of A is performed (by an outer environment or by an observer) and the A-S interaction ceases. Interesting enough, the observable measured on the traced out partition is irrelevant for the resulting reduced density matrix, which is what allows the versatility of the so called pure unravellings.
+
+Given all this narrative could now easily obtain a generalized measurement scheme were we could determine after the measurement in which state the system is, without such an state necessarily being part of the eigenbasis of a Hermitian operator. For this, we could couple the states of the decomposition of interest each with a state of an orthonormal basis $\{\ket{m}_A\}_m$ of an ancilla A with a suitable coupling unitary evolution $\hat{AS}$. Such that beginning with the product of a fiducial ancilla state and a certain subsytem state $\ket{\theta}_A\otimes\ket{\psi}_S$, we get $\ket{\Psi}_{AS}=\hat{U}\ket{\theta}_A\otimes\ket{\psi}_S=\sum_m \ket{m}_A\otimes \ket{\psi|m}_S$ with $\ket{\psi|m}:=\bra{m}_A\otimes\hat{Id}_S \hat{U}\ket{\theta}_A\otimes\ket{\psi}_S$ an unnormalized subsystem state (we will call a general conditional state). Then an ideal projective measurement for the $\ket{m}$ basis, just as the ones we have explained, performed on A, would generate AS unnormalized EFW-s $\ket{m}_A\otimes \ket{\psi|m}_S$, with a probability equal to its norm squared $N^2:=|\bra{\psi|m}\ket{\psi|m}|^2$. These AS states are a product of the measured state for A and the (unnormalized) state entangled with it for S. If we then set off the interaction between A and S, the S will be in the EWF $\ket{\psi|m}_S/N$ with probability $N^2$. If we wish we could now shortcut the formalization of the ancilla and its projective measurement, by just considering the general measurement operators (called POVM-s) $\{\Omega_m:=\ket{m}\otimes\hat{Id}\hat{U}\ket{\theta}_A\otimes\}_m$ such that the only requirement for them is that since $\Omega_m\ket{\psi}_S=\ket{\psi|m}_S$ will be the (unnormalized) post-measurement state and its squared norm will be the probability to observe $m$: $\sum_m \Omega_m^\dagger\Omega_m=\hat{Id}_S$ (so that probabilities add up to one). The reason why we can choose any linear operator in $\Omega_m$ will be seen in the next paragraph. The treatment of such an operation on the subsystem for a density matrix can be straightforwardly derived.
+
+In order to finish integrating the density matrix formalism and any general quantum operation with this Bohmian view (even the generality of the previous derivation of a POVM), we can invoke the Gelfand-Naimark-Segal theorem, following which, for any most general operation we can perform on a density matrix $\hat{\rho}_S$ of a system $S$ (any complete-positive, convex linear and not trace increasing superoperator), say, for the operation $\mathfrak{S}$, there exists at least an ancilla system $A$ with a pure state $\ket{\theta}_A$ and a coupling unitary evolution $\hat{U}_{AS}$ such that:
+\begin{equation}
+\mathfrak{S}[\hat{\rho}_S]=tr_A\qty[ (\hat{\Pi}_A\otimes \hat{Id}_S)  \hat{U}_{AS}\qty(\ket{\theta}_A\bra{\theta}_A\otimes \hat{\rho}_S)\hat{U}_{AS}^\dagger]
+\end{equation}
+which can be interpreted as a unitary coupling of the initially independent system and an ancilla, and posterior partially selective ideal projective measurement of $A$ (where only the eigenstates of non-null eigenvalue of $\hat{\Pi}_A$ are left and the rest are discarded)\footnote{Note that for the projective measurement of $A$, we will need to include a measurement ancilla $M$ and do all the coupling and macroscopic determination of the Bohmian position of $M$.}. In particular, if the coupling of S and A perfectly entangles the eigenstates of $\hat{\Pi}_A$ with some orthonormal basis of S, this will be visualizable as a projective measurement of S. Else, it will be visualizable as, a so called, generalized measurement (POVM) of S.
+
+
+\subsection*{From Markovian to Non-Markovian measurement contexts. THz electronics demands.}
+We have just seen that any portion A of the environment, interacting with the subsystem S such that for the reduced density it could be viewed as if every time step $\Delta t$ an ideal projective measurement was made on A (thus effectively collapsing S to the states entangled with the measured basis of A), could be called a Markovian environment. A possible realization of this is if a different portion of the environment interacts with the subsystem at each $\Delta t$ and is ideally measured after-wards (effective collapse). Among other formalizations, the Past-Future Independence definition of Markovianity by Wiseman et al.\cite{MarkovianityDefs}, perfectly matches this view.
+
+In fact, as shown by Ref \cite{continousMeas}, such a continuous monitorization of different ancillas coupled to the system at each time, can be used to derive one of the most general dynamical equations for the reduced density matrix of a subsytem in a Markovian environment. The so called Lindblad Master Equation. Generalizing it requires considering several measurements of different properties of the bath, but the idea still holds.
+
+The fact that the dynamics of the reduced density matrix of a subsystem can be understood in these terms, means that as an alternative computational tool to the non-linear Master Equations, we could find a compatible observable $W$ to be measured for the environment and evolve pure state-vectors of the subsystem choosing at each projective measurement time for the bath (each $\Delta t$) randomly one of the entangled subsystem measurement results. This would generate a series of pure states linked in time $\ket{\psi^{w(t)}(t)}$, associated to a certain measured continous monitorization (or unravelling) of its bath $w(t)$ (remember at each time a different measurement dial is represented by this trajectory, meaning its non-differentiable nature is not a problem). Such a pure state is called a quantum trajectory linked to a particular, so called, "noise realization" $w(t)$ for the environment. As we saw previously that the reduced density matrix of a system is how it would be left if an unconditional ideal measurement was performed on the environment, this tells us that we should be able to obtain the reduced density for the subsystem by averaging the ensemble of all possible quantum trajectories for the unraveling of the $W$ observable of the bath:
+\begin{equation}
+\hat{\rho}_S(t):=tr_{ES}[\hat{\rho}_{ES}(t)]=\mathbb{E}_{w(t)}\qty[\ket{\psi^{w(t)}(t)}\bra{\psi^{w(t)}(t)}]
+\end{equation}
+This means that if we got an equation ruling the stochastic time evolution of the pure quantum trajectory $\ket{\psi^{w(t)}}$ and its noise realization $w(t)$, numerically, we would be able to parallelize the computation of the reduced density matrix. Such equations are the so called Stochastic Schrödinger Equations (SSE-s).
+
+From our Bohmian perspective, this works because at each time step $\Delta t$, the measurement of the environment, makes the CWF obtained by conditioning the subsystem-bath-measurement-apparatus wavefunction to the dial position $w(t)$ be converted into an EWF (for it is an ideal measurement of the bath). Thus, the subsystem quantum trajectory is just the subsystem state that was entangled with the measured property of the bath, indicated by the dial of time $t$ at position $w(t)$. Notice that also in Bohmian mechanics, the measured property of the bath does not need to be its position. It is the position of the dial measuring this bath property that will need to be a Bohmian position. \# IT IS A GENERALIZED MEASUREMENT BA KLARO. IGUAL ARIÑAU AZALTZEN BAZUN...Ba idatzi hau exaktamente.
+Ta hau formulakin idazten badoten hurrengo esangotena ya sería inmediato (?). Aunke igual al dot berdin berdin esan hurrengoa, aklaretan ke en vd no hace falta que haya una measurement para ke con CWF-s se recoveree la reduced density en general-> non-MArkovianetan al dozu erabili CWF kontzeptue sin problemas...baia qtm trajectory como pure unravelling no.
+
+In fact, since we can write the full wavefunction of the subsystem S and the significant part of the environment A for it (say the degrees $\vec{z}=(x_{n+1},...,x_m)$ with $m<N$) as a function of CWF-s of the subsystem as:
+\begin{equation}
+\ket{\Psi}_{AS}=\int\ket{\vec{z}^\xi(t)}_A\otimes \ket{\psi^\xi(t)}_S dz = \iint\psi^\xi(\vec{x},t)\ket{\vec{z}^\xi(t)}_A\otimes \ket{\vec{x}}_S dx\ dz
+\end{equation}
+ an ideal projective measurement of the position of the environment degrees of freedom $\vec{z}=(x_{n+1},...,x_m)$ (with $m<N$) would be equivalent to applying 
+ 
+
+Azaldu quantum trajectoryxe eta lotute dekon trajectorixe de la monitorización crystal clearly. Ta zelan recover by averaging the reduced density. De fet sea la monitorización del entrono que uses la reduced density podrás recoverearla->unravellings. Azaldu CWFak diela desde Bohmian esas conditional states. Y ke se pueden enetender desde orthodox for they are EWFs at each delta t!
+
+The interesting point about such a master equation ruling the motion of the reduced density is that since the environment's effect can be viewed as stated, if we simulated enough conditional realizations of the continuous monitorizations of the environment, we could reconstruct the unconditional reduced density matrix via a simple frequentist ensemble average:
+
+
+Each realization of the measurements on the environment (which are the different Bohmian positions of the dials used in each time), then turn out to be conditional state vectors (in position representation they would be CWFs), that evolve in time without interacting with the rest of possible realizations or CWFs. This is clear since in each time increment they are EWF-s, for they are the result of an effective collapse of the bath. Therefore, if we got a dynamical equation for these CWF-s, we could in parallel evolve several CWF-s and then recover the unconditional reduced density by an averaging. Such a dynamical equation is a so called Stochastic Schrödinger Equation (SSE).
+
+
+Ref. \cite{mostGeneralMarkovian} prove that the general Lindblad equation for Markovian environments:
+
+
+can be derived as tal tal.
+
+Following all the above explanation, we can now easily understand the concept of a pure quantum trajectory unravelling for the system. 
+
+
+
+Yet, the reamining question would then be: what if the information leaked to the enviornment before we considered the effective collapse, could interact back with the CWF-s we sliced to define the EWFs? That is, what if the empty waves (like the different quantum trajectories of the pure unravellings) could interact with each other? More generally, what if we have an environment that simply does not cause an effective collapse of the bath in each time? That is, if the environment remains entangled with the subsystem for significant times for S. Could we then generate SSEs? Could we then understand them as pure unravellings? that is, could an orthodox interpret the quantum trajectories of the unravellings of such SSEs as soemthing meaningful? Not just interpretationally but in roder to compute time correlations for example. 
+Depending on if you assume that what you are really doing then is evolving CWF-s and not EWFs! The point is a CWF, which is a WF for the subsystem withoiut the need of talking about any observation (unlike a CWF), does not have any sort of interpretation in orthodox qm, but is straight-forward in Bohmian mechanics. This was already warned by Wiseman et al. in tal.
+
+In fact, many SSEs for non-Markovian environment interactions with the subsystem have been already derived in general orthodox, but also in modal theory terms. Yet, as for our knowledge, the ad-hoc assumptions required to have parallelizable SSEs require making assumptions about the interaction between adjacent CWF-s. For example in Wiseman's tal. Yet having a narrative like the one we have developed, might be useful not only theoretically, but also numerically, in that they could guide us in the creation of ad-hoc potentials.
+
+As an example. Pum! Gurie!
+
+
+\newpage
+Azaldu ke continous quantum measurement al dala Bohmianamente oso ondo ulertu bebai ancillas ke vas cambiando etc. De aki las quantum trajectories ke salen tal. 
+Ke inclusive se puede ver que Lindblad ekuation más generales vienen de tal tal wisemanen paperra etabar.
+
+Oin con la definición de Markovianidad de akel review de Wiseman, podemos hablar de qué es una medición así, y hablar inclusive de unravellings en este contexto (si lo haces al describir al principio la medición vas a tener que hablar de la density matrix y de la reduced density matrix).
+
+Hablar de lo que son las SSE y cómo al pasar a non-Markovian environments ya no tiene sentido hablar de que sean estados puros. Comentar que en CWF tampoco, y es que no son WF effectives! Ese es el problema! 
+Qué deben cumplir las SSE.
+Sartun gure SSEak como opción factible, particularmente para electrónica!
+
+
+
+Whenever an environmen's effect on the system is as if continous measurement of an ancilla that gets coupled with the system at each small time step, tal tal, artikuloa cite ke demuestran que Lindblad equation se puede ver asá. Esto permite que en cada tiempo el reduced density operator pueda entenderse como propia y entonces puedes hacer quantum trajectories de states, que juntas en plan unconditional te generarán el reduced density unconditional (haya habido o no measurement por un observador claro!). Plam, Markovian, entendible por la definición de wiseman et al de partes del entorno que se acoplan, miden y desacoplan PFI. Peero, si el environment puede volver a scar a la palestra el entrelazamiento que adquirió (que no se ve reflejado en el reduced density! eh ahi la diferencia, la cosa es si el entrelazamiento puede afectar tq CWf diferentes se afecten entre ellos), porke no ha sido un environment como una measurement, sino es un environmnet general, (non-Markovian), entonces pa evolucionar CWFs necesitas los slices de alado! + chungo encontrar SSEs (y ++ ad hoc claro), pues condiciones de las SSEs es ke permitan evolvear CWFs indepdtlky en paralelo sin necesidad de cross talk. Peero se pueden encontrar maneras, cita la de Wiseman, y cita nuestra sugerencia. Y dejar claro que no es entendible ortodoxamente un CWF como un pure quantum state, xke es cómo quedaría el resultado del measurement en cada tiempo si lo midieses, pero no lo haces, x ke si lo hicieses ya no evolvearía igual! Pero Bohmiananmente tiene todo el sentido del planeta tierra xD.
+
+En el otro, demostrar que cualquier propiedad de una Bohmian particle se puede medir así (gero si lo consideras malabares o no, up to you xD, pero se puede), y dejar caer la del spin si acaso, o si no simplemente los observables q tienen que ver con la posición. Y decir que esto no tienen por que estar cuantizado ni nada, que eso es la pilot wave.
+
+
+
+
+
+ 
+
+It turns out, as is well known, that any 
+
+It turns out that 
+
+In fact, in the work \cite{MarkovianityDefs} by Wiseman et al., many of the Markovian environmnet
+
+Haz el caso del continous
+
+Explica entonces que ahora si kisieras seguir describiendo el system sin el environment pero preservando todos los resultados (unconditional), generarias una matriz de wavefunctions, donde cada wavefunction iría acompañada de su probabilidad. Y de aki la proper density matrix.
+
+Es más, hacer la traza parcial, y considerar la reduced density matrix de un sub-system siempre se puede entender como tal tal.
+
+Más inclusive, cualquier operación sobre un subsystem quantum se puede expresar como una measurement de cualquiera de estos dos tipos. Jarri tal tal, lo ke explica que una explicación con evolución unitaria es muy natural y punto. La gracia será que esto nos permitirá hablar de Markovianidad con mucho criterio. Y pum! Sartun hemen Markovian non Markovian (Lindblad equAtion etc.). eta gure ekuaziñoiek.
+
+Ta gero ya penultima section azaldu aplikazo fantzixe de in position weak measurements y de props de la onda piloto y de la Bohmian
+
+
+ indicating the measured $a_k$. : $e^{-\frac{(z-a_kgT)^2}{4\sigma^2}}$ will generate a coupled state that  (whcih is a necessity for the measurement apparatus to be considered macroscopically acceptable, meaning the differ will generate a 
+
+
+Here, we see that if , then the dynamical equation for the subsystem of interest would be reduced into a Schrödinger Equation. This would be the case if for example, there is non-negligible probability density in macroscopically separated disjoint regions of configuration space, or if the variation of the wavefunction in the axes of the environment is so slow that tal. In any of the two cases, we could consider an effective wavefunction for the subsystem and study its dynamics ignoring the rest of the Universe (the environment). This is the rationale (from a Bohmian approach) to justify using the Schrödinger Equation for systems that are not the whole Universe. Jarri footnote baten ke even if zinzun ein effective wavefunction bat si consideras cadenas infinitas de potenciales puedes de todas formas entenderlos tal tal.
+
+Now, if we wanted to measure the subsystem, it is clear that its description as an effective wavefunction of $n$ degrees of freedom would end there. We need also to consider the degrees of freedom of the measuring apparatus and the coupling interaction with the subsystem, that will educe information of the subsytem to a scale that we can macroscopically identify. The typical protocol for a quantum measurement (so called projective measurement) involves the Hamiltonian
+tal tal countable y uncountable
+
+Y de forma que el colpaso realmente no es más que un fenómeno efectivo debido a observar el subsystem alone cuando la interacción ha cesado y/o se termaliza el entorno. Esan density matrixen naturalidadie at this step, y observa que partial trace en realidad no es más que asumir esto.
+
+Pero no sólo eso, sino que podriamos hacer un acoplamiento de un ancilla más y el que medimos proyectivamente es el segundo y el tal. Generalized measurements. Neimark segal tal theorem tal tal. 
+
+
+
+Igual lelau azaldu ein bidot zer dan una effective wavefunction, y como tenemos la forma de explicar el cómo puede seguir una Schr eqt para ella sóla....... Sin postular cosas como ellos en el paper sino usando fórmulas como tal.
+
+Azaldu en countable y en uncountable spectrum observables. Mencione el problema de que la ancilla se comporte clásicamente suceda o no el colapso en tu consideración. Komente hau Ortodoxoak ya komentetan biela azaltzeko la measurement. Pero que introducian el antinatural measurement.
+
+Quantum measurement es measure the a posteriori state con probabilidades a priori
+
+Azaldu weak measurement
+
+Azaldu ke en general edozein measurement al dozu egin holan
+
+Azaldu zelan CWFakaz inkluso al alkozenule ulertu  dana en términos de WFs en el espacio físico!
+
+Also density matrices se introducen de forma muuy natural.
+
+\subsection*{Properties of the Pilot Wave and Properties of the Particle. Two approaches to predict observables.}
+
+From the above explanation of the ideal projective measurement, we can see that a measurement operator is just a way to gather an orthonormal basis of the subsystem with the corresponding univoque physical observable value corresponding to each orthonormal state. Thus, we see that what we are really measuring is a property of the wavefunction, and not a property of the underlying Bohmian trajectory of the subsytem $\vec{x}^\xi(t)$.
+
+Azaldu zelan al dozuzen konsidere effective wavefunction horren propiedadiek, teorika eta observacionalmente como props de la onda a posteriori, con probabilidades a priori.
+Baia bebai con in position weak measurements al dozule Bohmian trajectory horren propiedadiek atara. En verdad edozein propiedade que se derive de la posición tendrá sentido. Inclusive otros, si así lo quisieras entender (ejem spin y tal). El gran mérito komenteu! Korrontie al dozule predezidu Bohmian partikleak averagietan para un operador que aunque formalmente no lo conozcas sí en términos de Bohmian partikels!!! De manifiestísimo itxi hau aplikaziño praktiko bat dala, ortodoxoakiko ekibalentie!
+
+
+\subsection*{Could we understand light matter interaction through well defined "Bohmian-electromagnetic fields"?}
+
+Azaldu ke con la Bohmiana es incluso posible describir light matter interaction empleando particulas y campos bien definidos.
+
+\subsection*{Conclusion}
+CONTEXTUALIZA UN POCO MÁS TODO EN TÉRMINOS DE ELECTRÓNICA
+
+
+\newpage
+\begin{thebibliography}{1}
+{\footnotesize 
+
+\bibitem{Bohm}
+Bohm, D. {\em "A suggested interpretation of the quanta theory in term of hidden variables: Part I."} Phys. Rev. 85, 166–179 (1952).
+
+\bibitem{where}
+Oriols X. and Ferry D. K., {\em "Why engineers are right to avoid the quantum reality offered by the orthodox theory? [point of view],"} Proceedings of the IEEE, vol. 109, no. 6, pp. 955-961, 2021.
+
+\bibitem{Durr}
+Dürr D., Teufel. S. {\em "Bohmian mechanics: the physics and mathematics of quantum theory,"} Springer Science \& Business Media, Berlin, Germany, 2009.
+
+\bibitem{JordiXavier}
+	Oriols X., Mompart J., {\em "Applied Bohmian Mechanics: From Nanoscale Systems to Cosmology,"} Pan Stanford, Singapore, 2012.
+	
+\bibitem{Absolute}
+Dürr, D., Goldstein, S. \& Zanghí, N. {\em "Quantum equilibrium and the origin of absolute uncertainty."} J Stat Phys 67, 843–907 (1992).
+
+\bibitem{GJ}
+Oriols X. {\em Quantum-trajectory approach to time-dependent transport in mesoscopic systems with electron-electron interactions} Phys. Rev. Lett. 98 066803 (2007).
+
+\bibitem{XOPhysSpace}
+Norsen, T., Marian, D. \& Oriols, X. {\em Can the wave function in configuration space be replaced by single-particle wave functions in physical space?.} Synthese 192, 3125–3151 (2015).
+
+
+\bibitem{VonNeumann}
+von Neumann, J. {\em "Mathematical Foundations of Quantum Mechanics."} Princeton University Press, Princeton (1955).
+
+\bibitem{Weak}
+Aharonov, Yakir, David Z. Albert, and Lev Vaidman. {\em "How the result of a measurement of a component of the spin of a spin-1/2 particle can turn out to be 100."} Physical review letters 60.14 (1988): 1351.
+
+\bibitem{Generalized}
+Wiseman, Howard M., and Gerard J. Milburn. {\em "Quantum measurement and control."} Cambridge university press, 2009.
+
+\bibitem{XOCM}
+Oriols, X., \& Benseny, A. {\em "Conditions for the classicality of the center of mass of many-particle quantum states."} New Journal of Physics, 19(6), [063031],  (2017).
+
+\bibitem{WisemanVel}
+Wiseman, H. M. {\em "Grounding Bohmian mechanics in weak values and bayesianism."} New Journal of Physics 9.6 (2007): 165.
+
+\bibitem{DevInPosition1}
+Pandey, Devashish, et al. {\em "Unmeasured Bohmian properties and their measurement through local-in-position weak values for assessing non-contextual quantum dynamics."} (2019).
+
+\bibitem{DevInPosition2}
+Pandey, Devashish, et al. {\em "Identifying weak values with intrinsic dynamical properties in modal theories."} Physical Review A 103.5 (2021): 052219.
+
+\bibitem{BohmianCurrent}
+Marian D., Zanghì N., and Oriols X. {\em "Weak values from displacement currents in multiterminal electron devices."} Physical review letters 116.11 (2016): 110404.
+
+\bibitem{continousMeas}
+Jacobs, Kurt, and Daniel A. Steck. {\em "A straightforward introduction to continuous quantum measurement."} Contemporary Physics 47.5 (2006): 279-303.
+
+\bibitem{MarkovianityDefs}
+Li, Li, Michael JW Hall, and Howard M. Wiseman. {\em "Concepts of quantum non-Markovianity: A hierarchy."} Physics Reports 759 (2018): 1-51.
+
+\bibitem{NMisModal}
+Wiseman, H. M. \& Gambetta, J. M. {\em "Pure-state quantum trajectories for general non-Markovian systems do not exist."} Phys. Rev. Lett. 101, 140401 (2008).
+
+\bibitem{WisemanSSE}
+Gambetta, Jay M., and Howard M. Wiseman. {\em "A non-Markovian stochastic Schrödinger equation developed from a hidden variable interpretation."} Fluctuations and Noise in Photonics and Quantum Optics. Vol. 5111. International Society for Optics and Photonics, 2003.
+
+\bibitem{Thz}
+Pandey, D., Colomés, E., Albareda, G. \& Oriols, X. {\em "Stochastic Schrödinger equations and conditional states: A general non-Markovian quantum electron transport simulator for THz electronics."} Entropy 21(12), 1148 (2019).
+
+\bibitem{lightMatter}
+Villani M., Destefani C. F., Cartoixà X., Feiginov M., Oriols X. {\em "THz displacement current in tunneling devices with coherent electron-photon
+interaction."}
+
+}
+
+\end{thebibliography}
+
+
+
+
+
+\end{document}
