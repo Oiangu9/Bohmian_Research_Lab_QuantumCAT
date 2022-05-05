@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  2 MAY 2022 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  5 MAY 2022 10:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3265,19 +3265,41 @@ LaTeX Warning: Reference `fig:collapse' on page 4 undefined on input line 225.
 LaTeX Font Info:    Try loading font information for U+euf on input line 250.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6]
-Overfull \hbox (3.95743pt too wide) in paragraph at lines 274--276
-\OT1/cmr/m/n/10.95 an ideal pro-jec-tive mea-sure-ment of the po-si-tion of the
- en-vi-ron-ment de-grees of free-dom $[] = (\OML/cmm/m/it/10.95 x[]; :::; x[]\O
-T1/cmr/m/n/10.95 )$
+) [6] [7]
+[8]
+
+LaTeX Warning: Citation `THz' on page 9 undefined on input line 292.
+
+[9]
+
+LaTeX Warning: Citation `divergenceless' on page 10 undefined on input line 296
+.
+
+
+LaTeX Warning: Reference `I' on page 10 undefined on input line 296.
+
+
+LaTeX Warning: Citation `equiv' on page 10 undefined on input line 296.
+
+
+LaTeX Warning: Citation `THz' on page 10 undefined on input line 298.
+
+
+Overfull \vbox (1.91942pt too high) has occurred while \output is active []
+
+
+[10]
+Overfull \hbox (8.1741pt too wide) detected at line 313
+ \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\O
+ML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
-[7]
+[11] [12] [13]
 
-LaTeX Warning: Citation `mostGeneralMarkovian' on page 8 undefined on input lin
-e 286.
+LaTeX Warning: Citation `mostGeneralMarkovian' on page 14 undefined on input li
+ne 370.
 
-[8] [9] [10] [11]
+[14] [15] [16]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 46.
 See the caption package documentation for explanation.
@@ -3286,14 +3308,14 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 47.
 See the caption package documentation for explanation.
 
-[12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 463.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 463.
+[17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
 
 (./Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memory_of_Detlef_Dur
 r.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 463.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 463.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
 Package rerunfilecheck Info: File `Chapter_on_Physics_and_the_Nature_of_Reality
 __Essays_in_Memory_of_Detlef_Durr.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -3303,10 +3325,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36336 strings out of 492982
- 680835 string characters out of 6134895
- 785525 words of memory out of 5000000
- 39287 multiletter control sequences out of 15000+600000
+ 36359 strings out of 492982
+ 681070 string characters out of 6134895
+ 786525 words of memory out of 5000000
+ 39291 multiletter control sequences out of 15000+600000
  546833 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,8n,97p,10473b,785s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3315,25 +3337,27 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
+ist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb>
 Output written on Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memor
-y_of_Detlef_Durr.pdf (13 pages, 293195 bytes).
+y_of_Detlef_Durr.pdf (18 pages, 344246 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
