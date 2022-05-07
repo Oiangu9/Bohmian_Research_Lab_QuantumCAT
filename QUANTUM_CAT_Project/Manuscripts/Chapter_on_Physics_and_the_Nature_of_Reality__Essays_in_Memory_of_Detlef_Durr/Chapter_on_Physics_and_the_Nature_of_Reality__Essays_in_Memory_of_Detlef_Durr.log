@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  6 MAY 2022 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  7 MAY 2022 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3251,58 +3251,65 @@ Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 [1] [2]
 
-LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 218.
+LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 221.
 
 
-LaTeX Warning: Citation `NeumannNoCollapse' on page 3 undefined on input line 2
-20.
+LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 229.
 
 [3]
 
-LaTeX Warning: Reference `fig:collapse' on page 4 undefined on input line 226.
+LaTeX Warning: Citation `NeumannNoCollapse' on page 4 undefined on input line 2
+32.
 
 [4]
-Overfull \hbox (31.51448pt too wide) in paragraph at lines 241--242
-[]\OT1/cmr/m/n/10.95 Given a den-sity ma-trix $[]$ for a com-posed MS sys-tem (
-which can be pure if say $[] = [][] [][]$),
+Overfull \hbox (20.05309pt too wide) in paragraph at lines 253--254
+[]\OT1/cmr/m/n/10.95 Now, given a den-sity ma-trix $[]$ for a com-pos-ite A$\OM
+S/cmsy/m/n/10.95 
+$ \OT1/cmr/m/n/10.95 S (which can be pure if say $[] = [][] [][]$),
  []
 
-[5]
-LaTeX Font Info:    Try loading font information for U+euf on input line 251.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+
+Overfull \hbox (0.96594pt too wide) in paragraph at lines 253--254
+\OT1/cmr/m/n/10.95 given an ar-bi-trary or-thonor-mal base of the A $\OMS/cmsy/
+m/n/10.95 f[][]g[]$\OT1/cmr/m/n/10.95 , its par-tial trace over A is de-fined a
+s: $\OML/cmm/m/it/10.95 tr[]\OT1/cmr/m/n/10.95 [[]] :=
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 258.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6] [7] [8]
+) [5] [6] [7]
 
-LaTeX Warning: Citation `THz' on page 9 undefined on input line 293.
-
-
-LaTeX Warning: Citation `divergenceless' on page 9 undefined on input line 297.
+LaTeX Warning: Citation `THz' on page 8 undefined on input line 301.
 
 
-
-LaTeX Warning: Reference `I' on page 9 undefined on input line 297.
-
-
-LaTeX Warning: Citation `equiv' on page 9 undefined on input line 297.
+LaTeX Warning: Citation `divergenceless' on page 8 undefined on input line 305.
 
 
-LaTeX Warning: Citation `THz' on page 9 undefined on input line 299.
 
-[9]
-Overfull \hbox (8.1741pt too wide) detected at line 314
+LaTeX Warning: Citation `equiv' on page 8 undefined on input line 305.
+
+[8]
+Overfull \hbox (8.1741pt too wide) detected at line 318
  \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\O
 ML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
-[10] [11] [12]
+[9] [10] [11]
 
-LaTeX Warning: Citation `nogo' on page 13 undefined on input line 364.
+LaTeX Warning: Citation `nogo' on page 12 undefined on input line 366.
 
-[13]
+[12]
 
-LaTeX Warning: Citation `Tal' on page 14 undefined on input line 398.
+LaTeX Warning: Citation `Tal' on page 13 undefined on input line 396.
 
-[14]
+
+Overfull \hbox (23.95552pt too wide) in paragraph at lines 398--398
+[][]\OT1/cmr/bx/n/10.95 Could we un-der-stand light mat-ter in-ter-ac-tion thro
+ugh well de-fined \  Bohmian-electromagnetic
+ []
+
+[13] [14]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 48.
 See the caption package documentation for explanation.
@@ -3312,13 +3319,13 @@ Package caption Warning: Unused \captionsetup[table] on input line 49.
 See the caption package documentation for explanation.
 
 [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 579.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 579.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 577.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 577.
 
 (./Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memory_of_Detlef_Dur
 r.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 579.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 579.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 577.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 577.
 Package rerunfilecheck Info: File `Chapter_on_Physics_and_the_Nature_of_Reality
 __Essays_in_Memory_of_Detlef_Durr.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -3328,11 +3335,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36356 strings out of 492982
- 681052 string characters out of 6134895
- 788525 words of memory out of 5000000
+ 36354 strings out of 492982
+ 681022 string characters out of 6134895
+ 787525 words of memory out of 5000000
  39286 multiletter control sequences out of 15000+600000
- 546833 words of font info for 88 fonts, out of 8000000 for 9000
+ 546526 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,8n,97p,10473b,783s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -3350,19 +3357,20 @@ mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm7.pfb>
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eul
+er/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm7.pfb>
 Output written on Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memor
-y_of_Detlef_Durr.pdf (16 pages, 359899 bytes).
+y_of_Detlef_Durr.pdf (16 pages, 363792 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 500000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
