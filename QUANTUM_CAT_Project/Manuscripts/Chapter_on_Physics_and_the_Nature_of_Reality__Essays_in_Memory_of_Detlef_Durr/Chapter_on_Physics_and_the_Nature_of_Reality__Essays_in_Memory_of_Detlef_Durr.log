@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  7 MAY 2022 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  8 MAY 2022 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3014,7 +3014,140 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
 (./Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memory_of_Detlef_Dur
-r.aux)
+r.aux
+
+LaTeX Warning: Label `where' multiply defined.
+
+
+LaTeX Warning: Label `Bohm' multiply defined.
+
+
+LaTeX Warning: Label `Holland' multiply defined.
+
+
+LaTeX Warning: Label `Durr' multiply defined.
+
+
+LaTeX Warning: Label `JordiXavier' multiply defined.
+
+
+LaTeX Warning: Label `Thz' multiply defined.
+
+
+LaTeX Warning: Label `Absolute' multiply defined.
+
+
+LaTeX Warning: Label `GJ' multiply defined.
+
+
+LaTeX Warning: Label `vonNeumann' multiply defined.
+
+
+LaTeX Warning: Label `NeumannNoCollapse' multiply defined.
+
+
+LaTeX Warning: Label `Generalized' multiply defined.
+
+
+LaTeX Warning: Label `GNSTheorem' multiply defined.
+
+
+LaTeX Warning: Label `continousMeas' multiply defined.
+
+
+LaTeX Warning: Label `MarkovianityDefs' multiply defined.
+
+
+LaTeX Warning: Label `QuantumTrajs' multiply defined.
+
+
+LaTeX Warning: Label `interpretSSE' multiply defined.
+
+
+LaTeX Warning: Label `NMisModal' multiply defined.
+
+
+LaTeX Warning: Label `Diosi' multiply defined.
+
+
+LaTeX Warning: Label `WisemanSSE' multiply defined.
+
+
+LaTeX Warning: Label `tdp' multiply defined.
+
+
+LaTeX Warning: Label `Pois' multiply defined.
+
+
+LaTeX Warning: Label `inject' multiply defined.
+
+
+LaTeX Warning: Label `boundary1' multiply defined.
+
+
+LaTeX Warning: Label `boundary2' multiply defined.
+
+
+LaTeX Warning: Label `eph' multiply defined.
+
+
+LaTeX Warning: Label `diver1' multiply defined.
+
+
+LaTeX Warning: Label `diver2' multiply defined.
+
+
+LaTeX Warning: Label `equiv' multiply defined.
+
+
+LaTeX Warning: Label `Pel' multiply defined.
+
+
+LaTeX Warning: Label `neg' multiply defined.
+
+
+LaTeX Warning: Label `WisemanVel' multiply defined.
+
+
+LaTeX Warning: Label `Weak' multiply defined.
+
+
+LaTeX Warning: Label `DevInPosition1' multiply defined.
+
+
+LaTeX Warning: Label `DevInPosition2' multiply defined.
+
+
+LaTeX Warning: Label `spin' multiply defined.
+
+
+LaTeX Warning: Label `nogo' multiply defined.
+
+
+LaTeX Warning: Label `workPb1' multiply defined.
+
+
+LaTeX Warning: Label `workPb2' multiply defined.
+
+
+LaTeX Warning: Label `modern' multiply defined.
+
+
+LaTeX Warning: Label `tunnel1' multiply defined.
+
+
+LaTeX Warning: Label `tunnel2' multiply defined.
+
+
+LaTeX Warning: Label `work1' multiply defined.
+
+
+LaTeX Warning: Label `work2' multiply defined.
+
+
+LaTeX Warning: Label `lightMatter' multiply defined.
+
+)
 \openout1 = `Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memory_of_
 Detlef_Durr.aux'.
 
@@ -3251,65 +3384,274 @@ Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 [1] [2]
 
-LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 221.
+LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 217.
 
 
-LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 229.
+LaTeX Warning: Reference `fig:collapse' on page 3 undefined on input line 225.
 
-[3]
-
-LaTeX Warning: Citation `NeumannNoCollapse' on page 4 undefined on input line 2
-32.
-
-[4]
-Overfull \hbox (20.05309pt too wide) in paragraph at lines 253--254
+[3] [4]
+Overfull \hbox (20.05309pt too wide) in paragraph at lines 249--250
 []\OT1/cmr/m/n/10.95 Now, given a den-sity ma-trix $[]$ for a com-pos-ite A$\OM
 S/cmsy/m/n/10.95 
 $ \OT1/cmr/m/n/10.95 S (which can be pure if say $[] = [][] [][]$),
  []
 
 
-Overfull \hbox (0.96594pt too wide) in paragraph at lines 253--254
+Overfull \hbox (0.96594pt too wide) in paragraph at lines 249--250
 \OT1/cmr/m/n/10.95 given an ar-bi-trary or-thonor-mal base of the A $\OMS/cmsy/
 m/n/10.95 f[][]g[]$\OT1/cmr/m/n/10.95 , its par-tial trace over A is de-fined a
 s: $\OML/cmm/m/it/10.95 tr[]\OT1/cmr/m/n/10.95 [[]] :=
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 258.
+LaTeX Font Info:    Try loading font information for U+euf on input line 254.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5] [6] [7]
-
-LaTeX Warning: Citation `THz' on page 8 undefined on input line 301.
-
-
-LaTeX Warning: Citation `divergenceless' on page 8 undefined on input line 305.
-
-
-
-LaTeX Warning: Citation `equiv' on page 8 undefined on input line 305.
-
-[8]
-Overfull \hbox (8.1741pt too wide) detected at line 318
+) [5] [6] [7] [8]
+Overfull \hbox (8.1741pt too wide) detected at line 314
  \OT1/cmr/m/n/10.95 + [] [] [][]\OML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 ([]\O
 ML/cmm/m/it/10.95 ; t\OT1/cmr/m/n/10.95 )
  []
 
-[9] [10] [11]
-
-LaTeX Warning: Citation `nogo' on page 12 undefined on input line 366.
-
-[12]
-
-LaTeX Warning: Citation `Tal' on page 13 undefined on input line 396.
-
-
-Overfull \hbox (23.95552pt too wide) in paragraph at lines 398--398
-[][]\OT1/cmr/bx/n/10.95 Could we un-der-stand light mat-ter in-ter-ac-tion thro
-ugh well de-fined \  Bohmian-electromagnetic
+[9] [10] [11] [12]
+Overfull \hbox (13.28694pt too wide) in paragraph at lines 390--390
+[][]\OT1/cmr/bx/n/10.95 Can we un-der-stand light mat-ter in-ter-ac-tion throug
+h well de-fined \  Bohmian-electromagnetic
  []
 
-[13] [14]
+[13] [14] [15] [16]pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.where}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.548 \bibitem{where}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.Bohm}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551 \bibitem{Bohm}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.Holland}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.554 \bibitem{Holland}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.Durr}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.557 \bibitem{Durr}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.JordiXavier}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.560 \bibitem{JordiXavier}
+                           pdfTeX warning (ext4): destination with the same ide
+ntifier (name{cite.Thz}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.563 \bibitem{Thz}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.Absolute}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.566 \bibitem{Absolute}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{cite.GJ}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.569 \bibitem{GJ}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{cite.vonNeumann}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.575 \bibitem{vonNeumann}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{cite.NeumannNoCollapse}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.578 \bibitem{NeumannNoCollapse}
+                                 pdfTeX warning (ext4): destination with the sa
+me identifier (name{cite.Generalized}) has been already used, duplicate ignored
+
+<to be read again> 
+                   \relax 
+l.584 \bibitem{Generalized}
+                           pdfTeX warning (ext4): destination with the same ide
+ntifier (name{cite.GNSTheorem}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.587 \bibitem{GNSTheorem}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{cite.continousMeas}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.590 \bibitem{continousMeas}
+                             pdfTeX warning (ext4): destination with the same i
+dentifier (name{cite.MarkovianityDefs}) has been already used, duplicate ignore
+d
+<to be read again> 
+                   \relax 
+l.593 \bibitem{MarkovianityDefs}
+                                pdfTeX warning (ext4): destination with the sam
+e identifier (name{cite.QuantumTrajs}) has been already used, duplicate ignored
+
+<to be read again> 
+                   \relax 
+l.596 \bibitem{QuantumTrajs}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{cite.interpretSSE}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.599 \bibitem{interpretSSE}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{cite.NMisModal}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.602 \bibitem{NMisModal}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{cite.Diosi}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.605 \bibitem{Diosi}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.WisemanSSE}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.608 \bibitem{WisemanSSE}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{cite.tdp}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.611 \bibitem{tdp}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.Pois}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.614 \bibitem{Pois}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.inject}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.617 \bibitem{inject}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{cite.boundary1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.620 \bibitem{boundary1}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{cite.boundary2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.623 \bibitem{boundary2}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{cite.eph}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.626 \bibitem{eph}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.diver1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.629 \bibitem{diver1}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{cite.diver2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.632 \bibitem{diver2}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{cite.equiv}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.635 \bibitem{equiv}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.Pel}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.638 \bibitem{Pel}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.neg}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.641 \bibitem{neg}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{cite.WisemanVel}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.644 \bibitem{WisemanVel}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{cite.Weak}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.647 \bibitem{Weak}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.DevInPosition1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.650 \bibitem{DevInPosition1}
+                              
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+[]\OT1/cmr/m/n/9 Pandey, Devashish, et al. (2019).
+ []
+
+
+Overfull \hbox (20.37578pt too wide) in paragraph at lines 651--652
+\OT1/cmr/m/n/9 https://pure.mpg.de/rest/items/item[]3179219/component/ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.DevInPos
+ition2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.653 \bibitem{DevInPosition2}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{cite.spin}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.656 \bibitem{spin}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.nogo}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.659 \bibitem{nogo}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.workPb1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.662 \bibitem{workPb1}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.workPb2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.665 \bibitem{workPb2}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.modern}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.668 \bibitem{modern}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{cite.tunnel1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.671 \bibitem{tunnel1}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.tunnel2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.674 \bibitem{tunnel2}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.work1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.677 \bibitem{work1}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.work2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.680 \bibitem{work2}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.lightMatter}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.683 \bibitem{lightMatter}
+                           
 
 Package caption Warning: Unused \captionsetup[figure] on input line 48.
 See the caption package documentation for explanation.
@@ -3318,14 +3660,16 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 49.
 See the caption package documentation for explanation.
 
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 577.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 577.
+[17
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 690.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 690.
 
 (./Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memory_of_Detlef_Dur
 r.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 577.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 577.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 690.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 690.
 Package rerunfilecheck Info: File `Chapter_on_Physics_and_the_Nature_of_Reality
 __Essays_in_Memory_of_Detlef_Durr.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -3333,44 +3677,46 @@ __Essays_in_Memory_of_Detlef_Durr.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 36354 strings out of 492982
- 681022 string characters out of 6134895
+ 36396 strings out of 492982
+ 681425 string characters out of 6134895
  787525 words of memory out of 5000000
- 39286 multiletter control sequences out of 15000+600000
- 546526 words of font info for 87 fonts, out of 8000000 for 9000
+ 39305 multiletter control sequences out of 15000+600000
+ 546218 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,8n,97p,10473b,783s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,8n,97p,10473b,938s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eul
-er/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm7.pfb>
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm7.pfb>
 Output written on Chapter_on_Physics_and_the_Nature_of_Reality__Essays_in_Memor
-y_of_Detlef_Durr.pdf (16 pages, 363792 bytes).
+y_of_Detlef_Durr.pdf (18 pages, 370788 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
