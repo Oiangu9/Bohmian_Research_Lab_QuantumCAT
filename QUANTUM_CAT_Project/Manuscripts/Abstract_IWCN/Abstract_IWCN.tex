@@ -1,0 +1,163 @@
+\documentclass[11pt, a4paper]{article} % , draft
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem} % customiçe item dots etc
+\usepackage{textgreek} % obv
+\usepackage{physics} % for easy derivative notation
+\usepackage{amsmath}
+\usepackage{amsthm} %theorems
+\usepackage{amssymb}
+\usepackage{mathtools} % for matrices with blocks inside
+\usepackage[scr=boondoxo]{mathalfa}
+\usepackage{pst-node}%
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Holo}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\z}{\mathpzc{s}}
+\newcommand{\p}{\mathpzc{r}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\Lg}{\mathscr{L}}
+\newcommand{\x}{\mathcal{X}}
+\newcommand{\B}{\mathfrak{B}}
+
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\setlength{\parskip}{0.3 cm}
+\setlength{\parindent}{0 cm}
+\usepackage[%
+style=phys,backend=bibtex,
+articletitle=false,biblabel=brackets,%
+chaptertitle=false,pageranges=false
+]
+{biblatex}
+\addbibresource{Bibliography_shortened_journals.bib}
+
+%\DeclareFieldFormat[article]{title}{}
+
+%\usepackage{filecontents}
+
+\usepackage{fancyhdr}
+
+%\usepackage{nath} % authomatic parenthesis stuff
+%\delimgrowth=1
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % set custom margins
+\usepackage{graphicx} % to insert figures
+\usepackage{grffile}
+\graphicspath{{Figures/}} % define the figure folder path
+\usepackage{subcaption} % for multiple figures at once each with a caption
+\usepackage{multirow} %multirow in tables
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize} %adjust caption size
+\captionsetup[table]{font=footnotesize} %adjust caption size
+
+\usepackage{booktabs} % for pretty tabs in tables
+\usepackage{siunitx} % Required for alignment
+\captionsetup{labelfont=bf} % bold face captations
+
+\usepackage{hyperref} % makes every reference a hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    filecolor=violet,      
+    urlcolor=violet,
+    citecolor=violet
+}
+
+\usepackage{epigraph} % for quotations in teh begginig
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\renewcommand{\qedsymbol}{o.\textepsilon.\textdelta}
+
+\newtheorem{prop}{Proposition} %so I can use propositions
+\newtheorem{cor}{Corollary} %so I can use corollaries
+\newtheorem{defi}{Definition} %so I can use corollaries
+
+\makeatother % all this is for the epigraph
+\usepackage{tocloft}
+
+\usepackage{imakeidx} % make index
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+
+
+\let\clipbox\relax
+\usepackage{adjustbox}
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+
+
+\usepackage{anyfontsize}
+
+\AtBeginBibliography{\vspace*{-0.2cm}}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+%\DeclareMathSizes{display size}{text size}{script size}{scriptscript size}.
+\DeclareMathSizes{10}{10}{10}{10}
+\setlength{\footnotesep}{0.55\baselineskip}
+\renewcommand{\contentsname}{{\large Contents}}
+
+
+\renewcommand*{\bibfont}{\footnotesize}
+
+
+\begin{document}
+\begin{center}
+\section*{ Why the (no longer)-Hidden Variables might save Computational Nanotechnology from an Uncomfortable Truth \vspace{0.2cm}\vspace{0.1cm}\\ \small Xabier Oianguren-Asua, Carlos F. Destefani, Xavier Oriols\vspace{-0.4cm}}
+{\footnotesize \em Departament d’Enginyeria Electrònica, Universitat Autònoma de Barcelona, 08193 Bellaterra, Barcelona, Spain}
+\vspace{-0.5cm}
+\end{center}
+\begin{center}
+{ \bf \hspace{5mm} {Abstract}\vspace{-1.2cm}}
+\end{center}
+\hspace{5mm} 
+
+One of the fundamental postulates of standard Quantum Mechanics (QM) is that only the act of measurement can make the concept of a "defined property" meaningful for a general closed quantum system (through the collapse postulate and the eigenvalue-eigenstate link) \cite{vonNeumann,where, consp}. Until then, the system can be in a "superposition of states" that leaves most properties undefined and "unspeakable". Moreover, as Mermin posed \cite{mermin}, through the collapse postulate of standard QM, "the outcome of a measurement is brought into being by the act of measurement itself", which suggests that it is meaningless to make any reference to the properties of a closed quantum system before the measurement takes place. This might be surprising because the word "measurement" has the connotation of unveiling some numerical property existent before the system interacted with the measurement apparatus \cite{Bell}. Be that as it may, we know that all this is well established theory, and yet, as uncomfortable as it might feel to notice, most computational simulations never consider any measurement in their descriptions. Not only that, but such simulations about "unmeasured" quantum systems, many times offer numerical results that evolve continuously in time (such as the time evolution of the expected energy of some interacting molecules). This ignores the fact that for standard QM, not only those numbers are "unspeakable" until measured, but, since a measurement disrupts the future evolution of the system, the time evolution of any such metric is devoid of any meaning.
+
+It turns out that the {\em in silico} community is not the only affected one by this uncomfortable truth. The experimental community suffers from similar points. For example, the orthodoxy of QM, does not allow an engineer to say that an electron is in the active region of a nano-transistor, since while in operation no measurement of its position is made \cite{where}. An even greater sacrilege is to say that it has a non-contextual two-time property like a dwell-time (which however is fundamental to predict the operation frequency of the device) \cite{tunnel1, tunnel2,modern}. Let alone those who even try to computationally predict and experimentally verify the "thermodynamics" of a closed quantum system. Thus, we see that even if all this is well-known standard QM, consciously or not, a generalized rejection towards the "observability doctrine" of Copenhagen \cite{Dirac} also percolates until the frontier of experimental nanotechnology.
+
+It is well known too, that there are alternative interpretations of QM, like the so-called Bohmian theory \cite{Holland, Durr, JordiXavier}, where systems (even the "unmeasured" ones) do posses well-defined properties (like position or energy) at all times, irrespective of the state of superposition of their wavefunction. These properties were so-called "hidden variables" because even if they philosophically allowed one to talk about "unmeasured" system properties, even allowing to have well-defined {\em in silico} closed system numerical properties, they were (non-contextually) inaccessible for a single experiment. Since otherwise, they produced the same phenomenological predictions as standard QM, they were set aside by the mainstream \cite{JordiXavier}. Hidden variables, even if valid, had no practical use. %Philosophical relief was not enough to avoid scientists the perpetuation of the state of confusion that we just explicated in these lines.
+
+This picture is now obsolete. The day in which these hidden variables could be experimentally obtained has recently arrived through the proposal of post-selected weak measurements \cite{Weak, DevInPosition2} and other feasible operational protocols \cite{strongweak}. This has re-opened the debate about their usefulness, since we are now able to assign definite properties to closed quantum systems, that can be predicted in a simulation and can then be obtained in an experiment. This does not only allow us to reliably talk about a time-evolving expectation, but allows us to go beyond and for example, simulate and experimentally find any Bohmian property of a quantum system \cite{WisemanVel, DevInPosition2}. Even the wavefunction itself has been experimentally measured this way \cite{directWF}. Any information that can be expressed as a so-called {\bf weak value}, can now be simulated and measured, irrespective of the preferred interpretation of QM.
+
+Notice that we are not claiming that this "proves" anything about the ontological existence of hidden variables or the weak values. The experimental protocols to obtain them involve measurements of repetitions of the experimental setting and some averaging, which the standard theory can still comfortably accommodate and "make meaningless" \cite{hownot}. However, regarding the mathematics, they are unambiguously definable, predictable and accessible in simulation and experiment, so from a pragmatic point of view, irrespective of the preferred interpretation, they can be used as practical tools to characterize the evolution of a quantum system. What is more, through their link with experimentally realizable protocols, they are starting to be used as fundamental keys in new frameworks for the simulation of complex quantum systems at the nanoscale \cite{DevInPosition2, NMisModal}. As we will explain in the talk, this now allows, among others, the computational simulation (and thus prediction) of the phenomenological manifestations of scenarios that were pathological under the orthodoxy of standard QM \cite{work1, work2,interpretSSE,NMisModal, equiv, Pel, Thz, resonant, thermalization}. For example, this has left within computaitonal nanotechnology's grasp, scenarios where the measurement operators (like the multi-electron displacement current operator \cite{equiv, Pel}) were far from obvious (e.g. in nano-scale devices operating at THz frequencies \cite{Thz}, or when there is a strong electron-photon interaction in those devices \cite{resonant}). They have also enlightened the search of pure-state "unravellings" in non-Markovian open quantum systems \cite{NMisModal, interpretSSE}, or the elucidation of a well-defined quantum work operator \cite{work1,work2}, an active region dwell-time \cite{tunnel1, tunnel2,modern, DevInPosition2}, or even a well-defined non-contextual two-time correlation for non-commuting operators \cite{DevInPosition2}. A final important example will be how they enlightened what the quantum thermalization of many-body systems imply in the physical space \cite{thermalization}, within the subject of computational quantum thermodynamics.
+
+With all, one could pragmatically say that weak values have come to save our community from the inconsistency of avoiding the inclusion of a measurement apparatus in our simulation environments. If so, they might become essential tools for computational nanotechnology in the forthcoming years.
+\vspace{0.4cm}
+
+\begin{multicols}{2}
+{\printbibliography
+}
+\end{multicols}
+
+\end{document}
+
+
+
+
+
+
