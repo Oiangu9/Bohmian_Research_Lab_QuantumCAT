@@ -8,9 +8,10 @@
 \usepackage{amsthm} %theorems
 \usepackage{amssymb}
 \usepackage{mathtools} % for matrices with blocks inside
-\usepackage[scr=boondoxo]{mathalfa}
+\usepackage[scr=rsfs,cal=boondox]{mathalfa}
 \usepackage{pst-node}%
 \usepackage{mathrsfs}
+
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 
 \newcommand{\mc}{\multicolumn{1}{c}}
@@ -26,6 +27,9 @@
 \newcommand{\U}{\mathscr{U}}
 \newcommand{\Lg}{\mathscr{L}}
 \newcommand{\x}{\mathcal{X}}
+\newcommand{\h}{\mathcal{H}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathbb{E}}
 
 \usepackage{csquotes}
 \MakeOuterQuote{"}
@@ -79,7 +83,7 @@
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 %\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
-\title{\vspace{-2cm} {\bf An Intuitive Narrative for\\ Open Quantum Systems?}\\{\small by {\em Xabier Oianguren Asua}}\vspace{-0.8cm}}
+\title{\vspace{-2cm} {\bf The Literal Quantum Theory:\\ Tangent Classical Universes?}\\{\small by {\em Xabier Oianguren Asua}}\vspace{-0.8cm}}
 \date{\vspace{-11ex}}
 \let\clipbox\relax
 \usepackage{adjustbox}
@@ -127,8 +131,8 @@
    \end{flushleft}
    \clearpage           % finish off the page
   }
-  
-%\newenvironment{kapituloBerria}[2]
+
+
   
 
 \usepackage{listings}
@@ -142,6 +146,11 @@
     backgroundcolor=\color{black!5}, % set backgroundcolor
     basicstyle=\footnotesize,% basic font setting
 }
+
+\usepackage{multibib}
+
+\newcites{proleg}{Essentially Paraphrasing...}
+\newcites{A}{References}
 
 \begin{document}
 
@@ -159,16 +168,19 @@
 \nbvspace[1]
 \Huge
 {\nbtitlestretch\huge
-AN INTUITIVE NARRATIVE FOR\\
-OPEN QUANTUM SYSTEMS?
+THE LITERAL QUANTUM THEORY:\\
+TANGENT CLASSICAL UNIVERSES?
 }
 
 \nbvspace[1]
 \normalsize
 
-AN AXIOMATIC APPROACH TO \\
-MAKE QUANTUM MEASUREMENTS\\ 
-AND OPEN SYSTEM DYNAMICS\\ INTUITIVE \\
+HOW QUANTIZATION CAN BE\\
+SEEN AS LETTING MANY CLASSICAL UNIVERSES\\
+INTERACT TANGENTIALLY
+%AN AXIOMATIC APPROACH TO \\
+%MAKE QUANTUM MEASUREMENTS\\ 
+%AND OPEN SYSTEM DYNAMICS\\ INTUITIVE \\
 
 \nbvspace[1]
 
@@ -178,9 +190,15 @@ AND OPEN SYSTEM DYNAMICS\\ INTUITIVE \\
 \small BY\\
 \Large Xabier Oianguren Asua\\[0.5em]
 %\footnotesize Can we really foresee the future of the Universe?"\\
+\nbvspace[2]
+%\normalsize
 
+\small FOR \\
+\normalsize
+other Students who want to\\
+"Understand", not just "Predict"
 
-\nbvspace[6]
+\nbvspace[4]
 
 \includegraphics[width=2.5in]{UAB.png}
 \normalsize
@@ -197,7 +215,7 @@ AND OPEN SYSTEM DYNAMICS\\ INTUITIVE \\
 \small
 %Bachelor's degree in Nanoscience and Nanotechnology \\
 \small
-$\ $Winter 2021-2022
+$\ $2021-2023
 \nbvspace[1]
 \end{center}
 \newpage
@@ -205,27 +223,36 @@ $\ $Winter 2021-2022
 \clearpage
 
 \maketitle
-\pagenumbering{gobble}
+{\pagenumbering{roman}
+\setcounter{page}{1}
 \setlength{\cftbeforesecskip}{0.4cm}
 \setlength{\cftbeforesubsecskip}{0.4cm}
 \setlength{\cftbeforesubsubsecskip}{0.25cm}
 
 \tableofcontents
-\clearpage
+}
+\newpage
 \pagenumbering{arabic}
 \setcounter{page}{0}
 \vspace{-0.3 cm}
 
 \pagestyle{empty}
 
-\section*{Abstract}
+\section*{\centering Preface - What is (Not) this?\vspace{-0.3cm}}
+First of all, let me explicitly state that this document is an informal guide (aimed for students around a third year Bachelor's in physics or some related field) to enlighten how one can indeed understand quantum mechanics without the need for qualitative conceptual steps nor "shut up and calculate"-s. It does not pretend to be a rigorous mathematical text, nor a thesis and even less a text book. I would call it rather a pedagogical-technical outreach essay for students with a confident background in first and second year calculus and algebra. I could not avoid some tedious mathematics at some points, and the appendices pretend to give enough qualitative insight to the student for a quasi-complete understanding of the text. However, the very technical parts can be diagonally read in a first read.
 
+But why am I writing this? Well, the present is a summary of the understanding of quantum mechanics I developed during the Bachelor's studies, thanks to stimulating lectures, readings, conversations and coding. In front of the mainstream "incomprehensibility of quantum mechanics", with all its paradoxes and axioms that have no connection whatsoever with reality (that leave the mathematical structures with cryptic meaning), I found that this incomprehensibility is nothing more than an "opinion", a particular way to build the theory, but not at all the only narrative. When sharing the ideas that led me there with fellow students, I also found relief in their eyes, "finally a pedagogical narrative to build an intuition from!", said one of them. It was then that I felt the urge to leave these ideas written down, if only to help other students that were in our same situation of discomfort. Students who came to University looking for an understanding of the world, but were only given recipes and calculation insights, useful for prediction sure, but philosophically hazy.
 
-\section*{Objectives}\vspace{-0.2cm}
+Being nothing more than the amalgam of different sources, the present book introduces nothing new to physics, it is just a medley of other narratives already thought by great (but apparently ignored) thinkers. And yet, I have seen nowhere a complete treatise of the tangent Universe narrative, so I think the work might still be creative enough to deserve its own place in our drives. 
 
+The orthodox way to write about an alternative formulation of quantum mechanics is to focus it from a historical point of view, comparing it with the mainstream and other alternatives. Instead, here, we will just build the whole theory from zero, just assuming the classical theories that are well rooted in our intuitions, and only afterwards we will see how other narratives have inspired it. 
 
+Just take this reading as a philosophical amusement, where we will build quantum mechanics from zero, you and me, leaving all assumptions explicitly underlined.
 
-\section*{Guideline}\vspace{-0.2cm}
+With the disclaimer clear, dear reader, there is a single golden rule you should follow: whenever you open this treatise, forget everything you priorly knew about quantum mechanics.\\ Now, lets create a theory!\vspace{-0.3cm}
+
+\subsection*{Guideline\vspace{-0.1cm}}
+We will start by (literally) questioning everything to arrive at a common philosophical point in our voyage towards a model of the Universe. From there, in part A, we will start the construction of our theory from the postulates of classical mechanics till the interaction between alternative Universes. Axiom by axiom, we will naturally arrive to the apparent randomness of quantum mechanics and end up deriving the Schrödinger Equation. In part B, we will see how the so-famous "collapse" of the wavefunction is simply an effective consequence of the interaction with a measuring apparatus, and we will see how measurement operators will naturally emerge. In part C, we will develop how the density matrix formulation fits in all of this, its usefulness and general quantum operations, all understood from our Tangent Universe approach. In part D, we will explain how general open quantum systems can naturally be described in our approach and we will derive the most general equations employed in non-relativistic quantum mechanics. Finally, in part E, we will understand what photons and other quasi-particles really are and even arrive to relativistic quantum mechanics with our Tangent Universe approach! Might we expand our knowledge from there? Well, you might be the one discovering it!
 
 
 \newpage
@@ -235,8 +262,8 @@ $\ $Winter 2021-2022
 
 \section*{\centering \huge{Philosophical Prolegomena}} %Preface
 \addcontentsline{toc}{section}{Philosophical Prolegomena}
-\subsection*{On the Noumenon and Phenomenon}
-\addcontentsline{toc}{subsection}{On the Noumenon and Phenomenon}
+\subsection*{Lets Start from the Very Beginning}
+\addcontentsline{toc}{subsection}{Lets Start from the Very Beginning}
 
 Focus your attention for a moment in that thing that is behind the eyes that are reading these lines and in front of the back of your head. Perhaps a bit upper than the eyes. There, in the center of your "world" or reality. We call it {\bf consciousness}. It is you, the light that makes you. That thing that when a person expels the last breath, is no longer there \footnote{It is no longer there when you are deep asleep either...}. That thing that when you look at the eyes of another person, you are (or at least expect to be) looking at. The relevance of that thing, the self-aware consciousness, is the following. Imagine you discover that the reality you considered as true and contingent and objectively material, is actually fake. For example, that your brain is actually in a liquid tank in some lab and it has connected to its visual-, auditive-, self-body internal perceptive- etc. cortices or brain regions, some electrodes that stimulate the exact same neural pulses that would be stimulated by a true perception in the visual neurons of a human eye that could be reading this, tactile neurons that could be wearing those clothes or internal nerves that would feel the body extension you feel. Well, there is absolutely no way to prove that this is not indeed the case. No way. Thus, there is no way either to prove that behind the eyes of the rest of the people there is a consciousness like yours. There is actually no way either to prove that your brain was not spontaneously arranged in the vacuum of space due to statistical fluctuations with these exact memories and current perceptions. Not either that it is not the product of a super-computer simulating each and every electron and fundamental particle in your brain to the quantum level, with these cortices being activated according to the algorithm of the machine, to make you feel this reality. There is no way either, in this line, to know that this consciousness should have any sort of ontologically material cause or foundation. \vspace{-0.3cm}
 
@@ -244,25 +271,25 @@ So yeah, everything could simply be "fake". Well, everything, except for one thi
 
 Great, so now we are both on the same beginning of the story. Let us call that "self-aware-conscious-light" that is currently reading this, simply as "the {\em cogito}".
 
-Now, lets make explicit the first assumption or postulate that any human being makes everyday: there exists an objective and materially contingent external reality, in which your {\em cogito} is placed as a cursor in a stage. Your {\em cogito} doesn't know directly about this scenario, else the stage itself would be part of the same mind. Instead, your {\em cogito} is attached to some organic sensors, like the neurons in your eardrum, which get activated in different ways according to how the external reality modulates the shape of the eardrum membrane. Accordingly it generates a signal that the neurons send to the acoustic cortex or region in your brain. The same happens for some visual neurons that are excited in different ways as a function of the energy of the light arriving to them etc. The same for the olfactory, gustatory, tactile, accelerometric (the inner ear liquid that lets you know the direction of gravity) or proprioceptive nerves\footnote{Proprioception is the information we receive from muscles, tendons and joints that allow us to know where our body parts are at any given moment even if we close our eyes.}. Once all this information arrives to the brain, it is processed and each chunk is projected as perceptual feelings surrounding the center of your person, around your {\em cogito}. As such, the particular colors, tastes, sounds etc, you will feel are generated in that processing, presumably due to specific excitations in the sensor organs\footnote{Think about how unique those projections you feel are, that you will never be able to know if what you "see" and call "red" is not seen by another person as what you call "blue", just that you both agree it is called "red".}. Let us give these concepts some names: the "external" reality to your {\em cogito}, the reality "in itself", the one you will never know about, because you can only know through your perceptual sensors, is called {\em \bf noumenon} (assuming of course, that such a thing objectively exists with the same certainty as your own {\em cogito}). Meanwhile, the set of projections where your {\em cogito} is centered, all that "virtual" surrounding that the processing of your perceptions produces around your {\em cogito}, is called the {\em \bf phenomenon}. Of course, it is also convenient to accept the hypothesis that not only there is an objective {\em noumenon}, but that the rest of people have also behind those eyes, their own {\em cogito}, and that those {\em cogito}-s are also centered at a {\em phenomenon}, which is at least very similar to yours.
+Now, lets make explicit the first assumption or postulate that any human being makes everyday: there exists an objective and materially contingent external reality, in which your {\em cogito} is placed as a cursor in a stage. Your {\em cogito} doesn't know directly about this scenario, else the stage itself would be part of the same mind. Instead, your {\em cogito} is attached to some organic sensors, like the neurons in your eardrum, which get activated in different ways according to how the external reality modulates the shape of the eardrum membrane. Accordingly it generates a signal that the neurons send to the acoustic cortex in your brain. The same happens for your visual neurons that are excited in different ways as a function of the energy of the light arriving to them. The same for the olfactory, gustatory, tactile, accelerometric (the inner ear liquid that lets you know the direction of gravity) or proprioceptive nerves\footnote{Proprioception is the information we receive from muscles, tendons and joints that allow us to know where our body parts are at any given moment even if we close our eyes.}. Once all this information arrives to the brain, it is processed and each chunk is projected as perceptual feelings surrounding the center of your person, around your {\em cogito}. As such, the particular colors, tastes, sounds etc, you will feel are generated in that processing, presumably due to specific excitations in the sensor organs\footnote{Think about how unique those projections you feel are, that you will never be able to know if what you "see" and call "red" is not seen by another person as what you call "blue", just that you both agree it is called "red".}. Let us give these concepts some names: the "external" reality to your {\em cogito}, the reality "in itself", the one you will never know about, because you can only know through your perceptual sensors, is called {\em \bf noumenon} (assuming of course, that such a thing objectively exists with the same certainty as your own {\em cogito}). Meanwhile, the set of projections where your {\em cogito} is centered, all that "virtual" surrounding that the processing of your perceptions produces around your {\em cogito}, is called the {\em \bf phenomenon}. Of course, it is also convenient to accept the hypothesis that not only there is an objective {\em noumenon}, but that the rest of people have also behind those eyes, their own {\em cogito}, and that those {\em cogito}-s are also centered at a {\em phenomenon}, which is at least very similar to yours.
 
-Now, note that what you know about the "external" reality is necessarily restricted to the particular way in which it is projected in your {\em phenomenon}! That is, about this {\em noumeno}, you will never know anything that cannot be directly or indirectly sensed and represented into your phenomenon. We are imprisoned in our phenomena. To convince you even more about the tangential nature of the {\em phenomenon} and {\em noumenon}, let me remember you that whenever you are dreaming, you see and touch things or even feel your own body in configurations, that are really "not true". Your brain is generating directly in the visual, auditive and other cortices, the same neuronal excitations that would be generated if your eyes received that light, or your arms were in that disposition, when in reality your eyes are closed and your arms are still hugging your teddy bear. So yeah, dreaming is indeed the most immersive of the virtual realities. If you had a computer stimulating those regions with those same pulses, you would feel the same projections in the phenomenon. Dreaming just has the little inconvenience that the reasoning cortex is at least partially inhibited (together with the motor cortex -the one making your body actually move). That is why you feel more "instinctive" and less aware, like if your judgment was covered in a sort of veil. That is why you never confuse the oneiric- with the daylight- phenomenon. Clearly, if you made the inhuman experiment to avoid the rational cortex to be inhibited, you would entirely feel a dream, as real as right now, following the fact that if you avoid the inhibition of the motor cortex you will move in the reality as you are moving in the dream. Of course, "the plot"  of that reality would be certainly confusing and inconsistent, like for Alice was the Wonderland, but the pehnomenon in itself would feel material. Think about it.\vspace{0.3cm}
+Now, note that what you know about the "external" reality is necessarily restricted to the particular way in which it is projected in your {\em phenomenon}! That is, about this {\em noumenon}, you will never know anything that cannot be directly or indirectly sensed and represented into your phenomenon. We are imprisoned in our phenomenon-s. To convince you even more about the tangential nature of the {\em phenomenon} and {\em noumenon}, let me remember you that whenever you are dreaming, you see and touch things or even feel your own body in configurations, that are really "not true". Your brain is generating directly in the visual, auditive and other cortices, the same neuronal excitations that would be generated if your eyes received that light, or your arms were in that disposition, when in reality your eyes are closed and your arms are still hugging your teddy bear. So yeah, dreaming is indeed the most immersive of the virtual realities. If you had a computer stimulating those regions with those same pulses, you would feel the same projections in the phenomenon. Dreaming just has the little inconvenience that the reasoning cortex is at least partially inhibited (together with the motor cortex -the one making your body actually move). That is why you feel more "instinctive" and less aware, like if your judgment was covered in a sort of veil. That is why you never confuse the oneiric- with the daylight- phenomenon. Clearly, if you made the inhuman experiment to avoid the rational cortex to be inhibited, you would entirely feel a dream, as real as right now, following the fact that if you avoid the inhibition of the motor cortex you will move in the reality as you are moving in the dream. Of course, "the plot"  of that reality would be certainly confusing and inconsistent, like for Alice was the Wonderland, but the pehnomenon in itself would feel material. Think about it.\vspace{0.3cm}
 
-\mybox{ {\bf Extra Thoughts: Solipsism, Antropocentrism and a Cosmic Logos \\ \centerline{-The Arithmetic Paradox-} \vspace{-0.2cm}  \\ }
-All this can easily lead you to {\em solipsism}, the philosophical posture where {\em you} are the only existing one, and as such, the reason of existence for all of your perceptions is your own existence. That is, {\em esse est percipi}, or whatever that {\em is}, can only {\em be}, if and while it is perceived by your {\em cogito}. That is, the Universe is as long as, or where, your {\em cogito}'s light illuminates it. That is, the Universe does not manifest its existence by itself. Instead, its "real"-ity is only as long as your {\em cogito} lights it. But sure, if you have accepted the postulate that there is such a thing as a {\em noumenon} (which you provide with existence through your phenomenon), why not accept also that there are more {\em cogito}-s lighting more {\em noumena}?\vspace{-0.2cm}  \\
+\mybox{ {\bf Extra Thoughts: Solipsism, Antropocentrism and a Cosmic Logos \\ \centerline{-Schrödinger's Arithmetic Paradox-} \vspace{-0.2cm}  \\ }
+All this can easily lead you to {\em solipsism}, the philosophical posture where {\em you} are the only existing one, and as such, the reason of existence for all of your perceptions is your own existence. That is, {\em esse est percipi}, or whatever that {\em is}, can only {\em be}, if and while it is perceived by your {\em cogito}. That is, the Universe is as long as, or where, your {\em cogito}'s light illuminates it. That is, the Universe does not manifest its existence by itself. Instead, its "real"-ity is only as long as your {\em cogito} lights it. But sure, if you have accepted the postulate that there is such a thing as a {\em noumenon} (which you provide with existence through your phenomenon), why not accept also that there are more {\em cogito}-s lighting more {\em noumenon}-s?\vspace{-0.2cm}  \\
 
-At this step, you may realize that there is apparently a common {\em noumenon} for all of those {\em cogito}-s, because, the rest of {\em cogito}-s seem to report changes in their phenomena that are identifiable with changes in your own phenomeon. It is this inter-personal agreement of coherence why we know dreams are not reality. Dreams do not alter this "common" {\em noumenon}. Only {\em you} feel the oneiric phenomenon. Schrödinger tries to manifest this dilemma in his {\em Mind and Matter} with the name "Arithmetic Paradox": How can there be multiple cogito-s, each giving existence with its light to the representations projected in each individual phenomenon, but even so, exist a single and shared {\em noumenon}?\vspace{-0.2cm} \\
+At this step, you may realize that there is apparently a common {\em noumenon} for all of those {\em cogito}-s, because, the rest of {\em cogito}-s seem to report changes in their phenomenon-s that are identifiable with changes in your own phenomeon. It is this inter-personal agreement of coherence why we know dreams are not reality. Dreams do not alter this "common" {\em noumenon}. Only {\em you} feel the oneiric phenomenon. Schrödinger tries to manifest this dilemma in his {\em Mind and Matter} with the name "Arithmetic Paradox": How can there be multiple cogito-s, each giving existence with its light to the representations projected in each individual phenomenon, but even so, exist a single and shared {\em noumenon}?\vspace{-0.2cm} \\
 
 Realize how the problem of this reality that requires to be part of a {\em phenomenon} for its existence to be manifested, but where not all the Universe is perceived by somebody at all times, could be solved by a rather simple idea.}
 
 \mybox{ The existence in itself of the Universe could be guaranteed without the need of having us, mammals, so casual results of evolution, which could have simply never come to live, by imagining a cosmic {\em cogito} that makes everything be explicitly manifested at all times. A {\em cogito} projecting the phenomenon of all the Universe at all times, and thus alleviating our fear of our Universe being a void theater if we were not here. We could identify this cosmic {\em cogito} with the pre-established harmony of Leibniz, perhaps a justified pretext for a greater existence or perhaps just the master algorithm that connects the perceptions that the computer simulating our brains needs to take care of. On this last idea, note that if we wanted to simulate a bunch of human brains -assuming a {\em cogito} can really emerge from non-organic computations- and make them believe they are "real" we would only need to simulate the atoms of their brains and the neural pulses generating their phenomenon, with the boundary condition of letting the different phenomenons influence each other. No need to simulate the whole Universe to make them believe they are true. \vspace{-0.2cm} \\
 
-Notice however, before sanctifying the cosmic {\em cogito}, mother algorithm or pre-established harmony, that its existence is just one possible exit for the {\em impasse} of the arithmetic paradox over solipsism. We should never forget that the first lesson is ones {\em cogito} and that all the rest of concepts are based on postulates that build up one after the other over ones {\em cogito}. If suddenly a postulate of these erases the need of having the {\em "cogito ergo sum"} as basis for the existence, then that is cheating the argumentation. Beneath this hypothesis, there will always be the one and only undeniable true that needs no prove: {\em you exist}. Yeah, perhaps it is too anthropocentric. But it seems to be the least arbitrary and least unjustified conviction a human being could have.
+Notice however, before sanctifying the cosmic {\em cogito}, mother algorithm or pre-established harmony, that its existence is just one possible exit for the {\em impasse} of the arithmetic paradox over solipsism. We should never forget that the first lesson is ones {\em cogito} and that all the rest of concepts are based on postulates that build up one after the other over ones {\em cogito}. If suddenly a postulate of these erases the need of having the {\em "cogito ergo sum"} as basis for the existence (because there is an external reality or a cosmic {\em cogito}), then that is cheating the argumentation. Beneath this hypothesis, there will always be the one and only undeniable truth that needs no prove: {\em you exist}. Yeah, perhaps it is too anthropocentric. But it seems to be the least arbitrary and least unjustified conviction a human being could have.\vspace{-0.1cm}
 }
 
-Then, just realize that how {\em we} perceive sound or images or any other perception, is due exclusively to how our human brains process the information and manifest their corresponding projections on the phenomenon. That is, if there could be other {\em cogito}-s, evolved in different circumstances, they could have a different phenomenon to ours in front of the same stimuli or same {\em noumenon}. As an example, we know that dogs for instance, have a smaller variety of visual sensor neurons and thus end up having a phenomenon with a bi-chromatic range (they "see" in gray-scales). Now, let us call the rules that make us manifest the projections in the particular ways we do (or dogs do) as mental {\em \bf categories}. These include two kinds: the purely perceptual ones -the axioms of raw perception- and the cognitive ones -the axioms of abstraction and comprehension-. 
+Then, just realize that how {\em we} perceive sound or images or any other perception, is due exclusively to how our human brains process the information and manifest their corresponding projections on the phenomenon. That is, if there could be other {\em cogito}-s, evolved in different circumstances, they could have a different phenomenon to ours in front of the same stimuli or same {\em noumenon}. As an example, we know that dogs for instance, have a smaller variety of visual sensor neurons and thus end up having a phenomenon with a bi-chromatic range (they "see" in gray-scales). Now, let us call the rules that make us manifest the projections in the particular ways we do (or dogs do) as mental {\em \bf categories}. These include two kinds: the purely perceptual ones -the axioms of raw perception- and the cognitive ones -the axioms of abstraction and comprehension-. \vspace{-0.1cm}
 
-The \textbf{perceptual categories} are those that map, for instance, certain light energies to certain colors, certain frequencies of air oscillations to certain perceived sounds or certain kinds of molecules to certain smells. If one was to explain to a non-human intelligence what music is, would need to resort to these.
+The \textbf{perceptual categories} are those that map, for instance, certain light energies to certain colors, certain frequencies of air oscillations to certain perceived sounds or certain kinds of molecules to certain smells. If one was to explain to a non-human intelligence what music is, would need to resort to these.\vspace{-0.1cm}
 
 Then, there are the \textbf{cognitive categories}, that are the basic essences through which we think and understand things (and through which we are doomed to understand them, as certainly as we are doomed to undeniably feel our own existence). For example, the idea of "unity" (of "one") as a concept, of "existence", or even "boundedness", which might be derived from having the idea of "unity" and "non existence" at the same time. These at the same time imply the category of "fragmentation": the reason why when you look at a scene you are able (and doomed to do so) of seeing and understanding individually delimited and separated things, as if they had independent existence from each other. You do not see everything as a single continuum, even if in the noumenon it could be that it is so. As a taste of how the nomenon could in fact be incompatible with the "fragmentation", notice that "physics" is essentially the study of the best model about the {\em noumenon} we can build, the best story to explain and predict the behavior of the {\em noumenon} and its consequences in the phenomenon. If our current models are good enough representations of the noumenon, then we know that in reality matter is a continuum of atoms that make really no distinction of whether they belong to a chair, to this paper or your own body, meaning that our "fragmentation" category is just the way we understand things, not something fundamental about reality. Most importantly however, these cognitive axioms are in essence, where mathematics are rooted on, the axioms that build them.
 
@@ -278,13 +305,21 @@ A physical model must have two elements. One is a {\bf mathematical model}, whic
 
 Now, such a physical model or theory, is enough from an operational point of view. It is enough for predicting the events we can perceive, which from an utilitarian view, is all physics should be about. However, we humans, have a natural tendency towards not only building physical models, as utilitarian mathematical tools, but for also seeking semantical or narrative models about reality. Stories that can aid us conceptually and intuitively understand what could be happening in the noumenon for the model to correctly predict the events we find in the phenomenon. We can define an {\bf interpretation} or {\bf narrative} of a physical model, as a self-consistent semantic story given to the mathematical structures and elements of the theory, that go beyond the set of concepts anchored to the phenomenon by the basic interpretation we defined earlier. That is, it is a conceptual representation of the noumenon, beyond the phenomenon. A conceptual representation that is consistent with each mathematical step given in the base physical model. 
 
-The fact that physical models or theories only speak about phenomoenological events, qualities we immediately perceive, make them falsifiable. If a certain model fails in some prediction, the model will be false for a general case. However, interpretations or narratives talk about the noumenon, which by definition is "the external reality in itself, without us perceiving it through our senses and categories". This noumenon thus can never be known in itself, it is epistemologically inaccessible. Therefore, as long as a narrative is consistent with the mathematics of the model, it will be unfalsifiable as a model for the noumenon. This is, as long as the physical model it is grounded on is not proven to be incorrect.
+The fact that physical models or theories speak about phenomoenological events, qualities we immediately perceive, make them falsifiable. If a certain model fails in some prediction, the model will be false for a general case. However, interpretations or narratives talk about the noumenon, which by definition is "the external reality in itself, without us perceiving it through our senses and categories". This noumenon thus can never be known in itself, it is epistemologically inaccessible. Therefore, as long as a narrative is consistent with the mathematics of the model, it will be unfalsifiable as a model for the noumenon. This is, as long as the physical model it is grounded on is not proven to be incorrect.
 
-It is this why one could say that working on an interpretation for a physical theory is a useless task. And it is indeed, from a purely productive or utilitarian point of view. However, since being able to predict reality does not make you understand it, there is place for scientists working on narratives. Intuitively understanding a theory, does not only allow a person to better make the questions about the model that can pull it to its limits, but it is also a way to better make it understand it, remember it and use it. Just as learning a text as part of a song makes it easier to digest it, or a moral is simpler to take when first known about through a tale, so is the case for a physical theory with a simple narrative, rather than the naked basic interpretation. It is a task that might not be as creative as creating the physical model itself, but is at least as imaginative and coloring for the community that reaches it. We could compare the physical theory with the outline of a picture, which has to be created "out of nothing", and thus has a big creative merit, while we could compare the interpretation or narrative with the coloring of the outlined picture. The painter is not "creating nothing usefully new", but, it gives body, consistency, appeal and digestibility to the overall picture.
+It is this why one could say that working on an interpretation for a physical theory is a useless task. And it is indeed, from a purely productive or utilitarian point of view. However, since being able to predict reality does not make you understand it, there is place for scientists working on narratives. Intuitively understanding a theory, does not only allow a person to better make the questions about the model that can pull it to its limits, but it is also a way to better make it understand it (teach it), remember it and use it. Just as learning a text as part of a song makes it easier to digest it, or a moral is simpler to take when first known about through a tale, so is the case for a physical theory with a simple narrative, rather than the naked basic interpretation. It is a task that might not be as creative as creating the physical model itself, but is at least as imaginative and coloring for the community that reaches it. We could compare the physical theory with the outline of a picture, which has to be created "out of nothing", and thus has a big creative merit, while we could compare the interpretation or narrative with the coloring of the outlined picture. The painter is not "creating nothing usefully new", but, it gives body, consistency, appeal and digestibility to the overall picture.
 
-In the present dissertation an illustrative narrative for the physical model comprehended under the name "Non-Relativistic Quantum Mechanics" will be exposed, as a means of introducing an intuitive explanation of the so called Open Quantum systems and their quandary.
+In the present dissertation an illustrative narrative for the physical model comprehended under the name "Non-Relativistic Quantum Mechanics" will be exposed, as a means of introducing an intuitive explanation of the so called Open Quantum systems and their quandary. \nociteproleg{schrodinger:mind}
+\nociteproleg{kant:critique}
+\nociteproleg{bohm:wholeness}
+\nociteproleg{descartes:discourse}
+\nociteproleg{kulstad:leibiniz}
+\nociteproleg{ordine:usefulness}
+\nociteproleg{downing:berkeley}
+\newpage
 
-
+\bibliographystyleproleg{plain}
+\bibliographyproleg{References/Bibliography} 
 
 
 \newpage
@@ -299,27 +334,28 @@ The Axioms
 \null
 \clearpage
 
-
 \section*{\centering \huge{Part A: The Axioms}\vspace{-0.3cm}}
 \noindent\rule{\textwidth}{0.4pt}
 
 {\bf Axioms} or {\bf postulates}\footnote{Historically, while the word  "postulate" has had an "arbitrary supposition" connotation, the word "axiom" has had a more fundamental status, as a self-evident statement that "must" be true by its own virtue. In this work, as is done today in most texts, we will use them interchangeably since the postulates we will state to build quantum mechanics, are arbitrary decisions we will make (even if grounded in intuition), but at the same time, most will be assumptions that must be taken for the theory to hold.  } are the principles or assumptions from which the understanding of something is built up. They are principles that are rather unprovable or self-evident and are admitted as the first facts in the deductive creation of a conceptual framework. This means that if one keeps on asking $why?$ within a certain framework, the last answers one can arrive to are these axioms over which all the rest is formulated. \vspace{0.2cm}
 
-\mybox{As an example, the following ones are some of the main axioms or postulates of physics:\vspace{-0.1cm}
+\mybox{As an example, the following ones are some of the main axioms or postulates of physics, as explained by Schrödinger in Refs. \citeA{schrodinger:mind, schrodinger:nature}:\vspace{-0.1cm}
 \begin{itemize}
 \item The postulate that the {\em noumenon}, or at least its consequences in our {\em phenomenon}, are understandable for human cognition.\footnote{Note how this is a rather arbitrary assumption (as most axioms are). The inner workings of reality could have also been incomprehensible for human cognition! Yet, till date it looks like the Universe is understandable. } 
 
-\item The postulate that this understandability, these rational models, can be formalized mathematically as a particular example of some mathematical construction, building what we called in the preface, a physical model or theory.
+\item The postulate that this understandability, these rational models, can be formalized mathematically as a particular example of some mathematical framework, building what we called in the preface, a physical model or theory.
 
 \item The postulates that fix the degrees of freedom of these physical models to fit our phenomenologic observations. These are postulates about some direct or indirect experimental observations we find in the phenomenon: for example, the Planck constant is this particular number because we see/measure it to be so, or time is absolute or not because we experimentally see so etc.\vspace{-0.1cm}
 \end{itemize}
 
-It is interesting to note that in maths on the other hand, the most fundamental axioms are the {\em cognitive categories} we talked about in the prologue: unity, fragmentation, inclusion, boundedness etc. The mental categories that shape our mind. Even if it is true that over them, we then also build axioms to ground mathematical theories that may be more "arbitrary". Most importantly, note that there are no experimental postulates in mathematics. This is the reason why mathematics needs no experimental proof, and no matter how complicated a mathematical theory is, once one understands the formal proof, its trueness is obvious and self-evident. This is because in its last resort, a mathematical statement is built on fundamental concepts with which you are doomed to understand the Universe (the cognitive categories). You are inevitably tied to those concepts as well as you are tied to your own existence by the {\em cogito ergo sum}.}
+It is interesting to note that in maths on the other hand, the most fundamental axioms are grounded on the {\em cognitive categories} we talked about in the prologue: unity, fragmentation, inclusion, boundedness etc. The mental categories that shape our mind. Even if it is true that over them, we shape other axioms to give more structure to the mathematical theories, note that there are no experimental postulates in mathematics. This is the reason why mathematics needs no experimental proof, and no matter how complicated a mathematical theory is, once one understands the formal proofs, their trueness is obvious and self-evident. This is because in its last resort, a mathematical statement is built on fundamental concepts with which you are doomed to understand the Universe (the cognitive categories). You are inevitably tied to those concepts as well as you are tied to your own existence by the {\em cogito ergo sum}.}
 
-Much in the same way, a narrative of a physical model, also has axioms or basic assumptions. Even if in general these are not explicited, it is a very interesting point to begin from, since these are the loose ends of the interpretation. 
+In much the same way, a narrative of a physical model, also has axioms or basic assumptions. Even if in general these are not explicited, they are a very pedagogical point to begin from, since these are the loose ends of the interpretation. If one keeps on asking {\em why?}, one arrives to these postulates or axioms.
 
-In this first part of the document, we will delve with the basic postulates of the narrative that will be employed in the rest of the work. Along with the narrative concepts, we will also expose the basic mathematical structures representing them in the (non-relativistic) Quantum Theory. Thus, in this first part, we will cover most of the loose-ends of both the Quantum Theory and the present narrative.
+In this first part of the book, we will delve with the basic postulates of the narrative that will be employed in the rest of the work. Along with the narrative concepts, we will also expose the basic mathematical structures representing them in the (non-relativistic) Quantum Theory. Thus, in this first part, we will cover most of the loose-ends of both the Quantum Theory and the present narrative.
+
 \newpage
+
 
 \fancyhead[L]{The Axioms}
 
@@ -332,29 +368,29 @@ In this first part of the document, we will delve with the basic postulates of t
 \subsection*{A.1.1. Reviving Postulates of Classical Mechanics}\vspace{-0.2cm}
 \addcontentsline{toc}{subsubsection}{1.1. Reviving Postulates of Classical Mechanics}
 
-If we are to provide an intuitive {\bf narrative} for a general physical model, in line with the preface, it seems reasonable that we should choose an entity we can actually observe or measure in our phenomenon as the basic quantity that can be known about. That is, the epistemological\footnote{Epistemology is the metaphysical study of what is knowable, of knowledge and know-ability.} basis of the interpretation should be a Kantian phenomenological property we perceive. In the preface, we have defined as real, the set of observations of the phenomenon that all average humans agree on. The position of the objects in the physical three dimensional space is one such property we can have an agreement on. Phenomenologically, we find that there are three orthogonal degrees of freedom in which each object can be displaced. Thus, we could define an absolute orthogonal coordinate system $\R^3$ as a scenario, where all objects extend in a fixed range of space. This picture will be dynamical, meaning that it will have the option to be different at each point of a privileged degree of freedom we will call time, defined as a Universal absolute time-line denoted by $t$. At a given time, the range of space occupied by a certain object is what we will call its {\bf position}. Following the fact that when we observe the smallest objects of reality, they all seem to be point-like, infinitesimal in spatial extension, instead of occupying a continuous range in space, we will postulate that all the objects of the Universe can be described in their last resort as cumulations of smaller objects that occupy only a single point in physical space. We will call them {\bf particles} or fragments. Assuming there are $n$ (arbitrary countable) particles in the Universe, we can model their position by stating the three numbers in the coordinate system of physical space that they occupy. As such, we could define the position of all the particles of the Universe, by specifying all these triplets. This means that the Universe as a whole has $3n=N$ {\bf degrees of freedom}, which we can set together in a same tuple $\vec{x}=(x_1,...,x_N)\in \R^N$. Each possible point $\vec{x}$ in $\R^N$ will then represent a possible configuration of the Universe. A possible arrangement of particles. It is this why we call this space, the {\bf configuration space} of the Universe. Some configurations might not be realizable at every times, so we will restrict the configuration space to a subset $\Omega_t\subseteq \R^N$. Then, we let our Universe to have an evolving configuration in time, $\vec{x}(t)$, which we will call the {\bf trajectory} of the Universe.
+If we are to provide an intuitive {\bf narrative} for a general physical model, in line with the preface, it seems reasonable that we should choose an entity we can actually observe or measure in our phenomenon as the basic quantity that can be known about. That is, the epistemological\footnote{Epistemology is the metaphysical study of what is knowable, of knowledge and know-ability.} basis of the interpretation should be a Kantian phenomenological property we perceive. In the preface, we have defined as real, the set of observations of the phenomenon that all average humans agree on. The position of the objects in the physical three dimensional space is one such property we can have an agreement on. Phenomenologically, we find that there are three orthogonal degrees of freedom in which each object can be displaced. Thus, we could define an absolute orthogonal coordinate system $\R^3$ as a scenario, where all objects extend in a fixed range of space. This picture will be dynamical, meaning that it will have the option to be different at each point of a privileged degree of freedom we will call time, defined as a Universal absolute time-line denoted by $t$. At a given time, the range of space occupied by a certain object is what we will call its {\bf position}. Following the fact that when we observe the smallest objects of reality, they all seem to be point-like, infinitesimal in spatial extension, instead of occupying a continuous range in space, we will postulate that all the objects of the Universe can be described in their last resort as cumulations of smaller objects that occupy only a single point in physical space. We will call them {\bf particles} or fragments. Assuming there are $n$ (arbitrary countable) particles in the Universe, we can model their position by stating the three numbers in the coordinate system of physical space that they occupy. As such, we could define the position of all the particles of the Universe, by specifying all these triplets. This means that the Universe as a whole has $3n=N$ {\bf degrees of freedom}, which we can set together in a same tuple $\vec{x}=(x_1,...,x_N)\in \R^N$. Each possible point $\vec{x}$ in $\R^N$ will then represent a possible configuration of the Universe. A possible arrangement of particles. It is this why we call this space, the {\bf configuration space} of the Universe. Some configurations might not be realizable at every times, so we will restrict the configuration space to a subset $\Omega_t\subseteq \R^N$. Then, we let our Universe have an evolving configuration in time, $\vec{x}(t)$, which we will call the {\bf trajectory} of the Universe.
 
 The reason why we said the position was an easy perceptive quality to set in common was because it is a binary property of a particle per each point in space (unlike more convoluted phenomenic properties like colors or smells). But there is a yet more important reason. Since we base most of our knowledge about the world in the visual perception, it turns out that, whenever we take a quantitative measurement, we do it by looking at the position of a cursor in a screen or dial, or the position where the observed particle was detected, among others. That is, all measurements in a Lab can be made as measurements of the position of the particles composing the measuring devices.
 
 But in this narrative, as is done in other interpretations, we will go even further and assume that not only will the configuration of the Universe in each time be the epistemological basis, but it will also be the ontological\footnote{Ontology is the metaphysical study of what {\bf is}, of existence and being.} foundation. That is, be it knowable, known or unknown, the position of each degree of freedom of the Universe at each time, will exist irrespective of whether they are part of the phenomenon of an observer or not.\vspace{-0.1cm}
 
 \mybox{
-An interesting point about the present narrative is that even if there are more phenomenological qualities of the entities we perceive than their position in space (like their colours, sounds, tastes, smells etc.), these other phenomenological properties will be derived from the positions of some particles composing them (like the trajectories of photons with certain momentum arriving to our eyes or the spatial arrangement of the electrons and nuclei of the molecules arriving to our nose, their position interaction with our nerves etc.).} 
+An interesting point about the present narrative is that even if there are more phenomenological qualities of the entities we perceive than their position in space (like their colours, sounds, tastes, smells etc.), these other phenomenological properties will be derived from the positions of some particles composing them (like the spatial arrangement of the electrons and nuclei of the molecules arriving to our nose, their position interaction with our nerves etc.).} 
 \mybox{
-This, essentially suggests, as did classical particle mechanics, that knowing the configuration of the Universe in each time would be enough to predict any phenomenological perception.
+Thus, the model we are building essentially suggests, as did classical particle mechanics, that knowing the configuration of the Universe in each time would be enough to predict any phenomenological perception.
 }
 
 \subsection*{A.1.2. A Fluid of Tangent Universes}
 \addcontentsline{toc}{subsubsection}{1.1. A Fluid of Tangent Universes}
 
-All the postulates so far are identical to the ones assumed in interpretations of classical particle mechanics. However, we will now introduce the most fundamental difference that our Quantum Mechanics narrative will have with the classical intuition. Brace yourself. We will assume that each point in configuration space $\vec{x}\in\Omega_t\subseteq\R^N$ at each time, not only is a {\em possible} configuration for our Universe, but actually {\bf is} a real physical Universe, among which one is our perceived Universe! Since there is a continuously infinite number of points in configuration space, we are effectively introducing here a {\bf fluid of uncountably many Universes}.
+All the postulates so far are identical to the ones assumed in interpretations of classical particle mechanics. However, we will now introduce the most fundamental difference that our Quantum Mechanics narrative will have with the classical intuition. Brace yourself. We will assume that each point in configuration space $\vec{x}\in\Omega_t\subseteq\R^N$ at each time, not only is a {\em possible} configuration for our Universe, but actually {\bf is} a real physical Universe, among which one is our perceived Universe! Since there is a "continuously" infinite number of points in configuration space, we are effectively introducing here a {\bf "fluid" of uncountably many Universes}.
 
-Let us now formalize this continuum of uncountably infinite point like Universes moving in confi-guration-space. As we said, assuming that a possible Universe is always observed in space as point-like in all its degrees of freedom\footnote{This turns out to be our case, since we always observe fundamental particles to be point-like in space.}, an $\R^N$ point $\vec{x}$ is a {\em possible} static configuration of the whole Universe. Now, as we also already said, a moving point in $\R^N$, $\vec{x}(t)$ could be seen as a possible Universe history. We could call it, the {\bf trajectory} of a possible Universe. We will now define the {\bf Fluid of Tangent Universes}, as the dense ensemble of trajectories of possible/alternative Universes. Let us formalize this mathematically.
+Let us now formalize this continuum of uncountably infinite point-like Universes moving in confi-guration-space. As we said, assuming that a possible Universe is always observed in space as point-like in all its degrees of freedom\footnote{This turns out to be our case, since we always observe fundamental particles to be point-like in space.}, an $\R^N$ point $\vec{x}$ is a {\em possible} static configuration of the whole Universe. Now, as we also already said, a moving point in $\R^N$, $\vec{x}(t)$ could be seen as a possible Universe history. We could call it, the {\bf trajectory} of a possible Universe. We will now define the {\bf Fluid of Tangent Universes}, as the continuum of trajectories of possible/alternative Universes. Let us formalize this mathematically.
 
-On the one hand, we will assume that the Universes {\em never collide}, because we will never observe a particle in more than one position at the same time, meaning that each Universe at each time occupies a single configuration. At any given time $t_0$, this would allow us to label each Universe using a tuple $\vec{\xi}\in\R^N$ representing its position in configuration space. This means that the function assigning a configuration to each Universe in each time must be injective. In turn, this means that we could identify the Universe that at time $t_0$ was at $\vec{x}=\vec{\xi}$ for any time $t$ with the same label $\vec{\xi}$. We will call it the {\bf $\vec{\xi}$-th Universe or fluid element}. 
+On the one hand, we will assume that the Universes {\em never collide}, because we never observe a particle in more than one position at the same time, meaning that each Universe at each time occupies a single configuration. At any given time $t$, this would allow us to label each Universe using a tuple $\vec{x}\in\R^N$ representing its position in configuration space. This means that the function assigning a configuration to each Universe in each time must be injective. In turn, this means that we could identify the Universe that at time $t_0$ was at $\vec{x}=\vec{\xi}$ for any time $t$ with the same label $\vec{\xi}$. We will call it the {\bf $\vec{\xi}$-th Universe or fluid element}. 
 
 
-On the other hand, since we seem to find that all the particles in our Universe move to nearby positions crossing all intermediate positions, we will assume that the trajectories of the Universes will be {\em continuous}. This, together with the fact that their trajectories never collide means that there is a continuous and locally bijective function $\vec{x}(\vec{\xi},t)\equiv \vec{x}^{\, \xi}(t)$ that tells us where in $\Omega_t$ each fluid element $\vec{\xi}\in\Omega_0$ is at each time $t$.\footnote{Note that we call $\Omega_0$ the subset of $\R^N$ where we consider there are fluid elements at the reference time $t=t_0$. } This is what we will call the {\bf trajectory} of the $\vec{\xi}$-th fluid element or Universe. Now, all this means that the function $\vec{x}(\vec{\xi},t)$ must have an inverse function $\vec{\xi}(\vec{x},t)\equiv \vec{x}^{\, -1}(\vec{\xi},t)$, telling us which is the label of the fluid element crossing the configuration-space point $\vec{x}$ in time $t$. This inverse must be continuous as well, since the transformation $\vec{x}(\vec{\xi},t)$ is required to be continuous in all its variables. Thus, we are asking that $\Omega_t$ is homeomorphic to $\Omega_0$ at all times.
+On the other hand, since we seem to find that all the particles in our Universe move to nearby positions crossing all intermediate positions, we will assume that the trajectories of the Universes will be {\em continuous}. This, together with the fact that their trajectories never collide means that there is a continuous and bijective function $\vec{x}(\vec{\xi},t)\equiv \vec{x}^{\, \xi}(t)$ that tells us where in $\Omega_t$ each fluid element $\vec{\xi}\in\Omega_0$ is at each time $t$.\footnote{Note that we call $\Omega_0$ the subset of $\R^N$ where we consider there are fluid elements at the reference time $t=t_0$. } This is what we will call the {\bf trajectory} of the $\vec{\xi}$-th fluid element or Universe. Now, all this means that the function $\vec{x}(\vec{\xi},t)$ must have an inverse function $\vec{\xi}(\vec{x},t)\equiv \vec{x}^{\, -1}(\vec{\xi},t)$, telling us which is the label of the fluid element crossing the configuration-space point $\vec{x}$ in time $t$. This inverse must be continuous as well, since the transformation $\vec{x}(\vec{\xi},t)$ is required to be continuous in all its variables. Thus, we are asking that $\Omega_t$ is homeomorphic to $\Omega_0$ at all times.
 
 For now, this seems to be just a convenience, but we will find it is a necessity within Quantum Mechanics. This will be so since we will achieve the description of the time evolution of the positions of the fluid elements through the integration of a continuous velocity field in configuration space. By the Picard-Lindelöf theorem, we will have that the transformation $\vec{x}(\vec{\xi},t)$ must therefore be a spatial homeomorphism. What is more, it will need to be differentiable, meaning it must be a diffeomorphism.
 
@@ -425,7 +461,7 @@ $$
 \mybox{
 Note that for the introduction of the narrative, we have been saying that ontologically our Universe has a discrete trajectory $\vec{x}(\vec{\xi},t)$, however, since in practice it is not possible to know the position of a particle with infinite precision (since we are dealing with continuous variables and not a variable with a countable support), the tangent Universes we should consider ontologically are those ones weighted by the density $\rho(\vec{\xi},t)$ and not the actual discrete ones. That is to say, the density of Universes will not need to be preserved along the trajectories. Instead they will need to be preserved in subsets of $R^N$ that move along with the trajectories! This is related to the typical discussion on the meaninglessness of observing a discrete value for a continuous probability density variable. We will see the relevance of this when we talk about the local conservation of the amount of Universes in the next section.\\
 
-It is interesting however that this observation opens the question of whether quantum theory is just the continous limit of a more fundamental theory where there is actually a countable number of possible Universes! If their number is very big, most predictions would coincide at a big degree with the theory were there is an uncountable number of Universes. However, they could clearly have different predictions for some very fine experiments. Different predictions that could be perceived in the phenomenon and thus help falsify the underlying theory. It is here where we can see the relevance of a narrative given to a physical theory. It can open ways to search for alternative theories and test non-trivial limits of the current theory. Actually, such an alternative Discrete Tangent Universe Quantum Theory was discussed very recently in Ref. \cite{TangentWiseman} by Wiseman et al.
+It is interesting however that this observation opens the question of whether quantum theory is just the continous limit of a more fundamental theory where there is actually a countable number of possible Universes! If their number is very big, most predictions would coincide at a big degree with the theory were there is an uncountable number of Universes. However, they could clearly have different predictions for some very fine experiments. Different predictions that could be perceived in the phenomenon and thus help falsify the underlying theory. It is here where we can see the relevance of a narrative given to a physical theory. It can open ways to search for alternative theories and test non-trivial limits of the current theory. Actually, such an alternative Discrete Tangent Universe Quantum Theory was discussed recently in Ref. \citeA{hall:many} by Hall et al.
 }
 
 \newpage
@@ -442,19 +478,19 @@ After understanding the way in which we can define the {\bf state} of the Univer
 
 Let us first focus on a single Universe of the ensemble of Tangent Universes and the particles observed within the physical space of this single Universe.
 
-Let us denote the degrees of freedom of the $k$-th particle as $\vec{q}_k=(x_{3k-2},\ x_{3k-1},\ x_{3k} )$ with $k\in\{1,...,n\}$, such that we denote the degrees of the ensemble of particles as $\vec{x}=(x_1,...,x_N)\equiv (\vec{q}_{1},...,\vec{q}_n)$.
+Let us denote the degrees of freedom of the $k$-th particle as $\vec{q}_k=(x_{3k-2},\ x_{3k-1},\ x_{3k} )$ with $k\in\{1,...,n\}$, such that we denote the degrees of freedom of all the particles together as $\vec{x}=(x_1,...,x_N)\equiv (\vec{q}_{1},...,\vec{q}_n)$.
 
-The {\bf Stationary Action Axiom} within each Universe states that given the boundary values for the trajectory of all the of particles $\vec{x}(t)$ (for a single Universe) are given as $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$ for some fixed $t_0<t_f\in\R$, $\vec{x}_0, \vec{x}_f\in\R^N$, there exists some function $L(t, \vec{x}, \dv{\vec{x}}{t})$, called the {\bf Lagrangian} of the Universe, such that, the trajectory taken by the ensemble $\vec{x}(t)$, which we call the {\bf physical trajectory}, is that yielding a critical point of the so called {\bf action functional}, which is the integral of the Lagrangian along the positions and velocities taken by the trajectory:
+The {\bf Stationary Action Axiom within each Universe} states that given the boundary values $\vec{x}(t_0)=\vec{x}_0$ and $\vec{x}(t_f)=\vec{x}_f$, for some fixed $t_0<t_f\in\R$, $\vec{x}_0, \vec{x}_f\in\R^N$ for the trajectory $\vec{x}(t)$ of all the particles in a single Universe, there exists some function $L(t, \vec{x}, \dv{\vec{x}}{t})$, called the {\bf Lagrangian} of the Universe, such that, the trajectory taken by the Universe, $\vec{x}(t)$, is that yielding a critical point of the so called {\bf action functional}. This is the integral of the Lagrangian along the positions and velocities taken by the trajectory:
 \begin{equation}\label{action}
 \s\qty[\vec{x}(t);\ t_0,t_f,x_0, x_f] = \int_{t_0}^{t_f} L\qty(t, \vec{x}(t),\dv{\vec{x}(t)}{t}(t))\ dt
 \end{equation}
-By a critical point, we mean a trajectory $\vec{x}(t)$ which if perturbed to the valid trajectories closest to it (the ones satisfying the boundaries), yields an action that is a critical point (typically a minimum). That is, we seek for trajectories for which the variation of the action is zero in the locality of the trajectory, that is, we look for trajectories yielding a stationary action.
+By a critical point, we mean a trajectory $\vec{x}(t)$ which if perturbed to the valid trajectories closest to it (the ones satisfying the boundaries), yields an action that is a critical point (typically a minimum). That is, we seek for trajectories for which the variation of the action is zero in the locality of the trajectory, yielding a stationary action.
 
-As we prove in the next gray box, a necessary condition for such a trajectory is to obey the $N$, so called, Euler-Lagrange equations:
+As we prove in the next gray box, a necessary condition for such a trajectory is to obey the $N$, so-called, Euler-Lagrange equations
 \begin{equation}\label{EL}
-\pdv{L}{x_j}-\dv{}{t}\pdv{L}{\qty(\dv{x_j}{t})}=0\quad \quad \forall j\in\{1,...,N\}
+\pdv{L(\vec{x}, \dv{\vec{x}}{t}, t)}{x_j}_{\Big\rvert {\substack{\vec{x}=\vec{x}(t)\\ \dv{\vec{x}}{t}=\dv{\vec{x}}{t}(t)}}}-\dv{}{t}\qty(\pdv{L(\vec{x}, \dv{\vec{x}}{t}, t)}{\qty(\dv{x_j}{t})})_{\Big\rvert {\substack{\vec{x}=\vec{x}(t)\\ \dv{\vec{x}}{t}=\dv{\vec{x}}{t}(t)}}}=0\quad \quad \forall j\in\{1,...,N\}.
 \end{equation}
-These partial differential equations are the so called {\bf equations of motion} of the system, since they define the motion of the trajectory $\vec{x}(t)$.
+These partial differential equations are called {\bf the equations of motion} of the system, since they define the motion of the trajectory $\vec{x}(t)$.
 \mybox{
 {\bf Derivation of the Euler-Lagrange Equations}
 }
@@ -464,39 +500,39 @@ These partial differential equations are the so called {\bf equations of motion}
 It turns out that the symmetries of the Lagrangian $L$ are transferred to symmetries of the resulting differential equations. This means that if we construct a Lagrangian obeying the postulates about symmetries of the Universe that we prefer, then the resulting laws of motion will obey them as well.
 
 \subsection*{A Single Universe and a Single Particle}
-Consider an isolated Universe (from the rest of Universes in the fluid) where there is only one particle, $\vec{x}=\vec{q}$. If there is only one particle (and one Universe), there should not be any influences on its motion, other than the ones caused by the structure of the physical space and time in which it lies.
+Consider an isolated Universe (from the rest of Universes in the fluid) where there is only one particle, $\vec{x}=\vec{q}$. If there is only one particle (and one Universe), the only thing determining its motion should be the structure of the physical space and time in which it lies. This structure will be represented by what we will call {\bf symmetries} of the equations of motion. A symmetry will be given by a transformation of the coordinate system that leaves the differential equation of motion invariant. Since the differential equations of motion are the mathematical expression of a "law of physics", this means that a symmetry is given by realizing under which frames of reference, we expect the laws of physics to be the same.
 
-First of all we will assume the Universal {\bf time} axis is {\bf homogeneous} with respect to the laws of physics: no matter where in time we are, the same equations of motion should work, the laws of physics should be the same. This means that the Lagrangian should be the same for any time shift $\tau$, which in turn can be true if it does not depend explicitly on time:
+For example, first of all we will assume the Universal {\bf time} axis is {\bf homogeneous} with respect to the laws of physics, meaning that no matter where in time we are, or equivalently, no matter how much I shift the clock of our reference frame, the same equations of motion should describe the system: the laws of physics should be the same. A way to make sure that this is the case would be by imposing that the Lagrangian is the same (is invariant) for any time shift $\tau$, meaning it does not depend explicitly on time
 \begin{equation}\label{tshift}
-L\qty(t+\tau,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})\quad \forall t,\tau\in \R \Longrightarrow L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(\vec{q},\ \dv{\vec{q}}{t})
+L\qty(t+\tau,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})\quad \forall t,\tau\in \R \Longrightarrow L\qty(t,\ \vec{q},\ \dv{\vec{q}}{t})=L\qty(\vec{q},\ \dv{\vec{q}}{t}).
 \end{equation}
 \mybox{
-Technically, the resulting equations of motion are the same for a Lagrangian and the same Lagrangian with an additive divergence term (with respect to the independent variables), in this case a total time derivative. That is, the Lagrangian $L(t, \vec{q}, \dv{\vec{q}})$ and $L(t, \vec{q}, \dv{\vec{q}})+\dv{}{t}f(t,\vec{q})$ for any "well behaved" function $f$ of time and position, would yield the same equations of motion. We prove this in Appendix $\alpha$ for a general case.\\
+In general, the resulting equations of motion are the same for a Lagrangian and the same Lagrangian with an additive divergence term (with respect to the independent variables), in our case, a total time derivative. That is, the Lagrangian $L(t, \vec{q}, \dv{\vec{q}})$ and $L(t, \vec{q}, \dv{\vec{q}})+\dv{}{t}f(t,\vec{q})$ for any "well behaved" function $f$ of time and position, would yield the same equations of motion. We prove this in Appendix X.1. for the general case.\\
 
-This means that for this first symmetry, we would have had enough if:
+Thus, if we want the equations of motion to be the same at all times, instead of assuming it for the Lagrangian itself, we would have had enough if under the time shift, the Lagrangian was the same up to "a total time derivative"
 \begin{equation}
 L\qty(t+\tau,\ \vec{q}(t),\  \dv{\vec{q}(t)}{t})=L\qty(t,\  \vec{q},\  \dv{\vec{q}(t)}{t})+\dv{}{t}f(t,\ \vec{q}(t))\quad \forall \tau,t
 \end{equation}
 for some "well behaved" function $f$ of time and position.\\
 
-However, the simplest Lagrangian could be obtained by further assuming if possible that the Lagrangian itself is invariant under such a symmetry (that is, if $f\equiv0$, as assumed in \eqref{tshift}), which we will assume by Occam's Razor\footnote{If there is a simpler yet equivalent explanation for a same phenomeonon, the simplest one should be preferred. Thus, if a simpler Lagrangian gives us the same equations of motion, we will prefer it over the rest.} for all symmetries but the last one.\\
+However, if by Occam's razor\footnote{If there is a simpler yet equivalent explanation for a same phenomeonon, the simplest one should be preferred. Thus, if a simpler Lagrangian (in this case meaning the one with the least terms) gives us the same equations of motion, we will prefer it over the rest.} we choose the simplest Lagrangian that yields the symmetry (time shift invariance) for the equations of motion, we can obtain this by further assuming if possible, that the Lagrangian itself is invariant under such a symmetry. This is the case if $f\equiv0$, as assumed in \eqref{tshift}. We will assume this for all symmetries but the last one.\\
 
 The same happens for a global multiplicative constant in the Lagrangian. The resulting equations of motion will be the same irrespective of the multiplied global constant.
 
 
 }
-Now, similarly, {\bf physical space} should be {\bf homogeneous}, meaning that wherever we center the coordinate system (apply a shift to the positions), the laws of physics should look the same. This means that we are imposing the Lagrangian to avoid an explicit dependence on the position of the particle:
+Now, similarly, {\bf physical space} should be {\bf homogeneous}, meaning that wherever we center the coordinate system (apply a shift to the positions), the laws of physics should look the same. This means that we can impose the Lagrangian to avoid an explicit dependence on the position of the particle:
 \begin{equation}
 L\qty( \vec{q}+\vec{c}, \dv{\vec{q}}{t})=L\qty( \vec{q}, \dv{\vec{q}}{t})\quad \forall \vec{c},\vec{q}\in \R^3 \Longrightarrow L\qty( \vec{q}, \dv{\vec{q}}{t})=L\qty( \dv{\vec{q}}{t})
 \end{equation}
 % En + de una particle ojo ke space homogenenous nahi dozu esan +(c,c,c,c) eitzie a (q1,q2,q3,q4)!!!!!!
 % The same for rotations! Es la misma rotacion en R3 a cada partícula!
 
-We will also assume the natural axiom that the {\bf physical space} is {\bf isotropic}, meaning that if we rotate the coordinate system, the equations of motion should look the same. Assuming the Lagrangian as well should be invariant, this will avoid the Lagrangian to depend on the direction of the velocities $\dv{\vec{q}}{t}$, leaving it only to depend potentially on their magnitude\footnote{Since $||\dv{\vec{q}}{t}||$ has its image in $[0,\infty)\subset\R$, and $f(s)=s^2$ is a homeomorphism from $[0,\infty)\subset\R$ to itself, we can equivalently consider the dependence on $||\dv{\vec{q}}{t}||$ or on $||\dv{\vec{q}}{t}||^2$ with a little notational abuse for the Lagrangian $L$.} $||\dv{\vec{q}}{t}||^2=\dv{x_1}{t}^2+\dv{x_1}{t}^2+\dv{x_1}{t}^2$. Denoting a rotation of angle $\phi$ about an axis $\vec{u}\in\R^3$ for a vector in $\R^3$ as $Rot(\cdot;\phi, \vec{u})$, we are imposing:
+We will also assume the natural axiom that the {\bf physical space} is {\bf isotropic}, meaning that if we rotate our coordinate system, the equations of motion should look the same. Assuming the Lagrangian as well should be invariant, this will avoid the Lagrangian to depend on the direction of the velocities $\dv{\vec{q}}{t}$, leaving it only to depend potentially on their magnitude\footnote{Since $||\dv{\vec{q}}{t}||$ has its image in $[0,\infty)\subset\R$, and $f(s)=s^2$ is a homeomorphism from $[0,\infty)\subset\R$ to itself, we can equivalently consider the dependence on $||\dv{\vec{q}}{t}||$ or on $||\dv{\vec{q}}{t}||^2$ with a little notational abuse for the Lagrangian $L$.} $||\dv{\vec{q}}{t}||^2=\dv{x_1}{t}^2+\dv{x_1}{t}^2+\dv{x_1}{t}^2$. Denoting a rotation of angle $\phi$ about an axis $\vec{u}\in\R^3$ for a vector in $\R^3$ as $Rot(\cdot;\phi, \vec{u})$, we are imposing:
 \begin{equation}
-L\qty( Rot\qty( \dv{\vec{q}}{t}; phi, \vec{u} ))=L\qty( \dv{\vec{q}}{t})\quad \forall \phi\in\R\ \forall \vec{u}\in \R^3 \Longrightarrow L\qty(\dv{\vec{q}}{t})=L\qty( \Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)
+L\qty( Rot\qty( \dv{\vec{q}}{t}; \phi, \vec{u} ))=L\qty( \dv{\vec{q}}{t})\quad \forall \phi\in\R\ \forall \vec{u}\in \R^3 \Longrightarrow L\qty(\dv{\vec{q}}{t})=L\qty( \Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)
 \end{equation}
-Finally, we will assume {\bf Galilean relativity}. That the equations of motion should be invariant under a constant velocity transformation for the coordinate system. That is, any observer moving at a constant velocity with respect to one another, should observe the same physical laws. This will lead us to conclude that $L\qty( ||\dv{\vec{q}}{t}||^2)=C ||\dv{\vec{q}}{t}||^2$ for some real constant $C$.
+Finally, we will assume {\bf Galilean relativity}. That the equations of motion should be invariant under a constant velocity transformation for the coordinate system. That is, any observer moving at a constant velocity with respect to one another, should observe the same physical laws (differential equations of motion). This will lead us to conclude that $L\qty( ||\dv{\vec{q}}{t}||^2)=C ||\dv{\vec{q}}{t}||^2$ for some real constant $C$.
 
 To see why, consider an infinitesimal Galilean transformation of the coordinate system by a constant velocity $\vec{\varepsilon}$, with $\vec{\varepsilon}$ in an $\R^3$ ball centered at $\vec{0}$ with an arbitrarily small radious $\delta>0$. Defining $\vec{v}:=\dv{\vec{q}}{t}+\vec{\varepsilon}$, let us expand $L\qty( ||\dv{\vec{q}}{t}+\vec{\varepsilon}||^2)=L(||\vec{v}||^2)$ in power series, centered at $\vec{\varepsilon}=\vec{0}$:
 \begin{equation}
@@ -504,7 +540,7 @@ L(||\vec{v}||^2)=L\qty(\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2)+\pdv{L(||\vec{v}||
 \end{equation}
 Denoting by $\cdot$ the scalar dot product between two vectors and using that:
 \begin{equation}
-||\vec{v}||^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}+\vec{\varepsilon}\ \Big|\Big|^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2+||\vec{\varepsilon}||^2+2\vec{q}\cdot \vec{\varepsilon}-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=2\dv{\vec{q}}{t}\cdot \vec{\varepsilon}
+||\vec{v}||^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}+\vec{\varepsilon}\ \Big|\Big|^2-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2+||\vec{\varepsilon}||^2+2\vec{q}\cdot \vec{\varepsilon}-\Big|\Big|\dv{\vec{q}}{t}\Big|\Big|^2=2\dv{\vec{q}}{t}\cdot \vec{\varepsilon}+||\vec{\varepsilon}||^2
 \end{equation}
 we get that:
 \begin{equation}
@@ -1047,21 +1083,6 @@ In the literature, this is called the {\bf Quantum Hamilton-Jacobi} equation.
 
 By knowing $S(\vec{x},t)$, we can get the velocity field for the trajectories of the Universes using equation \eqref{GL}.
 
-
-\mybox{
-{\bf The Intuition Behind the Quantum Potential\vspace{0.2cm}\\}
-We can intuitively understand the effect of the quantum potential \eqref{QP} if we re-express it as:
-\begin{equation}\label{Q2}
-Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla_x^2\rho}{\rho} -\frac{1}{2}\frac{\qty(\nabla_x \rho)^2}{\rho^2})\vspace{-0.2cm}
-\end{equation}
-
-The first term in $Q$ is the Laplacian ($\nabla_x^2 = \pdv[2]{}{x_1}+...+\pdv[2]{}{x_n}$) of $\rho(\vec{x},t)$ in each point, normalized by the value of $\rho$ in that point of configuration-space. The Laplacian of a scalar field in a certain point gives the difference between the value of the function in that point and the mean value in its locality. Interpreting this value as a potential, means that the higher the local variation of $\rho$ (the higher the difference between the value in the point and its mean value in the surrounding), the bigger the modulus of the potential will be. In particular, if the Laplacian of $\rho$ is positive, it means that the value in the point is smaller than the mean surrounding density. That is, the density is more convex-like there. This makes the potential at that point be negative -attractive- (noting the minus sign in front of the Laplacian). The fluid element will be more stable there than in points where the variation of the density is more concave-like (where the value of the density is higher than in its local surrounding: $\nabla_x^2 \rho<0$), as these make a positive -repulsive- contribution to the total potential in their locality.\\
-
-Interpreting $\rho$ as the density of all the possible configurations of the system, this means that the probability of observing each configuration\footnote{ The density $\rho^2$ and the Bohmian trajectories of the system are evolved using the same velocity field} is repelled by the configurations where there is a locally high agglomeration of probability. If we understand $\rho$ as the density of a continuum of possible tangent "Universes", then this simply means that the local agglomeration of possible Universes tends to diverge.\\
-
-The second term in $Q$ is more straight-forward: it is the modulus of the gradient of the density in each point normalized by the magnitude of the density. This fraction is always a positive value, which means the contribution to the potential will always be positive: it is a destabilizing factor (repels trajectories). That is, the higher the local steepness of the density, the more unstable this zone will be for the fluid element. Understanding $\rho$ as the density of a continuum of possible tangent "Universes", this means that the further the locality of a Universe is from the homogeneous density, the more unstable its configuration will be.
-}
-
 \subsection*{A.2.3. The Dynamics of the Density of Universes}
 
 \addcontentsline{toc}{subsubsection}{2.3. The Dynamics of the Density of Universes}
@@ -1184,41 +1205,169 @@ Finally, identifying $\Psi=\rho^{1/2}e^{iS/\hbar}$, we arrive at the following p
 \begin{equation}\label{SE}
 i\hbar \pdv{\Psi(\vec{x},t)}{t} = \qty[-\sum_{k=1}^N\frac{\hbar^2}{2m_k}\pdv[2]{}{x_k}+V(\vec{x})]\Psi(\vec{x},t)
 \end{equation}
-This is the famous, so called, {\bf Schrödinger Equation}.
-\subsection*{A.2.5 The Wavefunction as a Vector of a Hilbert Space}
-\addcontentsline{toc}{subsubsection}{2.5. The Wavefunction as a Vector of a Hilbert Space}
+This is the famous, so-called, {\bf Schrödinger Equation}.
 
-Now that we can define the state of the fluid of Universes with a single (complex) function $\Psi(\vec{x},t)$, it is interesting to see if we can situate it in any interesting mathematical structure. It turns out that there is one mathematical construction that will be very convenient to manage the wavefunction of the Universe (which will be extensible to the wavefunctions of partitions of the Universe that we will explore in the next section).
-
-Since we defined the density of tangent Universes as a normalized relative density, we imposed that its integral in the whole configuration space was 1 in equation \eqref{norm}. This condition in terms of the wavefunction is:
-\begin{equation}\label{NormPsi}
-\iint_{\Omega_t}\Psi^*(\vec{x},t)\Psi(\vec{x},t)\ dx_1\cdots dx_N=1\quad \forall t
+\subsection*{A.2.5. Summary of the Time Evolution Computational Schemes I}
+\addcontentsline{toc}{subsubsection}{2.5. Summary of the Computational Computational Schemes I}
+All in all, we can compute the time evolution of an {\bf isolated} quantum system (or a quantum system that allows an effective wavefunction, also known as {\bf closed} quantum system, which we will see in section A.2.7.\footnote{In that case, we can have that the potential depends on time $V(\vec{x},t)$. All the approaches would still be the same with this little fix.}) using any of the following equivalent frameworks, each having its computational pros and cons.
+\begin{itemize}
+\item[{\bf (I)}] {\bf The Newton-Bohm approach}. This is the most intuitive set of equations for someone with a "classical" intuition as us humans, who are used to Newton's second law. We are given the initial ($t=t_0$) domain $\Omega_{t_0}$ with its boundary conditions, the initial velocity field $\vec{v}(\vec{x},t_0)$ and the initial density field $\rho(\vec{x},t_0)$. We consider the ensemble of tangent trajectories such that $\vec{x}(\vec{\xi},t_0)\equiv\vec{x}^\xi(t_0)=\vec{\xi}\in\Omega_{t_0}$. The laws of physics would be for $\vec{\xi}\in\Omega_{t_0}$ and $t\geq t_0$,
+\begin{equation}
+\begin{cases}
+Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla_x^2\rho}{\rho} -\frac{1}{2}\frac{\qty||\vec{\nabla}_x \rho||^2}{\rho^2}) \\
+m_k\dv[2]{x_k^\xi(t)}{t}=-\pdv{}{x_k} \qty(V(\vec{x}) + Q(\vec{x},t))\Big\rvert_{\vec{x}=\vec{x}^\xi(t)}\quad \quad \forall k\in\{1,...,n\}\\
+\vec{v}(\vec{x}^\xi(t),t)=\dv{\vec{x}^\xi(t)}{t} \\
+\pdv{\rho(\vec{x},t)}{t}=-\vec{\nabla}\cdot \qty(\rho(\vec{x},t)\vec{v}(\vec{x},t))
+\end{cases}
 \end{equation}
-we call the left-hand-side the {\bf norm} of the wavefunction, and say that the wavefunction is {\bf normalized} if its norm is equal to 1 (aka \eqref{NormPsi} is satisfied).\footnote{Note how for its interpretation as a probability density, this is also a requirement.}
 
-We then imposed a local conservation of the relative number of Universes in time as an axiom, which meant in particular that the total density should also be conserved in time. This meant that if at any time $t_0$ we knew the wave function was normalized, the dynamics would preserve its norm to unity at all times. This is evident axiomatically, since otherwise we would be saying that there are Universes being created or destroyed. Since this axiom was an imposition in the derivation of the dynamical equations, it is this why we say that the evolution of the wavefunction given by the Schrödinger Equation \eqref{SE}, or equivalently the Hamilton-Jacobi and Continuity Equations \eqref{QHJE}, \eqref{CE}, is a {\bf unitary time evolution} (they preserve the norm of the wavefunction, of the density at all times).
+After computing the pressure potential $Q$, due to the curvature of the density, the Newton-Bohm equation will tell us the forces on the ensemble of possible trajectories $\vec{x}(\vec{\xi},t_0)=\vec{\xi}\in\Omega_{t_0}$, letting us know their next positions and which will be their new velocities, which in turn will guide the density along the grid of trajectories through the continuity equation \eqref{CE}. If one wishes to get the associated wavefunction $\psi(\vec{x},t)=\rho^{1/2}(\vec{x},t)e^{iS(\vec{x},t)/\hbar}$, one can simply compute $S(\vec{x},t)$ using that its gradient is the momentum field $(v_1m_1,...,v_nm_n)$. Any of the many algorithms to get the potential function from a vector field will suffice.
+
+\item[{\bf (II)}] {\bf The Hamilton-Jacobi approach.} This second approach is the intermediate between the previous and the next one, such that we need not obtain $S$ by integration of the velocity field. We are given the initial ($t=t_0$) domain $\Omega_{t_0}$ with its boundary conditions, the initial Hamilton action field $S(\vec{x},t)$ and initial density $\rho(\vec{x},t_0)$. We consider the ensemble of tangent trajectories such that $\vec{x}(\vec{\xi},t_0)\equiv\vec{x}^\xi(t_0)=\vec{\xi}\in\Omega_{t_0}$. The laws of physics would be for $\vec{\xi}\in\Omega_{t_0}$ and $t\geq t_0$,
+\begin{equation}
+\begin{cases}
+Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla_x^2\rho}{\rho} -\frac{1}{2}\frac{\qty||\vec{\nabla}_x \rho||^2}{\rho^2}) \\
+-\pdv{S(\vec{x},t)}{t} = \sum_{k=1}^N\frac{1}{2m_k} \qty(\pdv{S}{x_k})^2+V(\vec{x})+Q(\vec{x},t)\\
+\pdv{\rho(\vec{x},t)}{t}=-\sum_{k=1}^n\pdv{}{x_k} \qty(\rho(\vec{x},t)\frac{1}{m_k}\pdv{S(\vec{x},t)}{x_k})\\
+m_k\dv{\vec{x}_k^\xi(t)}{t}=\pdv{S(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}=\vec{x}^\xi(t)} \\
+\end{cases}
+\end{equation}
+After computing the pressure potential $Q$ due to the curvature of the density, the Hamilton-Jacobi equation will tell us how the Hamilton action per configuration $S(\vec{x},t)$ will evolve to the next time. With this field, we can obtain the velocity field, which will guide the trajectories to the next positions and the density to its next conformation. This approach has the great advantage that it is not necessary to compute the spatial derivatives of the quantum potential, which can be very noisy to do numerically.
+
+\item[{\bf (III)}] {\bf The Schrödinger approach}. This is the most common (and computationally most appealing for an isolated system\footnote{But as we will see, alternative methods will be almost essential for open quantum systems.}) approach used in the world. Unlike in the other coupled equations, which were real differential equations but non-linear, here, the core equation, evolving the action and density fields is complex but {\bf linear}! We are given the initial ($t=t_0$) domain $\Omega_{t_0}$ with its boundary conditions, the initial Hamilton action field $S(\vec{x},t)$ and initial density $\rho(\vec{x},t_0)$, or equivalently, the initial wavefunction $\psi(\vec{x},t)=\rho^{1/2}(\vec{x},t_0)e^{iS(\vec{x},t_0)/\hbar}$. We consider the ensemble of tangent trajectories such that $\vec{x}(\vec{\xi},t_0)\equiv\vec{x}^\xi(t_0)=\vec{\xi}\in\Omega_{t_0}$. The laws of physics would be for $\vec{\xi}\in\Omega_{t_0}$ and $t\geq t_0$,
+\begin{equation}
+\begin{cases}
+i\hbar \pdv{\psi(\vec{x},t)}{t}=-\sum_{k=1}^n\frac{\hbar^2}{2m_k}\pdv[2]{}{x_k}\psi(\vec{x},t)+V(\vec{x})\psi(\vec{x},t)\\
+m_k\dv{\vec{x}_k^\xi(t)}{t}=\pdv{S(\vec{x},t)}{x_k}\Big\rvert_{\vec{x}=\vec{x}^\xi(t)} \\
+\end{cases}
+\end{equation}
+Using the Schrödinger Equation (which includes the Hamilton-Jacobi, the definition of quantum potential and continuity equation in a single linear equation), we evolve at the same time the density and action to the next time, and with the action we move or guide the trajectories to their next position. Note that both in the second and this last approach, if we consider all the equations in the Eulerian frame, the trajectories themselves can be obtained just a posteriori. This is why at first nobody realizes about their feasibility. However, we insist that in the Lagrangian or partially Lagrangian frame into which we will need to turn for the description of open quantum systems, the particles will become as a priori as are in the first approach.
+\end{itemize}
+
+Any of these sets of equations, as will the next alternative computational schemes that we will see, may be re-expressed in a fully Eulerian, partially Lagrangian or totally Lagrangian frame. All of this is properly explained and developed in Appendix X.
+
+\section*{A.3. Intuition of the Non-Classical thing: the Quantum Potential}
+\addcontentsline{toc}{subsection}{3. The Non-Classical thing: the Quantum Potential}
+We have seen that essentially the only difference between a system of $n$ classical particles and $n$ quantum particles is that the quantum particles behave as if there were an infinite number of alternative $n$ system particles, distributed according to a density $\rho$ in their possible configurations, alternative systems that interact with each other tangentially, never crossing each other in total configuration, through a pressure potential proportional to the curvature of their agglomeration or density. We called this potential the quantum or pressure potential. Then, since we are trapped in a single one of these alternative systems (our brains are part of the $n$ particles), we still see only one of the interacting systems. But, its dynamics encodes, the information of all the rest. Then, if we understand how this potential changes the dynamics one expected classically on the system of particles, we will have mastered quantum mechanics.
+
+We can intuitively understand the effect of the quantum potential \eqref{QP} if we re-express it as:
+\begin{equation}\label{Q2}
+Q(\vec{x},t) = -\frac{\hbar^2}{4m_k }\qty(\frac{\nabla_x^2\rho}{\rho} -\frac{1}{2}\frac{\qty||\vec{\nabla}_x \rho||^2}{\rho^2})\vspace{-0.2cm}
+\end{equation}
+
+The first term in $Q$ is the Laplacian ($\nabla_x^2 = \pdv[2]{}{x_1}+...+\pdv[2]{}{x_n}$) of $\rho(\vec{x},t)$ in each point, normalized by the value of $\rho$ in that point of configuration-space. The Laplacian of a scalar field in a certain point gives the difference between the value of the function in that point and the mean value in its locality. Interpreting this value as a potential, means that the higher the local variation of $\rho$ (the higher the difference between the value in the point and its mean value in the surrounding), the bigger the modulus of the potential will be. In particular, if the Laplacian of $\rho$ is positive, it means that the value in the point is smaller than the mean surrounding density. That is, the density is more convex-like there. This makes the potential at that point be negative -attractive- (noting the minus sign in front of the Laplacian). The fluid element will be more stable there than in points where the variation of the density is more concave-like (where the value of the density is higher than in its local surrounding: $\nabla_x^2 \rho<0$), as these make a positive -repulsive- contribution to the total potential in their locality.
+
+Interpreting $\rho$ as the density of all the possible configurations of the system, this means that the probability of observing each configuration\footnote{ The density $\rho^2$ and the Bohmian trajectories of the system are evolved using the same velocity field} is repelled by the configurations where there is a locally high agglomeration of probability. If we understand $\rho$ as the density of a continuum of possible tangent "Universes", then this simply means that the local agglomeration of possible Universes tends to diverge.
+
+The second term in $Q$ is more straight-forward: it is the modulus of the gradient of the density in each point normalized by the magnitude of the density. This fraction is always a positive value, which means the contribution to the potential will always be positive: it is a destabilizing factor (repels trajectories). That is, the higher the local steepness of the density, the more unstable this zone will be for the fluid element. Understanding $\rho$ as the density of a continuum of possible tangent "Universes", this means that the further the locality of a Universe is from the homogeneous density, the more unstable its configuration will be.
+
+Let us now see its effects in some simple scenarios.
+
+
+\subsection*{A.3.1. Example 1: The Free Particle System}
+\addcontentsline{toc}{subsubsection}{3.1. Example 1: The Free Particle System}
+The first example we will visit is the free particle system, where there will be no interaction between the particles within each Universe $V(\vec{x})\equiv 0$ $\forall \vec{x}\in\Omega$. Note that there will still be present the quantum potential interaction between the tangent trajectories due to their local agglomeration in configuration space. This interaction is unavoidable and happens even in the case where within each Universe there is a single particle. It will inevitably interact with its alternative versions in the tangent Universes. Whenever the alternative versions get too concentrated around a similar configuration, they will repel each other. This is essentially the only difference with classical mechanics. Then, let us see which are its consequences in the dynamics of free particles.
+
+We will have that the equation governing each tangent trajectory $\vec{x}(t)=(\vec{q}_1(t),...,\vec{q}_N(T))$ will be given by the Newton-Bohm equation, Eq. \eqref{NewtOneUn}, with $V(\vec{x})=0$, where we all know that the particle will follow the path towards the minimum of potential energy (the force will always point in the steepest descent direction)
+\begin{equation}\label{hau}
+m_k\dv{\vec{q}_k(t)}{t}=-\vec{\nabla}_{\vec{q}_k}Q(\vec{q}_1,...,\vec{q}_N,t)\Big\rvert_{\vec{q}_j=\vec{q}_j(t)} \quad \forall k\in\{1,...,n\}.
+\end{equation}
+If we get the intuition of what this would (already classically) mean, we will immediately understand what the solution of the Schrödinger Equation encoding it,
+\begin{equation}
+i\hbar\pdv{\Psi(\vec{x},t)}{t}=\sum_{k=1}^n\frac{-\hbar^2}{2m_k}\pdv[2]{}{x_k}\psi(\vec{x},t),
+\end{equation}
+would look like.
+
+In order to get an intuition, consider for example the case in which we have an isolated 1D particle, such that equation \eqref{hau} would be the 1D second Newton's law with a potential energy field $Q(x,t)$,
+\begin{equation}\label{bestie}
+m_k\dv{x(t)}{t}=-\pdv{Q(x,t)}{x}\Big\rvert_{x=x(t)}
+\end{equation}
+where
+\begin{equation}
+Q(x,t)=\frac{\hbar^2}{4m}\qty(\frac{1}{2\rho^2(x,t)}\qty(\pdv{\rho(x,t)}{x})^2-\frac{1}{\rho(x,t)}\pdv[2]{}{x}\rho(x,t)).
+\end{equation}
+Note again that although its scary look, the quantum potential is just the magnitude of the gradient of the density (the maximum variation in that point) normalized by the absolute value of the density there (such that the steeper the density in that locality, the higher the potential will be and the more uncomfortable the trajectory will feel there) plus the negative curvature of the density normalized by the density's value (the laplacian, that will be higher the bigger the value of the density is in that point relative to the average density in the local surrounding). Both terms together mathematically express the mantra "trajectory ensembles that get denser repel each other stronger".
+
+We first note that if the density was such that it was uniform over all the domain $\Omega$ (which can happen if $\Omega\subseteq \R$ is bounded for the proper noramlization of the density), say an interval $[a,b]=\Omega$,
+\begin{equation}
+\rho(\vec{x},t_0)=\frac{1}{b-a}
+\end{equation}
+ then the quantum potential would be zero everywhere. In that case, at $t_0$ Newton's equation \eqref{bestie} would be exactly the same as the free particle in classical mechanics. That is, given an initial velocity field $v(x,t_0)=v_0\in\R$, since from the continuity equation \eqref{CE}, $\pdv{\rho(x,t=t_0)}{t}=0$, it would have an immediate solution $x(\xi,t)=\xi+v_0t$ with $v(x,t)=x_0$ $\forall t>t_0$, where $\xi=x(\xi,t_0)$ is the initial position of the $\xi$-th trajectory. That is, all possible particles would be moving at a constant speed for ever, ignoring the presence of each other. That is, for a wavefunction such that $\psi(x,t_0)=\frac{1}{b-a}e^{\frac{i}{\hbar}mv_0x}$, the Schrödinger time evolution will be $\psi(x,t)=\frac{1}{b-a}e^{\frac{i}{\hbar}mv_0x+c(t)}$, with $c(t)$ some constant in space that at most will change in time.
+ 
+For practically any other acceptable initial density however, it will be false that $\pdv{\rho(x,t_0)}{x}= 0 \ \forall x\in\Omega$ and thus false that $Q(x,t)=0$ and from \eqref{CE}, false that $\pdv{\rho(x,t_0)}{t}= 0\ \forall x\in\Omega$. That is, the trajectories will not be straight lines since the trajectories will influence each other, not even when the initial velocities of all the particles are the same $v(x,t_0)$ will they continue evolving in straight lines. The general motion however will still be intuitive because we can understand what the two terms in the quantum potential are.
+
+Imagine the non-trivial case of an initial Gaussian density packet 
+\begin{equation}
+\rho(\vec{x},t_0)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}.
+\end{equation}
+Since it reflects an agglomeration of tangent Universes around $\mu$, we can readily imagine that the Quantum potential will be very high in $\mu$ and will decrease while we go far from $\mu$ symmetrically. Indeed, if we compute the quantum potential we get
+\begin{equation}
+Q(x,t_0)=-\frac{\hbar^2}{4m\sigma^2}\qty[\frac{(x-\mu)^2}{\sigma^2}+1].
+\end{equation}
+This is a concave parabola potential energy, with its maximum at $\mu$ and such that the smaller $\sigma$ (the width of the Gaussian), the steeper it is, reflecting that the trajectories will be separated with a higher force from the center of the Gaussian. So, we can immediately see that even if we had that all the trajectories had a same zero initial velocity $v(x,t_0)=0$, in the next time step, the trajectories will obtain a non-zero velocity that will make them be more separated relative to the trajectories at $\mu$ (in a symmetric fashion). In turn, since the continuity equation causes the density to adapt to the new velocities of the trajectories, the density will broaden its shape to a higher width $\sigma$, which will cause a less sharply steep concave parabolic potential, which will add a smaller momentum to the trajectories, but will add a smaller momentum, and so on, towards a constant density distribution. Note that only the trajectory in the origin will remain still, since the quantum potential will be at its peak (thus a zero force) on it.
+
+As we saw in the derivation, the role of the quantum potential is to push a system towards the density profile of maximum entropy, the homogeneous density distribution, through the minimization of Fisher information. We will prove that the time evolution of the Gaussian in free space will still be a Gaussian later on when we see the observable operators, for now just believe it by looking at the simulation frames. 
+
+\mybox{
+{\bf Can we run out of Universes?}\\
+If the Gaussian keeps broadening for ever, thus the trajectories keep getting further away from the origin, one could ask whether at some point the only possible Universe around the origin will be the one at $x=0$, which is still. The answer is no. That is the consequence of having a {\em continuum} of possible Universes. What will happen of course is, that since the number of Universes relative to the total, in a certain neighborhood $\mathcal{N}$ of the origin is given by $\int_\mathcal{N}\rho(x,t)dx$, this number will asymptotically tend towards zero.
+}
+
+It will be interesting as well to see that for an initial condition where all the trajectories have the same non-zero initial velocity $v(x,t_0)=v_0$, they will still evolve towards the broadening of the density profile, such that the peak of the Gaussian will move at a fixed velocity $v_0$ (as the trajectory that was in the origin in the previous case remained there still, the quantum potential force is zero on it).
+
+The generalization to higher dimensions is straightforward for both the constant density and the Gaussian wavepacket.
+
+All in all, this means that if the fluid of tangent Universes had initially a peaked density, it will evolve towards its flattening. This has the epistemological consequence that although we could assert with great confidence that our Universe was around $\mu$ at the initial time, we loose that knowledge very fast, as the wavepacket gets dispersed towards maximum entropy.
+
+
+
+\subsection*{A.3.2. Example 2: The Harmonic Oscillator}
+\addcontentsline{toc}{subsubsection}{3.2. Example 2: The Harmonic Oscillator }
+What if we wanted to avoid this dispersion of tangent trajectories? After all, if the wavepackets get dispersed without bounds, the stability of our observed world would appear impossible! That is precisely the role of the potential energy $V(\vec{x})$. For instance, we have seen that a 1D Gaussian wavepacket centered in the origin with $V(x)\equiv 0$ will broaden unboundedly, because the curvature of the density causes the pressure potential $Q(x,t)$ to be a concave parabola. However, if we had set a potential energy $V(x)$ that was the additive inverse of $Q(x, t_0)$, that is, a convex parabola, or harmonic potential,
+\begin{equation}
+V(x)=\frac{\hbar^2}{4m\sigma^2}\qty[\frac{(x-\mu)^2}{\sigma^2}+1],
+\end{equation}
+it would make the total potential be zero, $Q(x,t_0)+V(x)\equiv 0$. Then, if the trajectories were still at $t_0$, $v(x,t_0)\equiv 0$, they would remain that way for ever. We would have that the Gaussian density continues to be the same function for ever. We would have been able to "confine" the high density of Universes in the parabolic potential.
+
+In fact, this fixed density could be one of the proves that the particle we would observe is not alone. Imagine we observe the particle in $x=1$, since there is an attractive harmonic potential, with the minimum in $x=0$, we would expect it to move towards $x=0$, just as a skateboard does in a U. We would expect to to "fall" to the attraction basin. However it does not. There is something holding it. It is the rest of tangent trajectories, that cannot cross each other and are piled one against the other, that hold it "in mid-air".
+
+If there was a harmonic potential $V(x)=V_0(x-\mu)^2$ centered in the same point as the peak of the Gaussian, but the harmonic potential was not exactly the one that cancels out the pressure potential, then, the total potential would still be quadratic, 
+\begin{equation}
+Q(x,t_0)+V(x)=\qty(V_0-\frac{\hbar^2}{4m\sigma^4})(x-\mu)^2-\hbar^2/4m\sigma^2
+\end{equation}
+Such that if $V_0>\frac{\hbar^2}{4m\sigma^4}$ (the potential is stronger than the pressure due to density agglomeration), the parabola would be convex and else concave. Then, in the convex case, the trajectories would feel a net attractive potential towards the origin and while they move they would deform the density increasing it in that region. As we will prove in a coming section, the shape would still be Gaussian, but the width $\sigma$ would diminish. This would then cause the balance between the potentials to revert at some point, which would start causing a repulsive force in the trajectories relative to the origin, which would widen the Gaussian until the balance reverts back, etc. This would be a "breathing"-like mode, which would eventually thermalize in a static Gaussian if there was something similar to a friction (which we will see that can appear due to the interaction with other particles).
+
+If on the other hand, the Gaussian was displaced, say $\mu>0$, relative to the harmonic potential $V(x)$ in the origin, and we set the magnitude of $V(x)$ equal to the one for $Q(x,t_0)$, the resulting total potential would be linear, with a positive slope $\mu\frac{\hbar^2}{4m\sigma^4}$,
+\begin{equation}
+Q(x,t_0)+V(x)=2\mu \frac{\hbar^2}{4m\sigma^4}x-{4m\sigma^4}(\mu^2+\sigma^2).
+\end{equation} 
+This would tend to move the trajectories (it can be proven that, preserving the same Gaussian shape, thus same $\sigma$) towards the center of the harmonic well, and as the Gaussian approaches the origin, since $\mu$ would get smaller, the total potential, which was a line would get its slope reduced until it gets to be a constant in the origin, while then it will become a negative slope line and will push back the Gaussian to the origin. That is, the Gaussian density will oscillate back and forth harmonically around the origin. Finally, if we let the potentials to have different magintudes, it can be proven that the motion will still be harmonic, just that the Gaussian will perform a breathing-like mode while back and forth.
+
+The generalization to higher dimensional systems with harmonic potentials and Gaussians is straightforward. The intuitions would still hold (just that there would now be more directions in which things can move).
 
 
 
 \newpage
 \fancyhead[R]{\em The State of a Partition of the Universe}
-\section*{A.3. The State of a Partition of the Universe}
-\addcontentsline{toc}{subsection}{ 3. The State of a Partition of the Universe}
+\section*{A.4. The State of a Partition of the Universe}
+\addcontentsline{toc}{subsection}{ 4. The State of a Partition of the Universe}
 % Azaldu la función de onda efectiva y la conditional wave-function
-
-
-
-\subsection*{A.3.1. The Epistemology of the Model}
-\addcontentsline{toc}{subsubsection}{3.1. The Epistemology of the Model}
+ The Epistemology of the Model
 % Lo que se puede saber independientemente de la realidad subyacente
+\iffalse
+Zer dan jakin ahal dana Unibertsoan portziñoak bakarrik accesible, orduen useless teorixe si no nos permite nada más
 
-\subsection*{A.3.2. An Effective Wavefunction}
+Klaro bakarrik unibertsoari buruzko predikziñoak badien jai dekogu!
+\fi
 
-\addcontentsline{toc}{subsubsection}{3.2. An Effective Wavefunction}
+\subsection*{A.4.1. The Conditional Wavefunction}
 
-\subsection*{A.3.3. The Conditional Wavefunction}
+\addcontentsline{toc}{subsubsection}{4.1. The Conditional Wavefunction}
+\iffalse
+- Zelan bai ahal dotzezun jarri unibertsoan zati bateri beren wavefunction propioa. Zelan interpretetan dan, zerba eztan estado tipikjo bat normalizaziñoa eta dana kontuten hartunde.
+Zelan dan lagrnagian viewra pasetie, ta ze izengo zan dana pasetie edo bakarrik partetxu bat.
+\fi
 
-\addcontentsline{toc}{subsubsection}{3.3. The Conditional Wavefunction}
 
 
 
@@ -1226,8 +1375,29 @@ We then imposed a local conservation of the relative number of Universes in time
 
 \newpage
 \fancyhead[R]{\em The Dynamics of a Partition of the Universe}
-\section*{A.4. The Dynamics of a Partition of the Universe}
-\addcontentsline{toc}{subsection}{ 4. The Dynamics of a Partition of the Universe}
+\section*{A.5. The Dynamics of a Partition of the Universe}
+\addcontentsline{toc}{subsection}{ 5. The Dynamics of a Partition of the Universe}
+
+
+\iffalse
+- Deribeu ekuaziñoak kinetic advective eta G,J bebai, kopixe ta pegeu handik, eta interprete ekuaziño resultantiek
+- Explike zelakoa dan en partikular dana lagrangianoa einde
+- Explikeu dana dauela entrelaceta ta dana jakin bizule eboluzionetako. El entrelazamiento con el entrono tal.
+- Ein partiziño gehiau egongo bazien en general zelan izengo zire ekuaziñoak.
+\fi
+
+\subsection*{A.5.1. Effective Wavefunctions and Closed Quantum Systems}
+\addcontentsline{toc}{subsubsection}{5.1. An Effective Wavefunction}
+\iffalse
+azaldu entanglement zer dan!
+
+Azaldu noiz exaktamente al dogun esan que el subsistema cuántico se comporta como si fuese un sistema cuántico aislado, noiz cerrado y tal, kondiziño konkretuek jarri sobre las $G,J$.
+
+Azaldu zer dan energía media etab oin hemendik perspektibatik
+\fi
+
+\subsection*{A.5.2. The Famous Quantum Entanglement}
+\addcontentsline{toc}{subsubsection}{5.2. The Famous Quantum Entanglement}
 
 \newpage
 Apendices pendientes:
@@ -1245,10 +1415,250 @@ Apendices pendientes:
 
 - Segun ze puntotan dauen del reflex izengo da zero edo ez asike zero danien atzerantza argi dau zabaldu eingo dala denporan
 
+
+- Marrazki bunch bat hobeto ulertzeko gauza danak
+- Azaldu grafikoau zer dan el fluido de universos: physical space eta configuration space argi eta garbi azaldu (even phase space gubazun), ahal dozuz jarri gray box baten si vols, baia jarri.
+- Apur bat pedagogikoauek azalpenak plis, ta gray box gehiau detalle motzak kentzeko ganetik.
+
+- Aklareu paralel zerba ez ta bai tangent eta hori
+
+
+\newpage
+\fancyhead[R]{\em The Observable Operators}
+\section*{A.6. The Hilbert Space and the Observable Operators}
+\addcontentsline{toc}{subsection}{6. The Hilbert Space and the Observable Operators}
+
+\section*{A.6.1. The Hilbert Space}
+\addcontentsline{toc}{subsubsection}{6.1. The Hilbert Space}
+
+Now that we can define the state of the fluid of Universes with a single (complex) function $\Psi(\vec{x},t)$, it is interesting to see if we can situate it in any interesting mathematical structure. It turns out that there is one mathematical construction that will be very convenient to manage the wavefunction of the Universe (which will be extensible to the wavefunctions of partitions of the Universe that we will explore in the next section).
+
+Since we defined the density of tangent Universes as a normalized relative density, we imposed that its integral in the whole configuration space was 1 in equation \eqref{norm}. This condition in terms of the wavefunction is:
+\begin{equation}\label{NormPsi}
+\iint_{\Omega_t}\Psi^*(\vec{x},t)\Psi(\vec{x},t)\ dx_1\cdots dx_N=1\quad \forall t
+\end{equation}
+we call the left-hand-side the {\bf norm} of the wavefunction, and say that the wavefunction is {\bf normalized} if its norm is equal to 1 (aka \eqref{NormPsi} is satisfied).\footnote{Note how for its interpretation as a probability density, this is also a requirement.}
+
+We then imposed a local conservation of the relative number of Universes in time as an axiom, which meant in particular that the total density should also be conserved in time. This meant that if at any time $t_0$ we knew the wave function was normalized, the dynamics would preserve its norm to unity at all times. This is evident axiomatically, since otherwise we would be saying that there are Universes being created or destroyed. Since this axiom was an imposition in the derivation of the dynamical equations, it is this why we say that the evolution of the wavefunction given by the Schrödinger Equation \eqref{SE}, or equivalently the Hamilton-Jacobi and Continuity Equations \eqref{QHJE}, \eqref{CE}, is a {\bf unitary time evolution} (they preserve the norm of the wavefunction, of the density at all times).
+
+\iffalse
+- Explikeu apendixien zegaitzik L2(-inf,inf)ko funtziñoak al diren exprese en orthonormal basis expansion etc. Azaldu ze guay dauen intuiziño labur bat.
+
+- Ket notationa azaldu informalki zelan erabiltlen dan, baia itxi klaru zer dan nahi dogune esan ket kontinuo bategaz.
+
+- Unitary time evolution azaldu operadore moduen zelan geratzen dan ta zerba unitary etc.
+
+- Ket notationen operadore bat zelan idazten dan jarri ta zer dan operadore hermitiko bat, eta diskleimerra gero etorko garela bueltan.
+\fi
+
+\subsection*{A.6.2. The Hamiltonian Operator}
+\addcontentsline{toc}{subsubsection}{6.2. The Hamiltonian Operator}
+Given a quantum system with EWF $\psi(\vec{x},t)$, let us define the energy of the trajectory that at time $t$ happens to be in $\vec{x}$ (for their non-crossing property, there will only be one, the $\xi$-th), as
+\begin{equation}
+\h^\psi(\vec{x}^\xi(t), t):=H\qty(\vec{x}^\xi(t), \vec{p}\qty(\dv{\vec{x}^\xi(t)}{t}), t)=\sum_{k=1}^n \frac{1}{2}m_k\qty(\dv{\vec{x}^\xi(t)}{t})^2+V(\vec{x}^\xi(t))+Q(\vec{x}^\xi(t),t)
+\end{equation}
+where $H$ is the Hamiltonian of the system as defined in Eq. \eqref{H:EWF}. As we saw previously, this energy depends not only on the instantaneous configuration of a certain trajectory, but also on the velocity field $\vec{v}(\vec{x}^\xi(t),t)=\dv{}{t}\vec{x}^\xi(t)$ appearing in the kinetic energy and the density of Universes $\rho(\vec{x},t)$, through the quantum potential $Q$. Thus it depends on the whole wavefunction $\psi=\rho^{1/2}e^{iS/\hbar}$ in addition to the position for a trajectory $\vec{x}$.
+
+One might be wondering what is the connection of this trajectory Hamiltonian $\h^\psi(\vec{x},t)$ and the operator we defined in Eq. \eqref{hatH} as the Hamiltonian operator, $\hat{H}_{\vec{x}}=\sum_{k=1}^n-\hbar^2/2m_k\pdv[2]{}{x_k}+V(\vec{x})$. When we derived the Schrödinger Equation, the operator simply appeared as an actor on the wavefunction, so their connection appears to be little more than their names. Far from being so, as we will see in this section, they are two faces of the same coin.
+
+Their relationship is the following equality
+\begin{equation}\label{117}
+\h^\psi(\vec{x},t)=\Re{\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}}
+\end{equation}
+ %=\Re{\frac{\bra{x}\hat{H}\ket{\psi}}{\bra{x}\ket{\psi}}}
+where by Re$\{\cdot\}$, we mean the real part. Let us prove this by developing the expression in the right hand side.
+
+\mybox{
+Since $\hat{H}_{\vec{x}}=\sum_{k=1}^n-\frac{\hbar^2}{2m_k}\pdv[2]{}{x_k}+V(\vec{x})$, we have in general that,
+\begin{equation}
+\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}=\sum_{k=1}^n \frac{-\hbar^2}{2m_k}\frac{\pdv[2]{}{x_k}\psi(\vec{x},t)}{\psi(\vec{x},t)}+\frac{V(\vec{x})\psi(\vec{x},t)}{\psi(\vec{x},t)}.
+\end{equation}
+Let us develop the first term with the wavefunction in polar form $\psi(\vec{x},t)=\rho^{1/2}(\vec{x},t)e^{iS(\vec{x},t)/\hbar}$
+\begin{equation}
+\frac{\pdv[2]{}{x_k}\psi(\vec{x},t)}{\psi(\vec{x},t)}=\frac{1}{\rho^{1/2}e^{iS/\hbar}}\qty(\pdv[2]{\rho^{1/2}}{x_k}e^{iS/\hbar}-\frac{\rho^{1/2}e^{iS/\hbar}}{\hbar^2}\qty(\pdv{S}{x_k})^2+\frac{2ie^{iS/\hbar}}{\hbar}\pdv{\rho^{1/2}}{x_k}\pdv{S}{x_k}+\frac{i}{\hbar}\rho^{1/2}e^{iS/\hbar}\pdv[2]{S}{x_k})=
+\end{equation}
+$$
+=-\frac{1}{\hbar^2}\qty(\pdv{S}{x_k})^2+\frac{1}{2\rho}\pdv[2]{\rho}{x_k}-\frac{1}{4\rho^2}\qty(\pdv{\rho}{x_k})^2+\frac{i}{\hbar}\qty(\frac{1}{\rho}\pdv{\rho}{x_k}\pdv{S}{x_k}+\pdv[2]{S}{x_k})
+$$
+where we can identify the trajectory momentum $p_k:=m_kv_k=\pdv{S}{x_k}$ in the $k$-th degree of freedom and the quantum potential due to the $k$-th degree of freedom $Q_k$ as seen in Eq. \eqref{Qk}. For the remaining term in the imaginary part, we can define 
+\begin{equation}
+\mathcal{p}_k(\vec{x},t):=-\hbar\frac{2}{\rho}\pdv{\rho}{x_k}
+\end{equation}
+to be the {\bf osmotic momentum}. We will find its relevance in section A.8, for now it will just be a shorthand. With this, we have that
+}\mybox{
+\begin{equation}
+\frac{\pdv[2]{}{x_k}\psi(\vec{x},t)}{\psi(\vec{x},t)}=-\frac{1}{\hbar^2}m_kv_k(\vec{x},t)^2-\frac{2m_k}{\hbar^2}Q_k(\vec{x},t)+\frac{i}{\hbar}\qty(-\frac{m_k}{2\hbar}\mathcal{p}_k(\vec{x},t)v_k(\vec{x},t)+m_k\pdv{v_k(\vec{x},t)}{x_k})
+\end{equation}
+And therefore,
+\begin{equation}\label{weakH}
+\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}=\sum_{k=1}^n\frac{1}{2}m_kv_k(\vec{x},t)^2+Q(\vec{x},t)+V(\vec{x},t)-i\frac{\hbar}{2}\qty(\frac{1}{2\hbar}\vec{\mathcal{p}}(\vec{x},t)\cdot\vec{v}(\vec{x},t)+\vec{\nabla}_x\cdot \vec{v}(\vec{x},t))
+\end{equation}
+Where we see that the real part is $\h^\psi(\vec{x},t)$.
+
+
+}
+
+At first this might seem to be a random coincidence. However, it is quite far from being so. Let us diagonalize the Hamiltonian operator to get the eigenstates $\{E_j(x)\}_j$ and eigenvalues $\{\varepsilon_j\}_j$ with $\varepsilon_j\in\R$, such that $\hat{H}_{\vec{x}}E_j(\vec{x})=\varepsilon_j E_j(\vec{x})$. Then, if the system had a wavefunction matching such an eigenstate, $\psi(\vec{x})=E_j(\vec{x})$, the energy of the different configurations would be
+\begin{equation}
+\h^\psi(\vec{x},t)=\Re{\frac{\hat{H}_{\vec{x}}E_j(\vec{x})}{E_j(\vec{x})}}=\varepsilon_j\quad \forall \vec{x}\in\Omega_t.
+\end{equation}
+That is, for an eigenstate of $\hat{H}_{\vec{x}}$, all the trajectories would have the same energy $\varepsilon_j$! Then, the natural question is the reverse one: are there additional acceptable wavefunctions $\psi(\vec{x},t)$ different from the eigenstates of $\hat{H}_{\vec{x}}$ for which all the possible configurations have the same energy? The answer unfortunately could be affirmative, but not if we add an additional condition. It turns out that the eigenstates $E_j(\vec{x})$ have an additional remarkable property. Given that the system at a certain time $t=t_0$ was an eigenstate $\psi(\vec{x},t_0)=E_j(\vec{x})$, we immediately know it would evolve to the state $\psi(\vec{x},t)=e^{-\frac{i}{\hbar}\varepsilon (t-t_0)}E_j(\vec{x})$.
+
+\mybox{
+Using the propagator definition \eqref{U} and the definition of the exponential of an operator \eqref{exp} together with the complex exponential
+\begin{equation}
+\psi(\vec{x},t)=\hat{U}_{\vec{x}}\psi(\vec{x},t_0)=e^{-\frac{i}{\hbar}\hat{H}_{\vec{x}}(t-t_0)}\psi(\vec{x},t_0)=\qty(1-\frac{i}{\hbar}(t-t_0)\hat{H}_{\vec{x}}+\frac{i^2}{\hbar^2}(t-t_0)\hat{H}_{\vec{x}}\hat{H}_{\vec{x}}+...)\psi(\vec{x},t_0)=
+\end{equation}
+$$
+=\qty(1-\frac{i}{\hbar}(t-t_0)\varepsilon_j+\frac{i^2}{\hbar^2}(t-t_0)\varepsilon_j^2+...)E_j(\vec{x})=e^{-\frac{i}{\hbar}\varepsilon_j (t-t_0)}E_j(\vec{x})
+$$
+}
+Then, because $e^{-\frac{i}{\hbar}\varepsilon_j (t-t_0)}$ is a global phase that only depends on $t$, both the velocity field and the density of trajectories will be the same at all times. To see why, note that if $E_j(\vec{x})=\rho^{1/2}(\vec{x})e^{iS(\vec{x})/\hbar}$,
+\begin{equation}
+\psi(\vec{x},t)=\rho^{1/2}(\vec{x})e^{i\frac{S(\vec{x})-\varepsilon_j(t-t_0)}{\hbar}}
+\end{equation} 
+and therefore, for all $t\geq t_0$, $|\psi(\vec{x},t)|^2=\rho(\vec{x})=|E(\vec{x})|^2$ and $\vec{v}(\vec{x},t)=\frac{1}{m_k}\vec{\nabla}(S(\vec{x})-\varepsilon_j(t-t_0))=\frac{1}{m_k}\vec{\nabla}S(\vec{x})=\vec{v}(\vec{x},t_0)$. As a consequence, if we have that the wavefunction was an eigenstate of the Hamiltonian operator, not only the energy of all the trajectories will be the same everywhere in $\vec{x}$, but also at all time $t$!
+
+Now yes, let us proof why, a state that fulfills both conditions, of constancy in time and configuration, must be an eigenstate of the Hamiltonian operator $\hat{H}_{\vec{x}}$. That is, let us prove that these two conditions uniquely characterize the Hamiltonian operator $\hat{H}_{\vec{x}}$, since by knowing the eigenstates and eigenvalues of $\hat{H}_{\vec{x}}$, we can fully determine it!
+
+We first need to prove that denoting by $\Im{\cdot}$ the imaginary part,
+\begin{equation}\label{ImH}
+\Im{\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}}=\frac{\hbar}{2\rho(\vec{x},t)}\pdv{\rho(\vec{x},t)}{t}=\hbar\pdv{}{t}log(\rho(\vec{x},t))
+\end{equation}
+\mybox{
+If we take the imaginary part that we already computed in \eqref{weakH} and write it all as a function of $\rho$ and $S$, we can undo a chain rule to get
+\begin{equation}
+\Im{\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}}=-\frac{\hbar}{2} \sum_{k=1}^n\frac{1}{m_k}\qty(\frac{1}{\rho}\pdv{\rho}{x_k}\pdv{S}{x_k}+\pdv[2]{S}{x_k})=-\frac{\hbar}{2}\frac{1}{\rho}\sum_{k=1}^n\pdv{}{x_k}\qty(\rho\frac{1}{m_k}\pdv{S}{x_k})
+\end{equation}
+If you take a look at to the continuity equation for the density to follow the velocity field, Eq. \eqref{CE}, you will immediately get the desired Eq. \eqref{ImW}.
+}
+Then, by defining 
+\begin{equation}
+\h_\C^\psi(\vec{x},t):=\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}\quad \text{ such that  }\h_\C^\psi(\vec{x},t)=\h^\psi(\vec{x},t)+i\hbar\pdv{}{t}log(\rho(\vec{x},t))
+\end{equation}
+we realize that to look for states that make the imaginary part of $\h^\psi_\C$ zero is equal to looking for states that have $\pdv{\rho(\vec{x},t)}{t}=0$ $\forall t$\footnote{One could also consider the case in which $\rho(\vec{x},t)$ spikes to infinity as well, but for vectors $\psi\in L^2(\Omega_t)$ this is not a possibility, although we will see one example that appears in a limiting case.}, meaning that we would be demanding that the density $\rho(\vec{x},t)$ is constant in time. Therefore, imposing that $\h^\psi_\C$ yields the same real value $E\in\R$ for all $\vec{x}$, means that at the same time we impose the imaginary part to be zero (the Eulerian density is constant in time) and that all configurations have the same energy $E$. That is, we have written the two conditions in one as
+\begin{equation}
+\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}=E\quad \forall \vec{x},t\Longleftrightarrow \hat{H}_{\vec{x}}\psi(\vec{x},t)=E\psi(\vec{x},t),
+\end{equation}
+which means that $\psi(\vec{x},t)$ must be an eigenstate of eigenvalue $E$ of the operator $\hat{H}_{\vec{x}}$ for both conditions on $\h^\psi_\C$ to be satisfied. Finally, since the eigenstates also fulfill that the velocity field is stationary, we even win that "for free".
+
+In summary, a state $\psi(\vec{x},t)$ is such that all the tangent trajectories have the same energy $\h^\psi(\vec{x},t)=E$ in all configurations $\vec{x}$ at all times $t$, if and only if, $\psi(\vec{x},t)$ is an eigenstate of the Hamiltonian operator, such that $\hat{H}_{\vec{x}}\psi(\vec{x},t)=E\psi(\vec{x},t)$.
+
+Because we saw that a Hermitian operator is always diagonalizable over real eigevalues, such that its eigenstates and eigenvectors uniquely determine it, we have that if we are able to find the states for which all trajectories have the same energy at all times, we will diagonalize $\hat{H}_{\vec{x}}$. Thus, this is an alternative method (quite unorthodox) for diagonalization. The most interesting thing will be the reverse however, that by abstractly diagonalizing a Hamiltonian, we will get very interesting particular states. 
+
+But, why are these states really interesting?
+\begin{itemize}
+\item No matter which Universe is ours, if one prepares an EWF that happens to be an eigenstate of its Hamiltonian, then, with probability one, one will know that the energy of the system is the eigenvalue, and that it will be so, while the potential energy $V(\vec{x})$ remains the same. We will see that this is the key misconception about measurements in quantum mechanics. That what we typically look for, is this kinds of states, because not only they are ontologically determined as all states are within our theory, but in particular these ones are also epistemologically determined (regarding the energy), and thus, will be phenomenologically appealing for many things.
+\item Since $\hat{H}_{\vec{x}}$ is a Hermitian operator, it diagonalizes over a complete orthonormal Hilbert set $\{E_j(\vec{x})\}_j$, such that
+\begin{equation}
+\iint_\Omega E_j^*(\vec{x})E_k(\vec{x}) dx = \delta_{jk}.
+\end{equation}
+As we saw, this means that an arbitrary state $\psi(\vec{x},t)$ can always be written as (the limit of) an "infinite linear combination" of the eigenstates of $\hat{H}_{\vec{x}}$ as
+\begin{equation}
+\psi(\vec{x},t_0)=\sum_{k=0}^\infty \alpha_k E_j(\vec{x})
+\end{equation}
+for certain coordinates $\alpha_k\in\C$ obtainable as
+\begin{equation}
+\alpha_k=\iint E_k^*\psi(\vec{x},t_0)dx
+\end{equation}
+But of course, this can be done with any complete orthonormal Hilbert set. What makes this one special? The key is that once we know the projection coordinates $\alpha_k$ of an arbitrary state $\psi(\vec{x},t_0)$ on the Hamiltonian eigenvector set, even if it is for a single time $t_0$, its whole time evolution will be completely determined. This is because of the superposition principle or linearity of the Schrödinger Equation. Indeed
+\begin{equation}
+\hat{U}^t_{\vec{x}}\psi(\vec{x},t_0)=\hat{U}^t_{\vec{x}}\sum_{k=0}^\infty \alpha_k E_k(\vec{x})=\sum_{k=0}^\infty \alpha_k \hat{U}^t_{\vec{x}}E_k(\vec{x})=\sum_{k=0}^\infty \alpha_k e^{-\frac{i}{\hbar}\varepsilon_k(t-t_0)} E_k(\vec{x}).
+\end{equation}
+That is, the time evolution only sets a {\bf relative} phase shift on each coefficient, $\alpha_k\xmapsto[]{\hat{U}}\alpha_k e^{-\frac{i}{\hbar}\varepsilon_k(t-t_0)}$, or in general, if we write the coefficients as functions of time $\alpha_k(t)=\alpha_k(t_0) e^{-\frac{i}{\hbar}\varepsilon_k(t-t_0)}$. Note how this does change the total density and velocity fields of the arbitrary state obtained with the sum, unlike what happened when the state was already an eigenstate: in that case the phase was a {\bf global} one! EL PAN BIMBO!!!
+
+\item A remarkable property of the expansion of an arbitrary state $\psi(\vec{x},t)$ in this basis, $\psi(\vec{x},t)=\sum_{k} \alpha_k(t)E_k(\vec{x})$, is that by knowing the coefficients $\alpha_k(t)$ and the eigen-energies $\varepsilon_k$ alone, we immediately know the ontological average energy of the possible trajectories, or equivalently, since the total amount of trajectories is normalized to 1, the total energy of the fluid of tangent trajectories, as
+\begin{equation}
+\E\qty[\h; \psi](t)=\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx = \sum_k |\alpha_k(t)|^2 \varepsilon_k
+\end{equation}
+\mybox{
+Given that $\forall z\in\C$, $\frac{1}{2}(z+z^*)=\Re{z}$ and meaning by $c.c.$ the complex conjugate of the previous part of the same expression,
+\begin{equation}
+\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx =\int_\Omega \Re{\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}} \psi^*\psi dx =\frac{1}{2}\int_\Omega \qty(\psi^*\hat{H}_{\vec{x}}\psi+\psi\hat{H}_{\vec{x}}\psi^*)dx=
+\end{equation}
+$$
+= \frac{1}{2}\int_\Omega\sum_j\qty(\alpha_j^*(t)E^*_j(\vec{x}))\sum_k\qty(\alpha_k(t)\varepsilon_k E_k(\vec{x})) dx+c.c.=\frac{1}{2}\sum_k\sum_j\alpha_j^*(t)\alpha_k(t)\varepsilon_k\int_{\Omega}E^*_j(\vec{x})E_k(\vec{x})dx +c.c.
+$$
+Using that by orthonormality $\int_\Omega E_j^*(\vec{x})E_k(\vec{x})dx=\delta_{jk}$,
+\begin{equation}
+\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx =\frac{1}{2}\sum_j |\alpha_k(t)|^2\varepsilon_k+c.c.=\sum_j |\alpha_k(t)|^2\varepsilon_k.
+\end{equation}
+}
+This feature will be crucial in the chapter about measurement.
+\end{itemize}
+
+\mybox{
+{\bf We can now almost see why we call it {\em Quantum}!\\ }
+Because in general, the cardinality of the orthonormal Hilbert basis in $L^2$ must be countable, the set of eigenstates of the Hamiltonian operator are in general countable. That is, it is not possible to have for any energy a fluid of tangent Universes with a velocity field and density that precisely give all the trajectories the same energy (and thus make the energy epistemologically deterministic). This delicate orchestration that gives all the trajectories the same energy can only be made for certain particular energies and not the other ones, only for a discretized grid or quantized grid of energies is this orchestration possible. If one wants to go from such a state to another one, only crossing states for which the epistemological energy is deterministic, it is not possible (as it was in classical mechanics)! You need to introduce discrete or quantized chunks of energy into the system to make it go from such a state to another one, and only that exact amount of energy may produce that exact transition. That is why we call it quantum! Because as we will see in what follows, the fact that the energy in this sense, considering the entire fluid, is quantized, will also cause that other observables like the angular momentum are be quantized. But notice, that this does not at all mean that we can have a Universe with an arbitrary (non-quantized) energy, just that the special arrangement where all Universes have the same energy are limited in a sense.
+}
+
+
+
+As we anticipated in this gray box, what we have found is way more than a Hamiltonian diagonalization technique, since it will now allow us to meaningfully define what we will call in general, observable operators! We will first walk through some very important examples, and we will state a general result afterwards.
+
+
+
+\subsection*{A.6.3. Example 1: The Free Particles - the Momentum Operator}
+\addcontentsline{toc}{subsubsection}{6.3. Example 1: The Free Particles}
+
+\subsection*{A.6.4. Example 2: The Harmonic Oscillator - the Position Operator}
+\addcontentsline{toc}{subsubsection}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}
+
+
+Bale, hau dana va en part A, ze hasta contiene los ejemplos y la conexión con la ket notation de forma superb natural.
+
+- Orduen si buscas los estados para los que una cantidad es la misma para toda trayectoria y encima es una cantidad conservada en el tiempo (si conmuta con el hamiltoniano)-z te sale el espectro de un operador hermítico (en concreto del hamiltoniano que tocaría en ese momento). Ejemplos, ein para el harmónico (conmuta ocn nada, ejemplo de hamiltoniano en general) y pare el central (conmuta con el momento angular-> operador momento angular), los eigenstates de ese hamiltoniano conservan la energía y tods las trajs con la misma energía, y en particular en ese sistema vemos que se conserva el momento angular tb, es más, si defines el operador momento angular, ves que conmuta con H, la base de estados del momento angular te la da este hamiltoniano. En free partcile, sacas los estados que cumplen eso, aka los eigenstates del hamiltoniano, entonces si defines un operador momento2, que por tanto conmuta con un operador momento, te da estos eigenstates! Como consideras omega\_t benetan son numerables, consideralo cúbico y quietp por ejemplo (que en verdad es como si fuese un potencial infinito cage), ta gero ein la aprox de que sería si hubiese infinito espacio. Conmuta con el momento lineal. Ba algo así debe poder hacerse con la posición no? Igual aproximando desde el potencial harmonico o algo? Tipo en el limite de que la masa sea enorme comparada con omega del potencial harmonico  Oin haces con la posición.
+
+En la de harmonic hacer lo de operadores de creacion y anikilasion pero desde nuestro punto de vista, sin mas, en plan preparasao para cuando hable de fotones.
+
+Azaldu que momentum op coefficients es Fourier transform de la de la posición y de alli tb s epuede motivar bien una delta en el espacio.
+En general observable bat zelan definiduten dozu en función de las x y p?
+
+COMMUTATION RELATIONS AZALDU! Ze naturalak diren.
+AZALDU HEISENBERG'S UNCERTAINTY
+
+Adibide bakoitza dibujoakaz gudot!
+
+Entonces qué ventaja tiene saberse los eigenstaes del H, bueno, que son una base ortonormal del espacio de Hilbert fijo! Orduen aparte de ser estados para los que fijo te sabes sin randomness cual es su energia etc. ba tal.-> measurement dilemma hortik etorriko da. Komente base honetan erreza dala esperantza ontologikoa kalkuletie, baia bueno ahal zenuzela erabili trayektoriak bebai.
+
+Jarri apartado bat nun komentas los axiomas de von Neumann, ta ikusi berdiñe diñoiela baia purely phenomenologicamente, lo que nos lleva a preguntas turbias y paradojas turbisimas, ta kritikeu zer gure dabien esan. Hasi measurementen txapterra horren komentario bategaz? Ez, hobeto bukaeran komente zer diñoien.
+
+Apartado bat komentetan el entanglement!! Lo natural que es, sin más, como el measurement no crea nada, pues ya está. Konekte con la no localidad.
+
+Apartado bat con charged particle hamiltonian y coulomb interaction y tal.
+
+Apartadoan en el del spinor, incluir spin operator, qiue es el que todo el mundo usa para explicarte todas las paradojas...en fin. Intente meikietan sense ia. baia posiblemente super ad-hoca izengo da.
+
+Klaro, guzti hau ez doa en la de measurement, ze es ontologico todo esto, pero si quieres probear something ya es part B.
+
+En section B Habría de ponerse ni que sea un apartado comentando la no localidad, como conseqcia natural de que el potencial cuantico tal, que es la unica paradoja que no es paradoja.
+
+
+
+
+
+
+%\subsection*{A.5.3. Example 2: The Uncertainty Principle}
+
+\subsection*{A.6.5. Example 3: The Central Potential - the Angular Momentum Operator}
+\addcontentsline{toc}{subsubsection}{6.5. Example 3: The Central Potential - the Angular Momentum Operator}
+
+
+\subsection*{A.6.6. A General Observable Operator}
+\addcontentsline{toc}{subsubsection}{6.6. A General Observable Operator}
+% Commutation relations?
+
+\subsection*{A.6.6. The Uncertainty Principle}
+\addcontentsline{toc}{subsubsection}{6.6. The Uncertainty Principle}
+% Hau igual hobeto en measuremnt ze es un efecto que se da en el measurement mas que otra cosa...
+\subsection*{A.6.7. The Ket Notation}
+\addcontentsline{toc}{subsubsection}{6.7. The Ket Notation}
+
+
 \newpage
 \fancyhead[R]{\em Overview of the Axioms}
-\section*{A.5. Overview of the Postulates}
-\addcontentsline{toc}{subsection}{ 5. Overview of the Postulates}
+\section*{A.7. The Axioms in Short}
+\addcontentsline{toc}{subsection}{7. The Axioms in Short}
 We can summarize the postulates we have assumed to arrive to non-relativistic Quantum Mechanics as follows:
 \begin{itemize}
 \item {\bf CM 1:} The Universe is made of a countable number of particles, each with three degrees of freedom.
@@ -1282,16 +1692,35 @@ We can summarize the postulates we have assumed to arrive to non-relativistic Qu
 \end{itemize}
 If we only assumed the postulates with a {\bf CM} tag, we would arrive at classical particle mechanics. It is the postulates with tags {\bf QM} that end up making non-relativistic quantum mechanics.
 
+\section*{A.7.1. The "Official" Postulates of Quantum Mechanics}
+\addcontentsline{toc}{subsubsection}{ 7.1. The "Official" Postulates of Quantum Mechanics}
 
 \newpage
 
 \fancyhead[R]{\em Overview of the Axioms}
-\section*{A.6. Spin in Non-Relativistic Quantum Mechanics}
-%\addcontentsline{toc}{subsection}{ 5. Overview of the Postulates}
+\section*{A.8. Spin in Non-Relativistic Quantum Mechanics}
+\addcontentsline{toc}{subsection}{ 8. Spin in Non-Relativistic Quantum Mechanics}
+\iffalse
+Azaldu zelan dan ad-hoca spine NRQMen, baia importantie dalez zelan ahal dogun introduzidu, como un spinor de position wf, ta zentzune beranduau emongo dotzegule al hablar de measurement, pero que será la media de algo era entre las dos wavefunction.
+
+Baia vamos que ojalá en relativistic urtetan badan naturalmente.
+
+Pauli exclusion, Fermions ta Bosons esan biherko dozu zer dien... Puuuuuf!!!
+\fi
+
+\section*{A.9. This was just a Medley of so Many Other Narratives!}
+\addcontentsline{toc}{subsection}{9. This was just a Medley of so Many Other Narratives!}
+\iffalse
+Explike ganetik orthodox, bohmian, madelung, ta many worlds, ta Schrodingerrena de la densidad de electrones! Que es la interpretación literal! El problema del physical space! Ontologias alternativas, la WF como dios, los potenciales acoplados entre sí etc.
+\fi
 
 \newpage
 
-\begin{kapituloBerria}{Part B}{" Measuring a Quantum System means knowing\\ the state of the system after the measurement, with\\ probabilities due to the state before the measurement."}
+\bibliographystyleA{plain}
+\bibliographyA{References/Bibliography} 
+\newpage
+
+\begin{kapituloBerria}{Part B}{" Measuring a Quantum System means knowing\\ the state of the system after perturbing it, with\\ probabilities due to the state before the measurement."}
 The Measurement 
 \end{kapituloBerria}
 \newpage
@@ -1307,30 +1736,78 @@ The Measurement
 \addcontentsline{toc}{section}{Part B: The Measurement}
 \addcontentsline{toc}{subsection}{1. The Von Neumann Chain and Perturbing the System}
 
+\iffalse
+Azaldu zegaitzik ezagutzeko zer dauen pasetan subsistema baten de EWF, interakzione ein behar dozule beragaz. Zelan? Proposatu von Neuman measurement Hamiltonian ta zelan akopletan deuzen posiziño bategaz de una ancilla (zer da ancilla) hau ta hau, ta jakinde posiziñoa badakizule tal o cual. Baia orduen akople hau hona ta horra, hasta tu ojo, y todo en una misma trayectoria entonces tal.  Bohr, Neumann citeu. Ein energixen neurketa baterako. Baia argi itxi zer dan pre-measuremetn ta post ta zer dakizun eta zer ez eta esan lo de Bell.
+\fi
+
+\section*{B.1. State Preparation}
+Imagine we isolate a subsystem of the Universe, say, the quantum system we are studying in our lab, so as to have an EWF $\ket{\psi}$ \footnote{We will later see how we can achieve this. For now just assume we have done so, for instance by putting it inside a cryostat at near 0K, with almost zero vibration and energy transmission from the environment, that is, with negligible interaction with the environment.}. 
+
+Now, in principle, since we do not know exactly the wavefunction $\ket{\psi}$ in which the system is, we would like to prepare it to a known wavefunction before any experiment is done. Not only that, but we would like to prepare it into a wavefunction for which for all the tangent subsystems, the value of some control variable $B$ (e.g. the energy, the angular momentum etc.) are the same, such that without needing to know about the rest of Universes we can be confident that ours has a certain reference value. Then, we would like to have an experimental protocol to convert the subsystem wavefunction $\ket{\psi}$ to such fiducial states where all tangent Universes agree in the value of some observable $B$.
+
+
+\section*{B.2. The Property of one or all the Universes?}
+\addcontentsline{toc}{subsection}{2. The Properties of one or all the Universes?}
+
+
+
+
+
+The answer is seemingly no, since that would imply that $\h^\psi(\vec{x},t)=E$ for all $\vec{x}$. YO ESPERO QUE SÍ QUE SEA CIERTO, ELSE LA DEFINICION DE LAS BOHMIAN EN FUNCION Yet that is still to be proven. What is true is that the eigenstates of the Hamiltonian are wavefunctions where all the trajectories have the same energy. 
+
+In general, it turns out that given a property of the trajectories $\B^\psi(\vec{x},t)$ (in the Eulerian frame), we can define a
+
+
+Consider that we are interested in knowing the property $B$ (it could be the position, the velocity, the energy, the angular momentum etc.) of a certain partition of the whole Universe. For example of the quantum particle system we have prepared into a known EWF $\ket{\psi}$ in the lab. You could imagine for instance a molecule that we have isolated in a cryostat, which we isolate from potential interactions with the rest of the world (its environment), including us, the measurement apparatus etc. We wait enough time for it to achieve an EWF (what one can informally say, "until its entanglement with the environment is lost"). 
+Let us denote by $B$ a general observable property of our subsystem of interest $S$. For example $B$ might be the position, the velocity, the energy or the angular momentum of some subsystem we are studying
+
+
+
+
+\iffalse
+Azaldu zelan benetan measurement deitzen dotziena dala detemrinetako unibertso danatan resultau bardiñe dekiezen estadoak. 
+
+Aklareu asozieta sistemien propiedade bakoitzagaz operadore hermitiko bat dauela usando las information B. Baia ze problema dekon orduen "measurement" deitzen dotzienak.
+\fi
+
+
 \fancyhead[R]{\em The Apparently Collapsing Measurement}
-\section*{B.2. The Apparently Collapsing Measurement}
-\addcontentsline{toc}{subsection}{2. The Apparently Collapsing Measurement}
+\section*{B.3. The Apparently Collapsing Measurement}
+\addcontentsline{toc}{subsection}{3. The Apparently Collapsing Measurement}
+
+\iffalse
+Erakutsi que lo que llaman measurement en efecto causa un colapso de la función de onda, pero que eso no es en realidad lo que queremos. Osea que sí da la propiedad de la trayectoria, pero una vez perturbada.
+
+Azaldu EWF baten bihurtzen dala geratzen dana etab etab
+\fi
 
 \subsection*{B.2.1. Discrete Spectrum Measurement}
 \addcontentsline{toc}{subsubsection}{2.1. Discrete Spectrum Measurement}
 \subsection*{B.2.2. Continuous Spectrum Measurement}
 \addcontentsline{toc}{subsubsection}{2.2. Continuous Spectrum Measurement}
 
+\section*{B.4. Non-contextual Characterization of the Quantum System}
+\addcontentsline{toc}{subsection}{4. Non-contextual Characterization of the Quantum System}
+\iffalse
+Azaldu zelan naive protocol batek emoten dozkun gure dogune, pero que implica esperanzas. Introduzidu weak measurementa eta protokoloak weak value emoten deuela. Weak value danak eztekiela zentzu operacional naive-ik!
+
+Weak valuen demostraziñoan tendrás que demostrar que es una EWF (gray box supongo xD).
+
+Adibidiek jarri zer dan orduen spin measurement strong bat eta local bat eta zer dan energy measurement strong ta local bat ta momentum measurement strong ta lokal bat
+\fi
+
 \fancyhead[R]{\em The Generalized Measurement}
 \section*{B.3. The Generalized Measurement}
 \addcontentsline{toc}{subsection}{3. The Generalized Measurement}
 
-\subsection*{B.3.1. A Strong Measurement}
-\addcontentsline{toc}{subsubsection}{3.1. A Strong Measurement}
-\subsection*{B.3.2. A Weak Measurement}
-\addcontentsline{toc}{subsubsection}{3.2. A Weak Measurement}
+\iffalse
+En general zer ahal doun egin eta zelan ahal dan demostreu el theorem akel mencione aurrerau ikusiko dogule. Por ahora let it be. Alzu demostreu EWF dala?
+\fi
 
-\fancyhead[R]{\em Properties of the Wavefunction vs Properties of the Trajectory}
-\section*{B.4. Properties of the Wavefunction vs Properties of the Trajectory}
-\addcontentsline{toc}{subsection}{4.  Properties of the Wavefunction vs Properties of the Trajectory}
 
-\subsection*{B.4.1 The In Position Weak Values as Trajectory Properties}
-\addcontentsline{toc}{subsubsection}{4.1. The Weak Values}
+
+\section*{B.5. Link with Other Narratives}
+\addcontentsline{toc}{subsubsection}{5. Link with Other Narratives}
 
 \newpage
 
@@ -1354,18 +1831,38 @@ ATAL BAT AZALTZEN MEASUREMENT EN DENSITY MATRIX FORMALISM ZEAN IZENGO ZAN TA ZE 
 \addcontentsline{toc}{section}{Part C: The Density Matrix}
 \addcontentsline{toc}{subsection}{1. The Way to Keep Track of Parallel Realities}
 
+\iffalse
+Plantieta del punto de vista práctico de querer keep trackera y tal post-meas states etab, ze ahallko gendun egin, density matrixek zer ahalbidetzen dozkuen orduen.
+
+Ta zer galtzen dogun honegaz deskribapenagaz! baia fenomenologikoki bahikoa dalez y tal ba bueno.
+
+Schrodinger-von Neumann equation dinamikoa idatzi
+
+Zelan dan measurement procesa en density matrices
+\fi
+
 \fancyhead[R]{\em The Reduced Density Matrix}
 \section*{C.2. The Reduced Density Matrix}
 \addcontentsline{toc}{subsection}{2. The Reduced Density Matrix}
+\iffalse
+Zer dan, zetako, zelan ulertu eta zelan ez! Eta zer zerikusi dekon con las CWF!
+\fi
+
 
 \fancyhead[R]{\em  The Unconditional Measurement and the Choice of Basis}
 \section*{C.3. The Unconditional Measurement and the Choice of Basis}
 \addcontentsline{toc}{subsection}{3. The Unconditional Measurement and the Choice of Basis}
+\iffalse
+Hemen batezbe argi geratzie CWFekaz dekon zerikusixe y tal
+\fi
+
 
 \fancyhead[R]{\em  Pure Unravellings}
 \section*{C.4. Pure Unravellings}
 \addcontentsline{toc}{subsection}{4. Pure Unravellings}
-
+\iffalse
+Si stron measurement-like sekuentzi bat zer paseko zan Markoviano dala, zegaitzik
+\fi
 
 
 \fancyhead[R]{\em  Pure Unravellings}
@@ -1423,7 +1920,54 @@ Markovianity and\\ Master Equations
 \subsection*{D.6.2 Ours}\addcontentsline{toc}{subsubsection}{6.2. Ours}
 % Guk eztogu en el interaction frame consideretan sino ke en general. Asike azaldu zelan al dan gure cwfakaz rekonstruidu la full reduced density adibidez ta gero redirigidu nire tratadoko part Lagrangian part Eulerian kapitulora!
 
+\section*{D.7. What if there was No Macro-scale?}
+\addcontentsline{toc}{subsection}{7. What if there was No Macro-Scale? }
 
+\cite{arnold:mathematical}
+\begin{kapituloBerria}{Part E}{" Eee menuda flipada"}
+Even Quantum Fields and Relativistic Equations Fit Well
+\end{kapituloBerria}
+\fancyhead[L]{Quantization of Fields and Relativity}
+
+\addcontentsline{toc}{section}{Part E: Even Fields and Relativity Fit Well}
+
+
+\fancyhead[R]{Photons}
+\section*{E.1. Photons}
+\addcontentsline{toc}{subsection}{1. Photons}
+
+
+\section*{E.2. Phonons and other quasi-particles}
+\addcontentsline{toc}{subsection}{2. Phonons and other quasi-particles}
+
+
+\section*{E.3. Then, what is really Quantization? Is this a new Quantization Method?}
+\addcontentsline{toc}{subsection}{3. Then, what is Quantization? Is this a new Quantization Method?}
+
+
+\section*{E.4. Relativistic Tangent Universes: the Klein-Gordon Equation}
+\addcontentsline{toc}{subsection}{4. Relativistic Tangent Universes: the Klein-Gordon Equation}
+
+\newpage
+\begin{kapituloBerria}{Part X}{"There is always more to say"}
+Appendices
+\end{kapituloBerria}
+\addcontentsline{toc}{section}{Part X: Appendices}
+
+\section*{X.1. Basic Probability Concepts and Lebesgue Integration}
+\addcontentsline{toc}{subsection}{1. Basic Probability Concepts and Lebesgue Integration}
+
+\section*{X.2. Basic Concepts about the Trajectory Ensemble $\vec{x}(\vec{\xi},t)$}
+\addcontentsline{toc}{subsection}{2. Basic Concepts about the Trajectory Ensemble $\vec{x}(\vec{\xi},t)$}
+
+\section*{X.3. Extremizing Multivariate Functionals with Constraints}
+\addcontentsline{toc}{subsection}{3. Extremizing Multivariate Functionals with Constraints}
+
+\section*{X.4. The Hilbert Space of Functions}
+\addcontentsline{toc}{subsection}{4. The Hilbert Space of Functions}
+
+\section*{X.5. Stochastic Differential Equations}
+\addcontentsline{toc}{subsection}{5. Stochastic Differential Equations}
 
 
 
@@ -1433,8 +1977,12 @@ Markovianity and\\ Master Equations
 \fancyhead[L]{\null}
 
 
-\begin{thebibliography}{1}
-\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{References/Bibliography}
+
+
+%\begin{thebibliography}{1}
+%\addcontentsline{toc}{section}{References}
 
 % Cita a la Crítica a la Razón Pura de Kant.
 
@@ -1446,7 +1994,7 @@ Markovianity and\\ Master Equations
 %	Albareda G, Kelly A, Rubio A. {\em Nonadiabatic quantum dynamics without potential energy surfaces.} Phys Rev Materials. 2019; 3: 023803. 
 
 	
-\end{thebibliography}
+%\end{thebibliography}
 
 
 \end{document}

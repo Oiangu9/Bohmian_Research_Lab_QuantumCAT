@@ -1,0 +1,191 @@
+\documentclass[11pt, a4paper]{article} % , draft
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem} % customiçe item dots etc
+\usepackage{textgreek} % obv
+\usepackage{physics} % for easy derivative notation
+\usepackage{amsmath}
+\usepackage{amsthm} %theorems
+\usepackage{amssymb}
+\usepackage{mathtools} % for matrices with blocks inside
+\usepackage[scr=boondoxo]{mathalfa}
+\usepackage{pst-node}%
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\mc}{\multicolumn{1}{c}}
+\newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Holo}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\z}{\mathpzc{s}}
+\newcommand{\p}{\mathpzc{r}}
+\newcommand{\s}{\mathbb{S}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\Lg}{\mathscr{L}}
+\newcommand{\x}{\mathcal{X}}
+\newcommand{\B}{\mathfrak{B}}
+
+\setlength{\parskip}{0.3 cm}
+\setlength{\parindent}{0 cm}
+
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\DeclareRobustCommand{\mybox}[2][gray!10]{%
+\begin{tcolorbox}[   %% Adjust the following parameters at will.
+        left=0.2cm,
+        right=0.2cm,
+        top=0.15cm,
+        bottom=0.15cm,
+        colback=#1,
+        colframe=#1,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=0pt,outer arc=0pt,
+        ]
+        #2
+\end{tcolorbox}
+}
+\usepackage[left=2cm, right=2cm, top=2.1cm, bottom=2.1cm]{geometry} % set custom margins
+\usepackage{graphicx} % to insert figures
+\usepackage{grffile}
+\graphicspath{{Figures/}} % define the figure folder path
+\usepackage{subcaption} % for multiple figures at once each with a caption
+\usepackage{multirow} %multirow in tables
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize} %adjust caption size
+\captionsetup[table]{font=footnotesize} %adjust caption size
+
+\usepackage{booktabs} % for pretty tabs in tables
+\usepackage{siunitx} % Required for alignment
+\captionsetup{labelfont=bf} % bold face captations
+
+\usepackage{hyperref} % makes every reference a hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    filecolor=violet,      
+    urlcolor=violet,
+    citecolor=violet
+}
+
+\usepackage{epigraph} % for quotations in teh begginig
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\renewcommand{\qedsymbol}{o.\textepsilon.\textdelta}
+
+\newtheorem{prop}{Proposition} %so I can use propositions
+\newtheorem{cor}{Corollary} %so I can use corollaries
+\newtheorem{defi}{Definition} %so I can use corollaries
+
+\title{\vspace{-1.5cm} {\bf }}
+\date{\vspace{-11ex}}
+\let\clipbox\relax
+\usepackage{adjustbox}
+\newcolumntype{?}{!{\vrule width 1.5pt}}
+\usepackage{abstract}
+\setlength{\absleftindent}{0mm}
+\setlength{\absrightindent}{0mm}
+
+\usepackage{anyfontsize}
+
+%\DeclareMathSizes{display size}{text size}{script size}{scriptscript size}.
+\DeclareMathSizes{10}{10}{10}{10}
+\setlength{\footnotesep}{0.55\baselineskip}
+\renewcommand{\contentsname}{{\large Contents}}
+\usepackage{mathtools}
+
+\begin{document}
+\section*{Meeting 29/03/2023 - Informal Notes}
+First I will informally write down the main ideas we have discussed during the meeting with some extra ideas in gray. Then, the structure for the book chapter as we have sketched in the meeting.
+
+\subsection*{Idea 1: Bohmian standard vs non-standard - the argument of Naiveness}
+From all the alternative Bohmian velocity fields, the standard one is favored by the fact that: if one naively measures the velocity, by only knowing that the quantum measurement destroys the subsequent evolution and one thinks that particles follow deterministic differentiable trajectories, it turns out that one measures a velocity that is equal to the Bohmian velocity. The velocity fields for the rest of Bohmian-like theories can also be computed using weak values, even with position post-selected ones. However, the experimental protocol to measure them will seem to follow an arbitrary algorithm for the naive experimentalist that knows nothing about quantum mechanics.
+
+\mybox{{\bf Could we do this?\\ }
+Let me invent an experiment to naively observe the trajectories. Let us place a chain of positively charged ions in the far away plane $z=-100$, such that all these ions are fixed along $x$ and at a distance $y=10$ from the gun (trapped with infinite wall optical potentials in $x,y$), but are allowed to move in $z$ (in $z$ they are in a harmonic well), this would be the so-called "weak screen". Now, imagine that we place a (strong) detection screen along $x$ but in $z=0$ and $y=11$ and we start shooting at $y=0$ one by one some ions (you can even place a double slit in $y=2$ if you wish). Then, when the ions pass above the chain, the chain will fluctuate slightly due to the Coulomb interaction (but only slightly for the distance is great). You record at time $T$ the perturbation on the chain and the landing position of the ion in the screen at $T+\tau$. Then, if we take all the cases in which the ion landed in the same position $x_f$ and compute the average displacement on the chain of ions, we will clearly see that one of the ions, the one in $x_0$ was mostly disturbed. The velocity $(x_f-x_0)/\tau$ will (approximately) be a naive velocity in $x$ for the ions (classically expected to be 0, but not quantically). And it will be the Bohmian velocity.\\
+
+Note that in order to estimate $T,\tau$, one could give all the ions in the gun the same velocity in $y$, by for instance letting them free-fall in a gravitational field placing one by one the ions in $y=0$ in an infinite wall optical trap and at $t=0$ turning it off to leave the ion free-fall. Prior to $t=0$ the ion in this optical trap should be thermalized into a slim gaussian ground state in $x$ to clearly see the quantum effect of the "self-interference" due to the broadening of the wavepacket in free space (in $y$ it should be such that the velocity gained by gravity is way more significant than the one gained by the broadening in $y$, which will also affect! That is, the gravitational force should be bigger than the quantum potential force -a very heavy ion needed clearly). Then the velocity in $y$ will hardly change for any ion, $T,\tau$ will be known with high accuracy, but the velcoity (Bohmian one) in $x$ will change for the broadening of the wavepacket in free space, due to the quantum potential being parabolic. This will be unexpected from classical mechanics, since there is only a single ion! Now move the chain of ions and the detection screen a little bit in $y$ and repeat the experiment. Scan the whole range in $y$. We should be able to see the Bohmian trajectories! What do you think about it?
+ }
+ 
+ Observation:
+ \begin{itemize}
+ \item It would be interesting to see if this last experiment would really yield the Bohmian velocity or the chain of ions should be entangled with the incoming ion more strongly.
+ \end{itemize}
+ \newpage
+
+\subsection*{Idea 2: Bohmian/Stoch. vs Copenhagen - the Practical/Heuristic Power argument}
+All the "metrics" in quantum mechanics are functionals (in general non-linear ones involving crossed products, derivatives and integrals) of the action $S$ and the magnitude $R$ of the wavefunction, and today, we are able to "measure" them "all" -ejem many body- through weak values (using several repetitions of the same experimental setting). For Copenhagen/Orthodox QM, not $S$ nor $R$ have actual "meaning", even if all their combinations are elements of the mathematical structure (say, the gradient of $S$), they are nothing meaningful. In principle only $R^2$ and its functionals (standard expectation values) have an interpretative connection with physical reality, and any other combination of $R$, $S$ seem to be arbitrary. But then, we have a theory (the standard Bohmian one), that provides an heuristic for certain combinations of $S,R$ and their derivatives that turn out to be pragamtically useful to characterize quantum systems, in cases when the Copenhagen theory is blind/hand-tied. For example the thermalization example Oriols and Destefani provided us. In that particular example, due to the symmetries in the initial conditions/setting, if one pays attention to the time evolution of the expected kinetic energy, the expected position or momentum (all "natural" in the orthodox language), one cannot obtain a thermalization time (expectations fluctuate around a conserved mean), while looking at the dynamics in an animation for example, it is clear that the system thermalizes at some point. Then, in that case, the Bohmian theory lets us know that the total expected kinetic energy (orthodox) can be divided into a component due to the bohmian kinetic energy and the quantum potential (or osmotic kinetic energy).  These quantities allow us to see the thermalization and to compute AND "MEASURE" the thermalization time. They can be experimentally obtained, so they are not a mere "curiosity". Then, obviously the Copenhagen theory and any theory using the wavefunction in its mathematical framework can also accommodate them, but that will be an ad-hoc fix, since the operationally obtained numbers will be certainly arbitrary averages for them. And yet they reflect the thermalization time. They are just adding "epicycles" in a certain sense. 
+
+\mybox{This reminds me the case of non-Markovian open quantum systems, where a priori there is no Copenhagen way to consider pure state unravellings (SSE-s), unlike in Bohmian mechanics, where they are naturally given by the Conditional Wavefunctions. But then, since the non-Markovian SSEs are essentially the only way to simulate the dynamics of such systems, the Orthodox employ and generate SSE-s with no concern (some even arriving to commit the sacrilege of saying that the evolved quantum trajectories are physically pure state unravellings as was legitimate to say in the case of Markovian open quantum systems). They introduce epicycles to reproduce the predictions for non-Markovian open quantum systems: they carelessly use and invent new non-Markovian SSE-s, thinking that they are in each time "how the system would have been left if a measurement was performed on the environment, which is really not performed since otherwise the evolution of the system would be different" -clearly an epicycle.}
+
+Observations on the example about thermalization:
+\begin{itemize}
+\item In reality there are probably some observables, perhaps $x^2$ or maybe some more complicated one, the (orthodox) expected value of which does allow the determination of the thermalization time as well. However, they might be quite remote to be found, perhaps even related to some very exotic observable for some pathological scenarios. Meanwhile, the metrics  obtained through the use of Bohmian mechanics as a tool, might be simple to be found. I do not think so, but there might be some Bohmian observable that always shows the thermalization, even in pathological cases. I do not think so, because that would imply that there are no scenarios where such a metric is a conserved quantity.
+
+\item Possibly in the other Bohmian-like theories one can also decompose the total kinetic energy in a contribution of the modified velocity field and modified quantum potential. And possibly they shed the same light on thermalization as Bohmian mechanics. Thus, this is not an argument to erase the underdetermination. (The naiveness of point 1, is such an argument though).
+
+\item An additional example of the heuristic power could be the one about non-Markovianity in the gray box or the ones explained in the other book chapter.
+
+\end{itemize}
+
+\subsection*{Idea 3: Misleading derivation of the Weak Values}
+The weak value is a number that one can legitimately assign to each individual wavepacket (since it depends exclusively on a single experiment wavefunction). HOWEVER, the experimental protocol to obtain it implies an average, not for technical reasons but fundamentally necessarily. The derivation of how the post-selected weak measurement protocol yields approximately the weak value, requires an average between several weak measurements! Else the equality does not hold. See the buried Appendix of "Identifying weak values with intrinsic dynamical properties in Modal theories" by Pandey (and Oriols) et al, to see what happens when seriously considered that there is a strong measurement of the weakly coupled ancilla. It is a master-piece appendix, that deserves more than that. 
+
+It is this why Wiseman says that the naively obtained velocity is the average particle velocity, such that if that number was also the velocity of all the particles landing in $x_f$, it would be a measurement of the individual particle velocity (which is the case in the Bohmian theory), but otherwise it might only be the average velocity of the particles landing in $x_f$, (which is the case in Stochastic trajectory theories).
+
+
+\subsection*{Idea 4: What if the ancilla wavepacket is complex?}
+While writing this I realized it was a bit more subtle than I thought, so I am writing a separate manuscript. I will send it to you sometime this coming week.
+
+\subsection*{Idea 5: Many-body Weak Values, a true novelty}
+In the literature practically only distinguishable particle weak-values have been considered. These are theoretically definable/simulable and experimentally obtainable. However, when one considers a many body system with indistinguishable particles, even if one can define and simulate a weak value for each individual particle , like the Bohmian velocity of each of them, there is no experimental protocol to obtain those numbers in the laboratory. One can only obtain the {\bf average} weak value of the considered indistinguishable particles. It turns out that this is not as appealing as the individual particle weak values for the non-contextual characterization of quantum systems. Moreover, in the limit of many particles, they approach the orthodox expectation value of observables. Yet, this is not a problem only for weak values. When trying to characterize a many-body system, nobody even attempts to obtain metrics concerning individual particles. Instead, concepts like the {\bf center of mass, or total/average quantities} are typically used. 
+
+Regarding the concept of center of mass, it turns out that weak values for the center of mass for example are experimentally accessible and have the same non-contextual characterization and Bohmian-mediated heuristic super-powers as the previously discussed ones. The center of mass always has for example a well defined and experimentally accessible Bohmian trajectory. For instance one might consider non-contextually and with empirical accessibility, {\bf the thermalization of a many body system through the study of its center of mass}, or one could study the dynamics of the center of mass of a cloud of electrons around the nuclei of a molecule, among others.
+
+Regarding the average/total quantities, as we showed in the previous book chapter, the total current measured in the ammeter of a nano-device operating at THz frequencies, concerns the average instantaneous current of the indistinguishable particles in the active region. This turns out to be the phenomenological metric of interest, thus it can be described as an average weak value, thus is experimentally accessible, and turns out to be naturally derivable from the Bohmian language.
+
+
+\subsection*{Structure of the Chapter: a Proposal}
+\begin{enumerate}
+\item An introduction to weak values, without the misleading step of avoiding the first collapse explicitly. How the weak measurement protocol only approximately yields weak values and how averaging is fundamentally necessary. Underline assumptions. Optional: 
+
+\begin{itemize}
+\item Experimental naiveness of a Bohmian local-in-position weak value. Optional:
+
+\begin{itemize}
+\item This selects Bohmian over the underdeterminationand support in front of orthodox criticism of non-observability of trajectories etc.
+
+\item Underline non-contextuality and break criticism of Bohmian trajectories as embellishments.
+
+\item Consideration about the real ancilla wavepacket. Necessary assumption? What about the complex part of a weak value? Osmotic velocity measurable.
+\end{itemize} 
+
+\item Many Body weak values, fundamental limitation in the determination of single particle weak values in an ensemble of indistinguishable particles and implications.
+
+\end{itemize} 
+
+\item The details of at least two (ideally unpublished) practical use-cases that show the power of weak values illuminating apparently pathological scenarios and the power of Bohmian mechanics as a heuristic tool to look for such useful weak values (even to understand them).
+\begin{itemize}
+\item The thermalization time orthodox blindness explained by Oriols and Destefani.
+\item ? Thermalization of a many-body system through the center of mass?
+\item ? Gauge transformations/invariance through trajectories and stuff?
+\end{itemize}
+
+\item Philosophical consequences and stuff. The "resignification" of such useful quantities in other quantum theories, epicycles? Additional examples exists, e.g. non-Markovian SSE-s. Heuristic/practical power of Bohmian mechanics (in addition to it offering naively observable metrics in each spatial locality), this is an additional argument to use/teach it.
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
