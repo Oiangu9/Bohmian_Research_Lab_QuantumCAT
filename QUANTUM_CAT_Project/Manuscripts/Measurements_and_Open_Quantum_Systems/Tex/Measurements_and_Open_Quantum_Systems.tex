@@ -16,6 +16,7 @@
 
 \newcommand{\mc}{\multicolumn{1}{c}}
 \newcommand{\R}{\mathbb{R}} % command for real R
+\newcommand{\Z}{\mathbb{Z}} % command for real R
 \newcommand{\Holo}{\mathcal{H}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\C}{\mathbb{C}}
@@ -1428,7 +1429,7 @@ Apendices pendientes:
 \section*{A.6. The Hilbert Space and the Observable Operators}
 \addcontentsline{toc}{subsection}{6. The Hilbert Space and the Observable Operators}
 
-\section*{A.6.1. The Hilbert Space}
+\subsection*{A.6.1. The Hilbert Space}
 \addcontentsline{toc}{subsubsection}{6.1. The Hilbert Space}
 
 Now that we can define the state of the fluid of Universes with a single (complex) function $\Psi(\vec{x},t)$, it is interesting to see if we can situate it in any interesting mathematical structure. It turns out that there is one mathematical construction that will be very convenient to manage the wavefunction of the Universe (which will be extensible to the wavefunctions of partitions of the Universe that we will explore in the next section).
@@ -1451,8 +1452,8 @@ We then imposed a local conservation of the relative number of Universes in time
 - Ket notationen operadore bat zelan idazten dan jarri ta zer dan operadore hermitiko bat, eta diskleimerra gero etorko garela bueltan.
 \fi
 
-\subsection*{A.6.2. The Hamiltonian Operator}
-\addcontentsline{toc}{subsubsection}{6.2. The Hamiltonian Operator}
+\subsection*{A.6.2. The Hamiltonian Operator and the Orchestration}
+\addcontentsline{toc}{subsubsection}{6.2. The Hamiltonian Operator and the Orchestration}
 Given a quantum system with EWF $\psi(\vec{x},t)$, let us define the energy of the trajectory that at time $t$ happens to be in $\vec{x}$ (for their non-crossing property, there will only be one, the $\xi$-th), as
 \begin{equation}
 \h^\psi(\vec{x}^\xi(t), t):=H\qty(\vec{x}^\xi(t), \vec{p}\qty(\dv{\vec{x}^\xi(t)}{t}), t)=\sum_{k=1}^n \frac{1}{2}m_k\qty(\dv{\vec{x}^\xi(t)}{t})^2+V(\vec{x}^\xi(t))+Q(\vec{x}^\xi(t),t)
@@ -1596,10 +1597,196 @@ Because in general, the cardinality of the orthonormal Hilbert basis in $L^2$ mu
 
 As we anticipated in this gray box, what we have found is way more than a Hamiltonian diagonalization technique, since it will now allow us to meaningfully define what we will call in general, observable operators! We will first walk through some very important examples, and we will state a general result afterwards.
 
-
+NOT ONLY THE TOTAL ENERGY OF THE FLUID BE CONSERVED BUT ALSO THE ENERGY OF EACH ONE OF THE TRAJECTORIES!
+EN GENERAL SI OMEGA NOT BOUNDED LA UNICA CONDICION DE CONTORNO QUE TENDRA SENTIDO PARA QUE ESTE NORMALIZADA LA FK DE ONDA ES QUE SE HAGA CERO AL TENDER AL INFINITO.
 
 \subsection*{A.6.3. Example 1: The Free Particles - the Momentum Operator}
 \addcontentsline{toc}{subsubsection}{6.3. Example 1: The Free Particles}
+
+Let us retake the free particle system example where there is no potential $V$ imposing hindrance on the motion of the fluid towards maximum diffusion or minimum Fisher information, $V(\vec{x})\equiv 0$. If so, the Hamiltonian operator would be left as $\hat{H}_{\vec{x}}=\sum_{k=1}^n\frac{-\hbar^2}{2m_k}\pdv[2]{}{x_k}$, which would make the energy of each configuration $\h^\psi$
+\begin{equation}
+\h^\psi(\vec{x},t)=\sum_{k=1}^n\frac{1}{2}m_kv_k(\vec{x},t)^2+Q(\vec{x},t).
+\end{equation}
+Then we could ask which are the states for which the energy of every trajectory is the same and is a constant in time. By the previous result we know that must be those states that diagonalize the Hamiltonian. To see the equivalence, let us consider the diagonalization from the two directions.
+
+To see the power of the result, we will first compute the states that make all the trajectories have the same energy at all times by diagonalizing the Hamiltonian and then we will try to obtain them as if we did not have the equivalence.
+
+The states $\psi(\vec{x})$ that diagonalize the Hamiltonian must fulfill 
+\begin{equation}
+\hat{H}_{\vec{x}}\psi(\vec{x})=E\psi(\vec{x})\Longleftrightarrow \sum_{k=1}^n\frac{-\hbar^2}{2m_k}\pdv[2]{}{x_k}\psi(\vec{x}) = E\psi(\vec{x}).
+\end{equation}
+\mybox{
+If we define a change of variables such that $\tilde{x_k}=\frac{x_k}{m_k}$ and define $\tilde{\psi}(\tilde{\vec{x}})=\psi(\vec{x}(\tilde{\vec{x}}))$, the eigenstate equation is left as if all masses were the same
+\begin{equation}
+\sum_{k=1}^n\frac{-\hbar^2}{2}\pdv[2]{}{\tilde{x}_k}\tilde{\psi}(\tilde{\vec{x}}) = E\tilde{\psi}(\tilde{\vec{x}})\Longleftrightarrow \sum_{k=1}^n\pdv[2]{}{\tilde{x}_k}\tilde{\psi}(\tilde{\vec{x}}) = \frac{-2E}{\hbar^2}\tilde{\psi}(\tilde{\vec{x}}).
+\end{equation}
+For reasons that will become clear soon, let us choose a plane wave solution proposal $\tilde{\psi}(\tilde{\vec{x}})=\alpha e^{i\vec{k}\cdot\tilde{\vec{x}}}$, where $\alpha\in\C$ and $\vec{k}=(k_1,...,k_n)\in\R^n$.\footnote{For maximum generality, we should let the constants $\vec{k}=(k_1,...,k_n)\in\C^n$. However, if $k_j\in\C$, this introduces an exponentially decaying or increasing factor multiplying the state as $e^{-\Im{k_j}x_j}$. If the domain $\Omega$ was unbounded, this would be directly unacceptable for the density would grow with no bounds. But, even if the domain $\Omega$ is bounded, for the two relevant cases of wavefunction zero in the boundary and continous periodic function, the state will still be unacceptable. Thus, we will only consider the case in which $k_j\in\R$.} Given $E\geq$,\footnote{If $E<0$, we get that some of the $k_j$ must be complex. So even if formally there is a state that is even normalizable if the domain $\Omega$ is bounded, exactly for the same reason mentioned in the previous footnote, such states will be unacceptable.} Introducing it in the eigenvalue problem, we get such a solution is an eigenstate if
+\begin{equation}
+k_1^2+\cdots+k_n^2=\frac{2E}{\hbar^2}\Rightarrow ||\vec{k}||^2= \frac{\sqrt{2E}}{\hbar},
+\end{equation}
+where we discard the negative sign case (for $||\vec{k}||>0$). This condition means that given a set $(k_1,...,k_n)$ for which $||\vec{k}||^2=2E/\hbar$, the new $\vec{k}'$ obtained by multiplying any number of the $k_j$ by -1, will also be an eigenstate of the same energy $E$. What is more, due to the linearity of the differential equation (by the superposition principle), any linear combination of them will also be an eigenstate of the same energy. Thus, for now we know that the linear combinations of the functions
+\begin{equation}
+\tilde{\psi}(\tilde{\vec{x}})= \alpha e^{i\vec{k}\cdot\tilde{\vec{x}}} \quad \text{ for any }\vec{k}\in\R^n \text{ s.t.} ||\vec{k}||=\frac{\sqrt{2E}}{\hbar}
+\end{equation} 
+will be eigenstates of the same energy $E$, or equivalently, reverting the change of variables, those of
+\begin{equation}
+\psi_{\vec{k}}(\vec{x})= \alpha e^{i(k_1m_1+\cdots+k_nm_n)\cdot\vec{x}} \quad \text{ for any }\vec{k}\in\R^n \text{ s.t.} ||\vec{k}||=\frac{\sqrt{2E}}{\hbar}.
+\end{equation}
+These are what are called, {\bf degenerate} states in energy. In particular, because the gradient of the phase divided by $\hbar$ is the momentum field, we would have for the $j$-th degree of freedom
+\begin{equation}
+p_j(\vec{x})=\pdv{}{x_k}\qty(\hbar\ phase\{\psi\}(\vec{x})))=\hbar m_jk_j
+\end{equation}
+which is constant in $\vec{x}$. In fact, this means that $E$ is equal to the kinetic energy, which is physically appealing. Thus, if we renamed the constant $k_j=\frac{p_j}{\hbar m_j}$ for some other constant $p_j$, which will turn out to be equal to the momentum of all the trajectories associated to that wavefunction (if it is not superposed with other wavefunctions), the general result could be re-written as
+\begin{equation}
+\psi_{\vec{p}}(\vec{x})=\alpha e^{i\frac{\vec{p}\cdot\vec{x}}{\hbar}} \quad \text{ for any }\vec{p}\in\R^n \text{ s.t.} \sum_{k=1}^n\frac{p_k^2}{2m_k}=E.
+\end{equation}
+A first necessary constraint to make each an acceptable state would be that $\alpha$ is such that the norm of the wavefunction is unity $\int_\Omega \psi^*(\vec{x})\psi(\vec{x})dx=1$.
+
+One might ask whether there are additional eigenstates that yield an energy $E$. Without imposing anything else about $\Omega$, there might. However, we will prove that these are enough for all the relevant cases, even when we take the limit to an unbounded domain $\Omega$.
+}
+
+Thus, as proven in the gray-box, if no additional constraint is placed, the plane waves, $\{\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}\}_{\vec{p}\in\R^n}$, with $\alpha\in\C$ a normalization constant are eigenstates of the Hamiltonian with respective eigenvalues $\{E_{\vec{p}}\}_{\vec{p}\in\R^n}=\{\sum_{j=1}^n\frac{p_j^2}{2m}\}_{\vec{p}\in\R^n}$. For now the energy eigenvalues appear {\bf not} to be "quantized", because we could find such a vector $\vec{p}$ for any desired $E\geq 0$. Moreover, each possible eigenvalue $E_{\vec{p}}$ is multiply degenerated. At least $2^n$ times degenerate, since if we find one such $\vec{p}$, we can obtain $2^n$ other $\vec{p}'$ by setting a -1 in any of the entries of $\vec{p}$.
+
+\subsubsection*{Bounded Domain}
+In order to give physical meaning to this, we must define a particular domain $\Omega$. Let us assume first $\Omega\subseteq \R^n$ is bounded. For simplicity it will be a parallelotope $\Omega=\prod_{j=1}^n(0,L_j)$. Without still saying what happens in its boundary, this readily imposes the normalization condition for the eigenstates such that, up to a global phase, we can fix $\alpha=\frac{1}{\sqrt{V}}$, for
+\begin{equation}
+\int_\Omega \alpha^*e^{-\frac{i}{\hbar}\vec{p}\cdot \vec{x}}\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}=1\Longrightarrow |\alpha|^2=\frac{1}{\prod_{j=1}^nL_j}.
+\end{equation}
+where $V:=\prod_{j=1}^nL_j$ is the $n$-volume of the parallelotope $\Omega$. Such a bounded domain must necessarily be considered in a numerical simulation for example, so it is not at all as artificial as it may sound. What is more, the domain of an effective wave-function of a subsystem, which we will study in the next sections may naturally be bounded.
+
+Now, let us try two important different behaviours for the fluid in its boundary, which we will denote by $\partial \Omega$.
+
+\subsubsection*{(a) Confined Universe}
+If we define the boundary of the domain $\Omega$ to be a confinement wall (as the one appearing in open-world videogames when you arrive to the edge of the map), it will be a boundary where there can be no Universe, $\rho(\vec{x})\Big\rvert_{\vec{x}\in\partial\Omega}=0$, and no Universe can get out of it, $\vec{v}(\vec{x})\Big\rvert_{\vec{x}\in\partial\Omega}=0$. By the continuity equation this will make sure that $\rho(\vec{x},t)\Big\rvert_{\vec{x}\in\partial\Omega}=0$ $\forall t$ (some call these ends of the fluid as "infinite potential energy walls"). These two conditions together, immediately imply that 
+\begin{equation}
+\psi(\vec{x})\Big\rvert_{\vec{x}\in\partial\Omega}=0 
+\end{equation}
+Since a general state $\psi(\vec{x})=\frac{1}{\sqrt{V}}e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}$ does not fulfill it, we might think that there is no energy eigenstate in this case. However, we remember that the plane wave with momentum $\vec{p}=(p_1,...,p_n)$ and all its $2^n$ variants $\vec{p}\,'=(-p_1,p_2,...,p_n), \vec{p}\,''=(-p_1,-p_2,...,p_n), \vec{p}\,'''=(p_1,-p_2,p_3,...,p_n)$ etc. had the same energy. Thus, we still have the chance that a superposition of them is acceptable, since such a superposition would still be an eigenstate of energy $E$. 
+\mybox{
+Let us index by $j$ the $j$-th of the $2^n$ variants of $\vec{p}:=(p_1,...,p_n)$ with $j\in\{1,...,2^n\}$, such that $j=0$ is $\vec{p}$ itself. Consider the $j$-th variant of $\vec{p}$ is given by $\vec{p}\,'(j)$ and that the number of negative signs it has relative to $\vec{p}$ is $\sigma(j)$. Then, we claim the equality
+\begin{equation}
+\sum_{j=1}^{2^n} (-1)^{\sigma(j)}\ e^{\frac{i}{\hbar}\vec{p}\,'(j)\cdot\vec{x}}\ =\ (2i)^n \sin(\frac{p_1x_1}{\hbar})\sin(\frac{p_2x_2}{\hbar})\cdots \sin(\frac{p_nx_n}{\hbar}).
+\end{equation}
+To see why this is true, let us take the result and develop it using the definition of the sine in terms of plane waves $sin(x)=\frac{1}{2i}(e^{ix}-e^{-ix})$,
+\begin{equation}
+(2i)^n \sin(\frac{p_1x_1}{\hbar})\sin(\frac{p_2x_2}{\hbar})\cdots \sin(\frac{p_nx_n}{\hbar})=
+\end{equation}
+$$
+=(2i)^n \frac{\qty(e^{\frac{i}{\hbar}p_1x_1}-e^{-\frac{i}{\hbar}p_1x_1})}{2i}\cdot \frac{\qty(e^{\frac{i}{\hbar}p_2x_2}-e^{-\frac{i}{\hbar}p_2x_2})}{2i}\cdots \frac{\qty(e^{\frac{i}{\hbar}p_nx_n}-e^{-\frac{i}{\hbar}p_nx_n})}{2i}=
+$$
+$$
+=\qty(e^{\frac{i}{\hbar}(p_1x_1+p_2x_2)}-e^{\frac{i}{\hbar}(-p_1x_1+p_2x_2)} -e^{\frac{i}{\hbar}(p_1x_1-p_2x_2)}+e^{\frac{i}{\hbar}(-p_1x_1-p_1x_1)})\cdot\qty(e^{\frac{i}{\hbar}p_3x_3}-e^{-\frac{i}{\hbar}p_3x_3})\cdots =
+$$
+$$
+=e^{\frac{i}{\hbar}(p_1x_1+\cdots+p_nx_n)}-e^{\frac{i}{\hbar}(-p_1x_1+p_2x_2+\cdots+p_nx_n)}-e^{\frac{i}{\hbar}(-p_1x_1-p_2x_2+p_3x_3+\cdots+p_nx_n)}+\cdots +e^{\frac{i}{\hbar}(-p_1x_1-\cdots-p_nx_n)}.
+$$
+Much in a similar way, we can prove the equality
+\begin{equation}
+\sum_{j=1}^{2^n} e^{\frac{i}{\hbar}\vec{p}\,'(j)\cdot\vec{x}}\ =\ 2^n \cos(\frac{p_1x_1}{\hbar})\cos(\frac{p_2x_2}{\hbar})\cdots \cos(\frac{p_nx_n}{\hbar}).
+\end{equation}
+Therefore the following linear combination
+\begin{equation}
+\phi_{\vec{p}}(\vec{x})=\frac{A}{2^n}\sum_{j=1}^{2^n} e^{\frac{i}{\hbar}\vec{p}\,'(j)\cdot\vec{x}}+\frac{B}{(2i)^n}\sum_{j=1}^{2^n} (-1)^{\sigma(j)}\ e^{\frac{i}{\hbar}\vec{p}\,'(j)\cdot\vec{x}},
+\end{equation}
+is equal to 
+\begin{equation}
+\phi_{\vec{p}}(\vec{x})= A\cos(\frac{p_1x_1}{\hbar})\cdots \cos(\frac{p_nx_n}{\hbar})+B\sin(\frac{p_1x_1}{\hbar})\cdots \sin(\frac{p_nx_n}{\hbar}).
+\end{equation}
+}
+As proven in the gray-box, the state 
+\begin{equation}
+\phi_{\vec{p}}(\vec{x})= A\cos(\frac{p_1x_1}{\hbar})\cdots \cos(\frac{p_nx_n}{\hbar})+B\sin(\frac{p_1x_1}{\hbar})\cdots \sin(\frac{p_nx_n}{\hbar})
+\end{equation}
+is a linear combination which has an associated eigenstate $E$. Now, this state can be made to satisfy the boundary condition, but this will restrict the allowed $\vec{p}$. 
+
+Any point $\vec{d}\in\partial \Omega$ can be written as $\vec{d}=(a_1L_1,...,a_nL_n)$ with $a_j\in[0,1]$ and at least one of the $a_j=0$ or $a_j=L_j$ (the faces of the box that touch the origin and the ones touching the point $(L_1,...,L_n)$ respectively). Then if $\vec{d}=\vec{0}$
+\begin{equation}
+\psi(\vec{d})\Big\rvert_{\vec{d}\in\partial \Omega}=0\Longrightarrow \ A=0
+\end{equation}
+wiping out the cosines. Then, for any of the faces of the box that cross the origin, $\phi_{\vec{p}}=0$ immediately (since at least one of the $x_j=0$ there). Finally, if we evaluate $\vec{d}=(L_1,...,L_n)$ 
+\begin{equation}
+\psi(\vec{x})\Big\rvert_{\vec{x}\in\partial \Omega}=0\Longrightarrow \ \sin(\frac{p_1L_1}{\hbar})\cdots \sin(\frac{p_nL_n}{\hbar})=0,
+\end{equation}
+taking into account that even if only one of the $a_j=L_j$ and for the rest $a_k\in(0,1)$ it must happen that
+\begin{equation}
+\psi(\vec{x})\Big\rvert_{\vec{x}\in\partial \Omega}=0\Longrightarrow \ \sin(\frac{p_1a_1L_1}{\hbar})\cdots\sin(\frac{p_jL_j}{\hbar})\cdots \sin(\frac{p_na_nL_n}{\hbar})=0,
+\end{equation}
+this implies that for all the $j\in\{1,...,n\}$
+\begin{equation}
+\sin(\frac{p_jL_j}{\hbar})=0\ \Longrightarrow\  p_j=\frac{\hbar\pi}{L_j}s_j\quad \text{ with }s_j\in\Z.
+\end{equation}
+That is, only a countable number of momenta $\vec{p}$ have an eigenstate! Therefore, we will only be able to orchestrate a wavefunction were all the trajectories have the same energy for a quantized number of energies, namely, if we denote by $\vec{s}=(s_1,...,s_n)$ the vector of quantum numbers, for the energies
+\begin{equation}
+E_{\vec{s}} = \sum_{k=1}^n\frac{1}{2m_k} \qty(\frac{s_j\hbar \pi}{L_j})^2 \quad \text{ with }\vec{s}\in\Z^n
+\end{equation}
+where the corresponding eigenstates would be
+\begin{equation}
+\phi_{\vec{s}}(\vec{x})=\sqrt{\frac{2^n}{V}}\sin(\frac{s_1\pi x_1}{L_1})\cdots \sin(\frac{s_n\pi x_1}{L_n})
+\end{equation}
+where we found $B$ by requiring the norm to be 1. Moreover, we can check that these functions are orthonormal, such that
+\begin{equation}
+\int_{\Omega}\phi^*_{\vec{s}}(\vec{x})\phi_{\vec{s}\,'}(\vec{x})dx=\delta_{\vec{s}\vec{s}\,'}.
+\end{equation}
+
+There is one last thing to prove in order to really state this conclusion however. When we derived the plane wave eigenstates, two gray-boxes above, we did not prove whether there were other functions that could be potential solutions to the Hamiltonian eigenstate problem. We can now confidently say that for the chosen domain and boundary conditions there are no more because we can realize that by the discrete Fourier series theorem, we know that for any function $\varphi(\vec{x})$ confined in $\Omega$ (in reality, that is periodic in the unit cell $\Omega$), there exist complex coefficients $\{A_{\vec{s}}, B_{\vec{s}}\}_{\vec{s}\in\Z^n}$ such that
+\begin{equation}
+\varphi(\vec{x})=\sum_{\vec{s}\in\Z^n}\qty(A_{\vec{s}}\cos(\frac{s_1\pi x_1}{L_1})\cdots \cos(\frac{s_n\pi x_1}{L_n})+ B_{\vec{s}}\sin(\frac{s_1\pi x_1}{L_1})\cdots \sin(\frac{s_n\pi x_1}{L_n})).
+\end{equation}
+In particular, any function $\varphi(\vec{x})$ that fulfills the boundary condition of being zero in $\partial \Omega$ will have that all coefficents $A_{\vec{s}}=0$, such that any function satisfying the conditions will be a superposition of the energy eigenstates we have found. Since this means that the eigenstates we have found form a complete orthonormal basis, they are "all" the eigenstates of the Hamiltonian operator (taking into account the boundary).
+
+KOEFIZIENTIEK ZELAN ATARA EIN HILBERT SPACEN INTRODUKZIÑOAN, ETA AZALDU HAN IGUAL ADIBIDE MODURE FOURIER DISKRETOA!
+
+EIN UNA DE LET US CALL THIS "THE ORCHESTRATION" ta holan hortik aurrera eztozu hainbeste errepikatu biher mantra guztixe.
+
+
+ 
+
+\subsubsection*{(b) Pac-Man Universe}
+If we assume alternatively that any particle entering from one face of the parallelotope will get out from the other face (this is a "Pac-Man Universe", or if you prefer a Universe that is periodic over and over again in unit cells $\Omega$), this mathematically means that for any $l_1,...,l_n\in\Z$
+\begin{equation}
+\psi(\vec{x})=\psi(\vec{x}+(l_1L_1,\cdots , l_nL_n)).
+\end{equation}
+For this to be satisfied we cannot accept all wavefunctions, only those plane waves with the same periodicity as the Pac-man box we defined. If we apply the condition to the generic eigenstate $\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}$, we get that
+\begin{equation}
+e^{\frac{i}{\hbar}\vec{p}\cdot\qty({l_1L_1,\cdots ,l_nL_n})}=1
+\end{equation}
+which can happen only if
+\begin{equation}
+\vec{p}\cdot( l_1L_1,\cdots, l_nL_n)=2\pi \hbar r \quad \text{ for } r\in\Z 
+\end{equation}
+\mybox{
+This is the condition for the so-called reciprocal lattice vectors, relative to the "direct lattice" defined by the $n$ parallelotope edges $\{(L_1,0,...,0), ..., (0,...,0,L_n)\}$, which we will denote by the $\R^n$ basis $\{\vec{L}_j\}_{j=1}^n$.
+}
+
+If we define an $\R^n$ basis as $\{\vec{P}_j\}_{j=1}^n=\{(2\pi\hbar/L_1,0,...,0), ..., (0,...,0,2\pi\hbar/L_n)\}$, since any vector $\vec{p}\in\R^n$ can be written in this second basis, such that for some $s_1,..,s_n\in\R$
+\begin{equation}
+\vec{p}=s_1\vec{P}_1+\cdots+s_n\vec{P}_n,
+\end{equation}
+the above condition is equivalent to
+\begin{equation}
+s_1l_1+\cdots+s_nl_n= r \quad \text{ for }r\in\Z
+\end{equation}
+Then, since $l_j\in\Z$ and $r\in\Z$, the equation can only be satisfied if $s_1,...,s_n\in\Z$. This means that not all the momenta $\vec{p}\in\R^n$ are allowed, but only a countable number of them. Namely
+\begin{equation}
+\vec{p}_{\vec{s}}=\qty(s_1\frac{2\pi\hbar}{L_1},...,s_n\frac{2\pi\hbar}{L_n})\quad \text{ with } \vec{s}=(s_1,...,s_n)\in\Z^n.
+\end{equation}
+Thus, the eigenstates of the Hamiltonian are "quantized" to be $\{\frac{1}{V} e^{\frac{i}{\hbar}\vec{p}_{s}\cdot \vec{x}}\}_{s\in\Z^n}$, meaning our desired states can only be achieved for not all energies.
+
+
+
+\subsubsection*{Unbounded Domain}
+
+
+
+\subsubsection*{What about the reverse way to find eigenstates?}
+
+Consider to make the notation less cumbersome the 1D case and consider to start that the domain is bounded $\Omega_t=[a,b]\subset \R$. Then, if we want to have a constant $\h^\psi$ in $x$, such that $\pdv{\rho(x,t)}{t}=0$, from the continuity equation, we know that the second condition implies
+\begin{equation}
+v(x,t)\rho(x,t)=c(t) \quad \forall x\in[a,b], \forall t>t_0
+\end{equation}
+with $c(t)\in\R$ constant in space. This implies that rather both are constant in space, rather one of them is zero, or rather they are not constant in space but are everywhere the multiplicative inverse of each other. The last option is not feasible because 
+
+we will consider two possible boundary conditions. First, what if  
 
 \subsection*{A.6.4. Example 2: The Harmonic Oscillator - the Position Operator}
 \addcontentsline{toc}{subsubsection}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}

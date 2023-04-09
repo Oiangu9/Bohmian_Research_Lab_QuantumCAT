@@ -26,51 +26,51 @@
 \BOOKMARK [3][-]{section*.42}{6.1. The Hilbert Space}{section*.41}% 26
 \BOOKMARK [3][-]{section*.43}{6.2. The Hamiltonian Operator}{section*.41}% 27
 \BOOKMARK [3][-]{section*.44}{6.3. Example 1: The Free Particles}{section*.41}% 28
-\BOOKMARK [3][-]{section*.45}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}{section*.41}% 29
-\BOOKMARK [3][-]{section*.46}{6.5. Example 3: The Central Potential - the Angular Momentum Operator}{section*.41}% 30
-\BOOKMARK [3][-]{section*.47}{6.6. A General Observable Operator}{section*.41}% 31
-\BOOKMARK [3][-]{section*.48}{6.6. The Uncertainty Principle}{section*.41}% 32
-\BOOKMARK [3][-]{section*.49}{6.7. The Ket Notation}{section*.41}% 33
-\BOOKMARK [2][-]{section*.50}{7. The Axioms in Short}{section*.8}% 34
-\BOOKMARK [3][-]{section*.51}{ 7.1. The "Official" Postulates of Quantum Mechanics}{section*.50}% 35
-\BOOKMARK [2][-]{section*.52}{ 8. Spin in Non-Relativistic Quantum Mechanics}{section*.8}% 36
-\BOOKMARK [2][-]{section*.53}{9. This was just a Medley of so Many Other Narratives!}{section*.8}% 37
-\BOOKMARK [1][-]{section*.55}{Part B: The Measurement}{}% 38
-\BOOKMARK [2][-]{section*.56}{1. The Von Neumann Chain and Perturbing the System}{section*.55}% 39
-\BOOKMARK [2][-]{section*.58}{2. The Properties of one or all the Universes?}{section*.55}% 40
-\BOOKMARK [2][-]{section*.59}{3. The Apparently Collapsing Measurement}{section*.55}% 41
-\BOOKMARK [3][-]{section*.60}{2.1. Discrete Spectrum Measurement}{section*.59}% 42
-\BOOKMARK [3][-]{section*.61}{2.2. Continuous Spectrum Measurement}{section*.59}% 43
-\BOOKMARK [2][-]{section*.62}{4. Non-contextual Characterization of the Quantum System}{section*.55}% 44
-\BOOKMARK [2][-]{section*.63}{3. The Generalized Measurement}{section*.55}% 45
-\BOOKMARK [3][-]{section*.64}{5. Link with Other Narratives}{section*.63}% 46
-\BOOKMARK [1][-]{section*.65}{Part C: The Density Matrix}{}% 47
-\BOOKMARK [2][-]{section*.66}{1. The Way to Keep Track of Parallel Realities}{section*.65}% 48
-\BOOKMARK [2][-]{section*.67}{2. The Reduced Density Matrix}{section*.65}% 49
-\BOOKMARK [2][-]{section*.68}{3. The Unconditional Measurement and the Choice of Basis}{section*.65}% 50
-\BOOKMARK [2][-]{section*.69}{4. Pure Unravellings}{section*.65}% 51
-\BOOKMARK [2][-]{section*.70}{5. Complete Positive Maps: Any Quantum Operation is a Measurement}{section*.65}% 52
-\BOOKMARK [2][-]{section*.71}{6. Noise, Decoherence and the Environment}{section*.65}% 53
-\BOOKMARK [1][-]{section*.72}{Part D: Markovianity and Master Equations}{}% 54
-\BOOKMARK [2][-]{section*.73}{1. Some Possible Quantum Markovianity Definitions}{section*.72}% 55
-\BOOKMARK [3][-]{section*.74}{1.1. Past-Future Independence}{section*.72}% 56
-\BOOKMARK [3][-]{section*.75}{1.2. Etc.}{section*.72}% 57
-\BOOKMARK [2][-]{section*.76}{2. Continuous Measurements: Introduction to Master and Stochastic Schr\366dinger Equations}{section*.72}% 58
-\BOOKMARK [2][-]{section*.77}{3. The Most General Markovian Master Equations: the Lindblad Equations}{section*.72}% 59
-\BOOKMARK [2][-]{section*.78}{4. Markovian Stochastic Schr\366dinger Equations: Pure Unravellings}{section*.72}% 60
-\BOOKMARK [2][-]{section*.79}{5. The Most General non-Markovian Master Equation: the Nakajima-Zwanzig Equation}{section*.72}% 61
-\BOOKMARK [2][-]{section*.80}{6. Non-Markovian Stochastic Schr\366dinger Equations: the Conditional Wavefunction}{section*.72}% 62
-\BOOKMARK [3][-]{section*.81}{6.1. Wiseman's}{section*.80}% 63
-\BOOKMARK [3][-]{section*.82}{6.2. Ours}{section*.80}% 64
-\BOOKMARK [2][-]{section*.83}{7. What if there was No Macro-Scale? }{section*.72}% 65
-\BOOKMARK [1][-]{section*.83}{Part E: Even Fields and Relativity Fit Well}{}% 66
-\BOOKMARK [2][-]{section*.84}{1. Photons}{section*.83}% 67
-\BOOKMARK [2][-]{section*.85}{2. Phonons and other quasi-particles}{section*.83}% 68
-\BOOKMARK [2][-]{section*.86}{3. Then, what is Quantization? Is this a new Quantization Method?}{section*.83}% 69
-\BOOKMARK [2][-]{section*.87}{4. Relativistic Tangent Universes: the Klein-Gordon Equation}{section*.83}% 70
-\BOOKMARK [1][-]{section*.87}{Part X: Appendices}{}% 71
-\BOOKMARK [2][-]{section*.88}{1. Basic Probability Concepts and Lebesgue Integration}{section*.87}% 72
-\BOOKMARK [2][-]{section*.89}{2. Basic Concepts about the Trajectory Ensemble \(,t\)}{section*.87}% 73
-\BOOKMARK [2][-]{section*.90}{3. Extremizing Multivariate Functionals with Constraints}{section*.87}% 74
-\BOOKMARK [2][-]{section*.91}{4. The Hilbert Space of Functions}{section*.87}% 75
-\BOOKMARK [2][-]{section*.92}{5. Stochastic Differential Equations}{section*.87}% 76
+\BOOKMARK [3][-]{section*.50}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}{section*.41}% 29
+\BOOKMARK [3][-]{section*.51}{6.5. Example 3: The Central Potential - the Angular Momentum Operator}{section*.41}% 30
+\BOOKMARK [3][-]{section*.52}{6.6. A General Observable Operator}{section*.41}% 31
+\BOOKMARK [3][-]{section*.53}{6.6. The Uncertainty Principle}{section*.41}% 32
+\BOOKMARK [3][-]{section*.54}{6.7. The Ket Notation}{section*.41}% 33
+\BOOKMARK [2][-]{section*.55}{7. The Axioms in Short}{section*.8}% 34
+\BOOKMARK [3][-]{section*.56}{ 7.1. The "Official" Postulates of Quantum Mechanics}{section*.55}% 35
+\BOOKMARK [2][-]{section*.57}{ 8. Spin in Non-Relativistic Quantum Mechanics}{section*.8}% 36
+\BOOKMARK [2][-]{section*.58}{9. This was just a Medley of so Many Other Narratives!}{section*.8}% 37
+\BOOKMARK [1][-]{section*.60}{Part B: The Measurement}{}% 38
+\BOOKMARK [2][-]{section*.61}{1. The Von Neumann Chain and Perturbing the System}{section*.60}% 39
+\BOOKMARK [2][-]{section*.63}{2. The Properties of one or all the Universes?}{section*.60}% 40
+\BOOKMARK [2][-]{section*.64}{3. The Apparently Collapsing Measurement}{section*.60}% 41
+\BOOKMARK [3][-]{section*.65}{2.1. Discrete Spectrum Measurement}{section*.64}% 42
+\BOOKMARK [3][-]{section*.66}{2.2. Continuous Spectrum Measurement}{section*.64}% 43
+\BOOKMARK [2][-]{section*.67}{4. Non-contextual Characterization of the Quantum System}{section*.60}% 44
+\BOOKMARK [2][-]{section*.68}{3. The Generalized Measurement}{section*.60}% 45
+\BOOKMARK [3][-]{section*.69}{5. Link with Other Narratives}{section*.68}% 46
+\BOOKMARK [1][-]{section*.70}{Part C: The Density Matrix}{}% 47
+\BOOKMARK [2][-]{section*.71}{1. The Way to Keep Track of Parallel Realities}{section*.70}% 48
+\BOOKMARK [2][-]{section*.72}{2. The Reduced Density Matrix}{section*.70}% 49
+\BOOKMARK [2][-]{section*.73}{3. The Unconditional Measurement and the Choice of Basis}{section*.70}% 50
+\BOOKMARK [2][-]{section*.74}{4. Pure Unravellings}{section*.70}% 51
+\BOOKMARK [2][-]{section*.75}{5. Complete Positive Maps: Any Quantum Operation is a Measurement}{section*.70}% 52
+\BOOKMARK [2][-]{section*.76}{6. Noise, Decoherence and the Environment}{section*.70}% 53
+\BOOKMARK [1][-]{section*.77}{Part D: Markovianity and Master Equations}{}% 54
+\BOOKMARK [2][-]{section*.78}{1. Some Possible Quantum Markovianity Definitions}{section*.77}% 55
+\BOOKMARK [3][-]{section*.79}{1.1. Past-Future Independence}{section*.77}% 56
+\BOOKMARK [3][-]{section*.80}{1.2. Etc.}{section*.77}% 57
+\BOOKMARK [2][-]{section*.81}{2. Continuous Measurements: Introduction to Master and Stochastic Schr\366dinger Equations}{section*.77}% 58
+\BOOKMARK [2][-]{section*.82}{3. The Most General Markovian Master Equations: the Lindblad Equations}{section*.77}% 59
+\BOOKMARK [2][-]{section*.83}{4. Markovian Stochastic Schr\366dinger Equations: Pure Unravellings}{section*.77}% 60
+\BOOKMARK [2][-]{section*.84}{5. The Most General non-Markovian Master Equation: the Nakajima-Zwanzig Equation}{section*.77}% 61
+\BOOKMARK [2][-]{section*.85}{6. Non-Markovian Stochastic Schr\366dinger Equations: the Conditional Wavefunction}{section*.77}% 62
+\BOOKMARK [3][-]{section*.86}{6.1. Wiseman's}{section*.85}% 63
+\BOOKMARK [3][-]{section*.87}{6.2. Ours}{section*.85}% 64
+\BOOKMARK [2][-]{section*.88}{7. What if there was No Macro-Scale? }{section*.77}% 65
+\BOOKMARK [1][-]{section*.88}{Part E: Even Fields and Relativity Fit Well}{}% 66
+\BOOKMARK [2][-]{section*.89}{1. Photons}{section*.88}% 67
+\BOOKMARK [2][-]{section*.90}{2. Phonons and other quasi-particles}{section*.88}% 68
+\BOOKMARK [2][-]{section*.91}{3. Then, what is Quantization? Is this a new Quantization Method?}{section*.88}% 69
+\BOOKMARK [2][-]{section*.92}{4. Relativistic Tangent Universes: the Klein-Gordon Equation}{section*.88}% 70
+\BOOKMARK [1][-]{section*.92}{Part X: Appendices}{}% 71
+\BOOKMARK [2][-]{section*.93}{1. Basic Probability Concepts and Lebesgue Integration}{section*.92}% 72
+\BOOKMARK [2][-]{section*.94}{2. Basic Concepts about the Trajectory Ensemble \(,t\)}{section*.92}% 73
+\BOOKMARK [2][-]{section*.95}{3. Extremizing Multivariate Functionals with Constraints}{section*.92}% 74
+\BOOKMARK [2][-]{section*.96}{4. The Hilbert Space of Functions}{section*.92}% 75
+\BOOKMARK [2][-]{section*.97}{5. Stochastic Differential Equations}{section*.92}% 76
