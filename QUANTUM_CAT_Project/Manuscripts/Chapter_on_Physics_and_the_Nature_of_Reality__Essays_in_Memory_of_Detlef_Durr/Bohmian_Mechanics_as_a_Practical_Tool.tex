@@ -114,7 +114,7 @@ We can easily arrive at these conclusions through the inherently Bohmian concept
 
 Given an isolated quantum system of $N$ degrees of freedom described by the real coordinate vector $\vec{q}=(q_1,..., q_N)\in\R^N$, its evolution in time $t$ is given by two entities: a complex wavefunction $\Psi(\vec{q},t)$, which in polar form $\Psi(\vec{q},t)=\rho^{1/2}(\vec{q},t)e^{i\mathcal{S}(\vec{q},t)/\hbar}$ encodes the real fields $\mathcal{S}$ and $\rho$, and a determined trajectory $\vec{q}^{\:\xi}(t)\equiv \vec{q}\:(\vec{\xi},t)$ for the degrees of freedom, the initial condition of which, $\vec{q}^{\:\xi}(t=0)=\vec{\xi}\in \R^N$, labels the actual trajectory among the possible ones. This trajectory is piloted by the wavefunction, which provides the velocity field $v_k$ for the $k$-th degree of freedom as $v_k(\vec{q},t):=\frac{1}{m_k} \pdv{\mathcal{S}(\vec{q},t)}{x_k}$ \cite{Bohm,Holland,Durr,JordiXavier}. Meanwhile, the wavefunction itself is guided by the Schrödinger Equation\vspace{-0.1cm} 
 \begin{equation}\label{SE}
-i\hbar\pdv{\Psi(\vec{q},t)}{t}=\Big[ \sum_{k=1}^N \frac{\hbar^2}{2m_k}\pdv[2]{}{q_k}+U(\vec{q})\Big]\Psi(\vec{q},t),\vspace{-0.1cm}
+i\hbar\pdv{\Psi(\vec{q},t)}{t}=\Big[ \sum_{k=1}^N \frac{-\hbar^2}{2m_k}\pdv[2]{}{q_k}+U(\vec{q})\Big]\Psi(\vec{q},t),\vspace{-0.1cm}
 \end{equation}
 where $m_k$ is the mass associated with the $k$-th degree of freedom and $U$ denotes the potential energy field describing the interaction between the degrees of freedom. 
 
@@ -122,7 +122,7 @@ The most general isolated system we can consider is the entire Universe, where $
 
 As proved in \cite{GJ}, the full Schrödinger Equation \eqref{SE} can be rewritten exactly into a coupled pair of dynamical equations ruling the motion of the two presented CWFs. Assuming we can write $U(\vec{x},\vec{y}\,)=U_x(\vec{x}\,)+U_{xy}(\vec{x},\vec{y}\,)$, for the system S we have\footnote{ For the environment the equation will be the same but changing the CWF and the index ranges in \eqref{SE.GJ} and \eqref{G.Bohm}.}\vspace{-0.1cm}
 \begin{equation}\label{SE.GJ}
-i \hbar \pdv{\psi^\xi (\vec{x},t)}{t} = \qty[\sum_{k=1}^n\frac{\hbar^2}{2m_k} \pdv[2]{}{x_k} + U_x(\vec{x}\,)+ U_{xy}(\vec{x}, \vec{y}^{\: \xi}(t)) + \mathfrak{W}(\vec{x}, \vec{y}^{\: \xi}(t),t)] \psi^\xi (\vec{x},t),
+i \hbar \pdv{\psi^\xi (\vec{x},t)}{t} = \qty[\sum_{k=1}^n\frac{-\hbar^2}{2m_k} \pdv[2]{}{x_k} + U_x(\vec{x}\,)+ U_{xy}(\vec{x}, \vec{y}^{\: \xi}(t)) + \mathfrak{W}(\vec{x}, \vec{y}^{\: \xi}(t),t)] \psi^\xi (\vec{x},t),
 \end{equation}
 where $\mathfrak{W}$ is the so-called {\bf quantum correlation potential}
 \begin{equation}\label{G.Bohm}\hspace{-0.2cm}
@@ -227,7 +227,7 @@ For example, they provide a well-defined non-contextual two-time correlation fun
 \begin{equation}
 \mathcal{H}^\psi(\vec{x}^{\:\xi}(t),t) := \mathbb{R}e\qty[ \frac{\bra{\vec{x}^{\:\xi}(t)}\hat{H}\ket{\psi(t)}}{\bra{\vec{x}^{\:\xi}(t)}\ket{\psi(t)}} ] = \sum_{k=1}^n\frac{1}{2}m_kv_k(\vec{x}^{\:\xi}(t),t)^2+V(\vec{x}^{\:\xi}(t),t)+Q(\vec{x}^{\:\xi}(t),t),\vspace{-0.15cm}
 \end{equation}
-with $Q$ the well-known Bohmian quantum potential \cite{Holland, Durr, JordiXavier}. This proves $\mathcal{H}^\psi(\vec{x}^{\:\xi}(t),t)$ is, as anticipated, the total Bohmian energy of the $\vec{\xi}$-th trajectory at time $t$. Then, we can compute its associated Bohmian work as the energy difference $\mathcal{W}^{(\xi)}(t_1,t_2)= \mathcal{H}^\psi(\vec{x}^{\:\xi}(t_2),t_2)-\mathcal{H}^\psi(\vec{x}^{\:\xi}(t_1),t_1)$ (if conservative, else, employing an integral). As a result, a well-defined non-contextual definition of the quantum work could be the ensemble average of the trajectory works,\vspace{-0.1cm}
+with $Q$ the well-known Bohmian quantum potential \cite{Holland, Durr, JordiXavier}. This proves $\mathcal{H}^\psi(\vec{x}^{\:\xi}(t),t)$ is, as anticipated, the total Bohmian energy of the $\vec{\xi}$-th trajectory at time $t$. We can compute its associated Bohmian work with $\mathcal{W}^{(\xi)}(t_1,t_2)= \int_{t_1}^{t_2}\dv{\mathcal{H}^\psi(\vec{x}^{\:\xi}(t),t)}{t}dt=\mathcal{H}^\psi(\vec{x}^{\:\xi}(t_2),t_2)-\mathcal{H}^\psi(\vec{x}^{\:\xi}(t_1),t_1)$. As a result, a well-defined non-contextual definition of the quantum work could be the ensemble average of the trajectory works,\vspace{-0.1cm}
 \begin{equation}
 \langle W(t_1,t_2)\rangle = \lim_{|\Sigma|\rightarrow \infty}\frac{1}{|\Sigma|} \sum_{\xi\in\Sigma} \qty(\mathcal{H}^\psi(\vec{x}^{\:\xi}(t_2),t_2)-\mathcal{H}^\psi(\vec{x}^{\:\xi}(t_1),t_1)).\vspace{-0.1cm}
 \end{equation}

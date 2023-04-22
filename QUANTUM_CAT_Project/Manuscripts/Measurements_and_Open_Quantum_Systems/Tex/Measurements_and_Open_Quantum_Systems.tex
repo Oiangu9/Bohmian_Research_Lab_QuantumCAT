@@ -84,7 +84,7 @@
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 %\title{\vspace{-2.5cm} {\bf Can we make the Exponential scaling in Time\\ be Linear in Time if Parallelized Exponentially? \\ {\em - Part 2 -}} \vspace{-0.4cm}  }
-\title{\vspace{-2cm} {\bf The Literal Quantum Theory:\\ Tangent Classical Universes?}\\{\small by {\em Xabier Oianguren Asua}}\vspace{-0.8cm}}
+\title{\vspace{-2cm} {\bf Quantum Mechanics Literally:\\ A Continuum of Tangent Universes}\\{\small by {\em Xabier Oianguren Asua}}\vspace{-0.8cm}}
 \date{\vspace{-11ex}}
 \let\clipbox\relax
 \usepackage{adjustbox}
@@ -169,8 +169,8 @@
 \nbvspace[1]
 \Huge
 {\nbtitlestretch\huge
-THE LITERAL QUANTUM THEORY:\\
-TANGENT CLASSICAL UNIVERSES?
+QUANTUM MECHANICS LITERALLY:\\
+A FLUID OF TANGENT UNIVERSES
 }
 
 \nbvspace[1]
@@ -1568,6 +1568,22 @@ But of course, this can be done with any complete orthonormal Hilbert set. What 
 \end{equation}
 That is, the time evolution only sets a {\bf relative} phase shift on each coefficient, $\alpha_k\xmapsto[]{\hat{U}}\alpha_k e^{-\frac{i}{\hbar}\varepsilon_k(t-t_0)}$, or in general, if we write the coefficients as functions of time $\alpha_k(t)=\alpha_k(t_0) e^{-\frac{i}{\hbar}\varepsilon_k(t-t_0)}$. Note how this does change the total density and velocity fields of the arbitrary state obtained with the sum, unlike what happened when the state was already an eigenstate: in that case the phase was a {\bf global} one! EL PAN BIMBO!!!
 
+\mybox{
+We can prove this in a more formal way, by taking the Schrödinger Equation and developing it with the linear combination at the initial time $\psi(\vec{x},t_0)=\sum_{k=0}^\infty c_k(t_0)E_k(\vec{x})$,
+\begin{equation}
+i\hbar\pdv{\psi(\vec{x},t)}{t}=\hat{H}_{\vec{x}}\psi(\vec{x},t)\Rightarrow \sum_{k=0}^\infty	i\hbar \pdv{c_k(t)}{t}=\sum_{k=0}^\infty c_k(t)\hat{H}_{\vec{x}}E_k(\vec{x})=\sum_{k=0}^\infty c_k(t)\varepsilon_k E_k(\vec{x}).
+\end{equation}
+then, applying the operation $\int_{\Omega}E_j(\vec{x})^*\cdot dx$ in both sides of the equation
+\begin{equation}
+\sum_k i\hbar \pdv{c_k(t)}{t} \int_\Omega E_j(\vec{x})^*E_k(\vec{x}) dx= \sum_k c_j(t)\varepsilon_j \int_\Omega E_j(\vec{x})^* E_k(\vec{x}) dx\Rightarrow i\hbar \pdv{c_j(t)}{t}= c_j(t)\varepsilon_j
+\end{equation}
+where we used the orthonormality of the eigenstates. The last differential equation can be directly integrated to get
+\begin{equation}
+c_k(t)=c_k(t_0)e^{-\frac{i}{\hbar}\varepsilon(t-t_0)}.
+\end{equation}
+which gives what we wanted.
+}
+
 \item A remarkable property of the expansion of an arbitrary state $\psi(\vec{x},t)$ in this basis, $\psi(\vec{x},t)=\sum_{k} \alpha_k(t)E_k(\vec{x})$, is that by knowing the coefficients $\alpha_k(t)$ and the eigen-energies $\varepsilon_k$ alone, we immediately know the ontological average energy of the possible trajectories, or equivalently, since the total amount of trajectories is normalized to 1, the total energy of the fluid of tangent trajectories, as
 \begin{equation}
 \E\qty[\h; \psi](t)=\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx = \sum_k |\alpha_k(t)|^2 \varepsilon_k
@@ -1599,6 +1615,8 @@ As we anticipated in this gray box, what we have found is way more than a Hamilt
 
 NOT ONLY THE TOTAL ENERGY OF THE FLUID BE CONSERVED BUT ALSO THE ENERGY OF EACH ONE OF THE TRAJECTORIES!
 EN GENERAL SI OMEGA NOT BOUNDED LA UNICA CONDICION DE CONTORNO QUE TENDRA SENTIDO PARA QUE ESTE NORMALIZADA LA FK DE ONDA ES QUE SE HAGA CERO AL TENDER AL INFINITO.
+
+
 
 \subsection*{A.6.3. Example 1: The Free Particles - the Momentum Operator}
 \addcontentsline{toc}{subsubsection}{6.3. Example 1: The Free Particles}
@@ -1728,11 +1746,72 @@ where we found $B$ by requiring the norm to be 1. Moreover, we can check that th
 \int_{\Omega}\phi^*_{\vec{s}}(\vec{x})\phi_{\vec{s}\,'}(\vec{x})dx=\delta_{\vec{s}\vec{s}\,'}.
 \end{equation}
 
-There is one last thing to prove in order to really state this conclusion however. When we derived the plane wave eigenstates, two gray-boxes above, we did not prove whether there were other functions that could be potential solutions to the Hamiltonian eigenstate problem. We can now confidently say that for the chosen domain and boundary conditions there are no more because we can realize that by the discrete Fourier series theorem, we know that for any function $\varphi(\vec{x})$ confined in $\Omega$ (in reality, that is periodic in the unit cell $\Omega$), there exist complex coefficients $\{A_{\vec{s}}, B_{\vec{s}}\}_{\vec{s}\in\Z^n}$ such that
+There is one last thing to prove in order to really state this conclusion however. When we derived the plane wave eigenstates, two gray-boxes above, we did not prove whether there were other functions that could be potential solutions to the Hamiltonian eigenstate problem. We can now confidently say that for the chosen domain and boundary conditions there are no more.
+
+\mybox{
+This is because we can realize that by the discrete Fourier series theorem, we know that for any function $\varphi(\vec{x})$ confined in $\Omega$ (in reality, that is periodic in the unit cell $\Omega$), there exist complex coefficients $\{A_{\vec{s}}, B_{\vec{s}}\}_{\vec{s}\in\Z^n}$ such that
 \begin{equation}
 \varphi(\vec{x})=\sum_{\vec{s}\in\Z^n}\qty(A_{\vec{s}}\cos(\frac{s_1\pi x_1}{L_1})\cdots \cos(\frac{s_n\pi x_1}{L_n})+ B_{\vec{s}}\sin(\frac{s_1\pi x_1}{L_1})\cdots \sin(\frac{s_n\pi x_1}{L_n})).
 \end{equation}
-In particular, any function $\varphi(\vec{x})$ that fulfills the boundary condition of being zero in $\partial \Omega$ will have that all coefficents $A_{\vec{s}}=0$, such that any function satisfying the conditions will be a superposition of the energy eigenstates we have found. Since this means that the eigenstates we have found form a complete orthonormal basis, they are "all" the eigenstates of the Hamiltonian operator (taking into account the boundary).
+In particular, any function $\varphi(\vec{x})$ that fulfills the boundary condition of being zero in $\partial \Omega$ will have that all coefficents $A_{\vec{s}}=0$, such that any function satisfying the conditions will be a superposition of the energy eigenstates we have found. Since this means that the eigenstates we have found form a complete orthonormal basis, they are "all" the eigenstates of the Hamiltonian operator (taking into account the boundary). If there was another one, we could write it as a combination of the ones we have found, so it would not be a "linearly independent" eigenstate.
+}
+
+Note that, as the time evolution of an eigenstate only introduced a global phase, the states we have found have a null velocity field everywhere in the domain (since they have no spatially varying complex phase) at all times,
+\begin{equation}
+v_k^{(\vec{s})}(\vec{x},t)=\frac{1}{m_k}\pdv{\text{phase}(\phi_{\vec{s}}(\vec{x}))}{x_k}=0\quad  \forall \vec{x}\in\Omega\ \ \forall t\geq t_0,
+\end{equation}
+meaning the kinetic energy of each configuration must be zero at all times. This leaves alone the quantum potential in the trajectory energy expression, $\h^\psi=Q$. Since the time evolution of an eigenstate leaves an initial density $\rho_{\vec{s}}(\vec{x})=|\phi_{\vec{s}}|^2(\vec{x})$ constant in time, the energy $\h^\psi$ will be constant in time. Finally, we can see it will also be constant in position by explicitly computing the derivatives of the density.
+
+\subsubsection*{Result Interpretation}
+We can interpret all this from the point of view of the trajectories. If the trajectories were for instance, in constant motion, they would try to surpass the boundary where their density must be zero. So at least we know that a constant velocity field is not possible. Let us imagine we set it to zero at a certain time. In order for the tangent trajectories to continue at rest in the next time, there should be no force acting on them. Since the only force that can appear is the one due to the variation of the quantum potential, we need it to be constant in space. So, we look for a function that has a curvature that allows this. And the sine is such a function. As you see, it seems that with similar argumentation we could have found the same orchestrations without knowing the Schrödinger Equation and thus that they are to be eigenstates of the Hamiltonian operator. Indeed, we can diagonalize the Hamiltonian operator using the tangent Universe interpretation as we prove in the next gray-box. Yet, we will see that without the eigenstate trick, the problem is fairly more complicated to be resolved. However, it might add light to why the eigenstates happened to be in particular the ones we found.\footnote{In addition in some cases we will have no other choice, since, as we will see in part C, there are scenarios where the full Hamiltonian diagonalization is inaccessible in practice, but there are phenomenological results of interest that depend on it.}
+%Let us for a moment conduct the mental experiment where we seek for the states having the same energy for all trajectories, but without employing that this is equivalent to computing the eigenstates. 
+
+\mybox{
+In order to make the notation less cumbersome, consider the 1D case and that the domain is bounded as $\Omega_t=(0,L)\subset \R$. We want to have a constant $\h^\psi$ in $x$, such that $\pdv{\rho(x,t)}{t}=0$. From the continuity equation, we know that the second condition implies
+\begin{equation}
+\pdv{}{x}\qty(v(x,t)\rho(x,t))=0\Rightarrow v(x,t)\rho(x,t)=c(t) \quad \forall x\in[a,b], \forall t>t_0
+\end{equation}
+with $c(t)\in\R$ constant in space. This implies that rather 
+\begin{itemize}
+\item Both $v$ and $\rho$ are (non-zero) constant in space
+\item $\rho$ is zero.
+\item They are not constant in space but are everywhere the multiplicative inverse of each other.
+\item $v$ is zero.
+\end{itemize}
+Let us first consider the {\bf confined system boundary condition (a)}, such that for all $\vec{x}\in\delta \Omega$, $\rho(\vec{x},t)=0$. 
+
+We note that for this system, the first of the possible implications we just obtained, is not possible, since if the $\rho$ is to be continuous and at the edges of the domain it must be zero, for it to be constant, it should be zero everywhere, which leaves us an unacceptable state. This also implies that the second case is discarded. The third case could be possible but we will rule it out because with only states for which the last condition holds, we will be able to find a set of solutions the linear combinations of which can give any possible state (even the ones that are not eigenvalues).\footnote{There could be an eigenstate that has indeed $v$ and $\rho$ as multiplicative inverses of each other. However, by linearity of the Hamiltonian operator and the completeness of the basis of eigenstates we will find, it will be necessarily a combination of such solutions with the same energy eigenvalue, and all of these solutions will just fulfill the fourth condition.}}
+\mybox{
+ Let us then consider that $v(x,t)=0$ $\forall x\in\Omega$ and $\forall t\geq t_0$. Now, we should try to look for $\rho(x,t_0)$ such that this is possible and such that $\h^\psi=E$ is preserved at all times. Since the velocity field is constantly zero, we have that the kinetic energy of the states we are looking for should be zero, but in $\h^\psi(x,t)$ \eqref{weakH} we still have the quantum potential $Q$, depending on $\rho$. It should be constant. Indeed, this would also allow that given $v(x,t_0)=0$ $\forall x\in\Omega$, we have $v(x,t)=0$ $\forall t>t_0$, because the force on the trajectories is the derivative of the quantum force (which would be zero). Therefore, we have enough with looking for the densities that cause $\hbar^\psi(x,t)=Q(x,t)=E\in\R$. By defining a change of variable function $R(x,t)$ such that $R^2=\rho$, the expression for $Q$ becomes
+\begin{equation}
+Q(x,t)= -\frac{\hbar^2}{2m}\frac{1}{\rho^{1/2}(x,t)}\pdv[2]{\rho^{1/2}(x,t)}{x}=-\frac{\hbar^2}{2m}\frac{1}{R(x,t)}\pdv[2]{R(x,t)}{x}
+\end{equation}
+meaning we are looking for $R(x,t)$ such that
+\begin{equation}
+Q(x,t)=E\Longrightarrow R(x,t)=R(x) \text{ and } -\pdv[2]{R(x)}{x}=E\,R(x).\label{esteeejk}
+\end{equation}
+This partial differential equation is similar to the one we solved for the wavefunction in the diagonalization of the Hamiltonian, but now the solutions we are looking for are strictly real. In order to find a general solution, note first that we are looking for a function that is its own second derivative. We could suggest a sine or a cosine. Since it is a linear differential equation we can try both at once as $R(x)=A \sin{kx}+B\cos{kx}$, to we get the condition
+\begin{equation}
+k^2(A\sin{kx}+B\cos{x})=E(A\sin{kx}+B\cos{x})\Rightarrow k^2=E\Rightarrow k=\pm\sqrt{E}
+\end{equation}
+thus, since it is a linear differential equation, we would have that one set of solutions would be $R(x)=A\sin{(\sqrt{E} x)}+B\cos{(\sqrt{E} x)}$ for any $A,B\in\R$. Note that we consider $\sin{(\sqrt{E}x)}$ and $\sin{(-\sqrt{E})}=-\sin{(\sqrt{E})}$ as a same solution, since the negative sign would be absorbed in a new constant. Yet this is not really a solution allowing any $E$, since it should also satisfy the boundary conditions, only the $R(x)$ such that
+\begin{equation}
+R(0)=0\Rightarrow B=0 \text{ and then } R(L)=0\Rightarrow \sin{(\sqrt{E}L)}=0\Rightarrow \sqrt{E}=\frac{\pi\ r}{L} \text{with }r\in\Z
+\end{equation}
+are solutions. And then $R(x)=\sqrt{\frac{2}{L}} \sin{\frac{\pi r}{L}x}$ (note the normalization condition) now yes, would be a possible solution for any $r\in\Z$, yielding a constant energy $E_r=\pi^2 r^2/L^2$. Let us see that there are no more solutions. 
+
+By the Fourier theorem, any real (periodic) function in $(0,L)$ can be written as a linear combination of sines and cosines of frequencies that are commensurate with the interval, but if the solution must be zero at $x=0$, for any combination $c_1sin(kx)+c_2cos(kx)$, we will have $c_2=0$ and the series will only be made out of sines. The commensurate sines are those $sin(\kappa x)$ such that
+\begin{equation}
+sin(\kappa x)\Big\rvert_{x=L}=0\Rightarrow sin(\kappa L)=0\Rightarrow \kappa x=\pi r \text{ for } r\in\Z.
+\end{equation}
+where $r$ and $-r$ are essentially the same sine.
+Thus in general we have that any function $f(x)$ in this domain can be written for some coefficients $\{A_r\}_{r\in\{1,2,...\}}\subset \R$ as
+\begin{equation}
+f(x)=\sum_{r=1}^\infty A_r \sin{\qty(\frac{x\pi r}{L})}.
+\end{equation} 
+But as we proved in the previous paragraph, this is nothing but a linear combination of functions that each is a solution for the differential equation \eqref{esteeejk} with a different $E$. Then this proves by the linearity of the equation \eqref{esteeejk} the only solutions are the found ones. Therefore, they should be an eigenbasis for the Hamiltonian of the system. Indeed, they match with the ones we found outside the gray-box by direct diagonalization.
+
+}
 
 KOEFIZIENTIEK ZELAN ATARA EIN HILBERT SPACEN INTRODUKZIÑOAN, ETA AZALDU HAN IGUAL ADIBIDE MODURE FOURIER DISKRETOA!
 
@@ -1742,27 +1821,29 @@ EIN UNA DE LET US CALL THIS "THE ORCHESTRATION" ta holan hortik aurrera eztozu h
  
 
 \subsubsection*{(b) Pac-Man Universe}
-If we assume alternatively that any particle entering from one face of the parallelotope will get out from the other face (this is a "Pac-Man Universe", or if you prefer a Universe that is periodic over and over again in unit cells $\Omega$), this mathematically means that for any $l_1,...,l_n\in\Z$
+Let us now assume a bounded domain case where particles do not need to avoid "touching" the boundaries. That is, that they can go with a certain velocity against the boundary. If we assume that any particle entering from one face of the parallelotope will get out from the other face (this is a "Pac-Man Universe", or if you prefer a Universe that is periodic over and over again in unit cells $\Omega$), this mathematically means that for any $l_1,...,l_n\in\Z$
 \begin{equation}
-\psi(\vec{x})=\psi(\vec{x}+(l_1L_1,\cdots , l_nL_n)).
+\psi(\vec{x})=\psi(\vec{x}+(l_1L_1,\cdots , l_nL_n))
 \end{equation}
-For this to be satisfied we cannot accept all wavefunctions, only those plane waves with the same periodicity as the Pac-man box we defined. If we apply the condition to the generic eigenstate $\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}$, we get that
+which will mean the same conditions must be held for the velocity field and the density.
+
+For this to be satisfied we cannot accept all the plane waves that formally appeared to be eigenstates at the beginning of the section, $\phi(\vec{x})=\frac{1}{\sqrt{V}}e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}$. Only those plane waves fulfilling the mathematical statement of periodicity in the pac-man box are acceptable. To know which ones in particular we apply the condition to the generic eigenstate $\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}$, to get that
 \begin{equation}
 e^{\frac{i}{\hbar}\vec{p}\cdot\qty({l_1L_1,\cdots ,l_nL_n})}=1
 \end{equation}
 which can happen only if
 \begin{equation}
-\vec{p}\cdot( l_1L_1,\cdots, l_nL_n)=2\pi \hbar r \quad \text{ for } r\in\Z 
+\vec{p}\cdot( l_1L_1,\cdots, l_nL_n)=2\pi \hbar r \quad \text{ for } r\in\Z.\label{condp}
 \end{equation}
 \mybox{
-This is the condition for the so-called reciprocal lattice vectors, relative to the "direct lattice" defined by the $n$ parallelotope edges $\{(L_1,0,...,0), ..., (0,...,0,L_n)\}$, which we will denote by the $\R^n$ basis $\{\vec{L}_j\}_{j=1}^n$.
+This is the condition for the so-called "reciprocal lattice vectors", relative to the "direct lattice" defined by the $n$ parallelotope edges $\{(L_1,0,...,0), ..., (0,...,0,L_n)\}$.
 }
 
-If we define an $\R^n$ basis as $\{\vec{P}_j\}_{j=1}^n=\{(2\pi\hbar/L_1,0,...,0), ..., (0,...,0,2\pi\hbar/L_n)\}$, since any vector $\vec{p}\in\R^n$ can be written in this second basis, such that for some $s_1,..,s_n\in\R$
+If we define an $\R^n$ basis as $\{\vec{P}_j\}_{j=1}^n=\{(2\pi\hbar/L_1,0,...,0), ..., (0,...,0,2\pi\hbar/L_n)\}$, since any vector $\vec{p}\in\R^n$ can be written in this basis, such that for some $s_1,..,s_n\in\R$,
 \begin{equation}
 \vec{p}=s_1\vec{P}_1+\cdots+s_n\vec{P}_n,
 \end{equation}
-the above condition is equivalent to
+evaluating equation \eqref{condp} we get the condition for acceptable plane-wave
 \begin{equation}
 s_1l_1+\cdots+s_nl_n= r \quad \text{ for }r\in\Z
 \end{equation}
@@ -1770,26 +1851,207 @@ Then, since $l_j\in\Z$ and $r\in\Z$, the equation can only be satisfied if $s_1,
 \begin{equation}
 \vec{p}_{\vec{s}}=\qty(s_1\frac{2\pi\hbar}{L_1},...,s_n\frac{2\pi\hbar}{L_n})\quad \text{ with } \vec{s}=(s_1,...,s_n)\in\Z^n.
 \end{equation}
-Thus, the eigenstates of the Hamiltonian are "quantized" to be $\{\frac{1}{V} e^{\frac{i}{\hbar}\vec{p}_{s}\cdot \vec{x}}\}_{s\in\Z^n}$, meaning our desired states can only be achieved for not all energies.
-
-
-
-\subsubsection*{Unbounded Domain}
-
-
-
-\subsubsection*{What about the reverse way to find eigenstates?}
-
-Consider to make the notation less cumbersome the 1D case and consider to start that the domain is bounded $\Omega_t=[a,b]\subset \R$. Then, if we want to have a constant $\h^\psi$ in $x$, such that $\pdv{\rho(x,t)}{t}=0$, from the continuity equation, we know that the second condition implies
+Thus, we can only find states with constant energy for all trajectories for certain "quantized" energies
 \begin{equation}
-v(x,t)\rho(x,t)=c(t) \quad \forall x\in[a,b], \forall t>t_0
+E_{\vec{s}}=\sum_{j=1}^n\frac{1}{2m_j}\qty(s_j\frac{2\pi\hbar}{L_j})
 \end{equation}
-with $c(t)\in\R$ constant in space. This implies that rather both are constant in space, rather one of them is zero, or rather they are not constant in space but are everywhere the multiplicative inverse of each other. The last option is not feasible because 
+of associated states 
+\begin{equation}
+\phi_{\vec{s}}(\vec{x})=\frac{1}{\sqrt{V}} e^{\frac{i}{\hbar}\qty(s_1\frac{2\pi\hbar}{L_1}+\cdots+s_n\frac{2\pi\hbar}{L_n})} \quad \text{ with }\vec{s}\in\Z^n.
+\end{equation}
+Notice that these states are orthonormal to each other
+\begin{equation}
+\int_{\Omega} \phi^*_{\vec{s}}(\vec{x})\phi_{\vec{s}\,'}(\vec{x}) dx = \delta_{\vec{s}\,\vec{s}'\,}.
+\end{equation}
+Then, by noting that by the Fourier series theorem (in its plane-wave version), for any function $\varphi(\vec{x})$ that is periodic in the cell $\Omega$ there exist coefficients $\{C_{\vec{s}}\}_{\vec{s}\in\Z^n}$ such that it can be written as a superposition of precisely the orthonormal states we found
+\begin{equation}
+\varphi(\vec{x})=\sum_{\vec{s}\in\Z^n}C_{\vec{s}}e^{\frac{i}{\hbar}\vec{p}_{\vec{s}}\cdot \vec{x}},
+\end{equation}
+we realize that the eigenstates of the Hamiltonian operator we have found form a complete orthonormal basis for our conditions, meaning there are no additional functions that give the energy orchestration that are not among the energies we listed before.
 
-we will consider two possible boundary conditions. First, what if  
+From the point of view of the trajectories, this time we have found a "reverse" case of stationary states. Now the density is constant in space, thus the quantum potential is what is zero everywhere, while the trajectories are not necessarily stationary and can move constantly.
 
-\subsection*{A.6.4. Example 2: The Harmonic Oscillator - the Position Operator}
-\addcontentsline{toc}{subsubsection}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}
+With a similar development as the one made in case (a), we could have obtained the eigenstaets of this case from trajectory based arguments alone without the usage of the Schrödinger equation and the wavefunction.
+
+\subsubsection*{Unbounded Domain - The Improper States}
+Let us now consider what happens when we take the domain $\Omega$ to be the whole $\R^n$. We found in the beginning of the example that for the free particle Hamiltonian $\hat{H}_{\vec{x}}=\sum_{j=1}^n\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}$, all the plane-waves $\phi_{\vec{p}}(\vec{x})=\alpha e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}$ with $\vec{p}\in\R^n$ satisfied the eigenvalue equation with eigenvalue $\varepsilon_{\vec{p}}=\sum_{j=1}^n\frac{p_j^2}{2m_k}$ (the kinetic energy),
+\begin{equation}
+\hat{H}_{\vec{x}}\phi_{\vec{p}}(\vec{x}) = \qty(\sum_{j=1}^n\frac{p_j^2}{2m_k}) \phi_{\vec{p}}(\vec{x}).
+\end{equation}
+This made them the candidates for energy eigenstates of the free system, and yet we found that when constraining the domain, only some of them or combinations of degenerate of them were acceptable wavefunctions. In this case we are placing no restriction at all, so it seems there is nothing against all of them being valid eigenstates. This would mean that a "really free" (in the sense that the space is not constrained) particle system would not have its orchestrated energies "quantized". However, it turns out that none of our plane-waves is normalizable if $\vec{x}\in\R^n$, not even by considering linear combinations of the degenerate ones. Therefore none of them is an state in $L^2$. The reason is quite clear: they do not even fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$. In fact, it can be proven that $\hat{H}_{\vec{x}}$ cannot be diagonalized over a set of acceptable quantum states. We can qualitatively understand this, because if a state must fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$, but $\rho\neq 0$ for some $\vec{x}$, then the quantum potential will take at least two different values and its derivative (thus the force the tangent trajectories exert on each other) will be non-null and a stationary state like the one we looked for will not be possible. Or if you prefer, since the effect of the quantum potential is to evolve the states towards the minimum Fisher information (which happens at a constant density, such as the plane-waves), we will not be able to stop the dynamics of the density. 
+
+Nevertheless, because the plane-waves do fulfill formally both the domain constraints and the eigenfunction equation, and thus in a formal sense they do determine the Hamiltonian, it is common to still call them "improper" quantum states. Improper in the sense that they can still be thought of as the limit of an acceptable quantum state, say, when the periodic box we considered in the bounded domain case is made big enough (in fact, since in numerical simulations an unbounded domain cannot be considered, over the simulation grids the approximations are quite acceptable). And in this sense, by lifting the normalization condition for the density, plane waves do describe an state for which all the trajectories have the same energy and actually a same momentum $\vec{p}$ at all times (they are minimal Fisher information states).
+
+
+It turns out that this formal consideration can be taken seriously because even if they are not acceptable states, apart from the analogy, they do fulfill very interesting properties that Hamiltonian eigenstates possessed. To see the analogy, let us consider that $\{\varphi_j(\vec{x})\}_{j\in\Z^n}$ is an acceptable wavefunction orthonormal basis (indexed by a countable set, say $\Z^n$).
+\begin{itemize}
+\item They satisfy a "continous version" of the orthonormality condition
+\begin{equation}
+\int_{\R^n} \phi_{\vec{p}\,'}^*(\vec{x})\phi_{\vec{p}}(\vec{x})dx=\delta(\vec{p}\,'-\vec{p}) \ \ \text{ just as } \int_{\R^n} \varphi_{j\,'}^*(\vec{x})\varphi_{j}(\vec{x})dx=\delta_{j\,'j}
+\end{equation}
+where $\delta(\vec{y}-\vec{y}_0)$ is the Dirac delta, the continous index analogous of the Kronecker delta $\delta_kk_0$, or its continous limit
+\begin{equation}
+\delta(\vec{y}-\vec{y}_0)=\begin{cases}
+0 \text{ if  }\vec{y}\neq \vec{y}_0\\
+\infty \text{ if  }\vec{y}=\vec{y}_0\\
+\end{cases} \ \ \text{ just as } \delta_{kk_0}=\begin{cases}
+0 \text{ if  }k\neq k_0\\
+1 \text{ if  }k=k_0\\
+\end{cases}
+\end{equation}
+\mybox{
+This expression is to be taken seriously only when it is inside an integral, for $\delta(\vec{y}-\vec{y}_0)$ is a {\bf distribution}, such that, it just "selects" one of the indexes of a smooth function $f(\vec{y})$ with which it is integrated (just as the Kronecker delta used to do),
+\begin{equation}
+\int_{\R^n}f(\vec{y})\delta(\vec{y}-\vec{y}_0) dy=f(\vec{y}_0) \ \ \text{ just as } \sum_{k\in\Z^n} f_k\delta_{kk_0} = f_{k_0}
+\end{equation}
+Ein analogixe tio
+EXPLIKE SARTZEN DOZUNIEN EL HILBERT SPACE LO QUE ES EL PAN BIMBO Y CÓMO LAS FUNCIONES EN REALIDAD SIEMPRE HAN SIDO VECTORES! NIKE SEA EN UN GRAYBOX.
+Klaro eske Hilbert space is just an intermediate thing entre finita dimensional y improper de estas. En la del pan bimbo ein analogixe explicitamente esaten lo poco que le gustará a un matemático pero lo cierto que es que no es más que una analogía.
+
+As it happened in the kronecker delta case, this is a useful feature whenever we already have an integral over plane waves (what previously was a sum on the eigenstates), since integrating over we just select one of the eigenstates. An example of its usefulness will be given in the two proves of the end of the list. 
+
+}
+\item Any state can be expressed using combinations of these states. Since they are an uncountably many number of states we consider a "continuous linear combination", such that for any state $\psi(\vec{x})$, there exist coefficients $\tilde{\psi}(\vec{p})$ such that
+\begin{equation}\label{inigo1}
+\psi(\vec{x}\,)=\int_{\R^n}\tilde{\psi}(\vec{p}\,)\ \phi_{\vec{p}}(\vec{x})dp \ \ \text{ just as } \psi(\vec{x}\,)=\sum_{j\in\Z^n}c_j\varphi_{j}(\vec{x}),
+\end{equation}
+where the coeffients are also given by the "projections"
+\begin{equation}\label{inigo2}
+\tilde{\psi}(\vec{p}\,)=\int_{\R^n}\phi_{\vec{p}}^*(\vec{x})\ \psi(\vec{x}\,)dx\ \ \text{ just as } c_j=\int_{\R^n}\varphi_{j}(\vec{x})^*\ \psi(\vec{x})dx.
+\end{equation}
+\mybox{
+The reason why this is true, is that since $\phi_{\vec{p}}(\vec{x}\,)=e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}$, equation \eqref{inigo2} is just the Fourier transform and equation \eqref{inigo1} the inverse Fourier transform
+\begin{equation}
+\tilde{f}(\vec{p})=\int_{\R^n} f(\vec{x})e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx \ \ \text{ and }\ \ f(\vec{x})=\int_{\R^n} \tilde{f}(\vec{p})e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx.
+\end{equation}}
+\item The expectation value of the energy for an arbitrary state can be computed using "only" the projection coefficient magnitudes,
+\begin{equation}
+\E[\h;\psi](t)=\int_{\R^n} \h^\psi(\vec{x},t)\rho(\vec{x},t)dx=\int_{\R^n}\varepsilon_{\vec{p}}\ |\tilde{\psi}(\vec{p},t)|^2dp \ \ \text{ just as }\E[\h;\psi](t)=\sum_{j\in\Z^n}\varepsilon_{j}|c_j(t)|^2.
+\end{equation}
+\mybox{
+Given that $\forall z\in\C$, $\frac{1}{2}(z+z^*)=\Re{z}$ and meaning by $c.c.$ the complex conjugate of the previous part of the same expression (assuming the Hamiltonian operator derivatives in $\vec{x}$ and the integrals over $\vec{p}$ commute),
+\begin{equation}
+\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx =\int_\Omega \Re{\frac{\hat{H}_{\vec{x}}\psi(\vec{x},t)}{\psi(\vec{x},t)}} \psi^*\psi dx =\frac{1}{2}\int_\Omega \qty(\psi^*\hat{H}_{\vec{x}}\psi+\psi\hat{H}_{\vec{x}}\psi^*)dx=
+\end{equation}
+$$
+= \frac{1}{2}\int_\Omega\int_{\R^n}\qty(\tilde{\psi}^*(\vec{p}\,',t)\phi^*_{\vec{p}\,'}(\vec{x}))dp'\int
+_{\R^n}\qty(\tilde{\psi}(\vec{p},t)\varepsilon_{\vec{p}} \phi_{\vec{p}}(\vec{x})) dx+c.c.=
+$$
+$$
+=\frac{1}{2}\int_{\R^n}\int_{\R^n}\tilde{\psi}^*(\vec{p}\,',t)\tilde{\psi}(\vec{p},t)\varepsilon_{\vec{p}}\int_{\Omega}\phi^*_{\vec{p}}(\vec{x})\phi_{\vec{p}}(\vec{x})dx dp dp' +c.c.=
+$$
+Using that by orthonormality condition we obtain a delta, which selects one of the $p$ as
+\begin{equation}
+=\frac{1}{2}\int_{\R^n}\int_{\R^n}\tilde{\psi}^*(\vec{p}\,',t)\tilde{\psi}(\vec{p},t)\varepsilon_{\vec{p}}\delta(\vec{p}-\vec{p}') dp dp' +c.c.=\frac{1}{2}\int_{\R^n}\tilde{\psi}^*(\vec{p},t)\tilde{\psi}(\vec{p},t)\varepsilon_{\vec{p}}dp  +c.c.
+\end{equation}
+And thus,
+$$
+\int_\Omega \h^\psi(\vec{x},t)\rho(\vec{x},t) dx =\frac{1}{2}\int_{\R^n}|\tilde{\psi}(\vec{p},t)|^2\varepsilon_{\vec{p}}dp  +c.c.=\int_{\R^n}\varepsilon_{\vec{p}}|\tilde{\psi}(\vec{p},t)|^2dp
+$$
+}
+\item Given we know the projection coefficients of an initial quantum state $\psi(\vec{x},t_0)$ are $\tilde{\psi}(\vec{p}\,,t_0)$, the time evolution of an state for the free particle Hamiltonian can be computed just adding relative phases 
+\begin{equation}
+\psi(\vec{x},t)=\int_{\R^n} e^{-\frac{i}{\hbar}\varepsilon_{\vec{p}}(t-t_0)}\tilde{\psi}(\vec{p}\,,t_0)\phi_{\vec{p}}(\vec{x}) dp \ \ \text{ just as }\ \ \psi(\vec{x},t)=\sum_{j\in\Z^n}e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{x}} c_j\varphi(\vec{x})
+\end{equation}
+
+\mybox{
+Given we know the initial condition of a certain state and we know its projection coefficients $\psi(\vec{x},t_0)=\int_{\R^n}\tilde{\psi}(\vec{p},t_0)\phi_{\vec{p}}(\vec{x})dp$, by the Schrödinger Equation \eqref{SE}, and assuming that the integral over $\vec{p}$ and the derivatives in $\vec{x}$ in the Hamiltonian operator commute,
+\begin{equation}
+i\hbar\pdv{\psi(\vec{x},t)}{t}=\hat{H}_{\vec{x}}\psi(\vec{x},t)\Rightarrow \int_{\R^n}i\hbar\pdv{\tilde{\psi}(\vec{p},t)}{t}\phi_{\vec{p}}(\vec{x})dp =\int_{\R^n}\tilde{\psi}(\vec{p},t)\hat{H}_{\vec{x}}\phi_{\vec{p}}(\vec{x})dp=\int_{\R^n}\varepsilon_{\vec{p}}\tilde{\psi}(\vec{p},t)\phi_{\vec{p}}(\vec{x})dp
+\end{equation}
+by applying the operation $\int_{\R^n}\phi_{\vec{p}\,'}^*(\vec{x})\cdot dx$ on both sides and assuming both integrals commute
+\begin{equation}
+ \int_{\R^n}i\hbar\pdv{\tilde{\psi}(\vec{p},t)}{t}\qty(\int_{\R^n}\phi_{\vec{p}\,'}^*(\vec{x})\phi_{\vec{p}}(\vec{x})dx)dp=\int_{\R^n}\varepsilon_{\vec{p}}\tilde{\psi}(\vec{p})\qty(\int_{\R^n}\phi_{\vec{p}\,'}^*(\vec{x})\phi_{\vec{p}}(\vec{x})dx)dp
+\end{equation}
+$$
+ \int_{\R^n}i\hbar\pdv{\tilde{\psi}(\vec{p},t)}{t}\delta(\vec{p}-\vec{p\,'})dp=\int_{\R^n}\varepsilon_{\vec{p}}\tilde{\psi}(\vec{p})\delta(\vec{p}-\vec{p\,'})dp\Rightarrow  i\hbar\pdv{\tilde{\psi}(\vec{p}\,',t)}{t}=\varepsilon_{\vec{p}}\tilde{\psi}(\vec{p}\,',t).
+$$
+Finally, this equation has an immediate solution for each $\vec{p}$,
+\begin{equation}
+\tilde{\psi}(\vec{p},t)=\tilde{\psi}(\vec{p},t_0)e^{-\frac{i}{\hbar}\varepsilon_{\vec{p}}(t-t_0)}
+\end{equation}
+which is what we wanted to prove.
+
+}
+\end{itemize}
+There are actually several mathematically rigurous ways to treat continious spectrum "formal eigenfunctions" as the ones we have encountered, rather through Rigged Hilbert Spaces or through the von Neumann development CITEU. However, we will not consider them here for ease of reading.
+
+Gray box bat esaten Fourierren kontzekuentzi bat dala al uncertainty relation? entre cuán determinada está la momentum y la position.
+
+Note that with the last of the properties we can now prove what we said a pair of sections ago about the broadening of an initially Gaussian wavepacket.
+
+Idatzi zelan dien koefizientiek horrenak eta zelan eboluzioneko ban. Oin idatzi orduen benetan si no te gusta la "formally" siempre puedes ver los momentum eigenfunctions formales como eigenstates asintóticos de la gaussiana al achafarse. Poner de manifiesto para tanto la propagación como para lo otro en el espacio de p como se vería la evolución.  Gausianas sin momentum!!! Y luego gaussianas con un momento en una dirección concreta, esas darán todas las p.
+
+Y ahora se la cuelas. Haces la pregunta de, y si hiciesemos el límite al revés? Ves que saldría algo alrevés, un estado con momentos uncertain total, pero con una certidumbre de la configuración de la gran mayoría de universos súper cierta! Dí que formalmente puedes entonces definir unos estados que son deltas de dirac en el espacio que se transforman al revés que los deltas de dirac en el momento, y que esto permite una visión unificada de la notación como veremos en el siguiente.
+Esan que de forma muy análoga estos estados pueden entenderse como estados donde "todas las trajs" tienen la misma posición y que forman una base impropia, como los del momento formaban una base impropia, en el sentido de que puedes alcanzarlos a todos y la forma en que operan es super similar.
+
+(Y dejaremos la definición del momentum operator para luego cuando definamos los operadores de observables en general y definamos también la momentum operator.)
+
+\section*{The Ket Notation }
+Imagine we were interested in knowing a complete set of orhtonormal states for which not the energy but the position was the same for all trajectories at all times. This however would mean that we would need a state with 
+
+Klaro dana zan super dependiente de la psoición, en el caso discreto, pero al hacer esto pues ttak """"unificas"""" las cosas.
+In this section we will learn about a notation is very convenient after we have seen the formal similarity of the improper states
+
+Klaro has de introducir position eigenstates, verás que son tal que tampoco son estados cuánticos, pero que permiten una notación muy interesante y útil, idatzi un operator como en su diagonal shape quedaría y tal.
+
+Haz incapié en que no es más que notación y que como bien decía un profesor, no heu de ser esclaus de la notació. Y q a mí enparticular no me agrada demasiado ze es un abuso que se hace del lenguaje, pero que es el que se usa desafortunadamente o no en la physics commmunity.
+
+\section*{A.6.6. A General Observable Operator}
+What if we found a complete set of quantum states for which not the energy but some other property like the momentum, the angular momentum etc., call it property $B$, is the same for all trajectories at all times? That is, imagine we define a trajectory property $B$, as given by a particular function $\B^\psi (\vec{x},t)$, and we find a complete orthonormal set of functions $\{B_k(\vec{x})\}_{k\in\sigma}$ for which $\B^{B_k}(\vec{x},t)=b_k\in\R$ for all $\vec{x},t$. Then, not only the set of orthonormal functions would be insightful orchestrations for which no matter which would our trajectory be, with a probability 1, we would know the property $B$'s value "forever", but, in addition, if we knew the expansion coefficients of an arbitrary function $\psi(\vec{x})$ in that base, such that $\psi(\vec{x},t)=\sum_{k\in\sigma}c_k(t)B_k(\vec{x})$, we would immediately know the expected value of the property $B$ for that state as
+\begin{equation}
+\E[\B; \psi]=\int_\Omega \rho(\vec{x},t)\B^\psi(\vec{x},t)dx=\sum_{k\in\sigma} b_k|c_k(t)|^2.
+\end{equation}
+Now, there is a very convenient way to gather these states and values in a same mathematical structure, such that we can share them or refer to them altogether naming a single thing. We can build with them an operator that diagonalizes over them and has as eigenvalues the corresponding constant property $B$. 
+More importantly, this would gives us a very convenient 
+
+But not only that. It turns out that this will give us the hint onto how to measure stuff in a very convenient way in part B and will very naturally allow us to see what the famous Heisenberg uncertainty formula means. And yet, not only that, but we will obtain a means to get more such bases for derived properties other than $B$ together with a lifehack to build Hamiltonian operators, just getting inspired by classical mechanics.
+
+But not only that! Este set nos permitiría saber la bohmian property como tal también para cualquier estado! Cómo? Pues allí es donde entra la necesidad última de definir un operador para nosotros. Ezta bape erreza demostretie........
+
+If we ever find such a complete orhtonormal set of functions with associated real numbers giving the constant property $B$ for each of them, 
+
+
+
+
+Ein ounbounded arinau expliketan de manera formal ein dogune dala, en el que sin poner ninguna restricción danak ziela eigenstatek. Pb? que ninguno es un estado de L2 valido, ezinzu normalizeu. Eta esan edmostreu ahal dala eztauela normalizeu ahal dozun eigenstateik, eta arrazoie dala edozein estado zabaldu eingo dala hacia el minimo fisher information. Baaaina, esan de manera formal que funciona como los otros por ejemplo para la evolución temporal tal. Orduen oin sartun momentum operatorrera, azaldu zein izengo zan oemga boundeden eta zein dan free spacen. orduen definidu momentum operator del free space zein dan eta idatzi finalmente hamiltonianoa ondo. 
+
+
+\subsubsection*{The Momentum Operator}
+% https://arxiv.org/pdf/quant-ph/0103153.pdf
+Notice that interestingly, all the trajectories in the eigenstates of the free Hamiltonians we have considered, not only had the energy, but also the velocity equal for all trajectories at all times.
+
+On this line, we might be interested in having a 
+
+Itxi klaru baten p momentume zala ta bestien ez!
+
+On this line, we might want to know which are the states (density and velocity fields, or equivalently, the wavefunctions) such that the velocity is the same constant for all the trajectories at all times. Then, if we want the velocity of the state to be constant at all times 
+
+ta gero ein adibidie del potenical central eta definidu momentu angularra.
+
+We could want to look for a complete orthonormal basis made out exclusively of states for which tal es constante. En cuyo caso para lo de la esperanza para esa base expansion de tal es sumar los coeficientes al cuadrado, y tal que podrás hacer un truco en la part B tanto lo de naive measurement como el von neumann normal. Si es función de rho y de v, que lo será, sabes que si impones rho cte y vel cte sale eigenstate izen bidala de hamiltoniano. Pues podemos buscar un Hamiltoniano para el que obtengas una base de orthornomals con no todos los tal para ellos igual a cero, porque si no el operador que te saldrá es el operador cero. Y entonces con esa base formas un operador hermítico nuevo, tal que sabes que siempre que conmute con el hamiltoniano como diagonalizarán en la misma base ortonormal ba ttak constante en el tiempo.
+
+Orduen te fijas en que este operador su parte real operada en un estado es literalmente la versión bohmiana. Orduen, oin una vez tienes un par cualquier producto de ellos os suma o tal en espacio de operadores, sabrás que el operador que te sale es la cosa versión bohmiana, tal que sus eigenstates son tal ke para le bohmiano es fim y tal que para 
+
+It is now time to see the main perk that the operator eigenstate view of the trajectory orchestration provides us. As we introduced in 6.1., any pair of (Hermitian) operators $\hat{A}_{\vec{x}},\hat{B}_{\vec{x}}$ that commute with each other will share a common eigenstate set (each with its own eigenvalues and degeneracies). From the trajectory point of view, this means that if the Hamiltonian $\hat{H}_{\vec{x}}$ commutes with some other Hermitian operator on the wavefunctions $\hat{G}_{\vec{x}}$ (that is, $\hat{H}\hat{G}\psi(\vec{x})=\hat{G}\hat{H}\psi(\vec{x})$ for any acceptable $\psi(\vec{x})$), then, each state $E_j(\vec{x})$ of the orthonormal eigenbasis of $\hat{H}_{\vec{x}}$ will fulfill that $\hat{G}E_j(\vec{x})=gE_j(\vec{x})$ for some real $g$. Thus, not only will we have a constant energy for any trajectory and any time, but will also have another number
+
+
+
+
+
+
+Oin the reverse way to find eigenstates. Ta gero el unbound domain ta gero explike zelan oin dinamika temporala super domineta dekozun. Quizás hasta merezca la pena hemen sartzie position representation eta zelan ez izen arren operadore balidoak en Hilbert space, son muy utilizados ni que sea de form asimbólica (aunque existen formalizaciones matemáticas eta redirigidu irakurlie beste batzutara gure badeuen irakurri), ta orduen behin honegaz oin idatzi beste base ortonormala del harmonix oscilator en este sentido cómo se escribe gure badozun.
+
+Ze koefiziente????
+
+
+
+
+ 
+\subsection*{We can now evolve an arbitrary initial condition!}
+
+As we explained in 6.2., one of the main reasons why computing the eigenstates is useful is that we are now able to obtain the time evolution of an arbitrary initial condition $\psi(\vec{x},t_0)=\phi(\vec{x})$. As an example, imagine we have a Gaussian 
+
 
 
 Bale, hau dana va en part A, ze hasta contiene los ejemplos y la conexión con la ket notation de forma superb natural.
@@ -1831,9 +2093,27 @@ En section B Habría de ponerse ni que sea un apartado comentando la no localida
 \addcontentsline{toc}{subsubsection}{6.5. Example 3: The Central Potential - the Angular Momentum Operator}
 
 
+\subsection*{A.6.4. Example 2: The Harmonic Oscillator - the Position Operator}
+\addcontentsline{toc}{subsubsection}{6.4. Example 2: The Harmonic Oscillator - the Position Operator}
+Ein hamiltonianoan eigenstaetk topeu gero interpreteu ein dinamika temporalana 
+
 \subsection*{A.6.6. A General Observable Operator}
 \addcontentsline{toc}{subsubsection}{6.6. A General Observable Operator}
 % Commutation relations?
+ARGITZAPENA, JAINKOAREN GRAZIAZ!
+
+Klaro ezta inungo misterioa! Zerba lo de kasualidad expresiño random honen parte reala da hau ta imagianrioa da hori? Bueno, ze $H\psi$ justo SEan eskumetara dauena da ta badakizu forma polarrien wf sartzen badozun urtetan dana diela la ecuacione de HJ con la energía total igual a la variación de la acción S (bider la densidad), eta la continuity equation. Asike zati densidadie edo zati WFa eitzen badozun (bixek ondo supongo baia hobeto zati wf ze holan weak value protocolak exaktamente hau emotetzu con una medición naive) urtetan dana ba literalmente da continuity eqt zati rho, por eso la derivada temporal de la desnidad y la energía total o elk Hamiltoniano. Orduen por qué casualidad da la energía bohmiana, pues por esto! Y porque si justo pongo un hamiltonian operator que conmute con un obsrevable por ejemplo el momento angular o uno que me invente resulta que saldrá la momentum bohmiana? La cosa es que en verdad es alrevés! Tú primero en base bohmiana sabes lo que se conserva o tal y escribes el hamiltoniano en su función, inicluso en el caso de una partícula cargada que de hecho será el siguiente ejemplo-> Cómo conserguir el hamiltonian operator de una partícula cargada? Lo suelen hacefr por operadores, pero no, nosotros haremos classical mechanics y luego el truco es ponerlo como parte real de una continuity equation con una velocity field asociada a la momentum lineal, asike generalized momentume ezta emoten deuena el gradiente de S, sino la lineal (creo...y si es alrevés pues tb bien, pero uno de los dos), y entonces al llegar a la eq de Schrödinger, la hamiltonian operator que te queda, eso es! Y ese hamiltonian operator pues tendrá la propiedad de que conmute la property esa con el hamiltonian, que si conserva la energía conserva esa cantidad. Por tanto podemos querer describir estados para los que la cantidad conservada sea X, pues la pones en la parte imaginaria de una ecuación con la continuity equation y ya está?
+
+Demostreu zeba horregaitzik funzionetan deuen eso de de repente ponerle operadores x y p que no conmuten. Osea que cuando cogían por ejemplo lo de el hamiltoniano clásico de la partícula cargada y le ponían de pronto que p y x eran operadores, era literalmente eso!!!!
+Asike llámale a esto QUANTIZATION!!!
+
+Orduen siempre que hagas que dos cosas conjugadas derepente sean operadores que no conmutan quizá, y sólo quizá, si escribes el hamiltoniano de esa primera cosa que te da una Hamilton-Jacobi equation, si luego haces una continuity equation aparte y consideras que esa cosa (aquí era la posición, pero podría ser la amplitud de un campo por ejemplo o más bien quizá su expansión en fourier, las k sobre las que tiene soporte), sean trayectorias con una densidad asociada que se mueve según el campo de velocidades de esas trayectorias, obtines la ecuación de la mecánica cuántica que toque!!!!!!
+
+Osea que literalmente si es un field(x) lo que cuantizas, las trayectorias serían $field(x,t)^\xi$, como cuando tenías $x(j)$ y ahora las trayectorias son $x(j,t)^\xi$. Asike tendrías por ejemplo la time evolution de posibles campos electricos en el espacio, y todos los posibles time evolutions de posibles campos eléctricos interaccionarían de forma tangente entre sí!
+
+Asike billatzen bazun la HJ equation para partículas relativistas y haces esto quizá, y sólo quizá te salga la KG o Dirac o algo. Aunque en relativista problemita bat agertzen da eta da qué tiempo? claro. Proper time supongo... Aunque si el campo electromagnético lo puedes cuantizar de esta forma y es lo más relativista que hay...
+
+Y así saldría que la razón por la que no conmuten esos dos operadores es que haces el caso de free system y haces bounded y luego al límite defines el momentum operator y luego el position operator como su conjugado en cierto sentido.
 
 \subsection*{A.6.6. The Uncertainty Principle}
 \addcontentsline{toc}{subsubsection}{6.6. The Uncertainty Principle}

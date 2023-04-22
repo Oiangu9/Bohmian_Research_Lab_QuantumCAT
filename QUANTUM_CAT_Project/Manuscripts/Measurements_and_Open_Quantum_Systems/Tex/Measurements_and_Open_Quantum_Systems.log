@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  9 APR 2023 20:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.29)  14 APR 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3775,13 +3775,18 @@ Overfull \hbox (5.30643pt too wide) in paragraph at lines 1568--1570
  []
 
 
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1585--1585
+[][] 
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [48]
-Overfull \hbox (10.74733pt too wide) detected at line 1587
+Overfull \hbox (10.74733pt too wide) detected at line 1603
 \OT1/cmr/m/n/10.95 = [] [][] [] [] [] []\OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.
 95 + \OML/cmm/m/it/10.95 c:c: \OT1/cmr/m/n/10.95 = [] [] [] \OML/cmm/m/it/10.95
  []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/
@@ -3792,7 +3797,7 @@ c:
  []
 
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 1574--1587
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1590--1603
 [] 
  []
 
@@ -3810,7 +3815,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [50]
-Overfull \hbox (0.25064pt too wide) in paragraph at lines 1648--1649
+Overfull \hbox (0.25064pt too wide) in paragraph at lines 1666--1667
 []\OT1/cmr/m/n/10.95 Thus, as proven in the gray-box, if no ad-di-tional con-st
 raint is placed, the plane waves, $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 e[
 ]\OMS/cmsy/m/n/10.95 g[]$\OT1/cmr/m/n/10.95 ,
@@ -3837,11 +3842,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [53]
-Overfull \hbox (8.55553pt too wide) in paragraph at lines 1737--1738
-[]\OT1/cmr/m/n/10.95 KOEFIZIENTIEK ZE-LAN ATARA EIN HILBERT SPACEN IN-TRO-DUKZI
-[]NOAN, ETA AZALDU
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3856,6 +3856,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [55]
+Overfull \vbox (25.1381pt too high) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3863,6 +3866,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [56]
+Overfull \hbox (8.55553pt too wide) in paragraph at lines 1816--1817
+[]\OT1/cmr/m/n/10.95 KOEFIZIENTIEK ZE-LAN ATARA EIN HILBERT SPACEN IN-TRO-DUKZI
+[]NOAN, ETA AZALDU
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3876,7 +3884,88 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58] (./A.bblpdfTeX warning (ext4): destination with the same identifier (name{
+[58]
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1901--1913
+[] 
+ []
+
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1921--1926
+[] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59]
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1930--1951
+[] 
+ []
+
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1975--1975
+[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[60]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[61]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[62]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[63]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[64]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[65]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[67] (./A.bblpdfTeX warning (ext4): destination with the same identifier (name{
 cite.schrodinger:mind}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3888,7 +3977,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[59] [60
+[68] [69
 
 ]
 
@@ -3897,79 +3986,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[61
+[70
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1922.
+(hyperref)                be the same. Added a new anchor on input line 2192.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[62
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[63] [64
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 17.68004pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[65
-
-]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 2017.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[66
-
-] [67
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 17.68004pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[68
-
-]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 2078.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[69
-
-] [70
-
-]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3978,16 +4001,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [71
 
-] [72
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[72] [73
 
 ]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2146.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 17.68004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[74
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2146.
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 2287.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3995,7 +4030,61 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[73
+[75
+
+] [76
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 17.68004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[77
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 2348.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[78
+
+] [79
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[80
+
+] [81
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2416.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2416.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[82
 
 ] (./Measurements_and_Open_Quantum_Systems.bbl)
 
@@ -4008,16 +4097,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[74]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2185.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2185.
+[83]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2455.
  (./Measurements_and_Open_Quantum_Systems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2185.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2455.
 
 Package rerunfilecheck Info: File `Measurements_and_Open_Quantum_Systems.out' h
 as not changed.
-(rerunfilecheck)             Checksum: DD1F44E35B6D3AC6C5B8624F27CD7ED3;6770.
+(rerunfilecheck)             Checksum: 7E5DFF4C43BE093FBD2F383346E96620;6794.
 
 
 LaTeX Warning: There were undefined references.
@@ -4027,10 +4116,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36987 strings out of 492982
- 688811 string characters out of 6134895
- 796449 words of memory out of 5000000
- 39591 multiletter control sequences out of 15000+600000
+ 37044 strings out of 492982
+ 689522 string characters out of 6134895
+ 796454 words of memory out of 5000000
+ 39604 multiletter control sequences out of 15000+600000
  555961 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,12n,97p,10433b,922s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4039,33 +4128,34 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Measurements_and_Open_Quantum_Systems.pdf (80 pages, 1514882 
+ist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
+Output written on Measurements_and_Open_Quantum_Systems.pdf (89 pages, 1565537 
 bytes).
 PDF statistics:
- 1268 PDF objects out of 1440 (max. 8388607)
- 1141 compressed objects within 12 object streams
- 390 named destinations out of 1000 (max. 500000)
+ 1365 PDF objects out of 1440 (max. 8388607)
+ 1227 compressed objects within 13 object streams
+ 434 named destinations out of 1000 (max. 500000)
  631 words of extra memory for PDF output out of 10000 (max. 10000000)
 
