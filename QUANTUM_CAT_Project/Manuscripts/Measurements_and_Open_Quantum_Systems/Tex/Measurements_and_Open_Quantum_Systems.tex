@@ -152,6 +152,8 @@
 
 \newcites{proleg}{Essentially Paraphrasing...}
 \newcites{A}{References}
+\newcites{B}{References}
+
 
 \begin{document}
 
@@ -1425,12 +1427,25 @@ Apendices pendientes:
 
 
 \newpage
-\fancyhead[R]{\em The Observable Operators}
-\section*{A.6. The Hilbert Space and the Observable Operators}
-\addcontentsline{toc}{subsection}{6. The Hilbert Space and the Observable Operators}
+\bibliographystyleA{plain}
+\bibliographyA{References/Bibliography} 
+\newpage
 
-\subsection*{A.6.1. The Hilbert Space}
-\addcontentsline{toc}{subsubsection}{6.1. The Hilbert Space}
+\begin{kapituloBerria}{Part B}{""}
+ Hilbert Space and Observable Operators 
+\end{kapituloBerria}
+\newpage
+\fancyhead[L]{\null}
+\fancyhead[R]{\null}
+\null
+\clearpage
+\fancyhead[R]{\em The Observable Operators}
+
+
+\addcontentsline{toc}{section}{Part B: Hilbert Space and Observable Operators}
+
+\subsection*{B.1. The Hilbert Space}
+\addcontentsline{toc}{subsection}{1. The Hilbert Space}
 
 Now that we can define the state of the fluid of Universes with a single (complex) function $\Psi(\vec{x},t)$, it is interesting to see if we can situate it in any interesting mathematical structure. It turns out that there is one mathematical construction that will be very convenient to manage the wavefunction of the Universe (which will be extensible to the wavefunctions of partitions of the Universe that we will explore in the next section).
 
@@ -1452,8 +1467,8 @@ We then imposed a local conservation of the relative number of Universes in time
 - Ket notationen operadore bat zelan idazten dan jarri ta zer dan operadore hermitiko bat, eta diskleimerra gero etorko garela bueltan.
 \fi
 
-\subsection*{A.6.2. The Hamiltonian Operator and the Orchestration}
-\addcontentsline{toc}{subsubsection}{6.2. The Hamiltonian Operator and the Orchestration}
+\subsection*{B.2. The Hamiltonian Operator and the Orchestration}
+\addcontentsline{toc}{subsection}{2. The Hamiltonian Operator and the Orchestration}
 Given a quantum system with EWF $\psi(\vec{x},t)$, let us define the energy of the trajectory that at time $t$ happens to be in $\vec{x}$ (for their non-crossing property, there will only be one, the $\xi$-th), as
 \begin{equation}
 \h^\psi(\vec{x}^\xi(t), t):=H\qty(\vec{x}^\xi(t), \vec{p}\qty(\dv{\vec{x}^\xi(t)}{t}), t)=\sum_{k=1}^n \frac{1}{2}m_k\qty(\dv{\vec{x}^\xi(t)}{t})^2+V(\vec{x}^\xi(t))+Q(\vec{x}^\xi(t),t)
@@ -1618,8 +1633,8 @@ EN GENERAL SI OMEGA NOT BOUNDED LA UNICA CONDICION DE CONTORNO QUE TENDRA SENTID
 
 
 
-\subsection*{A.6.3. Example 1: The Free Particles - the Momentum Operator}
-\addcontentsline{toc}{subsubsection}{6.3. Example 1: The Free Particles}
+\subsection*{B.2.1 Example 1: The Free Particles}
+\addcontentsline{toc}{subsubsection}{2.1 Example 1: The Free Particles}
 
 Let us retake the free particle system example where there is no potential $V$ imposing hindrance on the motion of the fluid towards maximum diffusion or minimum Fisher information, $V(\vec{x})\equiv 0$. If so, the Hamiltonian operator would be left as $\hat{H}_{\vec{x}}=\sum_{k=1}^n\frac{-\hbar^2}{2m_k}\pdv[2]{}{x_k}$, which would make the energy of each configuration $\h^\psi$
 \begin{equation}
@@ -1665,7 +1680,7 @@ One might ask whether there are additional eigenstates that yield an energy $E$.
 
 Thus, as proven in the gray-box, if no additional constraint is placed, the plane waves, $\{\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}\}_{\vec{p}\in\R^n}$, with $\alpha\in\C$ a normalization constant are eigenstates of the Hamiltonian with respective eigenvalues $\{E_{\vec{p}}\}_{\vec{p}\in\R^n}=\{\sum_{j=1}^n\frac{p_j^2}{2m}\}_{\vec{p}\in\R^n}$. For now the energy eigenvalues appear {\bf not} to be "quantized", because we could find such a vector $\vec{p}$ for any desired $E\geq 0$. Moreover, each possible eigenvalue $E_{\vec{p}}$ is multiply degenerated. At least $2^n$ times degenerate, since if we find one such $\vec{p}$, we can obtain $2^n$ other $\vec{p}'$ by setting a -1 in any of the entries of $\vec{p}$.
 
-\subsubsection*{Bounded Domain}
+\subsubsection*{B.2.1. Bounded Domain}
 In order to give physical meaning to this, we must define a particular domain $\Omega$. Let us assume first $\Omega\subseteq \R^n$ is bounded. For simplicity it will be a parallelotope $\Omega=\prod_{j=1}^n(0,L_j)$. Without still saying what happens in its boundary, this readily imposes the normalization condition for the eigenstates such that, up to a global phase, we can fix $\alpha=\frac{1}{\sqrt{V}}$, for
 \begin{equation}
 \int_\Omega \alpha^*e^{-\frac{i}{\hbar}\vec{p}\cdot \vec{x}}\alpha e^{\frac{i}{\hbar}\vec{p}\cdot \vec{x}}=1\Longrightarrow |\alpha|^2=\frac{1}{\prod_{j=1}^nL_j}.
@@ -1871,14 +1886,14 @@ we realize that the eigenstates of the Hamiltonian operator we have found form a
 
 From the point of view of the trajectories, this time we have found a "reverse" case of stationary states. Now the density is constant in space, thus the quantum potential is what is zero everywhere, while the trajectories are not necessarily stationary and can move constantly.
 
-With a similar development as the one made in case (a), we could have obtained the eigenstaets of this case from trajectory based arguments alone without the usage of the Schrödinger equation and the wavefunction.
+With a similar development as the one made in case (a), we could have obtained the eigenstaets of this case from trajectory based arguments alone, without the usage of the Schrödinger equation and the wavefunction.
 
-\subsubsection*{Unbounded Domain - The Improper States}
+\subsubsection*{B.2.2. Unbounded Domain - The Improper States}
 Let us now consider what happens when we take the domain $\Omega$ to be the whole $\R^n$. We found in the beginning of the example that for the free particle Hamiltonian $\hat{H}_{\vec{x}}=\sum_{j=1}^n\frac{-\hbar^2}{2m_j}\pdv[2]{}{x_j}$, all the plane-waves $\phi_{\vec{p}}(\vec{x})=\alpha e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}$ with $\vec{p}\in\R^n$ satisfied the eigenvalue equation with eigenvalue $\varepsilon_{\vec{p}}=\sum_{j=1}^n\frac{p_j^2}{2m_k}$ (the kinetic energy),
 \begin{equation}
 \hat{H}_{\vec{x}}\phi_{\vec{p}}(\vec{x}) = \qty(\sum_{j=1}^n\frac{p_j^2}{2m_k}) \phi_{\vec{p}}(\vec{x}).
 \end{equation}
-This made them the candidates for energy eigenstates of the free system, and yet we found that when constraining the domain, only some of them or combinations of degenerate of them were acceptable wavefunctions. In this case we are placing no restriction at all, so it seems there is nothing against all of them being valid eigenstates. This would mean that a "really free" (in the sense that the space is not constrained) particle system would not have its orchestrated energies "quantized". However, it turns out that none of our plane-waves is normalizable if $\vec{x}\in\R^n$, not even by considering linear combinations of the degenerate ones. Therefore none of them is an state in $L^2$. The reason is quite clear: they do not even fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$. In fact, it can be proven that $\hat{H}_{\vec{x}}$ cannot be diagonalized over a set of acceptable quantum states. We can qualitatively understand this, because if a state must fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$, but $\rho\neq 0$ for some $\vec{x}$, then the quantum potential will take at least two different values and its derivative (thus the force the tangent trajectories exert on each other) will be non-null and a stationary state like the one we looked for will not be possible. Or if you prefer, since the effect of the quantum potential is to evolve the states towards the minimum Fisher information (which happens at a constant density, such as the plane-waves), we will not be able to stop the dynamics of the density. 
+This made them the candidates for energy eigenstates of the free system, and yet we found that when constraining the domain, only some of them or combinations of degenerate states among them were acceptable wavefunctions. In this case we are placing no restriction at all, so it seems there is nothing against all of them being valid eigenstates. This would mean that a "really free" (in the sense that the space is not constrained) particle system would not have its orchestrated energies "quantized", since in principle any $\vec{p}\in\R^n$ satisfies the eigenstate equation. However, it turns out that none of our plane-waves is normalizable if $\Omega=\R^n$, not even by considering linear combinations of the degenerate ones. The reason is quite clear: they do not even fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$. Therefore none of them is an state in $L^2$. In fact, it can be proven that $\hat{H}_{\vec{x}}$ cannot be diagonalized over a set of acceptable quantum states. We can qualitatively understand this, because if a state must fulfill that $lim_{|\vec{x}|\rightarrow \infty}\phi_{\vec{p}}(\vec{x})=0$, but $\rho\neq 0$ for some $\vec{x}$, then the quantum potential will take at least two different values, and its derivative (thus the force the tangent trajectories exert on each other) will be non-null and a stationary state like the one we looked for will not be possible. Or if you prefer, since the effect of the quantum potential is to evolve the states towards the minimum Fisher information (which happens at a constant density, such as the plane-waves), we will not be able to stop the dynamics of the density. 
 
 Nevertheless, because the plane-waves do fulfill formally both the domain constraints and the eigenfunction equation, and thus in a formal sense they do determine the Hamiltonian, it is common to still call them "improper" quantum states. Improper in the sense that they can still be thought of as the limit of an acceptable quantum state, say, when the periodic box we considered in the bounded domain case is made big enough (in fact, since in numerical simulations an unbounded domain cannot be considered, over the simulation grids the approximations are quite acceptable). And in this sense, by lifting the normalization condition for the density, plane waves do describe an state for which all the trajectories have the same energy and actually a same momentum $\vec{p}$ at all times (they are minimal Fisher information states).
 
@@ -1922,7 +1937,7 @@ where the coeffients are also given by the "projections"
 \mybox{
 The reason why this is true, is that since $\phi_{\vec{p}}(\vec{x}\,)=e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}$, equation \eqref{inigo2} is just the Fourier transform and equation \eqref{inigo1} the inverse Fourier transform
 \begin{equation}
-\tilde{f}(\vec{p})=\int_{\R^n} f(\vec{x})e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx \ \ \text{ and }\ \ f(\vec{x})=\int_{\R^n} \tilde{f}(\vec{p})e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx.
+\tilde{f}(\vec{p})=\int_{\R^n} f(\vec{x})e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx \ \ \text{ and }\ \ f(\vec{x})=\int_{\R^n} \tilde{f}(\vec{p})e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}} dx.
 \end{equation}}
 \item The expectation value of the energy for an arbitrary state can be computed using "only" the projection coefficient magnitudes,
 \begin{equation}
@@ -1951,7 +1966,7 @@ $$
 }
 \item Given we know the projection coefficients of an initial quantum state $\psi(\vec{x},t_0)$ are $\tilde{\psi}(\vec{p}\,,t_0)$, the time evolution of an state for the free particle Hamiltonian can be computed just adding relative phases 
 \begin{equation}
-\psi(\vec{x},t)=\int_{\R^n} e^{-\frac{i}{\hbar}\varepsilon_{\vec{p}}(t-t_0)}\tilde{\psi}(\vec{p}\,,t_0)\phi_{\vec{p}}(\vec{x}) dp \ \ \text{ just as }\ \ \psi(\vec{x},t)=\sum_{j\in\Z^n}e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{x}} c_j\varphi(\vec{x})
+\psi(\vec{x},t)=\int_{\R^n} e^{-\frac{i}{\hbar}\varepsilon_{\vec{p}}(t-t_0)}\tilde{\psi}(\vec{p}\,,t_0)\phi_{\vec{p}}(\vec{x}) dp \ \ \text{ just as }\ \ \psi(\vec{x},t)=\sum_{j\in\Z^n}e^{-\frac{i}{\hbar}\varepsilon_j(t-t_0)} c_j\varphi(\vec{x})
 \end{equation}
 
 \mybox{
@@ -1976,6 +1991,93 @@ which is what we wanted to prove.
 \end{itemize}
 There are actually several mathematically rigurous ways to treat continious spectrum "formal eigenfunctions" as the ones we have encountered, rather through Rigged Hilbert Spaces or through the von Neumann development CITEU. However, we will not consider them here for ease of reading.
 
+In order to see how convenient the improper states are, let us prove the statements we made in a previous section about how a Gaussian wavepacket would evolve in time. Imagine we have that at the initial time $t=t_0$, the system has EWF
+\begin{equation}
+\psi(\vec{x},t_0)=\qty(\frac{1}{\sigma\sqrt{2\pi}})^ne^{-\frac{||\vec{x}||^2}{4\sigma^2}}.
+\end{equation}
+This means the density is a normalized Gaussian with the same standard deviation $\sigma$ in all axes, centered in the origin $\vec{x}=\vec{0}$. Since it is purely real, the velocity field for the trajectories starts with all of them still, $v(\vec{x},t_0)=0$ for all $\vec{x}\in\R^n$. We get the coefficients of this state in the (improper) basis $\{e^{i\frac{\vec{p}\cdot\vec{x}}{\hbar}}\}_{\vec{p}\in\R^n}$ diagonalizing the Hamiltonian, as seen, by the "projection"
+\begin{equation}
+\tilde{\psi}(\vec{p},t_0)=\int_{\R^n}e^{-i\frac{\vec{p}\cdot\vec{x}}{\hbar}}\psi(\vec{x},t_0)dx = \prod_{j=1}^n \int_{-\infty}^\infty e^{i\frac{p_jx_j}{\hbar}}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{||\vec{x}||^2}{4\sigma^2}} dx_j.
+\end{equation}
+We can use that the 1D Fourier transform of a Gaussian is itself a Gaussian,
+\begin{equation}\label{gaussFT}
+\int_{-\infty}^\infty e^{-iky} e^{-a^2y^2}dy = \sqrt{\frac{\pi}{a^2}}e^{-\frac{k^2}{4a^2}} \quad \forall a\in\C:\Re{a^2}>0,
+\end{equation}
+to immediately get that
+\begin{equation}
+\tilde{\psi}(\vec{p},t_0)=\prod_{j=1}^n\sqrt{2}\,e^{-\frac{\sigma^2}{\hbar^2}p_j^2}=2^{n/2}e^{-\frac{\sigma^2}{\hbar^2}||\vec{p}||^2}.
+\end{equation}
+Now, we can use that the time evolution when expressed in the Hamiltonian's eigenbasis is just multiplying each coefficient by a relative phase with the energy, as we have just seen, in order to get that
+\begin{equation}
+\psi(\vec{x},t)=\int_{\R^n}e^{-\frac{i}{\hbar}\sum_{j=1}^n \frac{p_j^2}{2m_k}(t-t_0)}\, 2^{n/2}e^{-\frac{\sigma^2}{\hbar^2}||\vec{p}||^2} \,e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}dp=\prod_{j=1}^n\sqrt{2}\int_{-\infty}^\infty e^{-p_j^2\qty(\frac{\sigma^2}{\hbar^2}+\frac{i}{2\hbar m_j}(t-t_0) )}\,e^{\frac{i}{\hbar}p_jx_j} dp_j
+\end{equation}
+where each of the integrals is the inverse Fourier transform of another Gaussian (now with a complex "standard deviation"). By equation \eqref{gaussFT}, this yields
+\begin{equation}
+\psi(\vec{x},t)=\prod_{j=1}^n \sqrt{\frac{2\pi}{\sigma^2+i\frac{\hbar}{2m_j}(t-t_0)}}\ e^{-\frac{x_j^2}{4\qty(\sigma^2+i\frac{\hbar}{2m_j}(t-t_0))}}.
+\end{equation}
+The factor in front of the exponential does not depend on $\vec{x}$, so we can substitute it up to a global phase by an alternative real normaization constant $C(t)$, then in the exponent we can multiply and divide by the conjugate, to get
+\begin{equation}
+\psi(\vec{x},t)=\prod_{j=1}^n C(t)e^{-\frac{x^2}{4\qty(\sigma^2+\frac{\hbar^2}{4\sigma^2m_j^2}(t-t_0)^2)}}e^{i\frac{x^2\hbar(t-t_0)}{8m_j\sigma^4+4\hbar^2(t-t_0)^2}}.
+\end{equation}
+This has a trajectory density that is a gaussian with a variance in the axis $j$ equal to
+\begin{equation}
+\sigma_j(t)^2=\sigma^2+\frac{\hbar^2}{4\sigma^2m_j^2}(t-t_0)^2
+\end{equation}
+which increases in time quadratically, faster the smaller it was in the beginning and slower, the bigger the mass of the degree of freedom. That is exactly what we anticipated about the boradening of the trajectory density due to the quantum potential. This means that the gaussian will tend asymptotically towards a constant probability density. 
+
+Regarding the velocity field, we see that
+\begin{equation}
+v_j(\vec{x},t)=\frac{1}{\frac{4m_j\sigma^4}{\hbar(t-t_0)}+2\hbar(t-t_0)}\ x_j
+\end{equation}
+which is just a line/plane that at the beginning will increase its slope, meaning all trajectories will move away from the origin at each time a bigger velocity, but at a certain time the velocity field will start to decline, until asymptotically, it becomes zero.
+
+Thus, a Gaussian with zero intial momentum tends towards a constant density in space and zero velocity for all trajectories. But that's exactly the improper state $\phi_{\vec{p}}(\vec{x})=e^{\frac{i}{\hbar}\vec{p}\cdot\vec{x}}$ with $\vec{p}=\vec{0}$. What would have happened if we gave to all the trajectories of the initial Gaussian wavepacket an initial momentum $\vec{p}_0\neq\vec{0}$? Would they also asymptotically evolve towards the improper states but now with momentum $\vec{p}$? If so, we could call them asymptotic, rahter than improper states.
+
+Well, a constant momentum field in space at $t_0$, would mean
+\begin{equation}
+\psi(\vec{x},t_0;\vec{p}_0)=\qty(\frac{1}{\sigma\sqrt{2\pi}})^ne^{-\frac{||\vec{x}||^2}{4\sigma^2}}e^{i\frac{\vec{p}_0}{\hbar}\cdot\vec{x}}.
+\end{equation} 
+Thus, when computing the improper basis coefficients, we would just be shifting all the coefficients by $\vec{p}_0$, and the coefficients would be a Gaussian, but now centered in $\vec{p}_0$ instead of $\vec{p}_0=0$, that is,
+\begin{equation}
+\tilde{\psi}(\vec{p},t_0;\vec{p}_0)=\prod_{j=1}^n \sqrt{2}\ e^{-\frac{\sigma^2}{\hbar^2}(p_j-p_{j0})^2}
+\end{equation}
+then, when looking at the time evolution by introducing relative phases to these coefficients we would find that
+\begin{equation}
+\psi(\vec{x},t;\vec{p}_0)=\prod_{j=1}^n\sqrt{2} \int_{-\infty}^\infty e^{-\frac{i}{\hbar} \frac{p_j^2}{2m_k}(t-t_0)}\, e^{-\frac{\sigma^2}{\hbar^2}(p_j-p_{j0}))^2} \,e^{\frac{i}{\hbar}p_jx_j}\,dp_j.
+\end{equation}
+Changing the variables with $k_j=p_j-p_{j0}$ and developing the squares that appear in the exponents we arrive to
+\begin{equation}
+\psi(\vec{x},t;\vec{p}_0)=\prod_{j=1}^n\sqrt{2}\,e^{-\frac{i}{\hbar} \frac{p_{j0}^2}{2m_k}(t-t_0)}\,e^{\frac{i}{\hbar}p_{j0}x_j} \int_{-\infty}^\infty e^{-k_j^2\qty(\frac{\sigma^2}{\hbar^2}+\frac{i}{2m_j\hbar}(t-t_0))}\, \,e^{\frac{i}{\hbar}k_j\qty(x_j-\frac{p_{j0}}{m_j}(t-t_0))}\,  dk_j
+\end{equation}
+with an additional change of variables as $q_j=x_j-\frac{p_{j0}}{m_j}(t-t_0)$, the integral becomes the one we resolved above, and undoing this last change, we would get
+\begin{equation}
+\psi(\vec{x},t;\vec{p}_0)=\prod_{j=1}^nC_j(t)\,e^{-\frac{i}{\hbar} \frac{p_{j0}^2}{2m_k}(t-t_0)}\,e^{\frac{i}{\hbar}p_{j0}x_j}e^{-\frac{\qty(x-\frac{p_{j0}}{m_j}(t-t_0))^2}{4\qty(\sigma^2+\frac{\hbar^2}{4\sigma^2m_j^2}(t-t_0)^2)}}e^{i\frac{\qty(x-\frac{p_{j0}}{m_j}(t-t_0))^2\hbar(t-t_0)}{8m_j\sigma^4+4\hbar^2(t-t_0)^2}}.
+\end{equation}
+By noting that the first exponential does not depend on $\vec{x}$, thus can be absorbed by the integration constant as $D_j(t)$, only two things have changed.
+
+The density continues to be a Gaussian with a quadratically increasing standard deviation, tending towards a constant density, but now it moves as it gets more dispersed, such that the center follows the path that a particle with with constant momentum $\vec{p}_0$ would follow.
+
+The velocity field is now
+\begin{equation}
+v_j(\vec{x},t)=\frac{p_{j0}}{m_j}+\frac{1}{\frac{4m_j\sigma^4}{\hbar(t-t_0)}+2\hbar(t-t_0)}\ \qty(x_j-\frac{p_{j0}}{m_j}(t-t_0))
+\end{equation}
+which is the same velocity field, just that now the straight line moves following the trajectory of the center of the Gaussian and that now when $t\rightarrow\pm\infty$, instead of decay to zero, the momentum tends asymptotically towards $\vec{p}_0$.
+
+It is not difficult to see that a general initial Gaussian (with a random covariance matrix and initial mean) would have the same behaviour.
+
+So, effectively, we could see the improper states diagonalizing the free particle Hamiltonian as the asymptotic Gaussians wavepackets.
+
+Oin, si nos fijamos en los coeficientes, lo que pasa es que empezamos con una gaussiana y en vez de hacerse lo más ancha, pasa al revés, s ehace lo más concentrada posible, hasta que un estado impropio lo podemos ver en el espacio de los coeficientes como una delta. Al deslocalizar/perder información en posición ganamos información de el valor esperado de momento, pero viceversa. Qué pasa si hacemos una localización mayor en el espacio? que la variancia del valor esperado de la velocidad de posibles universos aumenta en los coeficientes -> porke? la demo es la heisenberg uncertainty del Fourier! Así que un estado con máxima variancia para el momento, es uno con toda la información para el espacio. -> Y decir que esto introduce queeeee ttaka, por ser simétricos.
+Pero insisitir en la interpretación!!!! Esan eztauela Hamiltonianorik para el que son estados estacionarios...pero que tal.
+https://en.wikipedia.org/wiki/Uncertainty_principle	
+
+Y de fet, así puedes introducir las variables canónico conjugadas o tal.
+
+
+
+
+
+ 
 Gray box bat esaten Fourierren kontzekuentzi bat dala al uncertainty relation? entre cuán determinada está la momentum y la position.
 
 Note that with the last of the properties we can now prove what we said a pair of sections ago about the broadening of an initially Gaussian wavepacket.
@@ -2183,8 +2285,8 @@ Explike ganetik orthodox, bohmian, madelung, ta many worlds, ta Schrodingerrena 
 
 \newpage
 
-\bibliographystyleA{plain}
-\bibliographyA{References/Bibliography} 
+\bibliographystyleB{plain}
+\bibliographyB{References/Bibliography} 
 \newpage
 
 \begin{kapituloBerria}{Part B}{" Measuring a Quantum System means knowing\\ the state of the system after perturbing it, with\\ probabilities due to the state before the measurement."}
